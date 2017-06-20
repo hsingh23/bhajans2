@@ -1,0 +1,41 @@
+{
+  "name": "repro",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "classnames": "^2.2.5",
+    "create-react-class": "^15.5.2",
+    "humps": "^2.0.0",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "material-components": "^0.3.0",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-dom": "^15.5.4",
+    "react-highlight-words": "^0.8.0",
+    "react-redux": "^5.0.3",
+    "react-router-dom": "^4.0.0",
+    "react-tap-event-plugin": "^2.0.1",
+    "react-toolbox": "^2.0.0-beta.12",
+    "react-virtualized": "^9.8.0",
+    "reactstrap": "^4.6.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
