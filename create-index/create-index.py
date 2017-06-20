@@ -41,3 +41,5 @@ with open('bhajan-index.txt', 'w+') as f:
     f.write('\n'.join(final_sorted))
 with open('bhajan-index.json', 'w+') as f:
     f.write(json.dumps(final_sorted))
+with open('../public/bhajan-index.json', 'w+') as f:
+    f.write(json.dumps(final_sorted))
