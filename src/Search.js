@@ -4,11 +4,11 @@ import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
 
-const highlightClassName = 'highlight';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = { filteredBhajans: [], filter: window.searchFilter || '' };
+    window.searchFilter = window.searchFilter || '';
   }
 
   componentWillMount() {
@@ -77,15 +77,14 @@ class App extends Component {
         <div className="App-header">
           <div className="title">Amma's Bhajans</div>
           <input
-            type="text"
+            type="search"
             placeholder="Search Bhajans"
             autoFocus
             class="form-control"
             name="search"
             id="search"
-            type="search"
             value={window.searchFilter}
-            onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
+            onChange={e => e && e.target && e.target.value && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
         <div className="rest">
