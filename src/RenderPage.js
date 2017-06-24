@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactPDF from 'react-pdf'
 
 const canRenderPdfNatively = function() {
   function hasAcrobatInstalled() {
@@ -31,7 +32,7 @@ const RenderPage = props => {
         </nav>
       </div>
       <div className="rest">
-       { canRenderPdfNatively() ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} /> : <iframe src={`https://docs.google.com/gview?embedded=true&url=https://${window.location.host}/pdfs/${book}.pdf#page=${page}`} frameborder="0" style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} ></iframe> }
+       { canRenderPdfNatively() ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} /> : <ReactPDF file={`/pdfs/${book}.pdf`} pageIndex={page} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} /> }
       </div>
     </div>
   );

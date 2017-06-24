@@ -980,7 +980,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.4.7, bluebird@^3.5.0:
+bluebird@^3.4.7:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
@@ -1263,7 +1263,7 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.3, classnames@^2.2.5:
+classnames@^2.2.3:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
@@ -1524,14 +1524,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-create-react-class@^15.5.3:
-  version "15.5.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.5.3.tgz#fb0f7cae79339e9a179e194ef466efa3923820fe"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 create-react-class@^15.6.0:
   version "15.6.0"
@@ -2254,10 +2246,6 @@ exec-sh@^0.2.0:
   dependencies:
     merge "^1.1.3"
 
-exenv@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
-
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
@@ -2779,7 +2767,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@^1.0.3, hoist-non-react-statics@^1.2.0:
+hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
@@ -2891,10 +2879,6 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-humps@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
-
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -2992,7 +2976,7 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
+invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -3633,10 +3617,6 @@ jsx-ast-utils@^1.3.4, jsx-ast-utils@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
-jwt-decode@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
-
 kind-of@^3.0.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -3725,10 +3705,6 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@^4.2.0, lodash-es@^4.2.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
-
 lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
@@ -3767,21 +3743,9 @@ lodash.flow@^3.3.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/lodash.flow/-/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
 
-lodash.isfunction@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.8.tgz#4db709fc81bc4a8fd7127a458a5346c5cdce2c6b"
-
-lodash.isobject@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash.isobject/-/lodash.isobject-3.0.2.tgz#3c8fb8d5b5bf4bf90ae06e14f2a530a4ed935e1d"
-
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
-
-lodash.omit@^4.4.1:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
 
 lodash.template@^4.4.0:
   version "4.4.0"
@@ -3796,15 +3760,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash.tonumber@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/lodash.tonumber/-/lodash.tonumber-4.0.3.tgz#0b96b31b35672793eb7f5a63ee791f1b9e9025d9"
-
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+"lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3853,13 +3813,6 @@ makeerror@1.0.x:
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
-
-material-components@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/material-components/-/material-components-0.3.0.tgz#f75740d0a7b3b884d6c618285fc04df01def2bdd"
-  dependencies:
-    exenv "^1.2.0"
-    node-waves "^0.7.4"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -3988,24 +3941,6 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
-mobx-react-devtools@^4.2.15:
-  version "4.2.15"
-  resolved "https://registry.yarnpkg.com/mobx-react-devtools/-/mobx-react-devtools-4.2.15.tgz#881c038fb83db4dffd1e72bbaf5374d26b2fdebb"
-
-mobx-react@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.2.1.tgz#35324834b71ae27a7553d76ad413e5f96ba40db5"
-  dependencies:
-    hoist-non-react-statics "^1.2.0"
-
-mobx@^3.1.16:
-  version "3.1.16"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.1.16.tgz#7ef06b6de7cba31d2ca872484d47ee36265d7768"
-
-moment@^2.18.1:
-  version "2.18.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
-
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -4045,6 +3980,10 @@ no-case@^2.2.0:
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.1.tgz#7aeba1c73a52184265554b7dc03baf720df80081"
   dependencies:
     lower-case "^1.1.1"
+
+node-ensure@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/node-ensure/-/node-ensure-0.0.0.tgz#ecae764150de99861ec5c810fd5d096b183932a7"
 
 node-fetch@^1.0.1:
   version "1.7.1"
@@ -4111,10 +4050,6 @@ node-pre-gyp@^0.6.29:
 node-status-codes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-status-codes/-/node-status-codes-1.0.0.tgz#5ae5541d024645d32a58fcddc9ceecea7ae3ac2f"
-
-node-waves@^0.7.4:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/node-waves/-/node-waves-0.7.5.tgz#be15bccc685544cb9e68c8f922b57fb802d95cff"
 
 nopt@^4.0.1:
   version "4.0.1"
@@ -4416,6 +4351,13 @@ pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+pdfjs-dist@^1.7.339:
+  version "1.8.487"
+  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-1.8.487.tgz#03c3cc28358dffb7991520eb51a576855ebc2095"
+  dependencies:
+    node-ensure "^0.0.0"
+    worker-loader "^0.8.0"
 
 performance-now@^0.2.0:
   version "0.2.0"
@@ -4870,10 +4812,6 @@ querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
 
-ramda@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.23.0.tgz#ccd13fff73497a93974e3e86327bfd87bd6e8e2b"
-
 randomatic@^1.1.3:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.6.tgz#110dcabff397e9dcff7c0789ccc0a49adf1ec5bb"
@@ -4921,13 +4859,6 @@ react-base16-styling@^0.5.1:
     lodash.flow "^3.3.0"
     pure-color "^1.2.0"
 
-react-css-themr@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/react-css-themr/-/react-css-themr-2.1.2.tgz#e017514e471c232f43a754a55b49d81faf5dafb8"
-  dependencies:
-    hoist-non-react-statics "^1.2.0"
-    invariant "^2.2.1"
-
 react-dev-utils@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-3.0.0.tgz#3677f37718ba0cae892ba9c01fe54d1622e6ef7c"
@@ -4957,7 +4888,7 @@ react-dock@^0.2.4:
     lodash.debounce "^3.1.1"
     prop-types "^15.5.8"
 
-react-dom@^15.6.1:
+react-dom@>=15.0, react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -4992,21 +4923,17 @@ react-json-tree@^0.10.8:
     prop-types "^15.5.8"
     react-base16-styling "^0.5.1"
 
+react-pdf@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-1.6.1.tgz#dc528ebee6b7e7864db5036d5d52209b67a8e0d1"
+  dependencies:
+    pdfjs-dist "^1.7.339"
+    react ">=15.0"
+    react-dom ">=15.0"
+
 react-pure-render@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-pure-render/-/react-pure-render-1.0.2.tgz#9d8a928c7f2c37513c2d064e57b3e3c356e9fabb"
-
-react-redux@^5.0.3:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.5.tgz#f8e8c7b239422576e52d6b7db06439469be9846a"
-  dependencies:
-    create-react-class "^15.5.3"
-    hoist-non-react-statics "^1.0.3"
-    invariant "^2.0.0"
-    lodash "^4.2.0"
-    lodash-es "^4.2.0"
-    loose-envify "^1.1.0"
-    prop-types "^15.5.10"
 
 react-router-dom@^4.0.0:
   version "4.1.1"
@@ -5072,30 +4999,13 @@ react-scripts@1.0.7:
   optionalDependencies:
     fsevents "1.0.17"
 
-react-style-proptype@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-style-proptype/-/react-style-proptype-3.0.0.tgz#89e0b646f266c656abb0f0dd8202dbd5036c31e6"
-  dependencies:
-    prop-types "^15.5.4"
-
 react-tap-event-plugin@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
   dependencies:
     fbjs "^0.8.6"
 
-react-toolbox@^2.0.0-beta.12:
-  version "2.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/react-toolbox/-/react-toolbox-2.0.0-beta.12.tgz#1d9dd7cc41e3b35dabdce5eb100a8068eee88c45"
-  dependencies:
-    classnames "^2.2.5"
-    core-js "^2.4.0"
-    ramda "^0.23.0"
-    react-css-themr "^2.1.2"
-    react-style-proptype "^3.0.0"
-    react-transition-group "^1.1.3"
-
-react-transition-group@^1.1.3, react-transition-group@^1.2.0:
+react-transition-group@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.0.tgz#b51fc921b0c3835a7ef7c571c79fc82c73e9204f"
   dependencies:
@@ -5115,7 +5025,7 @@ react-virtualized@^9.8.0:
     loose-envify "^1.3.0"
     prop-types "^15.5.4"
 
-react@^15.6.1:
+react@>=15.0, react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -5124,22 +5034,6 @@ react@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-
-reactstrap-tether@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/reactstrap-tether/-/reactstrap-tether-1.3.4.tgz#86d94d30216ffa34ceb2c626f4b9912c0d193894"
-
-reactstrap@^4.6.2:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/reactstrap/-/reactstrap-4.6.2.tgz#96e4cddaf1c73923e701e216b33ce5b4740624c1"
-  dependencies:
-    classnames "^2.2.3"
-    lodash.isfunction "^3.0.8"
-    lodash.isobject "^3.0.2"
-    lodash.omit "^4.4.1"
-    lodash.tonumber "^4.0.3"
-    prop-types "^15.5.8"
-    reactstrap-tether "1.3.4"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -5274,19 +5168,6 @@ redux-devtools@^3.3.2:
     lodash "^4.2.0"
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.0.1"
-
-redux-thunk@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
-
-redux@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.0.tgz#07a623cafd92eee8abe309d13d16538f6707926f"
-  dependencies:
-    lodash "^4.2.1"
-    lodash-es "^4.2.1"
-    loose-envify "^1.1.0"
-    symbol-observable "^1.0.3"
 
 regenerate@^1.2.1:
   version "1.3.2"
@@ -5924,7 +5805,7 @@ sw-toolbox@^3.4.0:
     path-to-regexp "^1.0.1"
     serviceworker-cache-polyfill "^4.0.0"
 
-symbol-observable@^1.0.2, symbol-observable@^1.0.3:
+symbol-observable@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
@@ -6440,6 +6321,12 @@ worker-farm@^1.3.1:
   dependencies:
     errno ">=0.1.1 <0.2.0-0"
     xtend ">=4.0.0 <4.1.0-0"
+
+worker-loader@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/worker-loader/-/worker-loader-0.8.0.tgz#13582960dcd7d700dc829d3fd252a7561696167e"
+  dependencies:
+    loader-utils "^1.0.2"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
