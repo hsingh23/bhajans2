@@ -8,11 +8,15 @@ const highlightClassName = 'highlight';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { filteredBhajans: [] };
+    this.state = { filteredBhajans: [], filter: window.searchFilter || '' };
   }
 
   componentWillMount() {
-    window.fetch('./bhajan-index.json').then(data => data.json()).then(fetchedBhajans => this.filterBhajans({ fetchedBhajans }));
+    if (window.bhajans) {
+      this.filterBhajans({ fetchedBhajans: window.bhajans });
+    } else {
+      window.fetch('./bhajan-index.json').then(data => data.json()).then(fetchedBhajans => this.filterBhajans({ fetchedBhajans }));
+    }
   }
 
   linkify = (name, location) => {
@@ -41,9 +45,12 @@ class App extends Component {
       .replace(/[tdl]/g, 'tdl')
       .replace('z', 'r');
 
-  filterBhajans = ({ filter = '', fetchedBhajans }) => {
+  filterBhajans = ({ filter, fetchedBhajans }) => {
     // fetchedBhajans is optionally passed - after fetch request
+    filter = filter !== undefined ? filter : this.state.filter;
+    window.searchFilter = filter;
     const bhajans = fetchedBhajans || this.state.bhajans;
+    window.bhajans = bhajans;
     const searchableBhajans = this.state.searchableBhajans || bhajans.map(this.makeSearchable);
     const searchableFilter = this.makeSearchable(filter);
     const filteredBhajans = searchableBhajans.reduce((memo, bhajan, i) => {
@@ -69,17 +76,17 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <div className="title">Amma's Bhajans</div>
-          <div className="form-group search">
-            <label htmlFor="search">Search Bhajans</label>
-            <input
-              type="text"
-              class="form-control"
-              name="search"
-              id="search"
-              type="search"
-              onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Search Bhajans"
+            autoFocus
+            class="form-control"
+            name="search"
+            id="search"
+            type="search"
+            value={window.searchFilter}
+            onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
+          />
         </div>
         <div className="rest">
           <WindowScroller>
