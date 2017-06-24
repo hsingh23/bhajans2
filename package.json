@@ -10,6 +10,7 @@
     "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-highlight-words": "^0.8.0",
+    "react-pdf": "^1.6.1",
     "react-router-dom": "^4.0.0",
     "react-tap-event-plugin": "^2.0.1",
     "react-virtualized": "^9.8.0"
