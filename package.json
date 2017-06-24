@@ -11,9 +11,12 @@
     "react-dom": "^15.6.1",
     "react-highlight-words": "^0.8.0",
     "react-pdf": "^1.6.1",
+    "react-pdf-component": "^0.0.1",
+    "react-pdf-js": "^1.0.35",
     "react-router-dom": "^4.0.0",
     "react-tap-event-plugin": "^2.0.1",
-    "react-virtualized": "^9.8.0"
+    "react-virtualized": "^9.8.0",
+    "recompose": "^0.23.5"
   },
   "devDependencies": {
     "react-scripts": "1.0.7",

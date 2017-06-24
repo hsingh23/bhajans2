@@ -4,18 +4,17 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-bhajan_name	../create-index/create-index.py	/^				bhajan_name = bhajan_name.strip().lower()$/;"	kind:variable	line:34
-bhajans	../create-index/create-index.py	/^bhajans = {}$/;"	kind:variable	line:27
-changed	../create-index/create-index.py	/^changed = [ f + ".changed.txt" for f in supplements]$/;"	kind:variable	line:28
-content	../create-index/create-index.py	/^			content = re.sub(original, searchable, content)$/;"	kind:variable	line:21
-content	../create-index/create-index.py	/^		content = f.read().lower()$/;"	kind:variable	line:17
+bhajan_name	../create-index/create-index.py	/^                bhajan_name = bhajan_name.strip().lower()$/;"	kind:variable	line:32
+bhajans	../create-index/create-index.py	/^bhajans = {}$/;"	kind:variable	line:25
+changed	../create-index/create-index.py	/^changed = [f + ".changed.txt" for f in supplements]$/;"	kind:variable	line:26
+content	../create-index/create-index.py	/^            content = re.sub(original, searchable, content)$/;"	kind:variable	line:19
+content	../create-index/create-index.py	/^        content = f.read().lower()$/;"	kind:variable	line:15
 create-index.py	../create-index/create-index.py	1;"	kind:file	line:1
-final_sorted	../create-index/create-index.py	/^final_sorted = [ bhajan + ' ## '+  ','.join(info) for (bhajan,info) in sorted(bhajans.items())]$/;"	kind:variable	line:39
+final_sorted	../create-index/create-index.py	/^final_sorted = [bhajan + ' ## ' +$/;"	kind:variable	line:38
 json	../create-index/create-index.py	/^import json$/;"	kind:namespace	line:3
-location	../create-index/create-index.py	/^				location = location.strip().lower()$/;"	kind:variable	line:35
-original	../create-index/create-index.py	/^			original = original.strip()$/;"	kind:variable	line:20
-re	../create-index/create-index.py	/^import re$/;"	kind:namespace	line:13
+location	../create-index/create-index.py	/^                location = location.strip().lower()$/;"	kind:variable	line:33
+original	../create-index/create-index.py	/^            original = original.strip()$/;"	kind:variable	line:18
 re	../create-index/create-index.py	/^import re$/;"	kind:namespace	line:2
-supplements	../create-index/create-index.py	/^supplements = ["2016Supplement.txt","2015Supplement.txt","2014Supplement.txt","2013Supplement.txt","2012Supplement.txt","2011Supplement.txt"]$/;"	kind:variable	line:12
-translation_mapping	../create-index/create-index.py	/^	translation_mapping = f.readlines()$/;"	kind:variable	line:6
-translation_mapping	../create-index/create-index.py	/^translation_mapping = []$/;"	kind:variable	line:4
+supplements	../create-index/create-index.py	/^supplements = ["2016Supplement.txt", "2015Supplement.txt", "2014Supplement.txt",$/;"	kind:variable	line:10
+translation_mapping	../create-index/create-index.py	/^    translation_mapping = f.readlines()$/;"	kind:variable	line:7
+translation_mapping	../create-index/create-index.py	/^translation_mapping = []$/;"	kind:variable	line:5
