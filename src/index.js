@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Search from './Search';
 import RenderPage from './RenderPage';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 import './App.css';
