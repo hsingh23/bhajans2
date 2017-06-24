@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { filteredBhajans: [], filter: window.searchFilter || '' };
     window.searchFilter = window.searchFilter || '';
+    this.state = { filteredBhajans: [], filter: window.searchFilter };
   }
 
   componentWillMount() {
@@ -83,7 +83,7 @@ class App extends Component {
             class="form-control"
             name="search"
             id="search"
-            value={window.searchFilter}
+            value={filter}
             onChange={e => e && e.target && e.target.value && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
