@@ -8,3 +8,7 @@ fix bhajan vol1-vol2
 serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
+
+investigate broken mobile search
+
+render pdf on phone
