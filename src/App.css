@@ -31,18 +31,21 @@
   display: block;
   margin: 0 auto;
 }
+
 .pdf-next {
   z-index: 2;
   position: fixed;
-  height: calc( 100vh - 56px );
+  height: calc(100vh - 56px);
   width: 50vw;
   top: 56px;
   right: 0;
+  background-color: red;
 }
+
 .pdf-previous {
   z-index: 2;
   position: fixed;
-  height: calc( 100vh - 56px );
+  height: calc(100vh - 56px);
   width: 50vw;
   top: 56px;
   left: 0;
