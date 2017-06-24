@@ -29,6 +29,7 @@ class RenderPage extends PureComponent {
   }
 
   onPageComplete = page => this.setState({ page });
+  onDocumentComplete = (page, pages) => this.setState({ pages, page });
   handlePrevious = () => this.state.page > 1 && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
 
