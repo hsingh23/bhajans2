@@ -88,7 +88,7 @@ class App extends Component {
             name="search"
             id="search"
             value={filter}
-            onChange={e => e && e.target && e.target.value && this.filterBhajans({ filter: e.target.value })}
+            onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
         <div className="rest">
