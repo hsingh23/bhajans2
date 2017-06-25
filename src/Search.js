@@ -43,6 +43,7 @@ class App extends Component {
   // The meat and potatoes
   makeSearchable = line =>
     line
+      .toLowerCase()
       .replace('krs', 'kris')
       .replace('h', '')
       .replace(/a+/g, 'a')
