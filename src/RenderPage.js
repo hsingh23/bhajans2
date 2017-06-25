@@ -39,6 +39,8 @@ class RenderPage extends PureComponent {
       ? <span>
           <span className="pdf-previous" onClick={this.handlePrevious} />
           <span className="pdf-next" onClick={this.handleNext} />
+          <span className="pdf-prev-arrow arrow" />
+          <span className="pdf-next-arrow arrow" />
         </span>
       : null;
 
@@ -52,7 +54,7 @@ class RenderPage extends PureComponent {
           </nav>
         </div>
         <div className="rest">
-          {false && canRenderPdfNatively()
+          {canRenderPdfNatively()
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
                 <PDF
