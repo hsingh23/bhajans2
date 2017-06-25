@@ -7,15 +7,21 @@ import { Link } from 'react-router-dom';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-    window.searchFilter = window.searchFilter || '';
-    this.state = { filteredBhajans: [], filter: window.searchFilter };
+    this.state = { filteredBhajans: [] };
   }
 
   componentWillMount() {
     if (window.bhajans) {
-      this.filterBhajans({ fetchedBhajans: window.bhajans });
+      this.filterBhajans();
     } else {
-      window.fetch('./bhajan-index.json').then(data => data.json()).then(fetchedBhajans => this.filterBhajans({ fetchedBhajans }));
+      window
+        .fetch('./bhajan-index.json')
+        .then(data => data.json())
+        .then(fetchedBhajans => {
+          window.fetchedBhajans = fetchedBhajans;
+          window.searchableBhajans = fetchedBhajans.map(this.makeSearchable);
+        })
+        .then(() => this.filterBhajans());
     }
   }
 
@@ -45,25 +51,23 @@ class App extends Component {
       .replace(/[tdl]/g, 'tdl')
       .replace('z', 'r');
 
-  filterBhajans = ({ filter, fetchedBhajans }) => {
+  filterBhajans = ({ filter } = {}) => {
     // fetchedBhajans is optionally passed - after fetch request
-    filter = filter !== undefined ? filter : this.state.filter;
+    filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
-    const bhajans = fetchedBhajans || this.state.bhajans;
-    window.bhajans = bhajans;
-    const searchableBhajans = this.state.searchableBhajans || bhajans.map(this.makeSearchable);
     const searchableFilter = this.makeSearchable(filter);
-    const filteredBhajans = searchableBhajans.reduce((memo, bhajan, i) => {
+    const filteredBhajans = window.searchableBhajans.reduce((memo, bhajan, i) => {
       if (bhajan.includes(searchableFilter)) memo.push(i);
       return memo;
     }, []);
-    this.setState({ filter, bhajans, filteredBhajans, searchableBhajans });
+    this.setState({ filteredBhajans });
   };
 
   render() {
-    const { bhajans, filteredBhajans, filter } = this.state;
+    const { filteredBhajans } = this.state;
+    const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
-      const [name, location] = bhajans[filteredBhajans[index]].split(' ## ');
+      const [name, location] = window.fetchedBhajans[filteredBhajans[index]].split(' ## ');
       return (
         <div key={key} style={style} className="bhajanRow">
           <Highlighter searchWords={filter.split(' ')} textToHighlight={name} />
