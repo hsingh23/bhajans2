@@ -29,7 +29,7 @@ class RenderPage extends PureComponent {
   }
 
   onPageComplete = page => this.setState({ page });
-  onDocumentComplete = (page, pages) => this.setState({ pages, page });
+  onDocumentComplete = pages => this.setState({ pages });
   handlePrevious = () => this.state.page > 1 && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
 
@@ -52,7 +52,7 @@ class RenderPage extends PureComponent {
           </nav>
         </div>
         <div className="rest">
-          {canRenderPdfNatively()
+          {false && canRenderPdfNatively()
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
                 <PDF
