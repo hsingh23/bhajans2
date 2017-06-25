@@ -9,6 +9,4 @@ serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
 
-investigate broken mobile search
-
-render pdf on phone
+add hints that you can tap left or right to go to next page
