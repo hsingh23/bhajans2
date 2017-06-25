@@ -1,12 +1,7 @@
-add caching of pdfs and json
-  reduce size of pdfs
-  Skipping static resource "build/pdfs/2011supl.pdf" (3.78 MB) - max size is 2.1 MB
-  Skipping static resource "build/pdfs/2015supl.pdf" (3.43 MB) - max size is 2.1 MB
-
 fix bhajan vol1-vol2
+
+fix vol3
 
 serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
-
-add hints that you can tap left or right to go to next page

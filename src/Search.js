@@ -71,7 +71,7 @@ class App extends Component {
       const [name, location] = window.fetchedBhajans[filteredBhajans[index]].split(' ## ');
       return (
         <div key={key} style={style} className="bhajanRow">
-          <Highlighter searchWords={filter.split(' ')} textToHighlight={name} />
+          <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />
           {this.linkify(name, location)}
         </div>
       );
