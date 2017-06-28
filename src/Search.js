@@ -44,6 +44,7 @@ class App extends Component {
   makeSearchable = line =>
     line
       .toLowerCase()
+      .replace(' ', '')
       .replace('krs', 'kris')
       .replace('h', '')
       .replace(/a+/g, 'a')
