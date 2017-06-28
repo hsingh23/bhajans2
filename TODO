@@ -1,7 +1,6 @@
-fix bhajan vol1-vol2
-
-fix vol3
-
 serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
+
+add vol7 and 2017supl to index
+optimize vol7
