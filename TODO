@@ -2,5 +2,5 @@ serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
 
-add vol7 and 2017supl to index
+add 2017supl to index
 optimize vol7
