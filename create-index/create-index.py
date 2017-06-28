@@ -8,7 +8,7 @@ with open("translation.csv", 'r') as f:
 
 # read bhajan indexes
 supplements = ["2016Supplement.txt", "2015Supplement.txt", "2014Supplement.txt",
-               "2013Supplement.txt", "2012Supplement.txt", "2011Supplement.txt"]
+               "2013Supplement.txt", "2012Supplement.txt", "2011Supplement.txt", "Vol7.txt"]
 for filename in supplements:
     # make substitutions
     with open(filename, 'r') as f:
@@ -28,11 +28,12 @@ for filename in (changed + ["bhajanmritam.txt"]):
     with open(filename, 'r') as f:
         for line in f.read().lower().split('\n'):
             try:
-                (bhajan_name, location) = line.strip().split('##')
-                bhajan_name = bhajan_name.strip().lower()
-                location = location.strip().lower()
-                bhajans[bhajan_name] = bhajans[bhajan_name] + \
-                    [location] if bhajan_name in bhajans else [location]
+                if len(line.strip()) > 0:
+                    (bhajan_name, location) = line.strip().split('##')
+                    bhajan_name = bhajan_name.strip().lower()
+                    location = location.strip().lower()
+                    bhajans[bhajan_name] = bhajans[bhajan_name] + \
+                        [location] if bhajan_name in bhajans else [location]
             except Exception as e:
                 print filename, line
 final_sorted = [bhajan + ' ## ' +
