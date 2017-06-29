@@ -29,7 +29,11 @@ class Login extends Component {
       redirectOnLogin(user);
     };
 
-    auth.currentUser && signedIn(auth.currentUser);
+    signedIn(auth.currentUser);
+
+    if (localStorage.uid && !auth.currentUser) {
+      setTimeout(() => signedIn(auth.currentUser), 500);
+    }
     const uiConfig = {
       callbacks: {
         signInSuccess: signedIn,
