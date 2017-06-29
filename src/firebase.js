@@ -12,9 +12,8 @@ var config = {
 };
 
 //the root app just in case we need it
-firebase.initializeApp(config);
-export const db = firebase.database(); //the real-time database
-export const ref = db.ref; //the real-time database
+export const firebaseApp = firebase.initializeApp(config);
+export const db = firebaseApp.database(); //the real-time database
 export const auth = firebase.auth(); //the firebase auth namespace
 
 export { firebase };
