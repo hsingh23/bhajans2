@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 // import ReactPDF from 'react-pdf';
 import PDF from 'react-pdf-js';
 import React, { PureComponent } from 'react';
+import { auth } from './firebase';
 
 const canRenderPdfNatively = function() {
   function hasAcrobatInstalled() {
@@ -24,8 +25,12 @@ const canRenderPdfNatively = function() {
 class RenderPage extends PureComponent {
   constructor(props) {
     super(props);
-    const page = this.props.match.params.location.split('-')[1];
+    const page = props.match.params.location.split('-')[1];
     this.state = { page: parseInt(page, 10) };
+    if (!+localStorage.paid) {
+      if (!auth.currentUser) props.history.push(`/pay?next=${encodeURIComponent(props.location.pathname)}`);
+      props.history.push(`/login?next=${encodeURIComponent(props.location.pathname)}`);
+    }
   }
 
   onPageComplete = page => this.setState({ page });

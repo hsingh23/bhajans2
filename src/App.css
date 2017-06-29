@@ -15,7 +15,7 @@
   display: flex;
   position: fixed;
   top: 0;
-  width: calc(100vw - 30px);
+  width: 100vw;
   z-index: 2;
   background-color: orange;
   height: 56px;
@@ -25,6 +25,13 @@
 
 .rest {
   padding-top: 56px;
+}
+
+.restPage {
+  padding-top: 70px;
+  display: block;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .pdf {
