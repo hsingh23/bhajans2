@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import PDF from 'react-pdf-js';
 import React, { PureComponent } from 'react';
 import { auth } from './firebase';
-import ReactSwipeEvents from 'react-swipe-events';
 
 const canRenderPdfNatively = function() {
   function hasAcrobatInstalled() {
@@ -54,23 +53,21 @@ class RenderPage extends PureComponent {
             <Link to={'/'}>Back </Link>
           </nav>
         </div>
-        <ReactSwipeEvents onSwipedRight={this.handlePrevious} onSwipedLeft={this.handleNext}>
-          <div className="rest">
-            {false && canRenderPdfNatively()
-              ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
-              : <span>
-                  <PDF
-                    file={`/pdfs/${book}.pdf`}
-                    onDocumentComplete={this.onDocumentComplete}
-                    onPageComplete={this.onPageComplete}
-                    page={this.state.page}
-                    scale={4}
-                    style={{ width: '100vw', display: 'block', margin: '0 auto' }}
-                  />
-                  {pagination}
-                </span>}
-          </div>
-        </ReactSwipeEvents>
+        <div className="rest">
+          {false && canRenderPdfNatively()
+            ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
+            : <span>
+                <PDF
+                  file={`/pdfs/${book}.pdf`}
+                  onDocumentComplete={this.onDocumentComplete}
+                  onPageComplete={this.onPageComplete}
+                  page={this.state.page}
+                  scale={4}
+                  style={{ width: '100vw', display: 'block', margin: '0 auto' }}
+                />
+                {pagination}
+              </span>}
+        </div>
       </div>
     );
   }
