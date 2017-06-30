@@ -38,8 +38,8 @@ class RenderPage extends PureComponent {
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>
-          <span className="pdf-previous" onClick={this.handlePrevious} onSwipedRight={this.handleNext} onSwipedLeft={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} onSwipedRight={this.handleNext} onSwipedLeft={this.handlePrevious} />
+          <span className="pdf-previous" onClick={this.handlePrevious} />
+          <span className="pdf-next" onClick={this.handleNext} />
           <span className="pdf-prev-arrow arrow" />
           <span className="pdf-next-arrow arrow" />
         </span>
