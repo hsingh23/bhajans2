@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    if (window.bhajans) {
+    if (window.searchableBhajans) {
       this.filterBhajans();
     } else {
       window
@@ -36,7 +36,7 @@ class App extends Component {
       if (result.index > lastIndex) {
         results.push(location.slice(lastIndex, result.index));
       }
-      results.push(<Link to={`/pdf/${result[0]}/${name}`}>{result[0]}</Link>);
+      results.push(<Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>{result[0]}</Link>);
       lastIndex = re.lastIndex;
     }
     return <span className="spaced rightAligned">{results}</span>;

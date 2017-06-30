@@ -1,15 +1,26 @@
 import React, { PureComponent } from 'react';
-import { auth, setRefOnce } from './firebase';
+import { auth, db } from './firebase';
 import { Link } from 'react-router-dom';
+import { getNext } from './util';
 
 class Pay extends PureComponent {
   componentWillMount() {
-    const { history, match } = this.props;
-    const checkUser = () => {
+    const { history, location } = this.props;
+    if (localStorage.paid === '1') history.push(getNext());
+    const checkUser = async function() {
       if (auth.currentUser) {
-        setRefOnce(`/confirmPayment/${auth.currentUser.uid}`, { email: auth.currentUser.email, name: auth.currentUser.displayName });
+        // only ask to confirmPayment if the person hasn't paid
+        db.goOnline();
+        var didPay = await db.ref(`/paid/${auth.currentUser.uid}`).once('value');
+        if (didPay.val() === null) {
+          await db.ref(`/confirmPayment/${auth.currentUser.uid}`).set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
+        } else {
+          localStorage.paid = '1';
+          history.push(getNext());
+        }
+        db.goOffline();
       } else {
-        history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+        history.push(`/login${location.search}`);
       }
     };
     if (localStorage.uid && !auth.currentUser) {

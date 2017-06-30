@@ -21,17 +21,17 @@ if (localStorage.debug) window.firebase = firebase;
 
 export const doOnce = async function(firebasePromiseCallback) {
   return new Promise(async function(resolve, reject) {
-    await db.goOnline();
+    db.goOnline();
     await firebasePromiseCallback();
-    await db.goOffline();
+    db.goOffline();
   });
 };
 
 export const checkRefOnce = ref => {
-  return new Promise(async function(resolve, reject) {
-    await db.goOnline();
-    db.ref(ref).once('value').then(async function(snapshot) {
-      await db.goOffline();
+  return new Promise(function(resolve, reject) {
+    db.goOnline();
+    db.ref(ref).once('value').then(function(snapshot) {
+      db.goOffline();
       resolve(snapshot.val());
     });
   });
