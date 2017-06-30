@@ -20,7 +20,7 @@ class Admin extends PureComponent {
       db.ref(`admin/${uid}`).once('value').then(function(snapshot) {
         console.log(snapshot.val(), 'value');
 
-        if (snapshot.val() !== null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+        if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
       });
       this.confirmPayment.on('value', snap => {
         this.setState({ users: snap.val() || {} });
@@ -58,14 +58,14 @@ class Admin extends PureComponent {
           <table>
             <tbody>
               {users &&
-                Object.entries(users).map(([key, user]) =>
-                  <tr key={key}>
-                    <td>{`${user.email} ${user.name || ''}`}</td>
-                    <td>{key}</td>
+                Object.entries(users).map(([uid, user]) =>
+                  <tr key={uid}>
+                    <td>{user.name}</td>
+                    <td>{user.email} <small>{uid}</small></td>
                     <td>
                       <button
                         onClick={() => {
-                          this.setPaid(key);
+                          this.setPaid(uid);
                         }}>
                         Paid
                       </button>

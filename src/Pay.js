@@ -30,7 +30,10 @@ class Pay extends PureComponent {
         </div>
         <div className="restPage">
           <p>
-            To see the bhajans you need to pay. Please go to paypal.me/Something and pay $X. Once that is done. Please then use this following email template to
+            To see the bhajans you need to pay. This is easiest when you are on tour, simply pay at the cash register and come to the store. The admin will
+            grant you access once you log in.
+
+            If you are not on tour: Please go to paypal.me/Something and pay $X. Once that is done. Please then use this following email template to
             alert us that you paid. You should be able to access the full website within 3 business days. We thank you for your patience as we build out a more
             self-service experience. To check if you have access, simply click here.
           </p>
