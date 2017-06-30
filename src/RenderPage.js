@@ -15,11 +15,7 @@ const canRenderPdfNatively = function() {
     return getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
   }
 
-  function isIos() {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  }
-
-  return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled() || isIos();
+  return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
 };
 
 class RenderPage extends PureComponent {
