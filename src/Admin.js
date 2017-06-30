@@ -12,10 +12,15 @@ class Admin extends PureComponent {
     const { history, match } = this.props;
     db.goOnline();
     const awaitCurrentUser = () => {
-      const uid = auth.currentUser && auth.currentUser.uid;
-      if (!uid) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+      const uid = (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
+      if (!uid) {
+        console.log('Need to login');
+        history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+      }
       db.ref(`admin/${uid}`).once('value').then(function(snapshot) {
-        if (snapshot.val() === '1') history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+        console.log(snapshot.val(), 'value');
+
+        if (snapshot.val() !== null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
       });
       this.confirmPayment.on('value', snap => {
         this.setState({ users: snap.val() || {} });
