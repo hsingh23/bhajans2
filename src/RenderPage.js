@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-// import ReactPDF from 'react-pdf';
 import PDF from 'react-pdf-js';
 import React, { PureComponent } from 'react';
 import { auth } from './firebase';
+import ReactSwipeEvents from 'react-swipe-events';
 
 const canRenderPdfNatively = function() {
   function hasAcrobatInstalled() {
@@ -38,8 +38,8 @@ class RenderPage extends PureComponent {
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>
-          <span className="pdf-previous" onClick={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} />
+          <span className="pdf-previous" onClick={this.handlePrevious} onSwipedRight={this.handleNext} onSwipedLeft={this.handlePrevious} />
+          <span className="pdf-next" onClick={this.handleNext} onSwipedRight={this.handleNext} onSwipedLeft={this.handlePrevious} />
           <span className="pdf-prev-arrow arrow" />
           <span className="pdf-next-arrow arrow" />
         </span>
@@ -54,20 +54,23 @@ class RenderPage extends PureComponent {
             <Link to={'/'}>Back </Link>
           </nav>
         </div>
-        <div className="rest">
-          {canRenderPdfNatively()
-            ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
-            : <span>
-                <PDF
-                  file={`/pdfs/${book}.pdf`}
-                  onDocumentComplete={this.onDocumentComplete}
-                  onPageComplete={this.onPageComplete}
-                  page={this.state.page}
-                  style={{ height: 'calc( 100vh - 56px )', display: 'block', margin: '0 auto' }}
-                />
-                {pagination}
-              </span>}
-        </div>
+        <ReactSwipeEvents onSwipedRight={this.handlePrevious} onSwipedLeft={this.handleNext}>
+          <div className="rest">
+            {false && canRenderPdfNatively()
+              ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
+              : <span>
+                  <PDF
+                    file={`/pdfs/${book}.pdf`}
+                    onDocumentComplete={this.onDocumentComplete}
+                    onPageComplete={this.onPageComplete}
+                    page={this.state.page}
+                    scale={3}
+                    style={{ width: '100vw', maxHeight: 'calc( 100vh - 56px )', display: 'block', margin: '0 auto' }}
+                  />
+                  {pagination}
+                </span>}
+          </div>
+        </ReactSwipeEvents>
       </div>
     );
   }

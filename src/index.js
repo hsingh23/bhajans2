@@ -10,6 +10,8 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import './App.css';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 // auto logout user if +localstorage.updated
 // auth.currentUser && signedIn(auth.currentUser);
