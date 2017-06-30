@@ -99,6 +99,7 @@ body {
 
 mark {
   background-color: yellow;
+  padding: 0;
 }
 
 .arrow {
@@ -106,6 +107,10 @@ mark {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
+}
+
+.rightAligned {
+  text-align: right;
 }
 
 .pdf-next-arrow {

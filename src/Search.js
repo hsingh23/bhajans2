@@ -30,6 +30,8 @@ class App extends Component {
     var results = [];
     var lastIndex = re.lastIndex;
     var result;
+    location = location.replace(/[,/]/g, ' ');
+    // eslint-disable-next-line
     while ((result = re.exec(location)) !== null) {
       if (result.index > lastIndex) {
         results.push(location.slice(lastIndex, result.index));
@@ -37,7 +39,7 @@ class App extends Component {
       results.push(<Link to={`/pdf/${result[0]}/${name}`}>{result[0]}</Link>);
       lastIndex = re.lastIndex;
     }
-    return <span className="spaced">{results}</span>;
+    return <span className="spaced rightAligned">{results}</span>;
   };
 
   // The meat and potatoes
@@ -86,10 +88,10 @@ class App extends Component {
             type="search"
             placeholder="Search Bhajans"
             autoFocus
-            class="form-control"
+            className="form-control"
             name="search"
             id="search"
-            value={filter}
+            value={filter || ''}
             onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
@@ -104,7 +106,7 @@ class App extends Component {
                     isScrolling={isScrolling}
                     onScroll={onChildScroll}
                     rowCount={filteredBhajans.length}
-                    rowHeight={80}
+                    rowHeight={100}
                     rowRenderer={rowRenderer}
                     scrollTop={scrollTop}
                     width={width}
