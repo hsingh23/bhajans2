@@ -15,7 +15,6 @@
     "react-highlight-words": "^0.8.0",
     "react-pdf-js": "^1.0.35",
     "react-router-dom": "^4.0.0",
-    "react-swipe-events": "^1.0.2",
     "react-tap-event-plugin": "^2.0.1",
     "react-virtualized": "^9.8.0",
     "reactfire": "^1.0.0",
