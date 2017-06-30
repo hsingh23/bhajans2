@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { auth, setRefOnce, db } from './firebase';
+import { auth, setRefOnce } from './firebase';
 import { Link } from 'react-router-dom';
 
 class Pay extends PureComponent {

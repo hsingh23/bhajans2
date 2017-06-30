@@ -5211,6 +5211,12 @@ react-scripts@1.0.7:
   optionalDependencies:
     fsevents "1.0.17"
 
+react-swipe-events@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-swipe-events/-/react-swipe-events-1.0.2.tgz#82f620151938ccae9ed68be6cb143f9193cb571d"
+  dependencies:
+    babel-runtime "^6.6.1"
+
 react-tap-event-plugin@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"

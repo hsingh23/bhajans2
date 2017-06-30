@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { auth, checkRefOnce, db } from './firebase';
+import { auth, db } from './firebase';
 import { Link } from 'react-router-dom';
 
 class Admin extends PureComponent {

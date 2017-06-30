@@ -1,6 +1,3 @@
 serverless??/docker
   stripe? -> firebase
 firebase/auth0 -> google auth/db/fb/localstorage
-
-add 2017supl to index
-optimize vol7
