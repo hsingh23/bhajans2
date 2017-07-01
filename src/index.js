@@ -7,7 +7,6 @@ import Admin from './Admin';
 import Pay from './Pay';
 import registerServiceWorker from './registerServiceWorker';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import './App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';

@@ -15,12 +15,13 @@
   display: flex;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 2;
   background-color: orange;
   height: 56px;
   align-items: center;
   padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .rest {
@@ -95,6 +96,7 @@ body {
     "Droid Sans",
     "Helvetica Neue",
     sans-serif;
+  font-size: 16px;
 }
 
 mark {
