@@ -3,6 +3,7 @@ serverless??/docker
 firebase/auth0 -> google auth/db/fb/localstorage
 
 soon:
+
 amma icon
 add google analytics
 create facebook page <- drive likes on navigate away (after x visits)
@@ -11,9 +12,13 @@ fix redirection
 copyright footer (start fixed, then turn it into static)
 refresh page upon payment automatically - every 2 sec
 biz cards to promote website
-(annual pricing - 10$ to 15$) -> survey monkey
 
+Subscription only if offline (android)
+  (annual pricing - 10$ to 15$) -> survey monkey
+
+fix 2017 supl
 complex:
+new invite model
 Login -> Beta page /beta/uid/beta/uid/{name, email, expiration}  -> bhajans 
 
 meh:

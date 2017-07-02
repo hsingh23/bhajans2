@@ -5,6 +5,7 @@ import RenderPage from './RenderPage';
 import Login from './Login';
 import Admin from './Admin';
 import Pay from './Pay';
+import Beta from './Beta';
 import registerServiceWorker from './registerServiceWorker';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
@@ -19,10 +20,11 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={Search} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/admin" component={Admin} />
-      <Route exact path="/pay" component={Pay} />
       <Route path="/pdf/:location/:name" component={RenderPage} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/pay" component={Pay} />
+      <Route exact path="/beta" component={Beta} />
+      <Route exact path="/admin" component={Admin} />
     </Switch>
   </Router>,
   document.getElementById('root')
