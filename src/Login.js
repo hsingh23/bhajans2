@@ -9,7 +9,7 @@ var authUi = new firebaseui.auth.AuthUI(auth);
 class Login extends Component {
   componentDidMount() {
     const { history, location } = this.props;
-    if (localStorage.beta === '1') history.replace('/' + getNext());
+    // if (localStorage.beta === '1') history.replace('/' + getNext());
 
     const redirectOnLogin = async function(user) {
       const beta = await checkRefOnce(`/beta/${user.uid}`);
@@ -56,11 +56,7 @@ class Login extends Component {
       callbacks: {
         signInSuccess: signedIn,
       },
-      signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      ],
+      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
     };
     authUi.start('#firebaseui-auth', uiConfig);
   }
