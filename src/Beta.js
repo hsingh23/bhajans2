@@ -1,14 +1,22 @@
 import React, { PureComponent } from 'react';
 import { auth, db } from './firebase';
-import { Link } from 'react-router-dom';
 import { getNext } from './util';
 
 class Beta extends PureComponent {
-  componentWillMount() {}
+  constructor(props) {
+    super(props);
+    this.state = { optedIn: false };
+  }
+
+  componentWillMount() {
+    const { history } = this.props;
+    if (localStorage.beta === '1') {
+      history.push('/' + getNext());
+    }
+  }
 
   optIn = () => {
     const { history, location } = this.props;
-    if (localStorage.beta === '1') history.push(getNext());
     const checkUser = async function() {
       if (auth.currentUser) {
         // only ask to confirmBeta if the person hasn't beta
@@ -18,15 +26,15 @@ class Beta extends PureComponent {
           await db
             .ref(`/confirmBeta/${auth.currentUser.uid}`)
             .set({ email: auth.currentUser.email, name: auth.currentUser.displayName, signupDate: +new Date() });
+          this.setState({ optedIn: true });
         } else {
           localStorage.beta = '1';
-          history.push(getNext());
+          history.push('/' + getNext());
         }
         db.goOffline();
       } else {
         history.push(`/login${location.search}`);
       }
-      history.push(getNext());
     };
     checkUser();
   };
@@ -47,7 +55,7 @@ class Beta extends PureComponent {
             the site better by filling out our surveys, sending bug and feature requests. We may contact you via email during the beta period to answer short
             surveys. If you like the site, please like <a href="some facebook link">our facebook page</a>.
           </p>
-          <button onClick={this.optIn}>Agree and Continue</button>
+          {this.state.optedIn ? <div className="bigRedText">Awaiting approval</div> : <button onClick={this.optIn}>Agree and Continue</button>}
 
         </div>
 
