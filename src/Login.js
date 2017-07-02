@@ -9,14 +9,16 @@ var authUi = new firebaseui.auth.AuthUI(auth);
 class Login extends Component {
   componentDidMount() {
     const { history, location } = this.props;
-    if (localStorage.paid === '1') history.replace(getNext());
+    if (localStorage.beta === '1') history.replace('/' + getNext());
 
     const redirectOnLogin = async function(user) {
       const beta = await checkRefOnce(`/beta/${user.uid}`);
+      const admin = await checkRefOnce(`/admin/${user.uid}`);
+      if (admin !== null) localStorage.admin = 1;
       if (beta) {
         localStorage.beta = 1;
         // save user name, email, browser data
-        history.push(getNext());
+        history.push('/' + getNext());
       } else {
         localStorage.beta = 0;
         // TODO: redirect to pay once beta testing period is over
@@ -27,7 +29,7 @@ class Login extends Component {
       // const paid = await checkRefOnce(`/paid/${user.uid}`);
       // if (paid === '1') {
       //   localStorage.paid = 1;
-      //   history.push(getNext());
+      //   history.push('/'+getNext());
       // } else {
       //   localStorage.paid = 0;
       //   // redirect to pay once beta testing period is over

@@ -1,1 +1,1 @@
-export const getNext = (location = window.location) => decodeURIComponent((location.search.match(/next=(.*?)(&|$)/) || ['', '/'])[1]);
+export const getNext = () => decodeURIComponent((window.location.search.match(/next=(.*?)(&|$)/) || ['', ''])[1]);

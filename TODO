@@ -4,6 +4,8 @@ firebase/auth0 -> google auth/db/fb/localstorage
 
 soon:
 
+Controlled Beta -> approval process
+
 amma icon
 add google analytics
 create facebook page <- drive likes on navigate away (after x visits)
@@ -18,12 +20,6 @@ Subscription only if offline (android)
 
 fix 2017 supl
 complex:
-new invite model
-Login -> Beta page /beta/uid/beta/uid/{name, email, expiration}  -> bhajans 
-
-meh:
-default font sizing?
-automatically redirect to https?
 
 heart songs
   tab/link of favorite songs

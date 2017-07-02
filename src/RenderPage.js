@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import PDF from 'react-pdf-js';
 import React, { PureComponent } from 'react';
-import { auth } from './firebase';
 
 const canRenderPdfNatively = function() {
   // TODO: perhaps do this with screen size

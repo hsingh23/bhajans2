@@ -83,7 +83,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <div className="title">Amma's Bhajans</div>
+          <Link to={+localStorage.admin ? '/admin' : '/'}><div className="title">Amma's Bhajans</div></Link>
           <input
             type="search"
             placeholder="Search Bhajans"
