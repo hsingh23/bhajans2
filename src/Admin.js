@@ -22,23 +22,24 @@ class Admin extends PureComponent {
 
         if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
       });
-      this.confirmPayment.on('value', snap => {
+      this.confirmBeta.on('value', snap => {
         this.setState({ users: snap.val() || {} });
       });
     };
     setTimeout(awaitCurrentUser, 500);
-    this.confirmPayment = db.ref('confirmPayment');
-    this.paid = db.ref('paid');
+    this.confirmBeta = db.ref('confirmBeta');
+    this.beta = db.ref('beta');
 
     // TODO: this should not be value!
+    // TODO: set renewBeta table
   }
   componentWillUnmount() {
     return db.goOffline();
   }
 
-  setPaid = function(uid) {
-    this.confirmPayment.child(uid).remove();
-    this.paid.child(uid).set('1');
+  setBeta = function(uid) {
+    this.confirmBeta.child(uid).remove();
+    this.beta.child(uid).set('1');
   };
 
   render() {
@@ -65,9 +66,9 @@ class Admin extends PureComponent {
                     <td>
                       <button
                         onClick={() => {
-                          this.setPaid(uid);
+                          this.setBeta(uid);
                         }}>
-                        Paid
+                        beta
                       </button>
                     </td>
                   </tr>

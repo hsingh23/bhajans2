@@ -4,13 +4,13 @@ import React, { PureComponent } from 'react';
 import { auth } from './firebase';
 
 const canRenderPdfNatively = function() {
+  // TODO: perhaps do this with screen size
   function hasAcrobatInstalled() {
     function getActiveXObject(name) {
       try {
         return new ActiveXObject(name); // eslint-disable-line
       } catch (e) {}
     }
-
     return getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
   }
 
@@ -22,10 +22,17 @@ class RenderPage extends PureComponent {
     super(props);
     const page = props.match.params.location.split('-')[1];
     this.state = { page: parseInt(page, 10) };
-    if (!+localStorage.paid) {
-      if (!auth.currentUser) props.history.push(`/pay?next=${encodeURIComponent(props.location.pathname)}`);
+    if (!+localStorage.beta) {
+      //  beta -> render (this case should not happen)
+      // if (auth.currentUser) props.history.push(`/beta?next=${encodeURIComponent(props.location.pathname)}`);
+      // render -> login -> beta -> render
       props.history.push(`/login?next=${encodeURIComponent(props.location.pathname)}`);
+      // TODO: if expired -> redirect to beta
     }
+    // if (!+localStorage.paid) {
+    //   if (!auth.currentUser) props.history.push(`/pay?next=${encodeURIComponent(props.location.pathname)}`);
+    //   props.history.push(`/login?next=${encodeURIComponent(props.location.pathname)}`);
+    // }
   }
 
   onPageComplete = page => this.setState({ page });
@@ -47,6 +54,7 @@ class RenderPage extends PureComponent {
     return (
       <div className="App">
         <div className="App-header">
+          <img src="favicon.ico" alt="Sing " />
           <div className="title">Amma's Bhajans</div>
           <nav>
             {this.props.match.params.name} {' '}

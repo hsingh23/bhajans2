@@ -12,21 +12,36 @@ class Login extends Component {
     if (localStorage.paid === '1') history.replace(getNext());
 
     const redirectOnLogin = async function(user) {
-      const paid = await checkRefOnce(`/paid/${user.uid}`);
-      if (paid === '1') {
-        localStorage.paid = 1;
+      const beta = await checkRefOnce(`/beta/${user.uid}`);
+      if (beta) {
+        localStorage.beta = 1;
+        // save user name, email, browser data
         history.push(getNext());
       } else {
-        localStorage.paid = 0;
-        history.push(`/pay${location.search}}`);
+        localStorage.beta = 0;
+        // TODO: redirect to pay once beta testing period is over
+        history.push(`/beta${location.search}}`);
         // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
         // ideally you want to show stripe, upon payment kick off cloud function to update user account
       }
+      // const paid = await checkRefOnce(`/paid/${user.uid}`);
+      // if (paid === '1') {
+      //   localStorage.paid = 1;
+      //   history.push(getNext());
+      // } else {
+      //   localStorage.paid = 0;
+      //   // redirect to pay once beta testing period is over
+      //   history.push(`/pay${location.search}}`);
+      //   // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
+      //   // ideally you want to show stripe, upon payment kick off cloud function to update user account
+      // }
     };
     const signedIn = function signedIn(user) {
       if (!user) return false;
       localStorage.uid = user.uid;
       localStorage.updated = +new Date();
+      localStorage.displayName = user.displayName;
+      localStorage.email = user.email;
       redirectOnLogin(user);
     };
 
