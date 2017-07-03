@@ -3,7 +3,7 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
-
+import ReactGA from 'react-ga';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    if (localStorage.uid) ReactGA.set({ userId: localStorage.uid });
     if (window.searchableBhajans) {
       this.filterBhajans();
     } else {
