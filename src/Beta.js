@@ -17,6 +17,7 @@ class Beta extends PureComponent {
 
   optIn = () => {
     const { history, location } = this.props;
+    var worked;
     const checkUser = async function() {
       if (auth.currentUser) {
         // only ask to confirmBeta if the person hasn't beta
@@ -26,7 +27,7 @@ class Beta extends PureComponent {
           await db
             .ref(`/confirmBeta/${auth.currentUser.uid}`)
             .set({ email: auth.currentUser.email, name: auth.currentUser.displayName, signupDate: +new Date() });
-          this.setState({ optedIn: true });
+          worked = true;
         } else {
           localStorage.beta = '1';
           history.push('/' + getNext());
