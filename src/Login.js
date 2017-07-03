@@ -56,7 +56,7 @@ class Login extends Component {
       callbacks: {
         signInSuccess: signedIn,
       },
-      credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+      // credentialHelper: firebaseui.auth.CredentialHelper.NONE,
       signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
     };
     authUi.start('#firebaseui-auth', uiConfig);

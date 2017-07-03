@@ -49,6 +49,7 @@ class App extends Component {
       .toLowerCase()
       .replace(' ', '')
       .replace('krs', 'kris')
+      .replace('hr', 'hri')
       .replace('h', '')
       .replace(/a+/g, 'a')
       .replace(/[iey]+/g, 'iey')
