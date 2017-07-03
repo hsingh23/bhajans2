@@ -1,55 +1,55 @@
 amma amma enum (tamil) ## 2017supl-6
-amma dèvi (tulu version) ## 2017supl-6
+amma devi (tulu version) ## 2017supl-6
 amätalayam anandalayam (malayalam) ## 2017supl-7
-antardaréanattinuîîa (malayalam) ## 2017supl-8
+antardaréanattinulla (malayalam) ## 2017supl-8
 anudinamum (tamil) ## 2017supl-9
-arikiluåáenkilum (tamil version) ## 2017supl-10
+arikilundenkilum (tamil version) ## 2017supl-10
 barayya éiva (kannada) ## 2017supl-11
 bhuvanasundarì (tamil) ## 2017supl-12
-cinna cinna kaååa (tamil) ## 2017supl-13
+cinna cinna kanna (tamil) ## 2017supl-13
 danavantaka rama (kannada) ## 2017supl-15
 engum annaiyun (tamil) ## 2017supl-16
 ennai nan maranda (tamil) ## 2017supl-16
 en mannassiloru maunam (tamil) ## 2017supl-17
 gajanana he gajanana (tamil) ## 2017supl-18
 gòkula bala gòvinda (malayalam) ## 2017supl-18
-gopiyara usirè (kannada) ## 2017supl-19
+gopiyara usire (kannada) ## 2017supl-19
 he érìnivasa (kannada) ## 2017supl-20
 indu nammamma (kannada) ## 2017supl-21
 iniyoru janmam (kannada version) ## 2017supl-22
-inkè irukkum (tamil) ## 2017supl-23
-kaîi mateyè (kannada) ## 2017supl-24
-kaååeáuttu paramma (tamil) ## 2017supl-25
-kaååan kaîîa kaååan (tamil) ## 2017supl-26
-karunya rupiåi (malayalam) ## 2017supl-27
+inke irukkum (tamil) ## 2017supl-23
+kali mateye (kannada) ## 2017supl-24
+kanneduttu paramma (tamil) ## 2017supl-25
+kannan kalla kannan (tamil) ## 2017supl-26
+karunya rupini (malayalam) ## 2017supl-27
 kalamurali (tamil version) ## 2017supl-28
-karuåya murtte (kannada version) ## 2017supl-28
-kaâaikkaå parvai (tamil) ## 2017supl-29
+karunya murtte (kannada version) ## 2017supl-28
+kaâaikkan parvai (tamil) ## 2017supl-29
 kavaâiyam kavaâi (tamil) ## 2017supl-30
-kayilaiyilè éivaperuman (tamil) ## 2017supl-31
-kçaåakçaåavu (kannada) ## 2017supl-32
+kayilaiyile éivaperuman (tamil) ## 2017supl-31
+kçanakçanavu (kannada) ## 2017supl-32
 kuzhandaiyena (tamil) ## 2017supl-33
-käçåa kanaiyya (malayalam) ## 2017supl-34
+käçna kanaiyya (malayalam) ## 2017supl-34
 muttu mùkkutti (tamil) ## 2017supl-35
 nan enbatai (tamil) ## 2017supl-36
-nanendu kaåuve (kannaáa) ## 2017supl-37
+nanendu kanuve (kannada) ## 2017supl-37
 nanna hudòââada (kannada) ## 2017supl-38
-nannòáeya (kannada) ## 2017supl-39
-orunaîum piriyatta (kannada version) ## 2017supl-39
+nannòdeya (kannada) ## 2017supl-39
+orunalum piriyatta (kannada version) ## 2017supl-39
 neñcakaë ventiâunnu (malayalam) ## 2017supl-40
-padaravindakè (kannada) ## 2017supl-41
+padaravindake (kannada) ## 2017supl-41
 ponnamma en amma (tamil) ## 2017supl-42
 sambasadaéiva (tamil) ## 2017supl-43
 parinamamiyallatta (kannada version) ## 2017supl-43
 Éivke (hindi) ## 2017supl-44
-Éri dèvi laîita (tamil) ## 2017supl-45
-taîarnnuraêgukayò (malayalam) ## 2017supl-47
+Éri devi lalita (tamil) ## 2017supl-45
+talarnnuraêgukayò (malayalam) ## 2017supl-47
 tañcam undan (tamil) ## 2017supl-48
-taåáavamaâi (tamil) ## 2017supl-49
+tandavamaâi (tamil) ## 2017supl-49
 taye tava (kannada version) ## 2017supl-50
 ulagamaga mari nirkkum (tamil) ## 2017supl-51
 ulakattin tayenâru (tamil) ## 2017supl-52
-unai marava varamonáru (tamil) ## 2017supl-53
+unai marava varamondru (tamil) ## 2017supl-53
 uyara uyara (tamil) ## 2017supl-54
 uyiròâuyiray (tamil) ## 2017supl-55
 vaâaväkçmam (malayalam) ## 2017supl-56
