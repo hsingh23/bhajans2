@@ -96,7 +96,7 @@ amma nive saksi (telugu) ## 2016supl-10,vol7-19
 amma tan matiyil ## vol5-16
 amma tan namam ## vol1-22/voli1-122/voli1-124
 amma tanna matitattil ## vol2-15/voli2-11
-amma taye jaganmata ## 11-16/voli2-13
+amma taye jaganmata ## vol2-16/voli2-13
 amma un punnagayil ## vol4-14
 amma untan (tamil) ## vol6-19
 ammana divya padambujagalige ## vol6-20
@@ -112,7 +112,7 @@ ammayil manasam ## vol1-27/voli1-133/voli1-136
 ammayupeksa ## vol4-15
 amme agadhamay ## vol3-17
 amme amme amrtanandamayi ## vol3-18
-amme amme ennatma ## 11-17/voli2-14
+amme amme ennatma ## vol2-17/voli2-14
 amme amrtanandamayi asrayam ## vol3-19
 amme amrtanandamayi devi ## vol2-18/voli2-15
 amme amrtanandamayi sarvagama ## vol2-19/voli2-16
@@ -450,7 +450,7 @@ enu madali (kannada) ## vol6-69
 etayo teti ( tamil) ## vol6-70
 etayo teti (tamil) ## 2011supl-21 [dispassion],vol7-85
 etra nalayi ## vol2-69/voli2-77
-etrayo nalayi ## vol1-79/voli1-46/voli1- 47
+etrayo nalayi ## vol1-79/voli1-46/voli1-47
 ettanai vedanai (tamil) ## 2015supl-24,vol7-85
 every bird in a cage (english) ## vol4-239
 everywhere i look (english) ## vol5-194
