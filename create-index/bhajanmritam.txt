@@ -77,7 +77,7 @@ amma nin rupam##Vol1-21/VolI1-110/VolI1-112
 amma tan matiyil##Vol5-16
 amma tan namam##Vol1-22/VolI1-122/VolI1-124
 amma tanna matitattil##Vol2-15/VolI2-11
-amma taye jaganmata##11-16/VolI2-13
+amma taye jaganmata##Vol2-16/VolI2-13
 amma un punnagayil##Vol4-14
 amma untan (tamil)##Vol6-19
 ammana divya padambujagalige##Vol6-20
@@ -93,7 +93,7 @@ ammayil manasam##Vol1-27/VolI1-133/VolI1-136
 ammayupeksa##Vol4-15
 amme agadhamay##Vol3-17
 amme amme amrtanandamayi##Vol3-18
-amme amme ennatma##11-17/VolI2-14
+amme amme ennatma##Vol2-17/VolI2-14
 amme amrtanandamayi asrayam##Vol3-19
 amme amrtanandamayi devi##Vol2-18/VolI2-15
 amme amrtanandamayi sarvagama##Vol2-19/VolI2-16
@@ -365,7 +365,7 @@ entu chevo yedu chevo##Vol2-69/VolI2-76
 enu madali (kannada)##Vol6-69
 etayo teti ( tamil)##Vol6-70
 etra nalayi##Vol2-69/VolI2-77
-etrayo nalayi##Vol1-79/VolI1-46/VolI1- 47
+etrayo nalayi##Vol1-79/VolI1-46/VolI1-47
 every bird in a cage (english)##Vol4-239
 everywhere i look (english)##Vol5-194
 faith be my companion (english)##Vol3-187/VolI3-266
