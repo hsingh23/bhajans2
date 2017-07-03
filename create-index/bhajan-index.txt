@@ -130,7 +130,7 @@ amrta padattil anaykkuka ## vol3-20/voli3-20
 amrta rupini mrdu ## vol3-21/voli3-22
 amrta vahini ## vol4-20
 amrtakale anandakale ## vol4-17
-amrtalayam anandalayam (malayalam) ## vol7-21
+amrtalayam anandalayam (malayalam) ## 2017supl-7,vol7-21
 amrtam tava nijarupam ## vol5-19
 amrtamayi anandamayi ## vol2-21/voli2-18
 amrtamayi anandamayi amrtanandamayi jay ma ## vol3-22/voli3-23
@@ -161,7 +161,6 @@ amrtesvari suprabhatam ## vol4-213
 amrtesvari susmita ## vol3-26/voli3-29
 amrtesvari vandanam ## vol3-27/voli3-30
 amutam poriyum ananda ## vol2-30
-amätalayam anandalayam (malayalam) ## 2017supl-7
 anadhanakkarute ## vol2-31
 anadhinidhane ## vol2-32
 ananda janani ## vol4-25
@@ -199,8 +198,7 @@ annaiye unnaiye (tamil) ## 2012supl-5,vol7-23
 annapurna stotram ## vol5-179
 anpiyannamba ## vol3-31/voli3-36
 anpum arulum ## vol3-32/voli3-38
-antardarsanattinulla (malayalam) ## vol7-24
-antardaréanattinulla (malayalam) ## 2017supl-8
+antardarsanattinulla (malayalam) ## 2017supl-8,vol7-24
 anudinamum (tamil) ## 2017supl-9,vol7-25
 anupama guna nilaye ## vol1-39/voli1-246/voli0-82
 anutapa sangita ## vol5-30
@@ -274,8 +272,7 @@ bandhamu nitto (telugu) ## 2014supl-19,vol7-49
 bandu bidabarade (kannada) ## 2011supl-16 [amma],vol7-50,vol6-40
 bara gopala bala gopalabala (kannada) ## vol6-41
 baradada hrdayake ## vol5-35
-barayya siva (kannada) ## vol7-50
-barayya éiva (kannada) ## 2017supl-11
+barayya siva (kannada) ## 2017supl-11,vol7-50
 barutihalu (kannada) ## 2014supl-20,vol7-51
 belli bettadodeya (kannada) ## 2015supl-14,vol7-52
 beyond the most beautiful words ## vol7-53
@@ -301,8 +298,7 @@ bhavani jagadambe ## vol4-37
 bhavani jay jay ## vol2-50/voli2-53
 bholanatha re ## vol2-50/voli2-53
 bhramarame ## vol1-55/voli1-238/voli0-74
-bhuvanasundari (tamil) ## vol7-55
-bhuvanasundarì (tamil) ## 2017supl-12
+bhuvanasundari (tamil) ## 2017supl-12,vol7-55
 birha ki in (hindi) ## 2015supl-16,vol7-56
 biroher (bengali) ## vol6-43
 bit cala (hindi) ## vol6-44
@@ -489,7 +485,7 @@ give me devotion (english) ## vol5-195
 give me refuge (abhayam tan aruluka niyen) (english) ## vol4-239
 give us grace (shakti de bhakti de) (english) ## vol4-240
 give us your grace (english) ## vol5-195
-gokula bala govinda (malayalam) ## vol7-90
+gokula bala govinda (malayalam) ## 2017supl-18,vol7-90
 gopa balaka ## vol3-50/voli3-61
 gopala govinda govinda ## vol2-74/voli2-82
 gopala govinda krsna ## vol1-84/voli1-18
@@ -530,7 +526,6 @@ gurur brahma gurur visnuh ## vol1-271
 guruvastakam (sariram svarupam) ## vol3-157/voli3-205
 guruvativanavale ## vol3-54/voli3-67
 guruvayur appa ## vol3-55/voli3-68
-gòkula bala gòvinda (malayalam) ## 2017supl-18
 hail to your glory (english) ## vol6-227
 hamasa vahini devi ## vol1-91/voli1-187/voli0-22
 hanumat bal do (hindi) ## vol7-94
@@ -572,8 +567,7 @@ he nandalala tuhje (hindi) ## vol6-82
 he nath ab tu ## vol2-84/voli2-92
 he prabhu tu ananda data ## vol3-59/voli3-73
 he ram he ram ## vol3-59(missing)/voli3-85/voli1-94
-he srinivasa (kannada) ## vol7-102
-he érìnivasa (kannada) ## 2017supl-20
+he srinivasa (kannada) ## 2017supl-20,vol7-102
 holi hai ayi (hindi) ## 2016supl-23,vol7-103
 holo na somay (bengali) ## vol6-83
 how can i express my love ## vol3-192
@@ -810,7 +804,7 @@ karunya rupini (malayalam) ## 2017supl-27,vol7-141
 karunya varidhe ## vol1-129/voli1-4
 karvarnnane karunamayane ## vol3-85/voli3-108
 kasturi tilakam ## vol1-130/voli1-197/voli0-33
-kataikkan parvai (tamil) ## vol7-142
+kataikkan parvai (tamil) ## 2017supl-29,vol7-142
 kataloram tapamceyyum ## vol4-91
 kataloram tavam ## vol3-85/voli3-109
 katinnu katay ## vol1-131/voli1-118/voli1-120
@@ -818,17 +812,14 @@ kattittayir taram ## vol2-118/voli2-133
 kattitukamme i komala ## vol3-86/voli3-110
 kattraka nan (tamil) ## 2013supl-14,vol7-143
 katutta sokamam ## vol1-132/voli1-248/voli0-84
-kavatiyam kavati (tamil) ## vol7-144
-kavaâiyam kavaâi (tamil) ## 2017supl-30
+kavatiyam kavati (tamil) ## 2017supl-30,vol7-144
 kaya piya sukh se soya ## vol1-134/voli1-218/voli0-54/voli2-121/voli2-136
 kayambu varnna varika ni ## vol2-120/voli2-135
 kayambuniladyuti ## vol5-96
 kayena vaca ## vol1-271
-kayilaiyile sivaperuman (tamil) ## vol7-145
-kayilaiyile éivaperuman (tamil) ## 2017supl-31
+kayilaiyile sivaperuman (tamil) ## 2017supl-31,vol7-145
 kazhalina (malayam) ## 2012supl-12
 kazhalinayil (malayalam) ## vol7-146
-kaâaikkan parvai (tamil) ## 2017supl-29
 keliranna (kannada) ## 2016supl-32,vol7-148
 kelkkatta bhavam ## vol3-87/voli3-111
 kerunnen manasam (kezhunnen manasam) ## vol1-135/voli1-138/voli1-141
@@ -852,7 +843,7 @@ krsna govinda gopala ## vol2-122/voli2-137
 krsna govinda gopala (hindi) ## vol6-120
 krsna govinda govinda gopala ## vol2-123/voli2-138
 krsna jinka nam he ## vol2-123/voli2-139
-krsna kanaiyya (malayalam) ## vol7-151
+krsna kanaiyya (malayalam) ## 2017supl-34,vol7-151
 krsna kanhaiya ## vol5-102
 krsna kannaya ## vol1-138/voli1-200/voli0-36
 krsna krsna jaya radhakrsna ## vol5-103
@@ -866,7 +857,7 @@ krsna ninna bala lile (kannada) ## 2011supl-32 [krishna],vol7-152,vol6-121
 krsnam vande ## vol2-125/voli2-141
 krsnanai bhajanai seyvay ## vol4-94
 ksama prarthana (sanskrit) ## 2011supl-61 [devi]
-ksanaksanavu (kannada) ## vol7-153
+ksanaksanavu (kannada) ## 2017supl-32,vol7-153
 ksanam ennu vannitum ## vol3-87/voli3-112
 kucha na le ## vol4-95
 kumbhodara varada ## vol1-140/voli1-203/voli0-39
@@ -875,8 +866,6 @@ kurirul pole ## vol3-89/voli3-113
 kuriyani kanniru (telugu) ## vol6-122
 kurumbukkara (tamil) ## 2011supl-33 [krishna],vol7-155,vol6-123
 kuzhandaiyena (tamil) ## 2017supl-33,vol7-156
-käçna kanaiyya (malayalam) ## 2017supl-34
-kçanakçanavu (kannada) ## 2017supl-32
 lalali lalale (malayalam) ## 2014supl-35,vol7-157
 lalita lalita ## vol2-126/voli2-142
 lalle lalle (malayalam) ## 2015supl-30,vol7-160
@@ -1038,8 +1027,7 @@ muralikayiloru ganamundo? (malayalam) ## vol6-152
 muralivale ## vol2-139/voli2-157
 muruga velmuruga (tamil) ## 2013supl-17,vol7-195
 muruka muruka vel muruka ## vol4-118
-muttu mukkutti (tamil) ## vol7-197
-muttu mùkkutti (tamil) ## 2017supl-35
+muttu mukkutti (tamil) ## 2017supl-35,vol7-197
 muttumari amba ## vol2-140/voli2-159
 muttumari amma (teti unnai) ## vol3-241
 muvvalu katti ## vol5-123
@@ -1080,11 +1068,9 @@ nandana ## vol1-214
 nandana yadu nandana ## vol2-145/voli2-162/voli2-163
 nane ariyata ennai (tamil) ## 2016supl-46,vol7-205
 nanendu kanuve (kannada) ## 2017supl-37,vol7-207
-nanna hudottada (kannada) ## vol7-208
-nanna hudòââada (kannada) ## 2017supl-38
-nannodeya (kannada) ## vol7-209
+nanna hudottada (kannada) ## 2017supl-38,vol7-208
+nannodeya (kannada) ## 2017supl-39,vol7-209
 nannu cusi (telugu) ## vol6-160
-nannòdeya (kannada) ## 2017supl-39
 nanu embudilla (kannada) ## 2015supl-39,vol7-210
 narahari narayana (kannada) ## 2016supl-47,vol7-210
 narayana hare (kalina kanan en kanna) ## vol1-113/voli1-57/voli1-59
@@ -1100,12 +1086,12 @@ navilu gariya (kannada) ## vol7-216
 navilu gariya nayanada (kannada) ## 2015supl-44
 navinte tumbil nin ## vol2-146/voli2-164/voli2-165
 nencakaë ventitunnu (malayalam) ## vol7-217
+nencakam ventitunnu (malayalam) ## 2017supl-40
 nene manave ammana ninu (kannada) ## vol6-161
 nenjam niraintavane ## vol4-123
 nenu yavaranu (telugu) ## 2014supl-44,vol7-218
 netrangale ningal ## vol4-124
 neyyapantam yetriya dipam ## vol4-125
-neñcakaë ventiâunnu (malayalam) ## 2017supl-40
 ni ende velicham (tulu) (translated) ## 2016supl-73
 ni ente velicham ## vol1-162/voli1-236/voli0-71
 ni intri verarumillai (tamil) ## vol6-162
@@ -1347,8 +1333,7 @@ sakti mahadevi (kamesa vamaksi) ## vol1-115/voli1-126/voli1-128
 sakti rupe ninte ## vol1-220/voli1-10/voli1-11
 sakti ta jagadamba (tamil) ## 2011supl-54 [amma],vol7-252,vol6-184
 samasta papanasanam (visnu panchakam) ## vol4-169
-sambasadasiva (tamil) ## vol7-253
-sambasadaéiva (tamil) ## 2017supl-43
+sambasadasiva (tamil) ## 2017supl-43,vol7-253
 sambho mahadeva ## vol2-187/voli2-233
 sambho sankara ## vol2-187/voli2-215/voli2-216
 sambho sankara umapathe ## vol2-188/voli2-216/voli2-217
@@ -1410,7 +1395,7 @@ siva siva siva siva sada siva ## vol3-163/voli3-215
 sivane sankarane (kannada) ## 2014supl-55,vol7-266
 sivasakti aikyave (kannada) ## 2014supl-52,vol7-266
 sivaya paramesvaraya ## vol1-230/voli1-269/voli0-104/voli2-197/voli2-227/voli2-229
-sivke (hindi) ## vol7-268
+sivke (hindi) ## 2017supl-44,vol7-268
 skanda janani ## vol1-231/voli1-150/voli1-153
 skanda muruka varuvaye ## vol2-197/voli2-228/voli2-230
 sneha dutiyay ## vol5-151
@@ -1421,7 +1406,7 @@ sokamitentinu sandhye ## vol4-177
 sokamoha bhayapahe ## vol4-178
 sollariya nin pukhazhai (tamil) ## vol6-191
 sri chakram ennoru ## vol1-233/voli1-147/voli1-150
-sri devi lalita (tamil) ## vol7-269
+sri devi lalita (tamil) ## 2017supl-45,vol7-269
 sri gananayaka (hindi) ## vol6-192
 sri kari krpa kari ## vol2-200/voli2-231/voli2-233
 sri krsna chaitanya ## vol2-201/voli2-232/voli2-234
@@ -1477,16 +1462,14 @@ take me away (english) ## vol2-249
 take me deep in your eyes (english) ## vol4-247
 takutiyilla ## vol4-184
 talarnnurangukayo ## vol3-166/voli3-236
-talarnnurangukayo (malayalam) ## vol7-278
-talarnnuraêgukayò (malayalam) ## 2017supl-47
+talarnnurangukayo (malayalam) ## 2017supl-47,vol7-278
 tamara kanna varu ## vol2-217/voli2-250/voli2-252
 tan man dhan nu ## vol5-160
 tanana tanana ## vol2-218/voli2-253/voli2-255
-tancam undan (tamil) ## vol7-281
+tancam undan (tamil) ## 2017supl-48,vol7-281
 tancamena vantom (tamil) ## 2014supl-57,2013supl-26,vol7-279
 tandam tanannai (malayalam) ## 2013supl-27,vol7-282
-tandavamati (tamil) ## vol7-283
-tandavamaâi (tamil) ## 2017supl-49
+tandavamati (tamil) ## 2017supl-49,vol7-283
 tanman ki ## vol2-218/voli2-251/voli2-253
 tantam tananai (malayalam) ## 2012supl-26
 tapamanu (telugu) ## 2011supl-57 [dispassion],vol7-285,vol6-200
@@ -1507,7 +1490,6 @@ taye maha maye ## vol2-219/voli2-252/voli2-254
 taye tava (kannada version) ## 2017supl-50,vol7-290
 taye tava tanayaril ## vol1-242/voli1-113/voli1-115
 tayendru azhaikkava (tamil) ## 2015supl-54,vol7-289
-tañcam undan (tamil) ## 2017supl-48
 teach me the language (english) ## vol3-190/voli3-276
 tedal thodankum (tamil) ## vol6-202
 ten mazhaiyaka ## vol3-168/voli3-239
@@ -1538,8 +1520,7 @@ ulagankal yavum (tamil) ## 2012supl-28,vol7-295
 ulagankal yavum (telugu) (translated) ## 2016supl-75
 ulakalum nayakiye (tamil) ## 2016supl-64,vol7-298
 ulakattin adhara ## vol1-243/voli1-32/voli1-33
-ulakattin tayentru (tamil) ## vol7-299
-ulakattin tayenâru (tamil) ## 2017supl-52
+ulakattin tayentru (tamil) ## 2017supl-52,vol7-299
 ullam enum ## vol5-169
 ullam urukutayya muruka ## vol3-171/voli3-243
 ullil tulumbunna mantram ## vol3-172/voli3-244
@@ -1560,8 +1541,7 @@ utayaval (malayalam) ## 2015supl-60,vol7-307
 uttama premattin ## vol1-244/voli1-130/voli1-133
 uyara uyara (tamil) ## 2017supl-54,vol7-308
 uyiray oliyay ## vol1-245/voli1-52/voli1-53
-uyirotuyiray (tamil) ## vol7-309
-uyiròâuyiray (tamil) ## 2017supl-55
+uyirotuyiray (tamil) ## 2017supl-55,vol7-309
 vadikorinetra ## vol2-224/voli2-258/voli2-261
 vagadhisvari ## vol4-195
 vagdevate varu ## vol2-225/voli2-260/voli2-262
@@ -1589,11 +1569,10 @@ varunnennu tonnunnu ## vol2-227/voli2-262/voli2-264
 varuvanamantram ## vol4-200
 varuvay varuvay ganapatiye ## vol4-201
 vasudeva putrane va nila ## vol1-250/voli1-226/voli0-62
-vatavrksmam (malayalam) ## vol7-313
+vatavrksmam (malayalam) ## 2017supl-56,vol7-313
 vazhi duram ## vol5-175
 vazhimel vizhi (tamil) ## 2013supl-32,vol7-314
 vazhiya entrum vazhivave ## vol3-175/voli3-248
-vaâaväkçmam (malayalam) ## 2017supl-56
 vedambike namo ## vol1-251/voli1-61/voli1-63
 vedana kondoru (malayalam) ## vol6-213
 vedanta venalilute ## vol1-252/voli1-35/voli1-36
@@ -1671,5 +1650,3 @@ you are creation (english) ## vol5-202
 you have come to sacrifice (english) ## vol6-230
 you mean everything to me (english) ## vol3-189/voli3-277
 you're the essence (ullakattin adhara) (english) ## vol4-248
-Éivke (hindi) ## 2017supl-44
-Éri devi lalita (tamil) ## 2017supl-45
