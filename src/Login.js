@@ -44,6 +44,7 @@ class Login extends Component {
       localStorage.updated = +new Date();
       localStorage.displayName = user.displayName;
       localStorage.email = user.email;
+      localStorage.photoURL = user.photoURL;
       redirectOnLogin(user);
     };
 

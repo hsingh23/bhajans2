@@ -17,7 +17,7 @@ export const db = firebaseApp.database(); //the real-time database
 export const auth = firebase.auth(); //the firebase auth namespace
 
 export { firebase };
-if (localStorage.debug) window.firebase = firebase;
+if (window.location.host.includes('localhost')) window.firebase = firebase;
 
 export const doOnce = async function(firebasePromiseCallback) {
   return new Promise(async function(resolve, reject) {
@@ -38,9 +38,31 @@ export const checkRefOnce = ref => {
 };
 
 export const setRefOnce = (ref, value) => {
-  return new Promise(async function(resolve, reject) {
-    await db.goOnline();
+  return new Promise(resolve => {
+    db.goOnline();
     db.ref(ref).set(value, () => db.goOffline());
+  });
+};
+
+export const removeRefOnce = (ref, value) => {
+  return new Promise(resolve => {
+    db.goOnline();
+    db.ref(ref).remove(() => db.goOffline());
+  });
+};
+
+export const whenUser = (timeout = 5000) => {
+  // TODO: find out if db needs to be online to get user
+  if (auth.currentUser) return Promise.resolve(auth.currentUser);
+  return new Promise((resolve, reject) => {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        resolve(user);
+      }
+    });
+    setTimeout(function() {
+      reject('Timeout');
+    }, timeout);
   });
 };
 
