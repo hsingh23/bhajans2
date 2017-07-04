@@ -4,11 +4,12 @@ import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
 import omit from 'lodash/omit';
+import get from 'lodash/get';
 import ReactGA from 'react-ga';
 import { getJson, setJson } from './util';
 import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from './firebase';
-// import {auth, db}
-class App extends Component {
+
+class Search extends Component {
   constructor(props, context) {
     super(props, context);
     // You must be logged in to call firebase and get your favorites (rule) and also set your favorites
@@ -17,6 +18,12 @@ class App extends Component {
     setJson('favorites', favorites);
     this.state = { filteredBhajans: [], favorites };
     this.waiting = [];
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.filterBhajans();
+    }
   }
 
   componentWillMount() {
@@ -35,6 +42,7 @@ class App extends Component {
         },
       };
     })(this);
+
     if (window.searchableBhajans) {
       this.filterBhajans();
     } else {
@@ -51,7 +59,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    return Promise.all(this.waiting);
+    // return Promise.all(this.waiting);
   }
 
   wrappedName = (location, name, child) => {
@@ -97,10 +105,18 @@ class App extends Component {
     filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
+    const filterFavorites = window.location.hash.includes('/my-favorites');
+
     const filteredBhajans = window.searchableBhajans.reduce((memo, bhajan, i) => {
+      if (filterFavorites) {
+        const bhajanNameIndex = window.fetchedBhajans[i].indexOf('##');
+        const name = window.fetchedBhajans[i].slice(0, bhajanNameIndex).trim().toLowerCase();
+        if (!this.state.favorites[name]) return memo;
+      }
       if (bhajan.includes(searchableFilter)) memo.push(i);
       return memo;
     }, []);
+
     this.setState({ filteredBhajans });
   };
 
@@ -116,16 +132,20 @@ class App extends Component {
     const favorites = Object.assign({ [name]: 1 }, this.state.favorites);
     this.setState({ favorites });
     setJson('favorites', favorites);
-    this.waiting.push(setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, '1'));
+    const uid = get(auth, 'currentUser.uid');
+    uid && this.waiting.push(setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, '1'));
   };
 
   removeFavorite = name => {
     // delete this.addFavorite[name];
     // this.removeFavorite[name] = 1;
     const favorites = omit(this.state.favorites, name);
-    this.setState({ favorites });
+    this.setState({ favorites }, () => {
+      window.location.hash.includes('/my-favorites') && this.filterBhajans();
+    });
     setJson('favorites', favorites);
-    this.waiting.push(removeRefOnce(`favorites/${auth.currentUser.uid}/${name}`));
+    const uid = get(auth, 'currentUser.uid');
+    uid && this.waiting.push(removeRefOnce(`favorites/${auth.currentUser.uid}/${name}`));
   };
 
   render() {
@@ -148,6 +168,7 @@ class App extends Component {
       window.setGAUid = true;
       ReactGA.set({ userId: localStorage.uid });
     }
+    const myFavorites = window.location.hash.includes('/my-favorites');
 
     return (
       <div className="App">
@@ -165,6 +186,9 @@ class App extends Component {
           />
         </div>
         <div className="rest">
+          <nav>
+            {!myFavorites ? <Link to="/my-favorites">Only My Favorites</Link> : <Link to="/">Home</Link>}
+          </nav>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) =>
               <AutoSizer disableHeight>
@@ -188,4 +212,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Search;

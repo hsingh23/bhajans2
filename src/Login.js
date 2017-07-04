@@ -9,7 +9,8 @@ var authUi = new firebaseui.auth.AuthUI(auth);
 class Login extends Component {
   componentDidMount() {
     const { history, location } = this.props;
-    if (localStorage.beta === '1') history.replace('/' + getNext());
+    const next = getNext();
+    if (localStorage.beta === '1') return history.replace(next);
 
     const redirectOnLogin = async function(user) {
       const beta = await checkRefOnce(`/beta/${user.uid}`);
@@ -18,11 +19,11 @@ class Login extends Component {
       if (beta) {
         localStorage.beta = 1;
         // save user name, email, browser data
-        history.push('/' + getNext());
+        return history.push(next);
       } else {
         localStorage.beta = 0;
         // TODO: redirect to pay once beta testing period is over
-        history.push(`/beta${location.search}}`);
+        return history.push(`/beta${location.search}}`);
         // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
         // ideally you want to show stripe, upon payment kick off cloud function to update user account
       }

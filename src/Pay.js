@@ -6,7 +6,7 @@ import { getNext } from './util';
 class Pay extends PureComponent {
   componentWillMount() {
     const { history, location } = this.props;
-    if (localStorage.paid === '1') history.push('/' + getNext());
+    if (localStorage.paid === '1') history.push(getNext());
     const checkUser = async function() {
       if (auth.currentUser) {
         // only ask to confirmPayment if the person hasn't paid
@@ -16,7 +16,7 @@ class Pay extends PureComponent {
           await db.ref(`/confirmPayment/${auth.currentUser.uid}`).set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
         } else {
           localStorage.paid = '1';
-          history.push('/' + getNext());
+          history.push(getNext());
         }
         db.goOffline();
       } else {
