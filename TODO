@@ -1,26 +1,28 @@
 serverless??/docker
   stripe? -> firebase
-firebase/auth0 -> google auth/db/fb/localstorage
-
-soon:
-
-Controlled Beta -> approval process
 
 amma icon
-add google analytics
 create facebook page <- drive likes on navigate away (after x visits)
   https://www.hellobar.com/sites/456675/install
 fix redirection
 copyright footer (start fixed, then turn it into static)
-refresh page upon payment automatically - every 2 sec
 biz cards to promote website
 
-Subscription only if offline (android)
+Subscription (only if offline?) (android)
   (annual pricing - 10$ to 15$) -> survey monkey
 
-complex:
+done:
+  Controlled Beta -> approval process
+  refresh page upon payment automatically - every 2 sec
+  complex 
+    heart songs
+      - what to do for offline users - there changes won't be saved...:
+      tab/link of favorite songs
+        /favorite/uid/song-name : 1
 
-heart songs
-  tab/link of favorite songs
-    /favorite/uid/song-name : 1
-
+    constructor: json load local storage or {}
+    cwm: fetch firebase and overwrite; initialize add and remove changes
+    addFav: state, add to localstorage and add to add changes
+    removeFav: state, remove from localstorage and add to remove changes 
+    cwum: push add and rm changes to firebase
+    localstorage first

@@ -3,15 +3,38 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
+import omit from 'lodash/omit';
 import ReactGA from 'react-ga';
+import { getJson, setJson } from './util';
+import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from './firebase';
+// import {auth, db}
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { filteredBhajans: [] };
+    // You must be logged in to call firebase and get your favorites (rule) and also set your favorites
+    // if you don't care about syncing between devices, we can use localstorage for favorites
+    const favorites = getJson('favorites') || {};
+    setJson('favorites', favorites);
+    this.state = { filteredBhajans: [], favorites };
+    this.waiting = [];
   }
 
   componentWillMount() {
-    if (localStorage.uid) ReactGA.set({ userId: localStorage.uid });
+    const { haveUser, noUser } = (function(self) {
+      return {
+        haveUser: user => {
+          checkRefOnce(`favorites/${user.uid}`).then(favorites => {
+            favorites = Object.assign({}, self.state.favorites, favorites);
+            self.setState({ favorites });
+            setJson('favorites', favorites);
+          });
+        },
+        noUser: reason => {
+          window.confirm('Login to sync favorite?') && self.props.history.push('/login');
+          console.log(`No user: ${reason}`);
+        },
+      };
+    })(this);
     if (window.searchableBhajans) {
       this.filterBhajans();
     } else {
@@ -24,7 +47,17 @@ class App extends Component {
         })
         .then(() => this.filterBhajans());
     }
+    whenUser(1500).then(haveUser, noUser);
   }
+
+  componentWillUnmount() {
+    return Promise.all(this.waiting);
+  }
+
+  wrappedName = (location, name, child) => {
+    const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
+    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : { child };
+  };
 
   linkify = (name, location) => {
     var re = /\d{4}supl-\d+|vol\d-\d+/gi;
@@ -32,6 +65,8 @@ class App extends Component {
     var lastIndex = re.lastIndex;
     var result;
     location = location.replace(/[,/]/g, ' ');
+    // should I remove links from the pages
+    // return <span className="spaced rightAligned">{location}</span>;
     // eslint-disable-next-line
     while ((result = re.exec(location)) !== null) {
       if (result.index > lastIndex) {
@@ -69,6 +104,30 @@ class App extends Component {
     this.setState({ filteredBhajans });
   };
 
+  renderFavorite = name => {
+    return this.state.favorites[name]
+      ? <button className="button button-3d button-action button-circle button-jumbo" onClick={() => this.removeFavorite(name)}>♥</button>
+      : <button className="button button-3d button-circle button-jumbo" onClick={() => this.addFavorite(name)}>♡</button>;
+  };
+
+  addFavorite = name => {
+    // delete this.removeFavorite[name];
+    // this.addFavorite[name] = 1;
+    const favorites = Object.assign({ [name]: 1 }, this.state.favorites);
+    this.setState({ favorites });
+    setJson('favorites', favorites);
+    this.waiting.push(setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, '1'));
+  };
+
+  removeFavorite = name => {
+    // delete this.addFavorite[name];
+    // this.removeFavorite[name] = 1;
+    const favorites = omit(this.state.favorites, name);
+    this.setState({ favorites });
+    setJson('favorites', favorites);
+    this.waiting.push(removeRefOnce(`favorites/${auth.currentUser.uid}/${name}`));
+  };
+
   render() {
     const { filteredBhajans } = this.state;
     const filter = window.searchFilter;
@@ -76,11 +135,19 @@ class App extends Component {
       const [name, location] = window.fetchedBhajans[filteredBhajans[index]].split(' ## ');
       return (
         <div key={key} style={style} className="bhajanRow">
-          <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />
-          {this.linkify(name, location)}
+          {this.wrappedName(location, name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
+          <span className="Search_RightSide">
+            {this.linkify(name, location)}
+            {this.renderFavorite(name)}
+          </span>
         </div>
       );
     };
+
+    if (!window.setGAUid && localStorage.uid) {
+      window.setGAUid = true;
+      ReactGA.set({ userId: localStorage.uid });
+    }
 
     return (
       <div className="App">
