@@ -8,7 +8,7 @@ class Logout extends Component {
     auth.signOut();
     localStorage.clear();
     db.goOffline();
-    this.props.history.push('/' + getNext());
+    this.props.history.push(getNext());
   }
 
   render() {

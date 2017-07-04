@@ -12,7 +12,7 @@ class Beta extends PureComponent {
   componentWillMount() {
     const { history } = this.props;
     if (localStorage.beta === '1') {
-      history.push('/' + getNext());
+      history.push(getNext());
     }
     this.interval = setInterval(this.checkBeta, 2000);
 
@@ -32,7 +32,7 @@ class Beta extends PureComponent {
     checkRefOnce(`/beta/${auth.currentUser.uid}`).then(isBetaUser => {
       if (isBetaUser) {
         localStorage.beta = '1';
-        history.push('/' + getNext());
+        history.push(getNext());
       }
     });
   };
@@ -50,7 +50,7 @@ class Beta extends PureComponent {
         this.setState({ optedIn: true });
       } else {
         localStorage.beta = '1';
-        history.push('/' + getNext());
+        history.push(getNext());
       }
       db.goOffline();
     } else {
