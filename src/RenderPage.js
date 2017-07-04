@@ -69,7 +69,7 @@ class RenderPage extends PureComponent {
                   onDocumentComplete={this.onDocumentComplete}
                   onPageComplete={this.onPageComplete}
                   page={this.state.page}
-                  scale={4}
+                  scale={3}
                   style={{ width: '100vw', display: 'block', margin: '0 auto' }}
                 />
                 {pagination}
