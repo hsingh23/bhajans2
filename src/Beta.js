@@ -69,12 +69,21 @@ class Beta extends PureComponent {
         </div>
         <div className="restPage">
           <p>
-            Welcome to Amma's Bhajan Searcher. This is a beta website which you will be allowed to use for free until the beta period has expired. Current
-            expiration date is <strong>September 1st 2017</strong>. In exchange, please help us make
-            the site better by filling out our surveys, sending bug and feature requests. We may contact you via email during the beta period to answer short
-            surveys. If you like the site, please like <a href="some facebook link">our facebook page</a>.
+            Welcome to Amma's Bhajan Searcher, making bhajans easier. This is a beta website which means that things may not work as they should. Please help us
+            make the website better. As a gift, you will have free access to this website until September 1st 2017.{' '}
           </p>
-          {this.state.optedIn ? <div className="bigRedText">Awaiting approval</div> : <button onClick={this.optIn}>Agree and Continue</button>}
+          <p>
+            We may contact you via email, and push messages during the beta period to answer short
+            surveys.
+          </p>
+          {this.state.optedIn
+            ? <div className="bigRedText">
+                <div>Thanks for requesting access to the beta program! This site will automatically redirect once you are approved.</div>{' '}
+                <a href="some facebook link" target="_blank">
+                  While you wait, please support us by liking our facebook page and sharing it with others who may also make like this website.
+                </a>.
+              </div>
+            : <button onClick={this.optIn}>Agree and Continue</button>}
 
         </div>
 

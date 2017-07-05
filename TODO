@@ -11,18 +11,12 @@ biz cards to promote website
 Subscription (only if offline?) (android)
   (annual pricing - 10$ to 15$) -> survey monkey
 
-done:
-  Controlled Beta -> approval process
-  refresh page upon payment automatically - every 2 sec
-  complex 
-    heart songs
-      - what to do for offline users - there changes won't be saved...:
-      tab/link of favorite songs
-        /favorite/uid/song-name : 1
-
-    constructor: json load local storage or {}
-    cwm: fetch firebase and overwrite; initialize add and remove changes
-    addFav: state, add to localstorage and add to add changes
-    removeFav: state, remove from localstorage and add to remove changes 
-    cwum: push add and rm changes to firebase
-    localstorage first
+Ideas:
+  total like counts
+  bhajan categories
+  add push notifications to 
+    ask beta users to fillout feedback form
+    remind users to visit the sites
+    ask specific users to send/upload bhajans
+    gamify liking bhajans
+  perhaps a leader board on liked bhajans?
