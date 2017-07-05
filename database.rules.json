@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "paid": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+    },
+    "admin": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+    },
+    "confirmPayment": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+    },
+    "confirmBeta": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+    },
+    "beta": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+    },
+    "favorites": {
+      "$userId" : {
+      	".read": "auth.uid === $userId",
+        ".write": "auth.uid === $userId",
+      }
+    },
+  }
+}
