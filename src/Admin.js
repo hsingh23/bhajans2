@@ -28,6 +28,7 @@ class Admin extends PureComponent {
     };
     setTimeout(awaitCurrentUser, 500);
     this.confirmBeta = db.ref('confirmBeta');
+    this.confirmedBeta = db.ref('confirmedBeta');
     this.beta = db.ref('beta');
 
     // TODO: this should not be value!
@@ -37,7 +38,8 @@ class Admin extends PureComponent {
     return db.goOffline();
   }
 
-  setBeta = function(uid) {
+  setBeta = function(uid, user) {
+    this.confirmedBeta.child(uid).set(user);
     this.confirmBeta.child(uid).remove();
     this.beta.child(uid).set('1');
   };
@@ -66,7 +68,7 @@ class Admin extends PureComponent {
                     <td>
                       <button
                         onClick={() => {
-                          this.setBeta(uid);
+                          this.setBeta(uid, user);
                         }}>
                         beta
                       </button>

@@ -10,21 +10,25 @@
     },
     "confirmPayment": {
       ".read": "auth != null",
-      ".write": "auth != null",
+      ".write": "auth != null"
     },
     "confirmBeta": {
       ".read": "auth != null",
-      ".write": "auth != null",
+      ".write": "auth != null"
+    },
+    "confirmedBeta": {
+      ".read": "auth != null && root.child('admin').child(auth.uid).val() === '1'",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
     },
     "beta": {
       ".read": "auth != null",
       ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
     },
     "favorites": {
-      "$userId" : {
-      	".read": "auth.uid === $userId",
-        ".write": "auth.uid === $userId",
+      "$userId": {
+        ".read": "auth.uid === $userId",
+        ".write": "auth.uid === $userId"
       }
-    },
+    }
   }
 }
