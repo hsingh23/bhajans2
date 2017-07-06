@@ -90,5 +90,5 @@ export const whenUser = (timeout = 5000) => {
 
 messaging.onMessage(payload => {
   console.log(payload);
-  alert(payload.notification.body);
+  alert({ text: payload.notification.body });
 });
