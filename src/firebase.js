@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-
+import { alert } from 'notie';
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
 
 var config = {
@@ -15,17 +15,18 @@ var config = {
 export const firebaseApp = firebase.initializeApp(config);
 export const db = firebaseApp.database(); //the real-time database
 export const auth = firebase.auth(); //the firebase auth namespace
+export const messaging = firebase.messaging();
 
 export { firebase };
 if (window.location.host.includes('localhost')) window.firebase = firebase;
 
-export const doOnce = async function(firebasePromiseCallback) {
-  return new Promise(async function(resolve, reject) {
-    db.goOnline();
-    await firebasePromiseCallback();
-    db.goOffline();
-  });
-};
+// export const doOnce = async function(firebasePromiseCallback) {
+//   return new Promise(async function(resolve, reject) {
+//     db.goOnline();
+//     await firebasePromiseCallback();
+//     db.goOffline();
+//   });
+// };
 
 export const checkRefOnce = ref => {
   return new Promise(function(resolve, reject) {
@@ -40,14 +41,20 @@ export const checkRefOnce = ref => {
 export const setRefOnce = (ref, value) => {
   return new Promise(resolve => {
     db.goOnline();
-    db.ref(ref).set(value, () => db.goOffline());
+    db.ref(ref).set(value, () => {
+      db.goOffline();
+      resolve();
+    });
   });
 };
 
 export const removeRefOnce = (ref, value) => {
   return new Promise(resolve => {
     db.goOnline();
-    db.ref(ref).remove(() => db.goOffline());
+    db.ref(ref).remove(() => {
+      db.goOffline();
+      resolve();
+    });
   });
 };
 
@@ -60,53 +67,28 @@ export const whenUser = (timeout = 5000) => {
         resolve(user);
       }
     });
-    setTimeout(function() {
-      reject('Timeout');
-    }, timeout);
+    timeout &&
+      setTimeout(function() {
+        reject('Timeout');
+      }, timeout);
   });
 };
 
-// export const firebaseState = (function() {
-//   var state = {
-//     isAuthenticated: !!auth.currentUser || localStorage.uid,
-//     currentUser: auth.currentUser || {},
-//     paid: false,
-//   };
+(async function getMessageID() {
+  if (!localStorage.gcmToken) {
+    await messaging.requestPermission();
+    const token = await messaging.getToken();
+    if (token) {
+      await whenUser(null);
+      db.ref(`messages/${auth.currentUser.uid}`).set({ token }, () => {
+        localStorage.gcmToken = token;
+        console.log('set token');
+      });
+    }
+  }
+})();
 
-//   auth.onAuthStateChanged(function(user) {
-//     if (!user) {
-//       // logout
-//       delete localStorage.uid;
-//       delete localStorage.updated;
-//       state.isAuthenticated = false;
-//       state.currentUser = {};
-//       state.paid = false;
-//       db.goOffline();
-//     } else {
-//       // just authenticated
-//       localStorage.updated = +new Date();
-//       localStorage.uid = user.uid;
-//       state.currentUser = user;
-//       state.isAuthenticated = true;
-//       const getPaid = () =>
-//         db
-//           .ref(`/paid/${user.uid}`)
-//           .once('value')
-//           .then(function(snapshot) {
-//             if (snapshot.val() === '1') {
-//               state.paid = true;
-//             } else {
-//               state.paid = false;
-//             }
-//           })
-//           // close the connection once you know if someone has paid or not.
-//           .then(() => db.goOffline());
-//       db.goOnline().then(getPaid);
-//     }
-//   });
-//   const getState = () => state;
-
-//   return {
-//     getState,
-//   };
-// })();
+messaging.onMessage(payload => {
+  console.log(payload);
+  alert(payload.notification.body);
+});

@@ -79,7 +79,7 @@ class Beta extends PureComponent {
           {this.state.optedIn
             ? <div className="bigRedText">
                 <div>Thanks for requesting access to the beta program! This site will automatically redirect once you are approved.</div>{' '}
-                <a href="some facebook link" target="_blank">
+                <a href="some facebook link" target="_blank" rel="noopener noreferrer">
                   While you wait, please support us by liking our facebook page and sharing it with others who may also make like this website.
                 </a>.
               </div>

@@ -5,6 +5,7 @@ module.exports = {
     'build/static/**/!(*map*)',
     'build/bhajan-index.json',
     'build/*.min.css',
+    'build/*.min.js',
     'build/*.png',
     'build/*.jpg',
     'build/*.ico',
