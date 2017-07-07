@@ -27,6 +27,9 @@ class Search extends Component {
   }
 
   componentWillMount() {
+    setTimeout(function() {
+      document.scrollingElement.scrollTop = window.scrollTop || document.scrollingElement.scrollTop;
+    }, 0);
     const { haveUser, noUser } = (function(self) {
       return {
         haveUser: user => {
@@ -64,7 +67,11 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : { child };
+    return match
+      ? <Link to={`/pdf/${match[0]}/${name}`}>
+          {child}
+        </Link>
+      : { child };
   };
 
   linkify = (name, location) => {
@@ -80,10 +87,18 @@ class Search extends Component {
       if (result.index > lastIndex) {
         results.push(location.slice(lastIndex, result.index));
       }
-      results.push(<Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>{result[0]}</Link>);
+      results.push(
+        <Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>
+          {result[0]}
+        </Link>
+      );
       lastIndex = re.lastIndex;
     }
-    return <span className="spaced rightAligned">{results}</span>;
+    return (
+      <span className="spaced rightAligned">
+        {results}
+      </span>
+    );
   };
 
   // The meat and potatoes
@@ -122,8 +137,12 @@ class Search extends Component {
 
   renderFavorite = name => {
     return this.state.favorites[name]
-      ? <button className="button button-3d button-action button-circle button-jumbo" onClick={() => this.removeFavorite(name)}>♥</button>
-      : <button className="button button-3d button-circle button-jumbo" onClick={() => this.addFavorite(name)}>♡</button>;
+      ? <button className="button button-3d button-action button-circle button-jumbo" onClick={() => this.removeFavorite(name)}>
+          ♥
+        </button>
+      : <button className="button button-3d button-circle button-jumbo" onClick={() => this.addFavorite(name)}>
+          ♡
+        </button>;
   };
 
   addFavorite = name => {
@@ -173,7 +192,9 @@ class Search extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <Link to={+localStorage.admin ? '/admin' : '/'}><div className="title">Amma's Bhajans</div></Link>
+          <Link to={+localStorage.admin ? '/admin' : '/'}>
+            <div className="title">Amma's Bhajans</div>
+          </Link>
           <input
             type="search"
             placeholder="Search Bhajans"
@@ -190,21 +211,25 @@ class Search extends Component {
             {!myFavorites ? <Link to="/my-favorites">Only My Favorites</Link> : <Link to="/">Home</Link>}
           </nav>
           <WindowScroller>
-            {({ height, isScrolling, onChildScroll, scrollTop }) =>
-              <AutoSizer disableHeight>
-                {({ width }) =>
-                  <List
-                    autoHeight
-                    height={height}
-                    isScrolling={isScrolling}
-                    onScroll={onChildScroll}
-                    rowCount={filteredBhajans.length}
-                    rowHeight={100}
-                    rowRenderer={rowRenderer}
-                    scrollTop={scrollTop}
-                    width={width}
-                  />}
-              </AutoSizer>}
+            {({ height, isScrolling, onChildScroll, scrollTop }) => {
+              window.scrollTop = document.scrollingElement.scrollTop || window.scrollTop;
+              return (
+                <AutoSizer disableHeight>
+                  {({ width }) =>
+                    <List
+                      autoHeight
+                      height={height}
+                      isScrolling={isScrolling}
+                      onScroll={onChildScroll}
+                      rowCount={filteredBhajans.length}
+                      rowHeight={100}
+                      rowRenderer={rowRenderer}
+                      scrollTop={scrollTop}
+                      width={width}
+                    />}
+                </AutoSizer>
+              );
+            }}
           </WindowScroller>
         </div>
       </div>
