@@ -11,37 +11,37 @@
 import { alert } from 'notie';
 const prod = process.env.NODE_ENV === 'production';
 export default function register() {
-  if (prod && 'serviceWorker' in navigator) {
+  if (true && 'serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      const swUrls = [`${process.env.PUBLIC_URL}/service-worker.js`, `${process.env.PUBLIC_URL}/firebase-messaging-sw.js`];
-      swUrls.forEach(swUrl => {
-        navigator.serviceWorker
-          .register(swUrl)
-          .then(registration => {
-            registration.onupdatefound = () => {
-              const installingWorker = registration.installing;
-              installingWorker.onstatechange = () => {
-                if (installingWorker.state === 'installed') {
-                  if (navigator.serviceWorker.controller) {
-                    // At this point, the old content will have been purged and
-                    // the fresh content will have been added to the cache.
-                    // It's the perfect time to display a "New content is
-                    // available; please refresh." message in your web app.
-                    alert({ text: 'New content is available; please refresh.' });
-                  } else {
-                    // At this point, everything has been precached.
-                    // It's the perfect time to display a
-                    // "Content is cached for offline use." message.
-                    alert({ text: 'Content is cached for offline use.' });
-                  }
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+      navigator.serviceWorker
+        .register(swUrl)
+        .then(registration => {
+          registration.onupdatefound = () => {
+            const installingWorker = registration.installing;
+            installingWorker.onstatechange = () => {
+              if (installingWorker.state === 'installed') {
+                if (navigator.serviceWorker.controller) {
+                  // At this point, the old content will have been purged and
+                  // the fresh content will have been added to the cache.
+                  // It's the perfect time to display a "New content is
+                  // available; please refresh." message in your web app.
+                  console.log('New content is available; please refresh.');
+                  alert({ text: 'New content is available; please refresh.' });
+                } else {
+                  // At this point, everything has been precached.
+                  // It's the perfect time to display a
+                  // "Content is cached for offline use." message.
+                  console.log('Content is cached for offline use.');
+                  alert({ text: 'Content is cached for offline use.' });
                 }
-              };
+              }
             };
-          })
-          .catch(error => {
-            console.error('Error during service worker registration:', error);
-          });
-      });
+          };
+        })
+        .catch(error => {
+          console.error('Error during service worker registration:', error);
+        });
     });
   }
 }

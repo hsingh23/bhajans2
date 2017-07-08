@@ -11,6 +11,9 @@ module.exports = {
     'build/*.ico',
     'build/pdfs/*.pdf',
   ],
+  navigateFallback: 'build/index.html',
+  ignoreUrlParametersMatching: [/^utm_/, /^mode/],
+  importScripts: ['firebase-messaging-sw.js'],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
   swFilePath: 'build/service-worker.js',
 };

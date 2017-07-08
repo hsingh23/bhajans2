@@ -55,13 +55,18 @@ class RenderPage extends PureComponent {
         <div className="App-header">
           <img src="favicon.ico" alt="Sing " />
           <div className="title">Amma's Bhajans</div>
-          <nav>
-            {this.props.match.params.name} {' '}
-            <Link to={'/'}>Back </Link>
+          <div style={{ flexGrow: 1 }}>
+            {this.props.match.params.name}
+          </div>
+          <nav style={{ float: 'right', display: 'block' }}>
+            <Link to={'/'} className="button button-rounded button-">
+              Back
+            </Link>
+            {this.props.renderFavorite(this.props.match.params.name, 'button button-action button-circle', 'button button-circle')}
           </nav>
         </div>
         <div className="rest">
-          {false && canRenderPdfNatively()
+          {true && canRenderPdfNatively()
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
                 <PDF

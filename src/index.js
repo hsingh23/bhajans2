@@ -8,6 +8,7 @@ import Admin from './Admin';
 import Pay from './Pay';
 import Beta from './Beta';
 import registerServiceWorker from './registerServiceWorker';
+import withFavorites from './withFavorites';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './index.css';
 import './App.css';
@@ -28,14 +29,14 @@ function logPageView() {
 ReactDOM.render(
   <Router onUpdate={logPageView}>
     <Switch>
-      <Route exact path="/" component={Search} />
-      <Route exact path="/my-favorites" component={Search} />
-      <Route path="/pdf/:location/:name" component={RenderPage} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/logout" component={Logout} />
       <Route exact path="/pay" component={Pay} />
       <Route exact path="/beta" component={Beta} />
       <Route exact path="/admin" component={Admin} />
+      <Route exact path="/" component={withFavorites(Search)} />
+      <Route exact path="/my-favorites" component={withFavorites(Search)} />
+      <Route path="/pdf/:location/:name" component={withFavorites(RenderPage)} />
       <Redirect path="*" to="/" />
     </Switch>
   </Router>,
