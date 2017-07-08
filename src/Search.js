@@ -3,21 +3,13 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
-import omit from 'lodash/omit';
-import get from 'lodash/get';
 import ReactGA from 'react-ga';
-import { getJson, setJson } from './util';
-import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from './firebase';
+import { withRouter } from 'react-router';
 
 class Search extends Component {
-  constructor(props, context) {
-    super(props, context);
-    // You must be logged in to call firebase and get your favorites (rule) and also set your favorites
-    // if you don't care about syncing between devices, we can use localstorage for favorites
-    const favorites = getJson('favorites') || {};
-    setJson('favorites', favorites);
-    this.state = { filteredBhajans: [], favorites };
-    this.waiting = [];
+  constructor(props) {
+    super(props);
+    this.state = { filteredBhajans: [] };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,21 +22,6 @@ class Search extends Component {
     setTimeout(function() {
       document.scrollingElement.scrollTop = window.scrollTop || document.scrollingElement.scrollTop;
     }, 0);
-    const { haveUser, noUser } = (function(self) {
-      return {
-        haveUser: user => {
-          checkRefOnce(`favorites/${user.uid}`).then(favorites => {
-            favorites = Object.assign({}, self.state.favorites, favorites);
-            self.setState({ favorites });
-            setJson('favorites', favorites);
-          });
-        },
-        noUser: reason => {
-          window.confirm('Login to sync favorite?') && self.props.history.push('/login');
-          console.log(`No user: ${reason}`);
-        },
-      };
-    })(this);
 
     if (window.searchableBhajans) {
       this.filterBhajans();
@@ -58,11 +35,6 @@ class Search extends Component {
         })
         .then(() => this.filterBhajans());
     }
-    whenUser(1500).then(haveUser, noUser);
-  }
-
-  componentWillUnmount() {
-    // return Promise.all(this.waiting);
   }
 
   wrappedName = (location, name, child) => {
@@ -126,45 +98,13 @@ class Search extends Component {
       if (filterFavorites) {
         const bhajanNameIndex = window.fetchedBhajans[i].indexOf('##');
         const name = window.fetchedBhajans[i].slice(0, bhajanNameIndex).trim().toLowerCase();
-        if (!this.state.favorites[name]) return memo;
+        if (!this.props.favorites[name]) return memo;
       }
       if (bhajan.includes(searchableFilter)) memo.push(i);
       return memo;
     }, []);
 
     this.setState({ filteredBhajans });
-  };
-
-  renderFavorite = name => {
-    return this.state.favorites[name]
-      ? <button className="button button-3d button-action button-circle button-jumbo" onClick={() => this.removeFavorite(name)}>
-          ♥
-        </button>
-      : <button className="button button-3d button-circle button-jumbo" onClick={() => this.addFavorite(name)}>
-          ♡
-        </button>;
-  };
-
-  addFavorite = name => {
-    // delete this.removeFavorite[name];
-    // this.addFavorite[name] = 1;
-    const favorites = Object.assign({ [name]: 1 }, this.state.favorites);
-    this.setState({ favorites });
-    setJson('favorites', favorites);
-    const uid = get(auth, 'currentUser.uid');
-    uid && this.waiting.push(setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, '1'));
-  };
-
-  removeFavorite = name => {
-    // delete this.addFavorite[name];
-    // this.removeFavorite[name] = 1;
-    const favorites = omit(this.state.favorites, name);
-    this.setState({ favorites }, () => {
-      window.location.hash.includes('/my-favorites') && this.filterBhajans();
-    });
-    setJson('favorites', favorites);
-    const uid = get(auth, 'currentUser.uid');
-    uid && this.waiting.push(removeRefOnce(`favorites/${auth.currentUser.uid}/${name}`));
   };
 
   render() {
@@ -177,7 +117,7 @@ class Search extends Component {
           {this.wrappedName(location, name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
           <span className="Search_RightSide">
             {this.linkify(name, location)}
-            {this.renderFavorite(name)}
+            {this.props.renderFavorite(name)}
           </span>
         </div>
       );
@@ -237,4 +177,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
