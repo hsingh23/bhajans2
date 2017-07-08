@@ -23,7 +23,7 @@ class Login extends Component {
       } else {
         localStorage.beta = 0;
         // TODO: redirect to pay once beta testing period is over
-        return history.push(`/beta${location.search}}`);
+        return history.push(`/beta${location.search}`);
         // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
         // ideally you want to show stripe, upon payment kick off cloud function to update user account
       }
@@ -34,7 +34,7 @@ class Login extends Component {
       // } else {
       //   localStorage.paid = 0;
       //   // redirect to pay once beta testing period is over
-      //   history.push(`/pay${location.search}}`);
+      //   history.push(`/pay${location.search}`);
       //   // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
       //   // ideally you want to show stripe, upon payment kick off cloud function to update user account
       // }
@@ -58,7 +58,7 @@ class Login extends Component {
       callbacks: {
         signInSuccess: signedIn,
       },
-      // credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+      credentialHelper: firebaseui.auth.CredentialHelper.NONE,
       signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
     };
     authUi.start('#firebaseui-auth', uiConfig);
