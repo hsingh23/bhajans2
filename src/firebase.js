@@ -74,7 +74,7 @@ export const whenUser = (timeout = 5000) => {
   });
 };
 
-(async function getMessageID() {
+async function getMessageID() {
   if (!localStorage.newGcmToken) {
     await messaging.requestPermission();
     const token = await messaging.getToken();
@@ -90,7 +90,8 @@ export const whenUser = (timeout = 5000) => {
         });
     }
   }
-})();
+}
+getMessageID();
 
 messaging.onTokenRefresh(async function() {
   db.goOnline();
