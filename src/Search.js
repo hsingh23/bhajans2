@@ -132,8 +132,8 @@ class Search extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <Link to={+localStorage.admin ? '/admin' : '/'}>
-            <div className="title">Amma's Bhajans</div>
+          <Link to={+localStorage.admin ? '/admin' : '/'} className="title">
+            Amma's Bhajans
           </Link>
           <input
             type="search"
@@ -148,7 +148,13 @@ class Search extends Component {
         </div>
         <div className="rest">
           <nav>
-            {!myFavorites ? <Link to="/my-favorites">Only My Favorites</Link> : <Link to="/">Home</Link>}
+            {!myFavorites
+              ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-primary">
+                  Only My Favorites
+                </Link>
+              : <Link to="/" className="button button-glow button-rounded button-raised button-primary">
+                  Home
+                </Link>}
           </nav>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) => {
