@@ -1,3 +1,5 @@
+import './index.css';
+import './App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './Search';
@@ -10,13 +12,11 @@ import Beta from './Beta';
 import registerServiceWorker from './registerServiceWorker';
 import withFavorites from './withFavorites';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import './index.css';
-import './App.css';
-
+import ReactGA from 'react-ga';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 injectTapEventPlugin();
-var ReactGA = require('react-ga');
-ReactGA.initialize('UA-101960783-1');
+ReactGA.initialize('UA-101960783-1', { debug: 1 });
 
 function logPageView() {
   ReactGA.set({ page: window.location.pathname + window.location.search });
