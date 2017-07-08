@@ -149,7 +149,7 @@ class Search extends Component {
         <div className="rest">
           <nav>
             {!myFavorites
-              ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-primary">
+              ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-action">
                   Only My Favorites
                 </Link>
               : <Link to="/" className="button button-glow button-rounded button-raised button-primary">
