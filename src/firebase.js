@@ -75,15 +75,17 @@ export const whenUser = (timeout = 5000) => {
 };
 
 (async function getMessageID() {
-  if (!localStorage.gcmToken) {
+  if (!localStorage.newGcmToken) {
     await messaging.requestPermission();
     const token = await messaging.getToken();
     if (token) {
       await whenUser(null);
-      db.ref(`messages/${auth.currentUser.uid}`).set({ token }, () => {
-        localStorage.gcmToken = token;
-        console.log('set token');
-      });
+      db
+        .ref(`messages/${auth.currentUser.uid}`)
+        .update({ tokens: { [token]: 1 }, displayName: auth.currentUser.displayName, email: auth.currentUser.email }, () => {
+          localStorage.newGcmToken = token;
+          console.log('set token');
+        });
     }
   }
 })();
