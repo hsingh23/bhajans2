@@ -92,7 +92,7 @@ class Search extends Component {
     filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
-    const filterFavorites = window.location.hash.includes('/my-favorites');
+    const filterFavorites = this.props.location.pathname.includes('/my-favorites');
 
     const filteredBhajans = window.searchableBhajans.reduce((memo, bhajan, i) => {
       if (filterFavorites) {
