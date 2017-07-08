@@ -51,7 +51,7 @@ const withFavorites = WrappedComponent => {
       // this.removeFavorite[name] = 1;
       const favorites = omit(this.state.favorites, name);
       this.setState({ favorites }, () => {
-        window.location.hash.includes('/my-favorites') && this.filterBhajans();
+        window.location.hash.includes('/my-favorites');
       });
       setJson('favorites', favorites);
       const uid = get(auth, 'currentUser.uid');
@@ -60,7 +60,7 @@ const withFavorites = WrappedComponent => {
 
     renderFavorite = (name, activeClassName, inactiveClassName) => {
       return this.state.favorites[name]
-        ? <button className={activeClassName || 'button button-3d button-action button-circle button-jumbo'} onClick={() => this.removeFavorite(name)}>
+        ? <button className={activeClassName || 'button button-3d button-caution button-circle button-jumbo'} onClick={() => this.removeFavorite(name)}>
             ♥
           </button>
         : <button className={inactiveClassName || 'button button-3d button-circle button-jumbo'} onClick={() => this.addFavorite(name)}>

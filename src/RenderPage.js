@@ -62,7 +62,7 @@ class RenderPage extends PureComponent {
             <Link to={'/'} className="button button-rounded button-">
               Back
             </Link>
-            {this.props.renderFavorite(this.props.match.params.name, 'button button-action button-circle', 'button button-circle')}
+            {this.props.renderFavorite(this.props.match.params.name, 'button button-caution button-circle', 'button button-circle')}
           </nav>
         </div>
         <div className="rest">
