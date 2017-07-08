@@ -80,15 +80,25 @@ export const whenUser = (timeout = 5000) => {
     const token = await messaging.getToken();
     if (token) {
       await whenUser(null);
+      db.goOffline();
+      db.goOnline();
       db
         .ref(`messages/${auth.currentUser.uid}`)
         .update({ tokens: { [token]: 1 }, displayName: auth.currentUser.displayName, email: auth.currentUser.email }, () => {
           localStorage.newGcmToken = token;
-          console.log('set token');
+          console.log('updated token');
         });
     }
   }
 })();
+
+messaging.onTokenRefresh(async function() {
+  db.goOnline();
+  await whenUser(null);
+  await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.newGcmToken}`).remove();
+  delete localStorage.newGcmToken;
+  getMessageID();
+});
 
 messaging.onMessage(payload => {
   console.log(payload);
