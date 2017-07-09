@@ -3,7 +3,6 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
-import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
 
 class Search extends Component {
@@ -125,7 +124,7 @@ class Search extends Component {
 
     if (!window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      ReactGA.set({ userId: localStorage.uid });
+      window.ga('set', { userId: localStorage.uid });
     }
     const myFavorites = window.location.hash.includes('/my-favorites');
 
