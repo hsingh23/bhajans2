@@ -55,10 +55,10 @@ class RenderPage extends PureComponent {
         <div className="App-header">
           <img src="favicon.ico" alt="Sing " />
           <div className="title">Amma's Bhajans</div>
-          <div style={{ flexGrow: 1 }}>
+          <div style={{ flexGrow: 1, textOverflow: 'ellipsis' }}>
             {this.props.match.params.name}
           </div>
-          <nav style={{ float: 'right', display: 'block' }}>
+          <nav style={{ flex: '0 0 80px' }}>
             <Link to={'/'} className="button button-circle">
               ◀
             </Link>
