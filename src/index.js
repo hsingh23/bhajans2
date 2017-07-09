@@ -12,15 +12,12 @@ import Beta from './Beta';
 import registerServiceWorker from './registerServiceWorker';
 import withFavorites from './withFavorites';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import ReactGA from 'react-ga';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
-ReactGA.initialize('UA-101960783-1', { debug: 1 });
-
 function logPageView() {
-  ReactGA.set({ page: window.location.pathname + window.location.search });
-  ReactGA.pageview(window.location.pathname + window.location.search);
+  window.ga.set({ page: window.location.pathname + window.location.search });
+  window.ga('send', 'pageview', window.location.pathname);
 }
 
 // auto logout user if +localstorage.updated
