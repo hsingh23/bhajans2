@@ -8,10 +8,13 @@ fix redirection
 copyright footer (start fixed, then turn it into static)
 biz cards to promote website
 
+back button takes too much space
+
 Subscription (only if offline?) (android)
   (annual pricing - 10$ to 15$) -> survey monkey
 
 Ideas:
+  to make page load faster, we can pre compute searchable text
   total like counts - 
   bhajan categories
   add push notifications to 

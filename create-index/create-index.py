@@ -41,7 +41,7 @@ final_sorted = [bhajan + ' ## ' +
 
 bhajans2 = {}
 for (bhajan, location) in bhajans.items():
-    bhajans2[bhajan] = {"l": location}
+    bhajans2[bhajan] = {"l": location, 'n': bhajan}
 
 with open("music.txt", 'r') as f:
     for line in f.read().lower().split('\n'):
@@ -68,4 +68,4 @@ with open('bhajan-index.json', 'w+') as f:
 with open('../public/bhajan-index.json', 'w+') as f:
     f.write(json.dumps(final_sorted))
 with open('../public/bhajan-index2.json', 'w+') as f:
-    f.write(json.dumps(bhajans2))
+    f.write(json.dumps([v for (k, v) in sorted(bhajans2.items())]))
