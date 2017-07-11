@@ -30,17 +30,42 @@ for filename in (changed + ["bhajanmritam.txt"]):
             try:
                 if len(line.strip()) > 0:
                     (bhajan_name, location) = line.strip().split('##')
-                    bhajan_name = bhajan_name.strip().lower()
-                    location = location.strip().lower()
+                    bhajan_name = bhajan_name.strip()
+                    location = re.split('\s*[/\,]\s*', location)
                     bhajans[bhajan_name] = bhajans[bhajan_name] + \
-                        [location] if bhajan_name in bhajans else [location]
+                        location if bhajan_name in bhajans else location
             except Exception as e:
                 print filename, line
 final_sorted = [bhajan + ' ## ' +
                 ','.join(info) for (bhajan, info) in sorted(bhajans.items())]
+
+bhajans2 = {}
+for (bhajan, location) in bhajans.items():
+    bhajans2[bhajan] = {"l": location}
+
+with open("music.txt", 'r') as f:
+    for line in f.read().lower().split('\n'):
+        if len(line.strip()) > 0:
+            (bhajan, music) = line.strip().split('##')
+            bhajans2[bhajan] = {"m": re.split('\s*,\s*', music)}
+
+with open("video.txt", 'r') as f:
+    for line in f.read().lower().split('\n'):
+        if len(line.strip()) > 0:
+            (bhajan, video) = line.strip().split('##')
+            bhajans2[bhajan] = {"v": re.split('\s*,\s*', video)}
+
+with open("sheetmusic.txt", 'r') as f:
+    for line in f.read().lower().split('\n'):
+        if len(line.strip()) > 0:
+            (bhajan, sheetMusic) = line.strip().split('##')
+            bhajans2[bhajan] = {"s": re.split('\s*,\s*', sheetMusic)}
+
 with open('bhajan-index.txt', 'w+') as f:
     f.write('\n'.join(final_sorted))
 with open('bhajan-index.json', 'w+') as f:
     f.write(json.dumps(final_sorted))
 with open('../public/bhajan-index.json', 'w+') as f:
     f.write(json.dumps(final_sorted))
+with open('../public/bhajan-index2.json', 'w+') as f:
+    f.write(json.dumps(bhajans2))
