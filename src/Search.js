@@ -26,11 +26,11 @@ class Search extends Component {
       this.filterBhajans();
     } else {
       window
-        .fetch('./bhajan-index.json')
+        .fetch('./bhajan-index2.json')
         .then(data => data.json())
         .then(fetchedBhajans => {
           window.fetchedBhajans = fetchedBhajans;
-          window.searchableBhajans = fetchedBhajans.map(this.makeSearchable);
+          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join(',')));
         })
         .then(() => this.filterBhajans());
     }
@@ -73,6 +73,7 @@ class Search extends Component {
   };
 
   // The meat and potatoes
+  // TODO: to make page load faster, we can pre compute searchable text
   makeSearchable = line =>
     line
       .toLowerCase()
@@ -93,13 +94,11 @@ class Search extends Component {
     const searchableFilter = this.makeSearchable(filter);
     const filterFavorites = this.props.location.pathname.includes('/my-favorites');
 
-    const filteredBhajans = window.searchableBhajans.reduce((memo, bhajan, i) => {
+    const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
       if (filterFavorites) {
-        const bhajanNameIndex = window.fetchedBhajans[i].indexOf('##');
-        const name = window.fetchedBhajans[i].slice(0, bhajanNameIndex).trim().toLowerCase();
-        if (!this.props.favorites[name]) return memo;
+        if (!this.props.favorites[window.fetchedBhajans[i].n]) return memo;
       }
-      if (bhajan.includes(searchableFilter)) memo.push(i);
+      if (searchableBhajan.includes(searchableFilter)) memo.push(i);
       return memo;
     }, []);
 
@@ -110,12 +109,11 @@ class Search extends Component {
     const { filteredBhajans } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
-      const [name, location] = window.fetchedBhajans[filteredBhajans[index]].split(' ## ');
+      const { n: name, l: location } = window.fetchedBhajans[filteredBhajans[index]];
       return (
         <div key={key} style={style} className="bhajanRow">
-          {this.wrappedName(location, name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
+          {this.wrappedName(location[0], name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
           <span className="Search_RightSide">
-            {this.linkify(name, location)}
             {this.props.renderFavorite(name)}
           </span>
         </div>

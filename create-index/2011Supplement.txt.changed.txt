@@ -1,47 +1,47 @@
-abhivandanam (telugu) ## 2011supl-7 [ganesha]
-akamanatin karirulai (tamil) ## 2011supl-8 [devi]
-amala bharatam (english) ## 2011supl-9 [amma]
-anandame anandam (tamil) ## 2011supl-9 [krishna]
-anbu vativanaval (tamil) ## 2011supl-11 [devi]
-avi amba (bandalo in gujarati) ## 2011supl-13 [devi]
-ba bhrngave ba (kannada) ## 2011supl-14 [amma]
-bandalo bandalo (kannada) ## 2011supl-15 [amma]
-bandu bidabarade (kannada) ## 2011supl-16 [amma]
-cenmile (hindi) ## 2011supl-17 [amma]
-devadideva (telugu) ## 2011supl-18 [shiva]
-dam dam dum dum damaru bole (gujarati) ## 2011supl-19 [shiva]
-etayo teti (tamil) ## 2011supl-21 [dispassion]
-ganangalin natha (tamil) ## 2011supl-22 [ganesha]
-ganapati gunanidhi (hindi) ## 2011supl-23 [ganesha]
-hare tu hamare (hindi) ## 2011supl-24 [krishna]
-jnanakkataltannai (tamil) ## 2011supl-26 [devi]
-kab aye ga (hindi) ## 2011supl-27 [longing]
-kandarppakoti sundara (telugu) ## 2011supl-28 [krishna]
-kanniral kanna (malayalam) ## 2011supl-29 [krishna]
-karayalle paitale (malayalam) ## 2011supl-30 [amma]
-karumaiyile (tamil) ## 2011supl-31 [devi]
-krsna ninna bala lile (kannada) ## 2011supl-32 [krishna]
-kurumbukkara (tamil) ## 2011supl-33 [krishna]
-ma jay jay ma (hindi) ## 2011supl-35 [amma]
-manamendrum undan vidu (tamil) ## 2011supl-36 [shiva]
-manassil nila sarasil (malayalam) ## 2011supl-37 [longing]
-mangala nayaki (tamil) ## 2011supl-38 [devi]
-ma o ma (gujarati) ## 2011supl-39 [amma]
-mera mujh main (punjabi) ## 2011supl-40 [amma]
+abhivandanam (telugu) [ganesha] ## 2011supl-7
+akamanatin karirulai (tamil) [devi] ## 2011supl-8
+amala bharatam (english) [amma] ## 2011supl-9
+anandame anandam (tamil) [krishna] ## 2011supl-9
+anbu vativanaval (tamil) [devi] ## 2011supl-11
+avi amba (bandalo in gujarati) [devi] ## 2011supl-13
+ba bhrngave ba (kannada) [amma] ## 2011supl-14
+bandalo bandalo (kannada) [amma] ## 2011supl-15
+bandu bidabarade (kannada) [amma] ## 2011supl-16
+cenmile (hindi) [amma] ## 2011supl-17
+devadideva (telugu) [shiva] ## 2011supl-18
+dam dam dum dum damaru bole (gujarati) [shiva] ## 2011supl-19
+etayo teti (tamil) [dispassion] ## 2011supl-21
+ganangalin natha (tamil) [ganesha] ## 2011supl-22
+ganapati gunanidhi (hindi) [ganesha] ## 2011supl-23
+hare tu hamare (hindi) [krishna] ## 2011supl-24
+jnanakkataltannai (tamil) [devi] ## 2011supl-26
+kab aye ga (hindi) [longing] ## 2011supl-27
+kandarppakoti sundara (telugu) [krishna] ## 2011supl-28
+kanniral kanna (malayalam) [krishna] ## 2011supl-29
+karayalle paitale (malayalam) [amma] ## 2011supl-30
+karumaiyile (tamil) [devi] ## 2011supl-31
+krsna ninna bala lile (kannada) [krishna] ## 2011supl-32
+kurumbukkara (tamil) [krishna] ## 2011supl-33
+ma jay jay ma (hindi) [amma] ## 2011supl-35
+manamendrum undan vidu (tamil) [shiva] ## 2011supl-36
+manassil nila sarasil (malayalam) [longing] ## 2011supl-37
+mangala nayaki (tamil) [devi] ## 2011supl-38
+ma o ma (gujarati) [amma] ## 2011supl-39
+mera mujh main (punjabi) [amma] ## 2011supl-40
 mother nature (english) ## 2011supl-42 [nature]
-muraliganamutirkkunnu (malayalam) ## 2011supl-43 [krishna]
-namostute devi (marathi) ## 2011supl-44 [devi]
-naiyya tere (hindi) ## 2011supl-45 [dispassion]
-ni tanda solletuttu (tamil) ## 2011supl-46 [dispassion]
+muraliganamutirkkunnu (malayalam) [krishna] ## 2011supl-43
+namostute devi (marathi) [devi] ## 2011supl-44
+naiyya tere (hindi) [dispassion] ## 2011supl-45
+ni tanda solletuttu (tamil) [dispassion] ## 2011supl-46
 om mangalam (sanskrit) ## 2011supl-47 [guru]
-om sakti (tamil) ## 2011supl-49 [devi]
-pattave padamu (telugu) ## 2011supl-51 [dispassion]
-prema sagara (kannada) ## 2011supl-52 [devi]
-sarananti sarananti (telugu) ## 2011supl-53 [devi]
-sakti ta jagadamba (tamil) ## 2011supl-54 [amma]
+om sakti (tamil) [devi] ## 2011supl-49
+pattave padamu (telugu) [dispassion] ## 2011supl-51
+prema sagara (kannada) [devi] ## 2011supl-52
+sarananti sarananti (telugu) [devi] ## 2011supl-53
+sakti ta jagadamba (tamil) [amma] ## 2011supl-54
 silukisadiru ni (kannada) ## 2011supl-55 [guru]
-sundari jaganmohini (kannada) ## 2011supl-56 [devi]
-tapamanu (telugu) ## 2011supl-57 [dispassion]
-unmatta pancakam (tamil) ## 2011supl-58 [dispassion]
-vinayakane vinay tirtarulvay (tamil) ## 2011supl-59 [devi]
-ksama prarthana (sanskrit) ## 2011supl-61 [devi]
+sundari jaganmohini (kannada) [devi] ## 2011supl-56
+tapamanu (telugu) [dispassion] ## 2011supl-57
+unmatta pancakam (tamil) [dispassion] ## 2011supl-58
+vinayakane vinay tirtarulvay (tamil) [devi] ## 2011supl-59
+ksama prarthana (sanskrit) [devi] ## 2011supl-61

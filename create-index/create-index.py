@@ -7,8 +7,8 @@ with open("translation.csv", 'r') as f:
     translation_mapping = f.readlines()
 
 # read bhajan indexes
-supplements = ["2017Supplement.txt", "2016Supplement.txt", "2015Supplement.txt", "2014Supplement.txt",
-               "2013Supplement.txt", "2012Supplement.txt", "2011Supplement.txt", "Vol7.txt"]
+supplements = ["Vol7.txt", "2017Supplement.txt", "2016Supplement.txt", "2015Supplement.txt", "2014Supplement.txt",
+               "2013Supplement.txt", "2012Supplement.txt", "2011Supplement.txt"]
 for filename in supplements:
     # make substitutions
     with open(filename, 'r') as f:
@@ -24,14 +24,14 @@ for filename in supplements:
 # merge and sort file
 bhajans = {}
 changed = [f + ".changed.txt" for f in supplements]
-for filename in (changed + ["bhajanmritam.txt"]):
+for filename in (["bhajanmritam.txt"] + changed):
     with open(filename, 'r') as f:
         for line in f.read().lower().split('\n'):
             try:
                 if len(line.strip()) > 0:
                     (bhajan_name, location) = line.strip().split('##')
                     bhajan_name = bhajan_name.strip()
-                    location = re.split('\s*[/\,]\s*', location)
+                    location = re.split(' *[/\,] *', location.strip())
                     bhajans[bhajan_name] = bhajans[bhajan_name] + \
                         location if bhajan_name in bhajans else location
             except Exception as e:

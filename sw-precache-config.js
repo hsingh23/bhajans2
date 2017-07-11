@@ -3,7 +3,7 @@ module.exports = {
   staticFileGlobs: [
     'build/*.html',
     'build/static/**/!(*map*)',
-    'build/bhajan-index.json',
+    'build/bhajan-index2.json',
     'build/*.min.css',
     'build/*.min.js',
     'build/*.png',

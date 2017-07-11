@@ -14,6 +14,10 @@ Subscription (only if offline?) (android)
   (annual pricing - 10$ to 15$) -> survey monkey
 
 Ideas:
+  create an add meta data modal
+  consider removing supliements
+    normalize names (remove, tags)
+  click to show volumes (show by default on large screen)
   to make page load faster, we can pre compute searchable text
   total like counts - 
   bhajan categories
