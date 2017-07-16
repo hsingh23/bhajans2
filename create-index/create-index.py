@@ -43,23 +43,19 @@ bhajans2 = {}
 for (bhajan, location) in bhajans.items():
     bhajans2[bhajan] = {"l": location, 'n': bhajan}
 
-with open("music.txt", 'r') as f:
-    for line in f.read().lower().split('\n'):
-        if len(line.strip()) > 0:
-            (bhajan, music) = line.strip().split('##')
-            bhajans2[bhajan] = {"m": re.split('\s*,\s*', music)}
+def mergeData(filename, key):
+    with open(filename, 'r') as f:
+        for line in f.read().lower().split('\n'):
+            if len(line.strip()) > 0:
+                (bhajan, data) = line.strip().split('##')
+                if (bhajan in bhajans2 and 'n' in bhajans2[bhajan]):
+                    bhajans2[bhajan][key] = re.split('\s*,\s*', data)
+                else:
+                    print bhajan, data
 
-with open("video.txt", 'r') as f:
-    for line in f.read().lower().split('\n'):
-        if len(line.strip()) > 0:
-            (bhajan, video) = line.strip().split('##')
-            bhajans2[bhajan] = {"v": re.split('\s*,\s*', video)}
-
-with open("sheetmusic.txt", 'r') as f:
-    for line in f.read().lower().split('\n'):
-        if len(line.strip()) > 0:
-            (bhajan, sheetMusic) = line.strip().split('##')
-            bhajans2[bhajan] = {"s": re.split('\s*,\s*', sheetMusic)}
+mergeData('video.txt', 'v')
+mergeData('sheetmusic.txt', 's')
+mergeData('tags.txt', 't')
 
 with open('bhajan-index.txt', 'w+') as f:
     f.write('\n'.join(final_sorted))
@@ -69,3 +65,6 @@ with open('../public/bhajan-index.json', 'w+') as f:
     f.write(json.dumps(final_sorted))
 with open('../public/bhajan-index2.json', 'w+') as f:
     f.write(json.dumps([v for (k, v) in sorted(bhajans2.items())]))
+
+from subprocess import call
+call(["node", "cdbaby/mergelinks.js"])

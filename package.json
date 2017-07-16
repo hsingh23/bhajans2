@@ -19,12 +19,12 @@
     "react-pdf-js": "^1.0.35",
     "react-router-dom": "^4.0.0",
     "react-tap-event-plugin": "^2.0.1",
-    "react-virtualized": "^9.8.0",
+    "react-virtualized": "^9.9.0",
     "reactfire": "^1.0.0",
-    "recompose": "^0.23.5"
+    "recompose": "^0.24.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7",
+    "react-scripts": "^1.0.10",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.2.0",

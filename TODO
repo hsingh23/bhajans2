@@ -27,3 +27,22 @@ Ideas:
     ask specific users to send/upload bhajans
     gamify liking bhajans
   perhaps a leader board on liked bhajans?
+
+Get MUSIC
+  Phase 1: UI
+    support adding 1 song, add UI (preview song, and link to buy song)
+  Phase 2: Automate
+    get raw data
+    for each bhajan in previous data
+      normalize name
+      add normalized name to addressed
+    for each bhajan in raw data
+      normalize name
+      if normalized name !addressed
+        search searchable name and if 1 match - add metadata
+        if multiple mathes
+          if one full match
+            select
+          else
+            add to manually deal with normalized name
+            [once dealt add the song to addressed]
