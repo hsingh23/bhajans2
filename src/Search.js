@@ -117,10 +117,10 @@ class Search extends Component {
     const { filteredBhajans } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
-      const { n: name, l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
+      const { n: name, t: tags = '', l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
       return (
         <div key={key} style={style} className="bhajanRow">
-          {this.wrappedName(location[0], name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
+          {this.wrappedName(location[0], `${name} ${tags}`, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />)}
           <span className="Search_RightSide">
             {cdbabyBuyUrls && <a className='button button-3d button-circle button-action button-jumbo' href={cdbabyBuyUrls[0]} target='_blank' >$</a>}
             {cdbabySampleUrls && <button className='button button-3d button-circle button-action button-jumbo' onClick={() => this.play(cdbabySampleUrls[0])}>▶</button>}
