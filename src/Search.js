@@ -3,7 +3,7 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import Highlighter from 'react-highlight-words';
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 class Search extends Component {
   constructor(props) {
@@ -13,12 +13,12 @@ class Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      this.filterBhajans();
+      this.filterBhajans({ nextProps, filter: nextProps.path.includes('/my-favorites') ? '' : null });
     }
   }
 
   componentWillMount() {
-    setTimeout(function() {
+    setTimeout(function () {
       document.scrollingElement.scrollTop = window.scrollTop || document.scrollingElement.scrollTop;
     }, 0);
 
@@ -40,10 +40,17 @@ class Search extends Component {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
     return match
       ? <Link to={`/pdf/${match[0]}/${name}`}>
-          {child}
-        </Link>
+        {child}
+      </Link>
       : { child };
   };
+
+  audioTag = document.querySelector('#audio')
+
+  play = (url) => {
+    this.audioTag.src = url.toLowerCase();
+    this.audioTag.play()
+  }
 
   linkify = (name, location) => {
     var re = /\d{4}supl-\d+|vol\d-\d+/gi;
@@ -77,22 +84,23 @@ class Search extends Component {
   makeSearchable = line =>
     line
       .toLowerCase()
-      .replace(/ /g, '')
-      .replace('krs', 'kris')
-      .replace('hr', 'hri')
-      .replace('h', '')
+      .replace(/[^A-z0-9]/g, '')
+      .replace(/kr/g, 'kri')
+      .replace(/hr/g, 'hri')
+      .replace(/h/g, '')
       .replace(/a+/g, 'a')
       .replace(/[iey]+/g, 'iey')
       .replace(/[uo]+/g, 'uo')
       .replace(/[tdl]/g, 'tdl')
-      .replace('z', 'r');
+      .replace(/z/g, 'r');
 
-  filterBhajans = ({ filter } = {}) => {
+  filterBhajans = ({ filter, nextProps } = {}) => {
+    console.log('called');
     // fetchedBhajans is optionally passed - after fetch request
     filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
-    const filterFavorites = this.props.location.pathname.includes('/my-favorites');
+    const filterFavorites = nextProps ? nextProps.path.includes('/my-favorites') : this.props.path.includes('/my-favorites')
 
     const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
       if (filterFavorites) {
@@ -109,11 +117,13 @@ class Search extends Component {
     const { filteredBhajans } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
-      const { n: name, l: location } = window.fetchedBhajans[filteredBhajans[index]];
+      const { n: name, l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
       return (
         <div key={key} style={style} className="bhajanRow">
           {this.wrappedName(location[0], name, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={name} />)}
           <span className="Search_RightSide">
+            {cdbabyBuyUrls && <a className='button button-3d button-circle button-action button-jumbo' href={cdbabyBuyUrls[0]} target='_blank' >$</a>}
+            {cdbabySampleUrls && <button className='button button-3d button-circle button-action button-jumbo' onClick={() => this.play(cdbabySampleUrls[0])}>▶</button>}
             {this.props.renderFavorite(name)}
           </span>
         </div>
@@ -147,10 +157,10 @@ class Search extends Component {
           <nav>
             {!myFavorites
               ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-action">
-                  Only My Favorites
+                Only My Favorites
                 </Link>
               : <Link to="/" className="button button-glow button-rounded button-raised button-primary">
-                  Home
+                Home
                 </Link>}
           </nav>
           <WindowScroller>
@@ -180,4 +190,4 @@ class Search extends Component {
   }
 }
 
-export default withRouter(Search);
+export default Search;

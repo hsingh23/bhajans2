@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import { alert } from 'notie';
+import { alert, confirm } from 'notie';
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
 
 var config = {
@@ -29,9 +29,9 @@ if (window.location.host.includes('localhost')) window.firebase = firebase;
 // };
 
 export const checkRefOnce = ref => {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     db.goOnline();
-    db.ref(ref).once('value').then(function(snapshot) {
+    db.ref(ref).once('value').then(function (snapshot) {
       db.goOffline();
       resolve(snapshot.val());
     });
@@ -68,35 +68,36 @@ export const whenUser = (timeout = 5000) => {
       }
     });
     timeout &&
-      setTimeout(function() {
+      setTimeout(function () {
         reject('Timeout');
       }, timeout);
   });
 };
 
 async function getMessageID() {
-  if (!localStorage.newGcmToken) {
-    await messaging.requestPermission();
-    const token = await messaging.getToken();
-    if (token) {
-      await whenUser(null);
-      db.goOffline();
-      db.goOnline();
-      const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
-      const snap = await userMessagesRef.once('value');
-      if (!snap.val() || !snap.val().tokens) {
-        await userMessagesRef.set({ displayName: auth.currentUser.displayName, email: auth.currentUser.email, tokens: {} });
-      }
-      await userMessagesRef.child(`tokens/${token}`).set('1');
-
-      localStorage.newGcmToken = token;
-      console.log('updated token');
+  // if (!localStorage.newGcmToken) {
+  //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
+  // }
+  await messaging.requestPermission();
+  const token = await messaging.getToken();
+  if (token) {
+    await whenUser(null);
+    db.goOffline();
+    db.goOnline();
+    const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
+    const snap = await userMessagesRef.once('value');
+    if (!snap.val() || !snap.val().tokens) {
+      await userMessagesRef.set({ displayName: auth.currentUser.displayName, email: auth.currentUser.email, tokens: {} });
     }
+    await userMessagesRef.child(`tokens/${token}`).set('1');
+
+    localStorage.newGcmToken = token;
+    console.log('updated token');
   }
 }
 getMessageID();
 
-messaging.onTokenRefresh(async function() {
+messaging.onTokenRefresh(async function () {
   db.goOnline();
   await whenUser(null);
   await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.newGcmToken}`).remove();
