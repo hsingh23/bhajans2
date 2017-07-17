@@ -2,19 +2,19 @@ import { Link } from 'react-router-dom';
 import PDF from 'react-pdf-js';
 import React, { PureComponent } from 'react';
 
-const canRenderPdfNatively = function() {
-  // TODO: perhaps do this with screen size
-  function hasAcrobatInstalled() {
-    function getActiveXObject(name) {
-      try {
-        return new ActiveXObject(name); // eslint-disable-line
-      } catch (e) {}
-    }
-    return getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
-  }
+// const canRenderPdfNatively = function() {
+//   // TODO: perhaps do this with screen size
+//   function hasAcrobatInstalled() {
+//     function getActiveXObject(name) {
+//       try {
+//         return new ActiveXObject(name); // eslint-disable-line
+//       } catch (e) {}
+//     }
+//     return getActiveXObject('AcroPDF.PDF') || getActiveXObject('PDF.PdfCtrl');
+//   }
 
-  return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
-};
+//   return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
+// };
 
 class RenderPage extends PureComponent {
   constructor(props) {
@@ -43,11 +43,11 @@ class RenderPage extends PureComponent {
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>
-          <span className="pdf-previous" onClick={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} />
-          <span className="pdf-prev-arrow arrow" />
-          <span className="pdf-next-arrow arrow" />
-        </span>
+        <span className="pdf-previous" onClick={this.handlePrevious} />
+        <span className="pdf-next" onClick={this.handleNext} />
+        <span className="pdf-prev-arrow arrow" />
+        <span className="pdf-next-arrow arrow" />
+      </span>
       : null;
 
     return (
@@ -66,19 +66,19 @@ class RenderPage extends PureComponent {
           </nav>
         </div>
         <div className="rest">
-          {true && canRenderPdfNatively()
+          {false
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
-                <PDF
-                  file={`/pdfs/${book}.pdf`}
-                  onDocumentComplete={this.onDocumentComplete}
-                  onPageComplete={this.onPageComplete}
-                  page={this.state.page}
-                  scale={3}
-                  style={{ width: '100vw', display: 'block', margin: '0 auto' }}
-                />
-                {pagination}
-              </span>}
+              <PDF
+                file={`/pdfs/${book}.pdf`}
+                onDocumentComplete={this.onDocumentComplete}
+                onPageComplete={this.onPageComplete}
+                page={this.state.page}
+                scale={3}
+                style={{ width: '100vw', display: 'block', margin: '0 auto' }}
+              />
+              {pagination}
+            </span>}
         </div>
       </div>
     );
