@@ -17,7 +17,7 @@ class Admin extends PureComponent {
         console.log('Need to login');
         history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
       }
-      db.ref(`admin/${uid}`).once('value').then(function(snapshot) {
+      db.ref(`admin/${uid}`).once('value').then(function (snapshot) {
         console.log(snapshot.val(), 'value');
 
         if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
@@ -38,12 +38,28 @@ class Admin extends PureComponent {
     return db.goOffline();
   }
 
-  setBeta = function(uid, user) {
+  createEmailTemplate = (user) => {
+    const body = encodeURIComponent(`Om Namah Shivaya ${user.name},
+
+Thank you for joining the beta team for this website 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
+
+If you have see any errors like incorrect page number, broken search, website malfunctions, etc. please let me know at https://feedback.userreport.com/9f29eba3-9795-415f-9f34-3e1a2c8fb6ed/
+ 
+🎉 Thanks so much 🎉
+
+Peace `)
+
+    return window.localStorage.email.includes('gmail') ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent('[sing.withamma.com] Thanks for joining the beta 😄')}&bcc=hisingh1@gmail.com&body=${body}` : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent('[sing.withamma.com] Thanks for joining the beta')}&bcc=hisingh1@gmail.com&body=${body}`
+
+  }
+
+  setBeta = function (uid, user) {
     this.confirmedBeta.child(uid).set(user);
     this.confirmBeta.child(uid).remove();
     this.beta.child(uid).set('1');
+    window.open(this.createEmailTemplate(user))
+    return 1
   };
-
   render() {
     const { users } = this.state;
     return (
