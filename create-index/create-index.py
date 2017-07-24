@@ -23,6 +23,7 @@ for filename in supplements:
 
 # merge and sort file
 bhajans = {}
+supplement_tags = {}
 changed = [f + ".changed.txt" for f in supplements]
 for filename in (["bhajanmritam.txt"] + changed):
     with open(filename, 'r') as f:
@@ -31,6 +32,16 @@ for filename in (["bhajanmritam.txt"] + changed):
                 if len(line.strip()) > 0:
                     (bhajan_name, location) = line.strip().split('##')
                     bhajan_name = bhajan_name.strip()
+                    if (filename.find('bhajanmritam.txt') != 0):
+                        # Brittle Hack, remove tags from sumplements
+                        try:
+                            match = re.match(r"(.+?) *([\(\[])", bhajan_name)
+                            bhajan_name = match.group(1)
+                            tag = re.sub(r"\s*[\(\[\)\]]\s*",",", match.group(2))
+                            tags = [x for x in a.split(',') if len(x) > 0]
+                            supplement_tags[bhajan_name] = tags
+                        except:
+                            pass
                     location = re.split(' *[/\,] *', location.strip())
                     bhajans[bhajan_name] = bhajans[bhajan_name] + \
                         location if bhajan_name in bhajans else location
@@ -56,6 +67,13 @@ def mergeData(filename, key):
 mergeData('video.txt', 'v')
 mergeData('sheetmusic.txt', 's')
 mergeData('tags.txt', 't')
+
+for (bhajan, tags) in supplement_tags.iteritems():
+    if (bhajan in bhajans2 and 'n' in bhajans2[bhajan]):
+        if 't' in bhajans2[bhajan]:
+            bhajans2[bhajan]['t'].extend(tags)
+        else:
+            bhajans2[bhajan]['t'] = tags
 
 with open('bhajan-index.txt', 'w+') as f:
     f.write('\n'.join(final_sorted))

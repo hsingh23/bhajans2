@@ -75,12 +75,12 @@ class Beta extends PureComponent {
           <p>We may contact you via email, and push messages during the beta period to answer short surveys.</p>
           {this.state.optedIn
             ? <div className="bigRedText">
-                <div>Thanks for requesting access to the beta program! This site will automatically redirect once you are approved.</div> While you wait, please
+              <div>Thanks for requesting access to the beta program! This site will automatically redirect once you are approved.</div> While you wait, please
                 support us by liking{' '}
-                <a href="https://www.facebook.com/sing.withamma" target="_blank" rel="noopener noreferrer">
-                  our facebook page
+              <a href="https://www.facebook.com/sing.withamma" target="_blank" rel="noopener noreferrer">
+                our facebook page
                 </a>{' '}
-                and <strong>sharing it with others</strong> who may also make like this website..
+              and <strong>sharing it with others</strong> who may also make like this website..
               </div>
             : <button onClick={this.optIn}>Agree and Continue</button>}
         </div>

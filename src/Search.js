@@ -85,14 +85,18 @@ class Search extends Component {
     line
       .toLowerCase()
       .replace(/[^A-z0-9]/g, '')
-      .replace(/kr/g, 'kri')
-      .replace(/hr/g, 'hri')
+      .replace(/ri?/g, 'ri')
+      .replace(/[kg]il/g, 'kgil') // 2
+      .replace(/[vw]/g, 'vw')
+      .replace(/ny?/g, 'ny')
       .replace(/h/g, '')
       .replace(/a+/g, 'a')
+      .replace(/k+/g, 'k')
+      .replace(/t+/g, 't')
       .replace(/[iey]+/g, 'iey')
       .replace(/[uo]+/g, 'uo')
       .replace(/[tdl]/g, 'tdl')
-      .replace(/z/g, 'r');
+      .replace(/z/g, 'r')
 
   filterBhajans = ({ filter, nextProps } = {}) => {
     console.log('called');
@@ -120,7 +124,9 @@ class Search extends Component {
       const { n: name, t: tags = '', l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
       return (
         <div key={key} style={style} className="bhajanRow">
-          {this.wrappedName(location[0], `${name} ${tags}`, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />)}
+          <div className="capitalize">
+            {this.wrappedName(location[0], `${name} ${tags}`, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />)}
+          </div>
           <span className="Search_RightSide">
             {cdbabyBuyUrls && <a className='button button-3d button-circle button-action button-jumbo' href={cdbabyBuyUrls[0]} target='_blank' >$</a>}
             {cdbabySampleUrls && <button className='button button-3d button-circle button-action button-jumbo' onClick={() => this.play(cdbabySampleUrls[0])}>▶</button>}
