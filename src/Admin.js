@@ -43,6 +43,8 @@ class Admin extends PureComponent {
 
 Thank you for joining the beta team for this website 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
 
+Please like our Facebook page: https://www.facebook.com/sing.withamma/?ref=beta_email 
+
 If you have see any errors like incorrect page number, broken search, website malfunctions, etc. please let me know at https://feedback.userreport.com/9f29eba3-9795-415f-9f34-3e1a2c8fb6ed/
  
 🎉 Thanks so much 🎉
