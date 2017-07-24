@@ -53,14 +53,15 @@ class RenderPage extends PureComponent {
     return (
       <div className="App">
         <div className="App-header">
-          <img src="favicon.ico" alt="Sing " />
-          <div className="title">Amma's Bhajans</div>
-          <div style={{ flexGrow: 1, textOverflow: 'ellipsis' }}>
+          <Link to={'/'} >
+            <img className='favicon' src="favicon.ico" alt="Sing " />
+          </Link>
+          <div style={{ flexGrow: 1, textOverflow: 'ellipsis', textTransform: 'capitalize' }}>
             {this.props.match.params.name}
           </div>
           <nav style={{ flex: '0 0 80px' }}>
             <Link to={'/'} className="button button-circle">
-              ◀
+              <span className="back"></span>
             </Link>
             {this.props.renderFavorite(this.props.match.params.name, 'button button-caution button-circle', 'button button-circle')}
           </nav>

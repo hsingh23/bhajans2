@@ -4,14 +4,18 @@ const makeSearchable = line =>
   line
     .toLowerCase()
     .replace(/[^A-z0-9]/g, '')
-    .replace(/kr/g, 'kri')
-    .replace(/hr/g, 'hri')
+    .replace(/ri?/g, 'ri')
+    .replace(/[kg]il/g, 'kgil') // 2
+    .replace(/[vw]/g, 'vw')
+    .replace(/ny?/g, 'ny')
     .replace(/h/g, '')
     .replace(/a+/g, 'a')
+    .replace(/k+/g, 'k')
+    .replace(/t+/g, 't')
     .replace(/[iey]+/g, 'iey')
     .replace(/[uo]+/g, 'uo')
     .replace(/[tdl]/g, 'tdl')
-    .replace(/z/g, 'r');
+    .replace(/z/g, 'r')
 
 var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches;
 
@@ -55,7 +59,7 @@ function readFiles() {
         addSong(searchableName, song)
         // console.log(song.name);
       } else {
-        var matches = searchableBhajans.filter(b => b.includes(searchableName))
+        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`))
         if (matches.length === 1) {
           addSong(matches[0], song)
           console.log(song.name);
@@ -69,8 +73,10 @@ function readFiles() {
     })
   })
   fs.writeFileSync(path.resolve(__dirname, '../cdbaby.json'), JSON.stringify(searchable));
+  fs.writeFileSync(path.resolve(__dirname, '../noMatch.json'), JSON.stringify(noMatch));
+  fs.writeFileSync(path.resolve(__dirname, '../manyMatches.json'), JSON.stringify(manyMatches));
   console.log(noMatch);
-  console.log(Object.keys(searchable).length, count);
+  console.log(Object.keys(searchable).length, count, Object.keys(noMatch).length, Object.keys(manyMatches).length);
 
   return searchable
 }
