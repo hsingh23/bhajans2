@@ -91,15 +91,18 @@ async function getMessageID() {
       console.log('have user and are online');
       const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
       console.log('awaiting messages');
+      db.goOnline();
       const snap = await userMessagesRef.once('value');
       console.log('got messages');
       if (!snap.val() || !snap.val().tokens) {
         console.log('about to set metadata');
+        db.goOnline();
         await userMessagesRef.set({ displayName: auth.currentUser.displayName, email: auth.currentUser.email, tokens: {} });
         console.log('set metadata');
       }
       if (!snap.val().tokens[token]) {
         console.log('about to set token');
+        db.goOnline();
         await userMessagesRef.child(`tokens/${token}`).set('1');
         console.log('set token');
         localStorage.currentToken = token;
