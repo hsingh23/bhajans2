@@ -43,25 +43,25 @@ class RenderPage extends PureComponent {
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>
-        <span className="pdf-previous" onClick={this.handlePrevious} />
-        <span className="pdf-next" onClick={this.handleNext} />
-        <span className="pdf-prev-arrow arrow" />
-        <span className="pdf-next-arrow arrow" />
-      </span>
+          <span className="pdf-prev-arrow arrow" />
+          <span className="pdf-next-arrow arrow" />
+          <span className="pdf-previous" onClick={this.handlePrevious} />
+          <span className="pdf-next" onClick={this.handleNext} />
+        </span>
       : null;
 
     return (
       <div className="App">
         <div className="App-header">
-          <Link to={'/'} >
-            <img className='favicon' src="favicon.ico" alt="Sing " />
+          <Link to={'/'}>
+            <img className="favicon" src="favicon.ico" alt="Sing " />
           </Link>
           <div style={{ flexGrow: 1, textOverflow: 'ellipsis', textTransform: 'capitalize' }}>
             {this.props.match.params.name}
           </div>
           <nav style={{ flex: '0 0 80px' }}>
             <Link to={'/'} className="button button-circle">
-              <span className="back"></span>
+              <span className="back" />
             </Link>
             {this.props.renderFavorite(this.props.match.params.name, 'button button-caution button-circle', 'button button-circle')}
           </nav>
@@ -70,16 +70,16 @@ class RenderPage extends PureComponent {
           {false
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
-              <PDF
-                file={`/pdfs/${book}.pdf`}
-                onDocumentComplete={this.onDocumentComplete}
-                onPageComplete={this.onPageComplete}
-                page={this.state.page}
-                scale={3}
-                style={{ width: '100vw', display: 'block', margin: '0 auto' }}
-              />
-              {pagination}
-            </span>}
+                <PDF
+                  file={`/pdfs/${book}.pdf`}
+                  onDocumentComplete={this.onDocumentComplete}
+                  onPageComplete={this.onPageComplete}
+                  page={this.state.page}
+                  scale={3}
+                  style={{ width: '100vw', display: 'block', margin: '0 auto' }}
+                />
+                {pagination}
+              </span>}
         </div>
       </div>
     );
