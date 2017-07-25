@@ -87,6 +87,7 @@ async function getMessageID() {
     console.log('Token: ', token);
     if (token) {
       await whenUser(null);
+      db.goOnline();
       const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
       const snap = await userMessagesRef.once('value');
       if (!snap.val() || !snap.val().tokens) {
