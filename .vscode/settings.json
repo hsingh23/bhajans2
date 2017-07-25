@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
   "editor.formatOnSave": true,
-  "beautify.tabSize": 2
+  "beautify.tabSize": 2,
+  "prettier.singleQuote": true
 }
