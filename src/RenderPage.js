@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PDF from 'react-pdf-js';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
 // const canRenderPdfNatively = function() {
 //   // TODO: perhaps do this with screen size
@@ -16,7 +16,7 @@ import React, { PureComponent } from 'react';
 //   return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
 // };
 
-class RenderPage extends PureComponent {
+class RenderPage extends Component {
   constructor(props) {
     super(props);
     const page = props.match.params.location.split('-')[1];
