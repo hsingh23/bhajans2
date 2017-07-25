@@ -75,7 +75,7 @@ export const whenUser = (timeout = 5000) => {
 };
 
 async function getMessageID() {
-  // if (!localStorage.newGcmToken) {
+  // if (!localStorage.currentToken) {
   //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
   // }
   try {
@@ -88,15 +88,22 @@ async function getMessageID() {
     if (token) {
       await whenUser(null);
       db.goOnline();
+      console.log('have user and are online');
       const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
+      console.log('awaiting messages');
       const snap = await userMessagesRef.once('value');
+      console.log('got messages');
       if (!snap.val() || !snap.val().tokens) {
+        console.log('about to set metadata');
         await userMessagesRef.set({ displayName: auth.currentUser.displayName, email: auth.currentUser.email, tokens: {} });
+        console.log('set metadata');
       }
-      await userMessagesRef.child(`tokens/${token}`).set('1');
-
-      localStorage.newGcmToken = token;
-      console.log('updated token');
+      if (!snap.val().tokens[token]) {
+        console.log('about to set token');
+        await userMessagesRef.child(`tokens/${token}`).set('1');
+        console.log('set token');
+        localStorage.currentToken = token;
+      }
     }
   } catch (error) {
     console.error(error);
@@ -108,8 +115,8 @@ messaging.onTokenRefresh(async function() {
   db.goOnline();
   console.log('onTokenRefresh');
   await whenUser(null);
-  await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.newGcmToken}`).remove();
-  delete localStorage.newGcmToken;
+  await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`).remove();
+  delete localStorage.currentToken;
   getMessageID();
 });
 
