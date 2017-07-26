@@ -12,7 +12,7 @@ class Login extends Component {
     const next = getNext();
     if (localStorage.beta === '1') return history.replace(next);
 
-    const redirectOnLogin = async function(user) {
+    const redirectOnLogin = async function (user) {
       const beta = await checkRefOnce(`/beta/${user.uid}`);
       const admin = await checkRefOnce(`/admin/${user.uid}`);
       if (admin !== null) localStorage.admin = 1;
@@ -69,7 +69,8 @@ class Login extends Component {
   }
 
   render() {
-    return <div id="firebaseui-auth" />;
+    return <div><h1>Create an account or log in.</h1><div id="firebaseui-auth" /></div>
+
   }
 }
 
