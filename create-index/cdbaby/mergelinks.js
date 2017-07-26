@@ -1,5 +1,6 @@
 var fs = require('fs');
-var path = require('path')
+var path = require('path');
+var _ = require('lodash');
 const makeSearchable = line =>
   line
     .toLowerCase()
@@ -15,72 +16,71 @@ const makeSearchable = line =>
     .replace(/[iey]+/g, 'iey')
     .replace(/[uo]+/g, 'uo')
     .replace(/[tdl]/g, 'tdl')
-    .replace(/z/g, 'r')
+    .replace(/z/g, 'r');
 
 var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches;
 
 function readBhajanIndex() {
-  bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json')))
-  searchableBhajans = []
-  searchableBhajansObject = {}
+  bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json')));
+  searchableBhajans = [];
+  searchableBhajansObject = {};
   bhajans.forEach((bhajan, i) => {
     !bhajan.n && console.log(bhajan, i);
-    var s = makeSearchable(bhajan.n)
-    searchableBhajansObject[s] = i
-    searchableBhajans.push(s)
-  })
+    var s = makeSearchable(bhajan.n);
+    if (bhajan.t) bhajan.t = _.sortedUniq(bhajan.t);
+    searchableBhajansObject[s] = i;
+    searchableBhajans.push(s);
+  });
 }
 
 function writeNewBhajanIndex() {
   fs.writeFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json'), JSON.stringify(bhajans));
 }
 
-
 function readFiles() {
-  count = 0
-  noMatch = []
-  manyMatches = []
-  var searchable = {}
+  count = 0;
+  noMatch = [];
+  manyMatches = [];
+  var searchable = {};
   function addSong(fullSearch, song) {
-    var realBhajan = bhajans[searchableBhajansObject[fullSearch]]
-    realBhajan.cu = realBhajan.cu || []
-    realBhajan.cs = realBhajan.cs || []
-    realBhajan.cu.push(song.u)
-    realBhajan.cs.push(song.mp3.replace('https://content.cdbaby.com/audio/samples/d073192b/', 'https://s3.amazonaws.com/amma-bhajan-samples/'))
+    var realBhajan = bhajans[searchableBhajansObject[fullSearch]];
+    realBhajan.cu = realBhajan.cu || [];
+    realBhajan.cs = realBhajan.cs || [];
+    realBhajan.cu.push(song.u);
+    realBhajan.cs.push(song.mp3.replace('https://content.cdbaby.com/audio/samples/d073192b/', 'https://s3.amazonaws.com/amma-bhajan-samples/'));
     count += 1;
   }
   fs.readdirSync(path.resolve(__dirname)).filter(x => x.endsWith('json')).map(f => {
     JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map(song => {
-      var searchableName = makeSearchable(song.name.replace(/[\[\(].*[\]\)]/gi, ''))
+      var searchableName = makeSearchable(song.name.replace(/[\[\(].*[\]\)]/gi, ''));
       // if (searchable[searchableName]) console.log('Exists', searchable[searchableName].name, song.name, searchableName);
-      song.sn = searchableName
-      searchable[song.name] = song
+      song.sn = searchableName;
+      searchable[song.name] = song;
       if (searchableBhajansObject[searchableName]) {
-        addSong(searchableName, song)
+        addSong(searchableName, song);
         // console.log(song.name);
       } else {
-        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`))
+        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
         if (matches.length === 1) {
-          addSong(matches[0], song)
+          addSong(matches[0], song);
           console.log(song.name);
-
         } else if (matches.length === 0) {
-          noMatch.push(song)
+          noMatch.push(song);
         } else {
-          manyMatches.push([song, matches])
+          manyMatches.push([song, matches]);
         }
       }
-    })
-  })
+    });
+  });
   fs.writeFileSync(path.resolve(__dirname, '../cdbaby.json'), JSON.stringify(searchable));
   fs.writeFileSync(path.resolve(__dirname, '../noMatch.json'), JSON.stringify(noMatch));
   fs.writeFileSync(path.resolve(__dirname, '../manyMatches.json'), JSON.stringify(manyMatches));
   console.log(noMatch);
   console.log(Object.keys(searchable).length, count, Object.keys(noMatch).length, Object.keys(manyMatches).length);
 
-  return searchable
+  return searchable;
 }
 
-readBhajanIndex()
-readFiles()
-writeNewBhajanIndex()
+readBhajanIndex();
+readFiles();
+writeNewBhajanIndex();
