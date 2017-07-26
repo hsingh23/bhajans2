@@ -25,9 +25,7 @@
   height: 100%;
   border-bottom: 1px solid black;
 }
-.capitalize {
-  /*text-transform: capitalize;*/
-}
+
 .App-header {
   display: flex;
   position: fixed;
