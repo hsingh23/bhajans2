@@ -51,7 +51,7 @@ If you have see any errors like incorrect page number, broken search, website ma
 
 Peace `);
 
-    return window.localStorage.email.includes('gmail')
+    return window.localStorage.email.includes('gmail') && window.document.documentElement.clientWidth > 1024
       ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent(
           '[sing.withamma.com] Thanks for joining the beta 😄'
         )}&bcc=hisingh1@gmail.com&body=${body}`
