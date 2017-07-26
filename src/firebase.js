@@ -22,13 +22,13 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   // don't worry about going online and offline right now
   const goOffline = () => {
     history.push(['off', +new Date() - startTime]);
-    !initialWait && db.goOffline();
+    // !initialWait && db.goOffline();
     console.log('off', history);
   };
 
   const goOnline = () => {
     history.push(['on', +new Date() - startTime]);
-    !initialWait && db.goOnline();
+    // !initialWait && db.goOnline();
     console.log('on', history);
   };
 
