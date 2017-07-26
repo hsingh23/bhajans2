@@ -21,7 +21,12 @@ const Pdf = onlyUpdateForKeys(['page'])(PDF);
 class RenderPage extends Component {
   constructor(props) {
     super(props);
-    const page = props.match.params.location.split('-')[1];
+    var book, page, url;
+    if (!props.match.params.location.includes('.pdf')) {
+      var [book, page] = props.match.params.location.split('-')[1];
+    } else {
+      page = '1'
+    }
     this.state = { page: parseInt(page, 10) };
     if (!+localStorage.beta) {
       //  beta -> render (this case should not happen)
@@ -45,17 +50,25 @@ class RenderPage extends Component {
   handlePrevious = () => this.state.page > 1 && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
   render() {
-    const name = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].n;
-    const cdbabyBuyUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].cu;
-    const cdbabySampleUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].cs;
-    const [book, page] = this.props.match.params.location.split('-');
+    const { bhajans = {}, match: { params: { id, location } } } = this.props
+    const name = bhajans && bhajans[id] && bhajans[id].n;
+    const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
+    const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
+    var book, page, url, scale = 3;
+    if (!location.includes('.pdf')) {
+      var [book, page] = location.split('-');
+      url = `/pdfs/${book}.pdf`
+    } else {
+      url = `https://s3.amazonaws.com/amma-bhajans-sheetmusic/${location}`
+      scale = 1
+    }
     const pagination = this.state.pages
       ? <span>
-          <span className="pdf-prev-arrow arrow" />
-          <span className="pdf-next-arrow arrow" />
-          <span className="pdf-previous" onClick={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} />
-        </span>
+        <span className="pdf-prev-arrow arrow" />
+        <span className="pdf-next-arrow arrow" />
+        <span className="pdf-previous" onClick={this.handlePrevious} />
+        <span className="pdf-next" onClick={this.handleNext} />
+      </span>
       : null;
 
     return (
@@ -70,15 +83,15 @@ class RenderPage extends Component {
           <nav style={{ flex: '0 0 160px' }}>
             {cdbabyBuyUrls &&
               <a className="button button-3d button-circle button-action" href={cdbabyBuyUrls[0]} target="_blank">
-                📀
+                <span role='img' aria-label='cd'>💿</span>
               </a>}
             {cdbabySampleUrls &&
               <button className="button button-3d button-circle button-action" onClick={() => this.play(cdbabySampleUrls[0])}>
-                🎧
+                <span role='img' aria-label='music sample'>🎧</span>
               </button>}
             {this.props.renderFavorite(name, 'button button-caution button-circle', 'button button-circle')}
             <Link to={'/'} className="button button-circle">
-              🏠
+              <span role='img' aria-label='home'>🏠</span>
             </Link>
           </nav>
         </div>
@@ -86,16 +99,16 @@ class RenderPage extends Component {
           {false
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
-                <Pdf
-                  file={`/pdfs/${book}.pdf`}
-                  onDocumentComplete={this.onDocumentComplete}
-                  onPageComplete={this.onPageComplete}
-                  page={this.state.page}
-                  scale={3}
-                  style={{ maxWidth: '1220px', width: '100vw', display: 'block', margin: '0 auto' }}
-                />
-                {pagination}
-              </span>}
+              <Pdf
+                file={url}
+                onDocumentComplete={this.onDocumentComplete}
+                onPageComplete={this.onPageComplete}
+                page={this.state.page}
+                scale={scale}
+                style={{ maxWidth: '1220px', width: '100vw', display: 'block', margin: '0 auto' }}
+              />
+              {pagination}
+            </span>}
         </div>
       </div>
     );
