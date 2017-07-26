@@ -121,7 +121,7 @@ class Search extends Component {
     const { filteredBhajans } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
-      const { n: name, t: tags = '', l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
+      const { sm: sheetmusic, n: name, t: tags = '', l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : '';
       return (
         <div key={key} style={style} className="bhajanRow">
@@ -133,13 +133,17 @@ class Search extends Component {
             )}
           </div>
           <span className="Search_RightSide">
+            {sheetmusic &&
+              <Link className="button button-3d button-circle button-action button-jumbo" to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}>
+                <span role='img' aria-label='sheet music'>🎼</span>
+              </Link>}
             {cdbabyBuyUrls &&
               <a className="button button-3d button-circle button-action button-jumbo" href={cdbabyBuyUrls[0]} target="_blank">
-                📀
+                <span role='img' aria-label='cd'>💿</span>
               </a>}
             {cdbabySampleUrls &&
               <button className="button button-3d button-circle button-action button-jumbo" onClick={() => this.play(cdbabySampleUrls[0])}>
-                🎧
+                <span role='img' aria-label='music sample'>🎧</span>
               </button>}
             {this.props.renderFavorite(name)}
           </span>

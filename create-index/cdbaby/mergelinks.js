@@ -18,7 +18,7 @@ const makeSearchable = line =>
     .replace(/[tdl]/g, 'tdl')
     .replace(/z/g, 'r');
 
-var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches;
+var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches, noMatchSheet, manyMatchesSheet;
 
 function readBhajanIndex() {
   bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json')));
@@ -81,6 +81,37 @@ function readFiles() {
   return searchable;
 }
 
+function readSheetMusic() {
+  var smCount = 0
+  noMatchSheet = []
+  manyMatchesSheet = []
+  function addSheetMusic(searchableName, filename) {
+    var realBhajan = bhajans[searchableBhajansObject[searchableName]];
+    realBhajan.sm = realBhajan.sm || [];
+    realBhajan.sm.push(filename);
+    smCount += 1;
+  }
+  fs.readdirSync(path.resolve(__dirname, '../../public/pdfs/sheetmusic/')).filter(x => x.endsWith('pdf')).map(filename => {
+    var [filename, name, key] = filename.match(/(.*)([A-Z].*?)\.pdf$/)
+    var searchableName = makeSearchable(name)
+    if (searchableBhajansObject[searchableName]) {
+      addSheetMusic(searchableName, filename);
+    } else {
+      var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
+      if (matches.length === 1) {
+        addSheetMusic(matches[0], filename);
+        console.log(filename);
+      } else if (matches.length === 0) {
+        noMatchSheet.push(filename);
+      } else {
+        manyMatchesSheet.push([filename, matches]);
+      }
+    }
+  });
+  console.log(smCount, Object.keys(noMatchSheet).length, Object.keys(manyMatchesSheet).length);
+}
+
 readBhajanIndex();
 readFiles();
+readSheetMusic();
 writeNewBhajanIndex();
