@@ -13,7 +13,7 @@ module.exports = {
   ],
   navigateFallback: 'build/index.html',
   ignoreUrlParametersMatching: [/^utm_/, /^mode/],
-  importScripts: ['firebase-messaging-service-worker.js'],
+  importScripts: ['firebase-messaging-sw.js'],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
   swFilePath: 'build/service-worker.js'
 };
