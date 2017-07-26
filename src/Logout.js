@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { auth, db } from './firebase';
+import { auth, goOnline, goOffline } from './firebase';
 import { getNext } from './util';
 
 class Logout extends Component {
   componentWillMount() {
-    db.goOnline();
+    goOnline();
     auth.signOut();
     localStorage.clear();
-    db.goOffline();
+    goOffline();
     this.props.history.push(getNext());
   }
 
