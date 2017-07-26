@@ -1,15 +1,20 @@
 *:focus {
-    outline: none;
+  outline: none;
 }
 
+.pdfview {
+  width: '100vw';
+  display: 'block';
+  margin: '0 auto';
+}
 .spaced {
   padding: 0 10px;
 }
 
 .favicon {
-    width: 35px;
-    border-radius: 23px;
-    padding-right: 5px;
+  width: 35px;
+  border-radius: 23px;
+  padding-right: 5px;
 }
 
 .bhajanRow {
@@ -41,18 +46,18 @@
 }
 
 .back::before {
-    position: relative;
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-right: 0.2em solid black;
-    border-top: 0.2em solid black;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(225deg);
-    margin-left: 4px;
-    transition: transform 0.5s;
+  position: relative;
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 0.2em solid black;
+  border-top: 0.2em solid black;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(225deg);
+  margin-left: 4px;
+  transition: transform 0.5s;
 }
 
 .back:hover::before {

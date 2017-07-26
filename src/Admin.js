@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { auth, db } from './firebase';
+import { auth, db, goOnline, goOffline } from './firebase';
 import { Link } from 'react-router-dom';
 
 class Admin extends PureComponent {
@@ -10,14 +10,14 @@ class Admin extends PureComponent {
 
   componentWillMount() {
     const { history, match } = this.props;
-    db.goOnline();
+    goOnline();
     const awaitCurrentUser = () => {
       const uid = (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
       if (!uid) {
         console.log('Need to login');
         history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
       }
-      db.ref(`admin/${uid}`).once('value').then(function (snapshot) {
+      db.ref(`admin/${uid}`).once('value').then(function(snapshot) {
         console.log(snapshot.val(), 'value');
 
         if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
@@ -35,10 +35,10 @@ class Admin extends PureComponent {
     // TODO: set renewBeta table
   }
   componentWillUnmount() {
-    return db.goOffline();
+    return goOffline();
   }
 
-  createEmailTemplate = (user) => {
+  createEmailTemplate = user => {
     const body = encodeURIComponent(`Om Namah Shivaya ${user.name},
 
 Thank you for joining the beta team for this website 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
@@ -49,18 +49,23 @@ If you have see any errors like incorrect page number, broken search, website ma
  
 🎉 Thanks so much 🎉
 
-Peace `)
+Peace `);
 
-    return window.localStorage.email.includes('gmail') ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent('[sing.withamma.com] Thanks for joining the beta 😄')}&bcc=hisingh1@gmail.com&body=${body}` : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent('[sing.withamma.com] Thanks for joining the beta')}&bcc=hisingh1@gmail.com&body=${body}`
+    return window.localStorage.email.includes('gmail')
+      ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent(
+          '[sing.withamma.com] Thanks for joining the beta 😄'
+        )}&bcc=hisingh1@gmail.com&body=${body}`
+      : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent(
+          '[sing.withamma.com] Thanks for joining the beta'
+        )}&bcc=hisingh1@gmail.com&body=${body}`;
+  };
 
-  }
-
-  setBeta = function (uid, user) {
+  setBeta = function(uid, user) {
     this.confirmedBeta.child(uid).set(user);
     this.confirmBeta.child(uid).remove();
     this.beta.child(uid).set('1');
-    window.open(this.createEmailTemplate(user))
-    return 1
+    window.open(this.createEmailTemplate(user));
+    return 1;
   };
   render() {
     const { users } = this.state;
@@ -73,21 +78,24 @@ Peace `)
           </nav>
         </div>
         <div className="restPage">
-          <p>
-            The following people are waiting to get access to the app
-          </p>
+          <p>The following people are waiting to get access to the app</p>
           <table>
             <tbody>
               {users &&
                 Object.entries(users).map(([uid, user]) =>
                   <tr key={uid}>
-                    <td>{user.name}</td>
-                    <td>{user.email} <small>{uid}</small></td>
+                    <td>
+                      {user.name}
+                    </td>
+                    <td>
+                      {user.email} <small>{uid}</small>
+                    </td>
                     <td>
                       <button
                         onClick={() => {
                           this.setBeta(uid, user);
-                        }}>
+                        }}
+                      >
                         beta
                       </button>
                     </td>

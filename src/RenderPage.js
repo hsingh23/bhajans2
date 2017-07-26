@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PDF from 'react-pdf-js';
 import React, { Component } from 'react';
+import { onlyUpdateForKeys } from 'recompose';
 
 // const canRenderPdfNatively = function() {
 //   // TODO: perhaps do this with screen size
@@ -16,6 +17,7 @@ import React, { Component } from 'react';
 //   return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
 // };
 
+const Pdf = onlyUpdateForKeys(['page'])(PDF);
 class RenderPage extends Component {
   constructor(props) {
     super(props);
@@ -33,13 +35,19 @@ class RenderPage extends Component {
     //   props.history.push(`/login?next=${encodeURIComponent(props.location.pathname)}`);
     // }
   }
-
+  play = url => {
+    this.audioTag.src = url.toLowerCase();
+    this.audioTag.play();
+  };
+  audioTag = document.querySelector('#audio');
   onPageComplete = page => this.setState({ page });
   onDocumentComplete = pages => this.setState({ pages });
   handlePrevious = () => this.state.page > 1 && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
-
   render() {
+    const name = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].n;
+    const cdbabyBuyUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].cu;
+    const cdbabySampleUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].cs;
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>
@@ -57,26 +65,34 @@ class RenderPage extends Component {
             <img className="favicon" src="favicon.ico" alt="Sing " />
           </Link>
           <div style={{ flexGrow: 1, textOverflow: 'ellipsis', textTransform: 'capitalize' }}>
-            {this.props.match.params.name}
+            {name}
           </div>
-          <nav style={{ flex: '0 0 80px' }}>
+          <nav style={{ flex: '0 0 160px' }}>
+            {cdbabyBuyUrls &&
+              <a className="button button-3d button-circle button-action" href={cdbabyBuyUrls[0]} target="_blank">
+                📀
+              </a>}
+            {cdbabySampleUrls &&
+              <button className="button button-3d button-circle button-action" onClick={() => this.play(cdbabySampleUrls[0])}>
+                🎧
+              </button>}
+            {this.props.renderFavorite(name, 'button button-caution button-circle', 'button button-circle')}
             <Link to={'/'} className="button button-circle">
-              <span className="back" />
+              🏠
             </Link>
-            {this.props.renderFavorite(this.props.match.params.name, 'button button-caution button-circle', 'button button-circle')}
           </nav>
         </div>
         <div className="rest">
           {false
             ? <embed src={`/pdfs/${book}.pdf#page=${page}`} style={{ width: '100vw', height: 'calc( 100vh - 56px )' }} />
             : <span>
-                <PDF
+                <Pdf
                   file={`/pdfs/${book}.pdf`}
                   onDocumentComplete={this.onDocumentComplete}
                   onPageComplete={this.onPageComplete}
                   page={this.state.page}
                   scale={3}
-                  style={{ width: '100vw', display: 'block', margin: '0 auto' }}
+                  style={{ maxWidth: '1220px', width: '100vw', display: 'block', margin: '0 auto' }}
                 />
                 {pagination}
               </span>}

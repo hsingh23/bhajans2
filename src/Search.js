@@ -18,7 +18,7 @@ class Search extends Component {
   }
 
   componentWillMount() {
-    setTimeout(function () {
+    setTimeout(function() {
       document.scrollingElement.scrollTop = window.scrollTop || document.scrollingElement.scrollTop;
     }, 0);
 
@@ -40,17 +40,17 @@ class Search extends Component {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
     return match
       ? <Link to={`/pdf/${match[0]}/${name}`}>
-        {child}
-      </Link>
+          {child}
+        </Link>
       : { child };
   };
 
-  audioTag = document.querySelector('#audio')
+  audioTag = document.querySelector('#audio');
 
-  play = (url) => {
+  play = url => {
     this.audioTag.src = url.toLowerCase();
-    this.audioTag.play()
-  }
+    this.audioTag.play();
+  };
 
   linkify = (name, location) => {
     var re = /\d{4}supl-\d+|vol\d-\d+/gi;
@@ -96,7 +96,7 @@ class Search extends Component {
       .replace(/[iey]+/g, 'iey')
       .replace(/[uo]+/g, 'uo')
       .replace(/[tdl]/g, 'tdl')
-      .replace(/z/g, 'r')
+      .replace(/z/g, 'r');
 
   filterBhajans = ({ filter, nextProps } = {}) => {
     console.log('called');
@@ -104,7 +104,7 @@ class Search extends Component {
     filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
-    const filterFavorites = nextProps ? nextProps.path.includes('/my-favorites') : this.props.path.includes('/my-favorites')
+    const filterFavorites = nextProps ? nextProps.path.includes('/my-favorites') : this.props.path.includes('/my-favorites');
 
     const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
       if (filterFavorites) {
@@ -125,11 +125,21 @@ class Search extends Component {
       return (
         <div key={key} style={style} className="bhajanRow">
           <div className="capitalize">
-            {this.wrappedName(location[0], `${name} ${tags}`, <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />)}
+            {this.wrappedName(
+              location[0],
+              filteredBhajans[index],
+              <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />
+            )}
           </div>
           <span className="Search_RightSide">
-            {cdbabyBuyUrls && <a className='button button-3d button-circle button-action button-jumbo' href={cdbabyBuyUrls[0]} target='_blank' >$</a>}
-            {cdbabySampleUrls && <button className='button button-3d button-circle button-action button-jumbo' onClick={() => this.play(cdbabySampleUrls[0])}>▶</button>}
+            {cdbabyBuyUrls &&
+              <a className="button button-3d button-circle button-action button-jumbo" href={cdbabyBuyUrls[0]} target="_blank">
+                📀
+              </a>}
+            {cdbabySampleUrls &&
+              <button className="button button-3d button-circle button-action button-jumbo" onClick={() => this.play(cdbabySampleUrls[0])}>
+                🎧
+              </button>}
             {this.props.renderFavorite(name)}
           </span>
         </div>
@@ -163,10 +173,10 @@ class Search extends Component {
           <nav>
             {!myFavorites
               ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-action">
-                Only My Favorites
+                  Only My Favorites
                 </Link>
               : <Link to="/" className="button button-glow button-rounded button-raised button-primary">
-                Home
+                  Home
                 </Link>}
           </nav>
           <WindowScroller>

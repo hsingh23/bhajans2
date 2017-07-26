@@ -15,11 +15,11 @@ class App extends Component {
     // if you don't care about syncing between devices, we can use localstorage for favorites
     const favorites = getJson('favorites') || {};
     setJson('favorites', favorites);
-    this.state = { favorites };
+    this.state = { favorites, bhajans: [] };
   }
 
   componentDidMount() {
-    const { haveUser, noUser } = (function (self) {
+    const { haveUser, noUser } = (function(self) {
       return {
         haveUser: user => {
           checkRefOnce(`favorites/${user.uid}`).then(favorites => {
@@ -31,9 +31,15 @@ class App extends Component {
         noUser: reason => {
           confirm({ text: 'Login to sync favorite?' }, () => self.props.history.push('/login'));
           console.log(`No user: ${reason}`);
-        },
+        }
       };
     })(this);
+    if (!window.searchableBhajans) {
+      window.fetch('./bhajan-index2.json').then(data => data.json()).then(fetchedBhajans => {
+        window.fetchedBhajans = fetchedBhajans;
+        this.setState({ bhajans: fetchedBhajans });
+      });
+    }
 
     whenUser(3000).then(haveUser, noUser);
   }
@@ -63,26 +69,28 @@ class App extends Component {
   renderFavorite = (name, activeClassName, inactiveClassName) => {
     return this.state.favorites[name]
       ? <button className={activeClassName || 'button button-3d button-caution button-circle button-jumbo'} onClick={() => this.removeFavorite(name)}>
-        ♥
-          </button>
+          💖
+        </button>
       : <button className={inactiveClassName || 'button button-3d button-circle button-jumbo'} onClick={() => this.addFavorite(name)}>
-        ♡
-          </button>;
+          💟
+        </button>;
   };
 
   render() {
-    const { favorites } = this.state;
+    const { favorites, bhajans } = this.state;
     const { addFavorite, removeFavorite, renderFavorite } = this;
-    const additionalProps = { favorites, addFavorite, removeFavorite, renderFavorite };
-    return <Switch>
-      <PropsRoute exact path="/" component={Search} {...additionalProps} />
-      <PropsRoute exact path="/my-favorites" component={Search}  {...additionalProps} />
-      <PropsRoute path="/pdf/:location/:name" component={RenderPage}  {...additionalProps} />
-      <Redirect path='*' to='/' />
-    </Switch>
+    const additionalProps = { favorites, addFavorite, removeFavorite, renderFavorite, bhajans };
+    return (
+      <Switch>
+        <PropsRoute exact path="/" component={Search} {...additionalProps} />
+        <PropsRoute exact path="/my-favorites" component={Search} {...additionalProps} />
+        <PropsRoute path="/pdf/:location/:name" component={RenderPage} {...additionalProps} />
+        <Redirect path="*" to="/" />
+      </Switch>
+    );
 
     // {React.cloneElement(children, { ...rest, ...childrenConfig })}
   }
-};
+}
 
 export default App;
