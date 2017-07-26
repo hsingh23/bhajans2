@@ -122,13 +122,14 @@ class Search extends Component {
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
       const { n: name, t: tags = '', l: location, cs: cdbabySampleUrls, cu: cdbabyBuyUrls } = window.fetchedBhajans[filteredBhajans[index]];
+      const tag = tags ? ` (${tags})` : '';
       return (
         <div key={key} style={style} className="bhajanRow">
           <div className="capitalize">
             {this.wrappedName(
-              location[0],
+              `${location[0]}/${name}`,
               filteredBhajans[index],
-              <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name} ${tags}`} />
+              <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name}${tag}`} />
             )}
           </div>
           <span className="Search_RightSide">

@@ -17,7 +17,7 @@ for filename in supplements:
             (searchable, original) = line.split(',')
             original = original.strip()
             content = re.sub(original, searchable, content)
-    # write substitutions
+    # write substitutionse
     with open(filename + ".changed.txt", 'w+') as f:
         f.write(content)
 
@@ -35,12 +35,14 @@ for filename in (["bhajanmritam.txt"] + changed):
                     if (filename.find('bhajanmritam.txt') != 0):
                         # Brittle Hack, remove tags from sumplements
                         try:
-                            match = re.match(r"(.+?) *([\(\[])", bhajan_name)
+                            match = re.match(r"(.+?) *([\(\[].*)", bhajan_name)
                             bhajan_name = match.group(1)
-                            tag = re.sub(r"\s*[\(\[\)\]]\s*",",", match.group(2))
-                            tags = [x for x in a.split(',') if len(x) > 0]
+                            tag = re.sub(r"\s*[\(\[\)\]]\s*",
+                                         ",", match.group(2))
+                            tags = [x for x in tag.split(',') if len(x) > 0]
+                            print tags
                             supplement_tags[bhajan_name] = tags
-                        except:
+                        except Exception, e:
                             pass
                     location = re.split(' *[/\,] *', location.strip())
                     bhajans[bhajan_name] = bhajans[bhajan_name] + \
@@ -51,8 +53,9 @@ final_sorted = [bhajan + ' ## ' +
                 ','.join(info) for (bhajan, info) in sorted(bhajans.items())]
 
 bhajans2 = {}
-for (bhajan, location) in bhajans.items():
+for bhajan, location in bhajans.items():
     bhajans2[bhajan] = {"l": location, 'n': bhajan}
+
 
 def mergeData(filename, key):
     with open(filename, 'r') as f:
@@ -64,12 +67,13 @@ def mergeData(filename, key):
                 else:
                     print bhajan, data
 
+
 mergeData('video.txt', 'v')
 mergeData('sheetmusic.txt', 's')
 mergeData('tags.txt', 't')
 
 for (bhajan, tags) in supplement_tags.iteritems():
-    if (bhajan in bhajans2 and 'n' in bhajans2[bhajan]):
+    if bhajan in bhajans2:
         if 't' in bhajans2[bhajan]:
             bhajans2[bhajan]['t'].extend(tags)
         else:
