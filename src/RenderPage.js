@@ -92,7 +92,7 @@ class RenderPage extends Component {
               </button>}
             {this.props.renderFavorite(name, 'button button-caution button-circle', 'button button-circle')}
             <Link to={'/'} className="button button-circle">
-              <span role='img' aria-label='home'>🏠</span>
+              <span role='img' aria-label='back'>🔙</span>
             </Link>
           </nav>
         </div>
