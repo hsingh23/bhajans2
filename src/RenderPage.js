@@ -23,7 +23,7 @@ class RenderPage extends Component {
     super(props);
     var page;
     if (!props.match.params.location.includes('.pdf')) {
-      var page = props.match.params.location.split('-')[1];
+      page = props.match.params.location.split('-')[1];
     } else {
       page = '1'
     }
@@ -56,11 +56,12 @@ class RenderPage extends Component {
     const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
     var book, page, url, scale = 3;
     if (!location.includes('.pdf')) {
-      var [book, page] = location.split('-');
+      [book, page] = location.split('-');
       url = `/pdfs/${book}.pdf`
     } else {
       url = `https://s3.amazonaws.com/amma-bhajans-sheetmusic/${location}`
       scale = 1
+      page = 1
     }
     const pagination = this.state.pages
       ? <span>
