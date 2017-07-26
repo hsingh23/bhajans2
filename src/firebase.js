@@ -155,6 +155,8 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     console.log(payload);
     alert({ text: payload.notification.body });
   });
+  window.firebase = firebase
+  window.messaging = messaging
   return {
     firebaseApp,
     db,
