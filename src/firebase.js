@@ -55,9 +55,9 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   // };
 
   const checkRefOnce = ref => {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       goOnline();
-      db.ref(ref).once('value').then(function(snapshot) {
+      db.ref(ref).once('value').then(function (snapshot) {
         goOffline();
         resolve(snapshot.val());
       });
@@ -94,7 +94,7 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
         }
       });
       timeout &&
-        setTimeout(function() {
+        setTimeout(function () {
           reject('Timeout');
         }, timeout);
     });
@@ -105,7 +105,9 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
     // }
     try {
+      console.log('requesting permissions to notify');
       await messaging.requestPermission();
+      console.log('got permission');
       const token = await messaging.getToken().then(token => {
         console.log('token returned: ', token);
         return token;
@@ -140,7 +142,7 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   }
   getMessageID();
 
-  messaging.onTokenRefresh(async function() {
+  messaging.onTokenRefresh(async function () {
     goOnline();
     console.log('onTokenRefresh');
     await whenUser(null);
