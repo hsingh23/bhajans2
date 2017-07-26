@@ -31,14 +31,16 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     !initialWait && db.goOnline();
     console.log('on', history);
   };
-  setTimeout(
-    wrap({ initialWait, goOffline, startTime, history }, ({ initialWait, goOffline, startTime, history }) => {
-      initialWait = false;
-      history.push(['initialWaitOver', +new Date() - startTime]);
-      goOffline();
-    }),
-    15 * 1000
-  );
+
+  !window.localStorage.admin &&
+    setTimeout(
+      wrap({ initialWait, goOffline, startTime, history }, ({ initialWait, goOffline, startTime, history }) => {
+        initialWait = false;
+        history.push(['initialWaitOver', +new Date() - startTime]);
+        !window.localStorage.admin && goOffline();
+      }),
+      15 * 1000
+    );
 
   const auth = firebase.auth(); //the firebase auth namespace
   const messaging = firebase.messaging();
@@ -159,7 +161,9 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     whenUser,
     removeRefOnce,
     auth,
-    messaging
+    messaging,
+    goOnline,
+    goOffline
   };
 })();
 export { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth, firebase, messaging, goOffline, goOnline };
