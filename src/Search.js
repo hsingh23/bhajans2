@@ -18,7 +18,7 @@ class Search extends Component {
   }
 
   componentWillMount() {
-    setTimeout(function() {
+    setTimeout(function () {
       document.scrollingElement.scrollTop = window.scrollTop || document.scrollingElement.scrollTop;
     }, 0);
 
@@ -40,8 +40,8 @@ class Search extends Component {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
     return match
       ? <Link to={`/pdf/${match[0]}/${name}`}>
-          {child}
-        </Link>
+        {child}
+      </Link>
       : { child };
   };
 
@@ -127,8 +127,8 @@ class Search extends Component {
         <div key={key} style={style} className="bhajanRow">
           <div className="capitalize">
             {this.wrappedName(
-              `${location[0]}/${name}`,
-              filteredBhajans[index],
+              location[0],
+              `${filteredBhajans[index]}/${name}`,
               <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name}${tag}`} />
             )}
           </div>
@@ -174,10 +174,10 @@ class Search extends Component {
           <nav>
             {!myFavorites
               ? <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-action">
-                  Only My Favorites
+                Only My Favorites
                 </Link>
               : <Link to="/" className="button button-glow button-rounded button-raised button-primary">
-                  Home
+                Home
                 </Link>}
           </nav>
           <WindowScroller>
