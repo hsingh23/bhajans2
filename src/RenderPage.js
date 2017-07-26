@@ -21,9 +21,9 @@ const Pdf = onlyUpdateForKeys(['page'])(PDF);
 class RenderPage extends Component {
   constructor(props) {
     super(props);
-    var book, page, url;
+    var page;
     if (!props.match.params.location.includes('.pdf')) {
-      var [book, page] = props.match.params.location.split('-')[1];
+      var page = props.match.params.location.split('-')[1];
     } else {
       page = '1'
     }
@@ -80,7 +80,7 @@ class RenderPage extends Component {
           <div style={{ flexGrow: 1, textOverflow: 'ellipsis', textTransform: 'capitalize' }}>
             {name}
           </div>
-          <nav style={{ flex: '0 0 160px' }}>
+          <nav style={{ flex: '0 0 160px', display: 'flex', justifyContent: 'flex-end' }}>
             {cdbabyBuyUrls &&
               <a className="button button-3d button-circle button-action" href={cdbabyBuyUrls[0]} target="_blank">
                 <span role='img' aria-label='cd'>💿</span>
@@ -105,7 +105,7 @@ class RenderPage extends Component {
                 onPageComplete={this.onPageComplete}
                 page={this.state.page}
                 scale={scale}
-                style={{ maxWidth: '1220px', width: '100vw', display: 'block', margin: '0 auto' }}
+                style={{ maxWidth: '920px', width: '100vw', display: 'block', margin: '0 auto' }}
               />
               {pagination}
             </span>}
