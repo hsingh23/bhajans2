@@ -9,11 +9,11 @@ module.exports = {
     'build/*.png',
     'build/*.jpg',
     'build/*.ico',
-    'build/pdfs/*.pdf',
+    'build/pdfs/*.pdf'
   ],
   navigateFallback: 'build/index.html',
   ignoreUrlParametersMatching: [/^utm_/, /^mode/],
-  importScripts: ['firebase-messaging-sw.js'],
+  importScripts: ['firebase-messaging-service-worker.js'],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
-  swFilePath: 'build/service-worker.js',
+  swFilePath: 'build/service-worker.js'
 };
