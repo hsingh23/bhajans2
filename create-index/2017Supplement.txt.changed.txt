@@ -1,9 +1,9 @@
 amma amma enum (tamil) ## 2017supl-6
-amma devi (tulu version) ## 2017supl-6
+amma devi - tulu version ## 2017supl-6
 amrtalayam anandalayam (malayalam) ## 2017supl-7
 antardarsanattinulla (malayalam) ## 2017supl-8
 anudinamum (tamil) ## 2017supl-9
-arikilundenkilum (tamil version) ## 2017supl-10
+arikilundenkilum - tamil version ## 2017supl-10
 barayya siva (kannada) ## 2017supl-11
 bhuvanasundari (tamil) ## 2017supl-12
 cinna cinna kanna (tamil) ## 2017supl-13
@@ -16,14 +16,14 @@ gokula bala govinda (malayalam) ## 2017supl-18
 gopiyara usire (kannada) ## 2017supl-19
 he srinivasa (kannada) ## 2017supl-20
 indu nammamma (kannada) ## 2017supl-21
-iniyoru janmam (kannada version) ## 2017supl-22
+iniyoru janmam - kannada version ## 2017supl-22
 inke irukkum (tamil) ## 2017supl-23
 kali mateye (kannada) ## 2017supl-24
 kanneduttu paramma (tamil) ## 2017supl-25
 kannan kalla kannan (tamil) ## 2017supl-26
 karunya rupini (malayalam) ## 2017supl-27
-kalamurali (tamil version) ## 2017supl-28
-karunya murtte (kannada version) ## 2017supl-28
+kalamurali - tamil version ## 2017supl-28
+karunya murtte - kannada version ## 2017supl-28
 kataikkan parvai (tamil) ## 2017supl-29
 kavatiyam kavati (tamil) ## 2017supl-30
 kayilaiyile sivaperuman (tamil) ## 2017supl-31
@@ -35,18 +35,18 @@ nan enbatai (tamil) ## 2017supl-36
 nanendu kanuve (kannada) ## 2017supl-37
 nanna hudottada (kannada) ## 2017supl-38
 nannodeya (kannada) ## 2017supl-39
-orunalum piriyatta (kannada version) ## 2017supl-39
+orunalum piriyatta - kannada version ## 2017supl-39
 nencakam ventitunnu (malayalam) ## 2017supl-40
 padaravindake (kannada) ## 2017supl-41
 ponnamma en amma (tamil) ## 2017supl-42
 sambasadasiva (tamil) ## 2017supl-43
-parinamamiyallatta (kannada version) ## 2017supl-43
+parinamamiyallatta - kannada version ## 2017supl-43
 sivke (hindi) ## 2017supl-44
 sri devi lalita (tamil) ## 2017supl-45
 talarnnurangukayo (malayalam) ## 2017supl-47
 tancam undan (tamil) ## 2017supl-48
 tandavamati (tamil) ## 2017supl-49
-taye tava (kannada version) ## 2017supl-50
+taye tava - kannada version ## 2017supl-50
 ulagamaga mari nirkkum (tamil) ## 2017supl-51
 ulakattin tayentru (tamil) ## 2017supl-52
 unai marava varamondru (tamil) ## 2017supl-53

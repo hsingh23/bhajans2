@@ -10,8 +10,8 @@ amala bharatam (english) ## vol7-12
 ambapaluku (telugu) ## vol7-12
 amba sambhavi (sanskrit) ## vol7-13
 amma amma enum (tamil) ## vol7-15
-amma devi (kannada version) ## vol7-16
-amma devi (tulu version) ## vol7-16
+amma devi - kannada version ## vol7-16
+amma devi - tulu version ## vol7-16
 amma hasattu (konkani) ## vol7-17
 amma napai (telugu) ## vol7-17
 amma ninna premakagi (kannada) ## vol7-19
@@ -25,7 +25,7 @@ anudinamum (tamil) ## vol7-25
 aparadham-endetu (malayalam) ## vol7-26
 areyanareyanistam (malayalam) ## vol7-28
 aridu aridu (tamil) ## vol7-29
-arikilundenkilum (tamil version) ## vol7-30
+arikilundenkilum - tamil version ## vol7-30
 arivenum akakkan (tamil) ## vol7-31
 ariyate ceytoraparadham (malayalam) ## vol7-32
 asrutirtthattal (malayalam) ## vol7-33
@@ -42,7 +42,7 @@ azhutal unnaiperalame (tamil) ## vol7-44
 ba bhrngave ba (kannada) ## vol7-45
 bale ambike (tulu) ## vol7-46
 bandalo bandalo (kannada) ## vol7-47
-bandalo bandalo (gujarati version) ## vol7-48
+bandalo bandalo - gujarati version ## vol7-48
 bandhamu nitto (telugu) ## vol7-49
 bandu bidabarade (kannada) ## vol7-50
 barayya siva (kannada) ## vol7-50
@@ -101,7 +101,7 @@ holi hai ayi (hindi) ## vol7-103
 hrdoye acho ma tumi (bengali) ## vol7-104
 illamai enbatilum (tamil) ## vol7-105
 indu nammamma (kannada) ## vol7-106
-iniyoru janmam (kannada version) ## vol7-108
+iniyoru janmam - kannada version ## vol7-108
 inke irukkum (tamil) ## vol7-108
 iratte tupanaru (tulu) ## vol7-109
 iyarkaiyamma (tamil) ## vol7-110
@@ -117,7 +117,7 @@ jhala jhalavena (tamil) ## vol7-120
 jnanakkataltannai (tamil) ## vol7-122
 kab aye ga (hindi) ## vol7-122
 kadiranu enagende (kannada) ## vol7-123
-kalamurali (tamil version) ## vol7-124
+kalamurali - tamil version ## vol7-124
 kali kali kali (gujarati) ## vol7-125
 kali mateye (kannada) ## vol7-126
 kallum avane (tamil) ## vol7-127
@@ -133,7 +133,7 @@ kannirunangatta (malayalam) ## vol7-137
 karayalle paitale (malayalam) ## vol7-138
 karumaiyile (tamil) ## vol7-139
 karunaiyil pirandu (tamil) ## vol7-140
-karunya murtte (kannada version) ## vol7-141
+karunya murtte - kannada version ## vol7-141
 karunya rupini (malayalam) ## vol7-141
 kataikkan parvai (tamil) ## vol7-142
 kattraka nan (tamil) ## vol7-143
@@ -214,7 +214,7 @@ o naruda (telugu) ## vol7-226
 only love (english) ## vol7-227
 ormmayil ninnurnnu (malayalam) ## vol7-228
 oru nalamma (tamil) ## vol7-229
-orunalum piriyatta (kannada version) ## vol7-230
+orunalum piriyatta - kannada version ## vol7-230
 oru piti caramay (malayalam) ## vol7-230
 oru sottu kanniral (tamil) ## vol7-232
 paccamalai pavalamalai (tamil) ## vol7-232
@@ -222,7 +222,7 @@ padaravindake (kannada) ## vol7-234
 panduranga nam gya (marathi) ## vol7-235
 panipatarnda malaiyin (tamil) ## vol7-236
 parayuvanavatilla (malayalam) ## vol7-237
-parinamamiyallatta (kannada version) ## vol7-238
+parinamamiyallatta - kannada version ## vol7-238
 pari pari (telugu) ## vol7-238
 pattave padamu (telugu) ## vol7-239
 ponnamma en amma (tamil) ## vol7-240
@@ -272,7 +272,7 @@ taraka nama (kannada) ## vol7-286
 taraka namamu (telugu) ## vol7-287
 tataikalai nikkitum (tamil) ## vol7-288
 tayendru azhaikkava (tamil) ## vol7-289
-taye tava (kannada version) ## vol7-290
+taye tava - kannada version ## vol7-290
 teyyom taka (malayalam) ## vol7-291
 tintaka tintaka (malayalam) ## vol7-292
 tori koler chele ami (bengali) ## vol7-294

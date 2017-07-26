@@ -77,7 +77,8 @@ amma amma enum ## vol7-15,2017supl-6
 amma amma konachi ## vol6-17
 amma amma taye ## vol1-20,voli1-171,voli0-7
 amma baramma ## vol5-13
-amma devi ## vol7-16,vol7-16,2017supl-6
+amma devi - kannada version ## vol7-16
+amma devi - tulu version ## vol7-16,2017supl-6
 amma devi tanitantana ## 2015supl-6
 amma en azhaikayil ## vol5-14
 amma hasattu ## vol7-17,2014supl-7
@@ -210,7 +211,7 @@ arati kunja vihari (syam radhe syam) ## vol2-215,voli2-224,voli2-226
 areyanareyanistam ## vol7-28,2016supl-12
 aridu aridu ## vol7-29,2016supl-13
 arikil undenkilum ## vol1-42,voli1-48,voli1-50
-arikilundenkilum ## vol7-30,2017supl-10
+arikilundenkilum - tamil version ## vol7-30,2017supl-10
 arivay amrtay ## vol2-43,voli2-45
 arivenum akakkan ## vol7-31,2014supl-13
 arivukkum arivana ## vol3-34,voli3-39
@@ -262,7 +263,8 @@ bahut tarasa ## vol3-37,voli3-44
 balakrsnam kalaya ## vol2-46,voli2-49
 bale ambike ## vol7-46,2014supl-17
 banda krsna ## vol5-34
-bandalo bandalo ## vol6-38,vol7-47,vol7-48,2011supl-15
+bandalo bandalo ## vol6-38,vol7-47,2011supl-15
+bandalo bandalo - gujarati version ## vol7-48
 bandamuntu sontamuntu ## vol6-39
 bandham illa ## vol1-48,voli1-53,voli1-55
 bandhamu nitto ## vol7-49,2014supl-19
@@ -584,7 +586,7 @@ ingakale ## vol2-88,voli2-98
 ini oru janmam ## vol1-104,voli1-191,voli0-27
 iniyentinalasyam ## vol5-65
 iniyenu kanum ## vol6-86
-iniyoru janmam ## vol7-108,2017supl-22
+iniyoru janmam - kannada version ## vol7-108,2017supl-22
 inke irukkum ## vol7-108,2017supl-23
 innallo karthika nalu ## vol2-61,voli3-74,voli3-74
 iratte tupanaru ## vol7-109,2016supl-26
@@ -688,7 +690,7 @@ kaitorunnen krsna ## vol1-112,voli1-232,voli0-67
 kakkai chiraginile ## vol4-78
 kala murali ## vol2-100,voli2-113
 kalam kanalu ## vol4-79
-kalamurali ## vol7-124,2017supl-28
+kalamurali - tamil version ## vol7-124,2017supl-28
 kalattin pustakam ## vol6-96
 kalchilambocha ## vol2-101,voli2-112
 kali durge namo nama ## vol2-102,voli2-114
@@ -785,7 +787,7 @@ karunasagara ## vol6-115
 karunatan katamiri ## vol1-127,voli1-121,voli1-123
 karunya dhamame amme ## vol3-84,voli3-106
 karunya murte ## vol1-128,voli1-33,voli1-34
-karunya murtte ## vol7-141,2017supl-28
+karunya murtte - kannada version ## vol7-141,2017supl-28
 karunya piyusadhamam ## vol4-90
 karunya rupini ## vol7-141,2017supl-27
 karunya varidhe ## vol1-129,voli1-4
@@ -1168,7 +1170,7 @@ oru piti sneham tirannu ## vol3-137,voli3-179
 oru sottu kanniral ## vol7-232,2012supl-19
 oru tulli sneham ## vol1-196,voli1-72,voli1-73
 orunalamma ## 2012supl-18
-orunalum piriyatta ## vol7-230,2017supl-39
+orunalum piriyatta - kannada version ## vol7-230,2017supl-39
 oti oti olivatenke ## vol5-135
 paccamalai pavalamalai ## vol7-232,2015supl-45
 padamulattile pamsuvay ## vol4-148
@@ -1200,7 +1202,7 @@ parayuvanavatilla ## vol7-237,2014supl-47
 pari pari ## vol7-238,2012supl-20
 parihasa patramay ## vol1-202,voli1-233,voli0-69
 parinamam iyalatta ## vol1-203,voli1-242,voli0-77
-parinamamiyallatta ## vol7-238,2017supl-43
+parinamamiyallatta - kannada version ## vol7-238,2017supl-43
 parisuddha snehatte ## vol3-141,voli3-185
 pasankusa dhara ## vol3-144,voli3-188
 pasiyentral utan ## vol4-151
@@ -1462,7 +1464,7 @@ tava sannidhanattil ## vol1-241,voli1-117,voli1-119
 tava tirumozhikal ## vol5-162
 tay irukka pillai ## vol4-188
 taye maha maye ## vol2-219,voli2-252,voli2-254
-taye tava ## vol7-290,2017supl-50
+taye tava - kannada version ## vol7-290,2017supl-50
 taye tava tanayaril ## vol1-242,voli1-113,voli1-115
 tayendru azhaikkava ## vol7-289,2015supl-54
 teach me the language ## vol3-190,voli3-276
