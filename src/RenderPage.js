@@ -45,9 +45,9 @@ class RenderPage extends Component {
   handlePrevious = () => this.state.page > 1 && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
   render() {
-    const name = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].n;
-    const cdbabyBuyUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].cu;
-    const cdbabySampleUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.name] && this.props.bhajans[this.props.match.params.name].cs;
+    const name = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].n;
+    const cdbabyBuyUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].cu;
+    const cdbabySampleUrls = this.props.bhajans && this.props.bhajans[this.props.match.params.id] && this.props.bhajans[this.props.match.params.id].cs;
     const [book, page] = this.props.match.params.location.split('-');
     const pagination = this.state.pages
       ? <span>

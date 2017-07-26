@@ -84,7 +84,7 @@ class App extends Component {
       <Switch>
         <PropsRoute exact path="/" component={Search} {...additionalProps} />
         <PropsRoute exact path="/my-favorites" component={Search} {...additionalProps} />
-        <PropsRoute path="/pdf/:location/:name" component={RenderPage} {...additionalProps} />
+        <PropsRoute path="/pdf/:location/:id/:name" component={RenderPage} {...additionalProps} />
         <Redirect path="*" to="/" />
       </Switch>
     );
