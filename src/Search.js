@@ -30,7 +30,7 @@ class Search extends Component {
         .then(data => data.json())
         .then(fetchedBhajans => {
           window.fetchedBhajans = fetchedBhajans;
-          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join(',')));
+          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join('') + o.t));
         })
         .then(() => this.filterBhajans());
     }
