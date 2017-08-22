@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
-import { auth, db, goOnline, goOffline } from './firebase';
-import { Link } from 'react-router-dom';
+import React, { PureComponent } from "react";
+import { auth, db, goOnline, goOffline } from "./firebase";
+import { Link } from "react-router-dom";
 
 class Admin extends PureComponent {
   constructor(props) {
@@ -14,22 +14,22 @@ class Admin extends PureComponent {
     const awaitCurrentUser = () => {
       const uid = (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
       if (!uid) {
-        console.log('Need to login');
-        history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+        console.log("Need to login");
+        history.push(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
       }
-      db.ref(`admin/${uid}`).once('value').then(function(snapshot) {
-        console.log(snapshot.val(), 'value');
+      db.ref(`admin/${uid}`).once("value").then(function(snapshot) {
+        console.log(snapshot.val(), "value");
 
-        if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || '/')}`);
+        if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
       });
-      this.confirmBeta.on('value', snap => {
+      this.confirmBeta.on("value", snap => {
         this.setState({ users: snap.val() || {} });
       });
     };
     setTimeout(awaitCurrentUser, 500);
-    this.confirmBeta = db.ref('confirmBeta');
-    this.confirmedBeta = db.ref('confirmedBeta');
-    this.beta = db.ref('beta');
+    this.confirmBeta = db.ref("confirmBeta");
+    this.confirmedBeta = db.ref("confirmedBeta");
+    this.beta = db.ref("beta");
 
     // TODO: this should not be value!
     // TODO: set renewBeta table
@@ -41,7 +41,7 @@ class Admin extends PureComponent {
   createEmailTemplate = user => {
     const body = encodeURIComponent(`Om Namah Shivaya ${user.name},
 
-Thank you for joining the beta team for this website 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
+Thank you for joining the beta team for https://sing.withamma.com/#/ 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
 
 Please like our Facebook page: https://www.facebook.com/sing.withamma/?ref=beta_email 
 
@@ -51,19 +51,19 @@ If you have see any errors like incorrect page number, broken search, website ma
 
 Peace `);
 
-    return window.localStorage.email.includes('gmail') && window.document.documentElement.clientWidth > 1024
+    return window.localStorage.email.includes("gmail") && window.document.documentElement.clientWidth > 1024
       ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent(
-          '[sing.withamma.com] Thanks for joining the beta 😄'
+          "[sing.withamma.com] Thanks for joining the beta 😄"
         )}&bcc=hisingh1@gmail.com&body=${body}`
       : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent(
-          '[sing.withamma.com] Thanks for joining the beta'
+          "[sing.withamma.com] Thanks for joining the beta"
         )}&bcc=hisingh1@gmail.com&body=${body}`;
   };
 
   setBeta = function(uid, user) {
     this.confirmedBeta.child(uid).set(user);
     this.confirmBeta.child(uid).remove();
-    this.beta.child(uid).set('1');
+    this.beta.child(uid).set("1");
     window.open(this.createEmailTemplate(user));
     return 1;
   };
@@ -74,7 +74,7 @@ Peace `);
         <div className="App-header">
           <div className="title">Amma's Bhajans</div>
           <nav>
-            <Link to={'/'}>Back </Link>
+            <Link to={"/"}>Back </Link>
           </nav>
         </div>
         <div className="restPage">
