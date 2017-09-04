@@ -2,5 +2,6 @@
 {
   "editor.formatOnSave": true,
   "beautify.tabSize": 2,
-  "prettier.singleQuote": true
+    "prettier.printWidth": 120,
+  "prettier.eslintIntegration": true,
 }
