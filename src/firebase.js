@@ -111,6 +111,12 @@ const {
     });
   };
 
+  whenUser().then(user => {
+    checkRefOnce(`satsang/${auth.currentUser.uid}`).then(val => {
+      if (val) localStorage.presenter = true;
+    });
+  });
+
   async function getMessageID() {
     // if (!localStorage.currentToken) {
     //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })

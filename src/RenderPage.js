@@ -117,7 +117,7 @@ class RenderPage extends Component {
             </nav>
           </div>
           <div className="rest">
-            {localStorage.presenter
+            {localStorage.presenter && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200
               ? <embed
                   src={`/pdfs/${book}.pdf#page=${page}`}
                   style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
