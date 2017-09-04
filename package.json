@@ -20,7 +20,7 @@
     "react-highlight-words": "^0.8.1",
     "react-hotkeys": "^0.10.0",
     "react-modal": "^2.2.4",
-    "react-pdf-js": "^2.0.3",
+    "react-pdf-js": "1",
     "react-router-dom": "^4.2.2",
     "react-tap-event-plugin": "^2.0.1",
     "react-virtualized": "^9.9.0",
