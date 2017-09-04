@@ -1,15 +1,26 @@
-import firebase from 'firebase';
-import { alert, confirm } from 'notie';
-import wrap from 'lodash/wrap';
+import firebase from "firebase";
+import { alert } from "notie";
+import wrap from "lodash/wrap";
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
-const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth, messaging, goOffline, goOnline } = (() => {
+const {
+  firebaseApp,
+  db,
+  checkRefOnce,
+  setRefOnce,
+  whenUser,
+  removeRefOnce,
+  auth,
+  messaging,
+  goOffline,
+  goOnline
+} = (() => {
   var config = {
-    apiKey: 'AIzaSyB9MVmCPLBachZm1Yfc3r1IaguL6Ps2NdM',
-    authDomain: 'bhajans-588f5.firebaseapp.com',
-    databaseURL: 'https://bhajans-588f5.firebaseio.com',
-    projectId: 'bhajans-588f5',
-    storageBucket: 'bhajans-588f5.appspot.com',
-    messagingSenderId: '20248152848'
+    apiKey: "AIzaSyB9MVmCPLBachZm1Yfc3r1IaguL6Ps2NdM",
+    authDomain: "bhajans-588f5.firebaseapp.com",
+    databaseURL: "https://bhajans-588f5.firebaseio.com",
+    projectId: "bhajans-588f5",
+    storageBucket: "bhajans-588f5.appspot.com",
+    messagingSenderId: "20248152848"
   };
 
   //the root app just in case we need it
@@ -21,22 +32,22 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   const initialWait = true;
   // don't worry about going online and offline right now
   const goOffline = () => {
-    history.push(['off', +new Date() - startTime]);
+    history.push(["off", +new Date() - startTime]);
     // !initialWait && db.goOffline();
-    console.log('off', history);
+    console.log("off", history);
   };
 
   const goOnline = () => {
-    history.push(['on', +new Date() - startTime]);
+    history.push(["on", +new Date() - startTime]);
     // !initialWait && db.goOnline();
-    console.log('on', history);
+    console.log("on", history);
   };
 
   !window.localStorage.admin &&
     setTimeout(
       wrap({ initialWait, goOffline, startTime, history }, ({ initialWait, goOffline, startTime, history }) => {
         initialWait = false;
-        history.push(['initialWaitOver', +new Date() - startTime]);
+        history.push(["initialWaitOver", +new Date() - startTime]);
         !window.localStorage.admin && goOffline();
       }),
       15 * 1000
@@ -44,7 +55,7 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
 
   const auth = firebase.auth(); //the firebase auth namespace
   const messaging = firebase.messaging();
-  if (window.location.host.includes('localhost')) window.firebase = firebase;
+  if (window.location.host.includes("localhost")) window.firebase = firebase;
 
   // const doOnce = async function(firebasePromiseCallback) {
   //   return new Promise(async function(resolve, reject) {
@@ -55,9 +66,9 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   // };
 
   const checkRefOnce = ref => {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
       goOnline();
-      db.ref(ref).once('value').then(function (snapshot) {
+      db.ref(ref).once("value").then(function(snapshot) {
         goOffline();
         resolve(snapshot.val());
       });
@@ -94,8 +105,8 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
         }
       });
       timeout &&
-        setTimeout(function () {
-          reject('Timeout');
+        setTimeout(function() {
+          reject("Timeout");
         }, timeout);
     });
   };
@@ -105,34 +116,38 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
     // }
     try {
-      console.log('requesting permissions to notify');
+      console.log("requesting permissions to notify");
       await messaging.requestPermission();
-      console.log('got permission');
+      console.log("got permission");
       const token = await messaging.getToken().then(token => {
-        console.log('token returned: ', token);
+        console.log("token returned: ", token);
         return token;
       });
-      console.log('Token: ', token);
+      console.log("Token: ", token);
       if (token) {
         await whenUser(null);
         goOnline();
-        console.log('have user and are online');
+        console.log("have user and are online");
         const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
-        console.log('awaiting messages');
+        console.log("awaiting messages");
         goOnline();
-        const snap = await userMessagesRef.once('value');
-        console.log('got messages');
+        const snap = await userMessagesRef.once("value");
+        console.log("got messages");
         if (!snap.val() || !snap.val().tokens) {
-          console.log('about to set metadata');
+          console.log("about to set metadata");
           goOnline();
-          await userMessagesRef.set({ displayName: auth.currentUser.displayName, email: auth.currentUser.email, tokens: {} });
-          console.log('set metadata');
+          await userMessagesRef.set({
+            displayName: auth.currentUser.displayName,
+            email: auth.currentUser.email,
+            tokens: {}
+          });
+          console.log("set metadata");
         }
         if (!snap.val().tokens[token]) {
-          console.log('about to set token');
+          console.log("about to set token");
           goOnline();
-          await userMessagesRef.child(`tokens/${token}`).set('1');
-          console.log('set token');
+          await userMessagesRef.child(`tokens/${token}`).set("1");
+          console.log("set token");
           localStorage.currentToken = token;
         }
       }
@@ -142,9 +157,9 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
   }
   getMessageID();
 
-  messaging.onTokenRefresh(async function () {
+  messaging.onTokenRefresh(async function() {
     goOnline();
-    console.log('onTokenRefresh');
+    console.log("onTokenRefresh");
     await whenUser(null);
     await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`).remove();
     delete localStorage.currentToken;
@@ -155,8 +170,8 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     console.log(payload);
     alert({ text: payload.notification.body });
   });
-  window.firebase = firebase
-  window.messaging = messaging
+  window.firebase = firebase;
+  window.messaging = messaging;
   return {
     firebaseApp,
     db,
@@ -170,4 +185,16 @@ const { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth
     goOffline
   };
 })();
-export { firebaseApp, db, checkRefOnce, setRefOnce, whenUser, removeRefOnce, auth, firebase, messaging, goOffline, goOnline };
+export {
+  firebaseApp,
+  db,
+  checkRefOnce,
+  setRefOnce,
+  whenUser,
+  removeRefOnce,
+  auth,
+  firebase,
+  messaging,
+  goOffline,
+  goOnline
+};

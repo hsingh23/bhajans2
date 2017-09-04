@@ -1,10 +1,36 @@
-serverless??/docker
+Recurring payment
+  TODO
+
+Keyboard shortcuts
+  how to gain focus
+  somewhat there
+
+Hide feedback button on pdf view
+  ask for screenshot
+
+Menu
+  User info
+  Logout
+  Notification settings
+    request bhajan uploads (default yes) ?
+    revisit favorite song (default yes)
+
+  Pages
+    FAQ
+
+Details Page
+  User Tags
+  
+track pagevisits
+
+scroll to top
+
+cloud function/docker
   stripe? -> firebase
 
+Set goals + rewards
+
 amma icon
-create facebook page <- drive likes on navigate away (after x visits)
-  https://www.hellobar.com/sites/456675/install
-fix redirection
 copyright footer (start fixed, then turn it into static)
 biz cards to promote website
 

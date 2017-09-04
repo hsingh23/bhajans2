@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
-import { getJson, setJson, PropsRoute } from './util';
-import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from './firebase';
-import omit from 'lodash/omit';
-import get from 'lodash/get';
-import { confirm } from 'notie';
-import { Redirect, Switch } from 'react-router-dom';
-import Search from './Search';
-import RenderPage from './RenderPage';
+import React, { Component } from "react";
+import { getJson, setJson, PropsRoute } from "./util";
+import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from "./firebase";
+import omit from "lodash/omit";
+import get from "lodash/get";
+import { confirm } from "notie";
+import { Redirect, Switch } from "react-router-dom";
+import Search from "./Search";
+import RenderPage from "./RenderPage";
+import "whatwg-fetch";
 
 class App extends Component {
   constructor(props) {
     super(props);
     // You must be logged in to call firebase and get your favorites (rule) and also set your favorites
     // if you don't care about syncing between devices, we can use localstorage for favorites
-    const favorites = getJson('favorites') || {};
-    setJson('favorites', favorites);
+    const favorites = getJson("favorites") || {};
+    setJson("favorites", favorites);
     this.state = { favorites, bhajans: [] };
   }
 
@@ -25,23 +26,23 @@ class App extends Component {
           checkRefOnce(`favorites/${user.uid}`).then(favorites => {
             favorites = Object.assign({}, self.state.favorites, favorites);
             self.setState({ favorites });
-            setJson('favorites', favorites);
+            setJson("favorites", favorites);
           });
         },
         noUser: reason => {
-          confirm({ text: 'Login to sync favorite?' }, () => self.props.history.push('/login'));
+          confirm({ text: "Login to sync favorite?" }, () => self.props.history.push("/login"));
           console.log(`No user: ${reason}`);
         }
       };
     })(this);
     if (!window.searchableBhajans) {
-      window.fetch('./bhajan-index2.json').then(data => data.json()).then(fetchedBhajans => {
+      window.fetch("./bhajan-index2.json").then(data => data.json()).then(fetchedBhajans => {
         window.fetchedBhajans = fetchedBhajans;
         this.setState({ bhajans: fetchedBhajans });
       });
     }
-
-    whenUser(3000).then(haveUser, noUser);
+    // wait 10 seconds to see if you have a user
+    whenUser(10 * 1000).then(haveUser, noUser);
   }
 
   addFavorite = name => {
@@ -49,9 +50,9 @@ class App extends Component {
     // this.addFavorite[name] = 1;
     const favorites = Object.assign({ [name]: 1 }, this.state.favorites);
     this.setState({ favorites });
-    setJson('favorites', favorites);
-    const uid = get(auth, 'currentUser.uid');
-    uid && setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, '1');
+    setJson("favorites", favorites);
+    const uid = get(auth, "currentUser.uid");
+    uid && setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, "1");
   };
 
   removeFavorite = name => {
@@ -59,24 +60,34 @@ class App extends Component {
     // this.removeFavorite[name] = 1;
     const favorites = omit(this.state.favorites, name);
     this.setState({ favorites }, () => {
-      window.location.hash.includes('/my-favorites');
+      window.location.hash.includes("/my-favorites");
     });
-    setJson('favorites', favorites);
-    const uid = get(auth, 'currentUser.uid');
+    setJson("favorites", favorites);
+    const uid = get(auth, "currentUser.uid");
     uid && removeRefOnce(`favorites/${auth.currentUser.uid}/${name}`);
   };
 
   renderFavorite = (name, activeClassName, inactiveClassName) => {
     return this.state.favorites[name]
-      ? <button className={activeClassName || 'button button-3d button-caution button-circle button-jumbo'} onClick={() => this.removeFavorite(name)}>
+      ? <button
+          className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
+          onClick={() => this.removeFavorite(name)}
+        >
           💖
         </button>
-      : <button className={inactiveClassName || 'button button-3d button-circle button-jumbo'} onClick={() => this.addFavorite(name)}>
+      : <button
+          className={inactiveClassName || "button button-3d button-circle button-jumbo"}
+          onClick={() => this.addFavorite(name)}
+        >
           💟
         </button>;
   };
 
   render() {
+    const map = {
+      left: "left",
+      right: "right"
+    };
     const { favorites, bhajans } = this.state;
     const { addFavorite, removeFavorite, renderFavorite } = this;
     const additionalProps = { favorites, addFavorite, removeFavorite, renderFavorite, bhajans };
