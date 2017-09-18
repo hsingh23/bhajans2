@@ -21,9 +21,9 @@ class Search extends Component {
     setTimeout(function() {
       if (document.scrollingElement) {
         document.scrollingElement.scrollTop =
-          document.scrollTop || (document.scrollingElement && document.scrollingElement.scrollTop);
+          window.scrollTop || (document.scrollingElement && document.scrollingElement.scrollTop) || 0;
       } else {
-        document.body.scrollTop = document.scrollTop;
+        document.body.scrollTop = window.scrollTop || 0;
       }
     }, 0);
 
@@ -213,10 +213,10 @@ class Search extends Component {
           </nav>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) => {
-              document.body.scrollTop =
+              window.scrollTop =
                 (document.scrollingElement && document.scrollingElement.scrollTop) ||
-                document.body.scrollTop ||
-                window.pageYOffset;
+                window.pageYOffset ||
+                window.scrollTop;
               return (
                 <AutoSizer disableHeight>
                   {({ width }) => (
