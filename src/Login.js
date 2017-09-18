@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { auth, checkRefOnce, firebase } from './firebase';
-import firebaseui from 'firebaseui';
-import 'firebaseui/dist/firebaseui.css';
-import { getNext } from './util';
+import React, { Component } from "react";
+import { auth, checkRefOnce, firebase } from "./firebase";
+import firebaseui from "firebaseui";
+import "firebaseui/dist/firebaseui.css";
+import { getNext } from "./util";
 
 var authUi = new firebaseui.auth.AuthUI(auth);
 
@@ -10,9 +10,9 @@ class Login extends Component {
   componentDidMount() {
     const { history, location } = this.props;
     const next = getNext();
-    if (localStorage.beta === '1') return history.replace(next);
+    if (localStorage.beta === "1") return history.replace(next);
 
-    const redirectOnLogin = async function (user) {
+    const redirectOnLogin = async function(user) {
       const beta = await checkRefOnce(`/beta/${user.uid}`);
       const admin = await checkRefOnce(`/admin/${user.uid}`);
       if (admin !== null) localStorage.admin = 1;
@@ -59,9 +59,9 @@ class Login extends Component {
         signInSuccess: signedIn,
       },
       credentialHelper: firebaseui.auth.CredentialHelper.NONE,
-      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
+      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
     };
-    authUi.start('#firebaseui-auth', uiConfig);
+    authUi.start("#firebaseui-auth", uiConfig);
   }
 
   componentWillUnmount() {
@@ -69,8 +69,12 @@ class Login extends Component {
   }
 
   render() {
-    return <div><h1>Create an account or log in.</h1><div id="firebaseui-auth" /></div>
-
+    return (
+      <div>
+        <h2>Sign In or Sign Up</h2>
+        <div id="firebaseui-auth" />
+      </div>
+    );
   }
 }
 
