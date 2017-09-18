@@ -30,6 +30,12 @@
         ".write": "auth.uid === $userId"
       }
     },
+    "satsang": {
+      "$userId": {
+        ".read": "auth.uid === $userId",
+        ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+      }
+    },
     "messages": {
       "$userId": {
         ".read": "auth != null && (auth.uid === $userId || root.child('admin').child(auth.uid).val() === '1')",
