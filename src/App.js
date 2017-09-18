@@ -36,7 +36,7 @@ class App extends Component {
       };
     })(this);
     if (!window.searchableBhajans) {
-      window.fetch("./bhajan-index2.json").then(data => data.json()).then(fetchedBhajans => {
+      window.fetch("/bhajan-index2.json").then(data => data.json()).then(fetchedBhajans => {
         window.fetchedBhajans = fetchedBhajans;
         this.setState({ bhajans: fetchedBhajans });
       });
