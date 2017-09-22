@@ -96,10 +96,11 @@ class Search extends Component {
       .replace(/z/g, "r");
 
   filterBhajans = ({ filter, nextProps } = {}) => {
-    console.log("called");
     // fetchedBhajans is optionally passed - after fetch request
     filter = (filter !== undefined ? filter : window.searchFilter) || "";
     window.searchFilter = filter;
+    window.searchableBhajans = window.searchableBhajans || [];
+
     const searchableFilter = this.makeSearchable(filter);
     const filterFavorites = nextProps
       ? nextProps.path.includes("/my-favorites")
