@@ -11,10 +11,14 @@ import Beta from "./Beta";
 import App from "./App";
 import createHashHistory from "history/createHashHistory";
 import { Router, Route, Switch, withRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import registerServiceWorker from "./registerServiceWorker";
 import "bugsnag-js";
 import "whatwg-fetch";
+import configureStore from "./store/configureStore";
+const store = configureStore({});
+
 window.Bugsnag.apiKey = "a8b3dfbca1bb3f896d6e145d8e58db60";
 injectTapEventPlugin();
 class ErrorBoundary extends React.Component {
@@ -37,17 +41,19 @@ history.listen(function(location) {
 // http://bodiddlie.github.io/firebase-auth-with-react-router/
 ReactDOM.render(
   <ErrorBoundary>
-    <Router history={history}>
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/logout" component={Logout} />
-        <Route exact path="/pay" component={Pay} />
-        <Route exact path="/beta" component={Beta} />
-        <Route exact path="/admin" component={Admin} />
-        <Route exact path="/faq" component={FAQ} />
-        <Route path="*" component={App} />
-      </Switch>
-    </Router>
+    <Provider store={store} key="provider">
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/logout" component={Logout} />
+          <Route exact path="/pay" component={Pay} />
+          <Route exact path="/beta" component={Beta} />
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/faq" component={FAQ} />
+          <Route path="*" component={App} />
+        </Switch>
+      </Router>
+    </Provider>
   </ErrorBoundary>,
   document.getElementById("root")
 );

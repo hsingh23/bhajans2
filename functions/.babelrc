@@ -1,12 +1,11 @@
 {
   "presets": ["es2017", "react-app"],
   "plugins": [
-    [
-      "transform-runtime",
-      {
-        "polyfill": false,
-        "regenerator": true
-      }
-    ]
+    "transform-decorators-legacy",
+    "transform-runtime",
+    {
+      "polyfill": false,
+      "regenerator": true
+    }
   ]
 }

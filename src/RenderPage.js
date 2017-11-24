@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import PDF from "react-pdf-js";
+// import PDF from "react-pdf-js";
 import React, { Component } from "react";
 import { onlyUpdateForKeys } from "recompose";
 import { HotKeys } from "react-hotkeys";
+import { Document, Page } from "react-pdf/build/entry.webpack";
+import "./RenderPage.css";
 
 // const canRenderPdfNatively = function() {
 //   // TODO: perhaps do this with screen size
@@ -18,7 +20,7 @@ import { HotKeys } from "react-hotkeys";
 //   return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
 // };
 
-const Pdf = onlyUpdateForKeys(["page"])(PDF);
+// const Pdf = onlyUpdateForKeys(["page"])(PDF);
 const map = {
   left: "left",
   right: "right"
@@ -32,7 +34,14 @@ class RenderPage extends Component {
     } else {
       page = "1";
     }
-    this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10) };
+    const w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName("body")[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+    this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10), x };
     if (!+localStorage.beta) {
       //  beta -> render (this case should not happen)
       // if (auth.currentUser) props.history.push(`/beta?next=${encodeURIComponent(props.location.pathname)}`);
@@ -51,7 +60,7 @@ class RenderPage extends Component {
   };
   audioTag = document.querySelector("#audio");
   onPageComplete = page => this.setState({ page });
-  onDocumentComplete = pages => this.setState({ pages });
+  onDocumentComplete = ({ numPages }) => this.setState({ pages: numPages });
   handlePrevious = () => this.state.page > this.state.initialPage && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
   render() {
@@ -128,15 +137,19 @@ class RenderPage extends Component {
                 style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
               />
             ) : (
-              <span>
-                <Pdf
+              <span className="RenderPage-Page">
+                {/* <Pdf
                   file={url}
                   onDocumentComplete={this.onDocumentComplete}
                   onPageComplete={this.onPageComplete}
                   page={this.state.page}
                   scale={scale}
                   style={{ maxWidth: "100vw", display: "block", margin: "0 auto" }}
-                />
+                /> */}
+
+                <Document file={url} onLoadSuccess={this.onDocumentComplete}>
+                  <Page pageNumber={this.state.page} width={this.state.x > 1400 ? 1400 : this.state.x} />
+                </Document>
 
                 {pagination}
               </span>

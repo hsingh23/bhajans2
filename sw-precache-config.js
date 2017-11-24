@@ -15,6 +15,7 @@ module.exports = {
   ignoreUrlParametersMatching: [/./],
   importScripts: ["firebase-messaging-sw.js"],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
+  maximumFileSizeToCacheInBytes: 4097152,
   swFilePath: "build/service-worker.js",
   runtimeCaching: [
     {
