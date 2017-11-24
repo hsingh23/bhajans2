@@ -96,10 +96,6 @@ class Search extends Component {
       .replace(/z/g, "r");
 
   filterBhajans = ({ filter, nextProps } = {}) => {
-<<<<<<< HEAD
-    console.log("called");
-=======
->>>>>>> test
     // fetchedBhajans is optionally passed - after fetch request
     filter = (filter !== undefined ? filter : window.searchFilter) || "";
     window.searchFilter = filter;
@@ -180,10 +176,9 @@ class Search extends Component {
         </div>
       );
     };
-
-    if (!window.setGAUid && localStorage.uid) {
+    if (window.ga && !window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      window.ga("set", { userId: localStorage.uid });
+      window.ga && window.ga("set", { userId: localStorage.uid });
     }
     const myFavorites = window.location.hash.includes("/my-favorites");
 
