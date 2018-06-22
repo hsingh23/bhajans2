@@ -36,9 +36,6 @@ if (process.env.NODE_ENV === "development") {
 }
 
 const composedEnhancers = compose(
-  //   applyMiddleware([
-  //     thunk.withExtraArgument({ getFirebase }) // Pass getFirebase function as extra argument
-  //   ]),
   applyMiddleware(thunk.withExtraArgument({ getFirebase })),
   reactReduxFirebase(firebase, rrfConfig),
   // reduxFirestore(firebase) // <- needed if using firestore

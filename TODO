@@ -1,5 +1,10 @@
-Recurring payment
-  TODO
+Pay page
+  paypal.me/blah + confirmPayment -> confimedPayment / add time to profile
+  stripe -> customer -> card -> confirmPayment -> cloud function to check payment -> confimedPayment / add time to profile
+
+UI improvements
+
+
 
 Keyboard shortcuts
   how to gain focus

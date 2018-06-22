@@ -108,13 +108,17 @@ import { connect } from "react-redux";
 // }
 import { firebaseConnect, isLoaded, isEmpty } from "react-redux-firebase";
 
-@firebaseConnect(["favorite", "paid", "beta"])
-@connect(({ firebase: { data: { favorite, paid, beta } } }) => ({
-  // state.firebase.data.todos
-  // todos prop set to firebase data in redux under '/todos'
-  favorite,
-  paid,
-  beta
+@connect(({ firebase: { auth, auth: { uid = localStorage.uid } } }) => ({ auth, uid }))
+@firebaseConnect(({ auth }) => {
+  if (auth.isLoaded) {
+    return [`beta/${auth.uid}`, `favorites/${auth.uid}`, `paid/${auth.uid}`];
+  }
+  return [];
+})
+@connect(({ firebase: { data: { favorites, paid, beta } } }, { uid }) => ({
+  favorites: get(favorites, uid),
+  paid: get(paid, uid, localStorage.paid),
+  beta: get(beta, uid, localStorage.paid)
 }))
 export default class App extends Component {
   render() {

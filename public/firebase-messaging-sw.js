@@ -12,6 +12,7 @@ var config = {
   storageBucket: 'bhajans-588f5.appspot.com',
   messagingSenderId: '20248152848',
 };
+
 firebase.initializeApp(config);
 
 // Retrieve an instance of Firebase Messaging so that it can handle background
