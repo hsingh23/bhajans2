@@ -59,7 +59,12 @@ const {
     );
 
   const auth = firebase.auth(); //the firebase auth namespace
-  const messaging = firebase.messaging();
+  var messaging = null;
+  try {
+    messaging = firebase.messaging();
+  } catch (e) {
+    console.error(e);
+  }
   if (window.location.host.includes("localhost")) window.firebase = firebase;
 
   // const doOnce = async function(firebasePromiseCallback) {
@@ -73,8 +78,7 @@ const {
   const checkRefOnce = ref => {
     return new Promise(function(resolve, reject) {
       goOnline();
-      db
-        .ref(ref)
+      db.ref(ref)
         .once("value")
         .then(function(snapshot) {
           goOffline();
@@ -169,23 +173,25 @@ const {
       console.error(error);
     }
   }
-  getMessageID();
-
-  messaging.onTokenRefresh(async function() {
-    goOnline();
-    console.log("onTokenRefresh");
-    await whenUser(null);
-    await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`).remove();
-    delete localStorage.currentToken;
+  if (messaging) {
     getMessageID();
-  });
+    messaging.onTokenRefresh(async function() {
+      goOnline();
+      console.log("onTokenRefresh");
+      await whenUser(null);
+      await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`).remove();
+      delete localStorage.currentToken;
+      getMessageID();
+    });
 
-  messaging.onMessage(payload => {
-    console.log(payload);
-    alert({ text: payload.notification.body });
-  });
+    messaging.onMessage(payload => {
+      console.log(payload);
+      alert({ text: payload.notification.body });
+    });
+    window.messaging = messaging;
+  }
+
   window.firebase = firebase;
-  window.messaging = messaging;
   return {
     firebaseApp,
     db,
