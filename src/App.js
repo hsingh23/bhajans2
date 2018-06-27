@@ -3,7 +3,7 @@ import { getJson, setJson, PropsRoute } from "./util";
 import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from "./firebase";
 import omit from "lodash/omit";
 import get from "lodash/get";
-import { confirm } from "notie";
+// import { confirm } from "notie";
 import { Redirect, Switch } from "react-router-dom";
 import Search from "./Search";
 import RenderPage from "./RenderPage";
@@ -88,10 +88,6 @@ class App extends Component {
   };
 
   render() {
-    const map = {
-      left: "left",
-      right: "right"
-    };
     const { favorites, bhajans } = this.state;
     const { addFavorite, removeFavorite, renderFavorite } = this;
     const additionalProps = { favorites, addFavorite, removeFavorite, renderFavorite, bhajans };

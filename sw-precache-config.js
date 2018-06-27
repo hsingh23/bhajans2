@@ -16,7 +16,7 @@ module.exports = {
   ignoreUrlParametersMatching: [/./],
   importScripts: ["firebase-messaging-sw.js"],
   dontCacheBustUrlsMatching: /\.\w{8}\./,
-  swFilePath: "build/service-worker.js",
+  swFilePath: "build/service-worker2.js",
   runtimeCaching: [
     {
       urlPattern: /cdn.polyfill.io.v2.polyfill.min.js/,
