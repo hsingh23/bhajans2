@@ -1,4 +1,7 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/auth";
+import "firebase/messaging";
 import { alert } from "notie";
 import wrap from "lodash/wrap";
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
@@ -22,6 +25,8 @@ const {
     storageBucket: "bhajans-588f5.appspot.com",
     messagingSenderId: "20248152848"
   };
+
+  const doNothing = () => {};
 
   //the root app just in case we need it
   const firebaseApp = firebase.initializeApp(config);
@@ -68,10 +73,13 @@ const {
   const checkRefOnce = ref => {
     return new Promise(function(resolve, reject) {
       goOnline();
-      db.ref(ref).once("value").then(function(snapshot) {
-        goOffline();
-        resolve(snapshot.val());
-      });
+      db
+        .ref(ref)
+        .once("value")
+        .then(function(snapshot) {
+          goOffline();
+          resolve(snapshot.val());
+        });
     });
   };
 
@@ -115,7 +123,7 @@ const {
     checkRefOnce(`satsang/${auth.currentUser.uid}`).then(val => {
       if (val) localStorage.presenter = true;
     });
-  });
+  }, doNothing);
 
   async function getMessageID() {
     // if (!localStorage.currentToken) {

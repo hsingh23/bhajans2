@@ -71,14 +71,14 @@ class RenderPage extends Component {
       scale = 2;
       page = 1;
     }
-    const pagination = this.state.pages
-      ? <span>
-          <span className="pdf-prev-arrow arrow" />
-          <span className="pdf-next-arrow arrow" />
-          <span className="pdf-previous" onClick={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} />
-        </span>
-      : null;
+    const pagination = this.state.pages ? (
+      <span>
+        <span className="pdf-prev-arrow arrow" />
+        <span className="pdf-next-arrow arrow" />
+        <span className="pdf-previous" onClick={this.handlePrevious} />
+        <span className="pdf-next" onClick={this.handleNext} />
+      </span>
+    ) : null;
 
     const handlers = { left: this.handlePrevious, right: this.handleNext };
 
@@ -89,17 +89,21 @@ class RenderPage extends Component {
             <Link to={"/"}>
               <img className="favicon" src="favicon.ico" alt="Sing " />
             </Link>
-            <div style={{ flexGrow: 1, textOverflow: "ellipsis", textTransform: "capitalize" }}>
-              {name}
-            </div>
+            <div style={{ flexGrow: 1, textOverflow: "ellipsis", textTransform: "capitalize" }}>{name}</div>
             <nav style={{ flex: "0 0 160px", display: "flex", justifyContent: "flex-end" }}>
-              {cdbabyBuyUrls &&
-                <a className="button button-3d button-circle button-action" href={cdbabyBuyUrls[0]} target="_blank">
+              {cdbabyBuyUrls && (
+                <a
+                  className="button button-3d button-circle button-action"
+                  rel="noopener"
+                  href={cdbabyBuyUrls[0]}
+                  target="_blank"
+                >
                   <span role="img" aria-label="cd">
                     💿
                   </span>
-                </a>}
-              {cdbabySampleUrls &&
+                </a>
+              )}
+              {cdbabySampleUrls && (
                 <button
                   className="button button-3d button-circle button-action"
                   onClick={() => this.play(cdbabySampleUrls[0])}
@@ -107,7 +111,8 @@ class RenderPage extends Component {
                   <span role="img" aria-label="music sample">
                     🎧
                   </span>
-                </button>}
+                </button>
+              )}
               {this.props.renderFavorite(name, "button button-caution button-circle", "button button-circle")}
               <Link to={"/"} className="button button-circle">
                 <span role="img" aria-label="back">
@@ -117,22 +122,25 @@ class RenderPage extends Component {
             </nav>
           </div>
           <div className="rest">
-            {localStorage.presenter && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200
-              ? <embed
-                  src={`/pdfs/${book}.pdf#page=${page}`}
-                  style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+            {localStorage.presenter && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200 ? (
+              <embed
+                src={`/pdfs/${book}.pdf#page=${page}`}
+                style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+              />
+            ) : (
+              <span>
+                <Pdf
+                  file={url}
+                  onDocumentComplete={this.onDocumentComplete}
+                  onPageComplete={this.onPageComplete}
+                  page={this.state.page}
+                  scale={scale}
+                  style={{ maxWidth: "100vw", display: "block", margin: "0 auto" }}
                 />
-              : <span>
-                  <Pdf
-                    file={url}
-                    onDocumentComplete={this.onDocumentComplete}
-                    onPageComplete={this.onPageComplete}
-                    page={this.state.page}
-                    scale={scale}
-                    style={{ maxWidth: "100vw", display: "block", margin: "0 auto" }}
-                  />
-                  {pagination}
-                </span>}
+
+                {pagination}
+              </span>
+            )}
           </div>
         </div>
       </HotKeys>

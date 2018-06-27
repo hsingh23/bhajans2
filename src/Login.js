@@ -7,60 +7,66 @@ import { getNext } from "./util";
 var authUi = new firebaseui.auth.AuthUI(auth);
 
 class Login extends Component {
+  signedIn = user => {
+    if (!user) return false;
+    localStorage.uid = user.uid;
+    localStorage.updated = +new Date();
+    localStorage.displayName = user.displayName;
+    localStorage.email = user.email;
+    localStorage.photoURL = user.photoURL;
+    this.redirectOnLogin(user);
+    return true;
+  };
+
+  redirectOnLogin = async user => {
+    const { history, location } = this.props;
+    const beta = await checkRefOnce(`/beta/${user.uid}`);
+    const admin = await checkRefOnce(`/admin/${user.uid}`);
+    const next = getNext();
+    if (admin !== null) localStorage.admin = 1;
+    if (beta) {
+      localStorage.beta = 1;
+      // save user name, email, browser data
+      return history.push(next);
+    } else {
+      localStorage.beta = 0;
+      // TODO: redirect to pay once beta testing period is over
+      return history.push(`/beta${location.search}`);
+      // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
+      // ideally you want to show stripe, upon payment kick off cloud function to update user account
+    }
+    // const paid = await checkRefOnce(`/paid/${user.uid}`);
+    // if (paid === '1') {
+    //   localStorage.paid = 1;
+    //   history.push('/'+getNext());
+    // } else {
+    //   localStorage.paid = 0;
+    //   // redirect to pay once beta testing period is over
+    //   history.push(`/pay${location.search}`);
+    //   // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
+    //   // ideally you want to show stripe, upon payment kick off cloud function to update user account
+    // }
+  };
+
   componentDidMount() {
     const { history, location } = this.props;
     const next = getNext();
     if (localStorage.beta === "1") return history.replace(next);
 
-    const redirectOnLogin = async function(user) {
-      const beta = await checkRefOnce(`/beta/${user.uid}`);
-      const admin = await checkRefOnce(`/admin/${user.uid}`);
-      if (admin !== null) localStorage.admin = 1;
-      if (beta) {
-        localStorage.beta = 1;
-        // save user name, email, browser data
-        return history.push(next);
-      } else {
-        localStorage.beta = 0;
-        // TODO: redirect to pay once beta testing period is over
-        return history.push(`/beta${location.search}`);
-        // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
-        // ideally you want to show stripe, upon payment kick off cloud function to update user account
-      }
-      // const paid = await checkRefOnce(`/paid/${user.uid}`);
-      // if (paid === '1') {
-      //   localStorage.paid = 1;
-      //   history.push('/'+getNext());
-      // } else {
-      //   localStorage.paid = 0;
-      //   // redirect to pay once beta testing period is over
-      //   history.push(`/pay${location.search}`);
-      //   // redirect to a page with an email template that allows a user to pay to a paypal account and sends their userid
-      //   // ideally you want to show stripe, upon payment kick off cloud function to update user account
-      // }
-    };
-    const signedIn = function signedIn(user) {
-      if (!user) return false;
-      localStorage.uid = user.uid;
-      localStorage.updated = +new Date();
-      localStorage.displayName = user.displayName;
-      localStorage.email = user.email;
-      localStorage.photoURL = user.photoURL;
-      redirectOnLogin(user);
-    };
-
-    signedIn(auth.currentUser);
+    this.signedIn(auth.currentUser);
 
     if (localStorage.uid && !auth.currentUser) {
-      setTimeout(() => signedIn(auth.currentUser), 500);
+      setTimeout(() => this.signedIn(auth.currentUser), 500);
     }
     const uiConfig = {
       callbacks: {
-        signInSuccess: signedIn,
+        signInSuccess: this.signedIn
       },
       credentialHelper: firebaseui.auth.CredentialHelper.NONE,
       signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
     };
+
+    authUi.reset();
     authUi.start("#firebaseui-auth", uiConfig);
   }
 
