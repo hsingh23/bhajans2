@@ -1,5 +1,6 @@
 module.exports = {
   stripPrefix: "build/",
+  maximumFileSizeToCacheInBytes: 4097152,
   staticFileGlobs: [
     "build/*.html",
     "build/static/**/!(*map*)",
