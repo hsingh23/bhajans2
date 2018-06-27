@@ -12,7 +12,7 @@ import { alert } from "notie";
 const prod = process.env.NODE_ENV === "production";
 export default function register() {
   if (prod && "serviceWorker" in navigator) {
-    const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+    const swUrl = `${process.env.PUBLIC_URL}/service-worker2.js`;
     navigator.serviceWorker
       .register(swUrl)
       .then(registration => {
