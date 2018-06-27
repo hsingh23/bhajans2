@@ -1,10 +1,10 @@
 {
   "rules": {
-    "paid": {
+    "admin": {
       ".read": "auth != null",
       ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
     },
-    "admin": {
+    "paid": {
       ".read": "auth != null",
       ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
     },
@@ -12,16 +12,20 @@
       ".read": "auth != null",
       ".write": "auth != null"
     },
+    "confirmedPayment": {
+      ".read": "auth != null && root.child('admin').child(auth.uid).val() === '1'",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+    },
+    "beta": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+    },
     "confirmBeta": {
       ".read": "auth != null",
       ".write": "auth != null"
     },
     "confirmedBeta": {
       ".read": "auth != null && root.child('admin').child(auth.uid).val() === '1'",
-      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
-    },
-    "beta": {
-      ".read": "auth != null",
       ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
     },
     "favorites": {

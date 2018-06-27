@@ -7,7 +7,6 @@ import { confirm } from "notie";
 import { Redirect, Switch } from "react-router-dom";
 import Search from "./Search";
 import RenderPage from "./RenderPage";
-import "whatwg-fetch";
 
 class App extends Component {
   constructor(props) {
@@ -28,21 +27,20 @@ class App extends Component {
             self.setState({ favorites });
             setJson("favorites", favorites);
           });
-        },
-        noUser: reason => {
-          confirm({ text: "Login to sync favorite?" }, () => self.props.history.push("/login"));
-          console.log(`No user: ${reason}`);
         }
       };
     })(this);
     if (!window.searchableBhajans) {
-      window.fetch("/bhajan-index2.json").then(data => data.json()).then(fetchedBhajans => {
-        window.fetchedBhajans = fetchedBhajans;
-        this.setState({ bhajans: fetchedBhajans });
-      });
+      window
+        .fetch("/bhajan-index2.json")
+        .then(data => data.json())
+        .then(fetchedBhajans => {
+          window.fetchedBhajans = fetchedBhajans;
+          this.setState({ bhajans: fetchedBhajans });
+        });
     }
     // wait 10 seconds to see if you have a user
-    whenUser(10 * 1000).then(haveUser, noUser);
+    whenUser(10 * 1000).then(haveUser, () => {});
   }
 
   addFavorite = name => {
@@ -68,19 +66,25 @@ class App extends Component {
   };
 
   renderFavorite = (name, activeClassName, inactiveClassName) => {
-    return this.state.favorites[name]
-      ? <button
-          className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
-          onClick={() => this.removeFavorite(name)}
-        >
+    return this.state.favorites[name] ? (
+      <button
+        className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
+        onClick={() => this.removeFavorite(name)}
+      >
+        <span role="img" aria-label="unlike">
           💖
-        </button>
-      : <button
-          className={inactiveClassName || "button button-3d button-circle button-jumbo"}
-          onClick={() => this.addFavorite(name)}
-        >
+        </span>
+      </button>
+    ) : (
+      <button
+        className={inactiveClassName || "button button-3d button-circle button-jumbo"}
+        onClick={() => this.addFavorite(name)}
+      >
+        <span role="img" aria-label="like">
           💟
-        </button>;
+        </span>
+      </button>
+    );
   };
 
   render() {

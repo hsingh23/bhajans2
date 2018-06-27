@@ -175,10 +175,9 @@ class Search extends Component {
         </div>
       );
     };
-
-    if (!window.setGAUid && localStorage.uid) {
+    if (window.ga && !window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      window.ga("set", { userId: localStorage.uid });
+      window.ga && window.ga("set", { userId: localStorage.uid });
     }
     const myFavorites = window.location.hash.includes("/my-favorites");
 
