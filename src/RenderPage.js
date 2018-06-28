@@ -37,7 +37,7 @@ class RenderPage extends Component {
       //  beta -> render (this case should not happen)
       // if (auth.currentUser) props.history.push(`/beta?next=${encodeURIComponent(props.location.pathname)}`);
       // render -> login -> beta -> render
-      props.history.push(`/login?next=${encodeURIComponent(props.location.pathname)}`);
+      props.history.replace(`/login?next=${encodeURIComponent(props.location.pathname)}`);
       // TODO: if expired -> redirect to beta
     }
     // if (!+localStorage.paid) {
@@ -55,7 +55,12 @@ class RenderPage extends Component {
   handlePrevious = () => this.state.page > this.state.initialPage && this.setState({ page: this.state.page - 1 });
   handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
   render() {
-    const { bhajans = {}, match: { params: { id, location } } } = this.props;
+    const {
+      bhajans = {},
+      match: {
+        params: { id, location }
+      }
+    } = this.props;
     const name = bhajans && bhajans[id] && bhajans[id].n;
     const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
     const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;

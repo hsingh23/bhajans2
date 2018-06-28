@@ -1,26 +1,28 @@
-import React, { PureComponent } from 'react';
-import { auth, db, goOnline, goOffline } from './firebase';
-import { Link } from 'react-router-dom';
-import { getNext } from './util';
+import React, { PureComponent } from "react";
+import { auth, db, goOnline, goOffline } from "./firebase";
+import { Link } from "react-router-dom";
+import { getNext } from "./util";
 
 class Pay extends PureComponent {
   componentWillMount() {
     const { history, location } = this.props;
-    if (localStorage.paid === '1') history.push(getNext());
+    if (localStorage.paid === "1") history.push(getNext());
     const checkUser = async function() {
       if (auth.currentUser) {
         // only ask to confirmPayment if the person hasn't paid
         goOnline();
-        var didPay = await db.ref(`/paid/${auth.currentUser.uid}`).once('value');
+        var didPay = await db.ref(`/paid/${auth.currentUser.uid}`).once("value");
         if (didPay.val() === null) {
-          await db.ref(`/confirmPayment/${auth.currentUser.uid}`).set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
+          await db
+            .ref(`/confirmPayment/${auth.currentUser.uid}`)
+            .set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
         } else {
-          localStorage.paid = '1';
+          localStorage.paid = "1";
           history.push(getNext());
         }
         goOffline();
       } else {
-        history.push(`/login${location.search}`);
+        history.replace(`/login${location.search}`);
       }
     };
     if (localStorage.uid && !auth.currentUser) {
@@ -38,14 +40,15 @@ class Pay extends PureComponent {
           <img src="favicon.ico" alt="Sing " />
           <div className="title">Amma's Bhajans</div>
           <nav>
-            <Link to={'/'}>Back </Link>
+            <Link to={"/"}>Back </Link>
           </nav>
         </div>
         <div className="restPage">
           <p>
-            To see the bhajans you need to pay. This is easiest when you are on tour, simply pay at the cash register and come to the store. The admin will
-            grant you access once you log in. If you are not on tour: Please go to paypal.me/Something and pay $X. Once that is done. Please then use this
-            following email template to alert us that you paid. You should be able to access the full website within 3 business days. We thank you for your
+            To see the bhajans you need to pay. This is easiest when you are on tour, simply pay at the cash register
+            and come to the store. The admin will grant you access once you log in. If you are not on tour: Please go to
+            paypal.me/Something and pay $X. Once that is done. Please then use this following email template to alert us
+            that you paid. You should be able to access the full website within 3 business days. We thank you for your
             patience as we build out a more self-service experience. To check if you have access, simply click here.
           </p>
         </div>

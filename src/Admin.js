@@ -17,11 +17,13 @@ class Admin extends PureComponent {
         console.log("Need to login");
         history.push(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
       }
-      db.ref(`admin/${uid}`).once("value").then(function(snapshot) {
-        console.log(snapshot.val(), "value");
+      db.ref(`admin/${uid}`)
+        .once("value")
+        .then(function(snapshot) {
+          console.log(snapshot.val(), "value");
 
-        if (snapshot.val() === null) history.push(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
-      });
+          if (snapshot.val() === null) history.replace(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
+        });
       this.confirmBeta.on("value", snap => {
         this.setState({ users: snap.val() || {} });
       });
@@ -82,11 +84,9 @@ Peace `);
           <table>
             <tbody>
               {users &&
-                Object.entries(users).map(([uid, user]) =>
+                Object.entries(users).map(([uid, user]) => (
                   <tr key={uid}>
-                    <td>
-                      {user.name}
-                    </td>
+                    <td>{user.name}</td>
                     <td>
                       {user.email} <small>{uid}</small>
                     </td>
@@ -100,7 +100,7 @@ Peace `);
                       </button>
                     </td>
                   </tr>
-                )}
+                ))}
             </tbody>
           </table>
         </div>
