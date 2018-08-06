@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { getJson, setJson, PropsRoute } from "./util";
 import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from "./firebase";
-import omit from "lodash/omit";
-import get from "lodash/get";
+import { omit, get, orderBy } from "lodash-es";
+
 // import { confirm } from "notie";
 import { Redirect, Switch } from "react-router-dom";
 import Search from "./Search";
 import RenderPage from "./RenderPage";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHeart, faMusic, faPlay, faStop, faCompactDisc, faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+library.add(faHeart, faMusic, faPlay, faStop, faCompactDisc, faCartArrowDown);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,6 +39,7 @@ class App extends Component {
       .fetch("/bhajan-index2.json")
       .then(data => data.json())
       .then(fetchedBhajans => {
+        fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
         window.fetchedBhajans = fetchedBhajans;
         this.setState({ bhajans: fetchedBhajans });
       });
@@ -71,18 +76,14 @@ class App extends Component {
         className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
         onClick={() => this.removeFavorite(name)}
       >
-        <span role="img" aria-label="unlike">
-          💖
-        </span>
+        <FontAwesomeIcon icon="heart" color="white" />
       </button>
     ) : (
       <button
         className={inactiveClassName || "button button-3d button-circle button-jumbo"}
         onClick={() => this.addFavorite(name)}
       >
-        <span role="img" aria-label="like">
-          💟
-        </span>
+        <FontAwesomeIcon icon="heart" color="grey" />
       </button>
     );
   };
