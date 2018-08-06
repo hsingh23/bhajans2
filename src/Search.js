@@ -4,6 +4,28 @@ import { List, WindowScroller, AutoSizer } from "react-virtualized";
 import Highlighter from "react-highlight-words";
 import { Link } from "react-router-dom";
 // import { withRouter } from 'react-router';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { orderBy } from "lodash-es";
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ hasError: true });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <div>Something went wrong.</div>;
+    }
+    return this.props.children;
+  }
+}
 
 class Search extends Component {
   constructor(props) {
@@ -34,6 +56,7 @@ class Search extends Component {
         .fetch("./bhajan-index2.json")
         .then(data => data.json())
         .then(fetchedBhajans => {
+          fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
           window.fetchedBhajans = fetchedBhajans;
           window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join("") + o.t));
         })
@@ -43,7 +66,7 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : { child };
+    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : child;
   };
 
   audioTag = document.querySelector("#audio");
@@ -73,7 +96,10 @@ class Search extends Component {
       );
       lastIndex = re.lastIndex;
     }
-    return <span className="spaced rightAligned">{results}</span>;
+    if (results.length === 0) {
+      debugger;
+    }
+    return <span className="spaced rightAligned">{results.length > 0 ? result : null}</span>;
   };
 
   // The meat and potatoes
@@ -129,6 +155,7 @@ class Search extends Component {
         cu: cdbabyBuyUrls
       } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : "";
+
       return (
         <div key={key} style={style} className="bhajanRow">
           <div className="capitalize">
@@ -141,32 +168,28 @@ class Search extends Component {
           <span className="Search_RightSide">
             {sheetmusic && (
               <Link
-                className="button button-3d button-circle button-action button-jumbo"
+                className="button button-3d button-circle button-jumbo"
                 to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}
               >
                 <span role="img" aria-label="sheet music">
-                  🎼
+                  <FontAwesomeIcon icon="music" />
                 </span>
               </Link>
             )}
             {cdbabyBuyUrls && (
-              <a
-                className="button button-3d button-circle button-action button-jumbo"
-                href={cdbabyBuyUrls[0]}
-                target="_blank"
-              >
+              <a className="button button-3d button-circle button-jumbo" href={cdbabyBuyUrls[0]} target="_blank">
                 <span role="img" aria-label="cd">
-                  💿
+                  <FontAwesomeIcon icon="cart-arrow-down" />
                 </span>
               </a>
             )}
             {cdbabySampleUrls && (
               <button
-                className="button button-3d button-circle button-action button-jumbo"
+                className="button button-3d button-circle button-jumbo"
                 onClick={() => this.play(cdbabySampleUrls[0])}
               >
                 <span role="img" aria-label="music sample">
-                  🎧
+                  <FontAwesomeIcon icon="play" />
                 </span>
               </button>
             )}
@@ -201,7 +224,7 @@ class Search extends Component {
         <div className="rest">
           <nav>
             {!myFavorites ? (
-              <Link to="/my-favorites" className="button button-glow button-rounded button-raised button-action">
+              <Link to="/my-favorites" className="button button-glow button-rounded button-raised">
                 Only My Favorites
               </Link>
             ) : (

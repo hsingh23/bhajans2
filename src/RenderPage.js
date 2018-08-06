@@ -3,6 +3,7 @@ import PDF from "react-pdf-js";
 import React, { Component } from "react";
 import { onlyUpdateForKeys } from "recompose";
 import { HotKeys } from "react-hotkeys";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // const canRenderPdfNatively = function() {
 //   // TODO: perhaps do this with screen size
@@ -104,7 +105,7 @@ class RenderPage extends Component {
                   target="_blank"
                 >
                   <span role="img" aria-label="cd">
-                    💿
+                    <FontAwesomeIcon icon="cart-arrow-down" />
                   </span>
                 </a>
               )}
@@ -114,16 +115,11 @@ class RenderPage extends Component {
                   onClick={() => this.play(cdbabySampleUrls[0])}
                 >
                   <span role="img" aria-label="music sample">
-                    🎧
+                    <FontAwesomeIcon icon="play" />
                   </span>
                 </button>
               )}
               {this.props.renderFavorite(name, "button button-caution button-circle", "button button-circle")}
-              <Link to={"/"} className="button button-circle">
-                <span role="img" aria-label="back">
-                  🔙
-                </span>
-              </Link>
             </nav>
           </div>
           <div className="rest">
