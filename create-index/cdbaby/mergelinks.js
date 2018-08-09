@@ -34,7 +34,7 @@ function readBhajanIndex() {
 }
 
 function writeNewBhajanIndex() {
-  fs.writeFileSync(path.resolve(__dirname, "../../public/bhajan-index3.json"), JSON.stringify(bhajans));
+  fs.writeFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json"), JSON.stringify(bhajans));
 }
 
 function readFiles() {
@@ -70,7 +70,7 @@ function readFiles() {
           var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
           if (matches.length === 1) {
             addSong(matches[0], song);
-            console.log(song.name);
+            // console.log(song.name);
           } else if (matches.length === 0) {
             noMatch.push(song);
           } else {
@@ -82,7 +82,7 @@ function readFiles() {
   fs.writeFileSync(path.resolve(__dirname, "../cdbaby.json"), JSON.stringify(searchable));
   fs.writeFileSync(path.resolve(__dirname, "../noMatch.json"), JSON.stringify(noMatch));
   fs.writeFileSync(path.resolve(__dirname, "../manyMatches.json"), JSON.stringify(manyMatches));
-  console.log(noMatch);
+  console.log(noMatch.map(x => x.name));
   console.log(Object.keys(searchable).length, count, Object.keys(noMatch).length, Object.keys(manyMatches).length);
 
   return searchable;
@@ -98,7 +98,10 @@ function readSheetMusic() {
     realBhajan.sm.push(filename);
     smCount += 1;
   }
-  fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
+  fs.readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
+    .toString()
+    .split("\n")
+    // fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
     .filter(x => x.endsWith("pdf"))
     .map(filename => {
       var [filename, name, key] = filename.match(/(.*)([A-Z].*?)\.pdf$/);
@@ -109,7 +112,7 @@ function readSheetMusic() {
         var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
         if (matches.length === 1) {
           addSheetMusic(matches[0], filename);
-          console.log(filename);
+          // console.log(filename);
         } else if (matches.length === 0) {
           noMatchSheet.push(filename);
         } else {

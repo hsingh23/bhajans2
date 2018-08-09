@@ -76,31 +76,31 @@ class Search extends Component {
     this.audioTag.play();
   };
 
-  linkify = (name, location) => {
-    var re = /\d{4}supl-\d+|vol\d-\d+/gi;
-    var results = [];
-    var lastIndex = re.lastIndex;
-    var result;
-    location = location.replace(/[,/]/g, " ");
-    // should I remove links from the pages
-    // return <span className="spaced rightAligned">{location}</span>;
-    // eslint-disable-next-line
-    while ((result = re.exec(location)) !== null) {
-      if (result.index > lastIndex) {
-        results.push(location.slice(lastIndex, result.index));
-      }
-      results.push(
-        <Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>
-          {result[0]}
-        </Link>
-      );
-      lastIndex = re.lastIndex;
-    }
-    if (results.length === 0) {
-      debugger;
-    }
-    return <span className="spaced rightAligned">{results.length > 0 ? result : null}</span>;
-  };
+  // linkify = (name, location) => {
+  //   var re = /\d{4}supl-\d+|vol\d-\d+/gi;
+  //   var results = [];
+  //   var lastIndex = re.lastIndex;
+  //   var result;
+  //   location = location.replace(/[,/]/g, " ");
+  //   // should I remove links from the pages
+  //   // return <span className="spaced rightAligned">{location}</span>;
+  //   // eslint-disable-next-line
+  //   while ((result = re.exec(location)) !== null) {
+  //     if (result.index > lastIndex) {
+  //       results.push(location.slice(lastIndex, result.index));
+  //     }
+  //     results.push(
+  //       <Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>
+  //         {result[0]}
+  //       </Link>
+  //     );
+  //     lastIndex = re.lastIndex;
+  //   }
+  //   if (results.length === 0) {
+  //     debugger;
+  //   }
+  //   return <span className="spaced rightAligned">{results.length > 0 ? results : null}</span>;
+  // };
 
   // The meat and potatoes
   // TODO: to make page load faster, we can pre compute searchable text
@@ -122,7 +122,6 @@ class Search extends Component {
       .replace(/z/g, "r");
 
   filterBhajans = ({ filter, nextProps } = {}) => {
-    console.log("called");
     // fetchedBhajans is optionally passed - after fetch request
     filter = (filter !== undefined ? filter : window.searchFilter) || "";
     window.searchFilter = filter;
@@ -155,6 +154,16 @@ class Search extends Component {
         cu: cdbabyBuyUrls
       } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : "";
+
+      // return (
+      //   <div key={key} style={style} className="bhajanRow">
+      //     {name}
+      //     {location
+      //       .filter(x => x.match(/^vol\d|^\d/))
+      //       .sort((a, b) => a < b)
+      //       .map(x => this.wrappedName(x, `${filteredBhajans[index]}/${name}`, x))}
+      //   </div>
+      // );
 
       return (
         <div key={key} style={style} className="bhajanRow">

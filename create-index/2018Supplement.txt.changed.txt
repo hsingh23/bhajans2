@@ -1,78 +1,78 @@
-adhyatmata (kannada) ## 7
-adisakti (marathi) ## 8
-adisivan (tamil) ## 9
-a... e... o... (malayalam) ## 10
-aik manuja (maralhi) ## 12
-amma ninna karagalalli (kannada) ## 13
-anbumigu endan taye (tamil) ## 14
-ararum kanate (malayalam) ## 15
-arupalai vilu (tamil) ## 16
-avo ma de carana (punjabi) ## 18
-ayi tujhe dari (maralhi) ## 19
-barper barper (tulu) ## 20
-bhakti bhavam (telugu) ## 21
-bhav phulanci (marathi) ## 22
-bomma bomma (hindi) ## 23
-calitam skhalitam (malayalam) ## 24
-cinnari ponnari (telugu) ## 26
-citta spandana (kannada) ## 27
-culalayil (malayalam) ## 28
-darsanam darsanam sudarsanam (telugu) ## 29
-elilelelo (malayalam) ## 31
-ennule jivita (kannada version) ## 33
-ento tirannu (malayalam) ## 34
-ereri ereri (malayalam) ## 35
-gajamukha pujita (telugu) ## 38
-gala gala (telugu) ## 39
-hara hara sivane (tamil) ## 41
-harati gaikonuma (telugu) ## 42
-hariyuva nadiya (gujarati version) ## 43
-har pal har ksan (hindi) ## 44
-jag janani (punjabi) ## 45
-jamuna ke tal par (hindi) ## 46
-japonam japonam (bengali) ## 47
-kala bhairava (kannada) ## 49
-kalam kanalu (tamil version) ## 50
-kala nundi kala loniki (telugu) ## 51
-kanalekunnanu amma (telugu) ## 52
-kanna kanna kanna (tamil) ## 53
-kanna... un ninaivil (tamil) ## 54
-karindra vadana (hindi) ## 55
-kehenda hai mukh (punjabi) ## 57
-ke radha mane tu (gujrati) ## 59
-kolanukoli (gujrati version) ## 60
-koyi sune na sune (gujrati) ## 61
-krsna karunadi krpe (kannada) ## 62
-kugi karede (kannada) ## 63
-mahamahima (kannada) ## 64
-manasa vaca (marathi version) ## 65
-mayil pili (malayalam) ## 66
-na gunde (telugu) ## 67
-nalakam onlru (tamil) ## 68
-nilambuja nayane (gujrati version) ## 69
-nilambuja nayane (tamil version) ## 70
-nirmala jivana (kannada) ## 70
-ola kuzhaluti (malayalam) ## 71
-paritiyinmun paniyai (tamil) ## 73
-paurnnamiravil (kannada version) ## 74
-paurnnamiravil (telugu) ## 74
-prati ledu (telugu) ## 75
-radharani ke pyare (hindi) ## 76
-ram nam ras (hindi) ## 78
-samsaraduhkha (telugu version) ## 79
-sankaranandana (hindi) ## 80
-saranenniro (kannada) ## 81
-seyda seyalgal (tamil) ## 82
-sri lalitambike sarvasakte (kannada version) ## 83
-syam-golok-me (hindi) ## 86
-tannanna tannanna (malayalam) ## 87
-tattinantam teytara (malayalam) ## 91
-tintinnam tintinnam (malayalam) ## 93
-tum ho mate (hindi) ## 94
-undan tolil (tamil) ## 96
-vande vedamayim (sanskrit) ## 97
-vicalita vagade (kannada) ## 98
-vilhal smaran kara (marathi) ## 99
-yad rakh bande (hindi) ## 100
-yad teri vic (punjabi) ## 102
-yasodana lal (gujarati) ## 103
+adhyatmata (kannada) ## 2018supl-7
+adisakti (marathi) ## 2018supl-8
+adisivan (tamil) ## 2018supl-9
+a e o (malayalam) ## 2018supl-10
+aik manuja (maralhi) ## 2018supl-12
+amma ninna karagalalli (kannada) ## 2018supl-13
+anbumigu endan taye (tamil) ## 2018supl-14
+ararum kanate (malayalam) ## 2018supl-15
+arupalai vilu (tamil) ## 2018supl-16
+avo ma de carana (punjabi) ## 2018supl-18
+ayi tujhe dari (maralhi) ## 2018supl-19
+barper barper (tulu) ## 2018supl-20
+bhakti bhavam (telugu) ## 2018supl-21
+bhav phulanci (marathi) ## 2018supl-22
+bomma bomma (hindi) ## 2018supl-23
+calitam skhalitam (malayalam) ## 2018supl-24
+cinnari ponnari (telugu) ## 2018supl-26
+citta spandana (kannada) ## 2018supl-27
+culalayil (malayalam) ## 2018supl-28
+darsanam darsanam sudarsanam (telugu) ## 2018supl-29
+elilelelo (malayalam) ## 2018supl-31
+ennule jivita (kannada version) ## 2018supl-33
+ento tirannu (malayalam) ## 2018supl-34
+ereri ereri (malayalam) ## 2018supl-35
+gajamukha pujita (telugu) ## 2018supl-38
+gala gala (telugu) ## 2018supl-39
+hara hara sivane (tamil) ## 2018supl-41
+harati gaikonuma (telugu) ## 2018supl-42
+hariyuva nadiya (gujarati version) ## 2018supl-43
+har pal har ksan (hindi) ## 2018supl-44
+jag janani (punjabi) ## 2018supl-45
+jamuna ke tal par (hindi) ## 2018supl-46
+japonam japonam (bengali) ## 2018supl-47
+kala bhairava (kannada) ## 2018supl-49
+kalam kanalu (tamil version) ## 2018supl-50
+kala nundi kala loniki (telugu) ## 2018supl-51
+kanalekunnanu amma (telugu) ## 2018supl-52
+kanna kanna kanna (tamil) ## 2018supl-53
+kanna... un ninaivil (tamil) ## 2018supl-54
+karindra vadana (hindi) ## 2018supl-55
+kehenda hai mukh (punjabi) ## 2018supl-57
+ke radha mane tu (gujrati) ## 2018supl-59
+kolanukoli (gujrati version) ## 2018supl-60
+koyi sune na sune (gujrati) ## 2018supl-61
+krsna karunadi krpe (kannada) ## 2018supl-62
+kugi karede (kannada) ## 2018supl-63
+mahamahima (kannada) ## 2018supl-64
+manasa vaca (marathi version) ## 2018supl-65
+mayil pili (malayalam) ## 2018supl-66
+na gunde (telugu) ## 2018supl-67
+nalakam onlru (tamil) ## 2018supl-68
+nilambuja nayane (gujrati version) ## 2018supl-69
+nilambuja nayane (tamil version) ## 2018supl-70
+nirmala jivana (kannada) ## 2018supl-70
+ola kuzhaluti (malayalam) ## 2018supl-71
+paritiyinmun paniyai (tamil) ## 2018supl-73
+paurnnamiravil (kannada version) ## 2018supl-74
+paurnnamiravil (telugu) ## 2018supl-74
+prati ledu (telugu) ## 2018supl-75
+radharani ke pyare (hindi) ## 2018supl-76
+ram nam ras (hindi) ## 2018supl-78
+samsaraduhkha (telugu version) ## 2018supl-79
+sankaranandana (hindi) ## 2018supl-80
+saranenniro (kannada) ## 2018supl-81
+seyda seyalgal (tamil) ## 2018supl-82
+sri lalitambike sarvasakte (kannada version) ## 2018supl-83
+syam-golok-me (hindi) ## 2018supl-86
+tannanna tannanna (malayalam) ## 2018supl-87
+tattinantam teytara (malayalam) ## 2018supl-91
+tintinnam tintinnam (malayalam) ## 2018supl-93
+tum ho mate (hindi) ## 2018supl-94
+undan tolil (tamil) ## 2018supl-96
+vande vedamayim (sanskrit) ## 2018supl-97
+vicalita vagade (kannada) ## 2018supl-98
+vilhal smaran kara (marathi) ## 2018supl-99
+yad rakh bande (hindi) ## 2018supl-100
+yad teri vic (punjabi) ## 2018supl-102
+yasodana lal (gujarati) ## 2018supl-103
