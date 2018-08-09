@@ -147,7 +147,6 @@ makaranda madhurya##telugu
 malaimakale taye##tamil
 manamendrum undan vidu##tamil
 manas chora radha krsna##hindi
-manase nin svantamayi##english
 manassil nila sarasil##malayalam
 manavu nondiralu amma##kannada
 mangala nayaki##tamil
@@ -179,12 +178,10 @@ nammavararu namagilla##kannada
 namostute devi##marathi
 nan enna seyyavendum##tamil
 nanagenu beda##kannada
-nandalala nandalala##sanskrit
 nannu cusi##telugu
 nene manave ammana ninu##kannada
 ni intri verarumillai##tamil
 ni tanda solletuttu##tamil
-nilambuja nayane##kannada,telugu
 ninaivai nan marakkayile##tamil
 ninna mamate##kannada
 nintra tiru kolam kanten##tamil
@@ -212,7 +209,6 @@ rise up mother kali (jago ma)##english
 saka varamarulvay rama##tamil
 sakti ta jagadamba##tamil
 sankar sut ho tum##hindi
-sankara siva sankara##tamil
 saranagat ko apnavo ma##hindi
 sarananti sarananti##telugu
 saranu saranu##kannada

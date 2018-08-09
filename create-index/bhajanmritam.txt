@@ -478,7 +478,7 @@ hrim kali##Vol1-100/VolI1-119/VolI1-121
 hun to ma main tera hi##Vol6-85
 i manojna bhumiyil##Vol5-64
 i'm longing for you (milna tujhe)##Vol4-240
-ichamayi##Vol3-194/VolI3-268
+mother your will (ichamayi english)##Vol3-194/VolI3-268
 ichamayi##Vol1-102/VolI1-152/VolI1-154
 idamilla##Vol1-103/VolI1-66/VolI1-68/VolI2-237
 in the still of the night (raja ram)##Vol4-241
@@ -690,7 +690,7 @@ krishna play with us (vinati hamari) ##Vol4-242
 krpa ho teri##Vol5-99
 krpa karo##Vol5-100
 krpalo krsna##Vol5-101
-krsna govinda gopala##Vol6-120
+krsna govinda gopala ram hari nam gavo (hindi)##Vol6-120
 krsna govinda gopala##Vol2-122/VolI2-137
 krsna govinda govinda gopala##Vol2-123/VolI2-138
 krsna jinka nam he##Vol2-123/VolI2-139
@@ -745,7 +745,7 @@ mahita sneham pakarnunamme##Vol4-100
 makaranda madhurya##Vol6-127
 malaimakale taye##Vol6-134
 malamukalil olivitarum##Vol5-106
-malarum manavum##Vol1-143/1-149/VolI1-152
+malarum manavum##Vol1-143/VolI1-149/VolI1-152
 mama janani##Vol2-127/VolI2-143
 mamgala varada##Vol4-105
 man re##Vol5-109
@@ -757,7 +757,7 @@ manas chora radha krsna##Vol6-136
 manasa cheyi smarana##Vol4-107
 manasa malaril##Vol3-93/VolI3-119
 manasa vacha karmana##Vol1-145/VolI1-21/VolI1-23
-manase nin svantamayi ##Vol3-189/VolI3-270
+no one is your own (manase nin svantamayi english)##Vol3-189/VolI3-270
 manase nin svantamayi##Vol1-146/VolI1-5
 manassenna malarvallikkula##Vol5-107
 manassil nila sarasil##Vol6-129
@@ -867,8 +867,8 @@ nanda nandana##Vol3-102/VolI3-134
 nandakumara vanditarupa##Vol4-122
 nandalal nandalal##Vol1-158/VolI1-209/VolI0-45/VolI2-143/VolI2-161/VolI2-162
 nandalal yadu##Vol1-158/VolI1-210/VolI0-46
-nandalala nandalala##Vol6-159
-nandalala nandalala##Vol2-144/VolI2-161/VolI2-162
+nandalala nandalala (sanskrit)##Vol6-159
+nanda lala nanda lala##Vol2-144/VolI2-161/VolI2-162
 nandalala navanita##Vol2-144/VolI2-162/VolI2-163
 nandana yadu nandana##Vol2-145/VolI2-162/VolI2-163
 nandana##Vol1-214
@@ -889,7 +889,8 @@ ni maran jirippatengu##Vol2-149/VolI2-168/VolI2-169
 ni tanda solletuttu##Vol6-166
 nila nila megha varnna##Vol4-126
 nilaiyilla ulakil##Vol5-124
-nilambuja nayane##Vol5-126/Vol1-163/VolI1-81/VolI1-79
+nilambuja nayane (telagu)##Vol5-126
+nilambuja nayane (malayalam)##Vol1-163/VolI1-81/VolI1-79
 nilameghangale##Vol1-164/VolI1-259/VolI0-94/VolI2-148/VolI2-165/VolI2-167
 nilanjana miri##Vol2-148/VolI2-166/VolI2-168
 nin mukham kanumbol##Vol4-127
@@ -1059,8 +1060,8 @@ rama smaranam##Vol1-217/VolI1-219/VolI0-54
 ramachandra maha prabho##Vol3-150/VolI3-197
 ramachandra raghuvira##Vol4-165
 ramachandram manobhiramam##Vol4-164
-ramakrsna govinda##Vol1-215/VolI1-216/VolI0-52
-ramakrsna govinda##Vol5-144
+hari ramakrsna govinda janardhana##Vol1-215/VolI1-216/VolI0-52
+ramakrsna govinda (marathi)##Vol5-144
 ramakrsna hare##Vol3-151/VolI3-198
 ramakrsna prabhu tu##Vol1-215/VolI1-216/VolI0-52
 rasa vihari##Vol4-165
@@ -1092,8 +1093,8 @@ samsara dukha samanam##Vol1-223/VolI1-108/VolI1-110
 sanatani sangita##Vol3-155/VolI3-202
 sandhya mayangukayay##Vol5-148
 sankar sut ho tum##Vol6-185
-sankara siva sankara##Vol6-186
-sankara siva sankara##Vol4-171/ii1-89/VolI2-226/VolI2-227
+sankara siva sankara (tamil)##Vol6-186
+samkara siva samkara##Vol4-171/ii1-89/VolI2-226/VolI2-227
 sankari sambhavi##Vol2-189/VolI2-217/VolI2-218
 sankarji ka damaru bole##Vol4-171
 santamay orukatte jivitam##Vol2-190/VolI2-217/VolI2-219
@@ -1124,7 +1125,7 @@ satchitananda guru##Vol1-225/VolI1-222/VolI0-58
 silukisadiru ni##Vol6-190
 sinkara kavatiyil##Vol3-161/VolI3-211
 sirme mayur mukuta##Vol3-162/VolI3-212
-sita ram bol##Vol1-228/1-221/VolI0-57
+sita ram bol##Vol1-228/Voli1-221/VolI0-57
 sita ram radhe syam##Vol3-162/VolI3-213
 siva nandana sundara vadana##Vol3-163/VolI3-214
 siva pancakam (tarumula nivasinam)##Vol4-186
@@ -1138,7 +1139,7 @@ skanda janani##Vol1-231/VolI1-150/VolI1-153
 skanda muruka varuvaye##Vol2-197/VolI2-228/VolI2-230
 sneha dutiyay##Vol5-151
 sneha mayi sri bhagavati##Vol2-198/VolI2-229/VolI2-230
-sneha sudhamayi##Vol1-231/1-1
+sneha sudhamayi##Vol1-231
 snehamrtanandini##Vol2-199/VolI2-230/VolI2-231
 sokamitentinu sandhye##Vol4-177
 sokamoha bhayapahe##Vol4-178
