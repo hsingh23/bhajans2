@@ -45,8 +45,9 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-(function doOnce() {
-  registerServiceWorker();
+registerServiceWorker();
+
+function doOnce() {
   window._urq = window._urq || [];
   window._urq.push(['initSite', '9f29eba3-9795-415f-9f34-3e1a2c8fb6ed']);
   (function() {
@@ -80,4 +81,5 @@ ReactDOM.render(
     window.setGAUid = true;
     window.ga('set', { userId: localStorage.uid });
   }
-})();
+}
+setTimeout(doOnce, 5 * 1000);
