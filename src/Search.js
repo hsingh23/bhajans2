@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import "react-virtualized/styles.css";
-import { List, WindowScroller, AutoSizer } from "react-virtualized";
-import Highlighter from "react-highlight-words";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import 'react-virtualized/styles.css';
+import { List, WindowScroller, AutoSizer } from 'react-virtualized';
+import Highlighter from 'react-highlight-words';
+import { Link } from 'react-router-dom';
 // import { withRouter } from 'react-router';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { orderBy } from "lodash-es";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { orderBy } from 'lodash-es';
 
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+// class ErrorBoundary extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { hasError: false };
+//   }
 
-  componentDidCatch(error, info) {
-    // Display fallback UI
-    this.setState({ hasError: true });
-  }
+//   componentDidCatch(error, info) {
+//     // Display fallback UI
+//     this.setState({ hasError: true });
+//   }
 
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <div>Something went wrong.</div>;
-    }
-    return this.props.children;
-  }
-}
+//   render() {
+//     if (this.state.hasError) {
+//       // You can render any custom fallback UI
+//       return <div>Something went wrong.</div>;
+//     }
+//     return this.props.children;
+//   }
+// }
 
 class Search extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      this.filterBhajans({ nextProps, filter: nextProps.path.includes("/my-favorites") ? "" : null });
+      this.filterBhajans({ nextProps, filter: nextProps.path.includes('/my-favorites') ? '' : null });
     }
   }
 
@@ -53,12 +53,12 @@ class Search extends Component {
       this.filterBhajans();
     } else {
       window
-        .fetch("./bhajan-index2.json")
+        .fetch('./bhajan-index2.json')
         .then(data => data.json())
         .then(fetchedBhajans => {
-          fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
+          fetchedBhajans = orderBy(fetchedBhajans, ['n', 't'], ['asc', 'asc']);
           window.fetchedBhajans = fetchedBhajans;
-          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join("") + o.t));
+          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join('') + o.t));
         })
         .then(() => this.filterBhajans());
     }
@@ -69,7 +69,7 @@ class Search extends Component {
     return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : child;
   };
 
-  audioTag = document.querySelector("#audio");
+  audioTag = document.querySelector('#audio');
 
   play = url => {
     this.audioTag.src = url.toLowerCase();
@@ -107,28 +107,32 @@ class Search extends Component {
   makeSearchable = line =>
     line
       .toLowerCase()
-      .replace(/[^A-z0-9]/g, "")
-      .replace(/ri?/g, "ri")
-      .replace(/[kg]il/g, "kgil") // 2
-      .replace(/[vw]/g, "vw")
-      .replace(/ny?/g, "ny")
-      .replace(/h/g, "")
-      .replace(/a+/g, "a")
-      .replace(/k+/g, "k")
-      .replace(/t+/g, "t")
-      .replace(/[iey]+/g, "iey")
-      .replace(/[uo]+/g, "uo")
-      .replace(/[tdl]/g, "tdl")
-      .replace(/z/g, "r");
+      .replace(/[^A-z0-9]/g, '')
+      .replace(/h/g, '')
+      .replace(/z/g, 'r')
+      .replace(/ri?/g, 'ri')
+      .replace(/ai?/g, 'ai')
+      .replace(/ee/g, 'i')
+      .replace(/oo|uu/g, 'u')
+      .replace(/[kg]il/g, 'kgil') // 2
+      .replace(/[cj]al/g, 'Cal')
+      .replace(/[vw]/g, 'V')
+      .replace(/ny?/g, 'ny')
+      .replace(/a+/g, 'a')
+      .replace(/(t|k|c){2}/g, '$1')
+      .replace(/(g|p|j){2}/g, '$1')
+      .replace(/[ie]*y/g, 'Y')
+      .replace(/[tdl]/g, 'T');
 
   filterBhajans = ({ filter, nextProps } = {}) => {
     // fetchedBhajans is optionally passed - after fetch request
-    filter = (filter !== undefined ? filter : window.searchFilter) || "";
+    filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
+    console.log(searchableFilter);
     const filterFavorites = nextProps
-      ? nextProps.path.includes("/my-favorites")
-      : this.props.path.includes("/my-favorites");
+      ? nextProps.path.includes('/my-favorites')
+      : this.props.path.includes('/my-favorites');
 
     const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
       if (filterFavorites) {
@@ -148,12 +152,12 @@ class Search extends Component {
       const {
         sm: sheetmusic,
         n: name,
-        t: tags = "",
+        t: tags = '',
         l: location,
         cs: cdbabySampleUrls,
-        cu: cdbabyBuyUrls
+        cu: cdbabyBuyUrls,
       } = window.fetchedBhajans[filteredBhajans[index]];
-      const tag = tags ? ` (${tags})` : "";
+      const tag = tags ? ` (${tags})` : '';
 
       // return (
       //   <div key={key} style={style} className="bhajanRow">
@@ -171,22 +175,25 @@ class Search extends Component {
             {this.wrappedName(
               location[0],
               `${filteredBhajans[index]}/${name}`,
-              <Highlighter className="spaced" searchWords={filter.split(" ")} textToHighlight={`${name}${tag}`} />
+              <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name}${tag}`} />
             )}
           </div>
           <span className="Search_RightSide">
             {sheetmusic && (
               <Link
                 className="button button-3d button-circle button-jumbo"
-                to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}
-              >
+                to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}>
                 <span role="img" aria-label="sheet music">
                   <FontAwesomeIcon icon="music" />
                 </span>
               </Link>
             )}
             {cdbabyBuyUrls && (
-              <a className="button button-3d button-circle button-jumbo" href={cdbabyBuyUrls[0]} target="_blank">
+              <a
+                className="button button-3d button-circle button-jumbo"
+                href={cdbabyBuyUrls[0]}
+                target="_blank"
+                rel="noopener noreferrer">
                 <span role="img" aria-label="cd">
                   <FontAwesomeIcon icon="cart-arrow-down" />
                 </span>
@@ -195,8 +202,7 @@ class Search extends Component {
             {cdbabySampleUrls && (
               <button
                 className="button button-3d button-circle button-jumbo"
-                onClick={() => this.play(cdbabySampleUrls[0])}
-              >
+                onClick={() => this.play(cdbabySampleUrls[0])}>
                 <span role="img" aria-label="music sample">
                   <FontAwesomeIcon icon="play" />
                 </span>
@@ -209,14 +215,14 @@ class Search extends Component {
     };
     if (window.ga && !window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      window.ga && window.ga("set", { userId: localStorage.uid });
+      window.ga && window.ga('set', { userId: localStorage.uid });
     }
-    const myFavorites = window.location.hash.includes("/my-favorites");
+    const myFavorites = window.location.hash.includes('/my-favorites');
 
     return (
       <div className="App">
         <div className="App-header">
-          <Link to={+localStorage.admin ? "/admin" : "/"} className="title">
+          <Link to={+localStorage.admin ? '/admin' : '/'} className="title">
             Amma's Bhajans
           </Link>
           <input
@@ -226,7 +232,7 @@ class Search extends Component {
             className="form-control"
             name="search"
             id="search"
-            value={filter || ""}
+            value={filter || ''}
             onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
