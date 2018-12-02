@@ -78,8 +78,7 @@ function readFiles() {
             // console.log(song.name);
             noMatch.push(song);
           } else {
-            debugger;
-            addSong(matches[0], song);
+            matches.forEach(fullSearch => addSong(fullSearch, song));
             manyMatches.push([song, matches]);
           }
         }
@@ -128,6 +127,7 @@ function readSheetMusic() {
         } else if (matches.length === 0) {
           noMatchSheet.push(filename);
         } else {
+          matches.forEach(fullSearch => addSheetMusic(fullSearch, filename));
           manyMatchesSheet.push([filename, matches]);
         }
       }
