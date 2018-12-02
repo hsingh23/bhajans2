@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import PDF from "react-pdf-js";
-import React, { Component } from "react";
-import { onlyUpdateForKeys } from "recompose";
-import { HotKeys } from "react-hotkeys";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
+import PDF from 'react-pdf-js';
+import React, { Component } from 'react';
+import { onlyUpdateForKeys } from 'recompose';
+import { HotKeys } from 'react-hotkeys';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // const canRenderPdfNatively = function() {
 //   // TODO: perhaps do this with screen size
@@ -19,19 +19,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //   return navigator.mimeTypes['application/pdf'] || hasAcrobatInstalled();
 // };
 
-const Pdf = onlyUpdateForKeys(["page"])(PDF);
+const Pdf = onlyUpdateForKeys(['page'])(PDF);
 const map = {
-  left: "left",
-  right: "right"
+  left: 'left',
+  right: 'right',
 };
 class RenderPage extends Component {
   constructor(props) {
     super(props);
     var page;
-    if (!props.match.params.location.includes(".pdf")) {
-      page = props.match.params.location.split("-")[1];
+    if (!props.match.params.location.includes('.pdf')) {
+      page = props.match.params.location.split('-')[1];
     } else {
-      page = "1";
+      page = '1';
     }
     this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10) };
     if (!+localStorage.beta) {
@@ -50,7 +50,7 @@ class RenderPage extends Component {
     this.audioTag.src = url.toLowerCase();
     this.audioTag.play();
   };
-  audioTag = document.querySelector("#audio");
+  audioTag = document.querySelector('#audio');
   onPageComplete = page => this.setState({ page });
   onDocumentComplete = pages => this.setState({ pages });
   handlePrevious = () => this.state.page > this.state.initialPage && this.setState({ page: this.state.page - 1 });
@@ -59,8 +59,8 @@ class RenderPage extends Component {
     const {
       bhajans = {},
       match: {
-        params: { id, location }
-      }
+        params: { id, location },
+      },
     } = this.props;
     const name = bhajans && bhajans[id] && bhajans[id].n;
     const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
@@ -69,8 +69,8 @@ class RenderPage extends Component {
       page,
       url,
       scale = 3;
-    if (!location.includes(".pdf")) {
-      [book, page] = location.split("-");
+    if (!location.includes('.pdf')) {
+      [book, page] = location.split('-');
       url = `/pdfs/${book}.pdf`;
     } else {
       url = `https://s3.amazonaws.com/amma-bhajans-sheetmusic/${location}`;
@@ -92,18 +92,17 @@ class RenderPage extends Component {
       <HotKeys keyMap={map} handlers={handlers} focused={true}>
         <div className="App">
           <div className="App-header">
-            <Link to={"/"}>
+            <Link to={'/'}>
               <img className="favicon" src="favicon.ico" alt="Sing " />
             </Link>
-            <div style={{ flexGrow: 1, textOverflow: "ellipsis", textTransform: "capitalize" }}>{name}</div>
-            <nav style={{ flex: "0 0 160px", display: "flex", justifyContent: "flex-end" }}>
+            <div style={{ flexGrow: 1, textOverflow: 'ellipsis', textTransform: 'capitalize' }}>{name}</div>
+            <nav style={{ flex: '0 0 160px', display: 'flex', justifyContent: 'flex-end' }}>
               {cdbabyBuyUrls && (
                 <a
                   className="button button-3d button-circle button-action"
-                  rel="noopener"
                   href={cdbabyBuyUrls[0]}
                   target="_blank"
-                >
+                  rel="noopener noreferrer">
                   <span role="img" aria-label="cd">
                     <FontAwesomeIcon icon="cart-arrow-down" />
                   </span>
@@ -112,21 +111,20 @@ class RenderPage extends Component {
               {cdbabySampleUrls && (
                 <button
                   className="button button-3d button-circle button-action"
-                  onClick={() => this.play(cdbabySampleUrls[0])}
-                >
+                  onClick={() => this.play(cdbabySampleUrls[0])}>
                   <span role="img" aria-label="music sample">
                     <FontAwesomeIcon icon="play" />
                   </span>
                 </button>
               )}
-              {this.props.renderFavorite(name, "button button-caution button-circle", "button button-circle")}
+              {this.props.renderFavorite(name, 'button button-caution button-circle', 'button button-circle')}
             </nav>
           </div>
           <div className="rest">
             {localStorage.presenter && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200 ? (
               <embed
                 src={`/pdfs/${book}.pdf#page=${page}`}
-                style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+                style={{ width: '100vw', height: 'calc( 100vh - 56px )' }}
               />
             ) : (
               <span>
@@ -136,7 +134,7 @@ class RenderPage extends Component {
                   onPageComplete={this.onPageComplete}
                   page={this.state.page}
                   scale={scale}
-                  style={{ maxWidth: "100vw", display: "block", margin: "0 auto" }}
+                  style={{ maxWidth: '100vw', display: 'block', margin: '0 auto' }}
                 />
 
                 {pagination}

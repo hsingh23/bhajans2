@@ -127,7 +127,7 @@ kandarppakoti sundara (telugu) ## vol7-130
 kannan kalla kannan (tamil) ## vol7-131
 kanneduttu paramma (tamil) ## vol7-132
 kanne kalankate (tamil) ## vol7-134
-kanninakattoru (malayalam) ## vol7-135
+kanninakattoru kannunde (malayalam) ## vol7-135
 kanniral kanna (malayalam) ## vol7-136
 kannirunangatta (malayalam) ## vol7-137
 karayalle paitale (malayalam) ## vol7-138

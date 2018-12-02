@@ -1,16 +1,16 @@
-a-i bhavani##Vol6-8
+a-i bhavani (marathi)##Vol6-8
 abhayam abhayam amma##Vol1-6/VolI1-165/VolI0-1
 abhayam tan aruluka##Vol2-7/VolI2-1
 abhayattinimakan##Vol2-8/VolI2-2
 abhista varadayike##Vol2-8/VolI2-3
-abhivandanam##Vol6-6
+abhivandanam (telugu)##Vol6-6
 acho muncha nandalala##Vol5-6
 adharam madhuram##Vol3-6/VolI3-2
 adi divya jyoti mahakali##Vol3-8/VolI3-4
 adi purusa##Vol1-7/VolI1-167/VolI0-2
 adi sakti maha layamkari##Vol2-9/VolI2-4
 adimula param jyoti##Vol3-8/VolI3-4
-adiparama jyotivai##Vol6-6
+adiparama jyotivai (telugu)##Vol6-6
 adiparasakti##Vol1-6/VolI1-166/VolI0-1
 adisakti brahmamrta##Vol4-6
 adisesa ananta sayana##Vol4-7
@@ -22,24 +22,24 @@ aiye guru maharani##Vol1-48/VolI1-173/VolI0-9/VolI2-45/VolI2-5
 aja aja re##Vol5-6
 ajam nirvikalpam##Vol3-10/VolI3-7
 ajivanantam##Vol1-11/VolI1-59/VolI1-61
-ajnabi rah ke##Vol6-9
+ajnabi rah ke (hindi)##Vol6-9
 akalatta kovilil##Vol1-12/VolI1-167/VolI0-3
 akale akale##Vol1-13/VolI1-145/VolI1-148
-akamanatin karirulai##Vol6-10
-akataril arivinte##Vol3-11/VolI3-8
+akamanatin karirulai (tamil)##Vol6-10
+akataril arivinte (krpamrtam)##Vol3-11/VolI3-8
 akatarilarivinte oli namam telichu##Vol4-7
 akattil irruppavale##Vol4-8
 akhila loka nayaki##Vol2-11/VolI2-6
 akhila manamma##Vol3-11/VolI3-9
 akhilandesvari ambe##Vol4-10
-alambahina##Vol6-11
+alambahina (malayalam)##Vol6-11
 alarnda chutarvizhi##Vol5-7
 alaya maniosai kekkudamma##Vol3-12/VolI3-10
 albhuta charitre (atbhuta charitre)##Vol1-14/VolI1-129/VolI1-132
 allah tumaho##Vol2-12/VolI2-7
 alo mi mate##Vol5-8
 amaidiyin vative##Vol5-9
-amala bharatam##Vol6-224
+amala bharatam (english)##Vol6-224
 amala prakasame##Vol2-12/VolI2-7
 amba bhavani jaya jagadambe##Vol1-15/VolI1-112/VolI1-114
 amba bhavani nin ambhoja##Vol3-13/VolI3-11
@@ -49,41 +49,41 @@ amba mata##Vol1-16/VolI1-169/VolI0-5
 amba paramesvari##Vol2-13/VolI2-8
 amba sahita##Vol1-17/VolI1-170/VolI0-5
 ambati kanna##Vol3-14/VolI3-12
-ambe galanu##Vol6-14
+ambe galanu (kannada)##Vol6-14
 ambe jagadambe##Vol5-10
 ambe ma jagadambe ma##Vol3-15/VolI3-13
 ambe mata tu hi##Vol5-11
-ambe mayamauli##Vol6-12
+ambe mayamauli (marathi)##Vol6-12
 ambe pahimam##Vol2-13/VolI2-9
 ambike amrtesvari (ambike jagadisvari)##Vol3-15/VolI3-14
 ambike devi##Vol1-17/VolI1-29/VolI1-30
 ambike ennantarange##Vol2-14/VolI2-10
 ambike jagadambike##Vol1-19/VolI1-170/VolI0-6
 ambike jagadisvari (ambike amrtesvari)##Vol3-16/VolI3-14
-ame ma maiya##Vol6-15
+ame ma maiya (gujrati)##Vol6-15
 amma amma amma##Vol5-12
 amma amma bhairaviye##Vol4-12
-amma amma ena unnai##Vol6-16
-amma amma konachi##Vol6-17
+amma amma ena unnai (tamil)##Vol6-16
+amma amma konachi (konkani)##Vol6-17
 amma amma taye##Vol1-20/VolI1-171/VolI0-7
 amma baramma##Vol5-13
 amma en azhaikayil##Vol5-14
 amma ki chaya me##Vol4-13
-amma nanum##Vol6-17
+amma nanum (tamil)##Vol6-17
 amma ni nidu (alisuammana)##Vol5-15
-amma ni sirikkayile##Vol6-19
-amma nin rupam (mother can you hear me?)##Vol3-186/VolI3-262
+amma ni sirikkayile (tamil)##Vol6-19
+amma nin rupam (mother can you hear me?) (english)##Vol3-186/VolI3-262
 amma nin rupam##Vol1-21/VolI1-110/VolI1-112
 amma tan matiyil##Vol5-16
 amma tan namam##Vol1-22/VolI1-122/VolI1-124
 amma tanna matitattil##Vol2-15/VolI2-11
 amma taye jaganmata##Vol2-16/VolI2-13
 amma un punnagayil##Vol4-14
-amma untan##Vol6-19
+amma untan (tamil)##Vol6-19
 ammana divya padambujagalige##Vol6-20
-ammana nadadu##Vol6-21
+ammana nadadu (tulu)##Vol6-21
 ammavai parkka pokalam##Vol3-16/VolI3-15
-ammayalle endammayalle##Vol6-22
+ammayalle endammayalle (telugu)##Vol6-22
 ammayalle entammayalle##Vol1-23/VolI1-243/VolI0-78
 ammaye kandu nan##Vol3-17/VolI3-16
 ammayekkananayinnu nan##Vol5-17
@@ -102,9 +102,9 @@ amme bhagavati kalimate##Vol1-30/VolI1-132/VolI1-135
 amme bhagavati##Vol1-28/VolI1-67/VolI1-69
 amme kannu turakkule##Vol1-31/VolI1-90/VolI1-91
 amme ulakam##Vol1-32/VolI1-127/VolI1-130
-amme yi jivende (oh my divine mother)##Vol3-186/VolI3-263
+amme yi jivende (oh my divine mother) (english)##Vol3-186/VolI3-263
 amme yi jivente##Vol2-20/VolI2-17
-amritanandamayi jay jay (holy mother)##Vol3-187/VolI3-263
+amritanandamayi jay jay (holy mother) (english)##Vol3-187/VolI3-263
 amrta dayiniyamme##Vol4-16
 amrta padattil anaykkuka##Vol3-20/VolI3-20
 amrta rupini mrdu##Vol3-21/VolI3-22
@@ -134,7 +134,7 @@ amrtesvari jagadisvari he matrrupa##Vol4-23
 amrtesvari jagadisvari##Vol3-24/VolI3-26
 amrtesvari ma amrtesvari##Vol3-26/VolI3-28
 amrtesvari mangalam##Vol3-195/VolI3-278
-amrtesvari padam vande (sri pada)##Vol2-203/VolI2-234/VolI2-236
+amrtesvari padam vande (sri pada Mahatmyam)##Vol2-203/VolI2-234/VolI2-236
 amrtesvari sritapalini##Vol4-24
 amrtesvari suprabhatam##Vol4-213
 amrtesvari susmita##Vol3-26/VolI3-29
@@ -149,27 +149,27 @@ ananda rupiniye##Vol2-33/VolI2-34
 ananda sagara##Vol2-34/VolI2-35
 ananda vithiyiludente##Vol4-27
 anandadhamamam ninnilettan##Vol6-23
-anandam anandam anandame##Vol6-24
+anandam anandam anandame (tamil)##Vol6-24
 anandame amrtanandini##Vol5-22
-anandame anandam##Vol6-26
+anandame anandam (tamil)##Vol6-26
 anandamrta rupini amme##Vol1-36/VolI1-56/VolI1-58
 ananta mami##Vol1-38/VolI1-75/VolI1-77
 ananta rupini##Vol4-29
 ananta samsara (gurupadaka stotram)##Vol3-195/VolI3-278
 ananta srsti vahini##Vol2-35/VolI2-36
-anantamayi patarunnor##Vol2-35
+anantamayi patarunnor##Vol2-34
 anara vinara##Vol3-29/VolI3-33
 anbatikkannante padangal##Vol4-30
-anbenum sollukku amma##Vol6-27
+anbenum sollukku amma (tamil)##Vol6-27
 anbin vativam amma##Vol5-23
-anbu vativanaval##Vol6-27
+anbu vativanaval (tamil)##Vol6-27
 anbumigu chintaikalal##Vol5-24
 andela ravali##Vol5-25
 angallati##Vol1-39/VolI1-109/VolI1-111
-angum ingum##Vol6-30
+angum ingum (tamil)##Vol6-30
 anjana sridhara##Vol2-39/VolI2-40
 ankh na palka##Vol5-27
-annai entra sondama##Vol6-30
+annai entra sondama (tamil)##Vol6-30
 annai entratume##Vol5-28
 annai kayil pillaiyena##Vol5-29
 annaikku niratta ventum##Vol3-30/VolI3-34
@@ -203,8 +203,8 @@ atma rama##Vol1-46/VolI1-173/VolI0-8
 atulya tayute##Vol1-47/VolI1-128/VolI1-131
 avi amba (bandalo in gujarati)##Vol6-32
 avo mere nandalal##Vol3-37/VolI3-44
-awaken children##Vol6-224
-ayarkula kozhunte##Vol6-32
+awaken children (english)##Vol6-224
+ayarkula kozhunte (tamil)##Vol6-32
 aye he ma##Vol5-31
 ayenge mere##Vol5-32
 ayi he holi##Vol4-33
@@ -212,18 +212,18 @@ ayiram dipangal##Vol5-33
 ayiye guru maharani##Vol1-48/VolI1-173/VolI0-9/VolI2-45/VolI2-5
 ayodhya vasi ram##Vol2-46/VolI2-48
 azhikullil##Vol1-43/VolI1-91/VolI1-92
-azhiyada anandam##Vol6-34
+azhiyada anandam (tamil)##Vol6-34
 ba baro manave bhajisu ni hariya##Vol6-34
-ba bhrngave ba##Vol6-36
-badi duvidha me##Vol6-37
+ba bhrngave ba (kannada)##Vol6-36
+badi duvidha me (hindi)##Vol6-37
 bahut tarasa##Vol3-37/VolI3-44
 balakrsnam kalaya##Vol2-46/VolI2-49
 banda krsna##Vol5-34
-bandalo bandalo##Vol6-38
-bandamuntu sontamuntu##Vol6-39
+bandalo bandalo (kannada)##Vol6-38
+bandamuntu sontamuntu (tamil)##Vol6-39
 bandham illa##Vol1-48/VolI1-53/VolI1-55
-bandu bidabarade##Vol6-40
-bara gopala bala gopalabala##Vol6-41
+bandu bidabarade (kannada)##Vol6-40
+bara gopala bala gopalabala (kannada)##Vol6-41
 baradada hrdayake##Vol5-35
 bhagavad gita 15th chapter##Vol4-218
 bhagavan krsna akar##Vol4-34
@@ -234,28 +234,28 @@ bhajamana ma##Vol2-48/VolI2-51
 bhajamana ram##Vol1-50/VolI1-175/VolI0-10
 bhajo mana ramakrsna##Vol2-48/VolI2-52
 bhajo re bhajo##Vol3-36/VolI3-45
-bhaktaru bandiharu##Vol6-42
+bhaktaru bandiharu (kannada)##Vol6-42
 bhaktavatsale devi##Vol1-51/VolI1-24/VolI1-26
 bhakti de ma##Vol4-36
 bhakti korle amma##Vol5-35
 bhava mochaka bhaya##Vol2-49/VolI2-52
 bhavani bhagyavidhatri##Vol5-36
-bhavani bhujangam##Vol6-232
+bhavani bhujangam (sanskrit)##Vol6-232
 bhavani jagadambe##Vol4-37
 bhavani jay jay##Vol2-50/VolI2-53
 bholanatha re##Vol2-50/VolI2-53
 bhramarame##Vol1-55/VolI1-238/VolI0-74
-biroher##Vol6-43
-bit cala##Vol6-44
-bless me with your darshan ma (de darshan ma)##Vol4-235
-blissful knower of truth (anandamayi brahmamayi)##Vol4-235
+biroher (bengali)##Vol6-43
+bit cala (hindi)##Vol6-44
+bless me with your darshan ma (de darshan ma) (english)##Vol4-235
+blissful knower of truth (anandamayi brahmamayi) (english)##Vol4-235
 bolo bolo gokula bala##Vol4-38
 bolo bolo sab mil bolo##Vol1-56/VolI1-175/VolI0-11
 bolo syam radhe##Vol5-38
 brahma murari##Vol3-39/VolI3-46
 brahmanda paksikal##Vol1-57/VolI1-111/VolI1-113
-cenmile##Vol6-45
-cesenu talli abhisekam##Vol6-46
+cenmile (hindi)##Vol6-45
+cesenu talli abhisekam (telugu)##Vol6-46
 chamundhaye kali ma##Vol1-58/VolI1-115/VolI1-117
 chandra bhaga tiri ubhe##Vol5-39
 chandrasekaraya namah om##Vol1-58/VolI1-176/VolI0-11
@@ -273,50 +273,50 @@ chitta vrndavanam##Vol1-60/VolI1-177/VolI0-12
 chittamenum##Vol5-45
 chod de manse##Vol5-46
 chodi de manthi##Vol5-47
-chollu sakhi##Vol6-47
+chollu sakhi (malayalam)##Vol6-47
 choti choti gaiya##Vol4-38
 choto choto gayi##Vol5-48
 chuttuniri##Vol2-53/VolI2-56
-cittacorana##Vol6-49
-close to you##Vol4-236
-colte colte##Vol6-49
-come children (omkara divya porule)##Vol4-236
+cittacorana (kannada)##Vol6-49
+close to you (english)##Vol4-236
+colte colte (bengali)##Vol6-49
+come children (omkara divya porule) (english)##Vol4-236
 come running my darling children##Vol6-226
-comfort me (ananta mami)##Vol4-238
-cuttuniri##Vol6-50
+comfort me (ananta mami) (english)##Vol4-238
+cuttuniri (tamil)##Vol6-50
 dam dam dum dum damaru bole##Vol6-51
 danava bhanjana##Vol2-54/VolI2-58
-dao dao dao more##Vol6-53
+dao dao dao more (bengali)##Vol6-53
 dar dar me##Vol5-49
 darsan dena rama##Vol1-63/VolI1-228/VolI0-64
 darsan ki icha he to##Vol4-40
 darsanam ambike##Vol3-41/VolI3-50
 dasaratha nandana rama##Vol1-63/VolI1-179/VolI0-14
-dasarathatmaja##Vol2-55/VolI2-59
-dasarathe raghu##Vol6-54
+Dasarada Atmaja (dasarathatmaja)##Vol2-55/VolI2-59
+dasarathe raghuramana (kannada)##Vol6-54
 daya karo hari narayana##Vol2-56/VolI2-60
 daya karo mata##Vol1-63/VolI1-165/VolI1-167/VolI2-60
-dayagala ma amma##Vol6-56
-dayakaro tum##Vol6-55
+dayagala ma amma (telugu)##Vol6-56
+dayakaro tum (hindi)##Vol6-55
 de darsan ma##Vol3-42/VolI3-51
-deep within the soul##Vol5-194
-dehachya muralita gitecha vara##Vol6-57
-devadideva##Vol6-58
+deep within the soul (english)##Vol5-194
+dehachya muralita gitecha vara (marathi)##Vol6-57
+devadideva (telugu)##Vol6-58
 devi bhagavati##Vol1-64/VolI1-137/VolI1-140
 devi daya kari ma##Vol2-57/VolI2-61
 devi daya karo ma##Vol2-57/VolI2-61
-devi devi devi##Vol6-60
+devi devi devi (kannada)##Vol6-60
 devi devi devi amrtesvari##Vol1-65/VolI1-266/VolI0-102
 devi devi devi jaganmohini##Vol1-65/VolI1-266/VolI0-102
 devi jaganmata##Vol1-65/VolI1-231/VolI0-66
-devi mahesvari kali karunakari##Vol6-61
+devi mahesvari kali karunakari (kannada)##Vol6-61
 devi mahesvariye##Vol1-66/VolI1-240/VolI0-75
 devi mate##Vol3-43/VolI3-52
 devi mukambike (amme amrtesvari)##Vol2-58/VolI2-62
 devi ninne kani kantittu##Vol3-44/VolI3-53
 devi saranam durge saranam##Vol4-41
 devi saranam##Vol1-67/VolI1-141/VolI1-144
-devi sharanam (please give me refuge)##Vol3-191/VolI3-264
+devi sharanam (please give me refuge) (english)##Vol3-191/VolI3-264
 dhanye dhanye janani##Vol1-71/VolI1-179/VolI0-15
 dhimiki dhimiki##Vol1-72/VolI1-180/VolI0-16
 dina dayalo##Vol2-59/VolI2-63
@@ -324,21 +324,21 @@ dina jana dukha harini amme##Vol4-42
 dina nathe##Vol4-43
 dinatarini##Vol3-44/VolI3-53
 dip ka na##Vol5-50
-divine mother and father (twameva mata)##Vol4-238
+divine mother and father (twameva mata) (english)##Vol4-238
 dukhatti jvalayil##Vol5-51
 durga amba bhavani##Vol2-60/VolI2-64
 durga bhavani ma##Vol1-73/VolI1-181/VolI0-16
 durga namam##Vol2-60/VolI2-64
 durga suktam##Vol4-224
 durge durge##Vol1-73/VolI1-181/VolI0-17
-durgge i dhare gilidu bare##Vol6-62
-duvidha dur karo##Vol6-63
+durgge i dhare gilidu bare (kannada)##Vol6-62
+duvidha dur karo (hindi)##Vol6-63
 ehi murare##Vol2-61/VolI0-17/VolI2-66
 ek din kali ma##Vol4-44
-ek magane##Vol6-65
+ek magane (marathi)##Vol6-65
 ekasrayamam amma##Vol3-45/VolI3-55
 ella pulariyum##Vol2-62/VolI2-67
-ellam ariyunna##Vol3-187/VolI3-265
+ellam ariyunna (english)##Vol3-187/VolI3-265
 ellam ariyunna kannanotu##Vol1-74/VolI1-247/VolI0-83
 ellam ariyunnor amme##Vol3-46/VolI3-56
 ellamirikkilum##Vol4-45
@@ -346,12 +346,12 @@ en maha devi##Vol1-74/VolI1-237//VolI0-72/VolI2-65/VolI2-71
 en manah kovilin##Vol2-66/VolI2-72
 en manassin oru maunam##Vol1-75/VolI1-265/VolI0-101
 enaikkakka unaiyantri##Vol4-46
-enchi mahimena##Vol6-66
-enci poruluda##Vol6-66
+enchi mahimena (tulu)##Vol6-66
+enci poruluda (tulu)##Vol6-66
 engopoyi##Vol2-63/VolI2-68
 engum un arul mazhaiye##Vol4-47
 enkiruntu vandom##Vol5-52
-ennaga tarama##Vol6-68
+ennaga tarama (telugu)##Vol6-68
 ennicha tanne##Vol5-53
 ennile enne tirinnu##Vol2-67/VolI2-73
 ennullil minnunna##Vol4-48
@@ -362,40 +362,40 @@ ente kannunir##Vol1-79/VolI1-17
 entinanamme hara##Vol2-68/VolI2-74
 entinu sokam##Vol3-47/VolI3-57
 entu chevo yedu chevo##Vol2-69/VolI2-76
-enu madali##Vol6-69
-etayo teti##Vol6-70
+enu madali (kannada)##Vol6-69
+etayo teti (tamil)##Vol6-70
 etra nalayi##Vol2-69/VolI2-77
 etrayo nalayi##Vol1-79/VolI1-46/VolI1-47
-every bird in a cage##Vol4-239
-everywhere i look##Vol5-194
-faith be my companion##Vol3-187/VolI3-266
+every bird in a cage (english)##Vol4-239
+everywhere i look (english)##Vol5-194
+faith be my companion (english)##Vol3-187/VolI3-266
 gajai katti##Vol5-55
 gajamukha##Vol3-47/VolI3-58
 gajanana##Vol1-80/VolI1-227/VolI0-63
 gam ganapathaye##Vol3-48/VolI3-58
 gananatha om gananatha##Vol4-49
 gananathanin arul##Vol5-57
-ganangalin natha##Vol6-71
-ganapati gunanidhi##Vol6-72
+ganangalin natha (tamil)##Vol6-71
+ganapati gunanidhi (hindi)##Vol6-72
 ganesa nama om##Vol3-48/VolI3-59
 ganesaya namah om##Vol5-58
 gangadhara hara##Vol1-81/VolI1-182/VolI0-17
 gangajata dhara##Vol2-71/VolI2-78
-gange ginta##Vol6-73
+gange ginta (kannada)##Vol6-73
 gange svar gange##Vol2-71/VolI2-79
 garudha vahana##Vol4-20
 gau re tujhe abhanga (jaya hari vithala)##Vol4-51
 ghana syama sundara##Vol1-83/VolI1-183/VolI0-19
 ghana syama varnante##Vol2-72/VolI2-80
-giridhar he yadunatha##Vol6-74
+giridhar he yadunatha (hindi)##Vol6-74
 giridhara bala##Vol2-73/VolI2-82
 giridhari jai giridhari##Vol1-83/VolI1-184/VolI0-20
 girija suta sanmukha##Vol3-49/VolI3-60
 git nahi##Vol4-53
-give me devotion##Vol5-195
-give me refuge (abhayam tan aruluka niyen)##Vol4-239
-give us grace (shakti de bhakti de)##Vol4-240
-give us your grace##Vol5-195
+give me devotion (english)##Vol5-195
+give me refuge (abhayam tan aruluka niyen) (english)##Vol4-239
+give us grace (shakti de bhakti de) (english)##Vol4-240
+give us your grace (english)##Vol5-195
 gopa balaka##Vol3-50/VolI3-61
 gopala govinda govinda##Vol2-74/VolI2-82
 gopala govinda krsna##Vol1-84/VolI1-18
@@ -417,7 +417,7 @@ govinda krsna jai##Vol1-90/VolI1-186/VolI0-21
 govinda madhava##Vol2-77/VolI2-85
 govinda narayana##Vol1-91/VolI1-186/VolI0-22
 govinda radhe##Vol2-78/VolI2-85
-grace us with your compassion##Vol5-196
+grace us with your compassion (english)##Vol5-196
 guru charanam guru##Vol4-55
 guru charanam sadguru charanam##Vol3-53/VolI3-65
 guru charanam##Vol2-78/VolI2-86
@@ -431,29 +431,29 @@ gurur brahma gurur visnuh##Vol1-271
 guruvastakam (sariram svarupam)##Vol3-157/VolI3-205
 guruvativanavale##Vol3-54/VolI3-67
 guruvayur appa##Vol3-55/VolI3-68
-hail to your glory##Vol6-227
+hail to your glory (english)##Vol6-227
 hamasa vahini devi##Vol1-91/VolI1-187/VolI0-22
 har har mahadev siva siva##Vol3-56/VolI3-69
 hara hara mahadeva sambho##Vol4-56
-hara om siva##Vol6-75
+hara om siva (kannada)##Vol6-75
 haraya jaya##Vol3-57/VolI3-70
 hare kesava govinda##Vol1-92/VolI1-187/VolI0-23
 hare krsna krsna##Vol3-58/VolI3-71
 hare murare##Vol1-94/VolI1-189/VolI0-25
-hare panduranga##Vol6-76
+hare panduranga (marathi)##Vol6-76
 hare rama (radhika manohara)##i1-183/VolI2-209/VolI2-211
-hare tu hamare##Vol6-77
-hari bol hari bol##Vol6-78
+hare tu hamare (hindi)##Vol6-77
+hari bol hari bol (hindi)##Vol6-78
 hari gopala hari gopala##Vol5-61
 hari hara tanaya (svami saranam ayyappa)##Vol3-234
 hari hari sri hari charanam##Vol2-80/VolI2-88
-hari narayana##Vol6-79
+hari narayana (hindi)##Vol6-79
 hari om namo narayanaya##Vol3-59/VolI3-72
 hari om##Vol2-81/VolI2-89
 hariyude kalil##Vol1-94/VolI1-250/VolI0-86
 he amba##Vol1-96/VolI1-112/VolI1-114
 he bhavani he dayani##Vol2-82/VolI2-90
-he gananayaka siddivinayaka##Vol6-80
+he gananayaka siddivinayaka (marathi)##Vol6-80
 he giridhara gopala##Vol1-96/VolI1-189/VolI0-25
 he govind he gopal uddhara mam dinam##Vol3-59/VolI3-72
 he govinda he gopala##Vol2-82/VolI2-91
@@ -461,13 +461,13 @@ he krpamayi ambe##Vol5-62
 he madhava madhusudhana##Vol2-83/VolI2-91/Vol4-57
 he madhava##Vol1-97/VolI1-190/VolI0-26
 he maiya tu##Vol5-62
-he nandalala tuhje##Vol6-82
+he nandalala tuhje (hindi)##Vol6-82
 he nath ab tu##Vol2-84/VolI2-92
 he prabhu tu ananda data##Vol3-59/VolI3-73
 he ram he ram##VolI3-85/VolI1-94
-holo na somay##Vol6-83
+holo na somay (bengali)##Vol6-83
 how can i express my love##Vol3-192
-hrday ma##Vol6-84
+hrday ma (gujrati)##Vol6-84
 hrdaya mandakini##Vol3-56/VolI3-74
 hrdaya nivasini##Vol1-97/VolI1-252/VolI0-87
 hrdaya puspame##Vol1-100/VolI1-113/VolI1-115
@@ -475,25 +475,25 @@ hrdaya puspave##Vol5-63
 hrdayanjali##Vol2-86/VolI2-95
 hrdayesvari en##Vol2-87/VolI2-96
 hrim kali##Vol1-100/VolI1-119/VolI1-121
-hun to ma main tera hi##Vol6-85
+hun to ma main tera hi (hindi)##Vol6-85
 i manojna bhumiyil##Vol5-64
-i'm longing for you (milna tujhe)##Vol4-240
+i'm longing for you (milna tujhe) (english)##Vol4-240
 mother your will (ichamayi english)##Vol3-194/VolI3-268
-ichamayi##Vol1-102/VolI1-152/VolI1-154
+ichamayi (english)##Vol1-102/VolI1-152/VolI1-154
 idamilla##Vol1-103/VolI1-66/VolI1-68/VolI2-237
-in the still of the night (raja ram)##Vol4-241
+in the still of the night (raja ram) (english)##Vol4-241
 indire subha##Vol2-88/VolI2-97
 ingakale##Vol2-88/VolI2-98
 ini oru janmam##Vol1-104/VolI1-191/VolI0-27
 iniyentinalasyam##Vol5-65
-iniyenu kanum##Vol6-86
+iniyenu kanum (malayalam)##Vol6-86
 innallo karthika nalu##Vol2-61/VolI3-74/VolI3-74
-irul tingi (a fragrance in the dark)##Vol3-192/VolI3-269
+irul tingi (a fragrance in the dark) (english)##Vol3-192/VolI3-269
 irul tingi valarunna##Vol2-90/VolI2-99
 isar tumi##Vol5-66
-ishwari jagadishwari (wondrous goddess)##Vol3-188/VolI3-269
+ishwari jagadishwari (wondrous goddess) (english)##Vol3-188/VolI3-269
 isori jogodisari##Vol5-67
-isvar paramesvara##Vol6-88
+isvar paramesvara (hindi)##Vol6-88
 isvara lila yitellam##Vol3-60/VolI3-75
 isvari jagadisvari##Vol1-105/VolI1-192/VolI0-28
 iswar tumhi dayakaro##Vol4-58
@@ -506,7 +506,7 @@ jago ma kali jago jago##Vol4-58
 jago mere pyare bala##Vol4-59
 jaham dekhu##Vol4-60
 jai ambe##Vol1-106/VolI1-120/VolI1-123
-jai ganesa jai ekadanta##Vol6-88
+jai ganesa jai ekadanta (hindi)##Vol6-88
 jai gopalaka##Vol5-69
 jai ho hare ram##Vol4-65
 jai jagadambe ambe mata##Vol5-70
@@ -518,13 +518,13 @@ jai jai jai durga maharani##Vol2-93/VolI2-103
 jai jai jai gananath gajanana##Vol5-72
 jai jai jai gananatha gajanana (pahi gajanana)##Vol5-71
 jai jai jai gananayaka##Vol1-107/VolI1-196/VolI0-32
-jai jai janani jai ho teri##Vol6-89
+jai jai janani jai ho teri (hindi)##Vol6-89
 jai jai kali ma##Vol2-94/VolI2-105
 jai jai mata##Vol5-73
 jai jai ram##Vol5-74
 jai jai ramakrsna##Vol1-107/VolI1-193/VolI0-29
 jai jai satguru##Vol4-69
-jai kalyani jai bhavani##Vol4-72
+jai kalyani jai bhavani (hindi,marathi)##Vol4-72
 jai ma ambe jai ma ambe##Vol3-62/VolI3-77
 jai ma bhavani##Vol5-75
 jai ma jai jai ma##Vol3-63/VolI3-78
@@ -537,7 +537,7 @@ jal raha he##Vol4-61
 janani tava padam##Vol3-64/VolI3-80
 japa japa amma amma##Vol3-65/VolI3-81
 japu me sada##Vol5-76
-jay janani##Vol6-90
+jay janani (hindi)##Vol6-90
 jaya durga durgati##Vol4-62
 jaya hari vithala (gau re tujhe abhanga)##Vol4-51
 jaya jagad janani##Vol2-98/VolI2-110
@@ -556,19 +556,19 @@ jaya paramesvari jagadambe##Vol3-69/VolI3-86
 jaya rama janaki rama##Vol1-112/VolI1-196/VolI0-32
 jaya siva sankara##Vol2-100/VolI2-111
 jayatu jayatu sadguru##Vol3-70/VolI3-87
-jhala jhala##Vol6-27
+jhala jhala (tamil)##Vol6-27
 jhilam jhilam##Vol3-71/VolI3-88
 jinki karuna he apar (santos ma)##Vol4-74
 jis hal me##Vol3-72/VolI3-90
 jivitamennum##Vol4-76
-jnanakkataltannai##Vol6-92
-jnanayoga arivumillai##Vol6-93
+jnanakkataltannai (tamil)##Vol6-92
+jnanayoga arivumillai (tamil)##Vol6-93
 jot jalale##Vol5-77
 jvalana kalyana##Vol5-79
 jya jya thikkani##Vol5-80
 jyotir mari ma##Vol3-72/VolI3-91
-kab aye ga##Vol6-94
-kadaloram##Vol6-95
+kab aye ga (hindi)##Vol6-94
+kadaloram (tamil)##Vol6-95
 kadana bharam##Vol5-81
 kaha ho kanha mere##Vol3-73/VolI3-91
 kaisa sandesa##Vol4-77
@@ -576,31 +576,31 @@ kaitorunnen krsna##Vol1-112/VolI1-232/VolI0-67
 kakkai chiraginile##Vol4-78
 kala murali##Vol2-100/VolI2-113
 kalam kanalu##Vol4-79
-kalattin pustakam##Vol6-96
+kalattin pustakam (malayalam)##Vol6-96
 kalchilambocha##Vol2-101/VolI2-112
 kali durge namo nama##Vol2-102/VolI2-114
 kali ma jai jai ma##Vol3-74/VolI3-92
 kali mahesvari parvati##Vol2-103/VolI2-114
-kali mahesvariye##Vol6-97
+kali mahesvariye (malayalam)##Vol6-97
 kalike devi amrtesvari##Vol3-73/VolI3-93
 kalike syama chandrike##Vol3-73/VolI3-93
 kalimate jag ki mate##Vol5-82
 kalina kanan en kanna (narayana hare)##Vol1-113/VolI1-57/VolI1-59
 kalindi kalil##Vol4-80
 kalindi tirattu ninnum##Vol2-103/VolI2-115
-kalkal nadunka##Vol6-102
+kalkal nadunka (tamil)##Vol6-102
 kalpantarangalkkum##Vol5-83
 kalyana krsna kamaniya##Vol3-75/VolI3-94
 kamale karunardra manase##Vol3-75/VolI3-95
 kamesa vamaksi (sakti mahadevi)##Vol1-115/VolI1-126/VolI1-128
 kanakkan koti##Vol5-84
 kanamum maraven##Vol5-85
-kanata majhe##Vol6-104
-kandarppakoti sundara##Vol6-104
+kanata majhe (marathi)##Vol6-104
+kandarppakoti sundara (telugu)##Vol6-104
 kandrukal meytita##Vol3-76/VolI3-96
 kanivin kataksam##Vol3-77/VolI3-97
 kanivin porule##Vol1-116/VolI1-31/VolI1-32
-kanivotukattarulitaname##Vol6-106
+kanivotukattarulitaname (malayalam)##Vol6-106
 kanivu kiniyumiru##Vol5-86
 kanivutayon kannan##Vol3-78/VolI3-98
 kanjalochane##Vol3-80/VolI3-99
@@ -613,19 +613,19 @@ kanna vada unni##Vol2-108/VolI2-120
 kannan enke##Vol5-87
 kannan vrajathil##Vol5-88
 kannanai kandayo ni##Vol4-82
-kannande marile##Vol6-106
+kannande marile (malayalam)##Vol6-106
 kannande punya nama##Vol2-105/VolI2-117
 kannane kanan##Vol1-119/VolI1-23/VolI1-24
 kannaninettumo##Vol2-107/VolI2-119
 kannatachalum##Vol1-117/VolI1-91/VolI1-93
-kanne imai kappatupol##Vol6-108
+kanne imai kappatupol (tamil)##Vol6-108
 kannende kalocha kettu##Vol1-120/VolI1-8
 kannilenkilum karalil##Vol1-121/VolI1-80/VolI1-82
-kannimaykate##Vol6-109
+kannimaykate (malayalam)##Vol6-109
 kannindallade##Vol5-91
 kanninnu pinnile##Vol5-92
 kannir katalukal##Vol4-84
-kanniral kanna##Vol6-110
+kanniral kanna (malayalam)##Vol6-110
 kannunir illatta##Vol1-122/VolI1-254/VolI0-90
 kannunir kondu##Vol1-123/VolI1-63/VolI1-64
 kannunir toratta##Vol2-111/VolI2-123
@@ -636,28 +636,28 @@ kar le ma ka##Vol5-93
 kara lo naiya para##Vol4-85
 karala mala (radhe syam bolo)##Vol2-112/VolI2-125
 kararavindena##Vol1-124/VolI1-107/VolI1-109
-karayalle paitale##Vol6-111
+karayalle paitale (malayalam)##Vol6-111
 karayate karayunna##Vol2-113/VolI2-126
-karayatta kannanin##Vol6-112
+karayatta kannanin (malayalam)##Vol6-112
 karayum karmukil##Vol4-86
 karimukil varnnan##Vol1-125/VolI1-238/VolI0-73
-karm ki nadiya##Vol6-113
+karm ki nadiya (hindi)##Vol6-113
 karoli chandran##Vol2-114/VolI2-127
 karppuradipam##Vol4-88
 karturajnaya prapyate phalam##Vol3-80/VolI3-102
-karumaiyile##Vol6-114
+karumaiyile (tamil)##Vol6-114
 karuna mayi devi##Vol2-115/VolI2-129
 karuna nir katale nin##Vol1-125/VolI1-93/VolI1-94
 karuna sindho bhairavi##Vol3-81/VolI3-103
 karuna yille##Vol2-118/VolI2-132
 karunalaye devi##Vol1-126/VolI1-78/VolI1-80
-karunamayi devi##Vol5-94
+karunamayi devi (kannada,telugu)##Vol5-94
 karunamayi hrdayesvari##Vol3-83/VolI3-105
 karunamayi kanivu tukane##Vol3-83/VolI3-105
 karunamayi ni krpamayi ni##Vol2-116/VolI2-130
 karunamayi sneha arunodayam##Vol4-89
 karunardra manassan##Vol2-117/VolI2-131
-karunasagara##Vol6-115
+karunasagara (tamil)##Vol6-115
 karunatan katamiri##Vol1-127/VolI1-121/VolI1-123
 karunya dhamame amme##Vol3-84/VolI3-106
 karunya murte##Vol1-128/VolI1-33/VolI1-34
@@ -678,20 +678,20 @@ kayena vaca##Vol1-271
 kelkkatta bhavam##Vol3-87/VolI3-111
 kerunnen manasam (kezhunnen manasam)##Vol1-135/VolI1-138/VolI1-141
 kesava narayana##Vol1-136/VolI1-198/VolI0-34
-keva bhavama##Vol6-116
+keva bhavama (gujrati)##Vol6-116
 kezhunnen manasam (kerunnen manasam)##Vol1-135/VolI1-138/VolI1-141
-khol darvaza##Vol6-117
+khol darvaza (punjabi)##Vol6-117
 khusiyom ki bahar##Vol5-98
-kiski khoj##Vol6-118
+kiski khoj (hindi)##Vol6-118
 kiti ananda re##Vol4-91
 kodanu koti##Vol1-137/VolI1-199/VolI0-35
-kotha tumi jonani##Vol6-119
+kotha tumi jonani (bengali)##Vol6-119
 krishna play with us (vinati hamari) ##Vol4-242
 krpa ho teri##Vol5-99
 krpa karo##Vol5-100
 krpalo krsna##Vol5-101
 krsna govinda gopala ram hari nam gavo (hindi)##Vol6-120
-krsna govinda gopala##Vol2-122/VolI2-137
+krsna govinda gopala (hindi)##Vol2-122/VolI2-137
 krsna govinda govinda gopala##Vol2-123/VolI2-138
 krsna jinka nam he##Vol2-123/VolI2-139
 krsna kanhaiya##Vol5-102
@@ -703,37 +703,37 @@ krsna mana mohana##Vol2-124/VolI2-140
 krsna mukunda madhava##Vol2-125/VolI2-140
 krsna mukunda murari##Vol1-140/VolI1-202/VolI0-38
 krsna murari (yamuna tira vihari)##Vol4-93
-krsna ninna bala lile##Vol6-121
+krsna ninna bala lile (kannada)##Vol6-121
 krsnam vande##Vol2-125/VolI2-141
 krsnanai bhajanai seyvay##Vol4-94
 ksanam ennu vannitum##Vol3-87/VolI3-112
 kucha na le##Vol4-95
 kumbhodara varada##Vol1-140/VolI1-203/VolI0-39
 kurirul pole##Vol3-89/VolI3-113
-kuriyani kanniru##Vol6-122
-kurumbukkara##Vol6-123
+kuriyani kanniru (telugu)##Vol6-122
+kurumbukkara (tamil)##Vol6-123
 lalita lalita##Vol2-126/VolI2-142
 lambodara pahi mam##Vol1-141/VolI1-204/VolI0-40
 le lo sarana me ma##Vol4-96
 let my spirit fly to you ##Vol4-242
 life is a play ##Vol5-196
 light of truth (bandham illa) ##Vol4-243
-lila addhuta divya charita tava##Vol6-124
+lila addhuta divya charita tava (marathi)##Vol6-124
 lingastakam##Vol3-46/VolI3-46
 living goddess (vishva manava) ##Vol4-244
 lokah samastah##Vol3-197/VolI3-281
 lord of vrindavan ##Vol5-197
 ma amrtesvari##Vol5-105
-ma ilavelupu##Vol6-125
+ma ilavelupu (telugu)##Vol6-125
 ma jagadambe##Vol4-101
 ma jai jagadambe ma jay##Vol4-102
 ma jai ma karle japan##Vol4-103
-ma jay jay ma##Vol6-126
+ma jay jay ma (hindi)##Vol6-126
 ma ki nav##Vol4-104
 ma nam bole##Vol3-90/VolI3-114
-ma o ma##Vol6-131
+ma o ma (gujrati)##Vol6-131
 ma oh meri ma##Vol3-91/VolI3-116
-ma tere carano me jo##Vol6-133
+ma tere carano me jo (hindi)##Vol6-133
 madhava gopal##Vol1-142/VolI1-204/VolI0-40
 mahadeva sambho mahesa##Vol4-97
 mahakali##Vol2-127/VolI2-142
@@ -742,53 +742,53 @@ mahisa sura mardini##Vol4-98
 mahisasura mardini stotram##Vol5-184
 mahita sneha maharnnavam##Vol5-105
 mahita sneham pakarnunamme##Vol4-100
-makaranda madhurya##Vol6-127
-malaimakale taye##Vol6-134
+makaranda madhurya (telugu)##Vol6-127
+malaimakale taye (tamil)##Vol6-134
 malamukalil olivitarum##Vol5-106
 malarum manavum##Vol1-143/VolI1-149/VolI1-152
 mama janani##Vol2-127/VolI2-143
 mamgala varada##Vol4-105
 man re##Vol5-109
 maname narajivitam##Vol1-144/VolI1-65/VolI1-66
-manamendrum undan vidu##Vol6-128
+manamendrum undan vidu (tamil)##Vol6-128
 manamiruntuven##Vol4-106
 manamohana krsna##Vol3-92/VolI3-118
-manas chora radha krsna##Vol6-136
+manas chora radha krsna (hindi)##Vol6-136
 manasa cheyi smarana##Vol4-107
 manasa malaril##Vol3-93/VolI3-119
 manasa vacha karmana##Vol1-145/VolI1-21/VolI1-23
 no one is your own (manase nin svantamayi english)##Vol3-189/VolI3-270
 manase nin svantamayi##Vol1-146/VolI1-5
 manassenna malarvallikkula##Vol5-107
-manassil nila sarasil##Vol6-129
+manassil nila sarasil (malayalam)##Vol6-129
 manassil varnnappolima##Vol2-128/VolI2-144
 manassoru maya##Vol4-108
 manava hrdayattil##Vol2-129/VolI2-146
-manavu nondiralu amma##Vol6-137
+manavu nondiralu amma (kannada)##Vol6-137
 mandahasa vadane manohari##Vol1-149/VolI1-206/VolI0-42
 mandahasa vadane manonmani##Vol3-94/VolI3-120
 mangala arati##Vol1-149/VolI1-206/VolI0-42
-mangala nayaki##Vol6-129
+mangala nayaki (tamil)##Vol6-129
 mangu me##Vol5-108
 manikkakinkini arthia##Vol4-109
 manikkya chilaiye##Vol3-94/VolI3-121
 manilattaye##Vol4-110
 manivarnnan vannila##Vol4-111
-mankali mallamma##Vol6-138
+mankali mallamma (kannada)##Vol6-138
 mannayi marayum##Vol1-150/VolI1-96
 mannorkkum vinnorkkum##Vol4-112
 mano buddhya (nirvanastakam)##Vol1-151/VolI1-207/VolI0-43
 manva re tu##Vol5-111
 manyukal mutum##Vol2-130/VolI2-147
 mara yadukula##Vol1-153/VolI1-148/VolI1-151
-mari kali ma##Vol6-139
+mari kali ma (gujrati)##Vol6-139
 martyare samsara##Vol1-153/VolI1-73/VolI1-74
-mat bhavani mahesi ambe##Vol6-140
+mat bhavani mahesi ambe (hindi)##Vol6-140
 mata mahesvari##Vol3-95/VolI3-122
-mata rani ne krpa basayi##Vol6-141
-mathe rahe taro hath ma##Vol6-142
+mata rani ne krpa basayi (punjabi)##Vol6-141
+mathe rahe taro hath ma (gujrati)##Vol6-142
 mathuradhipathe##Vol1-142/VolI1-139/VolI0-41
-mativaruvolam##Vol6-143
+mativaruvolam (malayalam)##Vol6-143
 matr vatsalya##Vol3-95/VolI3-122
 matr vatsalyam nirannu##Vol5-112
 mauna ghanamrtam##Vol1-155/VolI1-140/VolI1-143
@@ -797,26 +797,26 @@ mayaiyentra peyinai##Vol4-114
 mayangunna pakalinnu##Vol2-131/VolI2-148
 mayil togai##Vol5-113
 mayilontru atutu (vel muruka vel muruka)##Vol3-99/VolI3-126
-mayyaji menu tu cahidi##Vol6-144
+mayyaji menu tu cahidi (punjabi)##Vol6-144
 me khadi##Vol5-114
-mera mujh main##Vol6-132
-mera pranam he##Vol6-147
-mere hrdaya##Vol6-146
+mera mujh main (punjabi)##Vol6-132
+mera pranam he (hindi)##Vol6-147
+mere hrdaya (gujrati)##Vol6-146
 mere prabhu tu mujh ko##Vol2-132/VolI2-149
 mere vich ram##Vol5-115
 meri dhatkan tera nam##Vol4-114
-meri jhoppidi de##Vol6-147
+meri jhoppidi de (punjabi)##Vol6-147
 meri sunle araj##Vol5-117
 merise kannula##Vol5-116
 milna tujhe mai chahu##Vol2-133/VolI2-150
 minuguva kannina##Vol5-118
-mithi madhuri##Vol6-148
-mohalu champpara gauri ramana##Vol6-149
+mithi madhuri (gujrati)##Vol6-148
+mohalu champpara gauri ramana (telugu)##Vol6-149
 mohana murali mohitamen##Vol3-99/VolI3-128
 mora mukuta vale##Vol5-120
 more lage##Vol4-115
 mother bless me ##Vol5-198
-mother nature##Vol6-228
+mother nature (english)##Vol6-228
 mother of all ##Vol3-194/VolI3-271
 mother of immortal bliss (snehamritanandani) ##Vol4-245
 mother of love ##Vol3-190/VolI3-272
@@ -836,28 +836,28 @@ murali dhara gopala##Vol2-135/VolI2-153
 murali dhara sundara##Vol4-117
 murali krsna mukunda##Vol2-137/VolI2-156
 murali ninadam##Vol2-138/VolI2-155
-murali vale##Vol6-150
-muraliganamutirkkunnu##Vol6-151
-muralikayiloru ganamundo?##Vol6-152
+murali vale (hindi)##Vol6-150
+muraliganamutirkkunnu (malayalam)##Vol6-151
+muralikayiloru ganamundo? (malayalam)##Vol6-152
 muralivale##Vol2-139/VolI2-157
 muruka muruka vel muruka##Vol4-118
 muttumari amba##Vol2-140/VolI2-159
 muttumari amma (teti unnai)##Vol3-241
 muvvalu katti##Vol5-123
 na karmana na prajaya##Vol3-197/VolI3-281
-na mai dharmi##Vol6-154
+na mai dharmi (hindi)##Vol6-154
 nalanchu nalekyu##Vol2-140/VolI1-159
 nam japana kyom chod##Vol4-119
 namami kalike##Vol2-141/VolI2-160
-nammavararu namagilla##Vol6-155
+nammavararu namagilla (kannada)##Vol6-155
 namo bhutanatha##Vol3-104/VolI3-131
 namo namah##Vol4-120
 namo namaste mata sarasvati##Vol3-105/VolI3-132
 namo namaste##Vol4-121
-namostute devi##Vol6-156
-nan enna seyyavendum##Vol6-158
+namostute devi (marathi)##Vol6-156
+nan enna seyyavendum (tamil)##Vol6-158
 nan sollum mantiram##Vol3-106/VolI3-133
-nanagenu beda##Vol6-158
+nanagenu beda (kannada)##Vol6-158
 nanda gopan##Vol2-141
 nanda kumara gopala sundarabala##Vol2-142/VolI2-158/VolI2-161
 nanda kumara gopala vrndavana##Vol1-157/VolI1-209/VolI0-45
@@ -872,21 +872,21 @@ nanda lala nanda lala##Vol2-144/VolI2-161/VolI2-162
 nandalala navanita##Vol2-144/VolI2-162/VolI2-163
 nandana yadu nandana##Vol2-145/VolI2-162/VolI2-163
 nandana##Vol1-214
-nannu cusi##Vol6-160
+nannu cusi (telugu)##Vol6-160
 narayana hare (kalina kanan en kanna)##Vol1-113/VolI1-57/VolI1-59
 narayana hari##Vol1-158/VolI1-86/VolI1-88
 narayana narayana jaya##Vol2-145/VolI2-163/VolI2-164
 nartana sundara nataraja##Vol2-146/VolI2-163/VolI2-164
 nataraja nataraja nartana##Vol2-146/VolI2-164/VolI2-165
 navinte tumbil nin##Vol2-146/VolI2-164/VolI2-165
-nene manave ammana ninu##Vol6-161
+nene manave ammana ninu (kannada)##Vol6-161
 nenjam niraintavane##Vol4-123
 netrangale ningal##Vol4-124
 neyyapantam yetriya dipam##Vol4-125
 ni ente velicham##Vol1-162/VolI1-236/VolI0-71
-ni intri verarumillai##Vol6-162
+ni intri verarumillai (tamil)##Vol6-162
 ni maran jirippatengu##Vol2-149/VolI2-168/VolI2-169
-ni tanda solletuttu##Vol6-166
+ni tanda solletuttu (tamil)##Vol6-166
 nila nila megha varnna##Vol4-126
 nilaiyilla ulakil##Vol5-124
 nilambuja nayane (telagu)##Vol5-126
@@ -897,10 +897,10 @@ nin mukham kanumbol##Vol4-127
 nin ormakal##Vol1-164/VolI1-106/VolI1-107
 nin premam kontenne##Vol1-165/VolI1-15/VolI1-16
 nin tiru padattil##Vol2-150/VolI2-169/VolI2-170
-ninaivai nan marakkayile##Vol6-163
-ninna mamate##Vol6-164
+ninaivai nan marakkayile (tamil)##Vol6-163
+ninna mamate (kannada)##Vol6-164
 ninne piriyunna##Vol3-106/VolI3-137
-nintra tiru kolam kanten##Vol6-165
+nintra tiru kolam kanten (tamil)##Vol6-165
 nintra tirukkolam kanten##Vol4-128
 nira kanti tingi##Vol2-151/VolI2-171/VolI2-172
 nirajanam##Vol5-127
@@ -913,7 +913,7 @@ nizhalinte pinnale##Vol3-108/VolI3-138
 nrttamatu krsna##Vol2-154/VolI2-174/VolI2-175
 o ma ye##Vol5-130
 o meri pyari mayya##Vol5-131
-o mind become surrendered##Vol6-228
+o mind become surrendered (english)##Vol6-228
 o vasudeva##Vol4-146
 om amrtesvari devi mata##Vol3-141/VolI3-141
 om amrtesvari namah##Vol3-108/VolI3-139
@@ -921,14 +921,14 @@ om bhadra kali namo##Vol3-109/VolI3-140
 om bhadra kali sri bhadra kali##Vol4-129
 om bhadra kali sri##Vol1-168/VolI1-241/VolI0-76
 om guru mata##Vol2-155/VolI2-174/VolI2-176
-om hari om hari##Vol6-166
+om hari om hari (tamil)##Vol6-166
 om jagad janani##Vol3-141/VolI3-141
 om kali om mata##Vol2-151/VolI2-175/VolI2-176
-om mangalam##Vol6-168
+om mangalam (sanskrit)##Vol6-168
 om namo bhagavate vasudevaya##Vol2-172/VolI2-197/VolI2-199
 om namo namah sivaya##Vol4-142
-om sakti##Vol6-170
-om sakti om sakti om sakti##Vol6-171
+om sakti (tamil)##Vol6-170
+om sakti om sakti om sakti (tamil)##Vol6-171
 om sri mata jaganmata##Vol2-172/VolI2-198/VolI2-199
 omkar guru ma omkar##Vol2-172/VolI2-197/VolI2-198
 omkara brahmattin##Vol1-169/VolI1-261/VolI0-96
@@ -943,10 +943,10 @@ omkara divya porule - 7##Vol2-163/VolI2-18/VolI2-188
 omkara divya porule - 8##Vol3-110/VolI3-141
 omkara divya porule 2 (love is the essence) ##Vol3-193/VolI3-273
 omkara panjara sukim (isvari ninne)##Vol5-132
-omkara svararupini unaru##Vol6-172
-omkara svarupini##Vol5-133
+omkara svararupini unaru (malayalam)##Vol6-172
+omkara svarupini Unaru##Vol5-133
 omkaram engum##Vol1-192/VolI1-153
-omkaresvara##Vol6-172
+omkaresvara (telugu)##Vol6-172
 one tiny atom ##Vol5-199
 onnu tirinningu##Vol3-132/VolI3-172
 open my heart ##Vol3-193/VolI3-274
@@ -967,20 +967,20 @@ oru tulli sneham##Vol1-196/VolI1-72/VolI1-73
 oti oti olivatenke##Vol5-135
 padamulattile pamsuvay##Vol4-148
 padaravindhangal##Vol4-149
-pagalaina reyaina##Vol6-174
+pagalaina reyaina (telugu)##Vol6-174
 pahi gajanana (jai jai gananath gajanana)##Vol5-74
 pahi murare pavana carita##Vol3-137/VolI3-180
-pahi pahi devi pahi##Vol6-175
+pahi pahi devi pahi (telugu)##Vol6-175
 pakalantiyil##Vol1-197/VolI1-262/VolI0-97
 palana parayani amrtesvari##Vol3-138/Vol5-136
 palkkatalnatuvil##Vol1-198/VolI1-258/VolI0-93
 pandharitsa deva tujha##Vol5-136
 panduranga vithala##Vol2-174/VolI2-200/VolI2-201
-panduritsa deva tujhi##Vol6-175
+panduritsa deva tujhi (marathi)##Vol6-175
 pankilamamen manassu##Vol3-139/VolI3-181
 pannagabharana##Vol4-150
 pannagabhusana paramadayalo##Vol3-140/VolI3-183
-parabrahma##Vol6-177
+parabrahma (kannada)##Vol6-177
 parama pavana vadane##Vol3-140/VolI3-184
 paramasiva mam pahi##Vol1-199/VolI1-210/VolI0-46
 parasahasra hrdayangalil##Vol1-200/VolI1-36/VolI1-37
@@ -995,12 +995,12 @@ pasiyentral utan##Vol4-151
 pati pukazhttuvan##Vol4-152
 patitum amme##Vol3-142/VolI3-186
 patituvay maname##Vol5-138
-pattave padamu##Vol6-178
+pattave padamu (telugu)##Vol6-178
 patupettere nan##Vol3-143/VolI3-187
 paurnami ravil##Vol1-204/VolI1-244/VolI0-80
 pavana gange taye##Vol2-177/VolI2-203/VolI2-205
 pavani dayakari##Vol4-154
-pelava kaiviral##Vol6-179
+pelava kaiviral (malayalam)##Vol6-179
 pirayentu cheytu##Vol1-205/VolI1-14
 pottikkarannu##Vol4-155
 povukayayo kanna##Vol1-206/VolI1-264/VolI0-99
@@ -1012,14 +1012,14 @@ pranesvara giridhari##Vol3-144/VolI3-188
 prapancha tinokkeyum##Vol3-145/VolI3-189
 prapancham engum##Vol1-209/VolI1-257/VolI0-92
 pratiloma saktitan##Vol1-210/VolI1-114/VolI1-116
-prem hi jivan ka adhar he##Vol6-181
+prem hi jivan ka adhar he (hindi)##Vol6-181
 prem jo diyo##Vol5-139
 prema ka dipa jala do##Vol4-156
 prema ki agan ho##Vol4-157
 prema me jiyo##Vol4-158
 prema prabholasini devi##Vol1-210/VolI1-263/VolI0-98
-prema sagara##Vol6-180
-pukare mayya tumhe sada ham##Vol6-182
+prema sagara (kannada)##Vol6-180
+pukare mayya tumhe sada ham (hindi)##Vol6-182
 purnam adah purnam idam##Vol1-272
 purusa suktam##Vol4-230
 puvuranga taye##Vol5-140
@@ -1077,14 +1077,14 @@ sadguru brahma##Vol1-219/VolI1-220/VolI0-55
 sadguruvay vantutitta kali##Vol3-152/VolI3-200
 sagara dalake##Vol5-147
 saha navavatu##Vol1-271
-saka varamarulvay rama##Vol6-183
+saka varamarulvay rama (tamil)##Vol6-183
 sakala kala devate##Vol1-219/VolI1-256/VolI0-91
 sakalagama samstute##Vol3-154/VolI3-201
 sakti de bhakti de##Vol2-186/VolI2-214/VolI2-215
 sakti do jagadambe##Vol4-168
 sakti mahadevi (kamesa vamaksi)##Vol1-115/VolI1-126/VolI1-128
 sakti rupe ninte##Vol1-220/VolI1-10/VolI1-11
-sakti ta jagadamba##Vol6-184
+sakti ta jagadamba (tamil)##Vol6-184
 samasta papanasanam (visnu panchakam)##Vol4-169
 sambho mahadeva##Vol2-187/VolI2-233
 sambho sankara umapathe##Vol2-188/VolI2-216/VolI2-217
@@ -1092,7 +1092,7 @@ sambho sankara##Vol2-187/VolI2-215/VolI2-216
 samsara dukha samanam##Vol1-223/VolI1-108/VolI1-110
 sanatani sangita##Vol3-155/VolI3-202
 sandhya mayangukayay##Vol5-148
-sankar sut ho tum##Vol6-185
+sankar sut ho tum (hindi)##Vol6-185
 sankara siva sankara (tamil)##Vol6-186
 samkara siva samkara##Vol4-171/ii1-89/VolI2-226/VolI2-227
 sankari sambhavi##Vol2-189/VolI2-217/VolI2-218
@@ -1102,13 +1102,13 @@ santapa santiykkay##Vol3-155/VolI3-203
 sapta svara rupini##Vol3-156/VolI3-204
 sapta svarangalkkum##Vol2-191/VolI2-218/VolI2-220
 sarade sarade##Vol2-192/VolI2-220/VolI2-221
-saranagat ko apnavo ma##Vol6-186
+saranagat ko apnavo ma (hindi)##Vol6-186
 saranam saranam bhagavane##Vol2-192/VolI2-220/VolI2-222
 saranam saranam kali##Vol4-173
 saranam kali saranam##Vol3-156
-sarananti sarananti##Vol6-188
+sarananti sarananti (telugu)##Vol6-188
 saranarthikalude##Vol2-193/VolI2-221/VolI2-223
-saranu saranu##Vol6-190
+saranu saranu (kannada)##Vol6-190
 sarasija nayane##Vol2-194/VolI2-222/VolI2-224
 sarasvati sarasvati sarasija##Vol2-195/VolI2-224/VolI2-225
 saravana bhavane##Vol5-149
@@ -1118,11 +1118,11 @@ sarva mamgala lalitambika##Vol4-174
 sarva mangale sadguru##Vol3-160/VolI3-210
 sarvajagattinum adharam##Vol4-173
 sarvam brahma mayam##Vol1-224/VolI1-220/VolI0-56
-sarvavyapiye##Vol6-189
+sarvavyapiye (tamil)##Vol6-189
 sarvesam svastir bhavatu##Vol1-272
 sata koti vandanam##Vol5-150
 satchitananda guru##Vol1-225/VolI1-222/VolI0-58
-silukisadiru ni##Vol6-190
+silukisadiru ni (kannada)##Vol6-190
 sinkara kavatiyil##Vol3-161/VolI3-211
 sirme mayur mukuta##Vol3-162/VolI3-212
 sita ram bol##Vol1-228/Voli1-221/VolI0-57
@@ -1143,18 +1143,18 @@ sneha sudhamayi##Vol1-231
 snehamrtanandini##Vol2-199/VolI2-230/VolI2-231
 sokamitentinu sandhye##Vol4-177
 sokamoha bhayapahe##Vol4-178
-sollariya nin pukhazhai##Vol6-191
+sollariya nin pukhazhai (tamil)##Vol6-191
 sri chakram ennoru##Vol1-233/VolI1-147/VolI1-150
-sri gananayaka##Vol6-192
+sri gananayaka (hindi)##Vol6-192
 sri kari krpa kari##Vol2-200/VolI2-231/VolI2-233
 sri krsna chaitanya##Vol2-201/VolI2-232/VolI2-234
 sri krsna govinda gopala##Vol2-122/VolI2-137
 sri krsna govinda##Vol2-202/VolI2-232/VolI2-234
 sri krsna saranam##Vol1-234/VolI1-76/VolI1-78
 sri krsna sri hari krsna##Vol4-179
-sri lalite##Vol6-193
+sri lalite (tulu)##Vol6-193
 sri mata jagan mata##Vol2-202/VolI2-233/VolI2-235
-sri pada (amrtesvari padam vande)##Vol2-203/VolI2-234/VolI2-236
+sri pada Mahatmyam (amrtesvari padam vande)##Vol2-203/VolI2-234/VolI2-236
 sri raghavam##Vol5-152
 sri rama jaya rama dasarathe##Vol4-180
 sri rama namamu##Vol1-236/VolI1-70/VolI1-72
@@ -1164,15 +1164,15 @@ sri ramachandra raghu##Vol1-237/VolI1-135/VolI1-138/VolI2-204/VolI2-235/
 sri sabarisa (svami saranam ayyappa)##Vol2-213/VolI2-247/VolI2-249
 sri vinayaka##Vol1-238/VolI1-225/VolI0-60
 srishtiyum niye - you are creation ##Vol3-194/VolI3-275
-srivenkatesa##Vol6-194
+srivenkatesa (telugu)##Vol6-194
 srstiyum niye##Vol1-239/VolI1-24/VolI1-25
 sruti padamillate##Vol2-205/VolI2-236/VolI2-238
 subhra saroruha nilaye devi##Vol4-181
 sukhamenni tirayunna##Vol2-211/VolI2-244/VolI2-246
 sun meri##Vol5-156
-sundar hai nayana tere##Vol6-196
+sundar hai nayana tere (hindi)##Vol6-196
 sundara kanna kanna##Vol2-212/VolI2-245/VolI2-247
-sundari jaganmohini##Vol6-197
+sundari jaganmohini (kannada)##Vol6-197
 sundari ni vayo##Vol1-240/VolI1-255/VolI0-90/VolI2-213/VolI2-246/VolI2-248
 suni a duniya##Vol5-155
 suni he##Vol5-156
@@ -1180,11 +1180,11 @@ sunle pukar##Vol3-165/VolI3-234
 svagatam krsna##Vol1-240/VolI1-226/VolI0-61
 svami saranam ayyappa (hari hara tanaya)##Vol3-165/VolI3-234
 svami saranam ayyappa (sri sabarisa)##Vol2-213/VolI2-247/VolI2-249
-svarloka vatsalya dharayai##Vol6-198
+svarloka vatsalya dharayai (malayalam)##Vol6-198
 sveta patmasane sasvate##Vol5-157
 svikarichitu mama manasa puja##Vol4-182
 syam radhe syam (arati kunja vihari ki)##Vol2-215/VolI2-224/VolI2-226
-syam syam kukadi me##Vol6-200
+syam syam kukadi me (punjabi)##Vol6-200
 syam varna##Vol5-158
 syama sundara madana mohana##Vol1-226/VolI1-49/VolI1-51
 syamne murali##Vol2-216/VolI2-249/VolI2-251
@@ -1196,22 +1196,22 @@ tamara kanna varu##Vol2-217/VolI2-250/VolI2-252
 tan man dhan nu##Vol5-160
 tanana tanana##Vol2-218/VolI2-253/VolI2-255
 tanman ki##Vol2-218/VolI2-251/VolI2-253
-tapamanu##Vol6-200
+tapamanu (telugu)##Vol6-200
 tapta manasam##Vol4-185
 tarapathangale##Vol3-167/VolI3-237
 taru nam##Vol5-161
 tarumula nivasinam (siva pancakam)##Vol4-186
 tatanavitunnu nangal makkal##Vol3-167/VolI3-238
-tathi tathi##Vol6-201
+tathi tathi (tamil)##Vol6-201
 tava sannidhanattil##Vol1-241/VolI1-117/VolI1-119
 tava tirumozhikal##Vol5-162
 tay irukka pillai##Vol4-188
 taye maha maye##Vol2-219/VolI2-252/VolI2-254
 taye tava tanayaril##Vol1-242/VolI1-113/VolI1-115
 teach me the language ##Vol3-190/VolI3-276
-tedal thodankum##Vol6-202
+tedal thodankum (tamil)##Vol6-202
 ten mazhaiyaka##Vol3-168/VolI3-239
-tera aksari mantra##Vol6-204
+tera aksari mantra (marathi)##Vol6-204
 tere siva##Vol5-164
 teri krpa se##Vol5-163
 teti unnai (muttumari amma)##Vol3-170/VolI3-241
@@ -1223,10 +1223,10 @@ tirukhatakal padam nan##Vol2-220/VolI2-253/VolI2-255
 tirumukha darsanam (kali mahesvari amrtesvari)##Vol4-190
 tiruvadi teti##Vol5-166
 triloka matr rupini##Vol5-168
-tujhyata vithala##Vol6-205
-tumbikkaiyan tunaiyiruppan##Vol6-206
+tujhyata vithala (marathi)##Vol6-205
+tumbikkaiyan tunaiyiruppan (tamil)##Vol6-206
 tunka karimukattu##Vol4-191
-tunpankale##Vol6-205
+tunpankale (tamil)##Vol6-205
 tvameva mata##Vol2-222/VolI2-256/VolI2-258
 tyaga diya tune##Vol4-192
 ul uraikintra##Vol5-170
@@ -1237,17 +1237,17 @@ ullil tulumbunna mantram##Vol3-172/VolI3-244
 un kaiyil pillai##Vol5-171
 un vasal teti##Vol4-195
 unarunaru amrtanandamayi##Vol2-222/VolI2-256/VolI2-258
-undan namam##Vol6-208
-unmatta pancakam##Vol6-209
+undan namam (tamil)##Vol6-208
+unmatta pancakam (tamil)##Vol6-209
 unnai teti ulakellam##Vol5-173
 unnum sorum##Vol4-193
 ushakala neram##Vol2-223/VolI2-257/VolI2-259
 uttama premattin##Vol1-244/VolI1-130/VolI1-133
-uyiray oliyay##Vol1-245/VolI1-52/VolI1-53
+uyirayi oliyay##Vol1-245/VolI1-52/VolI1-53
 vadikorinetra##Vol2-224/VolI2-258/VolI2-261
 vagadhisvari##Vol4-195
 vagdevate varu##Vol2-225/VolI2-260/VolI2-262
-vanamali kanna##Vol6-210
+vanamali kanna (malayalam)##Vol6-210
 vandana karu me##Vol5-173
 vandanam nitya vandanam##Vol3-173/VolI3-245
 vande nanda kumaram##Vol1-246/VolI1-229/VolI0-65
@@ -1261,8 +1261,8 @@ varalunna hrdayattil##Vol1-249/VolI1-265/VolI0-100
 varde mata jagadambe mata##Vol4-198
 varde varde jaya varde##Vol4-199
 varu murali mohana##Vol2-226/VolI2-261/VolI2-263
-varuga varuga##Vol6-211
-varumo iniyum##Vol6-212
+varuga varuga (tamil)##Vol6-211
+varumo iniyum (malayalam)##Vol6-212
 varunnennu tonnunnu##Vol2-227/VolI2-262/VolI2-264
 varuvanamantram##Vol4-200
 varuvay varuvay ganapatiye##Vol4-201
@@ -1270,32 +1270,32 @@ vasudeva putrane va nila##Vol1-250/VolI1-226/VolI0-62
 vazhi duram##Vol5-175
 vazhiya entrum vazhivave##Vol3-175/VolI3-248
 vedambike namo##Vol1-251/VolI1-61/VolI1-63
-vedana kondoru##Vol6-213
+vedana kondoru (malayalam)##Vol6-213
 vedanta venalilute##Vol1-252/VolI1-35/VolI1-36
 vel muruka vel muruka (mayilontru atutu)##Vol3-126/VolI3-126
 venkataramana##Vol2-228/VolI2-263/VolI2-266
 vennai unda vayinal (radhe krsna radhe krsna)##Vol4-202
-vennila vadanam##Vol6-214
+vennila vadanam (tamil)##Vol6-214
 venu gopala##Vol4-204
 venugopa bala ni##Vol2-229/VolI2-267/VolI2-270
 verumoru pulkoti##Vol3-176/VolI3-249
 vidhitakhila##Vol4-205
 viharati yamuna##Vol3-176/VolI3-249
 vilichal vilikelkkan##Vol2-230/VolI2-267/VolI2-271
-vilvattal archittom##Vol6-216
+vilvattal archittom (tamil)##Vol6-216
 vina vilambam##Vol2-230/VolI2-268/VolI2-272
 vinati hamari tune##Vol3-177/VolI3-250
 vinati suno vinati suno##Vol3-177/VolI3-251
 vinaya manasam##Vol1-253/VolI1-151/VolI1-153
 vinayaka vinayaka##Vol1-253/VolI1-268/VolI0-104
-vinayakane vinay tirtarulvay##Vol6-217
+vinayakane vinay tirtarulvay (tamil)##Vol6-217
 vinnavar potritum##Vol4-207
 viphalamo ennute##Vol2-232/VolI2-270/VolI2-273
 viraha ki badal##Vol5-176
 virahanombara##Vol5-177
 virahatti patarunnen##Vol2-233/VolI2-271/VolI2-275
-virahattin nombaram##Vol6-218
-virayarnnarayalttalirukal##Vol6-219
+virahattin nombaram (malayalam)##Vol6-218
+virayarnnarayalttalirukal (malayalam)##Vol6-219
 visadamakave vazhimarinikkum##Vol3-178/VolI3-251
 visal hrdaya dena devi##Vol4-208
 visnu panchakam (samasta papanasanam)##Vol4-169
@@ -1307,9 +1307,9 @@ vitaratta tamara malarmottu##Vol3-178/VolI3-253
 vitarunna kalikakku##Vol2-234/VolI2-273/VolI2-277
 vithala hari vithala panduranga vithala##Vol3-178/VolI3-254
 vithala vithala##Vol2-235/VolI2-274/VolI2-278
-vizhittituvay maname##Vol6-220
+vizhittituvay maname (tamil)##Vol6-220
 vraj me aisa##Vol4-209
-vraj me aya basant##Vol6-221
+vraj me aya basant (hindi)##Vol6-221
 vrajavana kunja vihari##Vol3-180/VolI3-255
 vrndavana chandra (radhe syam)##Vol3-194/VolI3-194
 vrndavana ke sundara##Vol2-236/VolI2-275/VolI2-279
@@ -1319,20 +1319,20 @@ vrndavanatille radha##Vol2-236/VolI2-276/VolI2-280
 vrndavanatille sakhimare##Vol3-183/VolI3-258
 vyatha yariyikkan vazhi##Vol3-184/VolI3-259
 vyatha yurannu vikalamaya##Vol3-184/VolI3-260
-we are all beads##Vol6-230
+we are all beads (english)##Vol6-230
 where can i go? ##Vol5-200
 wondrous goddess precious goddess ##Vol5-201
 yadavane mana mohanane##Vol1-257/VolI1-267/VolI0-102
 ya devi sarva bhutesu##Vol3-198/VolI3-282
-yadumaki nintray##Vol6-222
+yadumaki nintray (tamil)##Vol6-222
 yadupati manahari##Vol2-237/VolI2-277/VolI2-280
-yamuna nadi tiram##Vol6-223
+yamuna nadi tiram (tamil)##Vol6-223
 yamuna tira vihara yadukula##Vol4-210
 yamuna tira vihari (krsna murari)##Vol4-93
 yamuna tira vihari (vrindavan sancari)##Vol3-185/VolI3-261
 yasoda ke bala##Vol1-257/VolI1-267/VolI0-103
 yavarkkum tayana amma ni##Vol4-211
 you are creation ##Vol5-202
-you have come to sacrifice##Vol6-230
+you have come to sacrifice (english)##Vol6-230
 you mean everything to me ##Vol3-189/VolI3-277
 you're the essence (ullakattin adhara) ##Vol4-248

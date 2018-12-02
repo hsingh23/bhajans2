@@ -56,27 +56,27 @@ for bhajan, location in bhajans.items():
     bhajans2[bhajan] = {"l": location, 'n': bhajan}
 
 
-def mergeData(filename, key):
-    with open(filename, 'r') as f:
-        for line in f.read().lower().split('\n'):
-            if len(line.strip()) > 0:
-                (bhajan, data) = line.strip().split('##')
-                if (bhajan in bhajans2 and 'n' in bhajans2[bhajan]):
-                    bhajans2[bhajan][key] = re.split('\s*,\s*', data)
-                else:
-                    print 'adsf', bhajan, data
+# def mergeData(filename, key):
+#     with open(filename, 'r') as f:
+#         for line in f.read().lower().split('\n'):
+#             if len(line.strip()) > 0:
+#                 (bhajan, data) = line.strip().split('##')
+#                 if (bhajan in bhajans2 and 'n' in bhajans2[bhajan]):
+#                     bhajans2[bhajan][key] = re.split('\s*,\s*', data)
+#                 else:
+#                     print 'adsf', bhajan, data
 
 
-mergeData('video.txt', 'v')
-mergeData('sheetmusic.txt', 's')
-mergeData('tags.txt', 't')
+# mergeData('video.txt', 'v')
+# mergeData('sheetmusic.txt', 's')
+# mergeData('tags.txt', 't')
 
-for (bhajan, tags) in supplement_tags.iteritems():
-    if bhajan in bhajans2:
-        if 't' in bhajans2[bhajan]:
-            bhajans2[bhajan]['t'].extend(tags)
-        else:
-            bhajans2[bhajan]['t'] = tags
+# for (bhajan, tags) in supplement_tags.iteritems():
+#     if bhajan in bhajans2:
+#         if 't' in bhajans2[bhajan]:
+#             bhajans2[bhajan]['t'].extend(tags)
+#         else:
+#             bhajans2[bhajan]['t'] = tags
 
 with open('bhajan-index.txt', 'w+') as f:
     f.write('\n'.join(final_sorted))
