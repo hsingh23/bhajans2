@@ -2,7 +2,7 @@ module.exports = {
   stripPrefix: 'build/',
   maximumFileSizeToCacheInBytes: 4097152,
   staticFileGlobs: [
-    'build/*.html',
+    'build/index.html',
     'build/static/**/!(*map*)',
     'build/bhajan-index2.json',
     'build/*.min.css',

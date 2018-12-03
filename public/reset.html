@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Reset Bhajans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+          registration.unregister();
+        });
+
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister();
+          }
+        });
+      }
+      localStorage.reset = 1;
+      // try {
+      //   // localStorage.clear();
+      //   // ['fcm_token_details_db', 'fcm_vapid_details_db', 'firebaseLocalStorageDb', 'undefined'].forEach(x =>
+      //   //   indexedDB.deleteDatabase(x)
+      //   // );
+      // } catch (error) {}
+
+      setTimeout(() => {
+        window.location.replace('index.html');
+      }, 10000);
+    </script>
+    <h1>Reset Bhajans</h1>
+    <p>
+      Reset bhajans website to download the latest version. Useful if you are not getting latest version automatically
+      due to some bug. <b>The site will redirect back to the main site in 10 seconds.</b>
+    </p>
+  </body>
+</html>
