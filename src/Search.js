@@ -1,41 +1,21 @@
-import React, { Component } from 'react';
-import 'react-virtualized/styles.css';
-import { List, WindowScroller, AutoSizer } from 'react-virtualized';
-import Highlighter from 'react-highlight-words';
-import { Link } from 'react-router-dom';
-// import { withRouter } from 'react-router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { orderBy } from 'lodash-es';
-
-// class ErrorBoundary extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { hasError: false };
-//   }
-
-//   componentDidCatch(error, info) {
-//     // Display fallback UI
-//     this.setState({ hasError: true });
-//   }
-
-//   render() {
-//     if (this.state.hasError) {
-//       // You can render any custom fallback UI
-//       return <div>Something went wrong.</div>;
-//     }
-//     return this.props.children;
-//   }
-// }
+import React, { Component } from "react";
+import "react-virtualized/styles.css";
+import { List, WindowScroller, AutoSizer } from "react-virtualized";
+import Highlighter from "react-highlight-words";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { orderBy, zip } from "lodash-es";
+import classNames from "classnames";
 
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { filteredBhajans: [] };
+    this.state = { filteredBhajans: [], playing: false, infoOpen: false, infoFilteredIndex: false };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      this.filterBhajans({ nextProps, filter: nextProps.path.includes('/my-favorites') ? '' : null });
+      this.filterBhajans({ nextProps, filter: nextProps.path.includes("/my-favorites") ? "" : null });
     }
   }
 
@@ -53,12 +33,12 @@ class Search extends Component {
       this.filterBhajans();
     } else {
       window
-        .fetch('./bhajan-index2.json')
+        .fetch("./bhajan-index2.json")
         .then(data => data.json())
         .then(fetchedBhajans => {
-          fetchedBhajans = orderBy(fetchedBhajans, ['n', 't'], ['asc', 'asc']);
+          fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
           window.fetchedBhajans = fetchedBhajans;
-          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join('') + o.t));
+          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join("") + o.t));
         })
         .then(() => this.filterBhajans());
     }
@@ -66,73 +46,52 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : child;
+    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : <span>{child}</span>;
   };
 
-  audioTag = document.querySelector('#audio');
+  audioTag = document.querySelector("#audio");
 
   play = url => {
     this.audioTag.src = url.toLowerCase();
     this.audioTag.play();
+    this.setState({ playing: url });
+    this.audioTag.onEnded = this.stop;
   };
 
-  // linkify = (name, location) => {
-  //   var re = /\d{4}supl-\d+|vol\d-\d+/gi;
-  //   var results = [];
-  //   var lastIndex = re.lastIndex;
-  //   var result;
-  //   location = location.replace(/[,/]/g, " ");
-  //   // should I remove links from the pages
-  //   // return <span className="spaced rightAligned">{location}</span>;
-  //   // eslint-disable-next-line
-  //   while ((result = re.exec(location)) !== null) {
-  //     if (result.index > lastIndex) {
-  //       results.push(location.slice(lastIndex, result.index));
-  //     }
-  //     results.push(
-  //       <Link key={`/pdf/${result[0]}/${name}`} to={`/pdf/${result[0]}/${name}`}>
-  //         {result[0]}
-  //       </Link>
-  //     );
-  //     lastIndex = re.lastIndex;
-  //   }
-  //   if (results.length === 0) {
-  //     debugger;
-  //   }
-  //   return <span className="spaced rightAligned">{results.length > 0 ? results : null}</span>;
-  // };
+  stop = () => {
+    this.audioTag.pause();
+    this.setState({ playing: false });
+  };
 
-  // The meat and potatoes
-  // TODO: to make page load faster, we can pre compute searchable text
   makeSearchable = line =>
     line
       .toLowerCase()
-      .replace(/[^A-z0-9]/g, '')
-      .replace(/h/g, '')
-      .replace(/z/g, 'r')
-      .replace(/ri?/g, 'ri')
-      .replace(/ai?/g, 'ai')
-      .replace(/ee/g, 'i')
-      .replace(/oo|uu/g, 'u')
-      .replace(/[kg]il/g, 'kgil') // 2
-      .replace(/[cj]al/g, 'Cal')
-      .replace(/[vw]/g, 'V')
-      .replace(/ny?/g, 'ny')
-      .replace(/a+/g, 'a')
-      .replace(/(t|k|c){2}/g, '$1')
-      .replace(/(g|p|j){2}/g, '$1')
-      .replace(/[ie]*y/g, 'Y')
-      .replace(/[tdl]/g, 'T');
+      .replace(/[^A-z0-9]/g, "")
+      .replace(/h/g, "")
+      .replace(/z/g, "r")
+      .replace(/ri?/g, "ri")
+      .replace(/ai?/g, "ai")
+      .replace(/ee/g, "i")
+      .replace(/oo|uu/g, "u")
+      .replace(/[kg]il/g, "kgil") // 2
+      .replace(/[cj]al/g, "Cal")
+      .replace(/[vw]/g, "V")
+      .replace(/ny?/g, "ny")
+      .replace(/a+/g, "a")
+      .replace(/(t|k|c){2}/g, "$1")
+      .replace(/(g|p|j){2}/g, "$1")
+      .replace(/[ie]*y/g, "Y")
+      .replace(/[tdl]/g, "T");
 
   filterBhajans = ({ filter, nextProps } = {}) => {
     // fetchedBhajans is optionally passed - after fetch request
-    filter = (filter !== undefined ? filter : window.searchFilter) || '';
+    filter = (filter !== undefined ? filter : window.searchFilter) || "";
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
     console.log(searchableFilter);
     const filterFavorites = nextProps
-      ? nextProps.path.includes('/my-favorites')
-      : this.props.path.includes('/my-favorites');
+      ? nextProps.path.includes("/my-favorites")
+      : this.props.path.includes("/my-favorites");
 
     const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
       if (filterFavorites) {
@@ -145,84 +104,172 @@ class Search extends Component {
     this.setState({ filteredBhajans });
   };
 
+  setInfo = (infoOpen, infoFilteredIndex) => this.setState({ infoOpen, infoFilteredIndex });
+
   render() {
-    const { filteredBhajans } = this.state;
+    const { filteredBhajans, playing, infoOpen, infoFilteredIndex } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
       const {
         sm: sheetmusic,
         n: name,
-        t: tags = '',
+        t: tags = "",
         l: location,
         cs: cdbabySampleUrls,
-        cu: cdbabyBuyUrls,
+        cu: cdbabyBuyUrls
       } = window.fetchedBhajans[filteredBhajans[index]];
-      const tag = tags ? ` (${tags})` : '';
-
-      // return (
-      //   <div key={key} style={style} className="bhajanRow">
-      //     {name}
-      //     {location
-      //       .filter(x => x.match(/^vol\d|^\d/))
-      //       .sort((a, b) => a < b)
-      //       .map(x => this.wrappedName(x, `${filteredBhajans[index]}/${name}`, x))}
-      //   </div>
-      // );
+      const tag = tags ? ` (${tags})` : "";
 
       return (
-        <div key={key} style={style} className="bhajanRow">
-          <div className="capitalize">
-            {this.wrappedName(
-              location[0],
-              `${filteredBhajans[index]}/${name}`,
-              <Highlighter className="spaced" searchWords={filter.split(' ')} textToHighlight={`${name}${tag}`} />
-            )}
-          </div>
-          <span className="Search_RightSide">
-            {sheetmusic && (
-              <Link
-                className="button button-3d button-circle button-jumbo"
-                to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}>
-                <span role="img" aria-label="sheet music">
-                  <FontAwesomeIcon icon="music" />
-                </span>
-              </Link>
-            )}
-            {cdbabyBuyUrls && (
-              <a
-                className="button button-3d button-circle button-jumbo"
-                href={cdbabyBuyUrls[0]}
-                target="_blank"
-                rel="noopener noreferrer">
-                <span role="img" aria-label="cd">
-                  <FontAwesomeIcon icon="cart-arrow-down" />
-                </span>
-              </a>
-            )}
-            {cdbabySampleUrls && (
+        <div key={key} style={style}>
+          <div className="bhajanRow">
+            <div className="Search_LeftSide">
+              {this.wrappedName(
+                location[0],
+                `${filteredBhajans[index]}/${name}`,
+                <Highlighter className="spaced" searchWords={filter.split(" ")} textToHighlight={`${name}${tag}`} />
+              )}
+            </div>
+            <span className="Search_RightSide">
               <button
-                className="button button-3d button-circle button-jumbo"
-                onClick={() => this.play(cdbabySampleUrls[0])}>
-                <span role="img" aria-label="music sample">
-                  <FontAwesomeIcon icon="play" />
+                className="button button-3d button-circle button-jumbo spaced"
+                onClick={() => this.setInfo(window.fetchedBhajans[filteredBhajans[index]], filteredBhajans[index])}
+              >
+                <span role="img" aria-label="info">
+                  <FontAwesomeIcon icon="info" />
                 </span>
               </button>
-            )}
-            {this.props.renderFavorite(name)}
-          </span>
+              {sheetmusic && (
+                <Link
+                  className="button button-3d button-circle button-jumbo spaced"
+                  to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}
+                >
+                  <span role="img" aria-label="sheet music">
+                    <FontAwesomeIcon icon="music" />
+                  </span>
+                </Link>
+              )}
+              {cdbabyBuyUrls && (
+                <a
+                  className="button button-3d button-circle button-jumbo spaced"
+                  href={cdbabyBuyUrls[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span role="img" aria-label="cd">
+                    <FontAwesomeIcon icon="cart-arrow-down" />
+                  </span>
+                </a>
+              )}
+              {cdbabySampleUrls && (
+                <button
+                  className="button button-3d button-circle button-jumbo spaced"
+                  onClick={() => (playing === cdbabySampleUrls[0] ? this.stop() : this.play(cdbabySampleUrls[0]))}
+                >
+                  <span role="img" aria-label="music sample">
+                    <FontAwesomeIcon icon={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
+                  </span>
+                </button>
+              )}
+              {this.props.renderFavorite(name)}
+            </span>
+          </div>
         </div>
       );
     };
     if (window.ga && !window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      window.ga && window.ga('set', { userId: localStorage.uid });
+      window.ga && window.ga("set", { userId: localStorage.uid });
     }
-    const myFavorites = window.location.hash.includes('/my-favorites');
-
+    const myFavorites = window.location.hash.includes("/my-favorites");
+    const {
+      sm: sheetmusic = [],
+      n: name,
+      t: tags = "",
+      l: location = [],
+      cs: cdbabySampleUrls = [],
+      cu: cdbabyBuyUrls = []
+    } = infoOpen || {};
+    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls);
     return (
       <div className="App">
+        <div className={classNames("modal-window", { open: !!infoOpen })}>
+          <div>
+            <button
+              onClick={e => {
+                e.stopPropagation();
+                this.setInfo();
+              }}
+              title="Close"
+              className="modal-close"
+            >
+              Close
+            </button>
+            <h1>{name}</h1>
+            {location.length > 0 && (
+              <div>
+                <strong>Found in Books: </strong>
+
+                {location.map(pdf => (
+                  <span className="block">
+                    {this.wrappedName(
+                      pdf,
+                      `${infoFilteredIndex}/${name}`,
+                      pdf
+                        .replace("voli", "Alternate Volume ")
+                        .replace("vol", "Volume ")
+                        .replace("-", ", page ")
+                    )}
+                  </span>
+                ))}
+                <hr />
+              </div>
+            )}
+
+            {sheetmusic.length > 0 && (
+              <div>
+                <strong>Sheet Music: </strong>
+                {sheetmusic.map(pdf => (
+                  <Link to={`/pdf/${pdf}/${infoFilteredIndex}/${name}`} className="block">
+                    {pdf}
+                  </Link>
+                ))}
+                <hr />
+              </div>
+            )}
+
+            {cdbabyLinks.length > 0 && (
+              <div>
+                <strong>CD Baby: </strong>
+
+                {cdbabyLinks.map(([sample, buy]) => (
+                  <div>
+                    <button
+                      role="img"
+                      aria-label="music sample"
+                      onClick={() => (!!playing ? this.stop() : this.play(sample))}
+                    >
+                      <FontAwesomeIcon icon={playing === sample ? "stop" : "play"} />
+                    </button>
+                    <a href={buy} target="_blank" rel="noopener noreferrer">
+                      {buy}
+                    </a>
+                  </div>
+                ))}
+                <hr />
+              </div>
+            )}
+
+            {tags.length > 0 && (
+              <div>
+                <strong>Tags: </strong>
+                <small>{tags.join(", ")}</small>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="App-header">
-          <Link to={+localStorage.admin ? '/admin' : '/'} className="title">
+          <Link to={+localStorage.admin ? "/admin" : "/"} className="title">
             Amma's Bhajans
           </Link>
           <input
@@ -232,18 +279,18 @@ class Search extends Component {
             className="form-control"
             name="search"
             id="search"
-            value={filter || ''}
+            value={filter || ""}
             onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
         <div className="rest">
           <nav>
             {!myFavorites ? (
-              <Link to="/my-favorites" className="button button-glow button-rounded button-raised">
+              <Link to="/my-favorites" className="button button-rounded button-raised button-action full">
                 Only My Favorites
               </Link>
             ) : (
-              <Link to="/" className="button button-glow button-rounded button-raised button-primary">
+              <Link to="/" className="button full button-rounded button-raised button-primary">
                 Home
               </Link>
             )}
@@ -263,7 +310,7 @@ class Search extends Component {
                       isScrolling={isScrolling}
                       onScroll={onChildScroll}
                       rowCount={filteredBhajans.length}
-                      rowHeight={100}
+                      rowHeight={200}
                       rowRenderer={rowRenderer}
                       scrollTop={scrollTop}
                       width={width}
