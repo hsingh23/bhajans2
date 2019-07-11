@@ -116,8 +116,7 @@ class Search extends Component {
         t: tags = "",
         l: location,
         cs: cdbabySampleUrls,
-        cu: cdbabyBuyUrls,
-        cn: cdbabyName
+        cu: cdbabyBuyUrls
       } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : "";
 
