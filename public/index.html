@@ -11,7 +11,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="theme-color" content="#ffa500" />
-    <link rel="preload" href="bhajan-index2.json" as="fetch" type="application/json" />
+    <link crossorigin="anonymous" rel="preload" href="bhajan-index2.json" as="fetch" type="application/json" />
 
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -21,8 +21,8 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <script>
-      if (localStorage.reset === '1') {
-        localStorage.removeItem('reset');
+      if (localStorage.reset === "1") {
+        localStorage.removeItem("reset");
         location.reload(true);
       }
     </script>
@@ -47,8 +47,8 @@
 
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <script type="text/javascript">
-      if (location.protocol.toLowerCase() === 'http:' && !location.host.includes('localhost:'))
-        location.protocol = 'https:';
+      if (location.protocol.toLowerCase() === "http:" && !location.host.includes("localhost:"))
+        location.protocol = "https:";
     </script>
 
     <div id="root"></div>

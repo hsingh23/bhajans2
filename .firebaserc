@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "bhajans-588f5"
+    "default": "bhajans-588f5",
+    "staging": "bhajans-588f5"
   }
 }

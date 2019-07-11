@@ -37,15 +37,15 @@ const {
   const initialWait = true;
   // don't worry about going online and offline right now
   const goOffline = () => {
-    history.push(["off", +new Date() - startTime]);
+    // history.push(["off", +new Date() - startTime]);
     // !initialWait && db.goOffline();
-    console.log("off", history);
+    // console.log("off", history);
   };
 
   const goOnline = () => {
-    history.push(["on", +new Date() - startTime]);
+    // history.push(["on", +new Date() - startTime]);
     // !initialWait && db.goOnline();
-    console.log("on", history);
+    // console.log("on", history);
   };
 
   !window.localStorage.admin &&
@@ -126,6 +126,12 @@ const {
   whenUser().then(user => {
     checkRefOnce(`satsang/${auth.currentUser.uid}`).then(val => {
       if (val) localStorage.presenter = true;
+    });
+    checkRefOnce(`paid/${auth.currentUser.uid}/expiresOn`).then(val => {
+      if (val) {
+        localStorage.expiresOn = val;
+        localStorage.lastOnline = +new Date();
+      }
     });
   }, doNothing);
 
