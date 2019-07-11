@@ -17,22 +17,11 @@ class Pay extends PureComponent {
     const { history, location } = this.props;
     if (localStorage.paid === "1") history.push(getNext());
     const checkUser = async function() {
-      if (auth.currentUser) {
-        // only ask to confirmPayment if the person hasn't paid
-        goOnline();
-        var didPay = await db.ref(`/paid/${auth.currentUser.uid}`).once("value");
-        if (didPay.val() === null) {
-          await db
-            .ref(`/confirmPayment/${auth.currentUser.uid}`)
-            .set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
-        } else {
-          // TODO check when plan is over
-          localStorage.paid = "1";
-          history.push(getNext());
-        }
-        goOffline();
-      } else {
-        history.replace(`/login${location.search}`);
+      if (auth.currentUser && localStorage.expiresOn && +localStorage.expiresOn > +new Date()) {
+        debugger;
+        alert({ text: `You have already paid, your subscription will end on ${new Date(+localStorage.expiresOn)}` });
+      } else if (!auth.currentUser) {
+        history.push(`/login`);
       }
     };
     if (localStorage.uid && !auth.currentUser) {

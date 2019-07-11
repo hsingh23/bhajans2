@@ -60,9 +60,14 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Sign In or Sign Up</h2>
-        <div id="firebaseui-auth" />
+      <div className="App">
+        <div className="App-header">
+          <div className="title">Amma's Bhajans</div>
+        </div>
+        <div className="restPage">
+          <div id="firebaseui-auth" />
+          <p>If you don't have an account with the website, enter the email you want to sign up with.</p>
+        </div>
       </div>
     );
   }

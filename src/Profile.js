@@ -24,7 +24,7 @@ class Pay extends PureComponent {
         }
         goOffline();
       } else {
-        history.replace(`/login${location.search}`);
+        history.push(`/login${location.search}`);
       }
     };
     if (localStorage.uid && !auth.currentUser) {
