@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
-import { auth, db, goOnline, goOffline } from "./firebase";
+import { auth } from "./firebase";
 import { getNext } from "./util";
 import { PayPalButton } from "react-paypal-button-v2";
 import Select from "react-select";
 import { alert } from "notie";
 
 export const PLANS = [
+  { value: "oneIndividual10", label: "One Year Individual - $10", price: 10.0, time: 31536000000 },
   { value: "oneIndividual15", label: "One Year Individual - $15", price: 15.0, time: 31536000000 },
   { value: "fiveIndividual50", label: "Five Year Individual - $50", price: 50.0, time: 157680000000 },
   { value: "lifetimeIndividual80", label: "Lifetime Individual - $80", price: 80.0, time: 3153600000000 }
@@ -14,7 +15,7 @@ export const PLANS = [
 class Pay extends PureComponent {
   state = { selectedPlan: PLANS[1] };
   componentDidMount() {
-    const { history, location } = this.props;
+    const { history } = this.props;
     if (localStorage.paid === "1") history.push(getNext());
     const checkUser = async function() {
       if (auth.currentUser && localStorage.expiresOn && +localStorage.expiresOn > +new Date()) {
@@ -47,6 +48,9 @@ class Pay extends PureComponent {
           <p>There are 3 payment plans to choose from.</p>
           <ol>
             <li>
+              <strong>$10</strong> - 1 year of access with updates (for low income/ashram residents/tour staff special)
+            </li>
+            <li>
               <strong>$15</strong> - 1 year of access with updates
             </li>
             <li>
@@ -70,25 +74,37 @@ class Pay extends PureComponent {
           <div className="paypalButton">
             <PayPalButton
               options={{
-                clientId: "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv"
+                clientId: "AaXFqF6FFpEPMz46hZ0CAdMtBeDM4D7fB390yFhmf9NR1-CvXUdphGnbTqujXkAtlsT7v6LvzMipJ5Pp" // staging
+                // clientId: "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // prod
               }}
               amount={this.state.selectedPlan.price}
               onSuccess={(details, data) => {
                 alert({ text: "Payment successful, updating app, please stay online." });
                 // OPTIONAL: Call your server to save the transaction
-                return fetch("https://us-central1-bhajans-588f5.cloudfunctions.net/process", {
+                return fetch("https://us-central1-bhajans-588f5.cloudfunctions.net/processProd", {
+                  // return fetch("https://us-central1-bhajans-588f5.cloudfunctions.net/process", {
                   method: "post",
                   body: JSON.stringify({
                     ...data,
                     type: this.state.selectedPlan.value,
                     uid: localStorage.uid
                   })
-                }).then(resp => {
-                  if (resp.ok) {
-                    alert({ text: "App updated! Thanks for your support." });
-                    this.props.history.push(`/login`);
-                  }
-                });
+                })
+                  .then(resp => {
+                    if (resp.ok) {
+                      return resp.json();
+                    }
+                  })
+                  .then(({ expiresOn }) => {
+                    localStorage.expiresOn = +expiresOn;
+                    localStorage.lastOnline = +new Date();
+                    alert({
+                      text: `App updated! Thanks for your support. Your subscription expires on ${new Date(
+                        +localStorage.expiresOn
+                      )}`
+                    });
+                    this.props.history.push(`/`);
+                  });
               }}
             />
           </div>

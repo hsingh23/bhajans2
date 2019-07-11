@@ -9,6 +9,7 @@ const cors = require("cors")({
 admin.initializeApp(functions.config().firebase);
 
 const PLANS = {
+  oneIndividual10: { price: 10.0, time: 31536000000 },
   oneIndividual15: { price: 15.0, time: 31536000000 },
   fiveIndividual50: { price: 50.0, time: 157680000000 },
   lifetimeIndividual80: { price: 80.0, time: 3153600000000 }
@@ -60,7 +61,59 @@ export const process = functions.https.onRequest(async (req, res) => {
             payer: resp.result.payer,
             gross_total_amount: resp.result.gross_total_amount
           });
-          return res.status(200).send();
+          return res.json({ expiresOn, payer: resp.result.payer });
+        } else {
+          return res.status(500).send("Something broke!");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        return res.status(500).send("Something broke!");
+        // res.redirect(`${req.protocol}://${req.get("host")}/pay`);
+      });
+  });
+});
+
+export const processProd = functions.https.onRequest(async (req, res) => {
+  return cors(req, res, async () => {
+    const config = functions.config();
+    const { type, orderID, uid } = JSON.parse(req.body);
+    console.log(orderID);
+    const env = new paypal.core.LiveEnvironment(config.paypal.client_id, config.paypal.client_secret);
+    let client = new paypal.core.PayPalHttpClient(env);
+    let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
+    client
+      .execute(getOrder)
+      .then(resp => {
+        console.info(
+          resp.statusCode < 400,
+          resp.result.status === "COMPLETED",
+          parseFloat(resp.result.gross_total_amount.value),
+          PLANS[type].price
+        );
+
+        if (
+          resp.statusCode < 400 &&
+          resp.result.status === "COMPLETED" &&
+          parseFloat(resp.result.gross_total_amount.value) === PLANS[type].price
+        ) {
+          const expiresOn = +new Date(+new Date(resp.result.create_time) + PLANS[type].time);
+          const ref = admin.database().ref("paid/" + uid + "/");
+          console.info({
+            paidOn: +new Date(),
+            expiresOn,
+            orderID,
+            payer: resp.result.payer,
+            gross_total_amount: resp.result.gross_total_amount
+          });
+          ref.set({
+            paidOn: +new Date(),
+            expiresOn,
+            orderID,
+            payer: resp.result.payer,
+            gross_total_amount: resp.result.gross_total_amount
+          });
+          return res.json({ expiresOn, payer: resp.result.payer });
         } else {
           return res.status(500).send("Something broke!");
         }
