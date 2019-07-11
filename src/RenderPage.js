@@ -131,7 +131,7 @@ class RenderPage extends Component {
             ) : (
               <span>
                 <Pdf
-                  file={url}
+                  file={url.replace(/sharp/i, "%23")}
                   onDocumentComplete={this.onDocumentComplete}
                   onPageComplete={this.onPageComplete}
                   page={this.state.page}

@@ -5956,6 +5956,11 @@ istanbul-reports@^2.1.1:
   dependencies:
     handlebars "^4.1.2"
 
+jaro-winkler@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/jaro-winkler/-/jaro-winkler-0.2.8.tgz#6727e0d0b7091e2436f9356de9bf88fad23e534a"
+  integrity sha1-Zyfg0LcJHiQ2+TVt6b+I+tI+U0o=
+
 jest-changed-files@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.8.0.tgz#7e7eb21cf687587a85e50f3d249d1327e15b157b"
