@@ -52,7 +52,7 @@ class Search extends Component {
   audioTag = document.querySelector("#audio");
 
   play = url => {
-    this.audioTag.src = url.toLowerCase();
+    this.audioTag.src = url;
     this.audioTag.play();
     this.setState({ playing: url });
     this.audioTag.onEnded = this.stop;
@@ -116,7 +116,8 @@ class Search extends Component {
         t: tags = "",
         l: location,
         cs: cdbabySampleUrls,
-        cu: cdbabyBuyUrls
+        cu: cdbabyBuyUrls,
+        cn: cdbabyName
       } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : "";
 
@@ -188,9 +189,10 @@ class Search extends Component {
       t: tags = "",
       l: location = [],
       cs: cdbabySampleUrls = [],
-      cu: cdbabyBuyUrls = []
+      cu: cdbabyBuyUrls = [],
+      cn: cdbabyNames = []
     } = infoOpen || {};
-    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls);
+    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls, cdbabyNames);
     return (
       <div className="App">
         <div className={classNames("modal-window", { open: !!infoOpen })}>
@@ -242,7 +244,7 @@ class Search extends Component {
               <div>
                 <strong>CD Baby: </strong>
 
-                {cdbabyLinks.map(([sample, buy]) => (
+                {cdbabyLinks.map(([sample, buy, name]) => (
                   <div>
                     <button
                       role="img"
@@ -251,8 +253,9 @@ class Search extends Component {
                     >
                       <FontAwesomeIcon icon={playing === sample ? "stop" : "play"} />
                     </button>
+                    {" Buy "}
                     <a href={buy} target="_blank" rel="noopener noreferrer">
-                      {buy}
+                      {name}
                     </a>
                   </div>
                 ))}

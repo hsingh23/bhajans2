@@ -47,7 +47,7 @@ class RenderPage extends Component {
     }
   }
   play = url => {
-    this.audioTag.src = url.toLowerCase();
+    this.audioTag.src = url;
     this.audioTag.play();
   };
   audioTag = document.querySelector("#audio");
@@ -73,7 +73,7 @@ class RenderPage extends Component {
       [book, page] = location.split("-");
       url = `/pdfs/${book}.pdf`;
     } else {
-      url = `https://s3.amazonaws.com/amma-bhajans-sheetmusic/${location}`;
+      url = `https://singwithamma.s3.amazonaws.com/sheetmusic/${location}`;
       scale = 2;
       page = 1;
     }

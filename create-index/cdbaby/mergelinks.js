@@ -52,13 +52,15 @@ function readFiles() {
     var realBhajan = bhajans[searchableBhajansObject[fullSearch]];
     realBhajan.cu = realBhajan.cu || [];
     realBhajan.cs = realBhajan.cs || [];
+    realBhajan.cn = realBhajan.cn || [];
     realBhajan.cu.push(song.u);
     realBhajan.cs.push(
       song.mp3.replace(
-        "https://content.cdbaby.com/audio/samples/d073192b/",
-        "https://s3.amazonaws.com/amma-bhajan-samples/"
+        /https:\/\/content.cdbaby.com\/audio\/samples\/.*?\//,
+        "https://singwithamma.s3.amazonaws.com/samples/"
       )
     );
+    realBhajan.cn.push(song.name);
     count += 1;
   }
   fs.readdirSync(path.resolve(__dirname))
