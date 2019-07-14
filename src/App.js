@@ -16,12 +16,26 @@ import {
   faStop,
   faCompactDisc,
   faCartArrowDown,
-  faInfo
+  faInfo,
+  faSearch,
+  faArrowLeft,
+  faBookOpen
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Pay from "./Pay";
 
-library.add(faHeart, faMusic, faPlay, faStop, faCompactDisc, faCartArrowDown, faInfo);
+library.add(
+  faHeart,
+  faMusic,
+  faPlay,
+  faStop,
+  faCompactDisc,
+  faCartArrowDown,
+  faInfo,
+  faBookOpen,
+  faSearch,
+  faArrowLeft
+);
 class App extends Component {
   constructor(props) {
     super(props);

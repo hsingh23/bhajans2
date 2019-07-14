@@ -18,157 +18,85 @@ const PLANS = {
 export const process = functions.https.onRequest(async (req, res) => {
   return cors(req, res, async () => {
     const config = functions.config();
-    const { type, orderID, uid } = JSON.parse(req.body);
-    console.log(orderID);
-
+    const { mode, type, orderID, uid } = JSON.parse(req.body);
     var env = new paypal.core.SandboxEnvironment(
       "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv",
       "EIp7U4Y4Z9RU5moIZrOxW_KaXgPCC94x2fMlXmqHOs9Hp7u-kKjpx5iPv8tULuRXZ7RwJBr3rtXGPo0a"
     );
-    if (config.paypal && config.paypal.mode === "live") {
+    if (mode === "live" && config.paypal && config.paypal.client_id && config.paypal.client_secret) {
       env = new paypal.core.LiveEnvironment(config.paypal.client_id, config.paypal.client_secret);
     }
     let client = new paypal.core.PayPalHttpClient(env);
     let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
     client
       .execute(getOrder)
-      .then(resp => {
-        console.info(
-          resp.statusCode < 400,
-          resp.result.status === "COMPLETED",
-          parseFloat(resp.result.gross_total_amount.value),
-          PLANS[type].price
-        );
-
-        if (
-          resp.statusCode < 400 &&
-          resp.result.status === "COMPLETED" &&
-          parseFloat(resp.result.gross_total_amount.value) === PLANS[type].price
-        ) {
-          const expiresOn = +new Date(+new Date(resp.result.create_time) + PLANS[type].time);
-          const ref = admin.database().ref("paid/" + uid + "/");
-          console.info({
-            paidOn: +new Date(),
+      .then(({ statusCode, result: { status, gross_total_amount, create_time, payer } }) => {
+        if (statusCode < 400 && status === "COMPLETED" && parseFloat(gross_total_amount.value) === PLANS[type].price) {
+          const expiresOn = +new Date(+new Date(create_time) + PLANS[type].time);
+          const rootRef = admin.database().ref();
+          const paidOn = +new Date();
+          rootRef.child("paid/" + uid + "/").set({
+            paidOn,
             expiresOn,
             orderID,
-            payer: resp.result.payer,
-            gross_total_amount: resp.result.gross_total_amount
+            payer,
+            gross_total_amount,
+            mode
           });
-          ref.set({
-            paidOn: +new Date(),
+          rootRef.child("transactions/").push({
+            uid,
+            paidOn,
             expiresOn,
             orderID,
-            payer: resp.result.payer,
-            gross_total_amount: resp.result.gross_total_amount
+            payer,
+            gross_total_amount,
+            mode
           });
-          return res.json({ expiresOn, payer: resp.result.payer });
+          return res.json({ expiresOn, payer: payer });
         } else {
-          return res.status(500).send("Something broke!");
+          return res
+            .status(400)
+            .json({ type: "invalid_request_error", message: "Order invalid", extra: { orderID, uid, type, mode } });
         }
       })
       .catch(error => {
-        console.log(error);
-        return res.status(500).send("Something broke!");
-        // res.redirect(`${req.protocol}://${req.get("host")}/pay`);
-      });
-  });
-});
-
-export const processProd = functions.https.onRequest(async (req, res) => {
-  return cors(req, res, async () => {
-    const config = functions.config();
-    const { type, orderID, uid } = JSON.parse(req.body);
-    console.log(orderID);
-    const env = new paypal.core.LiveEnvironment(config.paypal.client_id, config.paypal.client_secret);
-    let client = new paypal.core.PayPalHttpClient(env);
-    let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
-    client
-      .execute(getOrder)
-      .then(resp => {
-        console.info(
-          resp.statusCode < 400,
-          resp.result.status === "COMPLETED",
-          parseFloat(resp.result.gross_total_amount.value),
-          PLANS[type].price
-        );
-
-        if (
-          resp.statusCode < 400 &&
-          resp.result.status === "COMPLETED" &&
-          parseFloat(resp.result.gross_total_amount.value) === PLANS[type].price
-        ) {
-          const expiresOn = +new Date(+new Date(resp.result.create_time) + PLANS[type].time);
-          const ref = admin.database().ref("paid/" + uid + "/");
-          console.info({
-            paidOn: +new Date(),
-            expiresOn,
-            orderID,
-            payer: resp.result.payer,
-            gross_total_amount: resp.result.gross_total_amount
-          });
-          ref.set({
-            paidOn: +new Date(),
-            expiresOn,
-            orderID,
-            payer: resp.result.payer,
-            gross_total_amount: resp.result.gross_total_amount
-          });
-          return res.json({ expiresOn, payer: resp.result.payer });
-        } else {
-          return res.status(500).send("Something broke!");
-        }
-      })
-      .catch(error => {
-        console.log(error);
-        return res.status(500).send("Something broke!");
-        // res.redirect(`${req.protocol}://${req.get("host")}/pay`);
+        console.error(error, mode, type, orderID, uid);
+        return res.status(500).json({ type: "api_error", message: error, extra: { error, orderID, uid, type, mode } });
       });
   });
 });
 
 // This is a Hello World function which writes to the database.
-export const confirmBeta = functions.database.ref("/confirmBeta/{uid}").onWrite(async event => {
-  const userInfo = event.data.val();
-  if (userInfo) {
-    console.log(userInfo);
+export const paid = functions.database.ref("/paid/{uid}").onWrite(async event => {
+  const { payer, gross_total_amount } = event.after.val();
+  if (gross_total_amount) {
     const tokens = {};
+    const rootRef = admin.database().ref();
     // Get list of admins
-    const admins = Object.keys(
-      (await admin
-        .database()
-        .ref("/admin")
-        .once("value")).val() || {}
-    );
-    console.log(admins);
+    const admins = Object.keys((await rootRef.child("/admin").once("value")).val() || {});
 
     // For each admin, get tokens
-    const potentialUsersTokens = await Promise.all(
-      admins.map(uid =>
-        admin
+    await Promise.all(
+      admins.map(async uid => {
+        const toks = await admin
           .database()
           .ref(`/messages/${uid}/tokens`)
-          .once("value")
-      )
-    );
-    potentialUsersTokens.forEach(usersTokens => {
-      if (usersTokens.val()) {
-        Object.keys(usersTokens.val()).forEach((token, index) => {
-          // Associate the token with the uid in case you need to remove a bad token
-          tokens[token] = admins[index];
-          console.log(`Found token ${token} for ${admins[index]}`);
+          .once("value");
+        const toks2 = Object.keys(toks.val() || {});
+        toks2.forEach(token => {
+          tokens[token] = uid;
         });
-      }
-    });
+        return toks2;
+      })
+    );
     // For each token send message
     const payload = {
       notification: {
-        title: "New user awaiting access!",
-        body: `${userInfo.name} is waiting to joing beta.`,
-        clickAction: "https://sing.withamma.com/#/admin"
+        title: `${payer.name.given_name} signed up!`,
+        body: `${payer.name.given_name} ${payer.name.surname} paid ${gross_total_amount.value} - ${payer.email_address}`
       }
     };
     const tokensList = Object.keys(tokens);
-    console.log("tokensList", tokensList);
     return admin
       .messaging()
       .sendToDevice(tokensList, payload)
@@ -177,8 +105,8 @@ export const confirmBeta = functions.database.ref("/confirmBeta/{uid}").onWrite(
         const tokensToRemove = [];
         response.results.forEach((result, index) => {
           const { error } = result;
+          const token = tokensList[index];
           if (error) {
-            console.error("Failure sending notification to", tokensList[index], error);
             // Cleanup the tokens who are not registered anymore.
             if (
               error.code === "messaging/invalid-registration-token" ||
@@ -187,7 +115,7 @@ export const confirmBeta = functions.database.ref("/confirmBeta/{uid}").onWrite(
               tokensToRemove.push(
                 admin
                   .database()
-                  .ref(`/messages/${tokens[tokensList[index]]}/tokens/${tokensList[index]}`)
+                  .ref(`/messages/${tokens[token]}/tokens/${token}`)
                   .remove()
               );
             }

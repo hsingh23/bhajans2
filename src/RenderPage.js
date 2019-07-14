@@ -4,12 +4,26 @@ import React, { Component } from "react";
 import { onlyUpdateForKeys } from "recompose";
 import { HotKeys } from "react-hotkeys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { auth } from "firebase";
+import { alert } from "notie";
+
 const THREE_MONTHS_MS = 7776000000;
 const Pdf = onlyUpdateForKeys(["page"])(PDF);
 const map = {
   left: "left",
   right: "right"
+};
+
+const removeServiceWorkers = () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.unregister();
+    });
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
 };
 class RenderPage extends Component {
   constructor(props) {
@@ -21,31 +35,22 @@ class RenderPage extends Component {
       page = "1";
     }
     this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10) };
-
-    if (
-      !localStorage.expiresOn ||
-      !localStorage.lastOnline ||
-      +localStorage.expiresOn < +new Date() ||
-      +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()
-    ) {
-      auth()
-        .signOut()
-        .then(() => {
-          localStorage.clear();
-          if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.ready.then(registration => {
-              registration.unregister();
-            });
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-              for (let registration of registrations) {
-                registration.unregister();
-              }
-            });
-          }
-          props.history.push(`/login`);
-        });
+    if (isNaN(localStorage.lastOnline) || +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()) {
+      alert({
+        text:
+          "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates."
+      });
+      removeServiceWorkers();
+      props.history.push(`/login`);
+    } else if (isNaN(localStorage.expiresOn) || +localStorage.expiresOn < +new Date()) {
+      alert({
+        text: "Your subscription has expired. Please pay for a new subscription"
+      });
+      removeServiceWorkers();
+      props.history.push(`/pay`);
     }
   }
+
   play = url => {
     this.audioTag.src = url;
     this.audioTag.play();

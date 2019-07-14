@@ -46,7 +46,13 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : <span>{child}</span>;
+    return match ? (
+      <Link to={`/pdf/${match[0]}/${name}`} className="lyrics">
+        {child} <FontAwesomeIcon icon="book-open" />
+      </Link>
+    ) : (
+      <span>{child}</span>
+    );
   };
 
   audioTag = document.querySelector("#audio");

@@ -46,6 +46,7 @@ a {
 }
 
 a {
+  margin-top: 0;
   text-decoration: underline;
 }
 
@@ -97,6 +98,11 @@ mark,
 
 *:focus {
   outline: none;
+}
+
+.lyrics {
+  text-decoration: none;
+  color: #156161;
 }
 
 .pdfview {
@@ -352,4 +358,8 @@ mark {
 
 .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
+}
+
+.mr-8 {
+  margin-right: 8px;
 }

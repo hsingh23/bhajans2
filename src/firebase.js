@@ -130,8 +130,10 @@ const {
     checkRefOnce(`paid/${auth.currentUser.uid}/expiresOn`).then(val => {
       if (val) {
         localStorage.expiresOn = val;
-        localStorage.lastOnline = +new Date();
+      } else {
+        delete localStorage.expiresOn;
       }
+      localStorage.lastOnline = +new Date();
     });
   }, doNothing);
 

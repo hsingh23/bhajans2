@@ -65,8 +65,8 @@ class Login extends Component {
           <div className="title">Amma's Bhajans</div>
         </div>
         <div className="restPage">
+          <p style={{ textAlign: "center" }}>Don't have an account? Enter the email you want to sign up with.</p>
           <div id="firebaseui-auth" />
-          <p>If you don't have an account with the website, enter the email you want to sign up with.</p>
         </div>
       </div>
     );
