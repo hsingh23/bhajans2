@@ -200,8 +200,18 @@ class Search extends Component {
     const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls, cdbabyNames);
     return (
       <div className="App">
-        <div className={classNames("modal-window", { open: !!infoOpen })}>
-          <div>
+        <div
+          className={classNames("modal-window", { open: !!infoOpen })}
+          onClick={e => {
+            e.stopPropagation();
+            this.setState({ infoOpen: false });
+          }}
+        >
+          <div
+            onClick={e => {
+              e.stopPropagation();
+            }}
+          >
             <button
               onClick={e => {
                 e.stopPropagation();
