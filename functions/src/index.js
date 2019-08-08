@@ -9,10 +9,9 @@ const cors = require("cors")({
 admin.initializeApp(functions.config().firebase);
 
 const PLANS = {
-  oneIndividual10: { price: 10.0, time: 31536000000 },
-  oneIndividual15: { price: 15.0, time: 31536000000 },
-  fiveIndividual50: { price: 50.0, time: 157680000000 },
-  lifetimeIndividual80: { price: 80.0, time: 3153600000000 }
+  oneIndividual10: { price: 9.99, time: 31536000000 },
+  fiveIndividual40: { price: 39.99, time: 157680000000 },
+  lifetimeIndividual50: { price: 49.99, time: 3153600000000 }
 };
 
 export const process = functions.https.onRequest(async (req, res) => {

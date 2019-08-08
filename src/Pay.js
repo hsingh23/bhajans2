@@ -6,10 +6,9 @@ import Select from "react-select";
 import { alert } from "notie";
 
 export const PLANS = [
-  // { value: "oneIndividual10", label: "One Year Individual - $10", price: 10.0, time: 31536000000 },
-  { value: "oneIndividual15", label: "One Year Individual - $15", price: 15.0, time: 31536000000 },
-  { value: "fiveIndividual50", label: "Five Year Individual - $50", price: 50.0, time: 157680000000 },
-  { value: "lifetimeIndividual80", label: "Lifetime Individual - $80", price: 80.0, time: 3153600000000 }
+  { value: "oneIndividual10", label: "One Year Individual - $9.99", price: 9.99, time: 31536000000 },
+  { value: "fiveIndividual40", label: "Five Year Individual - $39.99", price: 39.99, time: 157680000000 },
+  { value: "lifetimeIndividual50", label: "Lifetime Individual - $49.99", price: 49.99, time: 3153600000000 }
 ];
 
 class Pay extends PureComponent {
@@ -58,24 +57,20 @@ class Pay extends PureComponent {
               <strong>$10</strong> - 1 year of access with updates (for low income/ashram residents/tour staff special)
             </li> */}
             <li>
-              <strong>$15</strong> - 1 year of access with updates
+              <strong>$9.99</strong> - 1 year of access with updates
             </li>
             <li>
-              <strong>$50</strong> - 5 years of access with updates
+              <strong>$39.99</strong> - 5 years of access with updates
             </li>
             <li>
-              <strong>$80</strong> - lifetime access with updates (best value)
+              <strong>$49.99</strong> - lifetime access with updates (best value)
             </li>
           </ol>
 
           <p>
             All proceeds support <a href="http://www.embracingtheworld.org/">Embracing the World</a> nonprofit.
           </p>
-          <p>
-            Please select your payment plan and hit pay now. For any payment complications please email me at{" "}
-            <a href="mailto:singwithamma@gmail.com">singwithamma@gmail.com</a> and we’ll get back to you as soon as
-            possible.
-          </p>
+          <p>Please select your payment plan and pay with Paypal/Credit card.</p>
           <Select value={this.state.selectedPlan} onChange={this.handleChange} options={PLANS} />
           <div className="paypalButton">
             <PayPalButton
@@ -112,6 +107,10 @@ class Pay extends PureComponent {
               }}
             />
           </div>
+          <small>
+            For any payment complications please email{" "}
+            <a href="mailto:singwithamma@gmail.com">singwithamma@gmail.com</a>.
+          </small>
         </div>
       </div>
     );

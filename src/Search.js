@@ -28,7 +28,7 @@ class Search extends Component {
     setTimeout(() => {
       sessionStorage.copyRightHidden = 1;
       this.setState({ copyRightHidden: true });
-    }, 5000);
+    }, 10000);
   }
 
   componentWillMount() {
