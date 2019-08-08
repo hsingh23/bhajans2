@@ -363,3 +363,17 @@ mark {
 .mr-8 {
   margin-right: 8px;
 }
+
+.copyRight {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}

@@ -10,13 +10,25 @@ import classNames from "classnames";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { filteredBhajans: [], playing: false, infoOpen: false, infoFilteredIndex: false };
+    this.state = {
+      filteredBhajans: [],
+      playing: false,
+      infoOpen: false,
+      infoFilteredIndex: false,
+      copyRightHidden: !!sessionStorage.copyRightHidden
+    };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       this.filterBhajans({ nextProps, filter: nextProps.path.includes("/my-favorites") ? "" : null });
     }
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      sessionStorage.copyRightHidden = 1;
+      this.setState({ copyRightHidden: true });
+    }, 5000);
   }
 
   componentWillMount() {
@@ -338,6 +350,10 @@ class Search extends Component {
               );
             }}
           </WindowScroller>
+        </div>
+        <div className={classNames("copyRight", { hidden: this.state.copyRightHidden })}>
+          <img style={{ paddingLeft: "80px", display: "inline-block" }} src="amma.jpg" alt="Copyright: MA Center" />
+          <small style={{ position: "absolute", top: "50%" }}>© MA Centers 2019, all rights reserved.</small>
         </div>
       </div>
     );
