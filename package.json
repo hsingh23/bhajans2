@@ -37,7 +37,8 @@
     "reactfire": "^1.0.0",
     "reactstrap": "8.0.1",
     "recompose": "0.30.0",
-    "whatwg-fetch": "3.0.0"
+    "whatwg-fetch": "3.0.0",
+    "snyk": "^1.216.0"
   },
   "devDependencies": {
     "react-scripts": "3.0.1",
@@ -51,12 +52,15 @@
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js && cp ./build/service-worker2.js ./build/service-worker.js",
     "sw-precache": "sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "snyk": true
 }
