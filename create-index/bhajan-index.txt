@@ -4,6 +4,7 @@ abhayam abhayam amma ## vol1-6,voli1-165,voli0-1
 abhayam tan aruluka ## vol2-7,voli2-1
 abhayattinimakan ## vol2-8,voli2-2
 abhista varadayike ## vol2-8,voli2-3
+abhistavaradayike (kannada version) ## 2019supl-7
 abhivandanam (telugu) ## vol6-6,vol7-4
 acho muncha nandalala ## vol5-6
 adharam madhuram ## vol3-6,voli3-2
@@ -24,6 +25,7 @@ adiyil paramesvariye ## vol1-8,voli1-74,voli1-76,voli1-134
 adyamayamma darsanam ## vol3-9,voli3-6
 agamanta porule ## vol1-9,voli1-8,voli1-83
 agatanayi ## vol1-11,voli1-59,voli1-61
+agraganya agrapujya (telugu) ## 2019supl-7
 aik manuja (maralhi) ## 2018supl-12
 aintezhuttu (tamil) ## vol7-7
 aiye guru maharani ## vol1-48,voli1-173,voli0-9,voli2-45,voli2-5
@@ -88,6 +90,8 @@ amma hasattu (konkani) ## vol7-17
 amma ki chaya me ## vol4-13
 amma nanum (tamil) ## vol6-17
 amma napai (telugu) ## vol7-17
+amma ni (tamil) ## 2019supl-9
+amma ni baruveya (kannada) ## 2019supl-8
 amma ni nidu (alisuammana) ## vol5-15
 amma ni sirikkayile (tamil) ## vol6-19
 amma nin rupam ## vol1-21,voli1-110,voli1-112
@@ -123,6 +127,8 @@ amme bhagavati ## vol1-28,voli1-67,voli1-69
 amme bhagavati kalimate ## vol1-30,voli1-132,voli1-135
 amme enullu (malayalam) ## vol7-20
 amme kannu turakkule ## vol1-31,voli1-90,voli1-91
+amme kannu turakule (kannada version) ## 2019supl-10
+amme manassiloru (malayalam) ## 2019supl-11
 amme ulakam ## vol1-32,voli1-127,voli1-130
 amme yi jivende (oh my divine mother) (english) ## vol3-186,voli3-263
 amme yi jivente ## vol2-20,voli2-17
@@ -173,6 +179,7 @@ ananda sagara ## vol2-34,voli2-35
 ananda vithiyiludente ## vol4-27
 anandadhamamam ninnilettan ## vol6-23
 anandam anandam anandame (tamil) ## vol6-24
+anandam paramanandam (telugu) ## 2019supl-12
 anandame amrtanandini ## vol5-22
 anandame anandam (tamil) ## vol6-26,vol7-22
 anandamrta rupini amme ## vol1-36,voli1-56,voli1-58
@@ -199,19 +206,24 @@ annai kayil pillaiyena ## vol5-29
 annaikku niratta ventum ## vol3-30,voli3-34
 annaiye unnaiye (tamil) ## vol7-23
 annapurna stotram ## vol5-179
+annay madiyil (tamil) ## 2019supl-13
 anpiyannamba ## vol3-31,voli3-36
 anpum arulum ## vol3-32,voli3-38
 antardarsanattinulla (malayalam) ## vol7-24
 anudinamum (tamil) ## vol7-25
 anupama guna nilaye ## vol1-39,voli1-246,voli0-82
+anupama nina (kannada) ## 2019supl-14
 anutapa sangita ## vol5-30
 anutapam valarunnu ## vol3-33,voli3-39
+apara krpalo (telugu) ## 2019supl-16
 apara krpalo arikil ## vol2-40,voli2-42
 apara sachid ## vol2-41,voli2-43
 aparadham-endetu (malayalam) ## vol7-26
+aparakrpalo (kannada) ## 2019supl-15
 arari unnu nin maha ## vol2-42,voli2-44
 ararum kanate (malayalam) ## 2018supl-15
 arati ## vol1-40,voli1-124,voli1-126
+arati ambaku (telugu) ## 2019supl-17
 arati kunja vihari (syam radhe syam) ## vol2-215,voli2-224,voli2-226
 areyanareyanistam (malayalam) ## vol7-28
 aridu aridu (tamil) ## vol7-29
@@ -224,6 +236,7 @@ arivum abhayavum ## vol3-35,voli3-40
 ariyate ceytoraparadham (malayalam) ## vol7-32
 arotu chollitum ## vol3-35,voli3-42
 aruna nirakkati royilil ## vol1-44,voli1-136,voli1-139
+arunaiyil (tamil) ## 2019supl-18
 arundu cholluvan ## vol1-45,voli1-70,voli1-72
 arupalai vilu (tamil) ## 2018supl-16
 arute makkal nangal ## vol1-43,voli1-85,voli1-87
@@ -254,6 +267,7 @@ ayi he holi ## vol4-33
 ayi tujhe dari (maralhi) ## 2018supl-19
 ayiram dipangal ## vol5-33
 ayiye guru maharani ## vol1-48,voli1-173,voli0-9,voli2-45,voli2-5
+ayntu karattanai (tamil) ## 2019supl-19
 ayodhya vasi ram ## vol2-46,voli2-48
 azhagukku azhagu (tamil) ## vol7-40
 azhaku azhaku (tamil) ## vol7-41
@@ -315,10 +329,12 @@ bolo bolo sab mil bolo ## vol1-56,voli1-175,voli0-11
 bolo syam radhe ## vol5-38
 bomma bomma (hindi) ## 2018supl-23
 brahma murari ## vol3-39,voli3-46
+brahmam okkateyani (telugu) ## 2019supl-20
 brahmanda paksikal ## vol1-57,voli1-111,voli1-113
 calitam skhalitam (malayalam) ## 2018supl-24
 callaga cudu (telugu) ## vol7-57
 candracuda (telugu) ## vol7-58
+candrasekhara (telugu) ## 2019supl-21
 cenmile (hindi) ## vol6-45,vol7-59
 cesenu talli abhisekam (telugu) ## vol6-46
 chamundhaye kali ma ## vol1-58,voli1-115,voli1-117
@@ -344,6 +360,7 @@ choto choto gayi ## vol5-48
 chuttuniri ## vol2-53,voli2-56
 cinna cinna kanna (tamil) ## vol7-60
 cinnari ponnari (telugu) ## 2018supl-26
+cintana ela manasa (telugu) ## 2019supl-22
 citta spandana (kannada) ## 2018supl-27
 cittacorana (kannada) ## vol6-49
 close to you (english) ## vol4-236
@@ -367,12 +384,14 @@ darsanam darsanam sudarsanam (telugu) ## 2018supl-29
 dasarada atmaja (dasarathatmaja) ## vol2-55,voli2-59
 dasaratha nandana rama ## vol1-63,voli1-179,voli0-14
 dasarathe raghuramana (kannada) ## vol6-54
+dasoham (telugu) ## 2019supl-23
 daya karo hari narayana ## vol2-56,voli2-60
 daya karo mata ## vol1-63,voli1-165,voli1-167,voli2-60
 dayagala ma amma (telugu) ## vol6-56
 dayakaro tum (hindi) ## vol6-55
 dayanidhiye (kannada) ## vol7-65
 dayatoru he kalike (kannada) ## vol7-66
+dayavanta drsti (marathi) ## 2019supl-24
 dayayale urukondu (tamil) ## vol7-67
 de darsan ma ## vol3-42,voli3-51
 deep within the soul (english) ## vol5-194
@@ -462,6 +481,7 @@ ereri ereri (malayalam) ## 2018supl-35
 etayo teti (tamil) ## vol6-70,vol7-85
 etra nalayi ## vol2-69,voli2-77
 etrayo nalayi ## vol1-79,voli1-46,voli1-47
+ettanai murai (tamil) ## 2019supl-26
 ettanai vedanai (tamil) ## vol7-85
 every bird in a cage (english) ## vol4-239
 everywhere i look (english) ## vol5-194
@@ -476,7 +496,9 @@ gam ganapathaye ## vol3-48,voli3-58
 gananatha he gananatha (tamil) ## vol7-87
 gananatha om gananatha ## vol4-49
 gananathanin arul ## vol5-57
+gananayaka deva (marathi) ## 2019supl-27
 ganangalin natha (tamil) ## vol6-71,vol7-87
+ganapati bappa moraya (marathi) ## 2019supl-28
 ganapati gunanidhi (hindi) ## vol6-72,vol7-88
 ganesa nama om ## vol3-48,voli3-59
 ganesaya namah om ## vol5-58
@@ -517,8 +539,11 @@ govardhana giri kudayakki ## vol1-90,voli1-235,voli0-70
 govinda damodara ## vol3-52,voli3-64
 govinda gokula ayo ## vol2-76
 govinda gopala ## vol2-76,voli2-84,voli3-53,voli3-64
+govinda gopala ani (telugu) ## 2019supl-29
 govinda gopala hari hari ## vol4-54
+govinda govinda (tamil) ## 2019supl-30
 govinda jai jai ## vol2-77,voli2-84
+govinda jaya jaya jaya (namavali) ## 2019supl-31
 govinda krsna jai ## vol1-90,voli1-186,voli0-21
 govinda madhava ## vol2-77,voli2-85
 govinda narayana ## vol1-91,voli1-186,voli0-22
@@ -591,6 +616,7 @@ hrdaya nivasini ## vol1-97,voli1-252,voli0-87
 hrdaya puspame ## vol1-100,voli1-113,voli1-115
 hrdaya puspave ## vol5-63
 hrdayanjali ## vol2-86,voli2-95
+hrdayatil amulya (marathi) ## 2019supl-32
 hrdayesvari en ## vol2-87,voli2-96
 hrdoye acho ma tumi (bengali) ## vol7-104
 hrim kali ## vol1-100,voli1-119,voli1-121
@@ -613,6 +639,7 @@ innallo karthika nalu ## vol2-61,voli3-74,voli3-74
 iratte tupanaru (tulu) ## vol7-109
 irul tingi (a fragrance in the dark) (english) ## vol3-192,voli3-269
 irul tingi valarunna ## vol2-90,voli2-99
+iruvudu erade (kannada) ## 2019supl-33
 isar tumi ## vol5-66
 ishwari jagadishwari (wondrous goddess) (english) ## vol3-188,voli3-269
 isori jogodisari ## vol5-67
@@ -628,6 +655,7 @@ jagadho dharini mata ## vol2-91,voli2-103
 jagadisvari daya karo ## vol1-106,voli1-230,voli0-66
 jagadisvari janamana ## vol2-92,voli2-101
 jagajjanani (marathi) ## vol7-111
+jagamantalo (telugu) ## 2019supl-34
 jago ma kali jago jago ## vol4-58
 jago mere pyare bala ## vol4-59
 jaham dekhu ## vol4-60
@@ -663,6 +691,7 @@ jai saraswati ## vol2-98,voli2-108
 jal raha he ## vol4-61
 jamuna ke tal par (hindi) ## 2018supl-46
 jamuna kinare (hindi) ## vol7-113
+janani sakal (hindi) ## 2019supl-36
 janani tava padam ## vol3-64,voli3-80
 janmantarapathikan (malayalam) ## vol7-114
 japa japa amma amma ## vol3-65,voli3-81
@@ -674,7 +703,9 @@ jaya durga durgati ## vol4-62
 jaya hari vithala (gau re tujhe abhanga) ## vol4-51
 jaya jagad janani ## vol2-98,voli2-110
 jaya jagadambe jaya jaya ma ## vol3-66,voli3-82
+jaya jagadisvari (marathi) ## 2019supl-38
 jaya janakijivana rama ## vol4-63
+jaya janani caitanya (telugu) ## 2019supl-39
 jaya jaya arati ## vol1-109,voli1-194,voli0-30
 jaya jaya bhaya bhanjini ## vol3-66,voli3-83
 jaya jaya devi ## vol1-110,voli1-54,voli1-56
@@ -691,6 +722,7 @@ jaya paramesvari jagadambe ## vol3-69,voli3-86
 jaya rama janaki rama ## vol1-112,voli1-196,voli0-32
 jaya siva sankara ## vol2-100,voli2-111
 jayatu jayatu sadguru ## vol3-70,voli3-87
+jevha vatt (marathi) ## 2019supl-39
 jhala jhala (tamil) ## vol6-27
 jhala jhalavena (tamil) ## vol7-120
 jhilam jhilam ## vol3-71,voli3-88
@@ -721,6 +753,7 @@ kalattin pustakam (malayalam) ## vol6-96
 kalchilambocha ## vol2-101,voli2-112
 kali durge namo nama ## vol2-102,voli2-114
 kali kali kali (gujarati) ## vol7-125
+kali karunakari (tamil) ## 2019supl-41
 kali ma jai jai ma ## vol3-74,voli3-92
 kali mahesvari parvati ## vol2-103,voli2-114
 kali mahesvariye (malayalam) ## vol6-97
@@ -767,6 +800,7 @@ kannande marile (malayalam) ## vol6-106
 kannande punya nama ## vol2-105,voli2-117
 kannane kanan ## vol1-119,voli1-23,voli1-24
 kannaninettumo ## vol2-107,voli2-119
+kannanu naivedyam (malayalam) ## 2019supl-42
 kannatachalum ## vol1-117,voli1-91,voli1-93
 kanne imai kappatupol (tamil) ## vol6-108
 kanne kalankate (tamil) ## vol7-134
@@ -843,6 +877,7 @@ kehenda hai mukh (punjabi) ## 2018supl-57
 keliranna (kannada) ## vol7-148
 kelkkatta bhavam ## vol3-87,voli3-111
 kerunnen manasam (kezhunnen manasam) ## vol1-135,voli1-138,voli1-141
+kesava begane (kannada) ## 2019supl-44
 kesava namamu (telugu) ## vol7-149
 kesava narayana ## vol1-136,voli1-198,voli0-34
 keva bhavama (gujrati) ## vol6-116
@@ -922,6 +957,7 @@ maha natakam (telugu) ## vol7-167
 mahadeva sambho mahesa ## vol4-97
 mahakali ## vol2-127,voli2-142
 mahamahima (kannada) ## 2018supl-64
+mahamayi mahakali (telugu) ## 2019supl-45
 mahesvari rajarajesvari ## vol3-92,voli3-117
 mahisa sura mardini ## vol4-98
 mahisasura mardini stotram ## vol5-184
@@ -935,6 +971,7 @@ malarum manavum ## vol1-143,voli1-149,voli1-152
 mama janani ## vol2-127,voli2-143
 mamgala varada ## vol4-105
 man re ## vol5-109
+manadinullil (tamil) ## 2019supl-46
 manakkoyil (tamil) ## vol7-169
 maname narajivitam ## vol1-144,voli1-65,voli1-66
 manamendrum undan vidu (tamil) ## vol6-128,vol7-171
@@ -959,6 +996,7 @@ manava hrdayattil ## vol2-129,voli2-146
 manavu nondiralu amma (kannada) ## vol6-137
 mandahasa vadane manohari ## vol1-149,voli1-206,voli0-42
 mandahasa vadane manonmani ## vol3-94,voli3-120
+mandahasavadane (namavali) ## 2019supl-47
 mangal vadana (hindi) ## vol7-178
 mangala arati ## vol1-149,voli1-206,voli0-42
 mangala nayaki (tamil) ## vol6-129,vol7-177
@@ -973,7 +1011,9 @@ mannayi marayum ## vol1-150,voli1-96
 mannorkkum vinnorkkum ## vol4-112
 mano buddhya (nirvanastakam) ## vol1-151,voli1-207,voli0-43
 mano na visari (punjabi) ## vol7-180
+mantirattirkkilla (tamil) ## 2019supl-47
 manujkay hathi (hindi) ## vol7-181
+manusyan-ivide (malayalam) ## 2019supl-48
 manva re tu ## vol5-111
 manyukal mutum ## vol2-130,voli2-147
 mara yadukula ## vol1-153,voli1-148,voli1-151
@@ -994,6 +1034,7 @@ maya loniki nettak-amma (telugu) ## vol7-185
 maya ulagam (tamil) ## vol7-187
 mayaiyentra peyinai ## vol4-114
 mayangunna pakalinnu ## vol2-131,voli2-148
+maye embalata (kannada) ## 2019supl-49
 mayil pili (malayalam) ## 2018supl-66
 mayil togai ## vol5-113
 mayilirakani madhavane (tamil) ## vol7-188
@@ -1014,6 +1055,7 @@ milna tujhe mai chahu ## vol2-133,voli2-150
 minuguva kannina ## vol5-118
 mithi madhuri (gujrati) ## vol6-148
 mizhinirilazhnna (malayalam) ## vol7-190
+moda musukide (kannada) ## 2019supl-50
 mohalu champpara gauri ramana (telugu) ## vol6-149
 mohana murali mohitamen ## vol3-99,voli3-128
 mokeda ammanu (tulu) ## vol7-192
@@ -1048,18 +1090,24 @@ muralikayiloru ganamundo? (malayalam) ## vol6-152
 muralivale ## vol2-139,voli2-157
 muruga velmuruga (tamil) ## vol7-195
 muruka muruka vel muruka ## vol4-118
+muttamizh-nayaki (tamil) ## 2019supl-51
 muttu mukkutti (tamil) ## vol7-197
+muttu muttu velavane (tamil) ## 2019supl-52
 muttumari amba ## vol2-140,voli2-159
 muttumari amma (teti unnai) ## vol3-241
 muvvalu katti ## vol5-123
+na eda kovelalo (telugu) ## 2019supl-55
 na gunde (telugu) ## 2018supl-67
 na hrdi (telugu) ## vol7-198
 na karmana na prajaya ## vol3-197,voli3-281
 na mai dharmi (hindi) ## vol6-154
+nace tu (hindi) ## 2019supl-54
 naiyya tere (hindi) ## vol7-199
 nalakam onlru (tamil) ## 2018supl-68
 nalanchu nalekyu ## vol2-140,voli1-159
+nallanivadu (telugu) ## 2019supl-56
 nalnallatakum (tamil) ## vol7-200
+nam ek rup (hindi) ## 2019supl-57
 nam japana kyom chod ## vol4-119
 nam japo (hindi) ## vol7-202
 namami kalike ## vol2-141,voli2-160
@@ -1080,6 +1128,7 @@ nanda kumara gopala sundarabala ## vol2-142,voli2-158,voli2-161
 nanda kumara gopala vrndavana ## vol1-157,voli1-209,voli0-45
 nanda lala nanda lala ## vol2-144,voli2-161,voli2-162
 nanda nandana ## vol3-102,voli3-134
+nanda nandana (tamil) ## 2019supl-58
 nanda nandana hare ## vol3-103,voli3-135
 nanda nandana hari ## vol2-145,voli2-162,voli2-163
 nandakumara vanditarupa ## vol4-122
@@ -1095,6 +1144,7 @@ nanna hudottada (kannada) ## vol7-208
 nannodeya (kannada) ## vol7-209
 nannu cusi (telugu) ## vol6-160
 nanu embudilla (kannada) ## vol7-210
+nanu nanallavembante (kannada) ## 2019supl-61
 narahari narayana (kannada) ## vol7-210
 narayana hare (kalina kanan en kanna) ## vol1-113,voli1-57,voli1-59
 narayana hari ## vol1-158,voli1-86,voli1-88
@@ -1116,6 +1166,8 @@ ni ente velicham ## vol1-162,voli1-236,voli0-71
 ni intri verarumillai (tamil) ## vol6-162
 ni maran jirippatengu ## vol2-149,voli2-168,voli2-169
 ni tanda solletuttu (tamil) ## vol6-166,vol7-221
+nijava nariyade (telugu version) ## 2019supl-63
+nijavanariyade (kannada) ## 2019supl-62
 nila nila megha varnna ## vol4-126
 nila-kamala (telugu) ## vol7-219
 nilaiyilla ulakil ## vol5-124
@@ -1126,6 +1178,7 @@ nilambuja nayane (tamil version) ## 2018supl-70
 nilambuja nayane (telagu) ## vol5-126
 nilameghangale ## vol1-164,voli1-259,voli0-94,voli2-148,voli2-165,voli2-167
 nilanjana miri ## vol2-148,voli2-166,voli2-168
+nilavanna (tamil) ## 2019supl-64
 nin mukham kanumbol ## vol4-127
 nin ormakal ## vol1-164,voli1-106,voli1-107
 nin premam kontenne ## vol1-165,voli1-15,voli1-16
@@ -1199,9 +1252,11 @@ oru mandiram ata (om amritesvaryai namah) ## vol4-144
 oru mohaminnita ## vol4-145
 oru nalamma (tamil) ## vol7-229
 oru nalil nanen kannane ## vol1-194,voli1-106,voli1-108
+oru nalil nyan (tamil) ## 2019supl-65
 oru nalil varumo hrdaya ## vol1-195,voli1-232,voli0-68
 oru nalum piriyatto ## vol2-173,voli2-199,voli2-200
 oru nimisam enkilum ## vol3-135,voli3-177
+oru nimisham (tamil) ## 2019supl-65
 oru piti caramay (malayalam) ## vol7-230
 oru piti dukhattin ## vol3-136,voli3-178
 oru piti sneham tirannu ## vol3-137,voli3-179
@@ -1220,6 +1275,7 @@ pahi pahi devi pahi (telugu) ## vol6-175
 pakalantiyil ## vol1-197,voli1-262,voli0-97
 palana parayani amrtesvari ## vol3-138,vol5-136
 palkkatalnatuvil ## vol1-198,voli1-258,voli0-93
+pancendriya (kannada) ## 2019supl-66
 pandharitsa deva tujha ## vol5-136
 panduranga nam gya (marathi) ## vol7-235
 panduranga vithala ## vol2-174,voli2-200,voli2-201
@@ -1240,6 +1296,7 @@ pari pari (telugu) ## vol7-238
 parihasa patramay ## vol1-202,voli1-233,voli0-69
 parinamam iyalatta ## vol1-203,voli1-242,voli0-77
 parinamamiyallatta - kannada version ## vol7-238
+paripavana (marathi) ## 2019supl-67
 parisuddha snehatte ## vol3-141,voli3-185
 paritiyinmun paniyai (tamil) ## 2018supl-73
 pasankusa dhara ## vol3-144,voli3-188
@@ -1278,7 +1335,10 @@ prema ki agan ho ## vol4-157
 prema me jiyo ## vol4-158
 prema prabholasini devi ## vol1-210,voli1-263,voli0-98
 prema sagara (kannada) ## vol6-180,vol7-244
+premasandayini (marathi) ## 2019supl-68
+premasurya (kannada) ## 2019supl-69
 pukare mayya tumhe sada ham (hindi) ## vol6-182
+pundalika varada (marathi) ## 2019supl-70
 purnam adah purnam idam ## vol1-272
 purusa suktam ## vol4-230
 putta krsna (kannada) ## vol7-245
@@ -1308,6 +1368,7 @@ radhe syama he ## vol1-213,voli1-214,voli0-50
 radhesyam radhesyam (hindi) ## vol7-248
 radhika manohara (hare rama) ## vol2-182,voli2-209,voli2-211
 radhikesa yadunatha ramesa ## vol3-149,voli3-195
+raga vairikal (telugu translation) ## 2019supl-72
 raga vairikal ningitum ## vol4-163
 raghu nandana ## vol1-214,voli1-214,voli0-50
 raghupati raghava ## vol2-183,voli2-210,voli2-212
@@ -1315,6 +1376,7 @@ raja rama ## vol1-214,voli1-215,voli0-51
 ram nam ras (hindi) ## 2018supl-78
 ram ram bolo jay jay ## vol5-144
 rama bolo rama bolo ## vol2-184,voli2-211,voli2-212
+rama jaya jaya rama (kannada) ## 2019supl-72
 rama nama tarakam ## vol1-216,voli1-217,voli0-53
 rama pujari pada ## vol2-184,voli2-212,voli2-213
 rama raghava ## vol2-186,voli2-213,voli2-215
@@ -1341,6 +1403,7 @@ sadaram bhajicitunnu ## vol3-153,voli3-199
 sadguro pahimam ## vol1-218,voli1-45,voli1-46
 sadguru brahma ## vol1-219,voli1-220,voli0-55
 sadguruvay vantutitta kali ## vol3-152,voli3-200
+sadi tojale (tulu) ## 2019supl-74
 sagara cepaku (telugu) ## vol7-251
 sagara dalake ## vol5-147
 saha navavatu ## vol1-271
@@ -1400,11 +1463,14 @@ satyam jnanam (tamil) ## vol7-258
 satyattin saram (tamil) ## vol7-259
 seleyadirali ninna (kannada) ## vol7-260
 ser pe savar (punjabi) ## vol7-261
+sesasayana (kannada) ## 2019supl-75
 sevaiyenum (tamil) ## vol7-262
 seyda seyalgal (tamil) ## 2018supl-82
 silukisadiru ni (kannada) ## vol6-190,vol7-263
 sinkara kavatiyil ## vol3-161,voli3-211
 sinnanciru kuzhandai (tamil) ## vol7-264
+sirikka connal (marathi version) ## 2019supl-78
+sirikka connal (tamil) ## 2019supl-76
 sirme mayur mukuta ## vol3-162,voli3-212
 sita ram bol ## vol1-228,voli1-221,voli0-57
 sita ram radhe syam ## vol3-162,voli3-213
@@ -1414,8 +1480,10 @@ siva pancakam (tarumula nivasinam) ## vol4-186
 siva saktyaikya rupini ## vol4-175
 siva siva hara hara ## vol1-229,voli1-223,voli0-59,voli2-226,voli2-228
 siva siva mahadeva ## vol2-196,voli2-227,voli2-229
+siva siva rudra siva (telugu) ## 2019supl-80
 siva siva siva siva nama ## vol4-176
 siva siva siva siva sada siva ## vol3-163,voli3-215
+sivane ninu (kannada) ## 2019supl-79
 sivane sankarane (kannada) ## vol7-266
 sivasakti aikyave (kannada) ## vol7-266
 sivaya paramesvaraya ## vol1-230,voli1-269,voli0-104,voli2-197,voli2-227,voli2-229
@@ -1429,6 +1497,7 @@ snehamrtanandini ## vol2-199,voli2-230,voli2-231
 sokamitentinu sandhye ## vol4-177
 sokamoha bhayapahe ## vol4-178
 sollariya nin pukhazhai (tamil) ## vol6-191
+some say love (english) ## 2019supl-82
 sri chakram ennoru ## vol1-233,voli1-147,voli1-150
 sri devi lalita (tamil) ## vol7-269
 sri gananayaka (hindi) ## vol6-192
@@ -1448,11 +1517,13 @@ sri rama jaya rama dasarathe ## vol4-180
 sri rama namame (tamil) ## vol7-271
 sri rama namamu ## vol1-236,voli1-70,voli1-72
 sri rama rama namam ## vol1-236,voli1-224,voli0-59
+sri rama rama rameti (marathi) ## 2019supl-83
 sri ramachandra krpalu ## vol5-153
 sri ramachandra raghu ## vol1-237,voli1-135,voli1-138,voli2-204,voli2-235,
 sri sabarisa (svami saranam ayyappa) ## vol2-213,voli2-247,voli2-249
 sri vinayaka ## vol1-238,voli1-225,voli0-60
 srishtiyum niye - you are creation ## vol3-194,voli3-275
+srivari padalu (telugu) ## 2019supl-84
 srivenkatesa (telugu) ## vol6-194
 srsti veru (telugu) ## vol7-272
 srstiyum niye ## vol1-239,voli1-24,voli1-25
@@ -1486,6 +1557,7 @@ syamne murali ## vol2-216,voli2-249,voli2-251
 take me away ## vol2-249
 take me deep in your eyes ## vol4-247
 takutiyilla ## vol4-184
+tal panintom (tamil) ## 2019supl-85
 talarnnurangukayo ## vol3-166,voli3-236
 talarnnurangukayo (malayalam) ## vol7-278
 tamara kanna varu ## vol2-217,voli2-250,voli2-252
@@ -1515,6 +1587,7 @@ taye maha maye ## vol2-219,voli2-252,voli2-254
 taye tava - kannada version ## vol7-290
 taye tava tanayaril ## vol1-242,voli1-113,voli1-115
 tayendru azhaikkava (tamil) ## vol7-289
+tayilla pillayo (tamil) ## 2019supl-86
 teach me the language ## vol3-190,voli3-276
 tedal thodankum (tamil) ## vol6-202
 ten mazhaiyaka ## vol3-168,voli3-239
@@ -1531,6 +1604,7 @@ tirayunnu nan ninne ## vol4-189
 tiru vallikkavil amma ## vol2-221,voli2-255,voli2-257
 tirukhatakal padam nan ## vol2-220,voli2-253,voli2-255
 tirumukha darsanam (kali mahesvari amrtesvari) ## vol4-190
+tiruvadi pukazhppada (tamil) ## 2019supl-87
 tiruvadi teti ## vol5-166
 tori koler chele ami (bengali) ## vol7-294
 triloka matr rupini ## vol5-168
@@ -1600,6 +1674,7 @@ vatavrksmam (malayalam) ## vol7-313
 vazhi duram ## vol5-175
 vazhimel vizhi (tamil) ## vol7-314
 vazhiya entrum vazhivave ## vol3-175,voli3-248
+vazhkaiyoru (tamil) ## 2019supl-88
 vedambike namo ## vol1-251,voli1-61,voli1-63
 vedana kondoru (malayalam) ## vol6-213
 vedanta venalilute ## vol1-252,voli1-35,voli1-36
@@ -1622,6 +1697,7 @@ vimmum kural (tamil) ## vol7-318
 vina vilambam ## vol2-230,voli2-268,voli2-272
 vinati hamari tune ## vol3-177,voli3-250
 vinati suno vinati suno ## vol3-177,voli3-251
+vinavite (marathi) ## 2019supl-89
 vinaya manasam ## vol1-253,voli1-151,voli1-153
 vinayaka enkal (tamil) ## vol7-320
 vinayaka vinayaka ## vol1-253,voli1-268,voli0-104
@@ -1676,6 +1752,8 @@ yamuna tira vihari (vrindavan sancari) ## vol3-185,voli3-261
 yasoda ke bala ## vol1-257,voli1-267,voli0-103
 yasodana lal (gujarati) ## 2018supl-103
 yavarkkum tayana amma ni ## vol4-211
+yella daiva onde (kannada) ## 2019supl-90
+yenu mahime (kannada) ## 2019supl-91
 you are creation ## vol5-202
 you have come to sacrifice (english) ## vol6-230
 you mean everything to me ## vol3-189,voli3-277

@@ -6,6 +6,7 @@ import { omit, get, orderBy } from "lodash-es";
 // import { confirm } from "notie";
 import { Redirect, Switch } from "react-router-dom";
 import Search from "./Search";
+import Profile from "./Profile";
 import RenderPage from "./RenderPage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -15,11 +16,26 @@ import {
   faStop,
   faCompactDisc,
   faCartArrowDown,
-  faInfo
+  faInfo,
+  faSearch,
+  faArrowLeft,
+  faBookOpen
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Pay from "./Pay";
 
-library.add(faHeart, faMusic, faPlay, faStop, faCompactDisc, faCartArrowDown, faInfo);
+library.add(
+  faHeart,
+  faMusic,
+  faPlay,
+  faStop,
+  faCompactDisc,
+  faCartArrowDown,
+  faInfo,
+  faBookOpen,
+  faSearch,
+  faArrowLeft
+);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -103,6 +119,8 @@ class App extends Component {
     return (
       <Switch>
         <PropsRoute exact path="/" component={Search} {...additionalProps} />
+        <PropsRoute exact path="/pay" component={Pay} />
+        <PropsRoute exact path="/profile" component={Profile} />
         <PropsRoute exact path="/my-favorites" component={Search} {...additionalProps} />
         <PropsRoute path="/pdf/:location/:id/:name" component={RenderPage} {...additionalProps} />
         <Redirect path="*" to="/" />

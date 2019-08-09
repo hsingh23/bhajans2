@@ -1,11 +1,9 @@
 {
-  "presets": ["es2017", "react-app"],
-  "plugins": [
+  "presets": [
     [
-      "transform-runtime",
+      "@babel/preset-env",
       {
-        "polyfill": false,
-        "regenerator": true
+        "targets": { "node": "8.16.0" }
       }
     ]
   ]

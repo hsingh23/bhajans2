@@ -1,56 +1,116 @@
 import React, { PureComponent } from "react";
-import { auth, db, goOnline, goOffline } from "./firebase";
-import { Link } from "react-router-dom";
+import { auth } from "./firebase";
 import { getNext } from "./util";
+import { PayPalButton } from "react-paypal-button-v2";
+import Select from "react-select";
+import { alert } from "notie";
+
+export const PLANS = [
+  { value: "oneIndividual10", label: "One Year Individual - $9.99", price: 9.99, time: 31536000000 },
+  { value: "fiveIndividual40", label: "Five Year Individual - $39.99", price: 39.99, time: 157680000000 },
+  { value: "lifetimeIndividual50", label: "Lifetime Individual - $49.99", price: 49.99, time: 3153600000000 }
+];
 
 class Pay extends PureComponent {
-  componentWillMount() {
-    const { history, location } = this.props;
-    if (localStorage.paid === "1") history.push(getNext());
+  state = { selectedPlan: PLANS[1] };
+  componentDidMount() {
+    const { history } = this.props;
     const checkUser = async function() {
-      if (auth.currentUser) {
-        // only ask to confirmPayment if the person hasn't paid
-        goOnline();
-        var didPay = await db.ref(`/paid/${auth.currentUser.uid}`).once("value");
-        if (didPay.val() === null) {
-          await db
-            .ref(`/confirmPayment/${auth.currentUser.uid}`)
-            .set({ email: auth.currentUser.email, name: auth.currentUser.displayName, date: +new Date() });
-        } else {
-          localStorage.paid = "1";
-          history.push(getNext());
-        }
-        goOffline();
-      } else {
-        history.replace(`/login${location.search}`);
+      if (auth.currentUser && localStorage.expiresOn && +localStorage.expiresOn > +new Date()) {
+        alert({
+          text: `You have already paid, your subscription will end on ${new Date(
+            +localStorage.expiresOn
+          ).toLocaleDateString()}`
+        });
+      } else if (!auth.currentUser) {
+        history.push(`/login`);
       }
     };
     if (localStorage.uid && !auth.currentUser) {
-      setTimeout(checkUser, 500);
+      setTimeout(checkUser, 700);
     } else {
       checkUser();
     }
   }
 
+  handleChange = selectedPlan => this.setState({ selectedPlan });
+
   render() {
-    // TODO reword this, work with bhuvanesh for payment flow, investigate firebase cloud function
+    // Change mode here              ⬇️ to switch between sandbox and live paypal
+    const mode = ["sandbox", "live"][1];
+    const clientId =
+      mode === "sandbox"
+        ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
+        : "AcMLkUUIQ0-xZgsxf6I6I35spceQPDvvRu_uVXXclMOY_Vp7-Bvz4IdPVlAtmMHSIfddj0p1sUUwUu4i"; // live
+
     return (
       <div className="App">
         <div className="App-header">
-          <img src="favicon.ico" alt="Sing " />
           <div className="title">Amma's Bhajans</div>
-          <nav>
-            <Link to={"/"}>Back </Link>
-          </nav>
         </div>
-        <div className="restPage">
+        <div className="pay">
+          <h2>Pricing</h2>
+          <p>To see the bhajans you need to pay.</p>
+          <p>There are 3 payment plans to choose from.</p>
+          <ol>
+            {/* <li>
+              <strong>$10</strong> - 1 year of access with updates (for low income/ashram residents/tour staff special)
+            </li> */}
+            <li>
+              <strong>$9.99</strong> - 1 year of access with updates
+            </li>
+            <li>
+              <strong>$39.99</strong> - 5 years of access with updates
+            </li>
+            <li>
+              <strong>$49.99</strong> - lifetime access with updates (best value)
+            </li>
+          </ol>
+
           <p>
-            To see the bhajans you need to pay. This is easiest when you are on tour, simply pay at the cash register
-            and come to the store. The admin will grant you access once you log in. If you are not on tour: Please go to
-            paypal.me/Something and pay $X. Once that is done. Please then use this following email template to alert us
-            that you paid. You should be able to access the full website within 3 business days. We thank you for your
-            patience as we build out a more self-service experience. To check if you have access, simply click here.
+            All proceeds support <a href="http://www.embracingtheworld.org/">Embracing the World</a> nonprofit.
           </p>
+          <p>Please select your payment plan and pay with Paypal/Credit card.</p>
+          <Select value={this.state.selectedPlan} onChange={this.handleChange} options={PLANS} />
+          <div className="paypalButton">
+            <PayPalButton
+              options={{
+                clientId
+              }}
+              amount={this.state.selectedPlan.price}
+              onSuccess={(details, data) => {
+                alert({ text: "Payment successful, updating app, please stay online." });
+                return fetch("https://us-central1-bhajans-588f5.cloudfunctions.net/process", {
+                  method: "post",
+                  body: JSON.stringify({
+                    ...data,
+                    type: this.state.selectedPlan.value,
+                    uid: localStorage.uid,
+                    mode
+                  })
+                })
+                  .then(resp => {
+                    if (resp.ok) {
+                      return resp.json();
+                    }
+                  })
+                  .then(({ expiresOn }) => {
+                    localStorage.expiresOn = +expiresOn;
+                    localStorage.lastOnline = +new Date();
+                    alert({
+                      text: `App updated! Thanks for your support. Your subscription expires on ${new Date(
+                        +localStorage.expiresOn
+                      ).toLocaleDateString()}`
+                    });
+                    this.props.history.push(`/`);
+                  });
+              }}
+            />
+          </div>
+          <small>
+            For any payment complications please email{" "}
+            <a href="mailto:singwithamma@gmail.com">singwithamma@gmail.com</a>.
+          </small>
         </div>
       </div>
     );
