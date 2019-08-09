@@ -10,13 +10,25 @@ import classNames from "classnames";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { filteredBhajans: [], playing: false, infoOpen: false, infoFilteredIndex: false };
+    this.state = {
+      filteredBhajans: [],
+      playing: false,
+      infoOpen: false,
+      infoFilteredIndex: false,
+      copyRightHidden: !!sessionStorage.copyRightHidden
+    };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       this.filterBhajans({ nextProps, filter: nextProps.path.includes("/my-favorites") ? "" : null });
     }
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      sessionStorage.copyRightHidden = 1;
+      this.setState({ copyRightHidden: true });
+    }, 10000);
   }
 
   componentWillMount() {
@@ -46,13 +58,19 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? <Link to={`/pdf/${match[0]}/${name}`}>{child}</Link> : <span>{child}</span>;
+    return match ? (
+      <Link to={`/pdf/${match[0]}/${name}`} className="lyrics">
+        {child} <FontAwesomeIcon icon="book-open" />
+      </Link>
+    ) : (
+      <span>{child}</span>
+    );
   };
 
   audioTag = document.querySelector("#audio");
 
   play = url => {
-    this.audioTag.src = url.toLowerCase();
+    this.audioTag.src = url;
     this.audioTag.play();
     this.setState({ playing: url });
     this.audioTag.onEnded = this.stop;
@@ -188,13 +206,24 @@ class Search extends Component {
       t: tags = "",
       l: location = [],
       cs: cdbabySampleUrls = [],
-      cu: cdbabyBuyUrls = []
+      cu: cdbabyBuyUrls = [],
+      cn: cdbabyNames = []
     } = infoOpen || {};
-    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls);
+    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls, cdbabyNames);
     return (
       <div className="App">
-        <div className={classNames("modal-window", { open: !!infoOpen })}>
-          <div>
+        <div
+          className={classNames("modal-window", { open: !!infoOpen })}
+          onClick={e => {
+            e.stopPropagation();
+            this.setState({ infoOpen: false });
+          }}
+        >
+          <div
+            onClick={e => {
+              e.stopPropagation();
+            }}
+          >
             <button
               onClick={e => {
                 e.stopPropagation();
@@ -242,7 +271,7 @@ class Search extends Component {
               <div>
                 <strong>CD Baby: </strong>
 
-                {cdbabyLinks.map(([sample, buy]) => (
+                {cdbabyLinks.map(([sample, buy, name]) => (
                   <div>
                     <button
                       role="img"
@@ -251,8 +280,9 @@ class Search extends Component {
                     >
                       <FontAwesomeIcon icon={playing === sample ? "stop" : "play"} />
                     </button>
+                    {" Buy "}
                     <a href={buy} target="_blank" rel="noopener noreferrer">
-                      {buy}
+                      {name}
                     </a>
                   </div>
                 ))}
@@ -320,6 +350,10 @@ class Search extends Component {
               );
             }}
           </WindowScroller>
+        </div>
+        <div className={classNames("copyRight", { hidden: this.state.copyRightHidden })}>
+          <img style={{ paddingLeft: "80px", display: "inline-block" }} src="amma.jpg" alt="Copyright: MA Center" />
+          <small style={{ position: "absolute", top: "50%" }}>© MA Centers 2019, all rights reserved.</small>
         </div>
       </div>
     );

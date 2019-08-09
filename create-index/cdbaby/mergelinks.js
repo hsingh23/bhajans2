@@ -1,30 +1,32 @@
-var fs = require('fs');
-var path = require('path');
-var _ = require('lodash');
+var fs = require("fs");
+var path = require("path");
+var _ = require("lodash");
+var distance = require("jaro-winkler");
+
 const makeSearchable = line =>
   line
     .toLowerCase()
-    .replace(/[^A-z0-9]/g, '')
-    .replace(/h/g, '')
-    .replace(/z/g, 'r')
-    .replace(/ri?/g, 'ri')
-    // .replace(/r[uo]/g, 'rU')
-    .replace(/ai?/g, 'ai')
-    .replace(/ee/g, 'i')
-    .replace(/oo|uu/g, 'u')
-    // .replace(/[kg]il/g, 'kgil') // 2
-    // .replace(/[cj]al/g, 'Cal')
-    .replace(/[vw]/g, 'V')
-    .replace(/ny?/g, 'ny')
-    .replace(/(t|k|c){2}/g, '$1')
-    .replace(/(g|p|j){2}/g, '$1')
-    .replace(/[ie]*y/g, 'Y')
-    .replace(/[tdl]/g, 'T');
+    .replace(/[^A-z0-9]/g, "")
+    .replace(/h/g, "")
+    .replace(/z/g, "r")
+    .replace(/ri?/g, "ri")
+    .replace(/ai?/g, "ai")
+    .replace(/ee/g, "i")
+    .replace(/oo|uu/g, "u")
+    .replace(/[kg]il/g, "kgil") // 2
+    .replace(/[cj]al/g, "Cal")
+    .replace(/[vw]/g, "V")
+    .replace(/ny?/g, "ny")
+    .replace(/a+/g, "a")
+    .replace(/(t|k|c){2}/g, "$1")
+    .replace(/(g|p|j){2}/g, "$1")
+    .replace(/[ie]*y/g, "Y")
+    .replace(/[tdl]/g, "T");
 
 var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches, noMatchSheet, manyMatchesSheet;
 
 function readBhajanIndex() {
-  bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json')));
+  bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json")));
   searchableBhajans = [];
   searchableBhajansObject = {};
   bhajans.forEach((bhajan, i) => {
@@ -37,7 +39,7 @@ function readBhajanIndex() {
 }
 
 function writeNewBhajanIndex() {
-  fs.writeFileSync(path.resolve(__dirname, '../../public/bhajan-index2.json'), JSON.stringify(bhajans));
+  fs.writeFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json"), JSON.stringify(bhajans));
 }
 
 function readFiles() {
@@ -50,20 +52,22 @@ function readFiles() {
     var realBhajan = bhajans[searchableBhajansObject[fullSearch]];
     realBhajan.cu = realBhajan.cu || [];
     realBhajan.cs = realBhajan.cs || [];
+    realBhajan.cn = realBhajan.cn || [];
     realBhajan.cu.push(song.u);
     realBhajan.cs.push(
       song.mp3.replace(
-        'https://content.cdbaby.com/audio/samples/d073192b/',
-        'https://s3.amazonaws.com/amma-bhajan-samples/'
+        /https:\/\/content.cdbaby.com\/audio\/samples\/.*?\//,
+        "https://singwithamma.s3.amazonaws.com/samples/"
       )
     );
+    realBhajan.cn.push(song.name);
     count += 1;
   }
   fs.readdirSync(path.resolve(__dirname))
-    .filter(x => x.endsWith('json'))
+    .filter(x => x.endsWith("json"))
     .map(f => {
       JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map(song => {
-        var searchableName = makeSearchable(song.name.replace(/[\[\(].*[\]\)]/gi, ''));
+        var searchableName = makeSearchable(song.name.replace(/[\[\(].*[\]\)]/gi, ""));
         // if (searchable[searchableName]) console.log('Exists', searchable[searchableName].name, song.name, searchableName);
         song.sn = searchableName;
         searchable[song.name] = song;
@@ -84,9 +88,9 @@ function readFiles() {
         }
       });
     });
-  fs.writeFileSync(path.resolve(__dirname, '../cdbaby.json'), JSON.stringify(searchable));
-  fs.writeFileSync(path.resolve(__dirname, '../noMatch.json'), JSON.stringify(noMatch));
-  fs.writeFileSync(path.resolve(__dirname, '../manyMatches.json'), JSON.stringify(manyMatches));
+  fs.writeFileSync(path.resolve(__dirname, "../cdbaby.json"), JSON.stringify(searchable));
+  fs.writeFileSync(path.resolve(__dirname, "../noMatch.json"), JSON.stringify(noMatch));
+  fs.writeFileSync(path.resolve(__dirname, "../manyMatches.json"), JSON.stringify(manyMatches));
   // console.log(noMatch.map(x => x.name));
   console.log(
     `Total Cdbaby: ${Object.keys(searchable).length}, Match: ${count}, No Match: ${
@@ -108,34 +112,46 @@ function readSheetMusic() {
     realBhajan.sm.push(filename);
     smCount += 1;
   }
-  fs.readFileSync(path.resolve(__dirname, '../sheetmusiclist.txt'))
+  fs.readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
     .toString()
-    .split('\n')
+    .split("\n")
     // fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
-    .filter(x => x.endsWith('pdf'))
+    .filter(x => x.endsWith("pdf"))
     .map(filename => {
-      var [filename, name, key] = filename.match(/(.*)([A-Z].*?)\.pdf$/);
+      var name = filename.replace(/[A-Z][mb]*(?:sharp)?[mb]*\.pdf$/, "").replace(/\(.*\)|\d*/, "");
+      // console.log(name);
       total += 1;
       var searchableName = makeSearchable(name);
       if (searchableBhajansObject[searchableName]) {
         addSheetMusic(searchableName, filename);
       } else {
-        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
+        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`${searchableName}`));
         if (matches.length === 1) {
           addSheetMusic(matches[0], filename);
-          // console.log(filename);
         } else if (matches.length === 0) {
-          noMatchSheet.push(filename);
+          console.log(filename, name, searchableName);
+          const matched = [];
+          searchableBhajans.map(searchableBhajan => {
+            const d = distance(searchableBhajan, searchableName, { caseSensitive: false });
+            if (d >= 0.9) {
+              matched.push(searchableBhajan);
+              addSheetMusic(searchableBhajan, filename);
+              console.log(name, searchableName, searchableBhajan, d);
+            }
+          });
+          // if (matched.length === 0) console.log(name, searchableName);
         } else {
           matches.forEach(fullSearch => addSheetMusic(fullSearch, filename));
           manyMatchesSheet.push([filename, matches]);
         }
       }
     });
+  const noMatch = Object.keys(noMatchSheet).length;
+  const manyMatch = Object.keys(manyMatchesSheet).length;
   console.log(
-    `Total sheetmusic: ${total}, Match: ${smCount}, No Match: ${Object.keys(noMatchSheet).length}, Many Matches: ${
-      Object.keys(manyMatchesSheet).length
-    }`
+    `Total sheetmusic: ${total}, Match: ${total -
+      noMatch -
+      manyMatch}, No Match: ${noMatch}, Many Matches: ${manyMatch}`
   );
 }
 

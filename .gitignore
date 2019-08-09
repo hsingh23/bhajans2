@@ -9,7 +9,8 @@ node_modules
 
 # production
 /build
-
+dist/
+*.mp3
 # misc
 .DS_Store
 .env.local

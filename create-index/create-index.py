@@ -7,7 +7,7 @@ with open("translation.csv", 'r') as f:
     translation_mapping = f.readlines()
 
 # read bhajan indexes
-supplements = ["2018Supplement.txt", "Vol7.txt"]
+supplements = ["2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
 for filename in supplements:
     # make substitutions
     with open(filename, 'r') as f:
