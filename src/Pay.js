@@ -12,7 +12,7 @@ export const PLANS = [
 ];
 
 class Pay extends PureComponent {
-  state = { selectedPlan: PLANS[1] };
+  state = { selectedPlan: PLANS[2] };
   componentDidMount() {
     const { history } = this.props;
     const checkUser = async function() {
@@ -22,7 +22,7 @@ class Pay extends PureComponent {
             +localStorage.expiresOn
           ).toLocaleDateString()}`
         });
-      } else if (!auth.currentUser) {
+      } else if (!auth.currentUser || !localStorage.uid) {
         history.push(`/login`);
       }
     };
@@ -85,7 +85,7 @@ class Pay extends PureComponent {
                   body: JSON.stringify({
                     ...data,
                     type: this.state.selectedPlan.value,
-                    uid: localStorage.uid,
+                    uid: localStorage.uid || (auth.currentUser && auth.currentUser.uid),
                     mode
                   })
                 })
