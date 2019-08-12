@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import { auth } from "./firebase";
-import { getNext } from "./util";
 import { PayPalButton } from "react-paypal-button-v2";
 import Select from "react-select";
 import { alert } from "notie";

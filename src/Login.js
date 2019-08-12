@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { auth, checkRefOnce, firebase } from "./firebase";
-import firebaseui from "firebaseui";
+import * as firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
 import { getNext } from "./util";
 

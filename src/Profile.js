@@ -1,9 +1,5 @@
 import React, { PureComponent } from "react";
-import { auth, db, goOnline, goOffline } from "./firebase";
-import { Link } from "react-router-dom";
-import { getNext } from "./util";
-// import PaypalExpressBtn from "react-paypal-express-checkout";
-import { PayPalButton } from "react-paypal-button-v2";
+
 
 class Pay extends PureComponent {
   render() {
