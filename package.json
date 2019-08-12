@@ -63,9 +63,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "reactSnap": {
-    "inlineCss": true
-  },
   "browserslist": [
     "last 1 version",
     ">1%",
