@@ -18,6 +18,7 @@ export const process = functions.https.onRequest(async (req, res) => {
   return cors(req, res, async () => {
     const config = functions.config();
     const { mode, type, orderID, uid } = JSON.parse(req.body);
+    console.log("LOGGING ", mode, type, orderID, uid);
     var env = new paypal.core.SandboxEnvironment(
       "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv",
       "EIp7U4Y4Z9RU5moIZrOxW_KaXgPCC94x2fMlXmqHOs9Hp7u-kKjpx5iPv8tULuRXZ7RwJBr3rtXGPo0a"
@@ -30,6 +31,8 @@ export const process = functions.https.onRequest(async (req, res) => {
     client
       .execute(getOrder)
       .then(({ statusCode, result: { status, gross_total_amount, create_time, payer } }) => {
+        console.log("Paypal LOGGING ", mode, type, orderID, uid, status, gross_total_amount, create_time, payer);
+
         if (statusCode < 400 && status === "COMPLETED" && parseFloat(gross_total_amount.value) === PLANS[type].price) {
           const expiresOn = +new Date(+new Date(create_time) + PLANS[type].time);
           const rootRef = admin.database().ref();

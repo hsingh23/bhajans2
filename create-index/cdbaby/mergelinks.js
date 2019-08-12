@@ -133,7 +133,7 @@ function readSheetMusic() {
           const matched = [];
           searchableBhajans.map(searchableBhajan => {
             const d = distance(searchableBhajan, searchableName, { caseSensitive: false });
-            if (d >= 0.9) {
+            if (d >= 0.89) {
               matched.push(searchableBhajan);
               addSheetMusic(searchableBhajan, filename);
               console.log(name, searchableName, searchableBhajan, d);

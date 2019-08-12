@@ -150,6 +150,7 @@ class Search extends Component {
             </div>
             <span className="Search_RightSide">
               <button
+                aria-label="search"
                 className="button button-3d button-circle button-jumbo spaced"
                 onClick={() => this.setInfo(window.fetchedBhajans[filteredBhajans[index]], filteredBhajans[index])}
               >
@@ -173,6 +174,7 @@ class Search extends Component {
                   href={cdbabyBuyUrls[0]}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="buy song on cdbaby"
                 >
                   <span role="img" aria-label="cd">
                     <FontAwesomeIcon icon="cart-arrow-down" />
@@ -181,6 +183,7 @@ class Search extends Component {
               )}
               {cdbabySampleUrls && (
                 <button
+                  aria-label="play sample"
                   className="button button-3d button-circle button-jumbo spaced"
                   onClick={() => (playing === cdbabySampleUrls[0] ? this.stop() : this.play(cdbabySampleUrls[0]))}
                 >
@@ -225,6 +228,7 @@ class Search extends Component {
             }}
           >
             <button
+              aria-label="close dialog"
               onClick={e => {
                 e.stopPropagation();
                 this.setInfo();
@@ -274,8 +278,8 @@ class Search extends Component {
                 {cdbabyLinks.map(([sample, buy, name]) => (
                   <div>
                     <button
+                      aria-label="toggle sample"
                       role="img"
-                      aria-label="music sample"
                       onClick={() => (!!playing ? this.stop() : this.play(sample))}
                     >
                       <FontAwesomeIcon icon={playing === sample ? "stop" : "play"} />
@@ -309,6 +313,8 @@ class Search extends Component {
             className="form-control"
             name="search"
             id="search"
+            role="search"
+            aria-label="search"
             value={filter || ""}
             onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
