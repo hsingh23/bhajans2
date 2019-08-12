@@ -94,7 +94,7 @@ class RenderPage extends Component {
     const handlers = { left: this.handlePrevious, right: this.handleNext };
 
     return (
-      <HotKeys keyMap={map} handlers={handlers} focused={true}>
+      <HotKeys keyMap={map} handlers={handlers} focused="true">
         <div className="App">
           <div className="App-header">
             <Link to={"/"}>
