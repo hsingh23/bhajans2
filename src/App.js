@@ -99,6 +99,9 @@ class App extends Component {
       <button
         className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
         onClick={() => this.removeFavorite(name)}
+        alia-label="unlike"
+        role="presentation"
+        tabindex="-1"
       >
         <FontAwesomeIcon icon="heart" color="white" />
       </button>
@@ -106,6 +109,9 @@ class App extends Component {
       <button
         className={inactiveClassName || "button button-3d button-circle button-jumbo"}
         onClick={() => this.addFavorite(name)}
+        alia-label="like"
+        role="presentation"
+        tabindex="-1"
       >
         <FontAwesomeIcon icon="heart" color="grey" />
       </button>
