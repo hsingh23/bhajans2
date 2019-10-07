@@ -2,6 +2,11 @@
 {
   "editor.formatOnSave": true,
   "beautify.tabSize": 2,
-    "prettier.printWidth": 120,
-  "prettier.eslintIntegration": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "prettier.jsxBracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "eslint.alwaysShowStatus": true,
+  "git.allowForcePush": true,
+  "git.autoStash": true,
 }

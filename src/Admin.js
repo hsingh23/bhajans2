@@ -1,29 +1,40 @@
 import React, { PureComponent } from "react";
-import { auth, db, goOnline, goOffline } from "./firebase";
+import { auth, db } from "./firebase";
 import { Link } from "react-router-dom";
+import { PLANS } from "./Pay";
+import Select from "react-select";
 
 class Admin extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { users: {} };
+    this.state = {
+      users: {},
+      selectedPlan: PLANS[2]
+    };
   }
 
-  componentWillMount() {
+  input = React.createRef();
+  handleChange = selectedPlan => this.setState({ selectedPlan });
+
+  componentDidMount() {
     const { history, match } = this.props;
-    goOnline();
     const awaitCurrentUser = () => {
-      const uid = (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
+      const uid =
+        (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
       if (!uid) {
         console.log("Need to login");
-        history.push(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
+        history.push(
+          `/login?next=${decodeURIComponent(match.params.next || "/")}`
+        );
       }
-      db.ref(`admin/${uid}`)
-        .once("value")
-        .then(function(snapshot) {
-          console.log(snapshot.val(), "value");
+      db.ref(`admin/${uid}`).once("value").then(function(snapshot) {
+        console.log(snapshot.val(), "value");
 
-          if (snapshot.val() === null) history.replace(`/login?next=${decodeURIComponent(match.params.next || "/")}`);
-        });
+        if (snapshot.val() === null)
+          history.replace(
+            `/login?next=${decodeURIComponent(match.params.next || "/")}`
+          );
+      });
       this.confirmBeta.on("value", snap => {
         this.setState({ users: snap.val() || {} });
       });
@@ -36,31 +47,31 @@ class Admin extends PureComponent {
     // TODO: this should not be value!
     // TODO: set renewBeta table
   }
-  componentWillUnmount() {
-    return goOffline();
-  }
+  // componentWillUnmount() {
+  //   return goOffline();
+  // }
 
-  createEmailTemplate = user => {
-    const body = encodeURIComponent(`Om Namah Shivaya ${user.name},
+  //   createEmailTemplate = user => {
+  //     const body = encodeURIComponent(`Om Namah Shivaya ${user.name},
 
-Thank you for joining the beta team for https://sing.withamma.com/#/ 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone. 
+  // Thank you for joining the beta team for https://sing.withamma.com/#/ 🤗. We may send you surveys, push notifications, emails to help us make this a better experience for everyone.
 
-Please like our Facebook page: https://www.facebook.com/sing.withamma/?ref=beta_email 
+  // Please like our Facebook page: https://www.facebook.com/sing.withamma/?ref=beta_email
 
-If you have see any errors like incorrect page number, broken search, website malfunctions, etc. please let me know at https://feedback.userreport.com/9f29eba3-9795-415f-9f34-3e1a2c8fb6ed/
- 
-🎉 Thanks so much 🎉
+  // If you have see any errors like incorrect page number, broken search, website malfunctions, etc. please let me know at https://feedback.userreport.com/9f29eba3-9795-415f-9f34-3e1a2c8fb6ed/
 
-Peace `);
+  // 🎉 Thanks so much 🎉
 
-    return window.localStorage.email.includes("gmail") && window.document.documentElement.clientWidth > 1024
-      ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent(
-          "[sing.withamma.com] Thanks for joining the beta 😄"
-        )}&bcc=hisingh1@gmail.com&body=${body}`
-      : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent(
-          "[sing.withamma.com] Thanks for joining the beta"
-        )}&bcc=hisingh1@gmail.com&body=${body}`;
-  };
+  // Peace `);
+
+  //     return window.localStorage.email.includes("gmail") && window.document.documentElement.clientWidth > 1024
+  //       ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent(
+  //           "[sing.withamma.com] Thanks for joining the beta 😄"
+  //         )}&bcc=hisingh1@gmail.com&body=${body}`
+  //       : `mailto:${encodeURIComponent(user.email)}?subject=${encodeURIComponent(
+  //           "[sing.withamma.com] Thanks for joining the beta"
+  //         )}&bcc=hisingh1@gmail.com&body=${body}`;
+  //   };
 
   setBeta = function(uid, user) {
     this.confirmedBeta.child(uid).set(user);
@@ -69,8 +80,26 @@ Peace `);
     window.open(this.createEmailTemplate(user));
     return 1;
   };
+
+  setPaid = () => {
+    db.ref(`paid/${this.input.current.value}`).set({
+      expiresOn: +new Date() + this.state.selectedPlan.time,
+      gross_total_amount: {
+        currency: "USD",
+        value: this.state.selectedPlan.price
+      },
+      mode: "live",
+      manual: true,
+      orderID: "admin",
+      paidOn: +new Date(),
+      payer: {
+        payer_id: "admin"
+      }
+    });
+  };
+
   render() {
-    const { users } = this.state;
+    // const { users } = this.state;
     return (
       <div className="App">
         <div className="App-header">
@@ -80,29 +109,16 @@ Peace `);
           </nav>
         </div>
         <div className="restPage">
-          <p>The following people are waiting to get access to the app</p>
-          <table>
-            <tbody>
-              {users &&
-                Object.entries(users).map(([uid, user]) => (
-                  <tr key={uid}>
-                    <td>{user.name}</td>
-                    <td>
-                      {user.email} <small>{uid}</small>
-                    </td>
-                    <td>
-                      <button
-                        onClick={() => {
-                          this.setBeta(uid, user);
-                        }}
-                      >
-                        beta
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <p>Given a userId, give them access to the paid site.</p>
+          <div>
+            <input type="text" ref={this.input} placeholder="uid" />
+            <Select
+              value={this.state.selectedPlan}
+              onChange={this.handleChange}
+              options={PLANS}
+            />
+            <input type="button" value="submit" onClick={this.setPaid} />
+          </div>
         </div>
       </div>
     );
