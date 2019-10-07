@@ -21,21 +21,30 @@ class Search extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      this.filterBhajans({ nextProps, filter: nextProps.path.includes("/my-favorites") ? "" : null });
+      this.filterBhajans({
+        nextProps,
+        filter: nextProps.path.includes("/my-favorites") ? "" : null
+      });
     }
   }
   componentDidMount() {
-    setTimeout(() => {
+    this.timeout1 = setTimeout(() => {
       sessionStorage.copyRightHidden = 1;
       this.setState({ copyRightHidden: true });
     }, 10000);
   }
+  componentWillUnmount() {
+    clearTimeout(this.timeout1);
+    clearTimeout(this.timeout2);
+  }
 
   componentWillMount() {
-    setTimeout(function() {
+    this.timeout2 = setTimeout(function() {
       if (document.scrollingElement) {
         document.scrollingElement.scrollTop =
-          window.scrollTop || (document.scrollingElement && document.scrollingElement.scrollTop) || 0;
+          window.scrollTop ||
+          (document.scrollingElement && document.scrollingElement.scrollTop) ||
+          0;
       } else {
         document.body.scrollTop = window.scrollTop || 0;
       }
@@ -50,7 +59,9 @@ class Search extends Component {
         .then(fetchedBhajans => {
           fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
           window.fetchedBhajans = fetchedBhajans;
-          window.searchableBhajans = fetchedBhajans.map(o => this.makeSearchable(o.n + o.l.join("") + o.t));
+          window.searchableBhajans = fetchedBhajans.map(o =>
+            this.makeSearchable(o.n + o.l.join("") + o.t)
+          );
         })
         .then(() => this.filterBhajans());
     }
@@ -58,13 +69,13 @@ class Search extends Component {
 
   wrappedName = (location, name, child) => {
     const match = location.match(/\d{4}supl-\d+|vol\d-\d+/gi);
-    return match ? (
-      <Link to={`/pdf/${match[0]}/${name}`} className="lyrics">
-        {child} <FontAwesomeIcon icon="book-open" />
-      </Link>
-    ) : (
-      <span>{child}</span>
-    );
+    return match
+      ? <Link to={`/pdf/${match[0]}/${name}`} className="lyrics">
+          {child} <FontAwesomeIcon icon="book-open" />
+        </Link>
+      : <span>
+          {child}
+        </span>;
   };
 
   audioTag = document.querySelector("#audio");
@@ -111,21 +122,30 @@ class Search extends Component {
       ? nextProps.path.includes("/my-favorites")
       : this.props.path.includes("/my-favorites");
 
-    const filteredBhajans = window.searchableBhajans.reduce((memo, searchableBhajan, i) => {
-      if (filterFavorites) {
-        if (!this.props.favorites[window.fetchedBhajans[i].n]) return memo;
-      }
-      if (searchableBhajan.includes(searchableFilter)) memo.push(i);
-      return memo;
-    }, []);
+    const filteredBhajans = window.searchableBhajans.reduce(
+      (memo, searchableBhajan, i) => {
+        if (filterFavorites) {
+          if (!this.props.favorites[window.fetchedBhajans[i].n]) return memo;
+        }
+        if (searchableBhajan.includes(searchableFilter)) memo.push(i);
+        return memo;
+      },
+      []
+    );
 
     this.setState({ filteredBhajans });
   };
 
-  setInfo = (infoOpen, infoFilteredIndex) => this.setState({ infoOpen, infoFilteredIndex });
+  setInfo = (infoOpen, infoFilteredIndex) =>
+    this.setState({ infoOpen, infoFilteredIndex });
 
   render() {
-    const { filteredBhajans, playing, infoOpen, infoFilteredIndex } = this.state;
+    const {
+      filteredBhajans,
+      playing,
+      infoOpen,
+      infoFilteredIndex
+    } = this.state;
     const filter = window.searchFilter;
     const rowRenderer = ({ index, key, style }) => {
       const {
@@ -145,20 +165,28 @@ class Search extends Component {
               {this.wrappedName(
                 location[0],
                 `${filteredBhajans[index]}/${name}`,
-                <Highlighter className="spaced" searchWords={filter.split(" ")} textToHighlight={`${name}${tag}`} />
+                <Highlighter
+                  className="spaced"
+                  searchWords={filter.split(" ")}
+                  textToHighlight={`${name}${tag}`}
+                />
               )}
             </div>
             <span className="Search_RightSide">
               <button
                 aria-label="search"
                 className="button button-3d button-circle button-jumbo spaced"
-                onClick={() => this.setInfo(window.fetchedBhajans[filteredBhajans[index]], filteredBhajans[index])}
+                onClick={() =>
+                  this.setInfo(
+                    window.fetchedBhajans[filteredBhajans[index]],
+                    filteredBhajans[index]
+                  )}
               >
                 <span role="img" aria-label="info">
                   <FontAwesomeIcon icon="info" />
                 </span>
               </button>
-              {sheetmusic && (
+              {sheetmusic &&
                 <Link
                   className="button button-3d button-circle button-jumbo spaced"
                   to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}
@@ -166,9 +194,8 @@ class Search extends Component {
                   <span role="img" aria-label="sheet music">
                     <FontAwesomeIcon icon="music" />
                   </span>
-                </Link>
-              )}
-              {cdbabyBuyUrls && (
+                </Link>}
+              {cdbabyBuyUrls &&
                 <a
                   className="button button-3d button-circle button-jumbo spaced"
                   href={cdbabyBuyUrls[0]}
@@ -179,19 +206,22 @@ class Search extends Component {
                   <span role="img" aria-label="cd">
                     <FontAwesomeIcon icon="cart-arrow-down" />
                   </span>
-                </a>
-              )}
-              {cdbabySampleUrls && (
+                </a>}
+              {cdbabySampleUrls &&
                 <button
                   aria-label="play sample"
                   className="button button-3d button-circle button-jumbo spaced"
-                  onClick={() => (playing === cdbabySampleUrls[0] ? this.stop() : this.play(cdbabySampleUrls[0]))}
+                  onClick={() =>
+                    playing === cdbabySampleUrls[0]
+                      ? this.stop()
+                      : this.play(cdbabySampleUrls[0])}
                 >
                   <span role="img" aria-label="music sample">
-                    <FontAwesomeIcon icon={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
+                    <FontAwesomeIcon
+                      icon={playing === cdbabySampleUrls[0] ? "stop" : "play"}
+                    />
                   </span>
-                </button>
-              )}
+                </button>}
               {this.props.renderFavorite(name)}
             </span>
           </div>
@@ -211,7 +241,8 @@ class Search extends Component {
       cs: cdbabySampleUrls = [],
       cu: cdbabyBuyUrls = [],
       cn: cdbabyNames = []
-    } = infoOpen || {};
+    } =
+      infoOpen || {};
     const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls, cdbabyNames);
     return (
       <div className="App">
@@ -238,12 +269,14 @@ class Search extends Component {
             >
               Close
             </button>
-            <h1>{name}</h1>
-            {location.length > 0 && (
+            <h1>
+              {name}
+            </h1>
+            {location.length > 0 &&
               <div>
                 <strong>Found in Books: </strong>
 
-                {location.map(pdf => (
+                {location.map(pdf =>
                   <span className="block">
                     {this.wrappedName(
                       pdf,
@@ -254,52 +287,56 @@ class Search extends Component {
                         .replace("-", ", page ")
                     )}
                   </span>
-                ))}
+                )}
                 <hr />
-              </div>
-            )}
+              </div>}
 
-            {sheetmusic.length > 0 && (
+            {sheetmusic.length > 0 &&
               <div>
                 <strong>Sheet Music: </strong>
-                {sheetmusic.map(pdf => (
-                  <Link to={`/pdf/${pdf}/${infoFilteredIndex}/${name}`} className="block">
+                {sheetmusic.map(pdf =>
+                  <Link
+                    to={`/pdf/${pdf}/${infoFilteredIndex}/${name}`}
+                    className="block"
+                  >
                     {pdf}
                   </Link>
-                ))}
+                )}
                 <hr />
-              </div>
-            )}
+              </div>}
 
-            {cdbabyLinks.length > 0 && (
+            {cdbabyLinks.length > 0 &&
               <div>
                 <strong>CD Baby: </strong>
 
-                {cdbabyLinks.map(([sample, buy, name]) => (
+                {cdbabyLinks.map(([sample, buy, name]) =>
                   <div>
                     <button
                       aria-label="toggle sample"
                       role="img"
-                      onClick={() => (!!playing ? this.stop() : this.play(sample))}
+                      onClick={() =>
+                        !!playing ? this.stop() : this.play(sample)}
                     >
-                      <FontAwesomeIcon icon={playing === sample ? "stop" : "play"} />
+                      <FontAwesomeIcon
+                        icon={playing === sample ? "stop" : "play"}
+                      />
                     </button>
                     {" Buy "}
                     <a href={buy} target="_blank" rel="noopener noreferrer">
                       {name}
                     </a>
                   </div>
-                ))}
+                )}
                 <hr />
-              </div>
-            )}
+              </div>}
 
-            {tags.length > 0 && (
+            {tags.length > 0 &&
               <div>
                 <strong>Tags: </strong>
-                <small>{tags.join(", ")}</small>
-              </div>
-            )}
+                <small>
+                  {tags.join(", ")}
+                </small>
+              </div>}
           </div>
         </div>
         <div className="App-header">
@@ -316,30 +353,36 @@ class Search extends Component {
             role="search"
             aria-label="search"
             value={filter || ""}
-            onChange={e => e && e.target && this.filterBhajans({ filter: e.target.value })}
+            onChange={e =>
+              e && e.target && this.filterBhajans({ filter: e.target.value })}
           />
         </div>
         <div className="rest">
           <nav>
-            {!myFavorites ? (
-              <Link to="/my-favorites" className="button button-rounded button-raised button-action full">
-                Only My Favorites
-              </Link>
-            ) : (
-              <Link to="/" className="button full button-rounded button-raised button-primary">
-                Home
-              </Link>
-            )}
+            {!myFavorites
+              ? <Link
+                  to="/my-favorites"
+                  className="button button-rounded button-raised button-action full"
+                >
+                  Only My Favorites
+                </Link>
+              : <Link
+                  to="/"
+                  className="button full button-rounded button-raised button-primary"
+                >
+                  Home
+                </Link>}
           </nav>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) => {
               window.scrollTop =
-                (document.scrollingElement && document.scrollingElement.scrollTop) ||
+                (document.scrollingElement &&
+                  document.scrollingElement.scrollTop) ||
                 window.pageYOffset ||
                 window.scrollTop;
               return (
                 <AutoSizer disableHeight>
-                  {({ width }) => (
+                  {({ width }) =>
                     <List
                       autoHeight
                       height={height}
@@ -350,16 +393,25 @@ class Search extends Component {
                       rowRenderer={rowRenderer}
                       scrollTop={scrollTop}
                       width={width}
-                    />
-                  )}
+                    />}
                 </AutoSizer>
               );
             }}
           </WindowScroller>
         </div>
-        <div className={classNames("copyRight", { hidden: this.state.copyRightHidden })}>
-          <img style={{ paddingLeft: "80px", display: "inline-block" }} src="amma.jpg" alt="Copyright: MA Center" />
-          <small style={{ position: "absolute", top: "50%" }}>© MA Centers 2019, all rights reserved.</small>
+        <div
+          className={classNames("copyRight", {
+            hidden: this.state.copyRightHidden
+          })}
+        >
+          <img
+            style={{ paddingLeft: "80px", display: "inline-block" }}
+            src="amma.jpg"
+            alt="Copyright: MA Center"
+          />
+          <small style={{ position: "absolute", top: "50%" }}>
+            © MA Centers 2019, all rights reserved.
+          </small>
         </div>
       </div>
     );

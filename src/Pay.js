@@ -5,9 +5,24 @@ import Select from "react-select";
 import { alert } from "notie";
 
 export const PLANS = [
-  { value: "oneIndividual10", label: "One Year Individual - $9.99", price: 9.99, time: 31536000000 },
-  { value: "fiveIndividual40", label: "Five Year Individual - $39.99", price: 39.99, time: 157680000000 },
-  { value: "lifetimeIndividual50", label: "Lifetime Individual - $49.99", price: 49.99, time: 3153600000000 }
+  {
+    value: "oneIndividual10",
+    label: "One Year Individual - $9.99",
+    price: 9.99,
+    time: 31536000000
+  },
+  {
+    value: "fiveIndividual40",
+    label: "Five Year Individual - $39.99",
+    price: 39.99,
+    time: 157680000000
+  },
+  {
+    value: "lifetimeIndividual50",
+    label: "Lifetime Individual - $49.99",
+    price: 49.99,
+    time: 3153600000000
+  }
 ];
 
 class Pay extends PureComponent {
@@ -15,7 +30,11 @@ class Pay extends PureComponent {
   componentDidMount() {
     const { history } = this.props;
     const checkUser = async function() {
-      if (auth.currentUser && localStorage.expiresOn && +localStorage.expiresOn > +new Date()) {
+      if (
+        auth.currentUser &&
+        localStorage.expiresOn &&
+        +localStorage.expiresOn > +new Date()
+      ) {
         alert({
           text: `You have already paid, your subscription will end on ${new Date(
             +localStorage.expiresOn
@@ -48,6 +67,20 @@ class Pay extends PureComponent {
           <div className="title">Amma's Bhajans</div>
         </div>
         <div className="pay">
+          <h2>About</h2>
+          <p>
+            Sing.WithAmma.com is now out of beta and a paid website. A lot of
+            improvements have been added since the last beta release: over 500
+            sheet music pdfs, more matched cd baby songs, 2019 suppliment, and
+            speed and stability improvements.
+          </p>
+          <p>
+            The paid version of the app allows you to access the lyrics and
+            sheet music. The entire app works offline on most modern phones. The
+            free version also works offline, but only allows fast search where
+            you can see information{" "}
+          </p>
+
           <h2>Pricing</h2>
           <p>To see the bhajans you need to pay.</p>
           <p>There are 3 payment plans to choose from.</p>
@@ -62,15 +95,26 @@ class Pay extends PureComponent {
               <strong>$39.99</strong> - 5 years of access with updates
             </li>
             <li>
-              <strong>$49.99</strong> - lifetime access with updates (best value)
+              <strong>$49.99</strong> - lifetime access with updates (best
+              value)
             </li>
           </ol>
 
           <p>
-            All proceeds support <a href="http://www.embracingtheworld.org/">Embracing the World</a> nonprofit.
+            All proceeds support{" "}
+            <a href="http://www.embracingtheworld.org/">
+              Embracing the World
+            </a>{" "}
+            nonprofit.
           </p>
-          <p>Please select your payment plan and pay with Paypal/Credit card.</p>
-          <Select value={this.state.selectedPlan} onChange={this.handleChange} options={PLANS} />
+          <p>
+            Please select your payment plan and pay with Paypal/Credit card.
+          </p>
+          <Select
+            value={this.state.selectedPlan}
+            onChange={this.handleChange}
+            options={PLANS}
+          />
           <div className="paypalButton">
             <PayPalButton
               options={{
@@ -78,16 +122,23 @@ class Pay extends PureComponent {
               }}
               amount={this.state.selectedPlan.price}
               onSuccess={(details, data) => {
-                alert({ text: "Payment successful, updating app, please stay online." });
-                return fetch("https://us-central1-bhajans-588f5.cloudfunctions.net/process", {
-                  method: "post",
-                  body: JSON.stringify({
-                    ...data,
-                    type: this.state.selectedPlan.value,
-                    uid: localStorage.uid || (auth.currentUser && auth.currentUser.uid),
-                    mode
-                  })
-                })
+                alert({
+                  text: "Payment successful, updating app, please stay online."
+                });
+                return fetch(
+                  "https://us-central1-bhajans-588f5.cloudfunctions.net/process",
+                  {
+                    method: "post",
+                    body: JSON.stringify({
+                      ...data,
+                      type: this.state.selectedPlan.value,
+                      uid:
+                        localStorage.uid ||
+                        (auth.currentUser && auth.currentUser.uid),
+                      mode
+                    })
+                  }
+                )
                   .then(resp => {
                     if (resp.ok) {
                       return resp.json();
