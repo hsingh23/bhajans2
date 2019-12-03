@@ -3,6 +3,7 @@ import { auth } from "./firebase";
 import { PayPalButton } from "react-paypal-button-v2";
 import Select from "react-select";
 import { alert } from "notie";
+import { Link } from "react-router-dom";
 
 export const PLANS = [
   {
@@ -55,11 +56,29 @@ class Pay extends PureComponent {
 
   render() {
     // Change mode here              ⬇️ to switch between sandbox and live paypal
+    const { email, displayName, expiresOn = undefined, uid } = localStorage;
+    const paymentMessage =
+      new Date(+expiresOn) > new Date()
+        ? ` and your membership expires on ${new Date(
+            +expiresOn
+          ).toLocaleDateString()}.`
+        : " and you have not yet paid for the app.";
+
     const mode = ["sandbox", "live"][1];
     const clientId =
       mode === "sandbox"
         ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
         : "AcMLkUUIQ0-xZgsxf6I6I35spceQPDvvRu_uVXXclMOY_Vp7-Bvz4IdPVlAtmMHSIfddj0p1sUUwUu4i"; // live
+
+    const body = encodeURIComponent(`Om namaha shivaya, 
+I'm having payment issues. My Paypal transaction number is: 
+    
+
+-----
+name: ${displayName}
+email: ${email}
+uid: ${uid}
+expiresOn: ${expiresOn}`);
 
     return (
       <div className="App">
@@ -67,38 +86,34 @@ class Pay extends PureComponent {
           <div className="title">Amma's Bhajans</div>
         </div>
         <div className="pay">
-          <h2>About</h2>
+          <p className="yellowBg">
+            Hello {displayName}, you are signed in with the email {email}{" "}
+            {paymentMessage}
+            <br />
+            <Link to="/logout">Logout / Change User</Link>
+          </p>
           <p>
-            Sing.WithAmma.com is now out of beta and a paid website. A lot of
-            improvements have been added since the last beta release: over 500
-            sheet music pdfs, more matched cd baby songs, 2019 suppliment, and
-            speed and stability improvements.
+            A lot of improvements have been added since the last beta release:
+            over 500 sheet music pdfs added, more links to cd baby songs, the
+            2019 suppliment, and speed and stability improvements. 🙌🎉💯
           </p>
           <p>
             The paid version of the app allows you to access the lyrics and
             sheet music. The entire app works offline on most modern phones. The
-            free version also works offline, but only allows fast search where
-            you can see information{" "}
+            free version allows you to see which book you can find the lyrics
+            in.
           </p>
 
           <h2>Pricing</h2>
-          <p>To see the bhajans you need to pay.</p>
-          <p>There are 3 payment plans to choose from.</p>
-          <ol>
-            {/* <li>
-              <strong>$10</strong> - 1 year of access with updates (for low income/ashram residents/tour staff special)
-            </li> */}
-            <li>
-              <strong>$9.99</strong> - 1 year of access with updates
-            </li>
-            <li>
-              <strong>$39.99</strong> - 5 years of access with updates
-            </li>
-            <li>
-              <strong>$49.99</strong> - lifetime access with updates (best
-              value)
-            </li>
-          </ol>
+          <p>
+            To see the bhajans you need to pay. There are 3 payment plans to
+            choose from. Please note there are no refunds.
+          </p>
+          <p>
+            <b>1. $9.99</b> - 1 year of access with updates <br />
+            <b>2. $39.99</b> - 5 years of access with updates <br />
+            <b>3. $49.99</b> - lifetime access with updates (best value)
+          </p>
 
           <p>
             All proceeds support{" "}
@@ -157,10 +172,13 @@ class Pay extends PureComponent {
               }}
             />
           </div>
-          <small>
-            For any payment complications please email{" "}
-            <a href="mailto:singwithamma@gmail.com">singwithamma@gmail.com</a>.
-          </small>
+          <p>
+            For any payment complications please send your email{" "}
+            <a
+              href={`mailto:singwithamma@gmail.com?subject=[swa] Payment&body=${body}`}>
+              here
+            </a>
+          </p>
         </div>
       </div>
     );
