@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="description"
-      content="Search bhajans and find lyrics quickly and easily. Find your favorite Amma bhjans and sing with others now!"
-    />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="theme-color" content="#ffa500" />
-    <link crossorigin="anonymous" rel="preload" href="bhajan-index2.json" as="fetch" type="application/json" />
 
-    <!-- important -->
-    <!-- <link rel="preload" as="font" crossorigin type="font/woff2" href="myfont.woff2" /> -->
-    <!-- <link rel="preload" as="script" href="https://cdn.polyfill.io/v2/polyfill.min.js" /> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="preconnect" href="https://sessions.bugsnag.com/" crossorigin />
-    <!-- not important -->
-    <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin />
-    <link rel="preconnect" href="https://cdn.userreport.com" crossorigin />
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description"
+    content="Search bhajans and find lyrics quickly and easily. Find your favorite Amma bhjans and sing with others now!" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#ffa500" />
+  <meta http-equiv="origin-trial"
+    content="AtjIs2ekNjOAVJzpWJhN7IfkFkxeCjaq9iBudN87ZpRMGyse8SMyWYAys+CvIqR03KxaAcuq0EtTjencuXlw6QAAAABTeyJvcmlnaW4iOiJodHRwczovL3Npbmcud2l0aGFtbWEuY29tOjQ0MyIsImZlYXR1cmUiOiJXYWtlTG9jayIsImV4cGlyeSI6MTU4MjMzMTY0OX0=">
+  <link crossorigin="anonymous" rel="preload" href="bhajan-index2.json" as="fetch" type="application/json" />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+  <!-- important -->
+  <!-- <link rel="preload" as="font" crossorigin type="font/woff2" href="myfont.woff2" /> -->
+  <!-- <link rel="preload" as="script" href="https://cdn.polyfill.io/v2/polyfill.min.js" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="preconnect" href="https://sessions.bugsnag.com/" crossorigin />
+  <!-- not important -->
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin />
+  <link rel="preconnect" href="https://cdn.userreport.com" crossorigin />
 
-    <script>
-      if (location.protocol.toLowerCase() === "http:" && !location.host.includes("localhost:")) {
-        location.protocol = "https:";
-      }
-      if (localStorage.reset === "1") {
-        localStorage.removeItem("reset");
-        location.reload(true);
-      }
-    </script>
-    <title>Amma Bhajanamritam Index</title>
-  </head>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
 
-  <body>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
-    <div id="root"></div>
-    <audio id="audio"></audio>
-  </body>
+  <script>
+    if (location.protocol.toLowerCase() === "http:" && !location.host.includes("localhost:")) {
+      location.protocol = "https:";
+    }
+    if (localStorage.reset === "1") {
+      localStorage.removeItem("reset");
+      location.reload(true);
+    }
+  </script>
+  <title>Amma Bhajanamritam Index</title>
+</head>
+
+<body>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <noscript> You need to enable JavaScript to run this app. </noscript>
+  <div id="root"></div>
+  <audio id="audio"></audio>
+</body>
 </html>
