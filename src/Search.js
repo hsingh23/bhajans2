@@ -96,9 +96,11 @@ class Search extends Component {
     line
       .toLowerCase()
       .replace(/[^A-z0-9]/g, "")
+      .replace(/va/g, "v") //bhava ~= bhav
       .replace(/h/g, "")
       .replace(/z/g, "r")
       .replace(/ri?/g, "ri")
+      .replace(/a+/g, "a")
       .replace(/ai?/g, "ai")
       .replace(/ee/g, "i")
       .replace(/oo|uu/g, "u")
@@ -106,7 +108,6 @@ class Search extends Component {
       .replace(/[cj]al/g, "Cal")
       .replace(/[vw]/g, "V")
       .replace(/ny?/g, "ny")
-      .replace(/a+/g, "a")
       .replace(/(t|k|c){2}/g, "$1")
       .replace(/(g|p|j){2}/g, "$1")
       .replace(/[ie]*y/g, "Y")
@@ -180,8 +181,7 @@ class Search extends Component {
                   this.setInfo(
                     window.fetchedBhajans[filteredBhajans[index]],
                     filteredBhajans[index]
-                  )}
-              >
+                  )}>
                 <span role="img" aria-label="info">
                   <FontAwesomeIcon icon="info" />
                 </span>
@@ -189,8 +189,9 @@ class Search extends Component {
               {sheetmusic &&
                 <Link
                   className="button button-3d button-circle button-jumbo spaced"
-                  to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}
-                >
+                  to={`/pdf/${sheetmusic[0]}/${filteredBhajans[
+                    index
+                  ]}/${name}`}>
                   <span role="img" aria-label="sheet music">
                     <FontAwesomeIcon icon="music" />
                   </span>
@@ -201,8 +202,7 @@ class Search extends Component {
                   href={cdbabyBuyUrls[0]}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="buy song on cdbaby"
-                >
+                  aria-label="buy song on cdbaby">
                   <span role="img" aria-label="cd">
                     <FontAwesomeIcon icon="cart-arrow-down" />
                   </span>
@@ -214,8 +214,7 @@ class Search extends Component {
                   onClick={() =>
                     playing === cdbabySampleUrls[0]
                       ? this.stop()
-                      : this.play(cdbabySampleUrls[0])}
-                >
+                      : this.play(cdbabySampleUrls[0])}>
                   <span role="img" aria-label="music sample">
                     <FontAwesomeIcon
                       icon={playing === cdbabySampleUrls[0] ? "stop" : "play"}
@@ -251,13 +250,11 @@ class Search extends Component {
           onClick={e => {
             e.stopPropagation();
             this.setState({ infoOpen: false });
-          }}
-        >
+          }}>
           <div
             onClick={e => {
               e.stopPropagation();
-            }}
-          >
+            }}>
             <button
               aria-label="close dialog"
               onClick={e => {
@@ -265,8 +262,7 @@ class Search extends Component {
                 this.setInfo();
               }}
               title="Close"
-              className="modal-close"
-            >
+              className="modal-close">
               Close
             </button>
             <h1>
@@ -297,8 +293,7 @@ class Search extends Component {
                 {sheetmusic.map(pdf =>
                   <Link
                     to={`/pdf/${pdf}/${infoFilteredIndex}/${name}`}
-                    className="block"
-                  >
+                    className="block">
                     {pdf}
                   </Link>
                 )}
@@ -315,8 +310,7 @@ class Search extends Component {
                       aria-label="toggle sample"
                       role="img"
                       onClick={() =>
-                        !!playing ? this.stop() : this.play(sample)}
-                    >
+                        !!playing ? this.stop() : this.play(sample)}>
                       <FontAwesomeIcon
                         icon={playing === sample ? "stop" : "play"}
                       />
@@ -362,14 +356,12 @@ class Search extends Component {
             {!myFavorites
               ? <Link
                   to="/my-favorites"
-                  className="button button-rounded button-raised button-action full"
-                >
+                  className="button button-rounded button-raised button-action full">
                   Only My Favorites
                 </Link>
               : <Link
                   to="/"
-                  className="button full button-rounded button-raised button-primary"
-                >
+                  className="button full button-rounded button-raised button-primary">
                   Home
                 </Link>}
           </nav>
@@ -402,8 +394,7 @@ class Search extends Component {
         <div
           className={classNames("copyRight", {
             hidden: this.state.copyRightHidden
-          })}
-        >
+          })}>
           <img
             style={{ paddingLeft: "80px", display: "inline-block" }}
             src="amma.jpg"

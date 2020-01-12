@@ -6,10 +6,12 @@ var distance = require("jaro-winkler");
 const makeSearchable = line =>
   line
     .toLowerCase()
+    .replace(/va /g, "v") //bhava ~= bhav
     .replace(/[^A-z0-9]/g, "")
     .replace(/h/g, "")
     .replace(/z/g, "r")
     .replace(/ri?/g, "ri")
+    .replace(/a+/g, "a")
     .replace(/ai?/g, "ai")
     .replace(/ee/g, "i")
     .replace(/oo|uu/g, "u")
@@ -17,16 +19,29 @@ const makeSearchable = line =>
     .replace(/[cj]al/g, "Cal")
     .replace(/[vw]/g, "V")
     .replace(/ny?/g, "ny")
-    .replace(/a+/g, "a")
     .replace(/(t|k|c){2}/g, "$1")
     .replace(/(g|p|j){2}/g, "$1")
     .replace(/[ie]*y/g, "Y")
     .replace(/[tdl]/g, "T");
 
-var bhajans, searchableBhajans, searchableBhajansObject, count, noMatch, manyMatches, noMatchSheet, manyMatchesSheet;
+var bhajans,
+  searchableBhajans,
+  searchableBhajansObject,
+  count,
+  noMatch,
+  manyMatches,
+  noMatchSheet,
+  manyMatchesSheet;
 
 function readBhajanIndex() {
-  bhajans = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json")));
+  bhajans = JSON.parse(
+    fs.readFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json"))
+  );
+  // TODO hack to remove songs that don't have a real volume associated with them.
+  bhajans = _.filter(
+    bhajans,
+    value => !!value.l[0] && value.l[0].match(/\d{4}supl-\d+|vol\d-\d+/gi)
+  );
   searchableBhajans = [];
   searchableBhajansObject = {};
   bhajans.forEach((bhajan, i) => {
@@ -39,7 +54,10 @@ function readBhajanIndex() {
 }
 
 function writeNewBhajanIndex() {
-  fs.writeFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json"), JSON.stringify(bhajans));
+  fs.writeFileSync(
+    path.resolve(__dirname, "../../public/bhajan-index2.json"),
+    JSON.stringify(bhajans)
+  );
 }
 
 function readFiles() {
@@ -63,11 +81,14 @@ function readFiles() {
     realBhajan.cn.push(song.name);
     count += 1;
   }
-  fs.readdirSync(path.resolve(__dirname))
+  fs
+    .readdirSync(path.resolve(__dirname))
     .filter(x => x.endsWith("json"))
     .map(f => {
       JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map(song => {
-        var searchableName = makeSearchable(song.name.replace(/[\[\(].*[\]\)]/gi, ""));
+        var searchableName = makeSearchable(
+          song.name.replace(/[\[\(].*[\]\)]/gi, "")
+        );
         // if (searchable[searchableName]) console.log('Exists', searchable[searchableName].name, song.name, searchableName);
         song.sn = searchableName;
         searchable[song.name] = song;
@@ -75,7 +96,10 @@ function readFiles() {
           addSong(searchableName, song);
           // console.log(song.name);
         } else {
-          var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`(${searchableName}`));
+          var matches = searchableBhajans.filter(
+            b =>
+              b.startsWith(searchableName) || b.includes(`(${searchableName}`)
+          );
           if (matches.length === 1) {
             addSong(matches[0], song);
           } else if (matches.length === 0) {
@@ -88,14 +112,23 @@ function readFiles() {
         }
       });
     });
-  fs.writeFileSync(path.resolve(__dirname, "../cdbaby.json"), JSON.stringify(searchable));
-  fs.writeFileSync(path.resolve(__dirname, "../noMatch.json"), JSON.stringify(noMatch));
-  fs.writeFileSync(path.resolve(__dirname, "../manyMatches.json"), JSON.stringify(manyMatches));
+  fs.writeFileSync(
+    path.resolve(__dirname, "../cdbaby.json"),
+    JSON.stringify(searchable)
+  );
+  fs.writeFileSync(
+    path.resolve(__dirname, "../noMatch.json"),
+    JSON.stringify(noMatch)
+  );
+  fs.writeFileSync(
+    path.resolve(__dirname, "../manyMatches.json"),
+    JSON.stringify(manyMatches)
+  );
   // console.log(noMatch.map(x => x.name));
   console.log(
-    `Total Cdbaby: ${Object.keys(searchable).length}, Match: ${count}, No Match: ${
-      Object.keys(noMatch).length
-    }, Many Matches: ${Object.keys(manyMatches).length}`
+    `Total Cdbaby: ${Object.keys(searchable)
+      .length}, Match: ${count}, No Match: ${Object.keys(noMatch)
+      .length}, Many Matches: ${Object.keys(manyMatches).length}`
   );
 
   return searchable;
@@ -112,27 +145,34 @@ function readSheetMusic() {
     realBhajan.sm.push(filename);
     smCount += 1;
   }
-  fs.readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
+  fs
+    .readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
     .toString()
     .split("\n")
     // fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
     .filter(x => x.endsWith("pdf"))
     .map(filename => {
-      var name = filename.replace(/[A-Z][mb]*(?:sharp)?[mb]*\.pdf$/, "").replace(/\(.*\)|\d*/, "");
+      var name = filename
+        .replace(/[A-Z][mb]*(?:sharp)?[mb]*\.pdf$/, "")
+        .replace(/\(.*\)|\d*/, "");
       // console.log(name);
       total += 1;
       var searchableName = makeSearchable(name);
       if (searchableBhajansObject[searchableName]) {
         addSheetMusic(searchableName, filename);
       } else {
-        var matches = searchableBhajans.filter(b => b.startsWith(searchableName) || b.includes(`${searchableName}`));
+        var matches = searchableBhajans.filter(
+          b => b.startsWith(searchableName) || b.includes(`${searchableName}`)
+        );
         if (matches.length === 1) {
           addSheetMusic(matches[0], filename);
         } else if (matches.length === 0) {
           console.log(filename, name, searchableName);
           const matched = [];
           searchableBhajans.map(searchableBhajan => {
-            const d = distance(searchableBhajan, searchableName, { caseSensitive: false });
+            const d = distance(searchableBhajan, searchableName, {
+              caseSensitive: false
+            });
             if (d >= 0.89) {
               matched.push(searchableBhajan);
               addSheetMusic(searchableBhajan, filename);

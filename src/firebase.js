@@ -23,7 +23,8 @@ const {
     databaseURL: "https://bhajans-588f5.firebaseio.com",
     projectId: "bhajans-588f5",
     storageBucket: "bhajans-588f5.appspot.com",
-    messagingSenderId: "20248152848"
+    messagingSenderId: "20248152848",
+    appId: "1:20248152848:web:3975f2a0d9279841b8b395"
   };
 
   const doNothing = () => {};
@@ -50,11 +51,14 @@ const {
 
   !window.localStorage.admin &&
     setTimeout(
-      wrap({ initialWait, goOffline, startTime, history }, ({ initialWait, goOffline, startTime, history }) => {
-        initialWait = false;
-        history.push(["initialWaitOver", +new Date() - startTime]);
-        !window.localStorage.admin && goOffline();
-      }),
+      wrap(
+        { initialWait, goOffline, startTime, history },
+        ({ initialWait, goOffline, startTime, history }) => {
+          initialWait = false;
+          history.push(["initialWaitOver", +new Date() - startTime]);
+          !window.localStorage.admin && goOffline();
+        }
+      ),
       15 * 1000
     );
 
@@ -78,12 +82,10 @@ const {
   const checkRefOnce = ref => {
     return new Promise(function(resolve, reject) {
       goOnline();
-      db.ref(ref)
-        .once("value")
-        .then(function(snapshot) {
-          goOffline();
-          resolve(snapshot.val());
-        });
+      db.ref(ref).once("value").then(function(snapshot) {
+        goOffline();
+        resolve(snapshot.val());
+      });
     });
   };
 
@@ -165,15 +167,8 @@ const {
           await userMessagesRef.set({
             displayName: auth.currentUser.displayName,
             email: auth.currentUser.email,
-            tokens: {}
+            tokens: { [token]: 1 }
           });
-          console.log("set metadata");
-        }
-        if (!snap.val().tokens[token]) {
-          console.log("about to set token");
-          goOnline();
-          await userMessagesRef.child(`tokens/${token}`).set("1");
-          console.log("set token");
           localStorage.currentToken = token;
         }
       }
@@ -187,7 +182,11 @@ const {
       goOnline();
       console.log("onTokenRefresh");
       await whenUser(null);
-      await db.ref(`messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`).remove();
+      await db
+        .ref(
+          `messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`
+        )
+        .remove();
       delete localStorage.currentToken;
       getMessageID();
     });

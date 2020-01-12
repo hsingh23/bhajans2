@@ -7,7 +7,7 @@ with open("translation.csv", 'r') as f:
     translation_mapping = f.readlines()
 
 # read bhajan indexes
-supplements = ["2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
+supplements = ["Vol3.txt", "2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
 for filename in supplements:
     # make substitutions
     with open(filename, 'r') as f:
@@ -19,12 +19,13 @@ for filename in supplements:
     # write substitutionse
     with open(filename + ".changed.txt", 'w+') as f:
         f.write(content)
+supplements = ["2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
 
 # merge and sort file
 bhajans = {}
 supplement_tags = {}
 changed = [f + ".changed.txt" for f in supplements]
-for filename in (["bhajanmritam.txt"] + changed):
+for filename in (["Vol3.txt.changed.txt","bhajanmritam.txt"] + changed):
     with open(filename, 'r') as f:
         for line in f.read().lower().split('\n'):
             try:
