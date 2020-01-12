@@ -67,13 +67,18 @@ function doOnce() {
       i[r] ||
       function() {
         (i[r].q = i[r].q || []).push(arguments);
-      }),
-      (i[r].l = 1 * new Date());
+      }), (i[r].l = 1 * new Date());
     (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m);
-  })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga"
+  );
 
   if (window.ga && !window.setGAUid && localStorage.uid) {
     window.ga("create", "UA-101960783-1", "auto");
@@ -83,3 +88,31 @@ function doOnce() {
   }
 }
 setTimeout(doOnce, 5 * 1000);
+
+// Get a wake lock if possible
+let wakeLock = null;
+
+// Function that attempts to request a wake lock.
+const requestWakeLock = async () => {
+  try {
+    if (navigator.wakeLock) {
+      wakeLock = await navigator.wakeLock.request("screen");
+      wakeLock.addEventListener("release", () => {
+        console.log("Wake Lock was released");
+      });
+      console.log("Wake Lock is active");
+    }
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
+
+const handleVisibilityChange = () => {
+  if (wakeLock !== null && document.visibilityState === "visible") {
+    requestWakeLock();
+  }
+};
+
+document.addEventListener("visibilitychange", handleVisibilityChange);
+document.addEventListener("fullscreenchange", handleVisibilityChange);
+requestWakeLock();
