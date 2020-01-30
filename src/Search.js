@@ -19,7 +19,9 @@ class Search extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    // TODO: find a way to remove this - perhaps by moving it to render logic
+    // investigate memoization
     if (this.props.location.pathname !== nextProps.location.pathname) {
       this.filterBhajans({
         nextProps,
@@ -32,13 +34,7 @@ class Search extends Component {
       sessionStorage.copyRightHidden = 1;
       this.setState({ copyRightHidden: true });
     }, 10000);
-  }
-  componentWillUnmount() {
-    clearTimeout(this.timeout1);
-    clearTimeout(this.timeout2);
-  }
 
-  componentWillMount() {
     this.timeout2 = setTimeout(function() {
       if (document.scrollingElement) {
         document.scrollingElement.scrollTop =
@@ -65,6 +61,10 @@ class Search extends Component {
         })
         .then(() => this.filterBhajans());
     }
+  }
+  componentWillUnmount() {
+    clearTimeout(this.timeout1);
+    clearTimeout(this.timeout2);
   }
 
   wrappedName = (location, name, child) => {
@@ -367,11 +367,13 @@ class Search extends Component {
           </nav>
           <WindowScroller>
             {({ height, isScrolling, onChildScroll, scrollTop }) => {
-              window.scrollTop =
-                (document.scrollingElement &&
-                  document.scrollingElement.scrollTop) ||
-                window.pageYOffset ||
-                window.scrollTop;
+              if (isScrolling) {
+                window.scrollTop =
+                  (document.scrollingElement &&
+                    document.scrollingElement.scrollTop) ||
+                  window.pageYOffset ||
+                  window.scrollTop;
+              }
               return (
                 <AutoSizer disableHeight>
                   {({ width }) =>
