@@ -4,31 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.flexC {
-  display: flex;
-  height: 430px;
-  text-align: center;
-}
-
-.signUp {
-  background-color: #f06630;
-  color: #fff;
-  text-align: center;
-  width: calc(100% - 35px);
-  font-size: large;
-  font-weight: 600;
-  margin: 10px 10px;
-  padding: 10px 0;
-  border-radius: 6px;
-}
-
-.planHeader {
-  font-weight: 800;
-  text-align: center;
-  font-size: x-large;
-  padding: 30px 0 10px 0;
-}
-
 .price {
   color: #504a4a;
   padding-bottom: 5px;
@@ -38,51 +13,9 @@ body {
   text-align: center;
 }
 
-.options {
-  align-self: flex-end;
-  flex-grow: 1;
-  min-width: 200px;
-  margin: 0px 5px 0 5px;
-
-  display: inline-block;
-  padding: 5px 0;
-  align-items: center;
-  border: 2px solid #a6ccd7;
-  border-radius: 12px;
-}
-
-.selected {
-  /* align-self: flex-start; */
-  background-color: #e6f5fc;
-  flex-grow: 2;
-  transition: flex-grow 100ms ease-in;
-}
-
-.ourMostPopularPlan {
-  background-color: #1baac7;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  border-bottom: 5px solid #1792ad;
-  margin-bottom: 10px;
-}
-
 .features span {
   display: block;
   margin: 0 10px;
   padding: 10px 0;
   border-bottom: 1px solid gray;
-}
-
-@media (max-width: 576px) {
-  .flexC {
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  .options {
-    margin: 10px;
-  }
-  .selected {
-    margin: 10px;
-  }
 }
