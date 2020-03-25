@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import { auth, db } from "./firebase";
 import { Link } from "react-router-dom";
-import { PLANS } from "./Pay";
+import { PLANS } from "./Plans";
+
 import Select from "react-select";
 
 class Admin extends PureComponent {

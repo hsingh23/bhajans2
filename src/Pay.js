@@ -4,30 +4,10 @@ import { PayPalButton } from "react-paypal-button-v2";
 import Select from "react-select";
 import { alert } from "notie";
 import { Link } from "react-router-dom";
-
-export const PLANS = [
-  {
-    value: "oneIndividual10",
-    label: "One Year Individual - $9.99",
-    price: 9.99,
-    time: 31536000000
-  },
-  {
-    value: "fiveIndividual40",
-    label: "Five Year Individual - $39.99",
-    price: 39.99,
-    time: 157680000000
-  },
-  {
-    value: "lifetimeIndividual50",
-    label: "Lifetime Individual - $49.99",
-    price: 49.99,
-    time: 3153600000000
-  }
-];
+import { PLANS } from "./Plans";
 
 class Pay extends PureComponent {
-  state = { selectedPlan: PLANS[2] };
+  state = { selectedPlan: {} };
   componentDidMount() {
     const { history } = this.props;
     const checkUser = async function() {
@@ -52,11 +32,18 @@ class Pay extends PureComponent {
     }
   }
 
-  handleChange = selectedPlan => this.setState({ selectedPlan });
+  handleChange2 = selectedPlan => this.setState({ selectedPlan });
+  handleChange = e => {
+    this.setState({
+      selectedPlan: PLANS.find(x => x.value === e.currentTarget.id)
+    });
+  };
+  paypalButtonRef = React.createRef();
 
   render() {
     // Change mode here              ⬇️ to switch between sandbox and live paypal
     const { email, displayName, expiresOn = undefined, uid } = localStorage;
+    const { selectedPlan } = this.state;
     const paymentMessage =
       new Date(+expiresOn) > new Date()
         ? ` and your membership expires on ${new Date(
@@ -64,7 +51,7 @@ class Pay extends PureComponent {
           ).toLocaleDateString()}.`
         : " and you have not yet paid for the app.";
 
-    const mode = ["sandbox", "live"][1];
+    const mode = ["sandbox", "live"][0];
     const clientId =
       mode === "sandbox"
         ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
@@ -79,7 +66,6 @@ name: ${displayName}
 email: ${email}
 uid: ${uid}
 expiresOn: ${expiresOn}`);
-
     return (
       <div className="App">
         <div className="App-header">
@@ -92,86 +78,123 @@ expiresOn: ${expiresOn}`);
             <br />
             <Link to="/logout">Logout / Change User</Link>
           </p>
+
           <p>
-            A lot of improvements have been added since the last beta release:
-            over 500 sheet music pdfs added, more links to cd baby songs, the
-            2019 suppliment, and speed and stability improvements. 🙌🎉💯
+            The paid version of the app has many exciting features as listed
+            below.
           </p>
-          <p>
-            The paid version of the app allows you to access the lyrics and
-            sheet music. The entire app works offline on most modern phones. The
-            free version allows you to see which book you can find the lyrics
-            in.
-          </p>
+
+          <div className="features">
+            <span>Fast and trouble free search</span>
+            <span>
+              Unlimited access to lyrics (works offline on most phones)
+            </span>
+            <span>Unlimited access to sheet music</span>
+            <span>Save your favorite songs</span>
+          </div>
 
           <h2>Pricing</h2>
           <p>
-            To see the bhajans you need to pay. There are 3 payment plans to
-            choose from. Please note there are no refunds.
-          </p>
-          <p>
-            <b>1. $9.99</b> - 1 year of access with updates <br />
-            <b>2. $39.99</b> - 5 years of access with updates <br />
-            <b>3. $49.99</b> - lifetime access with updates (best value)
+            <strong>
+              All proceeds support{" "}
+              <a href="http://www.embracingtheworld.org/">
+                Embracing the World
+              </a>{" "}
+              nonprofit. Please note there are no refunds due to payment
+              processing restrictions. Please be sure to double check your order
+              before paying!
+            </strong>
           </p>
 
-          <p>
-            All proceeds support{" "}
-            <a href="http://www.embracingtheworld.org/">
-              Embracing the World
-            </a>{" "}
-            nonprofit.
-          </p>
-          <p>
-            Please select your payment plan and pay with Paypal/Credit card.
-          </p>
           <Select
             value={this.state.selectedPlan}
-            onChange={this.handleChange}
+            onChange={this.handleChange2}
             options={PLANS}
           />
-          <div className="paypalButton">
-            <PayPalButton
-              options={{
-                clientId
-              }}
-              amount={this.state.selectedPlan.price}
-              onSuccess={(details, data) => {
-                alert({
-                  text: "Payment successful, updating app, please stay online."
-                });
-                return fetch(
-                  "https://us-central1-bhajans-588f5.cloudfunctions.net/process",
-                  {
-                    method: "post",
-                    body: JSON.stringify({
-                      ...data,
-                      type: this.state.selectedPlan.value,
-                      uid:
-                        localStorage.uid ||
-                        (auth.currentUser && auth.currentUser.uid),
-                      mode
-                    })
-                  }
-                )
-                  .then(resp => {
-                    if (resp.ok) {
-                      return resp.json();
-                    }
-                  })
-                  .then(({ expiresOn }) => {
-                    localStorage.expiresOn = +expiresOn;
-                    localStorage.lastOnline = +new Date();
+          {/* <div class="flexC">
+            {PLANS.map(plan =>
+              <div
+                className={classNames("options", {
+                  selected: selectedPlan.value === plan.value
+                })}>
+                <div className="planHeader">
+                  {plan.label} Plan
+                </div>
+                <div className="price">
+                  Price: ${plan.price}
+                </div>
+                <div className="features">
+                  {plan.isBest &&
+                    <div className="ourMostPopularPlan">
+                      Our most popular plan!
+                    </div>}
+
+                  <span>
+                    Unlimited access to lyrics (even works offline for most
+                    phones)
+                  </span>
+                  <span>Unlimited access to sheet music</span>
+                  <span>Save your favorite songs</span>
+                  <span>Fast and trouble free search</span>
+                </div>
+
+                <button
+                  id={plan.value}
+                  onClick={this.handleChange}
+                  className="signUp">
+                  Sign me up!
+                </button>
+              </div>
+            )}
+          </div> */}
+          {!!selectedPlan.value
+            ? <div className="paypalButton" ref={this.paypalButtonRef}>
+                <div className="price">
+                  ${selectedPlan.price}
+                </div>
+                <PayPalButton
+                  options={{
+                    clientId
+                  }}
+                  amount={selectedPlan.price}
+                  onSuccess={(details, data) => {
                     alert({
-                      text: `App updated! Thanks for your support. Your subscription expires on ${new Date(
-                        +localStorage.expiresOn
-                      ).toLocaleDateString()}`
+                      text:
+                        "Payment successful, updating app, please stay online."
                     });
-                    this.props.history.push(`/`);
-                  });
-              }}
-            />
-          </div>
+                    return fetch(
+                      "https://us-central1-bhajans-588f5.cloudfunctions.net/process",
+                      {
+                        method: "post",
+                        body: JSON.stringify({
+                          ...data,
+                          type: selectedPlan.value,
+                          uid:
+                            localStorage.uid ||
+                            (auth.currentUser && auth.currentUser.uid),
+                          mode
+                        })
+                      }
+                    )
+                      .then(resp => {
+                        if (resp.ok) {
+                          return resp.json();
+                        }
+                      })
+                      .then(({ expiresOn }) => {
+                        localStorage.expiresOn = +expiresOn;
+                        localStorage.lastOnline = +new Date();
+                        alert({
+                          text: `App updated! Thanks for your support. Your subscription expires on ${new Date(
+                            +localStorage.expiresOn
+                          ).toLocaleDateString()}`
+                        });
+                        this.props.history.push(`/`);
+                      });
+                  }}
+                />
+              </div>
+            : <p>Select plan to pay</p>}
           <p>
             For any payment complications please send your email{" "}
             <a
