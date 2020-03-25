@@ -51,7 +51,7 @@ class Pay extends PureComponent {
           ).toLocaleDateString()}.`
         : " and you have not yet paid for the app.";
 
-    const mode = ["sandbox", "live"][0];
+    const mode = ["sandbox", "live"][1];
     const clientId =
       mode === "sandbox"
         ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
