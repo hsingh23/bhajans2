@@ -111,42 +111,6 @@ expiresOn: ${expiresOn}`);
             onChange={this.handleChange2}
             options={PLANS}
           />
-          {/* <div class="flexC">
-            {PLANS.map(plan =>
-              <div
-                className={classNames("options", {
-                  selected: selectedPlan.value === plan.value
-                })}>
-                <div className="planHeader">
-                  {plan.label} Plan
-                </div>
-                <div className="price">
-                  Price: ${plan.price}
-                </div>
-                <div className="features">
-                  {plan.isBest &&
-                    <div className="ourMostPopularPlan">
-                      Our most popular plan!
-                    </div>}
-
-                  <span>
-                    Unlimited access to lyrics (even works offline for most
-                    phones)
-                  </span>
-                  <span>Unlimited access to sheet music</span>
-                  <span>Save your favorite songs</span>
-                  <span>Fast and trouble free search</span>
-                </div>
-
-                <button
-                  id={plan.value}
-                  onClick={this.handleChange}
-                  className="signUp">
-                  Sign me up!
-                </button>
-              </div>
-            )}
-          </div> */}
           {!!selectedPlan.value
             ? <div className="paypalButton" ref={this.paypalButtonRef}>
                 <div className="price">
