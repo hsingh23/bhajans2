@@ -155,7 +155,7 @@ class Search extends Component {
         t: tags = "",
         l: location,
         cs: cdbabySampleUrls,
-        cu: cdbabyBuyUrls
+        cn: cdbabyNames
       } = window.fetchedBhajans[filteredBhajans[index]];
       const tag = tags ? ` (${tags})` : "";
 
@@ -196,10 +196,12 @@ class Search extends Component {
                     <FontAwesomeIcon icon="music" />
                   </span>
                 </Link>}
-              {cdbabyBuyUrls &&
+              {cdbabyNames &&
                 <a
                   className="button button-3d button-circle button-jumbo spaced"
-                  href={cdbabyBuyUrls[0]}
+                  href={`https://www.amazon.com/s?k=${encodeURIComponent(
+                    cdbabyNames[0]
+                  )} amma`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="buy song on cdbaby">
@@ -238,11 +240,10 @@ class Search extends Component {
       t: tags = "",
       l: location = [],
       cs: cdbabySampleUrls = [],
-      cu: cdbabyBuyUrls = [],
       cn: cdbabyNames = []
     } =
       infoOpen || {};
-    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyBuyUrls, cdbabyNames);
+    const cdbabyLinks = zip(cdbabySampleUrls, cdbabyNames);
     return (
       <div className="App">
         <div
@@ -304,7 +305,7 @@ class Search extends Component {
               <div>
                 <strong>CD Baby: </strong>
 
-                {cdbabyLinks.map(([sample, buy, name]) =>
+                {cdbabyLinks.map(([sample, name]) =>
                   <div>
                     <button
                       aria-label="toggle sample"
@@ -316,7 +317,12 @@ class Search extends Component {
                       />
                     </button>
                     {" Buy "}
-                    <a href={buy} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={`https://www.amazon.com/s?k=${encodeURIComponent(
+                        name
+                      )} amma`}
+                      target="_blank"
+                      rel="noopener noreferrer">
                       {name}
                     </a>
                   </div>
