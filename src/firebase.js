@@ -144,26 +144,15 @@ const {
     //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
     // }
     try {
-      console.log("requesting permissions to notify");
       await messaging.requestPermission();
-      console.log("got permission");
       const token = await messaging.getToken().then(token => {
-        console.log("token returned: ", token);
         return token;
       });
-      console.log("Token: ", token);
       if (token) {
         await whenUser(null);
-        goOnline();
-        console.log("have user and are online");
         const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
-        console.log("awaiting messages");
-        goOnline();
         const snap = await userMessagesRef.once("value");
-        console.log("got messages");
         if (!snap.val() || !snap.val().tokens) {
-          console.log("about to set metadata");
-          goOnline();
           await userMessagesRef.set({
             displayName: auth.currentUser.displayName,
             email: auth.currentUser.email,
@@ -179,8 +168,6 @@ const {
   if (messaging) {
     getMessageID();
     messaging.onTokenRefresh(async function() {
-      goOnline();
-      console.log("onTokenRefresh");
       await whenUser(null);
       await db
         .ref(
@@ -192,7 +179,6 @@ const {
     });
 
     messaging.onMessage(payload => {
-      console.log(payload);
       alert({ text: payload.notification.body });
     });
     window.messaging = messaging;

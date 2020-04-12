@@ -98,6 +98,7 @@ const requestWakeLock = async () => {
     if (navigator.wakeLock) {
       wakeLock = await navigator.wakeLock.request("screen");
       wakeLock.addEventListener("release", () => {
+        requestWakeLock();
         console.log("Wake Lock was released");
       });
       console.log("Wake Lock is active");

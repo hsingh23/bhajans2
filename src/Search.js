@@ -118,7 +118,6 @@ class Search extends Component {
     filter = (filter !== undefined ? filter : window.searchFilter) || "";
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
-    console.log(searchableFilter);
     const filterFavorites = nextProps
       ? nextProps.path.includes("/my-favorites")
       : this.props.path.includes("/my-favorites");
@@ -347,6 +346,7 @@ class Search extends Component {
             type="search"
             placeholder="Search Bhajans"
             autoFocus
+            autoComplete="off"
             className="form-control"
             name="search"
             id="search"
