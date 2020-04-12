@@ -113,6 +113,7 @@ const handleVisibilityChange = () => {
     requestWakeLock();
   }
 };
+// setInterval(handleVisibilityChange, 10 * 1000);
 
 document.addEventListener("visibilitychange", handleVisibilityChange);
 document.addEventListener("fullscreenchange", handleVisibilityChange);
