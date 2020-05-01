@@ -30,7 +30,8 @@
     "react-virtualized": "9.21.2",
     "reactstrap": "8.4.1",
     "recompose": "0.30.0",
-    "whatwg-fetch": "3.0.0"
+    "whatwg-fetch": "3.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "react-scripts": "3.4.1",
@@ -46,7 +47,9 @@
     "sw-precache": "sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -68,5 +71,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "snyk": true
 }
