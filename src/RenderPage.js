@@ -35,14 +35,20 @@ class RenderPage extends Component {
       page = "1";
     }
     this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10) };
-    if (isNaN(localStorage.lastOnline) || +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()) {
+    if (
+      isNaN(localStorage.lastOnline) ||
+      +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()
+    ) {
       alert({
         text:
           "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates."
       });
       removeServiceWorkers();
       props.history.push(`/login`);
-    } else if (isNaN(localStorage.expiresOn) || +localStorage.expiresOn < +new Date()) {
+    } else if (
+      isNaN(localStorage.expiresOn) ||
+      +localStorage.expiresOn < +new Date()
+    ) {
       alert({
         text: "Your subscription has expired. Please pay for a new subscription"
       });
@@ -58,15 +64,14 @@ class RenderPage extends Component {
   audioTag = document.querySelector("#audio");
   onPageComplete = page => this.setState({ page });
   onDocumentComplete = pages => this.setState({ pages });
-  handlePrevious = () => this.state.page > this.state.initialPage && this.setState({ page: this.state.page - 1 });
-  handleNext = () => this.state.page < this.state.pages && this.setState({ page: this.state.page + 1 });
+  handlePrevious = () =>
+    this.state.page > this.state.initialPage &&
+    this.setState({ page: this.state.page - 1 });
+  handleNext = () =>
+    this.state.page < this.state.pages &&
+    this.setState({ page: this.state.page + 1 });
   render() {
-    const {
-      bhajans = {},
-      match: {
-        params: { id, location }
-      }
-    } = this.props;
+    const { bhajans = {}, match: { params: { id, location } } } = this.props;
     const name = bhajans && bhajans[id] && bhajans[id].n;
     const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
     const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
@@ -82,14 +87,14 @@ class RenderPage extends Component {
       scale = 2;
       page = 1;
     }
-    const pagination = this.state.pages ? (
-      <span>
-        <span className="pdf-prev-arrow arrow" />
-        <span className="pdf-next-arrow arrow" />
-        <span className="pdf-previous" onClick={this.handlePrevious} />
-        <span className="pdf-next" onClick={this.handleNext} />
-      </span>
-    ) : null;
+    const pagination = this.state.pages
+      ? <span>
+          <span className="pdf-prev-arrow arrow" />
+          <span className="pdf-next-arrow arrow" />
+          <span className="pdf-previous" onClick={this.handlePrevious} />
+          <span className="pdf-next" onClick={this.handleNext} />
+        </span>
+      : null;
 
     const handlers = { left: this.handlePrevious, right: this.handleNext };
 
@@ -100,53 +105,73 @@ class RenderPage extends Component {
             <Link to={"/"}>
               <img className="favicon" src="favicon.ico" alt="Sing " />
             </Link>
-            <div style={{ flexGrow: 1, textOverflow: "ellipsis", textTransform: "capitalize" }}>{name}</div>
-            <nav style={{ flex: "0 0 160px", display: "flex", justifyContent: "flex-end" }}>
-              {cdbabyBuyUrls && (
+            <div
+              style={{
+                flexGrow: 1,
+                textOverflow: "ellipsis",
+                textTransform: "capitalize"
+              }}>
+              {name}
+            </div>
+            <nav
+              style={{
+                flex: "0 0 160px",
+                display: "flex",
+                justifyContent: "flex-end"
+              }}>
+              {cdbabyBuyUrls &&
                 <a
                   className="button button-3d button-circle button-action"
-                  href={cdbabyBuyUrls[0]}
+                  href={`https://www.amazon.com/s?k=${encodeURIComponent(
+                    name
+                  )} amma`}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <span role="img" aria-label="cd">
                     <FontAwesomeIcon icon="cart-arrow-down" />
                   </span>
-                </a>
-              )}
-              {cdbabySampleUrls && (
+                </a>}
+              {cdbabySampleUrls &&
                 <button
                   className="button button-3d button-circle button-action"
-                  onClick={() => this.play(cdbabySampleUrls[0])}
-                >
+                  onClick={() => this.play(cdbabySampleUrls[0])}>
                   <span role="img" aria-label="music sample">
                     <FontAwesomeIcon icon="play" />
                   </span>
-                </button>
+                </button>}
+              {this.props.renderFavorite(
+                name,
+                "button button-caution button-circle",
+                "button button-circle"
               )}
-              {this.props.renderFavorite(name, "button button-caution button-circle", "button button-circle")}
             </nav>
           </div>
           <div className="rest">
-            {localStorage.presenter && Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200 ? (
-              <embed
-                src={`/pdfs/${book}.pdf#page=${page}`}
-                style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
-              />
-            ) : (
-              <span>
-                <Pdf
-                  file={url.replace(/sharp/i, "%23")}
-                  onDocumentComplete={this.onDocumentComplete}
-                  onPageComplete={this.onPageComplete}
-                  page={this.state.page}
-                  scale={scale}
-                  style={{ maxWidth: "100vw", display: "block", margin: "0 auto" }}
+            {localStorage.presenter &&
+            Math.max(
+              document.documentElement.clientWidth,
+              window.innerWidth || 0
+            ) > 1200
+              ? <embed
+                  src={`/pdfs/${book}.pdf#page=${page}`}
+                  style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
                 />
+              : <span>
+                  <Pdf
+                    file={url.replace(/sharp/i, "%23")}
+                    onDocumentComplete={this.onDocumentComplete}
+                    onPageComplete={this.onPageComplete}
+                    page={this.state.page}
+                    scale={scale}
+                    style={{
+                      maxWidth: "100vw",
+                      display: "block",
+                      margin: "0 auto"
+                    }}
+                  />
 
-                {pagination}
-              </span>
-            )}
+                  {pagination}
+                </span>}
           </div>
         </div>
       </HotKeys>
