@@ -1,50 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="description"
+      content="Search bhajans and find lyrics quickly and easily. Find your favorite Amma bhjans and sing with others now!"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#ffa500" />
+    <meta
+      http-equiv="origin-trial"
+      content="Ah+Ggh1ywIgdANIlERuJ9usTpIGRk4doMmLkFKWS5yMRpOd1NbZqx9Cizo0ri0K/uabcPoG4RNQSeNR3f3U/tAIAAABTeyJvcmlnaW4iOiJodHRwczovL3Npbmcud2l0aGFtbWEuY29tOjQ0MyIsImZlYXR1cmUiOiJXYWtlTG9jayIsImV4cGlyeSI6MTU5NDA5NjM4NH0="
+    />
+    <link
+      crossorigin="anonymous"
+      rel="preload"
+      href="bhajan-index2.json"
+      as="fetch"
+      type="application/json"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="description"
-    content="Search bhajans and find lyrics quickly and easily. Find your favorite Amma bhjans and sing with others now!" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="theme-color" content="#ffa500" />
-  <meta http-equiv="origin-trial"
-    content="AgT95fsgfziRH7C95moeHl/0ISeoMpSzfLH6LCWTuyl0ZbiTpsWj4OOjkMEmnZSRKZWMdaRHCzKX4mNRrOH5ugAAAABTeyJvcmlnaW4iOiJodHRwczovL3Npbmcud2l0aGFtbWEuY29tOjQ0MyIsImZlYXR1cmUiOiJXYWtlTG9jayIsImV4cGlyeSI6MTU5MDMyNzcxMH0=">
-  <link crossorigin="anonymous" rel="preload" href="bhajan-index2.json" as="fetch" type="application/json" />
+    <!-- important -->
+    <!-- <link rel="preload" as="font" crossorigin type="font/woff2" href="myfont.woff2" /> -->
+    <!-- <link rel="preload" as="script" href="https://cdn.polyfill.io/v2/polyfill.min.js" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="preconnect" href="https://sessions.bugsnag.com/" crossorigin />
+    <!-- not important -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KF3RQXP");
+    </script>
+    <!-- End Google Tag Manager -->
 
-  <!-- important -->
-  <!-- <link rel="preload" as="font" crossorigin type="font/woff2" href="myfont.woff2" /> -->
-  <!-- <link rel="preload" as="script" href="https://cdn.polyfill.io/v2/polyfill.min.js" /> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link rel="preconnect" href="https://sessions.bugsnag.com/" crossorigin />
-  <!-- not important -->
-  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin />
-  <link rel="preconnect" href="https://cdn.userreport.com" crossorigin />
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KF3RQXP"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden;"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <link
+      rel="preconnect"
+      href="https://www.google-analytics.com/"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://cdn.userreport.com" crossorigin />
 
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
 
-  <script>
-    if (location.protocol.toLowerCase() === "http:" && !location.host.includes("localhost:")) {
-      location.protocol = "https:";
-    }
-    if (localStorage.reset === "1") {
-      localStorage.removeItem("reset");
-      location.reload(true);
-    }
-  </script>
-  <title>Amma Bhajanamritam Index</title>
-</head>
+    <script>
+      if (
+        location.protocol.toLowerCase() === "http:" &&
+        !location.host.includes("localhost:")
+      ) {
+        location.protocol = "https:";
+      }
+      if (localStorage.reset === "1") {
+        localStorage.removeItem("reset");
+        location.reload(true);
+      }
+    </script>
+    <title>Amma Bhajanamritam Index</title>
+  </head>
 
-<body>
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-  <noscript> You need to enable JavaScript to run this app. </noscript>
-  <div id="root"></div>
-  <audio id="audio"></audio>
-</body>
-
+  <body>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+    <audio id="audio"></audio>
+  </body>
 </html>
