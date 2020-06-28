@@ -26,3 +26,5 @@ yarn-error.log*
 user.json
 emails.txt
 sheetmusic
+public/webviewer/
+stats/
