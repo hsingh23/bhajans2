@@ -114,7 +114,7 @@ expiresOn: ${expiresOn}`);
             </strong>
           </p>
 
-          <h3>Important: When checking out, please use the email you used to sign up on this website - {email}</h3>
+          <h3>Important: When checking out, please use the email - {email} (should be autofilled). Changing this will complicate fulfillment.</h3>
           <h4>Please allow one business day for your account to be enabled - the process is currently manual.</h4>
 
           <TableContainer component={Paper}>
@@ -128,9 +128,9 @@ expiresOn: ${expiresOn}`);
                 </TableRow>
               </TableHead>
               <TableBody>
-                {[["The Decade", 10, "$50", "http://theammashop.com/cart/37277000827044:1"],
-                ["The 1/2 Decade", 5, "$40", "http://theammashop.com/cart/37277000794276:1"],
-                ["One Year", 1, "$10", "http://theammashop.com/cart/37277000728740:1"]
+                {[["The Decade", 10, "$50", `http://theammashop.com/cart/37277000827044:1?email=${email}`],
+                ["The 1/2 Decade", 5, "$40", `http://theammashop.com/cart/37277000794276:1?email=${email}`],
+                ["One Year", 1, "$10", `http://theammashop.com/cart/37277000728740:1?email=${email}`]
                 ].map((row) => (
                   <TableRow key={row[0]}>
                     <TableCell component="th" scope="row">
