@@ -1,4 +1,5 @@
 # read translation mapping
+from subprocess import call
 import re
 import json
 
@@ -7,7 +8,8 @@ with open("translation.csv", 'r') as f:
     translation_mapping = f.readlines()
 
 # read bhajan indexes
-supplements = ["Vol3.txt", "2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
+supplements = ["Vol3.txt", "2020Supplement.txt",
+               "2019Supplement.txt", "2018Supplement.txt", "Vol7.txt"]
 for filename in supplements:
     # make substitutions
     with open(filename, 'r') as f:
@@ -19,13 +21,14 @@ for filename in supplements:
     # write substitutionse
     with open(filename + ".changed.txt", 'w+') as f:
         f.write(content)
-supplements = ["2019Supplement.txt","2018Supplement.txt", "Vol7.txt"]
+supplements = ["2020Supplement.txt", "2019Supplement.txt",
+               "2018Supplement.txt", "Vol7.txt"]
 
 # merge and sort file
 bhajans = {}
 supplement_tags = {}
 changed = [f + ".changed.txt" for f in supplements]
-for filename in (["Vol3.txt.changed.txt","bhajanmritam.txt"] + changed):
+for filename in (["Vol3.txt.changed.txt", "bhajanmritam.txt"] + changed):
     with open(filename, 'r') as f:
         for line in f.read().lower().split('\n'):
             try:
@@ -33,22 +36,23 @@ for filename in (["Vol3.txt.changed.txt","bhajanmritam.txt"] + changed):
                     (bhajan_name, location) = line.strip().split('##')
                     bhajan_name = bhajan_name.strip()
                     # if (filename.find('bhajanmritam.txt') != 0):
-                        # Brittle Hack, remove tags from sumplements
-                        # try:
-                        #     match = re.match(r"(.+?) *([\(\[].*)", bhajan_name)
-                        #     bhajan_name = match.group(1)
-                        #     tag = re.sub(r"\s*[\(\[\)\]]\s*",
-                        #                  ",", match.group(2))
-                        #     tags = [x for x in tag.split(',') if len(x) > 0]
-                        #     print tags
-                        #     supplement_tags[bhajan_name] = tags
-                        # except Exception, e:
-                        #     pass
+                    # Brittle Hack, remove tags from sumplements
+                    # try:
+                    #     match = re.match(r"(.+?) *([\(\[].*)", bhajan_name)
+                    #     bhajan_name = match.group(1)
+                    #     tag = re.sub(r"\s*[\(\[\)\]]\s*",
+                    #                  ",", match.group(2))
+                    #     tags = [x for x in tag.split(',') if len(x) > 0]
+                    #     print tags
+                    #     supplement_tags[bhajan_name] = tags
+                    # except Exception, e:
+                    #     pass
                     location = re.split(' *[/\,] *', location.strip())
                     bhajans[bhajan_name] = bhajans[bhajan_name] + \
                         location if bhajan_name in bhajans else location
             except Exception as e:
-                print filename, line
+                print(filename, line)
+
 final_sorted = [bhajan + ' ## ' +
                 ','.join(info) for (bhajan, info) in sorted(bhajans.items())]
 
@@ -88,5 +92,4 @@ with open('../public/bhajan-index.json', 'w+') as f:
 with open('../public/bhajan-index2.json', 'w+') as f:
     f.write(json.dumps([v for (k, v) in sorted(bhajans2.items())]))
 
-from subprocess import call
 call(["node", "cdbaby/mergelinks.js"])
