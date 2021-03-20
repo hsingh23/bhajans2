@@ -20,7 +20,7 @@ const bugsnagClient = bugsnag("a8b3dfbca1bb3f896d6e145d8e58db60");
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 
 var history = createHashHistory();
-history.listen(function(location) {
+history.listen(function (location) {
   console.log(location);
   window.ga && window.ga("send", "pageview", location.pathname);
 });
@@ -50,7 +50,7 @@ registerServiceWorker();
 function doOnce() {
   window._urq = window._urq || [];
   window._urq.push(["initSite", "9f29eba3-9795-415f-9f34-3e1a2c8fb6ed"]);
-  (function() {
+  (function () {
     var ur = document.createElement("script");
     ur.type = "text/javascript";
     ur.async = true;
@@ -61,11 +61,11 @@ function doOnce() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ur, s);
   })();
-  (function(i, s, o, g, r, a, m) {
+  (function (i, s, o, g, r, a, m) {
     i["GoogleAnalyticsObject"] = r;
     (i[r] =
       i[r] ||
-      function() {
+      function () {
         (i[r].q = i[r].q || []).push(arguments);
       }), (i[r].l = 1 * new Date());
     (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);

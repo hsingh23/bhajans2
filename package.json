@@ -33,7 +33,7 @@
     "whatwg-fetch": "3.6.2"
   },
   "devDependencies": {
-    "react-scripts": "3.4.1",
+    "react-scripts": "4.0.3",
     "react-snap": "^1.23.0",
     "redux-devtools": "3.7.0",
     "redux-devtools-dock-monitor": "1.2.0",
