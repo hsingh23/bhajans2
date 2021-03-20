@@ -51,7 +51,6 @@ class Pay extends PureComponent {
   render() {
     // Change mode here              ⬇️ to switch between sandbox and live paypal
     const { email, displayName, expiresOn = undefined, uid } = localStorage;
-    const { selectedPlan } = this.state;
     const paymentMessage =
       new Date(+expiresOn) > new Date()
         ? ` and your membership expires on ${new Date(
@@ -59,11 +58,11 @@ class Pay extends PureComponent {
         ).toLocaleDateString()}.`
         : " and you have not yet paid for the app.";
 
-    const mode = ["sandbox", "live"][1];
-    const clientId =
-      mode === "sandbox"
-        ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
-        : "AcMLkUUIQ0-xZgsxf6I6I35spceQPDvvRu_uVXXclMOY_Vp7-Bvz4IdPVlAtmMHSIfddj0p1sUUwUu4i"; // live
+    // const mode = ["sandbox", "live"][1];
+    // const clientId =
+    //   mode === "sandbox"
+    //     ? "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv" // sandbox
+    //     : "AcMLkUUIQ0-xZgsxf6I6I35spceQPDvvRu_uVXXclMOY_Vp7-Bvz4IdPVlAtmMHSIfddj0p1sUUwUu4i"; // live
 
     const body = encodeURIComponent(`Om namaha shivaya, 
 I'm having payment issues. My Paypal transaction number is: 
