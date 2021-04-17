@@ -51,6 +51,7 @@ class Pay extends PureComponent {
   render() {
     // Change mode here              ⬇️ to switch between sandbox and live paypal
     const { email, displayName, expiresOn = undefined, uid } = localStorage;
+    const cleanedDisplayName = displayName ? JSON.parse(displayName) : displayName;
     const paymentMessage =
       new Date(+expiresOn) > new Date()
         ? ` and your membership expires on ${new Date(
@@ -69,19 +70,24 @@ I'm having payment issues. My Paypal transaction number is:
     
 
 -----
-name: ${displayName}
+name: ${cleanedDisplayName}
 email: ${email}
 uid: ${uid}
 expiresOn: ${expiresOn}`);
+    let helloText = cleanedDisplayName ? `Hello ${cleanedDisplayName}` : "Hello";
     return (
       <div className="App">
         <div className="App-header">
-          <div className="title">Amma's Bhajans</div>
+          <Link to={"/"} className="title">
+            Amma's Bhajans
+          </Link>
         </div>
         <div className="pay">
           <p className="yellowBg">
-            Hello {displayName}, you are signed in with the email {email}{" "}
+            {helloText}, you are signed in with the email {email}{" "}
             {paymentMessage}
+            <br />
+            <Link to="/">Home (Bhajan List)</Link>
             <br />
             <Link to="/logout">Logout / Change User</Link>
           </p>
