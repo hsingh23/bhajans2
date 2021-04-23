@@ -51,7 +51,7 @@ class Pay extends PureComponent {
   render() {
     // Change mode here              ⬇️ to switch between sandbox and live paypal
     const { email, displayName, expiresOn = undefined, uid } = localStorage;
-    const cleanedDisplayName = displayName ? JSON.parse(displayName) : displayName;
+    const cleanedDisplayName = displayName || "";
     const paymentMessage =
       new Date(+expiresOn) > new Date()
         ? ` and your membership expires on ${new Date(
