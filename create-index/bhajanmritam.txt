@@ -494,7 +494,8 @@ isar tumi##Vol5-66
 ishwari jagadishwari (wondrous goddess) (english)##Vol3Old-188/VolI3-269
 isori jogodisari##Vol5-67
 isvar paramesvara (hindi)##Vol6-88
-isvara lila yitellam##Vol3Old-60/VolI3-75
+isvara lila yitellam##Vol3-76
+ishwara lele yitellam##Vol3-76
 isvari jagadisvari##Vol1-105/VolI1-192/VolI0-28
 iswar tumhi dayakaro##Vol4-58
 jag ki trsna mitane ko (jai jagadambe jai jagadambe)##Vol4-66
