@@ -36,7 +36,7 @@ export const getUserByEmail = functions.region('us-central1').https.onCall(async
   if (isAdmin) {
     try {
       const {uid, email, displayName} = await admin.auth().getUserByEmail(data.email).then(x => x.toJSON());
-      const {paidOn, expiresOn} = (await rootRef.child(`/paid/${uid}`).once("value")).val()
+      const {paidOn, expiresOn} = (await rootRef.child(`/paid/${uid}`).once("value")).val() || {}
       return {uid, email, displayName , paidOn, expiresOn}
     } catch(e) {
       console.log(context.auth.uid, data.email, e)

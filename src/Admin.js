@@ -45,7 +45,8 @@ const Admin = () => {
   }, [history])
 
   let setPaid = async (e) => {
-    let plan = PLANS.find(x => x.value === e.target.name || e.target.parentElement.name)
+    let plan = PLANS.find(x => x.value === (e.target.name || e.target.parentElement.name))
+    console.log(plan, e.target.name || e.target.parentElement.name)
     await getUser()
     if (user.uid) {
       try{
@@ -63,6 +64,7 @@ const Admin = () => {
             payer_id: "admin"
           }
         });
+        getUser()
       } catch (e) {
         
       }
@@ -84,7 +86,7 @@ const Admin = () => {
               <DebounceInput
                 minLength={3}
                 debounceTimeout={700}
-                type="text" value={email} placeholder="email" onChange={(e) => setEmail(e.target.value)} /> 
+                type="text" value={email} placeholder="email" onChange={(e) => setEmail(e.target.value.trim())} /> 
               {PLANS.map(x => 
                 <Button onClick={setPaid} name={x.value} variant="contained" style={{ display: 'block', margin: "10px" } }>{x.label}</Button>
               )}
