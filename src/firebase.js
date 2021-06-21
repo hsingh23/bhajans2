@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/auth";
+import "firebase/functions";
 import "firebase/messaging";
 import { alert } from "notie";
 import wrap from "lodash/wrap";
@@ -15,7 +16,8 @@ const {
   auth,
   messaging,
   goOffline,
-  goOnline
+  goOnline,
+  getUserByEmail
 } = (() => {
   var config = {
     apiKey: "AIzaSyB9MVmCPLBachZm1Yfc3r1IaguL6Ps2NdM",
@@ -185,6 +187,8 @@ const {
   }
 
   window.firebase = firebase;
+  const getUserByEmail = firebaseApp.functions("us-central1").httpsCallable('getUserByEmail');
+
   return {
     firebaseApp,
     db,
@@ -195,9 +199,12 @@ const {
     auth,
     messaging,
     goOnline,
-    goOffline
+    goOffline,
+    getUserByEmail
   };
 })();
+
+
 export {
   firebaseApp,
   db,
@@ -209,5 +216,6 @@ export {
   firebase,
   messaging,
   goOffline,
-  goOnline
+  goOnline,
+  getUserByEmail
 };

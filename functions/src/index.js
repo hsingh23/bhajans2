@@ -26,7 +26,78 @@ const cors = require("cors")({
   origin: true
 });
 
+
 admin.initializeApp(functions.config().firebase);
+
+// gcloud functions add-iam-policy-binding "getUserByEmail" --member='allUsers'  --role='roles/cloudfunctions.invoker'
+export const getUserByEmail = functions.region('us-central1').https.onCall(async (data, context) => {
+  const rootRef = admin.database().ref();
+  const isAdmin = (await rootRef.child(`/admin/${context.auth.uid}`).once("value")).val() === "1";
+  if (isAdmin) {
+    try {
+      const {uid, email, displayName} = await admin.auth().getUserByEmail(data.email).then(x => x.toJSON());
+      const {paidOn, expiresOn} = (await rootRef.child(`/paid/${uid}`).once("value")).val()
+      return {uid, email, displayName , paidOn, expiresOn}
+    } catch(e) {
+      console.log(context.auth.uid, data.email, e)
+    }
+  }
+  return {}
+});
+
+
+export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
+  return cors(req, res, async () => {
+    const { type, email } = JSON.parse(req.body);
+    console.log("LOGGING ", email);
+    const user = await admin.auth().getUserByEmail(email)
+    const plan = PLANS.find(x => x.value === type);
+    const expiresOn = +new Date(+new Date() + plan.time);
+    const rootRef = admin.database().ref();
+    const paidOn = +new Date();
+    rootRef.child("paid/" + user.uid + "/").set({
+      expiresOn,
+      gross_total_amount: {
+        currency: "USD",
+        value: plan.price
+      },
+      mode: "live",
+      manual: true,
+      orderID: "admin",
+      paidOn,
+      payer: {
+        payer_id: "admin"
+      }
+    });
+    rootRef.child("transactions/").push({
+      uid: user.uid,
+      expiresOn,
+      gross_total_amount: {
+        currency: "USD",
+        value: plan.price
+      },
+      mode: "live",
+      manual: true,
+      orderID: "admin",
+      paidOn,
+      payer: {
+        payer_id: "admin"
+      }
+    });
+    res.status(200).send({ message: "done" });
+  });
+});
+
+// export const getUserByEmail = functions.https.onRequest(async (req, res) => {
+//   return cors(req, res, async () => {
+//     // const config = functions.config();
+//     const { email } = JSON.parse(req.body);
+//     console.log("LOGGING ", email);
+//     const user = await admin.auth.getUserByEmail(email).then(x => x.toJSON());
+//     admin.database().ref(``)
+//   });
+// });
+
 
 export const process = functions.https.onRequest(async (req, res) => {
   return cors(req, res, async () => {
