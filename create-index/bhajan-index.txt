@@ -731,10 +731,11 @@ irul tingi valarunna ## vol2-90,voli2-99
 irulil ninnutal (malayalam) ## 2020supl-73
 iruvudu erade (kannada) ## 2019supl-33
 isar tumi ## vol5-66
+ishwara lele yitellam ## vol3-76
 ishwari jagadishwari (wondrous goddess) (english) ## vol3old-188,voli3-269
 isori jogodisari ## vol5-67
 isvar paramesvara (hindi) ## vol6-88
-isvara lila yitellam ## vol3old-60,voli3-75
+isvara lila yitellam ## vol3-76,vol3-76
 isvari jagadisvari ## vol1-105,voli1-192,voli0-28
 iswar tumhi dayakaro ## vol4-58
 iyarkaiyamma (tamil) ## vol7-110
@@ -2049,4 +2050,3 @@ you have come to sacrifice (english) ## vol6-230
 you mean everything to me ## vol3old-189,voli3-277
 you mean everything to me english ## vol3-277
 you're the essence (ullakattin adhara) ## vol4-248
-Ìsvara lila yitellam ## vol3-76
