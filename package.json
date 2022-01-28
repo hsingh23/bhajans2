@@ -12,7 +12,7 @@
     "classnames": "^2.3.1",
     "core-js": "3.15.0",
     "create-react-class": "15.7.0",
-    "firebase": "8.6.8",
+    "firebase": "9.6.5",
     "firebaseui": "4.8.0",
     "jaro-winkler": "^0.2.8",
     "lodash-es": "4.17.21",
