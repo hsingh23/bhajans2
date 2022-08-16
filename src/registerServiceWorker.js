@@ -144,48 +144,56 @@
 // To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
 // This link also includes instructions on opting out of this behavior.
 
-import { alert } from 'notie';
-const prod = process.env.NODE_ENV === 'production';
+import { alert } from "notie";
+const prod = process.env.NODE_ENV === "production";
 export default function register() {
-  if (prod && 'serviceWorker' in navigator) {
+  if (prod && "serviceWorker" in navigator) {
     const swUrl = `${process.env.PUBLIC_URL}/service-worker2.js`;
-    window.addEventListener('load', function() {
+    window.addEventListener("load", function () {
       navigator.serviceWorker
         .register(swUrl)
-        .then(registration => {
+        .then((registration) => {
           registration.onupdatefound = () => {
             const installingWorker = registration.installing;
             installingWorker.onstatechange = () => {
-              if (installingWorker.state === 'installed') {
+              if (installingWorker.state === "installed") {
                 if (navigator.serviceWorker.controller) {
                   // At this point, the old content will have been purged and
                   // the fresh content will have been added to the cache.
                   // It's the perfect time to display a "New content is
                   // available; please refresh." message in your web app.
-                  console.log('New content is available; please refresh.');
-                  alert({ text: 'New content is available; please refresh.' });
+                  console.log("New content is available; please refresh.");
+                  alert({
+                    text: "New content is available; please refresh.",
+                    time: 1,
+                    stay: false,
+                  });
                   setTimeout(window.location.reload, 8000);
                 } else {
                   // At this point, everything has been precached.
                   // It's the perfect time to display a
                   // "Content is cached for offline use." message.
-                  console.log('Content is cached for offline use.');
-                  alert({ text: 'Content is cached for offline use.' });
+                  console.log("Content is cached for offline use.");
+                  alert({
+                    text: "Content is cached for offline use.",
+                    time: 1,
+                    stay: false,
+                  });
                 }
               }
             };
           };
         })
-        .catch(error => {
-          console.error('Error during service worker registration:', error);
+        .catch((error) => {
+          console.error("Error during service worker registration:", error);
         });
     });
   }
 }
 
 export function unregister() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.ready.then((registration) => {
       registration.unregister();
     });
   }
