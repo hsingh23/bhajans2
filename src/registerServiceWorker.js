@@ -165,7 +165,7 @@ export default function register() {
                   console.log("New content is available; please refresh.");
                   alert({
                     text: "New content is available; please refresh.",
-                    time: 1,
+                    time: 3,
                     stay: false,
                   });
                   setTimeout(window.location.reload, 8000);
@@ -176,7 +176,7 @@ export default function register() {
                   console.log("Content is cached for offline use.");
                   alert({
                     text: "Content is cached for offline use.",
-                    time: 1,
+                    time: 3,
                     stay: false,
                   });
                 }
