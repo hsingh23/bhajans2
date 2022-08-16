@@ -1,5 +1,5 @@
 # read translation mapping
-from subprocess import call
+from subprocess import Popen
 import re
 import json
 
@@ -8,7 +8,7 @@ with open("translation.csv", 'r') as f:
     translation_mapping = f.readlines()
 
 # read bhajan indexes
-supplements = ["Vol3.txt", "2020Supplement.txt",
+supplements = ["Vol3.txt", "2020Supplement.txt","2020Supplement2.txt","2020Supplement3.txt",
                "2019Supplement.txt", "2018Supplement.txt", "Vol7.txt"]
 for filename in supplements:
     # make substitutions
@@ -21,7 +21,7 @@ for filename in supplements:
     # write substitutionse
     with open(filename + ".changed.txt", 'w+') as f:
         f.write(content)
-supplements = ["2020Supplement.txt", "2019Supplement.txt",
+supplements = ["2020Supplement3.txt", "2020Supplement2.txt", "2020Supplement.txt", "2019Supplement.txt",
                "2018Supplement.txt", "Vol7.txt"]
 
 # merge and sort file
@@ -92,4 +92,4 @@ with open('../public/bhajan-index.json', 'w+') as f:
 with open('../public/bhajan-index2.json', 'w+') as f:
     f.write(json.dumps([v for (k, v) in sorted(bhajans2.items())]))
 
-call(["node", "cdbaby/mergelinks.js"])
+Popen(["node", "cdbaby/mergelinks.js"])
