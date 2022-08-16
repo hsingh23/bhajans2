@@ -3,7 +3,7 @@ var path = require("path");
 var _ = require("lodash");
 var distance = require("jaro-winkler");
 
-const makeSearchable = line =>
+const makeSearchable = (line) =>
   line
     .toLowerCase()
     .replace(/va /g, "v") //bhava ~= bhav
@@ -40,7 +40,7 @@ function readBhajanIndex() {
   // TODO hack to remove songs that don't have a real volume associated with them.
   bhajans = _.filter(
     bhajans,
-    value => !!value.l[0] && value.l[0].match(/\d{4}supl-\d+|vol\d-\d+/gi)
+    (value) => !!value.l[0] && value.l[0].match(/\d{4}supl\d?-\d+|vol\d-\d+/gi)
   );
   searchableBhajans = [];
   searchableBhajansObject = {};
@@ -81,11 +81,10 @@ function readFiles() {
     realBhajan.cn.push(song.name);
     count += 1;
   }
-  fs
-    .readdirSync(path.resolve(__dirname))
-    .filter(x => x.endsWith("json"))
-    .map(f => {
-      JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map(song => {
+  fs.readdirSync(path.resolve(__dirname))
+    .filter((x) => x.endsWith("json"))
+    .map((f) => {
+      JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map((song) => {
         var searchableName = makeSearchable(
           song.name.replace(/[\[\(].*[\]\)]/gi, "")
         );
@@ -97,7 +96,7 @@ function readFiles() {
           // console.log(song.name);
         } else {
           var matches = searchableBhajans.filter(
-            b =>
+            (b) =>
               b.startsWith(searchableName) || b.includes(`(${searchableName}`)
           );
           if (matches.length === 1) {
@@ -106,7 +105,7 @@ function readFiles() {
             // console.log(song.name);
             noMatch.push(song);
           } else {
-            matches.forEach(fullSearch => addSong(fullSearch, song));
+            matches.forEach((fullSearch) => addSong(fullSearch, song));
             manyMatches.push([song, matches]);
           }
         }
@@ -126,9 +125,11 @@ function readFiles() {
   );
   // console.log(noMatch.map(x => x.name));
   console.log(
-    `Total Cdbaby: ${Object.keys(searchable)
-      .length}, Match: ${count}, No Match: ${Object.keys(noMatch)
-      .length}, Many Matches: ${Object.keys(manyMatches).length}`
+    `Total Cdbaby: ${
+      Object.keys(searchable).length
+    }, Match: ${count}, No Match: ${
+      Object.keys(noMatch).length
+    }, Many Matches: ${Object.keys(manyMatches).length}`
   );
 
   return searchable;
@@ -145,13 +146,12 @@ function readSheetMusic() {
     realBhajan.sm.push(filename);
     smCount += 1;
   }
-  fs
-    .readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
+  fs.readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
     .toString()
     .split("\n")
     // fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
-    .filter(x => x.endsWith("pdf"))
-    .map(filename => {
+    .filter((x) => x.endsWith("pdf"))
+    .map((filename) => {
       var name = filename
         .replace(/[A-Z][mb]*(?:sharp)?[mb]*\.pdf$/, "")
         .replace(/\(.*\)|\d*/, "");
@@ -162,16 +162,16 @@ function readSheetMusic() {
         addSheetMusic(searchableName, filename);
       } else {
         var matches = searchableBhajans.filter(
-          b => b.startsWith(searchableName) || b.includes(`${searchableName}`)
+          (b) => b.startsWith(searchableName) || b.includes(`${searchableName}`)
         );
         if (matches.length === 1) {
           addSheetMusic(matches[0], filename);
         } else if (matches.length === 0) {
           console.log(filename, name, searchableName);
           const matched = [];
-          searchableBhajans.map(searchableBhajan => {
+          searchableBhajans.map((searchableBhajan) => {
             const d = distance(searchableBhajan, searchableName, {
-              caseSensitive: false
+              caseSensitive: false,
             });
             if (d >= 0.89) {
               matched.push(searchableBhajan);
@@ -181,7 +181,7 @@ function readSheetMusic() {
           });
           // if (matched.length === 0) console.log(name, searchableName);
         } else {
-          matches.forEach(fullSearch => addSheetMusic(fullSearch, filename));
+          matches.forEach((fullSearch) => addSheetMusic(fullSearch, filename));
           manyMatchesSheet.push([filename, matches]);
         }
       }
@@ -189,9 +189,9 @@ function readSheetMusic() {
   const noMatch = Object.keys(noMatchSheet).length;
   const manyMatch = Object.keys(manyMatchesSheet).length;
   console.log(
-    `Total sheetmusic: ${total}, Match: ${total -
-      noMatch -
-      manyMatch}, No Match: ${noMatch}, Many Matches: ${manyMatch}`
+    `Total sheetmusic: ${total}, Match: ${
+      total - noMatch - manyMatch
+    }, No Match: ${noMatch}, Many Matches: ${manyMatch}`
   );
 }
 
