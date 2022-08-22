@@ -101,7 +101,7 @@ class Search extends Component {
       .replace(/z/g, "r")
       .replace(/ri?/g, "ri")
       .replace(/a+/g, "a")
-      .replace(/ai?/g, "ai")
+      // .replace(/ai?/g, "ai")
       .replace(/ee/g, "i")
       .replace(/oo|uu/g, "u")
       .replace(/[kg]il/g, "kgil") // 2

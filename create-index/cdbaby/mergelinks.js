@@ -6,8 +6,8 @@ var distance = require("jaro-winkler");
 const makeSearchable = (line) =>
   line
     .toLowerCase()
-    .replace(/va /g, "v") //bhava ~= bhav
     .replace(/[^A-z0-9]/g, "")
+    .replace(/va/g, "v") //bhava ~= bhav
     .replace(/h/g, "")
     .replace(/z/g, "r")
     .replace(/ri?/g, "ri")
