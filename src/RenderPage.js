@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import PDF from "react-pdf-js";
 import React, { Component } from "react";
 import { onlyUpdateForKeys } from "recompose";
@@ -10,15 +9,15 @@ const THREE_MONTHS_MS = 7776000000;
 const Pdf = onlyUpdateForKeys(["page"])(PDF);
 const map = {
   left: "left",
-  right: "right"
+  right: "right",
 };
 
 const removeServiceWorkers = () => {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then((registration) => {
       registration.unregister();
     });
-    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
       for (let registration of registrations) {
         registration.unregister();
       }
@@ -40,8 +39,7 @@ class RenderPage extends Component {
       +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()
     ) {
       alert({
-        text:
-          "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates."
+        text: "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates.",
       });
       removeServiceWorkers();
       props.history.push(`/login`);
@@ -50,20 +48,20 @@ class RenderPage extends Component {
       +localStorage.expiresOn < +new Date()
     ) {
       alert({
-        text: "Your subscription has expired. Please pay for a new subscription"
+        text: "Your subscription has expired. Please pay for a new subscription",
       });
       removeServiceWorkers();
       props.history.push(`/pay`);
     }
   }
 
-  play = url => {
+  play = (url) => {
     this.audioTag.src = url;
     this.audioTag.play();
   };
   audioTag = document.querySelector("#audio");
-  onPageComplete = page => this.setState({ page });
-  onDocumentComplete = pages => this.setState({ pages });
+  onPageComplete = (page) => this.setState({ page });
+  onDocumentComplete = (pages) => this.setState({ pages });
   handlePrevious = () =>
     this.state.page > this.state.initialPage &&
     this.setState({ page: this.state.page - 1 });
@@ -71,7 +69,13 @@ class RenderPage extends Component {
     this.state.page < this.state.pages &&
     this.setState({ page: this.state.page + 1 });
   render() {
-    const { bhajans = {}, match: { params: { id, location } } } = this.props;
+    const {
+      bhajans = {},
+      match: {
+        params: { id, location },
+      },
+      history,
+    } = this.props;
     const name = bhajans && bhajans[id] && bhajans[id].n;
     const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
     const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
@@ -87,29 +91,29 @@ class RenderPage extends Component {
       scale = 2;
       page = 1;
     }
-    const pagination = this.state.pages
-      ? <span>
-          <span className="pdf-prev-arrow arrow" />
-          <span className="pdf-next-arrow arrow" />
-          <span className="pdf-previous" onClick={this.handlePrevious} />
-          <span className="pdf-next" onClick={this.handleNext} />
-        </span>
-      : null;
+    const pagination = this.state.pages ? (
+      <span>
+        <span className='pdf-prev-arrow arrow' />
+        <span className='pdf-next-arrow arrow' />
+        <span className='pdf-previous' onClick={this.handlePrevious} />
+        <span className='pdf-next' onClick={this.handleNext} />
+      </span>
+    ) : null;
 
     const handlers = { left: this.handlePrevious, right: this.handleNext };
 
     return (
-      <HotKeys keyMap={map} handlers={handlers} focused="true">
-        <div className="App">
-          <div className="App-header">
-            <Link to={"/"}>
-              <img className="favicon" src="favicon.ico" alt="Sing " />
-            </Link>
+      <HotKeys keyMap={map} handlers={handlers} focused='true'>
+        <div className='App'>
+          <div className='App-header'>
+            <div onClick={history.goBack}>
+              <img className='favicon' src='favicon.ico' alt='Sing ' />
+            </div>
             <div
               style={{
                 flexGrow: 1,
                 textOverflow: "ellipsis",
-                textTransform: "capitalize"
+                textTransform: "capitalize",
               }}>
               {name}
             </div>
@@ -117,28 +121,30 @@ class RenderPage extends Component {
               style={{
                 flex: "0 0 160px",
                 display: "flex",
-                justifyContent: "flex-end"
+                justifyContent: "flex-end",
               }}>
-              {cdbabyBuyUrls &&
+              {cdbabyBuyUrls && (
                 <a
-                  className="button button-3d button-circle button-action"
+                  className='button button-3d button-circle button-action'
                   href={`https://www.amazon.com/s?k=${encodeURIComponent(
                     name
                   )} amma`}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <span role="img" aria-label="cd">
-                    <FontAwesomeIcon icon="cart-arrow-down" />
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  <span role='img' aria-label='cd'>
+                    <FontAwesomeIcon icon='cart-arrow-down' />
                   </span>
-                </a>}
-              {cdbabySampleUrls &&
+                </a>
+              )}
+              {cdbabySampleUrls && (
                 <button
-                  className="button button-3d button-circle button-action"
+                  className='button button-3d button-circle button-action'
                   onClick={() => this.play(cdbabySampleUrls[0])}>
-                  <span role="img" aria-label="music sample">
-                    <FontAwesomeIcon icon="play" />
+                  <span role='img' aria-label='music sample'>
+                    <FontAwesomeIcon icon='play' />
                   </span>
-                </button>}
+                </button>
+              )}
               {this.props.renderFavorite(
                 name,
                 "button button-caution button-circle",
@@ -146,32 +152,34 @@ class RenderPage extends Component {
               )}
             </nav>
           </div>
-          <div className="rest">
+          <div className='rest'>
             {localStorage.presenter &&
             Math.max(
               document.documentElement.clientWidth,
               window.innerWidth || 0
-            ) > 1200
-              ? <embed
-                  src={`/pdfs/${book}.pdf#page=${page}`}
-                  style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+            ) > 1200 ? (
+              <embed
+                src={`/pdfs/${book}.pdf#page=${page}`}
+                style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+              />
+            ) : (
+              <span>
+                <Pdf
+                  file={url.replace(/sharp/i, "%23")}
+                  onDocumentComplete={this.onDocumentComplete}
+                  onPageComplete={this.onPageComplete}
+                  page={this.state.page}
+                  scale={scale}
+                  style={{
+                    maxWidth: "100vw",
+                    display: "block",
+                    margin: "0 auto",
+                  }}
                 />
-              : <span>
-                  <Pdf
-                    file={url.replace(/sharp/i, "%23")}
-                    onDocumentComplete={this.onDocumentComplete}
-                    onPageComplete={this.onPageComplete}
-                    page={this.state.page}
-                    scale={scale}
-                    style={{
-                      maxWidth: "100vw",
-                      display: "block",
-                      margin: "0 auto"
-                    }}
-                  />
 
-                  {pagination}
-                </span>}
+                {pagination}
+              </span>
+            )}
           </div>
         </div>
       </HotKeys>
