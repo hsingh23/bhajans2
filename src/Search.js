@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { orderBy, zip } from "lodash-es";
 import classNames from "classnames";
+import { PopupButton } from "@typeform/embed-react";
 
 class Search extends Component {
   constructor(props) {
@@ -401,6 +402,12 @@ class Search extends Component {
               );
             }}
           </WindowScroller>
+          <PopupButton
+            id='EVBTgcG5'
+            style={{ fontSize: 20 }}
+            className='my-button'>
+            Bhajan Problem
+          </PopupButton>
         </div>
         <div
           className={classNames("copyRight", {

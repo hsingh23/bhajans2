@@ -3,10 +3,11 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.35",
+    "@fortawesome/fontawesome-svg-core": "6.2.1",
     "@fortawesome/free-solid-svg-icons": "5.15.3",
     "@fortawesome/react-fontawesome": "0.1.14",
     "@material-ui/core": "^4.11.4",
+    "@typeform/embed-react": "^2.5.0",
     "bugsnag-js": "4.7.3",
     "bugsnag-react": "^1.1.1",
     "classnames": "^2.3.1",
@@ -43,10 +44,10 @@
     "sw-precache": "5.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && sw-precache --config=sw-precache-config.js && cp ./build/service-worker2.js ./build/service-worker.js",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build && sw-precache --config=sw-precache-config.js && cp ./build/service-worker2.js ./build/service-worker.js",
     "sw-precache": "sw-precache --config=sw-precache-config.js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
