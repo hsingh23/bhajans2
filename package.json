@@ -36,6 +36,8 @@
     "whatwg-fetch": "3.6.2"
   },
   "devDependencies": {
+    "cypress": "^11.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "react-scripts": "4.0.3",
     "react-snap": "^1.23.0",
     "redux-devtools": "3.7.0",
