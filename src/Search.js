@@ -123,7 +123,7 @@ class Search extends Component {
       ? nextProps.path.includes("/my-favorites")
       : this.props.path.includes("/my-favorites");
 
-    const filteredBhajans = window.searchableBhajans.reduce(
+    const filteredBhajans = window.searchableBhajans?.reduce(
       (memo, searchableBhajan, i) => {
         if (filterFavorites) {
           if (!this.props.favorites[window.fetchedBhajans[i].n]) return memo;
