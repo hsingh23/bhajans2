@@ -77,17 +77,10 @@ function readFiles() {
   // define a function to add data to the 'bhajans' array
   const addSong = (fullSearch, song) => {
     const realBhajan = bhajans[searchableBhajansObject[fullSearch]];
-    realBhajan.cu = realBhajan.cu || [];
-    realBhajan.cs = realBhajan.cs || [];
-    realBhajan.cn = realBhajan.cn || [];
-    realBhajan.cu.push(song.u);
-    realBhajan.cs.push(
-      song.mp3.replace(
-        /https:\/\/content.cdbaby.com\/audio\/samples\/.*?\//,
-        "https://singwithamma.s3.amazonaws.com/samples/"
-      )
-    );
-    realBhajan.cn.push(song.name);
+    realBhajan.cs = realBhajan.cs || []; // sample url
+    realBhajan.cn = realBhajan.cn || []; // song
+    realBhajan.cs.push("https://bhajan-samples.withamma.com" + song.path);
+    realBhajan.cn.push(song.song);
     count += 1;
   };
 
@@ -100,10 +93,10 @@ function readFiles() {
         (song) => {
           // create a searchable version of the song name
           const searchableName = makeSearchable(
-            song.name.replace(/[\[\(].*[\]\)]/gi, "")
+            song.song.replace(/[\[\(].*[\]\)]/gi, "")
           );
           song.sn = searchableName;
-          searchable[song.name] = song;
+          searchable[song.song] = song;
 
           // if the searchable name is found in the searchableBhajansObject object, add the song data to the 'bhajans' array
           if (searchableBhajansObject[searchableName]) {
@@ -133,15 +126,15 @@ function readFiles() {
   // write the 'searchable' object, 'noMatch' array, and 'manyMatches' array to separate JSON files
   fs.writeFileSync(
     path.resolve(__dirname, "../cdbaby.json"),
-    JSON.stringify(searchable)
+    JSON.stringify(searchable, null, 2)
   );
   fs.writeFileSync(
     path.resolve(__dirname, "../noMatch.json"),
-    JSON.stringify(noMatch)
+    JSON.stringify(noMatch, null, 2)
   );
   fs.writeFileSync(
     path.resolve(__dirname, "../manyMatches.json"),
-    JSON.stringify(manyMatches)
+    JSON.stringify(manyMatches, null, 2)
   );
 
   // log the total number of songs in the 'searchable' object, the number of matches, the number of no matches, and the number of many matches
