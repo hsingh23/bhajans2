@@ -1,6 +1,6 @@
 {
   "functions": {
     "source": ".",
-    "runtime": "nodejs14"
+    "runtime": "nodejs16"
   }
 }

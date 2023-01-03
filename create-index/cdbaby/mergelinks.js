@@ -3,8 +3,15 @@ var path = require("path");
 var _ = require("lodash");
 var distance = require("jaro-winkler");
 
-const makeSearchable = (line) =>
-  line
+/**
+ * The makeSearchable function takes a bhajan name and returns a modified version of the name
+ *  with certain characters replaced or removed.
+ * This modified string is intended to be used as a search key for matching with entries in the JSON file.
+ * @param {string} bhajanName
+ * @returns
+ */
+const makeSearchable = (bhajanName) =>
+  bhajanName
     .toLowerCase()
     .replace(/[^A-z0-9]/g, "")
     .replace(/va/g, "v") //bhava ~= bhav
@@ -61,13 +68,15 @@ function writeNewBhajanIndex() {
 }
 
 function readFiles() {
-  count = 0;
-  noMatch = [];
-  manyMatches = [];
-  var total = 0;
-  var searchable = {};
-  function addSong(fullSearch, song) {
-    var realBhajan = bhajans[searchableBhajansObject[fullSearch]];
+  // initialize counters and arrays
+  let count = 0;
+  const noMatch = [];
+  const manyMatches = [];
+  const searchable = {};
+
+  // define a function to add data to the 'bhajans' array
+  const addSong = (fullSearch, song) => {
+    const realBhajan = bhajans[searchableBhajansObject[fullSearch]];
     realBhajan.cu = realBhajan.cu || [];
     realBhajan.cs = realBhajan.cs || [];
     realBhajan.cn = realBhajan.cn || [];
@@ -80,37 +89,48 @@ function readFiles() {
     );
     realBhajan.cn.push(song.name);
     count += 1;
-  }
+  };
+
+  // read all JSON files in the current directory
   fs.readdirSync(path.resolve(__dirname))
     .filter((x) => x.endsWith("json"))
-    .map((f) => {
-      JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).map((song) => {
-        var searchableName = makeSearchable(
-          song.name.replace(/[\[\(].*[\]\)]/gi, "")
-        );
-        // if (searchable[searchableName]) console.log('Exists', searchable[searchableName].name, song.name, searchableName);
-        song.sn = searchableName;
-        searchable[song.name] = song;
-        if (searchableBhajansObject[searchableName]) {
-          addSong(searchableName, song);
-          // console.log(song.name);
-        } else {
-          var matches = searchableBhajans.filter(
-            (b) =>
-              b.startsWith(searchableName) || b.includes(`(${searchableName}`)
+    .forEach((f) => {
+      // parse the JSON data and process each song
+      JSON.parse(fs.readFileSync(path.resolve(__dirname, f))).forEach(
+        (song) => {
+          // create a searchable version of the song name
+          const searchableName = makeSearchable(
+            song.name.replace(/[\[\(].*[\]\)]/gi, "")
           );
-          if (matches.length === 1) {
-            addSong(matches[0], song);
-          } else if (matches.length === 0) {
-            // console.log(song.name);
-            noMatch.push(song);
+          song.sn = searchableName;
+          searchable[song.name] = song;
+
+          // if the searchable name is found in the searchableBhajansObject object, add the song data to the 'bhajans' array
+          if (searchableBhajansObject[searchableName]) {
+            addSong(searchableName, song);
           } else {
-            matches.forEach((fullSearch) => addSong(fullSearch, song));
-            manyMatches.push([song, matches]);
+            // if the searchable name is not found, find matches that start with or contain the searchable name
+            const matches = searchableBhajans.filter(
+              (b) =>
+                b.startsWith(searchableName) || b.includes(`(${searchableName}`)
+            );
+            // if there is one match, add the song data to the 'bhajans' array
+            if (matches.length === 1) {
+              addSong(matches[0], song);
+              // if there are no matches, add the song to the 'noMatch' array
+            } else if (matches.length === 0) {
+              noMatch.push(song);
+              // if there are many matches, add the song data to the 'bhajans' array for each match and add the song and matches to the 'manyMatches' array
+            } else {
+              matches.forEach((fullSearch) => addSong(fullSearch, song));
+              manyMatches.push([song, matches]);
+            }
           }
         }
-      });
+      );
     });
+
+  // write the 'searchable' object, 'noMatch' array, and 'manyMatches' array to separate JSON files
   fs.writeFileSync(
     path.resolve(__dirname, "../cdbaby.json"),
     JSON.stringify(searchable)
@@ -123,15 +143,17 @@ function readFiles() {
     path.resolve(__dirname, "../manyMatches.json"),
     JSON.stringify(manyMatches)
   );
-  // console.log(noMatch.map(x => x.name));
+
+  // log the total number of songs in the 'searchable' object, the number of matches, the number of no matches, and the number of many matches
   console.log(
     `Total Cdbaby: ${
       Object.keys(searchable).length
-    }, Match: ${count}, No Match: ${
-      Object.keys(noMatch).length
-    }, Many Matches: ${Object.keys(manyMatches).length}`
+    }, Match: ${count}, No Match: ${noMatch.length}, Many Matches: ${
+      manyMatches.length
+    }`
   );
 
+  // return the 'searchable' object
   return searchable;
 }
 
