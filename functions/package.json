@@ -9,11 +9,11 @@
   },
   "main": "dist/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.5",
-    "firebase-functions-test": "^0.3.0",
-    "firebase-tools": "^9.13.1",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "firebase-functions-test": "^3.0.0",
+    "firebase-tools": "^11.19.0",
     "xo": "^0.28.0"
   },
   "scripts": {
@@ -26,7 +26,7 @@
     "deploy": "yarn firebase deploy --only functions"
   },
   "engines": {
-    "node": "^10.12.0 || >=12.0.0"
+    "node": ">=16.0.0"
   },
   "xo": {
     "space": true

@@ -6,52 +6,103 @@ const PLANS = [
     value: "oneIndividual10",
     label: "1 Year - $9.99",
     price: 9.99,
-    time: 31536000000
+    time: 31536000000,
   },
   {
     value: "tenIndividual50",
     label: "10 Year - 49.99",
     price: 49.99,
     time: 315360000000,
-    isBest: true
+    isBest: true,
   },
   {
     value: "fiveIndividual40",
     label: "5 Year - $39.99",
     price: 39.99,
-    time: 157680000000
-  }
+    time: 157680000000,
+  },
 ];
 const cors = require("cors")({
-  origin: true
+  origin: true,
 });
-
 
 admin.initializeApp(functions.config().firebase);
 
 // gcloud functions add-iam-policy-binding "getUserByEmail" --member='allUsers'  --role='roles/cloudfunctions.invoker'
-export const getUserByEmail = functions.region('us-central1').https.onCall(async (data, context) => {
-  const rootRef = admin.database().ref();
-  const isAdmin = (await rootRef.child(`/admin/${context.auth.uid}`).once("value")).val() === "1";
-  if (isAdmin) {
-    try {
-      const {uid, email, displayName} = await admin.auth().getUserByEmail(data.email).then(x => x.toJSON());
-      const {paidOn, expiresOn} = (await rootRef.child(`/paid/${uid}`).once("value")).val() || {}
-      return {uid, email, displayName , paidOn, expiresOn}
-    } catch(e) {
-      console.log(context.auth.uid, data.email, e)
+export const getUserByEmail = functions
+  .region("us-central1")
+  .https.onCall(async (data, context) => {
+    const rootRef = admin.database().ref();
+    const isAdmin =
+      (
+        await rootRef.child(`/admin/${context.auth.uid}`).once("value")
+      ).val() === "1";
+    if (isAdmin) {
+      try {
+        const { uid, email, displayName } = await admin
+          .auth()
+          .getUserByEmail(data.email)
+          .then((x) => x.toJSON());
+        const { paidOn, expiresOn } =
+          (await rootRef.child(`/paid/${uid}`).once("value")).val() || {};
+        return { uid, email, displayName, paidOn, expiresOn };
+      } catch (e) {
+        console.log(context.auth.uid, data.email, e);
+      }
     }
-  }
-  return {}
-});
+    return {};
+  });
 
+export const shopify_paid = functions.https.onRequest(async (req, res) => {
+  return cors(req, res, async () => {
+    console.log(req.body);
+    console.log(JSON.parse(req.body));
+    // const { type, email } = JSON.parse(req.body);
+    // console.log("LOGGING ", email);
+    // const user = await admin.auth().getUserByEmail(email)
+    // const plan = PLANS.find(x => x.value === type);
+    // const expiresOn = +new Date(+new Date() + plan.time);
+    // const rootRef = admin.database().ref();
+    // const paidOn = +new Date();
+    // rootRef.child("paid/" + user.uid + "/").set({
+    //   expiresOn,
+    //   gross_total_amount: {
+    //     currency: "USD",
+    //     value: plan.price
+    //   },
+    //   mode: "live",
+    //   manual: true,
+    //   orderID: "admin",
+    //   paidOn,
+    //   payer: {
+    //     payer_id: "admin"
+    //   }
+    // });
+    // rootRef.child("transactions/").push({
+    //   uid: user.uid,
+    //   expiresOn,
+    //   gross_total_amount: {
+    //     currency: "USD",
+    //     value: plan.price
+    //   },
+    //   mode: "live",
+    //   manual: true,
+    //   orderID: "admin",
+    //   paidOn,
+    //   payer: {
+    //     payer_id: "admin"
+    //   }
+    // });
+    res.status(200).send({ message: "done" });
+  });
+});
 
 export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
   return cors(req, res, async () => {
     const { type, email } = JSON.parse(req.body);
     console.log("LOGGING ", email);
-    const user = await admin.auth().getUserByEmail(email)
-    const plan = PLANS.find(x => x.value === type);
+    const user = await admin.auth().getUserByEmail(email);
+    const plan = PLANS.find((x) => x.value === type);
     const expiresOn = +new Date(+new Date() + plan.time);
     const rootRef = admin.database().ref();
     const paidOn = +new Date();
@@ -59,30 +110,30 @@ export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
       expiresOn,
       gross_total_amount: {
         currency: "USD",
-        value: plan.price
+        value: plan.price,
       },
       mode: "live",
       manual: true,
       orderID: "admin",
       paidOn,
       payer: {
-        payer_id: "admin"
-      }
+        payer_id: "admin",
+      },
     });
     rootRef.child("transactions/").push({
       uid: user.uid,
       expiresOn,
       gross_total_amount: {
         currency: "USD",
-        value: plan.price
+        value: plan.price,
       },
       mode: "live",
       manual: true,
       orderID: "admin",
       paidOn,
       payer: {
-        payer_id: "admin"
-      }
+        payer_id: "admin",
+      },
     });
     res.status(200).send({ message: "done" });
   });
@@ -97,7 +148,6 @@ export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
 //     admin.database().ref(``)
 //   });
 // });
-
 
 export const process = functions.https.onRequest(async (req, res) => {
   return cors(req, res, async () => {
@@ -127,7 +177,7 @@ export const process = functions.https.onRequest(async (req, res) => {
       .then(
         ({
           statusCode,
-          result: { status, gross_total_amount, create_time, payer }
+          result: { status, gross_total_amount, create_time, payer },
         }) => {
           console.log(
             "Paypal LOGGING ",
@@ -140,7 +190,7 @@ export const process = functions.https.onRequest(async (req, res) => {
             create_time,
             payer
           );
-          const plan = PLANS.find(x => x.value === type);
+          const plan = PLANS.find((x) => x.value === type);
           console.log(plan, type, PLANS);
 
           if (
@@ -157,7 +207,7 @@ export const process = functions.https.onRequest(async (req, res) => {
               orderID,
               payer,
               gross_total_amount,
-              mode
+              mode,
             });
             rootRef.child("transactions/").push({
               uid,
@@ -166,24 +216,24 @@ export const process = functions.https.onRequest(async (req, res) => {
               orderID,
               payer,
               gross_total_amount,
-              mode
+              mode,
             });
             return res.json({ expiresOn, payer: payer });
           } else {
             return res.status(400).json({
               type: "invalid_request_error",
               message: "Order invalid",
-              extra: { orderID, uid, type, mode }
+              extra: { orderID, uid, type, mode },
             });
           }
         }
       )
-      .catch(error => {
+      .catch((error) => {
         console.error(error, mode, type, orderID, uid);
         return res.status(500).json({
           type: "api_error",
           message: error,
-          extra: { error, orderID, uid, type, mode }
+          extra: { error, orderID, uid, type, mode },
         });
       });
   });
@@ -192,7 +242,7 @@ export const process = functions.https.onRequest(async (req, res) => {
 // This is a Hello World function which writes to the database.
 export const paid = functions.database
   .ref("/paid/{uid}")
-  .onWrite(async event => {
+  .onWrite(async (event) => {
     const { payer, gross_total_amount } = event.after.val();
     if (gross_total_amount) {
       const tokens = {};
@@ -204,13 +254,13 @@ export const paid = functions.database
 
       // For each admin, get tokens
       await Promise.all(
-        admins.map(async uid => {
+        admins.map(async (uid) => {
           const toks = await admin
             .database()
             .ref(`/messages/${uid}/tokens`)
             .once("value");
           const toks2 = Object.keys(toks.val() || {});
-          toks2.forEach(token => {
+          toks2.forEach((token) => {
             tokens[token] = uid;
           });
           return toks2;
@@ -220,15 +270,14 @@ export const paid = functions.database
       const payload = {
         notification: {
           title: `${payer.name.given_name} signed up!`,
-          body: `${payer.name.given_name} ${payer.name
-            .surname} paid ${gross_total_amount.value} - ${payer.email_address}`
-        }
+          body: `${payer.name.given_name} ${payer.name.surname} paid ${gross_total_amount.value} - ${payer.email_address}`,
+        },
       };
       const tokensList = Object.keys(tokens);
       return admin
         .messaging()
         .sendToDevice(tokensList, payload)
-        .then(response => {
+        .then((response) => {
           // For each message check if there was an error.
           const tokensToRemove = [];
           response.results.forEach((result, index) => {
