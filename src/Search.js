@@ -301,7 +301,7 @@ class Search extends Component {
 
             {cdbabyLinks.length > 0 && (
               <div>
-                <strong>CD Baby: </strong>
+                <strong>Song samples: </strong>
 
                 {cdbabyLinks.map(([sample, name]) => (
                   <div>
@@ -315,7 +315,7 @@ class Search extends Component {
                         icon={playing === sample ? "stop" : "play"}
                       />
                     </button>
-                    {" Buy "}
+                    {" Buy on Amazon (if available) "}
                     <a
                       href={`https://www.amazon.com/s?k=${encodeURIComponent(
                         name
@@ -364,13 +364,13 @@ class Search extends Component {
               <Link
                 to='/my-favorites'
                 className='button button-rounded button-raised button-action full'>
-                Only My Favorites
+                Filter to my Favorites
               </Link>
             ) : (
               <Link
                 to='/'
                 className='button full button-rounded button-raised button-primary'>
-                Home
+                Show All Bhajans
               </Link>
             )}
           </nav>
