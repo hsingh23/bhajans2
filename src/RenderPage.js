@@ -106,7 +106,12 @@ class RenderPage extends Component {
       <HotKeys keyMap={map} handlers={handlers} focused='true'>
         <div className='App'>
           <div className='App-header'>
-            <div onClick={history.goBack}>
+            <div
+              onClick={() =>
+                history.length === 1
+                  ? (window.location.href = window.location.origin + "/#/")
+                  : history.goBack()
+              }>
               <img className='favicon' src='favicon.ico' alt='Sing ' />
             </div>
             <div
