@@ -257,7 +257,7 @@ h2 {
   font-size: 26px;
   font-weight: 700;
   padding: 0;
-  margin: 56px 0 -13px -1.883px;
+  /* margin: 56px 0 -13px -1.883px; */
   text-align: left;
   line-height: 34.5px;
   letter-spacing: -0.45px;
@@ -425,7 +425,7 @@ mark,
   max-width: 800px;
 }
 .pay {
-  padding: 50px 20px;
+  padding: 80px 20px;
   display: block;
   margin: 0 auto;
   max-width: 800px;
