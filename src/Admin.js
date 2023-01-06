@@ -117,7 +117,7 @@ Harsh Singh`);
         <div>
           {/* <input type="text" ref={this.input} placeholder="uid" /> */}
           <DebounceInput
-            style={{ minWidth: "800px" }}
+            style={{ minWidth: "min( 95%, 800px )" }}
             minLength={3}
             debounceTimeout={100}
             type='text'

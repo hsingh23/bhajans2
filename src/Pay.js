@@ -1,19 +1,8 @@
 import React, { PureComponent } from "react";
-import { useEffect, useState } from "react";
 
-import { auth, whenUser } from "./firebase";
-// import { PayPalButton } from "react-paypal-button-v2";
-// import Select from "react-select";
-import { alert } from "notie";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PLANS } from "./Plans";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+
 import Button from "@material-ui/core/Button";
 
 class Pay extends PureComponent {
