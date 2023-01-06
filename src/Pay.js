@@ -104,7 +104,7 @@ expiresOn: ${expiresOn}`);
               variant='contained'
               color='primary'
               href={`http://theammashop.com/cart/37277000794276:1?email=${email}`}>
-              5 Years - $50
+              5 Years - $40
             </Button>
             <Button
               variant='contained'
