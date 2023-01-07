@@ -15,9 +15,11 @@ import { Router, Route, Switch } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 import bugsnag from "bugsnag-js";
 import createPlugin from "bugsnag-react";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const bugsnagClient = bugsnag("a8b3dfbca1bb3f896d6e145d8e58db60");
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
+const queryClient = new QueryClient();
 
 var history = createHashHistory();
 history.listen(function (location) {
@@ -30,17 +32,20 @@ history.listen(function (location) {
 // http://bodiddlie.github.io/firebase-auth-with-react-router/
 ReactDOM.render(
   <ErrorBoundary>
-    <Router history={history}>
-      <Switch>
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/logout" component={Logout} />
-        <Route exact path="/pay" component={Pay} />
-        <Route exact path="/beta" component={Beta} />
-        <Route exact path="/admin" component={Admin} />
-        <Route exact path="/faq" component={FAQ} />
-        <Route path="*" component={App} />
-      </Switch>
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <Router history={history}>
+        <Switch>
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/logout' component={Logout} />
+          <Route exact path='/pay' component={Pay} />
+          <Route exact path='/beta' component={Beta} />
+          <Route exact path='/admin' component={Admin} />
+          <Route exact path='/faq' component={FAQ} />
+          <Route path='*' component={App} />
+        </Switch>
+      </Router>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   </ErrorBoundary>,
   document.getElementById("root")
 );
@@ -67,7 +72,8 @@ function doOnce() {
       i[r] ||
       function () {
         (i[r].q = i[r].q || []).push(arguments);
-      }), (i[r].l = 1 * new Date());
+      }),
+      (i[r].l = 1 * new Date());
     (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
     a.async = 1;
     a.src = g;
