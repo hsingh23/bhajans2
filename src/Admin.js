@@ -4,7 +4,7 @@ import { PLANS } from "./Plans";
 
 import { Button, CircularProgress } from "@material-ui/core";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { DebounceInput } from "react-debounce-input";
 import { useQuery } from "@tanstack/react-query";
@@ -28,7 +28,7 @@ const Admin = () => {
   const history = useHistory();
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState(null);
-  const { isFetching, isError, data, error } = useQuery({
+  const { isFetching, data } = useQuery({
     queryKey: ["email", email],
     queryFn: () => getUserByEmail({ email }).then((x) => x.data),
     enabled: email.length > 3 && email.includes("@"),
