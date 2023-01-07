@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { getJson, setJson, PropsRoute } from "./util";
-import { whenUser, setRefOnce, removeRefOnce, checkRefOnce, auth } from "./firebase";
+import {
+  whenUser,
+  setRefOnce,
+  removeRefOnce,
+  checkRefOnce,
+  auth,
+} from "./firebase";
 import { omit, get, orderBy } from "lodash-es";
 
 // import { confirm } from "notie";
@@ -19,7 +25,7 @@ import {
   faInfo,
   faSearch,
   faArrowLeft,
-  faBookOpen
+  faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Pay from "./Pay";
@@ -47,22 +53,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { haveUser } = (function(self) {
+    const { haveUser } = (function (self) {
       return {
-        haveUser: user => {
-          checkRefOnce(`favorites/${user.uid}`).then(favorites => {
+        haveUser: (user) => {
+          checkRefOnce(`favorites/${user.uid}`).then((favorites) => {
             favorites = Object.assign({}, self.state.favorites, favorites);
             self.setState({ favorites });
             setJson("favorites", favorites);
           });
-        }
+        },
       };
     })(this);
 
     window
       .fetch("/bhajan-index2.json")
-      .then(data => data.json())
-      .then(fetchedBhajans => {
+      .then((data) => data.json())
+      .then((fetchedBhajans) => {
         fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
         window.fetchedBhajans = fetchedBhajans;
         this.setState({ bhajans: fetchedBhajans });
@@ -72,7 +78,7 @@ class App extends Component {
     whenUser(10 * 1000).then(haveUser, () => {});
   }
 
-  addFavorite = name => {
+  addFavorite = (name) => {
     // delete this.removeFavorite[name];
     // this.addFavorite[name] = 1;
     const favorites = Object.assign({ [name]: 1 }, this.state.favorites);
@@ -82,7 +88,7 @@ class App extends Component {
     uid && setRefOnce(`favorites/${auth.currentUser.uid}/${name}`, "1");
   };
 
-  removeFavorite = name => {
+  removeFavorite = (name) => {
     // delete this.addFavorite[name];
     // this.removeFavorite[name] = 1;
     const favorites = omit(this.state.favorites, name);
@@ -97,23 +103,26 @@ class App extends Component {
   renderFavorite = (name, activeClassName, inactiveClassName) => {
     return this.state.favorites[name] ? (
       <button
-        className={activeClassName || "button button-3d button-caution button-circle button-jumbo"}
+        className={
+          activeClassName ||
+          "button button-3d button-caution button-circle button-jumbo"
+        }
         onClick={() => this.removeFavorite(name)}
-        alia-label="unlike"
-        role="presentation"
-        tabIndex="-1"
-      >
-        <FontAwesomeIcon icon="heart" color="white" />
+        alia-label='unlike'
+        role='presentation'
+        tabIndex='-1'>
+        <FontAwesomeIcon icon='heart' color='white' />
       </button>
     ) : (
       <button
-        className={inactiveClassName || "button button-3d button-circle button-jumbo"}
+        className={
+          inactiveClassName || "button button-3d button-circle button-jumbo"
+        }
         onClick={() => this.addFavorite(name)}
-        alia-label="like"
-        role="presentation"
-        tabIndex="-1"
-      >
-        <FontAwesomeIcon icon="heart" color="grey" />
+        alia-label='like'
+        role='presentation'
+        tabIndex='-1'>
+        <FontAwesomeIcon icon='heart' color='grey' />
       </button>
     );
   };
@@ -121,15 +130,30 @@ class App extends Component {
   render() {
     const { favorites, bhajans } = this.state;
     const { addFavorite, removeFavorite, renderFavorite } = this;
-    const additionalProps = { favorites, addFavorite, removeFavorite, renderFavorite, bhajans };
+    const additionalProps = {
+      favorites,
+      addFavorite,
+      removeFavorite,
+      renderFavorite,
+      bhajans,
+    };
     return (
       <Switch>
-        <PropsRoute exact path="/" component={Search} {...additionalProps} />
-        <PropsRoute exact path="/pay" component={Pay} />
-        <PropsRoute exact path="/profile" component={Profile} />
-        <PropsRoute exact path="/my-favorites" component={Search} {...additionalProps} />
-        <PropsRoute path="/pdf/:location/:id/:name" component={RenderPage} {...additionalProps} />
-        <Redirect path="*" to="/" />
+        <PropsRoute exact path='/' component={Search} {...additionalProps} />
+        <PropsRoute exact path='/pay' component={Pay} />
+        <PropsRoute exact path='/profile' component={Profile} />
+        <PropsRoute
+          exact
+          path='/my-favorites'
+          component={Search}
+          {...additionalProps}
+        />
+        <PropsRoute
+          path='/pdf/:location/:id/:name'
+          component={RenderPage}
+          {...additionalProps}
+        />
+        <Redirect path='*' to='/' />
       </Switch>
     );
 

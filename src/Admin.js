@@ -7,6 +7,7 @@ import { Button, CircularProgress } from "@material-ui/core";
 import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { DebounceInput } from "react-debounce-input";
+import { useQuery } from "@tanstack/react-query";
 
 const createBody = encodeURIComponent(`Dear Customer
 
@@ -27,20 +28,13 @@ const Admin = () => {
   const history = useHistory();
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState(null);
-  const [user, setUser] = useState({});
-  let getUser = useCallback(async () => {
-    if (email.includes("@")) {
-      try {
-        let user = await getUserByEmail({ email }).then((x) => x.data);
-        setUser(user || {});
-      } catch (error) {}
-    }
-  }, [email]);
-  useEffect(() => {
-    if (email != null && email.includes("@")) {
-      getUser();
-    }
-  }, [email, getUser]);
+  const { isFetching, isError, data, error } = useQuery({
+    queryKey: ["email", email],
+    queryFn: () => getUserByEmail({ email }).then((x) => x.data),
+    enabled: email.length > 3 && email.includes("@"),
+  });
+  const user = data || {};
+
   useEffect(() => {
     async function fetchData() {
       const uid =
@@ -62,9 +56,10 @@ const Admin = () => {
         });
     }
     fetchData();
-  }, [history]);
+  }, []);
+  console.log(user);
   const activateBody = encodeURIComponent(`Dear ${
-    user?.name?.length > 2 ? user.name : "Customer"
+    user?.displayName?.length > 2 ? user.displayName : "Customer"
   },
 
 Thank you for purchasing a subscription to https://sing.withamma.com/#/ Your account is now active and you will have full access to all the bhajans and sheet music.
@@ -81,8 +76,7 @@ Harsh Singh`);
       (x) => x.value === (e.target.name || e.target.parentElement.name)
     );
     console.log(plan, e.target.name || e.target.parentElement.name);
-    await getUser();
-    if (user.uid) {
+    if (user?.uid) {
       try {
         await db.ref(`paid/${user.uid}`).set({
           expiresOn: +new Date() + plan.time,
@@ -98,7 +92,6 @@ Harsh Singh`);
             payer_id: "admin",
           },
         });
-        getUser();
       } catch (e) {}
     }
   };
@@ -114,30 +107,30 @@ Harsh Singh`);
         </nav>
       </div>
       <div className='restPage'>
-        <div>
-          {/* <input type="text" ref={this.input} placeholder="uid" /> */}
+        <div style={{ display: "flex", height: 40 }}>
           <DebounceInput
-            style={{ minWidth: "min( 95%, 800px )" }}
-            minLength={3}
-            debounceTimeout={100}
+            style={{ flex: "1" }}
+            debounceTimeout={400}
             type='text'
             value={email}
             placeholder='email'
             onChange={(e) =>
-              setEmail(e.target.value.trim().replace(/^mailto:/, ""))
+              setEmail(() => e.target.value.trim().replace(/^mailto:/, ""))
             }
           />
-          {PLANS.map((x) => (
-            <Button
-              onClick={setPaid}
-              name={x.value}
-              variant='contained'
-              style={{ display: "block", margin: "10px" }}>
-              {x.label}
-            </Button>
-          ))}
+          {isFetching && <CircularProgress />}
         </div>
-        {user.uid && (
+        {PLANS.map((x) => (
+          <Button
+            key={x.value}
+            onClick={setPaid}
+            name={x.value}
+            variant='contained'
+            style={{ display: "block", margin: "10px" }}>
+            {x.label}
+          </Button>
+        ))}
+        {user?.uid && (
           <div>
             <a
               target='_blank'
@@ -152,7 +145,7 @@ Harsh Singh`);
             <p>expiresOn: {new Date(user.expiresOn).toLocaleDateString()}</p>
           </div>
         )}
-        {email && !user.uid && (
+        {email && !user?.uid && (
           <a
             href={`mailto:${email}?subject=Important: Complete Account Setup to Gain Access to Sing with Amma&body=${createBody}`}
             target='_blank'
