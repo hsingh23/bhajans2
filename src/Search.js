@@ -82,6 +82,8 @@ class Search extends Component {
   audioTag = document.querySelector("#audio");
 
   play = (url) => {
+    console.log(url);
+
     this.audioTag.src = url;
     this.audioTag.play();
     this.setState({ playing: url });
