@@ -176,8 +176,8 @@ class RenderPage extends Component {
               )}
               {this.props.renderFavorite(
                 name,
-                "button button-caution button-circle",
-                "button button-circle"
+                "button button-3d button-caution button-circle",
+                "button button-3d button-circle"
               )}
             </nav>
           </div>
