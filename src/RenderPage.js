@@ -33,7 +33,16 @@ class RenderPage extends Component {
     } else {
       page = "1";
     }
-    this.state = { page: parseInt(page, 10), initialPage: parseInt(page, 10) };
+    if (!document.querySelector("#audio").paused) {
+      this.audioTag.onEnded = this.stop;
+    }
+    this.state = {
+      page: parseInt(page, 10),
+      initialPage: parseInt(page, 10),
+      playing: document.querySelector("#audio").paused
+        ? false
+        : decodeURIComponent(document.querySelector("#audio").src),
+    };
     if (
       isNaN(localStorage.lastOnline) ||
       +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()
@@ -54,12 +63,19 @@ class RenderPage extends Component {
       props.history.push(`/pay`);
     }
   }
+  audioTag = document.querySelector("#audio");
 
   play = (url) => {
     this.audioTag.src = url;
     this.audioTag.play();
+    this.setState({ playing: url });
+    this.audioTag.onEnded = this.stop;
   };
-  audioTag = document.querySelector("#audio");
+
+  stop = () => {
+    this.audioTag.pause();
+    this.setState({ playing: false });
+  };
   onPageComplete = (page) => this.setState({ page });
   onDocumentComplete = (pages) => this.setState({ pages });
   handlePrevious = () =>
@@ -99,9 +115,10 @@ class RenderPage extends Component {
         <span className='pdf-next' onClick={this.handleNext} />
       </span>
     ) : null;
+    const { playing } = this.state;
 
     const handlers = { left: this.handlePrevious, right: this.handleNext };
-
+    console.log(playing, cdbabySampleUrls[0]);
     return (
       <HotKeys keyMap={map} handlers={handlers} focused='true'>
         <div className='App'>
@@ -143,10 +160,17 @@ class RenderPage extends Component {
               )}
               {cdbabySampleUrls && (
                 <button
+                  aria-label='play sample'
                   className='button button-3d button-circle button-action'
-                  onClick={() => this.play(cdbabySampleUrls[0])}>
+                  onClick={() =>
+                    playing === cdbabySampleUrls[0]
+                      ? this.stop()
+                      : this.play(cdbabySampleUrls[0])
+                  }>
                   <span role='img' aria-label='music sample'>
-                    <FontAwesomeIcon icon='play' />
+                    <FontAwesomeIcon
+                      icon={playing === cdbabySampleUrls[0] ? "stop" : "play"}
+                    />
                   </span>
                 </button>
               )}
