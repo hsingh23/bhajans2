@@ -118,7 +118,6 @@ class RenderPage extends Component {
     const { playing } = this.state;
 
     const handlers = { left: this.handlePrevious, right: this.handleNext };
-    console.log(playing, cdbabySampleUrls[0]);
     return (
       <HotKeys keyMap={map} handlers={handlers} focused='true'>
         <div className='App'>
