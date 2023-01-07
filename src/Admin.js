@@ -27,11 +27,11 @@ Harsh Singh`);
 const Admin = () => {
   const history = useHistory();
   const [isAdmin, setIsAdmin] = useState(false);
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState("");
   const { isFetching, data } = useQuery({
     queryKey: ["email", email],
     queryFn: () => getUserByEmail({ email }).then((x) => x.data),
-    enabled: email.length > 3 && email.includes("@"),
+    enabled: !!email && email?.length > 3 && email.includes("@"),
   });
   const user = data || {};
 
@@ -55,7 +55,7 @@ const Admin = () => {
           }
         });
     }
-    fetchData();
+    fetchData(); // eslint-disable-next-line
   }, []);
   console.log(user);
   const activateBody = encodeURIComponent(`Dear ${
@@ -96,9 +96,7 @@ Harsh Singh`);
     }
   };
 
-  return !isAdmin ? (
-    <CircularProgress />
-  ) : (
+  return (
     <div className='App'>
       <div className='App-header'>
         <div className='title'>Amma's Bhajans</div>
