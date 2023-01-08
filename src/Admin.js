@@ -26,7 +26,6 @@ Harsh Singh`);
 
 const Admin = () => {
   const history = useHistory();
-  const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState("");
   const { isFetching, data } = useQuery({
     queryKey: ["email", email],
@@ -49,9 +48,7 @@ const Admin = () => {
         .then(function (snapshot) {
           if (snapshot.val() === null) {
             history.replace(`/login`);
-            setIsAdmin(false);
           } else {
-            setIsAdmin(true);
           }
         });
     }
