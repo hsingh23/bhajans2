@@ -1,6 +1,13 @@
-import * as functions from "firebase-functions";
-import * as admin from "firebase-admin";
-import * as paypal from "paypal-rest-sdk";
+import { newUserResetPasswordEmail } from "./mail";
+
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const crypto = require("crypto");
+
+const amritabooks_secret = functions.config().config.amritabooks_secret;
+const mailjet_auth_header = functions.config().config.mailjet_auth_header;
+const amritabooks_secret_debug = functions.config().config
+  .amritabooks_secret_debug;
 const PLANS = [
   {
     value: "oneIndividual10",
@@ -22,9 +29,25 @@ const PLANS = [
     time: 157680000000,
   },
 ];
+const TIMES = {
+  1: 31536000000,
+  5: 157680000000,
+  10: 315360000000,
+};
 const cors = require("cors")({
   origin: true,
 });
+const generateRandomString = (myLength) => {
+  const chars =
+    "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
+  const randomArray = Array.from(
+    { length: myLength },
+    (v, k) => chars[Math.floor(Math.random() * chars.length)]
+  );
+
+  const randomString = randomArray.join("");
+  return randomString;
+};
 
 admin.initializeApp(functions.config().firebase);
 
@@ -53,48 +76,99 @@ export const getUserByEmail = functions
     return {};
   });
 
-export const shopify_paid = functions.https.onRequest(async (req, res) => {
-  return cors(req, res, async () => {
-    console.log(req.body);
-    console.log(JSON.parse(req.body));
-    // const { type, email } = JSON.parse(req.body);
-    // console.log("LOGGING ", email);
-    // const user = await admin.auth().getUserByEmail(email)
-    // const plan = PLANS.find(x => x.value === type);
-    // const expiresOn = +new Date(+new Date() + plan.time);
-    // const rootRef = admin.database().ref();
-    // const paidOn = +new Date();
-    // rootRef.child("paid/" + user.uid + "/").set({
-    //   expiresOn,
-    //   gross_total_amount: {
-    //     currency: "USD",
-    //     value: plan.price
-    //   },
-    //   mode: "live",
-    //   manual: true,
-    //   orderID: "admin",
-    //   paidOn,
-    //   payer: {
-    //     payer_id: "admin"
-    //   }
-    // });
-    // rootRef.child("transactions/").push({
-    //   uid: user.uid,
-    //   expiresOn,
-    //   gross_total_amount: {
-    //     currency: "USD",
-    //     value: plan.price
-    //   },
-    //   mode: "live",
-    //   manual: true,
-    //   orderID: "admin",
-    //   paidOn,
-    //   payer: {
-    //     payer_id: "admin"
-    //   }
-    // });
-    res.status(200).send({ message: "done" });
-  });
+export const amritabooks = functions.https.onRequest(async (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  if (req.method === "OPTIONS") {
+    // Send response to OPTIONS requests
+    res.set("Access-Control-Allow-Methods", "*");
+    res.set("Access-Control-Allow-Headers", "*");
+    res.set("Access-Control-Max-Age", "7200");
+    return res.status(204).send("");
+  } else {
+    try {
+      const rawBody = req.rawBody.toString();
+      const body = JSON.parse(rawBody);
+      const hash = crypto
+        .createHmac("SHA256", amritabooks_secret)
+        .update(rawBody)
+        .digest("base64");
+      const expected = req.headers["x-wc-webhook-signature"];
+      console.log(hash, expected, hash === expected);
+      if (hash !== expected && amritabooks_secret_debug !== "1") {
+        return res.status(401).send("");
+      }
+      const {
+        status,
+        billing,
+        order_key,
+        needs_payment,
+        date_paid_gmt,
+        line_items,
+      } = body;
+      if (
+        status === "processing" &&
+        needs_payment === false &&
+        !!billing?.email
+      ) {
+        var time = null;
+        line_items.forEach(({ sku, subtotal }) => {
+          if (sku === "SingWithAmma-1year") {
+            time = TIMES[1];
+          }
+        });
+        if (time) {
+          const email = billing.email;
+          const expiresOn = +new Date(+new Date() + time);
+
+          const password = generateRandomString(10);
+          var uid = null;
+          try {
+            const user = await admin.auth().getUserByEmail(email);
+            uid = user.uid;
+          } catch (error) {
+            // user not found, so create, reset password and send welcome email
+            try {
+              const user = await admin.auth().createUser({ email, password });
+              const resetLink = await admin
+                .auth()
+                .generatePasswordResetLink(email);
+              await newUserResetPasswordEmail({
+                email,
+                password,
+                resetLink,
+                validUntil: new Date(expiresOn).toLocaleDateString(),
+                apiKey: mailjet_auth_header,
+              });
+
+              uid = user.uid;
+            } catch (error) {
+              console.log(`unable to create user ${email} ${error}`);
+              return res.send(500);
+            }
+          }
+          const rootRef = admin.database().ref();
+          const paidOn = +new Date();
+          rootRef.child("paid/" + uid + "/").set({
+            expiresOn,
+            // gross_total_amount: {
+            //   currency: "INR",
+            //   value: plan.price,
+            // },
+            mode: "live",
+            manual: false,
+            orderID: order_key,
+            paidOn,
+            payer: {
+              payer_id: email,
+            },
+          });
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  res.status(200).send({ message: "done" });
 });
 
 export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
@@ -149,95 +223,95 @@ export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
 //   });
 // });
 
-export const process = functions.https.onRequest(async (req, res) => {
-  return cors(req, res, async () => {
-    const config = functions.config();
-    const { mode, type, orderID, uid } = JSON.parse(req.body);
-    console.log("LOGGING ", mode, type, orderID, uid);
-    var env = new paypal.core.SandboxEnvironment(
-      "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv",
-      "EIp7U4Y4Z9RU5moIZrOxW_KaXgPCC94x2fMlXmqHOs9Hp7u-kKjpx5iPv8tULuRXZ7RwJBr3rtXGPo0a"
-    );
+// export const process = functions.https.onRequest(async (req, res) => {
+//   return cors(req, res, async () => {
+//     const config = functions.config();
+//     const { mode, type, orderID, uid } = JSON.parse(req.body);
+//     console.log("LOGGING ", mode, type, orderID, uid);
+//     var env = new paypal.core.SandboxEnvironment(
+//       "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv",
+//       "EIp7U4Y4Z9RU5moIZrOxW_KaXgPCC94x2fMlXmqHOs9Hp7u-kKjpx5iPv8tULuRXZ7RwJBr3rtXGPo0a"
+//     );
 
-    if (
-      mode === "live" &&
-      config.paypal &&
-      config.paypal.client_id &&
-      config.paypal.client_secret
-    ) {
-      env = new paypal.core.LiveEnvironment(
-        config.paypal.client_id,
-        config.paypal.client_secret
-      );
-    }
-    let client = new paypal.core.PayPalHttpClient(env);
-    let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
-    client
-      .execute(getOrder)
-      .then(
-        ({
-          statusCode,
-          result: { status, gross_total_amount, create_time, payer },
-        }) => {
-          console.log(
-            "Paypal LOGGING ",
-            mode,
-            type,
-            orderID,
-            uid,
-            status,
-            gross_total_amount,
-            create_time,
-            payer
-          );
-          const plan = PLANS.find((x) => x.value === type);
-          console.log(plan, type, PLANS);
+//     if (
+//       mode === "live" &&
+//       config.paypal &&
+//       config.paypal.client_id &&
+//       config.paypal.client_secret
+//     ) {
+//       env = new paypal.core.LiveEnvironment(
+//         config.paypal.client_id,
+//         config.paypal.client_secret
+//       );
+//     }
+//     let client = new paypal.core.PayPalHttpClient(env);
+//     let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
+//     client
+//       .execute(getOrder)
+//       .then(
+//         ({
+//           statusCode,
+//           result: { status, gross_total_amount, create_time, payer },
+//         }) => {
+//           console.log(
+//             "Paypal LOGGING ",
+//             mode,
+//             type,
+//             orderID,
+//             uid,
+//             status,
+//             gross_total_amount,
+//             create_time,
+//             payer
+//           );
+//           const plan = PLANS.find((x) => x.value === type);
+//           console.log(plan, type, PLANS);
 
-          if (
-            statusCode < 400 &&
-            status === "COMPLETED" &&
-            parseFloat(gross_total_amount.value) === plan.price
-          ) {
-            const expiresOn = +new Date(+new Date(create_time) + plan.time);
-            const rootRef = admin.database().ref();
-            const paidOn = +new Date();
-            rootRef.child("paid/" + uid + "/").set({
-              paidOn,
-              expiresOn,
-              orderID,
-              payer,
-              gross_total_amount,
-              mode,
-            });
-            rootRef.child("transactions/").push({
-              uid,
-              paidOn,
-              expiresOn,
-              orderID,
-              payer,
-              gross_total_amount,
-              mode,
-            });
-            return res.json({ expiresOn, payer: payer });
-          } else {
-            return res.status(400).json({
-              type: "invalid_request_error",
-              message: "Order invalid",
-              extra: { orderID, uid, type, mode },
-            });
-          }
-        }
-      )
-      .catch((error) => {
-        console.error(error, mode, type, orderID, uid);
-        return res.status(500).json({
-          type: "api_error",
-          message: error,
-          extra: { error, orderID, uid, type, mode },
-        });
-      });
-  });
-});
+//           if (
+//             statusCode < 400 &&
+//             status === "COMPLETED" &&
+//             parseFloat(gross_total_amount.value) === plan.price
+//           ) {
+//             const expiresOn = +new Date(+new Date(create_time) + plan.time);
+//             const rootRef = admin.database().ref();
+//             const paidOn = +new Date();
+//             rootRef.child("paid/" + uid + "/").set({
+//               paidOn,
+//               expiresOn,
+//               orderID,
+//               payer,
+//               gross_total_amount,
+//               mode,
+//             });
+//             rootRef.child("transactions/").push({
+//               uid,
+//               paidOn,
+//               expiresOn,
+//               orderID,
+//               payer,
+//               gross_total_amount,
+//               mode,
+//             });
+//             return res.json({ expiresOn, payer: payer });
+//           } else {
+//             return res.status(400).json({
+//               type: "invalid_request_error",
+//               message: "Order invalid",
+//               extra: { orderID, uid, type, mode },
+//             });
+//           }
+//         }
+//       )
+//       .catch((error) => {
+//         console.error(error, mode, type, orderID, uid);
+//         return res.status(500).json({
+//           type: "api_error",
+//           message: error,
+//           extra: { error, orderID, uid, type, mode },
+//         });
+//       });
+//   });
+// });
 
 // This is a Hello World function which writes to the database.
 export const paid = functions.database
