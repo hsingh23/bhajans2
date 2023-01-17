@@ -3,16 +3,16 @@
   "description": "Cloud Functions for Firebase",
   "dependencies": {
     "cors": "^2.8.5",
+    "firebase": "9.15.0",
     "firebase-admin": "~9.9.0",
-    "firebase-functions": "3.14.1",
-    "paypal-rest-sdk": "^2.0.0-rc.2"
+    "firebase-functions": "3.x"
   },
   "main": "dist/index.js",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
-    "firebase-functions-test": "^3.0.0",
+    "firebase-functions-test": "2.x",
     "firebase-tools": "^11.19.0",
     "xo": "^0.28.0"
   },
