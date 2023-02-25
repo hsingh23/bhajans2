@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import "react-virtualized/styles.css";
-import { List, WindowScroller, AutoSizer } from "react-virtualized";
-import Highlighter from "react-highlight-words";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { orderBy, zip } from "lodash-es";
-import classNames from "classnames";
-import { PopupButton } from "@typeform/embed-react";
+import React, { Component } from 'react';
+import 'react-virtualized/styles.css';
+import { List, WindowScroller, AutoSizer } from 'react-virtualized';
+import Highlighter from 'react-highlight-words';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { orderBy, zip } from 'lodash-es';
+import classNames from 'classnames';
+import { PopupButton } from '@typeform/embed-react';
 
 class Search extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Search extends Component {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       this.filterBhajans({
         nextProps,
-        filter: nextProps.path.includes("/my-favorites") ? "" : null,
+        filter: nextProps.path.includes('/my-favorites') ? '' : null,
       });
     }
   }
@@ -51,13 +51,13 @@ class Search extends Component {
       this.filterBhajans();
     } else {
       window
-        .fetch("./bhajan-index2.json")
+        .fetch('./bhajan-index2.json')
         .then((data) => data.json())
         .then((fetchedBhajans) => {
-          fetchedBhajans = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
+          fetchedBhajans = orderBy(fetchedBhajans, ['n', 't'], ['asc', 'asc']);
           window.fetchedBhajans = fetchedBhajans;
           window.searchableBhajans = fetchedBhajans.map((o) =>
-            this.makeSearchable(o.n + o.l.join("") + o.t)
+            this.makeSearchable(o.n + o.l.join('') + o.t)
           );
         })
         .then(() => this.filterBhajans());
@@ -79,7 +79,7 @@ class Search extends Component {
     );
   };
 
-  audioTag = document.querySelector("#audio");
+  audioTag = document.querySelector('#audio');
 
   play = (url) => {
     this.audioTag.src = url;
@@ -96,32 +96,32 @@ class Search extends Component {
   makeSearchable = (line) =>
     line
       .toLowerCase()
-      .replace(/[^A-z0-9]/g, "")
-      .replace(/va/g, "v") //bhava ~= bhav
-      .replace(/h/g, "")
-      .replace(/z/g, "r")
-      .replace(/ri?/g, "ri")
-      .replace(/a+/g, "a")
+      .replace(/[^A-z0-9]/g, '')
+      .replace(/va/g, 'v') //bhava ~= bhav
+      .replace(/h/g, '')
+      .replace(/z/g, 'r')
+      .replace(/ri?/g, 'ri')
+      .replace(/a+/g, 'a')
       // .replace(/ai?/g, "ai")
-      .replace(/ee/g, "i")
-      .replace(/oo|uu/g, "u")
-      .replace(/[kg]il/g, "kgil") // 2
-      .replace(/[cj]al/g, "Cal")
-      .replace(/[vw]/g, "V")
-      .replace(/ny?/g, "ny")
-      .replace(/(t|k|c){2}/g, "$1")
-      .replace(/(g|p|j){2}/g, "$1")
-      .replace(/[ie]*y/g, "Y")
-      .replace(/[tdl]/g, "T");
+      .replace(/ee/g, 'i')
+      .replace(/oo|uu/g, 'u')
+      .replace(/[kg]il/g, 'kgil') // 2
+      .replace(/[cj]al/g, 'Cal')
+      .replace(/[vw]/g, 'V')
+      .replace(/ny?/g, 'ny')
+      .replace(/(t|k|c){2}/g, '$1')
+      .replace(/(g|p|j){2}/g, '$1')
+      .replace(/[ie]*y/g, 'Y')
+      .replace(/[tdl]/g, 'T');
 
   filterBhajans = ({ filter, nextProps } = {}) => {
     // fetchedBhajans is optionally passed - after fetch request
-    filter = (filter !== undefined ? filter : window.searchFilter) || "";
+    filter = (filter !== undefined ? filter : window.searchFilter) || '';
     window.searchFilter = filter;
     const searchableFilter = this.makeSearchable(filter);
     const filterFavorites = nextProps
-      ? nextProps.path.includes("/my-favorites")
-      : this.props.path.includes("/my-favorites");
+      ? nextProps.path.includes('/my-favorites')
+      : this.props.path.includes('/my-favorites');
 
     const filteredBhajans = window.searchableBhajans?.reduce(
       (memo, searchableBhajan, i) => {
@@ -148,12 +148,12 @@ class Search extends Component {
       const {
         sm: sheetmusic,
         n: name,
-        t: tags = "",
+        t: tags = '',
         l: location,
         cs: cdbabySampleUrls,
         cn: cdbabyNames,
       } = window.fetchedBhajans[filteredBhajans[index]];
-      const tag = tags ? ` (${tags})` : "";
+      const tag = tags ? ` (${tags})` : '';
 
       return (
         <div key={key} style={style}>
@@ -164,7 +164,7 @@ class Search extends Component {
                 `${filteredBhajans[index]}/${name}`,
                 <Highlighter
                   className='spaced'
-                  searchWords={filter.split(" ")}
+                  searchWords={filter.split(' ')}
                   textToHighlight={`${name}${tag}`}
                 />
               )}
@@ -217,7 +217,7 @@ class Search extends Component {
                   }>
                   <span role='img' aria-label='music sample'>
                     <FontAwesomeIcon
-                      icon={playing === cdbabySampleUrls[0] ? "stop" : "play"}
+                      icon={playing === cdbabySampleUrls[0] ? 'stop' : 'play'}
                     />
                   </span>
                 </button>
@@ -230,13 +230,13 @@ class Search extends Component {
     };
     if (window.ga && !window.setGAUid && localStorage.uid) {
       window.setGAUid = true;
-      window.ga && window.ga("set", { userId: localStorage.uid });
+      window.ga && window.ga('set', { userId: localStorage.uid });
     }
-    const myFavorites = window.location.hash.includes("/my-favorites");
+    const myFavorites = window.location.hash.includes('/my-favorites');
     const {
       sm: sheetmusic = [],
       n: name,
-      t: tags = "",
+      t: tags = '',
       l: location = [],
       cs: cdbabySampleUrls = [],
       cn: cdbabyNames = [],
@@ -245,7 +245,7 @@ class Search extends Component {
     return (
       <div className='App'>
         <div
-          className={classNames("modal-window", { open: !!infoOpen })}
+          className={classNames('modal-window', { open: !!infoOpen })}
           onClick={(e) => {
             e.stopPropagation();
             this.setState({ infoOpen: false });
@@ -275,9 +275,9 @@ class Search extends Component {
                       pdf,
                       `${infoFilteredIndex}/${name}`,
                       pdf
-                        .replace("voli", "Alternate Volume ")
-                        .replace("vol", "Volume ")
-                        .replace("-", ", page ")
+                        .replace('voli', 'Alternate Volume ')
+                        .replace('vol', 'Volume ')
+                        .replace('-', ', page ')
                     )}
                   </span>
                 ))}
@@ -312,10 +312,10 @@ class Search extends Component {
                         !!playing ? this.stop() : this.play(sample)
                       }>
                       <FontAwesomeIcon
-                        icon={playing === sample ? "stop" : "play"}
+                        icon={playing === sample ? 'stop' : 'play'}
                       />
                     </button>
-                    {" Buy on Amazon (if available) "}
+                    {' Buy on Amazon (if available) '}
                     <a
                       href={`https://www.amazon.com/s?k=${encodeURIComponent(
                         name
@@ -333,13 +333,13 @@ class Search extends Component {
             {tags.length > 0 && (
               <div>
                 <strong>Tags: </strong>
-                <small>{tags.join(", ")}</small>
+                <small>{tags.join(', ')}</small>
               </div>
             )}
           </div>
         </div>
         <div className='App-header'>
-          <Link to={+localStorage.admin ? "/admin" : "/"} className='title'>
+          <Link to={+localStorage.admin ? '/admin' : '/'} className='title'>
             Amma's Bhajans
           </Link>
           <input
@@ -352,7 +352,7 @@ class Search extends Component {
             id='search'
             role='search'
             aria-label='search'
-            value={filter || ""}
+            value={filter || ''}
             onChange={(e) =>
               e && e.target && this.filterBhajans({ filter: e.target.value })
             }
@@ -410,16 +410,16 @@ class Search extends Component {
           </PopupButton>
         </div>
         <div
-          className={classNames("copyRight", {
+          className={classNames('copyRight', {
             hidden: this.state.copyRightHidden,
           })}>
           <img
-            style={{ paddingLeft: "80px", display: "inline-block" }}
+            style={{ paddingLeft: '80px', display: 'inline-block' }}
             src='amma.jpg'
             alt='Copyright: MA Center'
           />
-          <small style={{ position: "absolute", top: "50%" }}>
-            © MA Centers 2019, all rights reserved.
+          <small style={{ position: 'absolute', top: '50%' }}>
+            © MA Centers 2023 & © Amrita Books 2023, all rights reserved.
           </small>
         </div>
       </div>
