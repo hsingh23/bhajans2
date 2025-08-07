@@ -5,7 +5,7 @@ import { PLANS } from "./Plans";
 import { Button, CircularProgress } from "@material-ui/core";
 
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 import { DebounceInput } from "react-debounce-input";
 import { useQuery } from "@tanstack/react-query";
 
@@ -25,7 +25,7 @@ Sincerely,
 Harsh Singh`);
 
 const Admin = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const { isFetching, data } = useQuery({
     queryKey: ["email", email],
@@ -40,14 +40,14 @@ const Admin = () => {
         (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
       if (!uid) {
         console.log("Need to login");
-        history.push(`/login`);
+        navigate(`/login`);
       }
       await db
         .ref(`admin/${uid}`)
         .once("value")
         .then(function (snapshot) {
           if (snapshot.val() === null) {
-            history.replace(`/login`);
+            navigate(`/login`, { replace: true });
           } else {
           }
         });
