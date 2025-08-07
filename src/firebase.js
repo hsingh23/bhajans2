@@ -4,7 +4,7 @@ import "firebase/auth";
 import "firebase/functions";
 import "firebase/messaging";
 // import { alert } from "notie";
-import wrap from "lodash/wrap";
+import { wrap } from "lodash";
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
 
 const {

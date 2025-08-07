@@ -72,6 +72,72 @@ firebase deploy --only database
 3. Local storage fallback for non-authenticated users
 4. Audio samples and PDFs served from public directory
 
+### Component & Data Flow Diagram
+
+```mermaid
+flowchart TB
+  subgraph UI[React UI]
+    A[App.js\nstate: { favorites, bhajans, path }\nloads: bhajan-index2.json]
+    S[Search.js\nstate: { filteredBhajans, playing, infoOpen }\nprops: { favorites, path, renderFavorite }]
+    R[RenderPage.js\nstate: { page, pages, playing }\nprops: { bhajans, match, history, renderFavorite }]
+    AD[Admin.js\nstate: { email }\ndata: useQuery(getUserByEmail)]
+    P[Profile.js]
+    Pay[Pay.js]
+  end
+
+  subgraph Static[Static Content]
+    BI[(public/bhajan-index2.json)]
+    PDFs[(public/pdfs/*.pdf)]
+  end
+
+  subgraph Firebase[Firebase Backend]
+    Auth[(Auth)]
+    RTDB[(Realtime Database)]
+    Msg[(FCM Messaging)]
+    CF[Cloud Functions\nfunctions/src/index.js]
+  end
+
+  BI -->|load + normalize| A
+  A -- window.searchableBhajans --> S
+  A -->|props.bhajans| R
+  S -->|Link /pdf/:location/:id/:name| R
+  R --> PDFs
+
+  A <--->|favorites merge/sync| RTDB
+  A <--> localStorage[(localStorage.favorites)]
+  A -->|auth.currentUser| Auth
+  AD -->|httpsCallable:getUserByEmail| CF
+  AD -->|writes paid/{uid}| RTDB
+  CF -->|onWrite /paid/{uid}| Msg
+  A -->|FCM token save| RTDB
+  Msg -->|notify admins| AdminDevices[(admin devices)]
+```
+
+### Deep Dives
+
+#### functions/src/index.js
+- Callable: `getUserByEmail` (admin-only) returns `{ uid, email, displayName, paidOn, expiresOn }`.
+- HTTPS: `amritabooks` webhook (WooCommerce). Verifies HMAC (`x-wc-webhook-signature`) then:
+  - Finds plan by SKU (e.g., `SingWithAmma-1year`), creates user if needed, sends Mailjet welcome/reset, writes `paid/{uid}` with `expiresOn`/metadata.
+- HTTPS: `manuallyAddUser` CORS endpoint to grant plan by email and log a `transactions` entry.
+- RTDB trigger: `/paid/{uid}` onWrite → aggregates admin device tokens under `messages/{adminUid}/tokens/*` and sends FCM notification with payer details. Removes invalid tokens.
+
+#### src/RenderPage.js
+- State: `{ page, initialPage, pages, playing }`. Derives initial page from route; guards subscription validity via `localStorage.expiresOn/lastOnline` and redirects to `/pay`/`/login`.
+- Props: `{ bhajans, match: { params: { id, location } }, history, renderFavorite }`.
+- Renders PDF via `react-pdf-js` or `<embed>` in presenter mode; left/right key navigation; sample audio play/stop; Amazon link; favorite button via `renderFavorite()`.
+
+#### src/Admin.js
+- State: `{ email }`; React Router `history`.
+- Auth gate: verifies `admin/{uid}` in RTDB.
+- Data: `useQuery(['email', email], getUserByEmail)` returns user with paid status.
+- Actions: Buttons for each plan write `paid/{uid}` with `manual: true`. Provides prefilled `mailto:` links for activation/create-account.
+
+#### Search algorithm (src/Search.js)
+- `makeSearchable(line)`: lowercase → strip non-alphanumerics → normalize (drop `h`, map `z→r`, fold vowels `ee→i`, `oo|uu→u`, collapse repeats, consonant class unifications, etc.).
+- Precomputes `window.searchableBhajans` by applying to `name + locations + tags`.
+- Filters by checking `searchableBhajan.includes(searchableFilter)`; uses `react-virtualized` for list performance.
+
 ### Firebase Services
 - **Authentication**: Email/password and social providers
 - **Realtime Database**: User favorites and metadata
