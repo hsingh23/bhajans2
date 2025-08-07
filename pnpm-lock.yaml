@@ -50,9 +50,15 @@ importers:
       firebaseui:
         specifier: 4.8.0
         version: 4.8.0(firebase@8.6.8)
+      history:
+        specifier: 4.10.1
+        version: 4.10.1
       jaro-winkler:
         specifier: ^0.2.8
         version: 0.2.8
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       lodash-es:
         specifier: 4.17.21
         version: 4.17.21
@@ -9961,7 +9967,11 @@ snapshots:
       jest-runner: 26.6.3
       jest-runtime: 26.6.3
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   '@jest/transform@26.6.2':
     dependencies:
@@ -14184,7 +14194,11 @@ snapshots:
       stack-utils: 2.0.6
       throat: 5.0.0
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   jest-cli@26.6.3:
     dependencies:
