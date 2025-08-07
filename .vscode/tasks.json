@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Deploy Firebase Functions",
+			"type": "shell",
+			"command": "cd functions && npm run build && firebase deploy --only functions",
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
