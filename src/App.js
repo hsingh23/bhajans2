@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getJson, setJson, PropsRoute } from "./util";
+import { getJson, setJson } from "./util";
 import {
   whenUser,
   setRefOnce,
@@ -10,10 +10,12 @@ import {
 import { omit, get, orderBy } from "lodash-es";
 
 // import { confirm } from "notie";
-import { Redirect, Switch } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { RequireAuth } from "./util";
 import Search from "./Search";
 import Profile from "./Profile";
 import RenderPage from "./RenderPage";
+import { withRouterCompat } from "./util";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeart,
@@ -137,24 +139,20 @@ class App extends Component {
       renderFavorite,
       bhajans,
     };
+    const WrappedRenderPage = withRouterCompat(RenderPage);
+    const WrappedSearch = withRouterCompat(Search);
     return (
-      <Switch>
-        <PropsRoute exact path='/' component={Search} {...additionalProps} />
-        <PropsRoute exact path='/pay' component={Pay} />
-        <PropsRoute exact path='/profile' component={Profile} />
-        <PropsRoute
-          exact
-          path='/my-favorites'
-          component={Search}
-          {...additionalProps}
-        />
-        <PropsRoute
+      <Routes>
+        <Route path='/' element={<WrappedSearch path='/' {...additionalProps} />} />
+        <Route path='/pay' element={<Pay />} />
+        <Route path='/profile' element={<RequireAuth><Profile /></RequireAuth>} />
+        <Route path='/my-favorites' element={<WrappedSearch path='/my-favorites' {...additionalProps} />} />
+        <Route
           path='/pdf/:location/:id/:name'
-          component={RenderPage}
-          {...additionalProps}
+          element={<RequireAuth><WrappedRenderPage {...additionalProps} /></RequireAuth>}
         />
-        <Redirect path='*' to='/' />
-      </Switch>
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
     );
 
     // {React.cloneElement(children, { ...rest, ...childrenConfig })}

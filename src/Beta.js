@@ -8,20 +8,22 @@ class Beta extends PureComponent {
     this.state = { optedIn: false };
     this.optIn = this.optIn.bind(this);
   }
-
-  componentWillMount() {
+  componentDidMount() {
     const { history } = this.props;
     if (localStorage.beta === '1') {
-      history.push(getNext());
+      // Use replace to avoid back nav to this splash page
+      history.replace(getNext());
+      return;
     }
     this.interval = setInterval(this.checkBeta, 2000);
 
-    auth.currentUser &&
+    if (auth.currentUser) {
       checkRefOnce(`/confirmBeta/${auth.currentUser.uid}`).then(optedIn => {
         if (optedIn) {
           this.setState({ optedIn });
         }
       });
+    }
   }
   componentWillUnmount() {
     clearInterval(this.interval);

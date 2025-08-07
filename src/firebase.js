@@ -170,23 +170,30 @@ const {
       console.error(error);
     }
   }
-  if (messaging) {
-    getMessageID();
-    messaging.onTokenRefresh(async function () {
-      await whenUser(null);
-      await db
-        .ref(
-          `messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`
-        )
-        .remove();
-      delete localStorage.currentToken;
+  if (
+    messaging &&
+    typeof navigator !== "undefined" &&
+    "serviceWorker" in navigator &&
+    process.env.NODE_ENV === "production"
+  ) {
+    navigator.serviceWorker.ready.then(() => {
       getMessageID();
-    });
+      messaging.onTokenRefresh(async function () {
+        await whenUser(null);
+        await db
+          .ref(
+            `messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`
+          )
+          .remove();
+        delete localStorage.currentToken;
+        getMessageID();
+      });
 
-    messaging.onMessage((payload) => {
-      alert({ text: payload.notification.body });
+      messaging.onMessage((payload) => {
+        alert({ text: payload.notification.body });
+      });
+      window.messaging = messaging;
     });
-    window.messaging = messaging;
   }
 
   window.firebase = firebase;

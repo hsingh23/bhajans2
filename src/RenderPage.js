@@ -43,24 +43,27 @@ class RenderPage extends Component {
         ? false
         : decodeURIComponent(document.querySelector("#audio").src),
     };
+  }
+  componentDidMount() {
+    const { history } = this.props;
     if (
       isNaN(localStorage.lastOnline) ||
       +localStorage.lastOnline + THREE_MONTHS_MS < +new Date()
     ) {
       alert({
-        text: "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates.",
+        text:
+          "You haven't been online for 3 months, so offline storage is disabled. Please go online to get latest updates.",
       });
       removeServiceWorkers();
-      props.history.push(`/login`);
-    } else if (
-      isNaN(localStorage.expiresOn) ||
-      +localStorage.expiresOn < +new Date()
-    ) {
+      history.replace(`/login`);
+      return;
+    }
+    if (isNaN(localStorage.expiresOn) || +localStorage.expiresOn < +new Date()) {
       alert({
         text: "Your subscription has expired. Please pay for a new subscription",
       });
       removeServiceWorkers();
-      props.history.push(`/pay`);
+      history.replace(`/pay`);
     }
   }
   audioTag = document.querySelector("#audio");

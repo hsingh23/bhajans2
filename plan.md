@@ -1,0 +1,150 @@
+# Modernization and Refactor Plan — Sing With Amma
+
+Last updated: 2025-08-07 (local)
+
+## Objectives
+- Incrementally modernize the app with small, low-risk PRs.
+- Improve build speed, bundle size, DX, and long-term maintainability.
+- Preserve existing behavior (search, favorites sync, PDF viewing, admin flows, payments webhook).
+
+## Current Stack (baseline)
+- React 17, React Router v5 (hash-based)
+- Firebase SDK v8 (frontend), Firebase Functions v9 (backend)
+- CRA 4 + sw-precache + react-snap
+- UI: Material-UI v4, react-virtualized, recompose
+- Error/analytics: Bugsnag (legacy), GA/Tag Manager
+ - Node: v22.16.0 (local dev)
+
+## Phased Plan
+
+### Execution Log
+- 2025-08-07: Phase 1 (Router v6) code changes implemented:
+  - Replaced v5 `Router/Switch` with `HashRouter/Routes` in `src/index.js`.
+  - Added GA tracking via `hashchange` listener.
+  - Updated `src/App.js` to `Routes/Route/Navigate`; wrapped `Search` and `RenderPage` with a v6 compatibility HOC to supply `match/history/location`.
+  - Migrated `src/Admin.js` to `useNavigate`.
+  - Added `RequireAuth` and `RequireAdmin` route guards and applied to `/profile` and `/admin`.
+  - Added `withRouterCompat` in `src/util.js`.
+  - Next: install `react-router-dom@^6` and verify build/runtime.
+
+- 2025-08-07: Phase 1 follow-up (guards + warnings cleanup):
+  - Wrapped `Login`, `Logout`, and `Beta` with `withRouterCompat` for v6 history/location.
+  - Moved redirects out of constructors/`componentWillMount` to `componentDidMount` (RenderPage, Logout, Beta) to avoid navigate-during-render warnings.
+  - Deferred `history.push/replace` in `withRouterCompat` to microtask to align with React Router v6 guidance.
+  - Wrapped `/pdf/:location/:id/:name` route with `RequireAuth`.
+  - Gated analytics/UserReport to production only; guarded Firebase Messaging to production + active SW to avoid `PushManager` errors in dev.
+  - Built successfully and launched dev server for manual QA.
+
+Verification checklist for Phase 1:
+- [x] Install dependency: `pnpm add react-router-dom@^6`
+- [x] Build succeeds: `pnpm build`
+- [ ] Manual QA routes: `/`, `/login`, `/logout`, `/pay`, `/admin`, `/faq`, `/pdf/:location/:id/:name`, `/my-favorites`, `/profile`
+- [ ] Protected routes redirect to `/login` when logged out: `/profile`
+- [ ] Admin route blocked for non-admin users: `/admin`
+- [ ] Navigate back button works in `RenderPage` (history.goBack)
+- [ ] Search favorites filter works
+- [x] Dev console clean of navigate-during-render warnings
+- [x] No PushManager/service worker errors in dev (messaging gated to prod)
+
+Next up after QA sign-off: Phase 2 — Firebase v9 modular migration.
+
+### Phase 0 — Prep & Hygiene
+- Using Node v22.16.0 locally; keep CRA OpenSSL legacy flag for compatibility. No engine change required now.
+- Add automated checks: prettier + eslint (keep minimal rules compatible with CRA/Vite migration).
+- Audit and note deprecated libs:
+  - Bugsnag -> @bugsnag/js + @bugsnag/plugin-react
+  - react-pdf-js: keep current for now; revisit in Phase 5 (optional) or when moving to Vite
+  - recompose -> remove (use React.memo/useCallback/useMemo)
+  - react-virtualized -> consider react-window (later)
+- Acceptance: CI/build passes; no runtime behavior change.
+
+### Phase 0b — Bun adoption (frontend only)
+- Install Bun on macOS: `brew install oven-sh/bun/bun` (or follow https://bun.sh)
+- Use Bun to run existing scripts: `bun run start`, `bun run build`, `bun run test`
+- Ensure OpenSSL legacy flag carries through in build: keep `--openssl-legacy-provider` in scripts
+- Verify `bun run build` produces identical output as `pnpm run build`
+- Note: Firebase Functions continue to use Node runtime; do not run functions on Bun
+
+### Phase 1 — React Router v6
+- Install `react-router-dom@^6`.
+- Migrate routes in `src/index.js` and `src/App.js`:
+  - `Switch -> Routes`, `component -> element`, `render -> element`.
+  - Replace direct `history` usage with `useNavigate`, `useLocation`.
+  - Keep `HashRouter` to avoid Firebase Hosting path rewrites.
+- QA routes: `/`, `/login`, `/logout`, `/pay`, `/admin`, `/faq`, `/pdf/:location/:id/:name`, `/my-favorites`, `/profile`.
+- Acceptance: All routes function, no regressions.
+
+### Phase 2 — Firebase v9 Modular (frontend)
+- Refactor `src/firebase.js`:
+  - `initializeApp`, `getAuth`, `getDatabase`, `ref/get/set/remove`, `goOnline/goOffline` from modular SDK.
+  - Update helpers: `checkRefOnce`, `setRefOnce`, `removeRefOnce`, `whenUser`.
+  - Messaging: `getMessaging`, `getToken`, `onMessage` (HTTPS requirement noted; gate in dev).
+- Keep Cloud Functions backend as-is (already v9) and callable interface stable.
+- Acceptance: Auth works, favorites syncs, FCM token save path unchanged, Admin page callable works.
+
+### Phase 3 — Service Worker & Offline
+- Replace `sw-precache` with Workbox (or move directly to Vite PWA in Phase 4).
+- Define caching:
+  - Precache: core shell, index, static assets, index JSON.
+  - Runtime: PDFs (`/pdfs/*.pdf`) with a cache-first strategy + versioning.
+- Remove `react-snap` if not needed; consider later SSG.
+- Acceptance: Offline behavior unchanged or better; no stale-login issues with `RenderPage` checks.
+
+### Phase 4 — Move to Vite
+- Add: `vite`, `@vitejs/plugin-react-swc`, optional `vite-plugin-svgr`, `vite-plugin-pwa`.
+- Scripts: `start -> vite`, `build -> vite build`, `preview -> vite preview`.
+- Optional: use Bun to run Vite scripts for faster dev start: `bun run dev`, `bun run build`
+- Convert CRA configs to Vite equivalents; likely remove `.babelrc` and `config-overrides.js`.
+- Verify `public/` assets behavior and environment variables.
+- Acceptance: Dev start and prod build work; Firebase Hosting serves Vite build.
+
+### Phase 5 — React 19 + React Compiler
+- Upgrade to React 19 (react + react-dom).
+- Enable React Compiler (via Vite plugin when stable).
+- Library updates:
+  - Bugsnag -> @bugsnag/js + plugin-react
+  - MUI v4 -> MUI v5 (install emotion; update imports/components)
+  - Replace `recompose` usages with hooks/memoization
+  - Consider migrating `react-virtualized` -> `react-window`
+  - Replace `react-pdf-js` -> modern alternative
+- Acceptance: App compiles clean; critical flows tested.
+
+### Phase 6 — Cleanup & Tests
+- Update Cypress config; add minimal unit tests (Vitest or Jest) for core helpers (search normalization, favorites merge).
+- Add preview deployments via Firebase Hosting channels for QA.
+- Acceptance: CI green; happy-path E2E passes.
+
+## Reference Commands
+- Router v6: `pnpm add react-router-dom@^6`
+- Firebase v9 modular: `pnpm add firebase@^10`
+- Workbox (CRA path): `pnpm add workbox-build workbox-window`
+- Vite: `pnpm add -D vite @vitejs/plugin-react-swc`
+- Optional Vite plugins: `pnpm add -D vite-plugin-svgr vite-plugin-pwa`
+- React 19: `pnpm add react@^19 react-dom@^19`
+- Bugsnag (new): `pnpm add @bugsnag/js @bugsnag/plugin-react`
+ - Bun install (macOS): `brew install oven-sh/bun/bun`
+ - Verify Bun: `bun --version`
+ - Use Bun with current scripts: `bun run start`, `bun run build`
+
+## Risks & Mitigations
+- Router v6: history API differences → audit navigation; prefer `useNavigate`.
+- Firebase modular: tree-shaking changes; ensure all imports are from modular packages.
+- SW changes: cache invalidation/regressions → versioned precache + runtime cache limits.
+- React 19: 3P libs compatibility → plan upgrades (MUI, pdf viewer, virtualization).
+
+## Rollback Strategy
+- Small PRs per phase; revertible without affecting others.
+- Keep feature flags when switching SW or Router to toggle if needed.
+
+## QA Plan
+- Smoke tests: search, favorites add/remove (anon + authed), PDF open, Admin grant plan, webhook happy-path (staging), FCM token save.
+- Cross-browser: Chrome, Safari (desktop + iOS for PDF/Audio).
+- Performance spot-check: bundle size, dev start time (expect Vite win).
+
+## Suggested PR Breakdown
+1) Router v6 migration
+2) Firebase v9 modular refactor
+3) SW migration to Workbox (or paired with Vite PWA)
+4) Vite adoption
+5) React 19 + library upgrades (Bugsnag, PDF viewer, remove recompose, consider react-window)
+6) QA + tests

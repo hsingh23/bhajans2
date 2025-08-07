@@ -10,8 +10,8 @@ import Pay from "./Pay";
 import FAQ from "./FAQ";
 import Beta from "./Beta";
 import App from "./App";
-import { createHashHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import { withRouterCompat, RequireAdmin } from "./util";
 import registerServiceWorker from "./registerServiceWorker";
 import bugsnag from "bugsnag-js";
 import createPlugin from "bugsnag-react";
@@ -20,11 +20,14 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const bugsnagClient = bugsnag("a8b3dfbca1bb3f896d6e145d8e58db60");
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 const queryClient = new QueryClient();
+const WrappedLogin = withRouterCompat(Login);
+const WrappedLogout = withRouterCompat(Logout);
+const WrappedBeta = withRouterCompat(Beta);
 
-var history = createHashHistory();
-history.listen(function (location) {
-  console.log(location);
-  window.ga && window.ga("send", "pageview", location.pathname);
+// Track page views on hash changes (replacement for history.listen)
+window.addEventListener("hashchange", () => {
+  const path = window.location.hash.replace(/^#/, "") || "/";
+  window.ga && window.ga("send", "pageview", path);
 });
 
 // auto logout user if +localstorage.updated
@@ -33,17 +36,17 @@ history.listen(function (location) {
 ReactDOM.render(
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
-      <Router history={history}>
-        <Switch>
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/logout' component={Logout} />
-          <Route exact path='/pay' component={Pay} />
-          <Route exact path='/beta' component={Beta} />
-          <Route exact path='/admin' component={Admin} />
-          <Route exact path='/faq' component={FAQ} />
-          <Route path='*' component={App} />
-        </Switch>
-      </Router>
+      <HashRouter>
+        <Routes>
+          <Route path='/login' element={<WrappedLogin />} />
+          <Route path='/logout' element={<WrappedLogout />} />
+          <Route path='/pay' element={<Pay />} />
+          <Route path='/beta' element={<WrappedBeta />} />
+          <Route path='/admin' element={<RequireAdmin><Admin /></RequireAdmin>} />
+          <Route path='/faq' element={<FAQ />} />
+          <Route path='*' element={<App />} />
+        </Routes>
+      </HashRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>
   </ErrorBoundary>,
@@ -93,7 +96,9 @@ function doOnce() {
     window.ga("set", { userId: localStorage.uid });
   }
 }
-setTimeout(doOnce, 5 * 1000);
+if (process.env.NODE_ENV === "production") {
+  setTimeout(doOnce, 5 * 1000);
+}
 
 // Get a wake lock if possible
 let wakeLock = null;
