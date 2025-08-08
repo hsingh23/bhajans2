@@ -150,7 +150,7 @@ flowchart TB
 ### Firebase Services
 
 - **Authentication**: Email/password and social providers
-- **Realtime Database**: User favorites and metadata
+- **Realtime Database**: User favorites and metadata (migrated to Firebase v9 modular API)
 - **Functions**: Backend services in `functions/src/`
 - **Hosting**: Static site deployment to Firebase Hosting
 
@@ -203,6 +203,11 @@ Note: Legacy v5 props (`match`, `history`, `location`) are provided to class com
   - `src/Admin.js` migrated to `useNavigate`.
   - Pending: install `react-router-dom@^6` and verify build.
 
+- Phase 2 (Firebase v9 modular) completed:
+  - `src/firebase.js` refactored to use `initializeApp`, `getAuth`, `getDatabase`, `ref/get/set/remove`, and `httpsCallable`.
+  - Added `isSupported()` guard and production-only + service worker checks for FCM messaging.
+  - Export surface preserved for existing imports; a minimal `firebase` shim is exposed for local debugging.
+
 ### Search Algorithm (tolerant matching)
 
 Implemented in `src/Search.js > makeSearchable()`:
@@ -220,9 +225,10 @@ Implemented in `src/Search.js > makeSearchable()`:
 
 ### Notifications (FCM)
 
-- `src/firebase.js` requests notification permission (if supported)
-- Stores FCM tokens under `messages/{uid}/tokens/{token} = 1` with user metadata
-- Handles token refresh and foreground messages
+- Frontend migrated to Firebase v9 modular APIs in `src/firebase.js`.
+- Messaging is guarded to production and requires an active Service Worker; dev environment skips messaging to avoid PushManager errors.
+- On first run, requests notification permission (if supported), and stores tokens under `messages/{uid}/tokens/{token} = 1` with user metadata.
+- Foreground messages handled via `onMessage`. Token refresh setup is handled at login/init time.
 
 ### Analytics and Error Monitoring
 

@@ -1,10 +1,17 @@
-import firebase from "firebase/app";
-import "firebase/database";
-import "firebase/auth";
-import "firebase/functions";
-import "firebase/messaging";
+import { initializeApp } from "firebase/app";
+import {
+  getDatabase,
+  ref,
+  get,
+  set,
+  remove,
+  goOnline as dbGoOnline,
+  goOffline as dbGoOffline,
+} from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFunctions, httpsCallable } from "firebase/functions";
+import { getMessaging, getToken, onMessage, isSupported } from "firebase/messaging";
 // import { alert } from "notie";
-import { wrap } from "lodash";
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
 
 const {
@@ -19,8 +26,9 @@ const {
   goOffline,
   goOnline,
   getUserByEmail,
+  firebaseShim,
 } = (() => {
-  var config = {
+  const config = {
     apiKey: "AIzaSyB9MVmCPLBachZm1Yfc3r1IaguL6Ps2NdM",
     authDomain: "bhajans-588f5.firebaseapp.com",
     databaseURL: "https://bhajans-588f5.firebaseio.com",
@@ -32,47 +40,37 @@ const {
 
   const doNothing = () => {};
 
-  //the root app just in case we need it
-  const firebaseApp = firebase.initializeApp(config);
-  const db = firebaseApp.database(); //the real-time database
+  // Initialize Firebase (modular)
+  const firebaseApp = initializeApp(config);
+  const db = getDatabase(firebaseApp); // Realtime Database
   var history = [];
   window.dbHistory = history;
   var startTime = +new Date();
-  const initialWait = true;
+  let initialWait = true;
   // don't worry about going online and offline right now
   const goOffline = () => {
     // history.push(["off", +new Date() - startTime]);
-    // !initialWait && db.goOffline();
+    // !initialWait && dbGoOffline(db);
     // console.log("off", history);
   };
 
   const goOnline = () => {
     // history.push(["on", +new Date() - startTime]);
-    // !initialWait && db.goOnline();
+    // !initialWait && dbGoOnline(db);
     // console.log("on", history);
   };
 
-  !window.localStorage.admin &&
-    setTimeout(
-      wrap(
-        { initialWait, goOffline, startTime, history },
-        ({ initialWait, goOffline, startTime, history }) => {
-          initialWait = false;
-          history.push(["initialWaitOver", +new Date() - startTime]);
-          !window.localStorage.admin && goOffline();
-        }
-      ),
-      15 * 1000
-    );
-
-  const auth = firebase.auth(); //the firebase auth namespace
-  var messaging = null;
-  try {
-    messaging = firebase.messaging();
-  } catch (e) {
-    console.error(e);
+  if (!window.localStorage.admin) {
+    setTimeout(() => {
+      initialWait = false;
+      history.push(["initialWaitOver", +new Date() - startTime]);
+      if (!window.localStorage.admin) goOffline();
+    }, 15 * 1000);
   }
-  if (window.location.host.includes("localhost")) window.firebase = firebase;
+
+  const auth = getAuth(firebaseApp);
+  let messaging = null;
+  // window.firebase shim defined later for dev debugging
 
   // const doOnce = async function(firebasePromiseCallback) {
   //   return new Promise(async function(resolve, reject) {
@@ -82,32 +80,30 @@ const {
   //   });
   // };
 
-  const checkRefOnce = (ref) => {
+  const checkRefOnce = (refPath) => {
     return new Promise(function (resolve, reject) {
       goOnline();
-      db.ref(ref)
-        .once("value")
-        .then(function (snapshot) {
-          goOffline();
-          resolve(snapshot.val());
-        });
+      get(ref(db, refPath)).then(function (snapshot) {
+        goOffline();
+        resolve(snapshot.val());
+      });
     });
   };
 
-  const setRefOnce = (ref, value) => {
+  const setRefOnce = (refPath, value) => {
     return new Promise((resolve) => {
       goOnline();
-      db.ref(ref).set(value, () => {
+      set(ref(db, refPath), value).then(() => {
         goOffline();
         resolve();
       });
     });
   };
 
-  const removeRefOnce = (ref, value) => {
+  const removeRefOnce = (refPath) => {
     return new Promise((resolve) => {
       goOnline();
-      db.ref(ref).remove(() => {
+      remove(ref(db, refPath)).then(() => {
         goOffline();
         resolve();
       });
@@ -118,8 +114,9 @@ const {
     // TODO: find out if db needs to be online to get user
     if (auth.currentUser) return Promise.resolve(auth.currentUser);
     return new Promise((resolve, reject) => {
-      auth.onAuthStateChanged((user) => {
+      const unsub = onAuthStateChanged(auth, (user) => {
         if (user) {
+          unsub && unsub();
           resolve(user);
         }
       });
@@ -149,16 +146,17 @@ const {
     //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
     // }
     try {
-      await messaging.requestPermission();
-      const token = await messaging.getToken().then((token) => {
-        return token;
-      });
+      if (!messaging) return;
+      if (typeof Notification !== "undefined") {
+        await Notification.requestPermission();
+      }
+      const token = await getToken(messaging).then((t) => t);
       if (token) {
         await whenUser(null);
-        const userMessagesRef = db.ref(`messages/${auth.currentUser.uid}`);
-        const snap = await userMessagesRef.once("value");
+        const userMessagesRef = ref(db, `messages/${auth.currentUser.uid}`);
+        const snap = await get(userMessagesRef);
         if (!snap.val() || !snap.val().tokens) {
-          await userMessagesRef.set({
+          await set(userMessagesRef, {
             displayName: auth.currentUser.displayName,
             email: auth.currentUser.email,
             tokens: { [token]: 1 },
@@ -170,36 +168,43 @@ const {
       console.error(error);
     }
   }
+  // Initialize messaging only in production with active service worker and browser support
   if (
-    messaging &&
     typeof navigator !== "undefined" &&
     "serviceWorker" in navigator &&
     process.env.NODE_ENV === "production"
   ) {
-    navigator.serviceWorker.ready.then(() => {
-      getMessageID();
-      messaging.onTokenRefresh(async function () {
-        await whenUser(null);
-        await db
-          .ref(
-            `messages/${auth.currentUser.uid}/tokens/${localStorage.currentToken}`
-          )
-          .remove();
-        delete localStorage.currentToken;
-        getMessageID();
-      });
-
-      messaging.onMessage((payload) => {
-        alert({ text: payload.notification.body });
-      });
-      window.messaging = messaging;
-    });
+    isSupported()
+      .then((supported) => {
+        if (!supported) return;
+        messaging = getMessaging(firebaseApp);
+        navigator.serviceWorker.ready.then(() => {
+          getMessageID();
+          onMessage(messaging, (payload) => {
+            if (payload && payload.notification && payload.notification.body) {
+              if (typeof window !== "undefined" && window.alert) {
+                window.alert(payload.notification.body);
+              }
+            }
+          });
+          window.messaging = messaging;
+        });
+      })
+      .catch(() => {});
   }
+  // functions
+  const functions = getFunctions(firebaseApp, "us-central1");
+  const getUserByEmail = httpsCallable(functions, "getUserByEmail");
 
-  window.firebase = firebase;
-  const getUserByEmail = firebaseApp
-    .functions("us-central1")
-    .httpsCallable("getUserByEmail");
+  // Minimal shim for dev debugging (kept for compatibility)
+  const firebaseShim = {
+    app: firebaseApp,
+    auth,
+    db,
+  };
+  if (typeof window !== "undefined" && window.location.host.includes("localhost")) {
+    window.firebase = firebaseShim;
+  }
 
   return {
     firebaseApp,
@@ -213,6 +218,7 @@ const {
     goOnline,
     goOffline,
     getUserByEmail,
+    firebaseShim,
   };
 })();
 
@@ -224,7 +230,7 @@ export {
   whenUser,
   removeRefOnce,
   auth,
-  firebase,
+  firebaseShim as firebase,
   messaging,
   goOffline,
   goOnline,
