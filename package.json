@@ -15,8 +15,8 @@
     "classnames": "^2.3.1",
     "core-js": "3.15.0",
     "create-react-class": "15.7.0",
-    "firebase": "8.6.8",
-    "firebaseui": "4.8.0",
+    "firebase": "^10",
+    "firebaseui": "^6",
     "history": "4.10.1",
     "jaro-winkler": "^0.2.8",
     "lodash": "4.17.21",
@@ -47,12 +47,11 @@
     "redux-devtools": "3.7.0",
     "redux-devtools-dock-monitor": "1.2.0",
     "redux-devtools-log-monitor": "2.1.0",
-    "sw-precache": "5.2.1"
+    "workbox-build": "^7.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build && sw-precache --config=sw-precache-config.js && cp ./build/service-worker2.js ./build/service-worker.js",
-    "sw-precache": "sw-precache --config=sw-precache-config.js",
+    "build": "react-scripts --openssl-legacy-provider build && node scripts/generate-sw.js && cp ./build/service-worker2.js ./build/service-worker.js",
     "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"

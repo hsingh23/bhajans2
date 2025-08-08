@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { auth, checkRefOnce, firebase } from "./firebase";
+import { auth, checkRefOnce } from "./firebase";
 import * as firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
 import { getNext } from "./util";
@@ -47,7 +47,7 @@ class Login extends Component {
         signInSuccess: this.signedIn
       },
       credentialHelper: firebaseui.auth.CredentialHelper.NONE,
-      signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID]
+      signInOptions: [firebaseui.auth.EmailAuthProvider.PROVIDER_ID]
     };
 
     authUi.reset();
