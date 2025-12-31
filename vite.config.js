@@ -37,7 +37,9 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,json,woff,woff2,ttf}"],
+        globPatterns: [
+          "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,pdf,json,woff,woff2,ttf}",
+        ],
         runtimeCaching: [
           {
             urlPattern: /\/pdfs\/.*\.(pdf|PDF)$/,
