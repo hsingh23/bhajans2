@@ -1,77 +1,80 @@
 {
   "name": "bhajans",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "6.2.1",
-    "@fortawesome/free-solid-svg-icons": "5.15.3",
-    "@fortawesome/react-fontawesome": "0.1.14",
-    "@material-ui/core": "^4.11.4",
-    "@tanstack/react-query": "^4.20.9",
-    "@tanstack/react-query-devtools": "^4.20.9",
-    "@typeform/embed-react": "^2.5.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fortawesome/fontawesome-svg-core": "7.1.0",
+    "@fortawesome/free-solid-svg-icons": "7.1.0",
+    "@fortawesome/react-fontawesome": "3.1.1",
+    "@lottiefiles/dotlottie-react": "^0.17.12",
+    "@mui/icons-material": "^7.3.6",
+    "@mui/material": "^7.3.6",
+    "@tanstack/react-query": "^5.90.16",
+    "@tanstack/react-query-devtools": "^5.91.2",
+    "@typeform/embed-react": "^4.11.0",
     "bugsnag-js": "4.7.3",
-    "bugsnag-react": "^1.1.1",
-    "classnames": "^2.3.1",
-    "core-js": "3.15.0",
-    "create-react-class": "15.7.0",
-    "firebase": "^10",
-    "firebaseui": "^6",
-    "history": "4.10.1",
-    "jaro-winkler": "^0.2.8",
-    "lodash": "4.17.21",
-    "lodash-es": "4.17.21",
-    "notie": "^4.3.1",
-    "prop-types": "15.7.2",
-    "react": "17.0.1",
-    "react-debounce-input": "^3.2.3",
-    "react-dom": "17.0.1",
-    "react-ga": "3.3.0",
-    "react-highlight-words": "0.17.0",
+    "classnames": "^2.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "firebase": "^12.7.0",
+    "firebaseui": "^6.1.0",
+    "globals": "^16.5.0",
+    "lodash-es": "4.17.22",
+    "react": "^19.2.3",
+    "react-debounce-input": "^3.3.0",
+    "react-dom": "^19.2.3",
+    "react-ga": "3.3.1",
+    "react-highlight-words": "0.21.0",
     "react-hotkeys": "2.0.0",
-    "react-modal": "3.12.1",
-    "react-paypal-button-v2": "2.6.3",
-    "react-pdf-js": "1",
-    "react-router-dom": "^6",
-    "react-select": "^4.3.1",
-    "react-virtualized": "9.22.3",
-    "reactstrap": "8.9.0",
-    "recompose": "0.30.0",
-    "whatwg-fetch": "3.6.2"
+    "react-pdf-js": "^5.1.0",
+    "react-router-dom": "^7.11.0",
+    "react-virtualized": "9.22.6"
   },
   "devDependencies": {
-    "cypress": "^11.2.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "react-scripts": "4.0.3",
-    "react-snap": "^1.23.0",
-    "redux-devtools": "3.7.0",
-    "redux-devtools-dock-monitor": "1.2.0",
-    "redux-devtools-log-monitor": "2.1.0",
-    "workbox-build": "^7.0.0"
+    "@babel/core": "^7.28.5",
+    "@commitlint/cli": "^20.2.0",
+    "@commitlint/config-conventional": "^20.2.0",
+    "@playwright/test": "^1.57.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-fontawesome": "^1.6.8",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/coverage-v8": "^4.0.16",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-compiler": "19.1.0-rc.2",
+    "husky": "^9.1.7",
+    "jsdom": "^27.4.0",
+    "msw": "^2.12.7",
+    "prettier": "^3.7.4",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vite-plugin-pwa": "^1.2.0",
+    "vitest": "^4.0.16",
+    "workbox-build": "^7.4.0",
+    "workbox-window": "^7.4.0",
+    "zod-validation-error": "^5.0.0"
   },
   "scripts": {
-    "dev": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build && node scripts/generate-sw.js && cp ./build/service-worker2.js ./build/service-worker.js",
-    "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "post-checkout": "yarnhook",
-      "post-merge": "yarnhook",
-      "post-rewrite": "yarnhook",
-      "pre-commit": "lint-staged"
-    }
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --cache --cache-location .eslintcache",
+    "test": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "validate": "tsc --noEmit && bun run lint && bun run test",
+    "prepare": "husky"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "browserslist": [
     "last 1 version",
@@ -80,5 +83,15 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+  "trustedDependencies": [
+    "@firebase/util",
+    "esbuild",
+    "msw",
+    "protobufjs"
+  ],
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
 }

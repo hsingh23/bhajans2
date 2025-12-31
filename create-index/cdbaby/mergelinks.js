@@ -45,9 +45,10 @@ function readBhajanIndex() {
     fs.readFileSync(path.resolve(__dirname, "../../public/bhajan-index2.json"))
   );
   // TODO hack to remove songs that don't have a real volume associated with them.
+  // Pattern matches: YYYYsuplN-X (supplements), volN-X (volumes), and YYYY-X (year-only like 2025-53)
   bhajans = _.filter(
     bhajans,
-    (value) => !!value.l[0] && value.l[0].match(/\d{4}supl\d?-\d+|vol\d-\d+/gi)
+    (value) => !!value.l[0] && value.l[0].match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi)
   );
   searchableBhajans = [];
   searchableBhajansObject = {};

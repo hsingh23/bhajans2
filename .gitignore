@@ -28,3 +28,15 @@ emails.txt
 sheetmusic
 public/webviewer/
 stats/
+*_log_*
+
+# Generated files
+create-index/ppts/output
+lint_results*.txt
+validate_log*.txt
+.eslintcache
+
+
+# python
+__pycache__
+output_test/

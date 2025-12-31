@@ -2,288 +2,117 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Overview
+## Project: Sing With Amma - Bhajan Search Engine
 
-Sing With Amma (https://sing.withamma.com/) is a React-based bhajan search engine with Firebase backend. The app allows users to search, favorite, and listen to bhajans (devotional songs) with PDF sheet music support.
+A Progressive Web App (PWA) for searching and viewing bhajans (devotional songs) with PDF lyrics, audio playback, and user favorites. Built with React 19, Vite, and Firebase.
 
-## Development Commands
+## Tech Stack
 
-### Main Application
+- **Runtime**: Bun (use `bun` for all package management and script execution in the root project)
+- **Framework**: React 19 with Vite
+- **UI**: Material UI (@mui/material) + FontAwesome icons
+- **State**: React Query (@tanstack/react-query)
+- **Routing**: React Router DOM v7
+- **Backend**: Firebase (Hosting, Realtime Database, Auth, Cloud Functions, Cloud Messaging)
+- **Build**: Vite with React Compiler optimization
+- **Testing**: Vitest (unit), Playwright (E2E), MSW (mocking)
+- **Linting**: ESLint v9 with React Compiler plugin
+
+## Common Commands
 
 ```bash
-# Install dependencies (uses pnpm)
-pnpm install
+# Development
+bun dev              # Start Vite dev server on port 3000
+bun run build        # Build for production (outputs to build/)
+bun run preview      # Preview production build
 
-# Start development server (requires --openssl-legacy-provider for Node 16+)
-pnpm start
-
-# Build production bundle
-pnpm build
-
-# Run tests
-pnpm test
-
-# Run Cypress E2E tests
-npx cypress open
+# Code Quality
+bun run lint         # ESLint with cache
+bun run test         # Run Vitest unit tests with coverage
+bun run test:e2e     # Run Playwright E2E tests
+bun run validate     # Full validation: typecheck + lint + test
+                      # IMPORTANT: Always run this before completing tasks
 ```
 
-### Firebase Functions
+**Important**: You are not done with any task until `bun run validate` passes completely.
 
+## Monorepo Structure
+
+This is effectively a monorepo with different package managers:
+
+- **Root project**: Use **Bun** (`bun install`, `bun run <script>`)
+- **functions/**: Use **Yarn** (`cd functions && yarn install`, `yarn build`, `yarn deploy`)
+
+## Firebase Cloud Functions
+
+Located in `functions/` directory with separate package.json:
+- **Runtime**: Node.js (via Firebase Functions)
+- **Package Manager**: Yarn (not Bun)
+- **Build**: `yarn build` transpiles src/ to dist/ with Babel
+- **Deploy**: `yarn deploy` deploys only functions
+
+Key commands in functions/:
 ```bash
-# Navigate to functions directory
 cd functions
-
-# Install dependencies
-yarn install
-
-# Build functions
-yarn build
-
-# Serve locally
-yarn serve
-
-# Deploy to Firebase
-yarn deploy
-# or from root: firebase deploy --only functions
+yarn build           # Build functions for deployment
+yarn deploy          # Deploy to Firebase
+yarn serve           # Local development with Firebase emulators
 ```
 
-### Deployment
+## App Architecture
 
-```bash
-# Deploy entire app (hosting + functions + database rules)
-firebase deploy
-
-# Deploy specific services
-firebase deploy --only hosting
-firebase deploy --only functions
-firebase deploy --only database
+### Routing (React Router v7)
+```
+/               - Main search interface (Search.jsx)
+/pay             - Payment/contribution page
+/profile         - User profile (requires auth)
+/my-favorites    - User's favorite bhajans (requires auth)
+/pdf/:id/:name   - PDF viewer for specific bhajan (requires auth)
+/login           - Firebase Auth login
 ```
 
-## Architecture
+### Key Components
 
-### Frontend Structure
-
-- **src/App.js**: Main app component handling routing and favorites management
-- **src/Search.js**: Core search functionality with virtualized list rendering
-- **src/firebase.js**: Firebase configuration and authentication utilities
-- **src/Profile.js**: User profile management
-- **src/RenderPage.js**: PDF rendering for sheet music
-- **src/Pay.js**: Payment integration via PayPal
+- **App.jsx**: Main router with public/protected route definitions, loads bhajan data
+- **Search.jsx**: Search interface with virtualized list (react-virtualized), real-time filtering
+- **RenderPage.jsx**: PDF/audio viewer with invertible colors, keyboard shortcuts
+- **Profile.jsx**: User profile management
+- **Admin.jsx**: Admin interface
 
 ### Data Flow
 
-1. Bhajan index loaded from `/bhajan-index2.json` (static JSON)
-2. User favorites synced with Firebase Realtime Database when authenticated
-3. Local storage fallback for non-authenticated users
-4. Audio samples and PDFs served from public directory
+1. **Bhajan Data**: Pre-processed JSON loaded from `public/bhajan-index2.json` (~400KB)
+2. **User Data**: Firebase Realtime Database (favorites, preferences)
+3. **Authentication**: Firebase Auth with custom UI
+4. **PDFs**: Served from `public/pdfs/`, cached by service worker
 
-### Component & Data Flow Diagram
+### Firebase Configuration
 
-```mermaid
-flowchart TB
-  subgraph UI[React UI]
-    A[App.js\nstate: { favorites, bhajans, path }\nloads: bhajan-index2.json]
-    S[Search.js\nstate: { filteredBhajans, playing, infoOpen }\nprops: { favorites, path, renderFavorite }]
-    R[RenderPage.js\nstate: { page, pages, playing }\nprops: { bhajans, match, history, renderFavorite }]
-    AD[Admin.js\nstate: { email }\ndata: useQuery(getUserByEmail)]
-    P[Profile.js]
-    Pay[Pay.js]
-  end
+- **Config**: `src/firebase.js` contains Firebase v9 modular SDK initialization
+- **Database**: Realtime Database with rules in `database.rules.json`
+- **Hosting**: Configured in `firebase.json` (serves from `build/` directory)
 
-  subgraph Static[Static Content]
-    BI[(public/bhajan-index2.json)]
-    PDFs[(public/pdfs/*.pdf)]
-  end
+## Code Conventions
 
-  subgraph Firebase[Firebase Backend]
-    Auth[(Auth)]
-    RTDB[(Realtime Database)]
-    Msg[(FCM Messaging)]
-    CF[Cloud Functions\nfunctions/src/index.js]
-  end
-
-  BI -->|load + normalize| A
-  A -- window.searchableBhajans --> S
-  A -->|props.bhajans| R
-  S -->|Link /pdf/:location/:id/:name| R
-  R --> PDFs
-
-  A <--->|favorites merge/sync| RTDB
-  A <--> localStorage[(localStorage.favorites)]
-  A -->|auth.currentUser| Auth
-  AD -->|httpsCallable:getUserByEmail| CF
-  AD -->|writes paid/{uid}| RTDB
-  CF -->|onWrite /paid/{uid}| Msg
-  A -->|FCM token save| RTDB
-  Msg -->|notify admins| AdminDevices[(admin devices)]
-```
-
-### Deep Dives
-
-#### functions/src/index.js
-
-- Callable: `getUserByEmail` (admin-only) returns `{ uid, email, displayName, paidOn, expiresOn }`.
-- HTTPS: `amritabooks` webhook (WooCommerce). Verifies HMAC (`x-wc-webhook-signature`) then:
-  - Finds plan by SKU (e.g., `SingWithAmma-1year`), creates user if needed, sends Mailjet welcome/reset, writes `paid/{uid}` with `expiresOn`/metadata.
-- HTTPS: `manuallyAddUser` CORS endpoint to grant plan by email and log a `transactions` entry.
-- RTDB trigger: `/paid/{uid}` onWrite → aggregates admin device tokens under `messages/{adminUid}/tokens/*` and sends FCM notification with payer details. Removes invalid tokens.
-
-#### src/RenderPage.js
-
-- State: `{ page, initialPage, pages, playing }`. Derives initial page from route; guards subscription validity via `localStorage.expiresOn/lastOnline` and redirects to `/pay`/`/login`.
-- Props: `{ bhajans, match: { params: { id, location } }, history, renderFavorite }`.
-- Renders PDF via `react-pdf-js` or `<embed>` in presenter mode; left/right key navigation; sample audio play/stop; Amazon link; favorite button via `renderFavorite()`.
-
-#### src/Admin.js
-
-- State: `{ email }`; React Router `history`.
-- Auth gate: verifies `admin/{uid}` in RTDB.
-- Data: `useQuery(['email', email], getUserByEmail)` returns user with paid status.
-- Actions: Buttons for each plan write `paid/{uid}` with `manual: true`. Provides prefilled `mailto:` links for activation/create-account.
-
-#### Search algorithm (src/Search.js)
-
-- `makeSearchable(line)`: lowercase → strip non-alphanumerics → normalize (drop `h`, map `z→r`, fold vowels `ee→i`, `oo|uu→u`, collapse repeats, consonant class unifications, etc.).
-- Precomputes `window.searchableBhajans` by applying to `name + locations + tags`.
-- Filters by checking `searchableBhajan.includes(searchableFilter)`; uses `react-virtualized` for list performance.
-
-### Firebase Services
-
-- **Authentication**: Email/password and social providers
-- **Realtime Database**: User favorites and metadata (migrated to Firebase v9 modular API)
-- **Functions**: Backend services in `functions/src/`
-- **Hosting**: Static site deployment to Firebase Hosting
-
-### Key Dependencies
-
-- React 17 with React Router v6 (HashRouter)
-- Firebase SDK v8 (frontend) / v9 (functions)
-- React Virtualized for performance with large lists
-- Material-UI v4 for UI components
-- React Query for data fetching
-- PayPal Button v2 for payments
-
-## Important Technical Notes
-
-1. **Node Version**: Requires Node >=16.0.0
-2. **OpenSSL Legacy Provider**: Required flag for React Scripts with Node 16+
-3. **Package Manager**: Uses pnpm (v10.11.1) for main app, yarn for Firebase functions
-4. **Service Worker**: Custom service worker generated with sw-precache
-5. **PDF Support**: Sheet music PDFs in `public/pdfs/` with pattern `vol[1-7].pdf` and `[year]supl[n].pdf`
-
-## Additional Details
-
-### Project Layout
-
-- `src/`: React app source (routes, pages, firebase helpers, styles)
-- `public/`: Static assets, SPA shell (`index.html`), search indexes (`bhajan-index*.json`), PDFs under `public/pdfs/`
-- `functions/`: Firebase Cloud Functions (source in `src/`, built to `dist/`)
-- `create-index/`: Scripts and source texts to build the search index JSON
-- `cypress/`: E2E tests and Cypress config
-- Config: `firebase.json`, `database.rules.json`, `.babelrc`, `.eslintrc`, `config-overrides.js`
-
-### Routing
-
-Top-level routes are defined in `src/index.js` and `src/App.js` using Hash Router (React Router v6 with `Routes/Route`):
-
-- `/login`, `/logout`, `/pay`, `/beta`, `/admin`, `/faq` (direct routes in `index.js`)
-- App shell (`App.js`) handles:
-  - `/` → search page
-  - `/my-favorites` → filtered view of favorites
-  - `/profile` → profile page
-  - `/pay` → payment page
-  - `/pdf/:location/:id/:name` → in-app PDF viewer for bhajan/sheet music
-
-Note: Legacy v5 props (`match`, `history`, `location`) are provided to class components via a small compatibility HOC (`withRouterCompat`) until components are modernized to hooks.
-
-### Modernization Progress (2025-08-07)
-- Phase 1 (Router v6) code changes are implemented:
-  - `src/index.js` migrated to `HashRouter` + `Routes`.
-  - `src/App.js` uses `Routes/Route/Navigate` and wraps class components with `withRouterCompat`.
-  - `src/Admin.js` migrated to `useNavigate`.
-  - Pending: install `react-router-dom@^6` and verify build.
-
-- Phase 2 (Firebase v9 modular) completed:
-  - `src/firebase.js` refactored to use `initializeApp`, `getAuth`, `getDatabase`, `ref/get/set/remove`, and `httpsCallable`.
-  - Added `isSupported()` guard and production-only + service worker checks for FCM messaging.
-  - Export surface preserved for existing imports; a minimal `firebase` shim is exposed for local debugging.
-
-### Search Algorithm (tolerant matching)
-
-Implemented in `src/Search.js > makeSearchable()`:
-
-- Lowercases and strips non-alphanumerics
-- Normalizes common variations (e.g., collapses repeated vowels, maps `z→r`, removes `h`, folds `ee→i`, `oo|uu→u`, etc.)
-- Precomputes `window.searchableBhajans` from the JSON index; filters against normalized user input
-- Uses `react-virtualized` (`List`, `WindowScroller`, `AutoSizer`) for performant rendering
-
-### Favorites and Data Model
-
-- Local: `localStorage.favorites` stores a map of `{ [bhajanName]: 1 }`
-- Remote: When signed-in, favorites sync to Firebase at `favorites/{uid}/{bhajanName} = "1"`
-- Fetch/load: `App.js` merges local favorites with server-side on login (`checkRefOnce`)
-
-### Notifications (FCM)
-
-- Frontend migrated to Firebase v9 modular APIs in `src/firebase.js`.
-- Messaging is guarded to production and requires an active Service Worker; dev environment skips messaging to avoid PushManager errors.
-- On first run, requests notification permission (if supported), and stores tokens under `messages/{uid}/tokens/{token} = 1` with user metadata.
-- Foreground messages handled via `onMessage`. Token refresh setup is handled at login/init time.
-
-### Analytics and Error Monitoring
-
-- Bugsnag error boundary wraps the app (`index.js`)
-- Google Analytics + Google Tag Manager loaded via `public/index.html` and initialized in `index.js`
-- UserReport script deferred in `index.js`
-
-### Service Worker and Performance
-
-- Build pipeline: `react-scripts build` → `sw-precache` → copy `service-worker2.js` to `service-worker.js`
-- `react-snap` runs in `postbuild` for static prerendering of routes where possible
-
-### Index Generation Pipeline
-
-- Source texts and utilities in `create-index/` (e.g., `create-index.py`, `*.txt`, `cdbaby.json`)
-- Outputs `public/bhajan-index2.json` consumed by the app
-
-### Security and Access Control (Realtime Database)
-
-See `database.rules.json` for details:
-
-- `favorites/{userId}`: read/write by that user only
-- `messages/{userId}`: owner read/write; admins can read
-- `admin`, `paid`, `beta`, `confirmed*`: admin-only writes; select reads
-- `satsang/{userId}`: readable by owner; write restricted to admins
-
-### Cloud Functions
-
-- Source: `functions/src/` → transpiled to `functions/dist/` via Babel
-- Example callable used by frontend: `getUserByEmail` (`firebase.functions('us-central1').httpsCallable('getUserByEmail')`)
-- Dev scripts: `yarn build`, `yarn serve` (watches + serves with Firebase CLI), `yarn deploy`
-
-### Running Locally — Tips
-
-- Node ≥16 required; CRA scripts pass `--openssl-legacy-provider` automatically via `package.json`
-- Use `pnpm` per `packageManager`; `yarn` is used inside `functions/`
-- If you switch Firebase projects locally, run `cd functions && yarn setup` (`firebase use --add`)
-
-### Troubleshooting
-
-- OpenSSL errors on Node 16+: ensure you run via `pnpm start`/`pnpm build` so the legacy flag is applied
-- FCM requires HTTPS and user permission; in local dev it may not be available
-- If PDFs don’t open, verify route is `/pdf/:location/:id/:name` and file exists under `public/pdfs/`
+- **Commits**: Conventional Commits format enforced by commitlint (`feat:`, `fix:`, `refactor:`, etc.)
+- **Git Hooks**: Husky runs pre-commit hooks
+- **React**: Functional components with hooks, React Compiler enabled for optimization
+- **Styling**: Vanilla CSS with mobile-first approach in `src/App.css`
+- **Typing**: Loose TypeScript with `@ts-nocheck` directives throughout
 
 ## Testing
 
-- **Unit Tests**: `pnpm test` (uses Jest via React Scripts)
-- **E2E Tests**: Cypress tests in `cypress/e2e/` - focus on Firebase authentication flows
-- **Functions**: XO linter for Firebase functions (`cd functions && yarn lint`)
+- **Unit tests**: `src/**/*.test.jsx` or `src/**/*.spec.jsx` - use Vitest + jsdom
+- **E2E tests**: `e2e/` directory - use Playwright
+- **Mocks**: MSW (Mock Service Worker) configured, worker in `public/mockServiceWorker.js`
 
-## Firebase Configuration
+## Performance Features
 
-- Project ID: `bhajans-588f5`
-- Database rules in `database.rules.json`
-- Hosting rewrites all routes to `index.html` (SPA)
-- Functions source in `./functions` directory
+- **React Compiler**: Automatically optimizes components (check `react-compiler/react-compiler` ESLint rule)
+- **Virtualized lists**: For large bhajan datasets
+- **Service Worker**: Caches PDFs for 30 days (CacheFirst strategy)
+- **PWA**: Installable as desktop/mobile app
 
-execute plan with good commits after every phase once verfied the phase is good, always update @plan.md and always keep @CLAUDE.md in context
+## Data Processing Tools
+
+The `create-index/` directory contains Python scripts for processing bhajan data and generating searchable indices and PDFs. This is separate from the main React app.
