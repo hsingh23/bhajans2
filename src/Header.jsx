@@ -37,7 +37,7 @@ const Header = ({ children = null, back = false, title = "", rightContent = null
 
       <nav className="header-right">
         {rightContent}
-        <DarkModeToggle className="button button-3d button-circle" />
+        <DarkModeToggle className="button button-3d button-circle header-darkmode" />
       </nav>
     </div>
   );
