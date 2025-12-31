@@ -15,33 +15,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { withRouterCompat, RequireAdmin } from "./util";
 import ErrorBoundary from "./ErrorBoundary";
 // @ts-expect-error: virtual module not found in TS context
-import { registerSW } from 'virtual:pwa-register';
-
-// Register PWA
-const updateSW = registerSW({
-  onNeedRefresh() {
-    console.log("New content available, reloading to update.");
-    updateSW(true);
-  },
-  onOfflineReady() {
-    console.log("App is ready to work offline.");
-  },
-});
-
-const requestServiceWorkerUpdate = () => {
-  if (import.meta.env.PROD) {
-    updateSW(true);
-  }
-};
-
-window.requestServiceWorkerUpdate = requestServiceWorkerUpdate;
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") {
-    requestServiceWorkerUpdate();
-  }
-});
-window.addEventListener("online", requestServiceWorkerUpdate);
+import { registerSW } from "virtual:pwa-register";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -72,6 +46,54 @@ async function enableMocking() {
   const { worker } = await import("./mocks/browser");
   return worker.start();
 }
+
+const registerServiceWorkers = async () => {
+  if (!import.meta.env.PROD || !("serviceWorker" in navigator)) {
+    return;
+  }
+
+  try {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(
+      registrations.map((registration) => {
+        const scriptURL =
+          registration.active?.scriptURL ||
+          registration.waiting?.scriptURL ||
+          registration.installing?.scriptURL ||
+          "";
+        if (scriptURL && !scriptURL.includes("service-worker2.js")) {
+          return registration.unregister();
+        }
+        return Promise.resolve();
+      })
+    );
+  } catch (error) {
+    console.warn("Failed to clean up old service workers:", error);
+  }
+
+  const updateSW = registerSW({
+    onNeedRefresh() {
+      console.log("New content available, reloading to update.");
+      updateSW(true);
+    },
+    onOfflineReady() {
+      console.log("App is ready to work offline.");
+    },
+  });
+
+  const requestServiceWorkerUpdate = () => {
+    updateSW(true);
+  };
+
+  window.requestServiceWorkerUpdate = requestServiceWorkerUpdate;
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      requestServiceWorkerUpdate();
+    }
+  });
+  window.addEventListener("online", requestServiceWorkerUpdate);
+};
 
 const renderApp = () => {
   const container = document.getElementById("root");
@@ -106,6 +128,7 @@ const renderApp = () => {
 
 const bootstrap = async () => {
   try {
+    await registerServiceWorkers();
     await enableMocking();
   } catch (error) {
     console.error("Failed to enable mocking:", error);
