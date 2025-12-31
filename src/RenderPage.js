@@ -1,12 +1,14 @@
-import PDF from "react-pdf-js";
 import React, { Component } from "react";
 import { onlyUpdateForKeys } from "recompose";
 import { HotKeys } from "react-hotkeys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { alert } from "notie";
+import DarkModeToggle from "./DarkModeToggle";
+import InvertiblePDF from "./InvertiblePDF";
+import InvertibleEmbed from "./InvertibleEmbed";
 
 const THREE_MONTHS_MS = 7776000000;
-const Pdf = onlyUpdateForKeys(["page"])(PDF);
+const InvertiblePdfComponent = onlyUpdateForKeys(["page"])(InvertiblePDF);
 const map = {
   left: "left",
   right: "right",
@@ -181,6 +183,7 @@ class RenderPage extends Component {
                 "button button-3d button-caution button-circle",
                 "button button-3d button-circle"
               )}
+              <DarkModeToggle className="button button-3d button-circle" />
             </nav>
           </div>
           <div className='rest'>
@@ -189,13 +192,13 @@ class RenderPage extends Component {
               document.documentElement.clientWidth,
               window.innerWidth || 0
             ) > 1200 ? (
-              <embed
+              <InvertibleEmbed
                 src={`/pdfs/${book}.pdf#page=${page}`}
                 style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
               />
             ) : (
               <span>
-                <Pdf
+                <InvertiblePdfComponent
                   file={url.replace(/sharp/i, "%23")}
                   onDocumentComplete={this.onDocumentComplete}
                   onPageComplete={this.onPageComplete}

@@ -1,0 +1,2886 @@
+{
+  "timestamp": "2025-12-31T08:43:08.765417",
+  "input_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts",
+  "output_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/output",
+  "summary": {
+    "total_files_found": 397,
+    "total_files_processed": 397,
+    "total_songs_extracted": 397,
+    "total_stanzas": 3918
+  },
+  "songs_by_year": {
+    "2025": 396,
+    "2021": 1
+  },
+  "songs_missing_year": [
+    "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy (Amma en bodha nilavayita 2025 Mal in Eng.pptx)",
+    "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān (Kannan varuvan 2025 Tamil in English.pptx)",
+    "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)",
+    "Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)",
+    "manamē narajīvitamākum (Maname Narajivitam 2025 Odiya in Eng v4.pptx)",
+    "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ (Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx)",
+    "Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)",
+    "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō (Pranesvara en hridayesvara 2025 Mal in Eng.pptx)",
+    "samatvam, samatvamsamatvam, samatvam (Samatvam Samatvam 2025 - English.pptx)",
+    "there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)",
+    "you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)"
+  ],
+  "songs_missing_language": [
+    "ādimātastava caraṇa-rēṇu (Adimatastava 2025 Samskritam in Eng.pptx)",
+    "amba tan padatārin dhūḷikaḷ nannāy (Amba tan padataril 2025 Mal in Eng.pptx)",
+    "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy (Amma en bodha nilavayita 2025 Mal in Eng.pptx)",
+    "bhavābdhi-tāriṇī (Bhavabdhi tarini 2025 Samskritam in Eng.pptx)",
+    "cinmaya-rūpiṇi kanmaṣa-nāśini (Chinmaya rupini 2025 Sanskrit in Eng.pptx)",
+    "hē nīḷōmaṇi hē jogonnātho (He Nilomani 2025 Odiya in Eng.pptx)",
+    "kahiyō rē prabhu (Kahiyo re prabhu 2025 Braj in Eng.pptx)",
+    "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān (Kannan varuvan 2025 Tamil in English.pptx)",
+    "kiṇu saṅg khēlūṅ hōlī (Kinu sang 2025 Marwari in Eng.pptx)",
+    "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)",
+    "Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)",
+    "mājī sāṅvarē (Maji samvare 2025 Braj in Eng.pptx)",
+    "manamē narajīvitamākum (Maname Narajivitam 2025 Odiya in Eng v4.pptx)",
+    "māyī… mainē… (Mayi maine Govinda 2025 Braj in Eng.pptx)",
+    "māyī… mainē… (Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx)",
+    "māyi mhārō supaṇāmā (Mayi mharo supanama 2025 Marwari in Eng.pptx)",
+    "mhārā rē giridhar gōpāl (Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx)",
+    "nandanandan diṭh paḍiyā (Nandanandan bith padiya 2025 Braj in Eng.pptx)",
+    "nārāyaṇā śrī rāmā nārāyaṇā śrī rāma (Narayana Sri Rama 2025 Samskritam in Eng.pptx)",
+    "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ (Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx)",
+    "O Essentie (O Essentie 2025 Dutch in English.pptx)",
+    "ō kāḷiyā rē ō kāḷiyā rē (O Kaliya re 2025 Odiya in Eng.pptx)",
+    "Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)",
+    "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō (Pranesvara en hridayesvara 2025 Mal in Eng.pptx)",
+    "rādhē rādhē rādhē rādhē kṛṣṇa (Radhe Radhe Radhe 2025 Samskritam in Eng.pptx)",
+    "samatvam, samatvamsamatvam, samatvam (Samatvam Samatvam 2025 - English.pptx)",
+    "sāṅvarā rē mhāri (Sanvara re mhari 2025 Marwari in Eng.pptx)",
+    "satyam jñānam anantam (Satyam Jnanam anantam 2025 Samskritam in Eng.pptx)",
+    "there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)",
+    "you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)"
+  ],
+  "songs_with_missing_meanings": {
+    "beloved amma, divine mother (Beloved Amma 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dēkhā thā pēhlī bār (Dekha tha pehali bar 2025 Hindi in Eng.pptx)": [
+      14
+    ],
+    "did you hear my call (Did you hear my call 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "Divine Painter (Divine Painter 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "enta citramu enta vairudhyamu (Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx)": [
+      4,
+      7,
+      10
+    ],
+    "I was lost in the darkness2025(English) (I was lost in darkness 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "In the misty mountains Is our Mahadeva (In the misty mountains 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "Jump into the river of love (Jump into the river of love 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "kaṇṇan eṅgē kāṇavillai (Kannan enge kanavillai 2025 Tamil in Eng.pptx)": [
+      16
+    ],
+    "karuniṙa azhakā kaṇṇā (Karunira azhaga 2025 Tamil in Eng.pptx)": [
+      16
+    ],
+    "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "life and death are within you (Life and Death are within you 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "love is the face of god (Love is the face of God 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "Miles away from you (Miles away 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "mizhi colli avan annu pōy (Mizhi cholli avanannu 2025 Mal in Eng.pptx)": [
+      8
+    ],
+    "Mother with you as our shield (Mother with You as our shield 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "pariśuddha anbin uruvamē (Parisuddha anbin 2025 Tamil in Eng.pptx)": [
+      4,
+      7,
+      10,
+      11
+    ],
+    "Peace to the ocean (Peace to the ocean 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rādhē rādhē rādhē rādhē kṛṣṇa (Radhe Radhe Radhe 2025 Samskritam in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "samatvam, samatvamsamatvam, samatvam (Samatvam Samatvam 2025 - English.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "tappate japisu avirata bhajisu (Tappade japisu 2025 Kan in Eng.pptx)": [
+      5,
+      8
+    ],
+    "tappade japisu avirata bhajisu (Tappate japisu 2025 Kan in Eng.pptx)": [
+      5,
+      8,
+      11
+    ],
+    "there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "This boat was lost at sea (This boat was lost 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "where do you wander2025(English) (Where do you wander 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "files_with_errors": [],
+  "skipped_files": [],
+  "issues": [
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Adimatastava 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Adimatastava 2025 Samskritam in Eng.pptx",
+      "song_title": "ādimātastava caraṇa-rēṇu",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "ādimātastava caraṇa-rēṇu\n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Amba tan padataril 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amba tan padataril 2025 Mal in Eng.pptx",
+      "song_title": "amba tan padatārin dhūḷikaḷ nannāy",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "amba tan padatārin dhūḷikaḷ nannāy\n---\n2025\n(Malyalam)"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Amma en bodha nilavayita 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amma en bodha nilavayita 2025 Mal in Eng.pptx",
+      "song_title": "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy\n---\nMother is the moonlight that illuminates my awareness, the song of my life, "
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Amma en bodha nilavayita 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amma en bodha nilavayita 2025 Mal in Eng.pptx",
+      "song_title": "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy\n---\nMother is the moonlight that illuminates my awareness, the song of my life, "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "beloved amma, divine mother sitting with you, there is no other"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I write ‘ōm’ in the cloudsI bow down to the stars"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "and I kiss the moon.I pray to you, amma."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "no more harm to nature’s lifethe world needs to survive"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "everywhere life needs our carenot to perish, be aware"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "our prayers and respectto all lives on earth"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love longs to flowto set all things aglow"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "let us rise in unitypeacefully in harmony"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Beloved Amma 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx",
+      "song_title": "beloved amma, divine mother",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "let us rise in unitythe world is family"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Bhavabdhi tarini 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Bhavabdhi tarini 2025 Samskritam in Eng.pptx",
+      "song_title": "bhavābdhi-tāriṇī",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "bhavābdhi-tāriṇī\n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Chinmaya rupini 2025 Sanskrit in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Chinmaya rupini 2025 Sanskrit in Eng.pptx",
+      "song_title": "cinmaya-rūpiṇi kanmaṣa-nāśini",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "cinmaya-rūpiṇi kanmaṣa-nāśini\n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Dekha tha pehali bar 2025 Hindi in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Dekha tha pehali bar 2025 Hindi in Eng.pptx",
+      "song_title": "dēkhā thā pēhlī bār",
+      "slide_number": 14,
+      "stanza_number": null,
+      "details": "Slide 14 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "harī harī harī harī"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "did you hear my callmy cry, my prayer"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I have searched for youeverywhere"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "waxing and waning the moon knows my plight"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "weeks turn to months you are nowhere in sight"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "giridhāri… vanamāli…  "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the blue of the moon makes my eyes fill with tears"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I've cried for your darshan for so many years"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Did you hear my call 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx",
+      "song_title": "did you hear my call",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "giridhāri… vanamāli…"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Divine Painter please paint within me Lessons of wisdom, pearls of the sea"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Oh Devi your beauty shines bright and strongYou show us through nature how to be One "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I feel in my soul soaring freethe bird that you painted within me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "The bird glides beyond thoughts and clouds of the mind"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Attachment and sorrow fall far behind "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "A lake lies motionlessly,a lake that you painted within me."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "May I dissolve in this deep still lake"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Reflecting the perfect beauty of your face. "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Divine Painter please paint within me Lessons of wisdom, pearls of the sea"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Oh Devi your beauty shines bright and strong. You show us through nature how to be One. "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Divine Painter 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx",
+      "song_title": "Divine Painter",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Isha vasya idam sarvamPainter brush and canvas are one"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "song_title": "enta citramu enta vairudhyamu",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "hara ōm… śiva ōm… hara ōm… śiva ōm…"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "song_title": "enta citramu enta vairudhyamu",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "hara ōm… śiva ōm… hara ōm… śiva ōm…"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx",
+      "song_title": "enta citramu enta vairudhyamu",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "hara ōm… śiva ōm… hara ōm… śiva ōm…"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "He Nilomani 2025 Odiya in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/He Nilomani 2025 Odiya in Eng.pptx",
+      "song_title": "hē nīḷōmaṇi hē jogonnātho",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "hē nīḷōmaṇi hē jogonnātho\n---\n2025\n(Odiya)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I was lost in the darknessIn the shadows of ignorance"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Nowhere to go, I looked upon youYou lit the fire in me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Amma Amma Amma AmmaI see the truth I long for"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I was lost in the parched worldCraving for peace of mind"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Stuck in the desert, I looked upon youYou showered love on me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Amma Amma Amma AmmaI feel the love I long for"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I was lost in the lifeless worldCaught in the grasp of fear"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Searching for life, I looked upon youYou breathed life into me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "I was lost in darkness 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx",
+      "song_title": "I was lost in the darkness2025(English)",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Amma Amma Amma Amma"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "In the misty mountains Is our Mahadeva"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Eyes closed and heart openSilently protecting us"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "As soon as you wakeEarth begins to shake"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Will I get a chanceTo see your holy dance"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "You dance and you chanttrident in your hand"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "God of the three worldsYou are beyond words"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Cosmic and divineYou rise and you shine"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Let me be your NandiTo carry you with me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 13,
+      "stanza_number": null,
+      "details": "Slide 13 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "O NeelakanthaO Mahadeva"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "In the misty mountains 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx",
+      "song_title": "In the misty mountains Is our Mahadeva",
+      "slide_number": 14,
+      "stanza_number": null,
+      "details": "Slide 14 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "When I hear your drumMy heart beats in your rhythm"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Jump into the river of loveSwim through the waves of life,"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Amma, guide me to the ocean,Bliss, eternal light."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Teach me how to swimThrough happiness and strife,"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Floating on the raft of graceI offer you my life."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Looking at the river, See not the separate shores,"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "“I” and “you” merge into LoveWe’re one, forever more."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Jump into the river of love 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx",
+      "song_title": "Jump into the river of love",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Kahiyo re prabhu 2025 Braj in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kahiyo re prabhu 2025 Braj in Eng.pptx",
+      "song_title": "kahiyō rē prabhu",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "kahiyō rē prabhu \n---\n2025\n(Braj Bhasha)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Kannan enge kanavillai 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan enge kanavillai 2025 Tamil in Eng.pptx",
+      "song_title": "kaṇṇan eṅgē kāṇavillai",
+      "slide_number": 16,
+      "stanza_number": null,
+      "details": "Slide 16 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhē kṛṣṇā rādhē kṛṣṇāgōpi kṛṣṇā rādhē śyāmrādhē śyām rādhē śyāmrādhā mādhava rādhē śyām"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Kannan varuvan 2025 Tamil in English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan varuvan 2025 Tamil in English.pptx",
+      "song_title": "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān\n---\nKrishna will come — our beloved Krishna will arrive.\nHe will answer the call of the gopis; Krishna will come."
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Kannan varuvan 2025 Tamil in English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan varuvan 2025 Tamil in English.pptx",
+      "song_title": "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān\n---\nKrishna will come — our beloved Krishna will arrive.\nHe will answer the call of the gopis; Krishna will come."
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Karunira azhaga 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Karunira azhaga 2025 Tamil in Eng.pptx",
+      "song_title": "karuniṙa azhakā kaṇṇā",
+      "slide_number": 16,
+      "stanza_number": null,
+      "details": "Slide 16 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "kaṇṇā… kaṇṇā… kaṇṇā… kaṇṇā…"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Kinu sang 2025 Marwari in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kinu sang 2025 Marwari in Eng.pptx",
+      "song_title": "kiṇu saṅg khēlūṅ hōlī",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "kiṇu saṅg khēlūṅ hōlī\n---\n2025\n(Marwari)"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "oh children of amṛta, let us make a better world"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "brahman is bliss, endless lovein changeless truth, peace we’ll find"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "captured in illusions snaremaking sorrows with our mind"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam oh children of amṛta, let us make a better world"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in happiness love does bloom,the coin is one, yet sides are two"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love is happiness conveyedhappiness is love’s pure state"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam oh children of amṛta, let us make a better world"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "feel the joy of sharinggiving is life, taking is death"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "share and feel we’re always fullthe well of love refills itself"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "lacking nothing, children of amṛtablissful brahman—you are that"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx",
+      "song_title": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "kṛnvantō viśvamāryam amṛtasya putrāḥ vayam oh children of amṛta, let us make a better world"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "Krishna left with the cows, Radha's heart is aching"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "Krishna left with the cows, Radha's heart is aching"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in the woods wandering, in despair she's pleading"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "“O flowers, O trees, have you seen Ghana Shyam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "my soul is yearning for my beloved one”"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Radha is longing for you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Krishna may I merge in you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in her eyes is flowing the river Yamuna"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in her pain is revealed, Krishna's divine leela"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "“may your will be done, we surrender indeed"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "we will chant your name serving those in need”"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Radha is longing for you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Krishna may I merge in you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 13,
+      "stanza_number": null,
+      "details": "Slide 13 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "with the peacock feather, comes her Giridhari"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 14,
+      "stanza_number": null,
+      "details": "Slide 14 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in a surge of sharing, she calls all the gopis"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 15,
+      "stanza_number": null,
+      "details": "Slide 15 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "and losing themselves in the Rasa Leela"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 16,
+      "stanza_number": null,
+      "details": "Slide 16 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "to the sound of his flute, they all dance with Krishna"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 17,
+      "stanza_number": null,
+      "details": "Slide 17 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Radha is longing for you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Krishna left with the cows 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx",
+      "song_title": "Krishna left with the cows, Radha's heart is aching",
+      "slide_number": 18,
+      "stanza_number": null,
+      "details": "Slide 18 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Krishna, Krishna may I merge in you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "life and death are within youheaven and hell are within you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the truth that is told, is what you must know"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you are free (2)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "don't you grow tired of this journey?In ancient dreams you are searching"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "bonds you have made, all you have gainedwill be lost like tears in the rain"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "life and death are within youheaven and hell are within you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the truth that is told, is what you must know"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "all that is seen cannot be truethe seer alone is the real you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "awake from this dream, truth's glory singbe as you are - ever free"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "life and death are within youheaven and hell are within you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Life and Death are within you 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx",
+      "song_title": "life and death are within you",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the truth that is told, is what you must know"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love is the face of god the silent song of the soul"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "this life will passlike dust in the wind"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love alone will remain "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "we take this birthto find the onewho shines with the light of a thousand suns "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love is the face of god the silent song of the soul"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "to see that onein every facecast off the pastlet your mind fall away "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love is the face of god the silent song of the soul"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "by love alone, the path is shown to end this age of strife "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love is the face of god the silent song of the soul"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "this life will passlike dust in the wind"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Love is the face of God 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx",
+      "song_title": "love is the face of god",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "love alone will remain "
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Maji samvare 2025 Braj in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maji samvare 2025 Braj in Eng.pptx",
+      "song_title": "mājī sāṅvarē",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "mājī sāṅvarē \n---\n2025\n(Braj Bhasha)"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Maname Narajivitam 2025 Odiya in Eng v4.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maname Narajivitam 2025 Odiya in Eng v4.pptx",
+      "song_title": "manamē narajīvitamākum",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "manamē narajīvitamākum\n---\n(Odiya)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Maname Narajivitam 2025 Odiya in Eng v4.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maname Narajivitam 2025 Odiya in Eng v4.pptx",
+      "song_title": "manamē narajīvitamākum",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "manamē narajīvitamākum\n---\n(Odiya)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Mayi maine Govinda 2025 Braj in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda 2025 Braj in Eng.pptx",
+      "song_title": "māyī… mainē…",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "māyī… mainē…\n---\n2025\n(Braj)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx",
+      "song_title": "māyī… mainē…",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "māyī… mainē…\n---\n2025\n(Braj)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Mayi mharo supanama 2025 Marwari in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi mharo supanama 2025 Marwari in Eng.pptx",
+      "song_title": "māyi mhārō supaṇāmā",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "māyi mhārō supaṇāmā\n---\n2025\n(Marwari)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx",
+      "song_title": "mhārā rē giridhar gōpāl",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "mhārā rē giridhar gōpāl\n---\n2025\n(Marwari)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Miles away from youCloser than my breathYour essence in hearts of allI pray to merge in you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Devi whose hair is skyPlease reveal your subtle form"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Boundless and full, perfectly stillShine forth from the shrine within"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Miles away from you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "each and every drop of your loveDevi is like fragrant gold"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the sun rises, the path unfoldsMoments with you etched in my soul"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Miles away from you"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Miles away 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx",
+      "song_title": "Miles away from you",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Devi hold me close from farHold me close from farDevi hold me close from far"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Mizhi cholli avanannu 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mizhi cholli avanannu 2025 Mal in Eng.pptx",
+      "song_title": "mizhi colli avan annu pōy",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "kaṇṇā… kaṇṇā… kaṇṇā… kaṇṇā…"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Mother with You as our shield 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx",
+      "song_title": "Mother with you as our shield",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Mother with you as our shieldthere is nothing left to fearknowing the battles are already wonlet us not waste this life"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Mother with You as our shield 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx",
+      "song_title": "Mother with you as our shield",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you have cleared the path Mother, you have lit the wayknowing the battles are already wonlet us not waste this life"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Mother with You as our shield 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx",
+      "song_title": "Mother with you as our shield",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you give the strength that we needMother, you give the air that we breathe"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Mother with You as our shield 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx",
+      "song_title": "Mother with you as our shield",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "knowing the battles are already wonlet us not waste this life"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Nandanandan bith padiya 2025 Braj in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nandanandan bith padiya 2025 Braj in Eng.pptx",
+      "song_title": "nandanandan diṭh paḍiyā",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "nandanandan diṭh paḍiyā\n---\n2025\n(Braj)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Narayana Sri Rama 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Narayana Sri Rama 2025 Samskritam in Eng.pptx",
+      "song_title": "nārāyaṇā śrī rāmā nārāyaṇā śrī rāma",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "nārāyaṇā śrī rāmā nārāyaṇā śrī rāma\n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx",
+      "song_title": "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ\n---\nBedecked with the radiant ornaments like justice in the heart, valor for shoulders,"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx",
+      "song_title": "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ\n---\nBedecked with the radiant ornaments like justice in the heart, valor for shoulders,"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "O Essentie 2025 Dutch in English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/O Essentie 2025 Dutch in English.pptx",
+      "song_title": "O Essentie",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "O Essentie\n---\n2025\n(Dutch)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "O Kaliya re 2025 Odiya in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/O Kaliya re 2025 Odiya in Eng.pptx",
+      "song_title": "ō kāḷiyā rē ō kāḷiyā rē",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "ō kāḷiyā rē ō kāḷiyā rē\n---\n2025\n(Odiya)"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "Oh Ma you are everywhereAll is within you "
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "Oh Ma you are everywhereAll is within you "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Search and only Amma is found  "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Holy Mother so divine Would you purify my mind?"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Crying for you since the dawn Holy mother you are all,  Hear this call "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "By grace everything is doneThrough you flows the sun"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Wide blue sky without a cloud"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "The witness ever brightThe self is still as night"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Divine light flowing through time"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx",
+      "song_title": "Oh Ma you are everywhereAll is within you",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Amma! Amma!Amma! Amma!"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "song_title": "pariśuddha anbin uruvamē",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhā rādhā rādhā mādhavā harē harērādhā rādhā rādhā ramaṇa mādhavā harē"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "song_title": "pariśuddha anbin uruvamē",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhā rādhā rādhā mādhavā harē harērādhā rādhā rādhā ramaṇa mādhavā harē"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "song_title": "pariśuddha anbin uruvamē",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhā rādhā rādhā mādhavā harē harērādhā rādhā rādhā ramaṇa mādhavā harē"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Parisuddha anbin 2025 Tamil in Eng.pptx",
+      "song_title": "pariśuddha anbin uruvamē",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhā mādhavā harērādhā mādhavā harē"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Peace to the oceanPeace to the skyPeace to the earthHer mountains high"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Peace to the cloudsPeace to the starsPeace to all people wherever they are. "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Let’s make a world of loveKindness will be everywhere"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Healing the wounds hatred created Show the world that we care"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Different faces and names Inside we’re all the same"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Wisdom revealsLove is what healstaking our sorrow and pain. "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Peace to the ocean 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx",
+      "song_title": "Peace to the ocean",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "Let us all join handsEvery country and land Light a lamp of love inside the heart of every man"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Pranesvara en hridayesvara 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Pranesvara en hridayesvara 2025 Mal in Eng.pptx",
+      "song_title": "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō\n---\nLord of my life, Lord of my heart — Krishna, won’t you come, adorned with garlands of wildflowers? "
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Pranesvara en hridayesvara 2025 Mal in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Pranesvara en hridayesvara 2025 Mal in Eng.pptx",
+      "song_title": "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō\n---\nLord of my life, Lord of my heart — Krishna, won’t you come, adorned with garlands of wildflowers? "
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "song_title": "rādhē rādhē rādhē rādhē kṛṣṇa",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "rādhē rādhē rādhē rādhē kṛṣṇa \n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "song_title": "rādhē rādhē rādhē rādhē kṛṣṇa",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādhē rādhē rādhē rādhē kṛṣṇa rādhē rādhē rādhē rādhē kṛṣṇa "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "song_title": "rādhē rādhē rādhē rādhē kṛṣṇa",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "gōvinda kṛṣṇa gōpāla kṛṣṇa rādhē kṛṣṇaśrīdhara kṛṣṇa kēśava kṛṣṇa rādhē kṛṣṇa"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "song_title": "rādhē rādhē rādhē rādhē kṛṣṇa",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "rādha ramana rādhē kṛṣṇa vanamāli kṛṣṇa rādhē kṛṣṇa "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx",
+      "song_title": "rādhē rādhē rādhē rādhē kṛṣṇa",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "gōvardhana giridhāri kṛṣṇa navanita cōra rādhē kṛṣṇa"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "samatvam, samatvamsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "samatvam, samatvamsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "life passes by in yearning "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "likes and dislikes churning "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in desire’s fire we’re burning "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samatvam, samatvamsamatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in this world of duality "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "true yoga is equanimity "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 13,
+      "stanza_number": null,
+      "details": "Slide 13 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "discover this and you are free "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 14,
+      "stanza_number": null,
+      "details": "Slide 14 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 15,
+      "stanza_number": null,
+      "details": "Slide 15 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samatvam, samatvamsamatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 16,
+      "stanza_number": null,
+      "details": "Slide 16 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 17,
+      "stanza_number": null,
+      "details": "Slide 17 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the key to our mind’s freedomsamatvam, samatvam"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 18,
+      "stanza_number": null,
+      "details": "Slide 18 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "go beyond… samatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 19,
+      "stanza_number": null,
+      "details": "Slide 19 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "our mind’s bonds… samatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 20,
+      "stanza_number": null,
+      "details": "Slide 20 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "we lose and we gain… samatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 21,
+      "stanza_number": null,
+      "details": "Slide 21 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "but it’s all the same… samatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 22,
+      "stanza_number": null,
+      "details": "Slide 22 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "our essence is one… samatvam, samatvam "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Samatvam Samatvam 2025 - English.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx",
+      "song_title": "samatvam, samatvamsamatvam, samatvam",
+      "slide_number": 23,
+      "stanza_number": null,
+      "details": "Slide 23 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "may this truth in you dawn… samatwam, samatwam"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Sanvara re mhari 2025 Marwari in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Sanvara re mhari 2025 Marwari in Eng.pptx",
+      "song_title": "sāṅvarā rē mhāri",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "sāṅvarā rē mhāri\n---\n2025\n(Marwari)"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "Satyam Jnanam anantam 2025 Samskritam in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Satyam Jnanam anantam 2025 Samskritam in Eng.pptx",
+      "song_title": "satyam jñānam anantam",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "satyam jñānam anantam\n---\n2025\n(Samskritam)"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Tappade japisu 2025 Kan in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Tappade japisu 2025 Kan in Eng.pptx",
+      "song_title": "tappate japisu avirata bhajisu",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "nārāyaṇa hari nārāyaṇa harinārāyaṇa hari nārāyaṇa"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Tappade japisu 2025 Kan in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Tappade japisu 2025 Kan in Eng.pptx",
+      "song_title": "tappate japisu avirata bhajisu",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "nārāyaṇa hari nārāyaṇa harinārāyaṇa hari nārāyaṇa"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Tappate japisu 2025 Kan in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Tappate japisu 2025 Kan in Eng.pptx",
+      "song_title": "tappade japisu avirata bhajisu",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "nārāyaṇa hari nārāyaṇa harinārāyaṇa hari nārāyaṇa"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Tappate japisu 2025 Kan in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Tappate japisu 2025 Kan in Eng.pptx",
+      "song_title": "tappade japisu avirata bhajisu",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "nārāyaṇa hari nārāyaṇa harinārāyaṇa hari nārāyaṇa"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Tappate japisu 2025 Kan in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Tappate japisu 2025 Kan in Eng.pptx",
+      "song_title": "tappade japisu avirata bhajisu",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "nārāyaṇa hari nārāyaṇa harinārāyaṇa hari nārāyaṇa"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "there’s a way of life in this universe leading to true peace"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "there’s a way of life in this universe leading to true peace"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "sanatana dharma… sanatana dharma…eternal law… eternal way of life…"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in this vast enchanting creationthere is one underlying truth"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "creator and creation are one and not twomanifest in many forms"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "we all have a face, each is unique, yet we are not this framemother, may I see you everywhere, lift this blinding veil"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "īśāvāsyam idam sarvameverything is divine"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "mother end this separationmay I merge in youas space embraces allbeyond confines of walls"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the same consciousness pervades everythingsee oneness in all there is"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "There's a way of life 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx",
+      "song_title": "there’s a way of life in this universe leading to true peace",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you’re the I in me, I’m the you in youawaken to true freedomawaken to true freedom"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "This boat was lost at seauntil you rescued me"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "oh arbiter of my destinyambē mā amṛtēśvarī "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samsara’s waves engulfing mewas calling for you desperately/"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "until you rose resplendentlyemerging from the deep blue sea emerging from the deep blue sea"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "oh arbiter of my destinyambē mā amṛtēśvarī "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "I reveled in your majestythe sound of om pervading me/"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "samsara’s tempest ceased to bein your arms, eternally in your arms, eternally"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "This boat was lost 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx",
+      "song_title": "This boat was lost at sea",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "oh arbiter of my destinyambē mā amṛtēśvarī"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "where do you wander? where do you go?"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the sun inside you is waiting to dawn "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "be without fear, be without sorrow "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you are love itself "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "why do you cry? why do you cry? "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 7,
+      "stanza_number": null,
+      "details": "Slide 7 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "where do you wander? where do you go? "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 8,
+      "stanza_number": null,
+      "details": "Slide 8 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the sun inside you is waiting to dawn"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 9,
+      "stanza_number": null,
+      "details": "Slide 9 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you have no past, give up your shame "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 10,
+      "stanza_number": null,
+      "details": "Slide 10 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "in your hand alone"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 11,
+      "stanza_number": null,
+      "details": "Slide 11 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "is the key of fate, is the key of fate "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 12,
+      "stanza_number": null,
+      "details": "Slide 12 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "where do you wander? where do you go? "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 13,
+      "stanza_number": null,
+      "details": "Slide 13 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "the sun inside you is waiting to dawn"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 14,
+      "stanza_number": null,
+      "details": "Slide 14 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you were never born, you will never die "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 15,
+      "stanza_number": null,
+      "details": "Slide 15 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "you are life itself "
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "Where do you wander 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx",
+      "song_title": "where do you wander2025(English)",
+      "slide_number": 16,
+      "stanza_number": null,
+      "details": "Slide 16 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "why do you cry? why do you cry?"
+    },
+    {
+      "type": "MISSING_YEAR",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Year not found on slide, using folder year: 2025",
+      "raw_text": "you are the one awake at nightoutside it's darkbut you're full of light"
+    },
+    {
+      "type": "MISSING_LANGUAGE",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 1,
+      "stanza_number": null,
+      "details": "Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
+      "raw_text": "you are the one awake at nightoutside it's darkbut you're full of light"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 2,
+      "stanza_number": null,
+      "details": "Slide 2 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "we are the onesawake in the daybut that for youis all just a play"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 3,
+      "stanza_number": null,
+      "details": "Slide 3 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "śiva śiva śiva hara hara śaṅkara"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 4,
+      "stanza_number": null,
+      "details": "Slide 4 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "for one who's awakethis world that is seenis nothing butillusory dream"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 5,
+      "stanza_number": null,
+      "details": "Slide 5 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "for one who's asleepit all seems so realthe thoughts that we thinkthe feelings we feel"
+    },
+    {
+      "type": "MISSING_MEANING",
+      "source_file": "You are the one 2025 Eng in Eng.pptx",
+      "full_path": "/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx",
+      "song_title": "you are the one awake at nightoutside it's darkbut you're full of light",
+      "slide_number": 6,
+      "stanza_number": null,
+      "details": "Slide 6 has lyrics but no English meaning (only 1 text box found)",
+      "raw_text": "śiva śiva śiva hara hara śaṅkara"
+    }
+  ]
+}
