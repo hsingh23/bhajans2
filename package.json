@@ -50,7 +50,7 @@
     "workbox-build": "^7.0.0"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "dev": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build && node scripts/generate-sw.js && cp ./build/service-worker2.js ./build/service-worker.js",
     "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
     "eject": "react-scripts eject",

@@ -1,7 +1,7 @@
 ================================================================================
 SONGBOOK PROCESSING REPORT
 ================================================================================
-Generated: 2025-12-31T08:43:08.765417
+Generated: 2025-12-31T09:18:55.275425
 Input:     /Users/hisingh1/projects/bhajans2/create-index/ppts
 Output:    /Users/hisingh1/projects/bhajans2/create-index/ppts/output
 
@@ -22,91 +22,38 @@ SONGS BY YEAR
   2025: 396 songs (from 397 files)
 
 ────────────────────────────────────────────────────────────────────────────────
-ISSUE SUMMARY
+LANGUAGE DETECTION SUMMARY
 ────────────────────────────────────────────────────────────────────────────────
-  Songs with year not on slide:    11
-  Songs missing language:          30
-  Songs with missing meanings:     28
-  Total stanzas missing meaning:   214
-  Files with errors:               0
+  Languages detected from slide (parentheses): 376
+  Languages detected from slide (text):        16
+  Languages detected from filename:            0
+  Languages not detected:                      5
 
 ────────────────────────────────────────────────────────────────────────────────
-SONGS WITH YEAR NOT FOUND ON SLIDE
-(year was inferred from folder name or default)
+ISSUE SUMMARY
 ────────────────────────────────────────────────────────────────────────────────
-  • amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy (Amma en bodha nilavayita 2025 Mal in Eng.pptx)
-  • kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān (Kannan varuvan 2025 Tamil in English.pptx)
-  • kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)
-  • Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)
-  • manamē narajīvitamākum (Maname Narajivitam 2025 Odiya in Eng v4.pptx)
-  • neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ (Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx)
-  • Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)
-  • prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō (Pranesvara en hridayesvara 2025 Mal in Eng.pptx)
-  • samatvam, samatvamsamatvam, samatvam (Samatvam Samatvam 2025 - English.pptx)
-  • there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)
-  • you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)
+  Songs with year not on slide:    0
+  Songs missing language:          5
+  Songs with missing meanings:     15
+  Total stanzas missing meaning:   91
+  Files with errors:               0
 
 ────────────────────────────────────────────────────────────────────────────────
 SONGS MISSING LANGUAGE
 ────────────────────────────────────────────────────────────────────────────────
-  • ādimātastava caraṇa-rēṇu (Adimatastava 2025 Samskritam in Eng.pptx)
-  • amba tan padatārin dhūḷikaḷ nannāy (Amba tan padataril 2025 Mal in Eng.pptx)
-  • amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy (Amma en bodha nilavayita 2025 Mal in Eng.pptx)
-  • bhavābdhi-tāriṇī (Bhavabdhi tarini 2025 Samskritam in Eng.pptx)
-  • cinmaya-rūpiṇi kanmaṣa-nāśini (Chinmaya rupini 2025 Sanskrit in Eng.pptx)
-  • hē nīḷōmaṇi hē jogonnātho (He Nilomani 2025 Odiya in Eng.pptx)
-  • kahiyō rē prabhu (Kahiyo re prabhu 2025 Braj in Eng.pptx)
-  • kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān (Kannan varuvan 2025 Tamil in English.pptx)
-  • kiṇu saṅg khēlūṅ hōlī (Kinu sang 2025 Marwari in Eng.pptx)
-  • kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)
   • Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)
-  • mājī sāṅvarē (Maji samvare 2025 Braj in Eng.pptx)
-  • manamē narajīvitamākum (Maname Narajivitam 2025 Odiya in Eng v4.pptx)
-  • māyī… mainē… (Mayi maine Govinda 2025 Braj in Eng.pptx)
-  • māyī… mainē… (Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx)
-  • māyi mhārō supaṇāmā (Mayi mharo supanama 2025 Marwari in Eng.pptx)
-  • mhārā rē giridhar gōpāl (Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx)
-  • nandanandan diṭh paḍiyā (Nandanandan bith padiya 2025 Braj in Eng.pptx)
-  • nārāyaṇā śrī rāmā nārāyaṇā śrī rāma (Narayana Sri Rama 2025 Samskritam in Eng.pptx)
-  • neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ (Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx)
   • O Essentie (O Essentie 2025 Dutch in English.pptx)
-  • ō kāḷiyā rē ō kāḷiyā rē (O Kaliya re 2025 Odiya in Eng.pptx)
   • Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)
-  • prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō (Pranesvara en hridayesvara 2025 Mal in Eng.pptx)
-  • rādhē rādhē rādhē rādhē kṛṣṇa (Radhe Radhe Radhe 2025 Samskritam in Eng.pptx)
   • samatvam, samatvamsamatvam, samatvam (Samatvam Samatvam 2025 - English.pptx)
-  • sāṅvarā rē mhāri (Sanvara re mhari 2025 Marwari in Eng.pptx)
-  • satyam jñānam anantam (Satyam Jnanam anantam 2025 Samskritam in Eng.pptx)
   • there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)
-  • you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)
 
 ────────────────────────────────────────────────────────────────────────────────
 SONGS WITH MISSING ENGLISH MEANINGS
 (lists which slide numbers are missing translations)
 ────────────────────────────────────────────────────────────────────────────────
-  • Divine Painter (Divine Painter 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  • I was lost in the darkness2025(English) (I was lost in darkness 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10]
-  • In the misty mountains Is our Mahadeva (In the misty mountains 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-  • Jump into the river of love (Jump into the river of love 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10]
   • Krishna left with the cows, Radha's heart is aching (Krishna left with the cows 2025 Eng in Eng.pptx)
       Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-  • Miles away from you (Miles away 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9]
-  • Mother with you as our shield (Mother with You as our shield 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5]
   • Oh Ma you are everywhereAll is within you (Oh Ma You are everywhere 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9]
-  • Peace to the ocean (Peace to the ocean 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8]
-  • This boat was lost at sea (This boat was lost 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9]
-  • beloved amma, divine mother (Beloved Amma 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10]
-  • did you hear my call (Did you hear my call 2025 Eng in Eng.pptx)
       Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9]
   • dēkhā thā pēhlī bār (Dekha tha pehali bar 2025 Hindi in Eng.pptx)
       Missing on slides: [14]
@@ -117,10 +64,6 @@ SONGS WITH MISSING ENGLISH MEANINGS
   • kaṇṇan eṅgē kāṇavillai (Kannan enge kanavillai 2025 Tamil in Eng.pptx)
       Missing on slides: [16]
   • kṛnvantō viśvamāryam amṛtasya putrāḥ vayam (Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  • life and death are within you (Life and Death are within you 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-  • love is the face of god (Love is the face of God 2025 Eng in Eng.pptx)
       Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   • mizhi colli avan annu pōy (Mizhi cholli avanannu 2025 Mal in Eng.pptx)
       Missing on slides: [8]
@@ -136,8 +79,6 @@ SONGS WITH MISSING ENGLISH MEANINGS
       Missing on slides: [5, 8]
   • there’s a way of life in this universe leading to true peace (There's a way of life 2025 Eng in Eng.pptx)
       Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9]
-  • where do you wander2025(English) (Where do you wander 2025 Eng in Eng.pptx)
-      Missing on slides: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
   • you are the one awake at nightoutside it's darkbut you're full of light (You are the one 2025 Eng in Eng.pptx)
       Missing on slides: [2, 3, 4, 5, 6]
 
@@ -145,389 +86,67 @@ SONGS WITH MISSING ENGLISH MEANINGS
 DETAILED ISSUE LOG
 ────────────────────────────────────────────────────────────────────────────────
 
-### MISSING LANGUAGE (30 occurrences)
-
-  File: Adimatastava 2025 Samskritam in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Adimatastava 2025 Samskritam in Eng.pptx
-  Song: ādimātastava caraṇa-rēṇu
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | ādimātastava caraṇa-rēṇu
-    | ---
-    | 2025
-    | (Samskritam)
-
-  File: Amba tan padataril 2025 Mal in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amba tan padataril 2025 Mal in Eng.pptx
-  Song: amba tan padatārin dhūḷikaḷ nannāy
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | amba tan padatārin dhūḷikaḷ nannāy
-    | ---
-    | 2025
-    | (Malyalam)
-
-  File: Amma en bodha nilavayita 2025 Mal in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amma en bodha nilavayita 2025 Mal in Eng.pptx
-  Song: amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy
-    | ---
-    | Mother is the moonlight that illuminates my awareness, the song of my life, 
-
-  File: Bhavabdhi tarini 2025 Samskritam in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Bhavabdhi tarini 2025 Samskritam in Eng.pptx
-  Song: bhavābdhi-tāriṇī
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | bhavābdhi-tāriṇī
-    | ---
-    | 2025
-    | (Samskritam)
-
-  File: Chinmaya rupini 2025 Sanskrit in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Chinmaya rupini 2025 Sanskrit in Eng.pptx
-  Song: cinmaya-rūpiṇi kanmaṣa-nāśini
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | cinmaya-rūpiṇi kanmaṣa-nāśini
-    | ---
-    | 2025
-    | (Samskritam)
-
-  File: He Nilomani 2025 Odiya in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/He Nilomani 2025 Odiya in Eng.pptx
-  Song: hē nīḷōmaṇi hē jogonnātho
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | hē nīḷōmaṇi hē jogonnātho
-    | ---
-    | 2025
-    | (Odiya)
-
-  File: Kahiyo re prabhu 2025 Braj in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kahiyo re prabhu 2025 Braj in Eng.pptx
-  Song: kahiyō rē prabhu
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | kahiyō rē prabhu 
-    | ---
-    | 2025
-    | (Braj Bhasha)
-
-  File: Kannan varuvan 2025 Tamil in English.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan varuvan 2025 Tamil in English.pptx
-  Song: kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān
-    | ---
-    | Krishna will come — our beloved Krishna will arrive.
-    | He will answer the call of the gopis; Krishna will come.
-
-  File: Kinu sang 2025 Marwari in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kinu sang 2025 Marwari in Eng.pptx
-  Song: kiṇu saṅg khēlūṅ hōlī
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | kiṇu saṅg khēlūṅ hōlī
-    | ---
-    | 2025
-    | (Marwari)
-
-  File: Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx
-  Song: kṛnvantō viśvamāryam amṛtasya putrāḥ vayam
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | kṛnvantō viśvamāryam amṛtasya putrāḥ vayam
+### MISSING LANGUAGE (5 occurrences)
 
   File: Krishna left with the cows 2025 Eng in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx
   Song: Krishna left with the cows, Radha's heart is aching
   Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
+  Details: Language not found. Checked:
+  - Title slide text
+  - Filename: Krishna left with the cows 2025 Eng in Eng.pptx
+Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'
   Raw text sample:
     | Krishna left with the cows, Radha's heart is aching
-
-  File: Maji samvare 2025 Braj in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maji samvare 2025 Braj in Eng.pptx
-  Song: mājī sāṅvarē
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | mājī sāṅvarē 
-    | ---
-    | 2025
-    | (Braj Bhasha)
-
-  File: Maname Narajivitam 2025 Odiya in Eng v4.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maname Narajivitam 2025 Odiya in Eng v4.pptx
-  Song: manamē narajīvitamākum
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | manamē narajīvitamākum
-    | ---
-    | (Odiya)
-
-  File: Mayi maine Govinda 2025 Braj in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda 2025 Braj in Eng.pptx
-  Song: māyī… mainē…
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | māyī… mainē…
-    | ---
-    | 2025
-    | (Braj)
-
-  File: Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx
-  Song: māyī… mainē…
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | māyī… mainē…
-    | ---
-    | 2025
-    | (Braj)
-
-  File: Mayi mharo supanama 2025 Marwari in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi mharo supanama 2025 Marwari in Eng.pptx
-  Song: māyi mhārō supaṇāmā
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | māyi mhārō supaṇāmā
-    | ---
-    | 2025
-    | (Marwari)
-
-  File: Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx
-  Song: mhārā rē giridhar gōpāl
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | mhārā rē giridhar gōpāl
-    | ---
-    | 2025
-    | (Marwari)
-
-  File: Nandanandan bith padiya 2025 Braj in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nandanandan bith padiya 2025 Braj in Eng.pptx
-  Song: nandanandan diṭh paḍiyā
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | nandanandan diṭh paḍiyā
-    | ---
-    | 2025
-    | (Braj)
-
-  File: Narayana Sri Rama 2025 Samskritam in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Narayana Sri Rama 2025 Samskritam in Eng.pptx
-  Song: nārāyaṇā śrī rāmā nārāyaṇā śrī rāma
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | nārāyaṇā śrī rāmā nārāyaṇā śrī rāma
-    | ---
-    | 2025
-    | (Samskritam)
-
-  File: Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx
-  Song: neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ
-    | ---
-    | Bedecked with the radiant ornaments like justice in the heart, valor for shoulders,
 
   File: O Essentie 2025 Dutch in English.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/O Essentie 2025 Dutch in English.pptx
   Song: O Essentie
   Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
+  Details: Language not found. Checked:
+  - Title slide text
+  - Filename: O Essentie 2025 Dutch in English.pptx
+Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'
   Raw text sample:
     | O Essentie
     | ---
     | 2025
     | (Dutch)
 
-  File: O Kaliya re 2025 Odiya in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/O Kaliya re 2025 Odiya in Eng.pptx
-  Song: ō kāḷiyā rē ō kāḷiyā rē
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | ō kāḷiyā rē ō kāḷiyā rē
-    | ---
-    | 2025
-    | (Odiya)
-
   File: Oh Ma You are everywhere 2025 Eng in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx
   Song: Oh Ma you are everywhereAll is within you
   Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
+  Details: Language not found. Checked:
+  - Title slide text
+  - Filename: Oh Ma You are everywhere 2025 Eng in Eng.pptx
+Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'
   Raw text sample:
     | Oh Ma you are everywhereAll is within you 
-
-  File: Pranesvara en hridayesvara 2025 Mal in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Pranesvara en hridayesvara 2025 Mal in Eng.pptx
-  Song: prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō
-    | ---
-    | Lord of my life, Lord of my heart — Krishna, won’t you come, adorned with garlands of wildflowers? 
-
-  File: Radhe Radhe Radhe 2025 Samskritam in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx
-  Song: rādhē rādhē rādhē rādhē kṛṣṇa
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | rādhē rādhē rādhē rādhē kṛṣṇa 
-    | ---
-    | 2025
-    | (Samskritam)
 
   File: Samatvam Samatvam 2025 - English.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx
   Song: samatvam, samatvamsamatvam, samatvam
   Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
+  Details: Language not found. Checked:
+  - Title slide text
+  - Filename: Samatvam Samatvam 2025 - English.pptx
+Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'
   Raw text sample:
     | samatvam, samatvamsamatvam, samatvam
-
-  File: Sanvara re mhari 2025 Marwari in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Sanvara re mhari 2025 Marwari in Eng.pptx
-  Song: sāṅvarā rē mhāri
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | sāṅvarā rē mhāri
-    | ---
-    | 2025
-    | (Marwari)
-
-  File: Satyam Jnanam anantam 2025 Samskritam in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Satyam Jnanam anantam 2025 Samskritam in Eng.pptx
-  Song: satyam jñānam anantam
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | satyam jñānam anantam
-    | ---
-    | 2025
-    | (Samskritam)
 
   File: There's a way of life 2025 Eng in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx
   Song: there’s a way of life in this universe leading to true peace
   Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
+  Details: Language not found. Checked:
+  - Title slide text
+  - Filename: There's a way of life 2025 Eng in Eng.pptx
+Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'
   Raw text sample:
     | there’s a way of life in this universe leading to true peace
 
-  File: You are the one 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx
-  Song: you are the one awake at nightoutside it's darkbut you're full of light
-  Slide: 1
-  Details: Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\n(Malayalam)'
-  Raw text sample:
-    | you are the one awake at nightoutside it's darkbut you're full of light
-
-### MISSING MEANING (214 occurrences)
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | beloved amma, divine mother sitting with you, there is no other
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I write ‘ōm’ in the cloudsI bow down to the stars
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | and I kiss the moon.I pray to you, amma.
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | no more harm to nature’s lifethe world needs to survive
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | everywhere life needs our carenot to perish, be aware
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | our prayers and respectto all lives on earth
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love longs to flowto set all things aglow
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | let us rise in unitypeacefully in harmony
-
-  File: Beloved Amma 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx
-  Song: beloved amma, divine mother
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | let us rise in unitythe world is family
+### MISSING MEANING (91 occurrences)
 
   File: Dekha tha pehali bar 2025 Hindi in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Dekha tha pehali bar 2025 Hindi in Eng.pptx
@@ -537,158 +156,6 @@ DETAILED ISSUE LOG
   Raw text sample:
     | harī harī harī harī
 
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | did you hear my callmy cry, my prayer
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I have searched for youeverywhere
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | waxing and waning the moon knows my plight
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | weeks turn to months you are nowhere in sight
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | giridhāri… vanamāli…  
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the blue of the moon makes my eyes fill with tears
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I've cried for your darshan for so many years
-
-  File: Did you hear my call 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx
-  Song: did you hear my call
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | giridhāri… vanamāli…
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Divine Painter please paint within me Lessons of wisdom, pearls of the sea
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Oh Devi your beauty shines bright and strongYou show us through nature how to be One 
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I feel in my soul soaring freethe bird that you painted within me
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | The bird glides beyond thoughts and clouds of the mind
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Attachment and sorrow fall far behind 
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | A lake lies motionlessly,a lake that you painted within me.
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | May I dissolve in this deep still lake
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Reflecting the perfect beauty of your face. 
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Divine Painter please paint within me Lessons of wisdom, pearls of the sea
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 11
-  Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Oh Devi your beauty shines bright and strong. You show us through nature how to be One. 
-
-  File: Divine Painter 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx
-  Song: Divine Painter
-  Slide: 12
-  Details: Slide 12 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Isha vasya idam sarvamPainter brush and canvas are one
-
   File: Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Enta Chitramu enta vairudhyamu 2025 Telugu in Eng.pptx
   Song: enta citramu enta vairudhyamu
@@ -712,254 +179,6 @@ DETAILED ISSUE LOG
   Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
   Raw text sample:
     | hara ōm… śiva ōm… hara ōm… śiva ōm…
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I was lost in the darknessIn the shadows of ignorance
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Nowhere to go, I looked upon youYou lit the fire in me
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Amma Amma Amma AmmaI see the truth I long for
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I was lost in the parched worldCraving for peace of mind
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Stuck in the desert, I looked upon youYou showered love on me
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Amma Amma Amma AmmaI feel the love I long for
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I was lost in the lifeless worldCaught in the grasp of fear
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Searching for life, I looked upon youYou breathed life into me
-
-  File: I was lost in darkness 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx
-  Song: I was lost in the darkness2025(English)
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Amma Amma Amma Amma
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | In the misty mountains Is our Mahadeva
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Eyes closed and heart openSilently protecting us
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | As soon as you wakeEarth begins to shake
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Will I get a chanceTo see your holy dance
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | You dance and you chanttrident in your hand
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | God of the three worldsYou are beyond words
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Cosmic and divineYou rise and you shine
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 11
-  Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Let me be your NandiTo carry you with me
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 12
-  Details: Slide 12 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | tam taka dhimi tam taka dhimiom namah shivayaDance in my heart Nataraja
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 13
-  Details: Slide 13 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | O NeelakanthaO Mahadeva
-
-  File: In the misty mountains 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx
-  Song: In the misty mountains Is our Mahadeva
-  Slide: 14
-  Details: Slide 14 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | When I hear your drumMy heart beats in your rhythm
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Jump into the river of loveSwim through the waves of life,
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Amma, guide me to the ocean,Bliss, eternal light.
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Teach me how to swimThrough happiness and strife,
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Floating on the raft of graceI offer you my life.
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Looking at the river, See not the separate shores,
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | “I” and “you” merge into LoveWe’re one, forever more.
-
-  File: Jump into the river of love 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx
-  Song: Jump into the river of love
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Jai Amma… Jai Amma… Jai Amma… My Amma!Jai Amma… Jai Amma… Jai Amma… My Amma!
 
   File: Kannan enge kanavillai 2025 Tamil in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan enge kanavillai 2025 Tamil in Eng.pptx
@@ -1201,246 +420,6 @@ DETAILED ISSUE LOG
   Raw text sample:
     | Krishna, Krishna may I merge in you
 
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | life and death are within youheaven and hell are within you
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the truth that is told, is what you must know
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you are free (2)
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | don't you grow tired of this journey?In ancient dreams you are searching
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | bonds you have made, all you have gainedwill be lost like tears in the rain
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | life and death are within youheaven and hell are within you
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the truth that is told, is what you must know
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | all that is seen cannot be truethe seer alone is the real you
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | awake from this dream, truth's glory singbe as you are - ever free
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 11
-  Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | life and death are within youheaven and hell are within you
-
-  File: Life and Death are within you 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx
-  Song: life and death are within you
-  Slide: 12
-  Details: Slide 12 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the truth that is told, is what you must know
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love is the face of god the silent song of the soul
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | this life will passlike dust in the wind
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love alone will remain 
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | we take this birthto find the onewho shines with the light of a thousand suns 
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love is the face of god the silent song of the soul
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | to see that onein every facecast off the pastlet your mind fall away 
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love is the face of god the silent song of the soul
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | by love alone, the path is shown to end this age of strife 
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love is the face of god the silent song of the soul
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 11
-  Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | this life will passlike dust in the wind
-
-  File: Love is the face of God 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx
-  Song: love is the face of god
-  Slide: 12
-  Details: Slide 12 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | love alone will remain 
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Miles away from youCloser than my breathYour essence in hearts of allI pray to merge in you
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Devi whose hair is skyPlease reveal your subtle form
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Boundless and full, perfectly stillShine forth from the shrine within
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Miles away from you
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | each and every drop of your loveDevi is like fragrant gold
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the sun rises, the path unfoldsMoments with you etched in my soul
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Miles away from you
-
-  File: Miles away 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx
-  Song: Miles away from you
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Devi hold me close from farHold me close from farDevi hold me close from far
-
   File: Mizhi cholli avanannu 2025 Mal in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mizhi cholli avanannu 2025 Mal in Eng.pptx
   Song: mizhi colli avan annu pōy
@@ -1448,38 +427,6 @@ DETAILED ISSUE LOG
   Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
   Raw text sample:
     | kaṇṇā… kaṇṇā… kaṇṇā… kaṇṇā…
-
-  File: Mother with You as our shield 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx
-  Song: Mother with you as our shield
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Mother with you as our shieldthere is nothing left to fearknowing the battles are already wonlet us not waste this life
-
-  File: Mother with You as our shield 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx
-  Song: Mother with you as our shield
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you have cleared the path Mother, you have lit the wayknowing the battles are already wonlet us not waste this life
-
-  File: Mother with You as our shield 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx
-  Song: Mother with you as our shield
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you give the strength that we needMother, you give the air that we breathe
-
-  File: Mother with You as our shield 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx
-  Song: Mother with you as our shield
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | knowing the battles are already wonlet us not waste this life
 
   File: Oh Ma You are everywhere 2025 Eng in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx
@@ -1576,62 +523,6 @@ DETAILED ISSUE LOG
   Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
   Raw text sample:
     | rādhā mādhavā harērādhā mādhavā harē
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Peace to the oceanPeace to the skyPeace to the earthHer mountains high
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Peace to the cloudsPeace to the starsPeace to all people wherever they are. 
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Let’s make a world of loveKindness will be everywhere
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Healing the wounds hatred created Show the world that we care
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Different faces and names Inside we’re all the same
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Wisdom revealsLove is what healstaking our sorrow and pain. 
-
-  File: Peace to the ocean 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx
-  Song: Peace to the ocean
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | Let us all join handsEvery country and land Light a lamp of love inside the heart of every man
 
   File: Radhe Radhe Radhe 2025 Samskritam in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx
@@ -1945,190 +836,6 @@ DETAILED ISSUE LOG
   Raw text sample:
     | you’re the I in me, I’m the you in youawaken to true freedomawaken to true freedom
 
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | This boat was lost at seauntil you rescued me
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | oh arbiter of my destinyambē mā amṛtēśvarī 
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | samsara’s waves engulfing mewas calling for you desperately/
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | until you rose resplendentlyemerging from the deep blue sea emerging from the deep blue sea
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | oh arbiter of my destinyambē mā amṛtēśvarī 
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | I reveled in your majestythe sound of om pervading me/
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | samsara’s tempest ceased to bein your arms, eternally in your arms, eternally
-
-  File: This boat was lost 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx
-  Song: This boat was lost at sea
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | oh arbiter of my destinyambē mā amṛtēśvarī
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 2
-  Details: Slide 2 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | where do you wander? where do you go?
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 3
-  Details: Slide 3 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the sun inside you is waiting to dawn 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 4
-  Details: Slide 4 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | be without fear, be without sorrow 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 5
-  Details: Slide 5 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you are love itself 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 6
-  Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | why do you cry? why do you cry? 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 7
-  Details: Slide 7 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | where do you wander? where do you go? 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 8
-  Details: Slide 8 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the sun inside you is waiting to dawn
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 9
-  Details: Slide 9 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you have no past, give up your shame 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 10
-  Details: Slide 10 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | in your hand alone
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 11
-  Details: Slide 11 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | is the key of fate, is the key of fate 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 12
-  Details: Slide 12 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | where do you wander? where do you go? 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 13
-  Details: Slide 13 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | the sun inside you is waiting to dawn
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 14
-  Details: Slide 14 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you were never born, you will never die 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 15
-  Details: Slide 15 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | you are life itself 
-
-  File: Where do you wander 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx
-  Song: where do you wander2025(English)
-  Slide: 16
-  Details: Slide 16 has lyrics but no English meaning (only 1 text box found)
-  Raw text sample:
-    | why do you cry? why do you cry?
-
   File: You are the one 2025 Eng in Eng.pptx
   Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx
   Song: you are the one awake at nightoutside it's darkbut you're full of light
@@ -2168,107 +875,6 @@ DETAILED ISSUE LOG
   Details: Slide 6 has lyrics but no English meaning (only 1 text box found)
   Raw text sample:
     | śiva śiva śiva hara hara śaṅkara
-
-### MISSING YEAR (11 occurrences)
-
-  File: Amma en bodha nilavayita 2025 Mal in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amma en bodha nilavayita 2025 Mal in Eng.pptx
-  Song: amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy
-    | ---
-    | Mother is the moonlight that illuminates my awareness, the song of my life, 
-
-  File: Kannan varuvan 2025 Tamil in English.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan varuvan 2025 Tamil in English.pptx
-  Song: kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān
-    | ---
-    | Krishna will come — our beloved Krishna will arrive.
-    | He will answer the call of the gopis; Krishna will come.
-
-  File: Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx
-  Song: kṛnvantō viśvamāryam amṛtasya putrāḥ vayam
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | kṛnvantō viśvamāryam amṛtasya putrāḥ vayam
-
-  File: Krishna left with the cows 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx
-  Song: Krishna left with the cows, Radha's heart is aching
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | Krishna left with the cows, Radha's heart is aching
-
-  File: Maname Narajivitam 2025 Odiya in Eng v4.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maname Narajivitam 2025 Odiya in Eng v4.pptx
-  Song: manamē narajīvitamākum
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | manamē narajīvitamākum
-    | ---
-    | (Odiya)
-
-  File: Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx
-  Song: neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ
-    | ---
-    | Bedecked with the radiant ornaments like justice in the heart, valor for shoulders,
-
-  File: Oh Ma You are everywhere 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx
-  Song: Oh Ma you are everywhereAll is within you
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | Oh Ma you are everywhereAll is within you 
-
-  File: Pranesvara en hridayesvara 2025 Mal in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Pranesvara en hridayesvara 2025 Mal in Eng.pptx
-  Song: prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō
-    | ---
-    | Lord of my life, Lord of my heart — Krishna, won’t you come, adorned with garlands of wildflowers? 
-
-  File: Samatvam Samatvam 2025 - English.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx
-  Song: samatvam, samatvamsamatvam, samatvam
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | samatvam, samatvamsamatvam, samatvam
-
-  File: There's a way of life 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx
-  Song: there’s a way of life in this universe leading to true peace
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | there’s a way of life in this universe leading to true peace
-
-  File: You are the one 2025 Eng in Eng.pptx
-  Path: /Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx
-  Song: you are the one awake at nightoutside it's darkbut you're full of light
-  Slide: 1
-  Details: Year not found on slide, using folder year: 2025
-  Raw text sample:
-    | you are the one awake at nightoutside it's darkbut you're full of light
 
 ================================================================================
 END OF REPORT
