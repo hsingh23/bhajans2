@@ -18,16 +18,30 @@ import ErrorBoundary from "./ErrorBoundary";
 import { registerSW } from 'virtual:pwa-register';
 
 // Register PWA
-registerSW({
+const updateSW = registerSW({
   onNeedRefresh() {
-    // Show a prompt to user or auto reload
-    // For now, let's just log it or auto-reload if critical
-    console.log('New content available, reload to update.');
+    console.log("New content available, reloading to update.");
+    updateSW(true);
   },
   onOfflineReady() {
-    console.log('App is ready to work offline.');
+    console.log("App is ready to work offline.");
   },
 });
+
+const requestServiceWorkerUpdate = () => {
+  if (import.meta.env.PROD) {
+    updateSW(true);
+  }
+};
+
+window.requestServiceWorkerUpdate = requestServiceWorkerUpdate;
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    requestServiceWorkerUpdate();
+  }
+});
+window.addEventListener("online", requestServiceWorkerUpdate);
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
