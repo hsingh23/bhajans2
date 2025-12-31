@@ -17,17 +17,59 @@ import ErrorBoundary from "./ErrorBoundary";
 // @ts-expect-error: virtual module not found in TS context
 import { registerSW } from 'virtual:pwa-register';
 
-// Register PWA
-registerSW({
-  onNeedRefresh() {
-    // Show a prompt to user or auto reload
-    // For now, let's just log it or auto-reload if critical
-    console.log('New content available, reload to update.');
-  },
-  onOfflineReady() {
-    console.log('App is ready to work offline.');
-  },
+const expectedServiceWorkerFile = "service-worker2.js";
+let updateSW = () => {};
+
+const unregisterLegacyServiceWorkers = async () => {
+  if (!("serviceWorker" in navigator)) {
+    return;
+  }
+
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(
+    registrations.map((registration) => {
+      const scriptUrl =
+        registration.active?.scriptURL ||
+        registration.waiting?.scriptURL ||
+        registration.installing?.scriptURL;
+
+      if (scriptUrl && !scriptUrl.endsWith(`/${expectedServiceWorkerFile}`)) {
+        return registration.unregister();
+      }
+
+      return null;
+    })
+  );
+};
+
+const registerServiceWorker = async () => {
+  await unregisterLegacyServiceWorkers();
+
+  updateSW = registerSW({
+    onNeedRefresh() {
+      console.log("New content available, reloading to update.");
+      updateSW();
+    },
+    onOfflineReady() {
+      console.log("App is ready to work offline.");
+    },
+  });
+};
+
+const requestServiceWorkerUpdate = () => {
+  if (import.meta.env.PROD) {
+    updateSW();
+  }
+};
+
+window.requestServiceWorkerUpdate = requestServiceWorkerUpdate;
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") {
+    requestServiceWorkerUpdate();
+  }
 });
+window.addEventListener("online", requestServiceWorkerUpdate);
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -91,6 +133,12 @@ const renderApp = () => {
 };
 
 const bootstrap = async () => {
+  try {
+    await registerServiceWorker();
+  } catch (error) {
+    console.error("Failed to register service worker:", error);
+  }
+
   try {
     await enableMocking();
   } catch (error) {
