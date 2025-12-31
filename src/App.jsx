@@ -44,9 +44,19 @@ library.add(
   faArrowLeft
 );
 
+const getShow2025Param = (search) => {
+  const value = new URLSearchParams(search).get("2025");
+  if (value === "1") return true;
+  if (value === "0") return false;
+  return null;
+};
+
+const shouldShow2025 = () => localStorage.getItem("show2025") === "1";
+
 const App = () => {
   const [favorites, setFavorites] = useState(() => getJson("favorites") || {});
-  const [bhajans, setBhajans] = useState([]);
+  const [allBhajans, setAllBhajans] = useState([]);
+  const [show2025, setShow2025] = useState(shouldShow2025);
   const location = useLocation();
 
   useEffect(() => {
@@ -73,7 +83,7 @@ const App = () => {
       .then((fetchedBhajans) => {
         const sorted = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
         window.fetchedBhajans = sorted;
-        setBhajans(sorted);
+        setAllBhajans(sorted);
       });
 
     // Subscribe to auth state changes to sync favorites on every login
@@ -85,6 +95,33 @@ const App = () => {
 
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    const paramValue = getShow2025Param(location.search);
+    if (paramValue === null) return;
+    localStorage.setItem("show2025", paramValue ? "1" : "0");
+    setShow2025(paramValue);
+  }, [location.search]);
+
+  const bhajans = useMemo(() => {
+    if (show2025) {
+      return allBhajans;
+    }
+
+    return allBhajans
+      .map((bhajan) => {
+        if (!bhajan?.l?.length) return bhajan;
+        const filteredLocations = bhajan.l.filter((loc) => !loc.startsWith("2025-"));
+        if (filteredLocations.length === 0) {
+          return null;
+        }
+        if (filteredLocations.length === bhajan.l.length) {
+          return bhajan;
+        }
+        return { ...bhajan, l: filteredLocations };
+      })
+      .filter(Boolean);
+  }, [allBhajans, show2025]);
 
   const addFavorite = useCallback((name) => {
     setFavorites((prev) => {
