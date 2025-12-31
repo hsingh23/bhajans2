@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { initializeApp } from "firebase/app";
 import {
   getDatabase,
@@ -5,13 +6,10 @@ import {
   get,
   set,
   remove,
-  goOnline as dbGoOnline,
-  goOffline as dbGoOffline,
 } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
-import { getMessaging, getToken, onMessage, isSupported } from "firebase/messaging";
-// import { alert } from "notie";
+
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
 
 const {
@@ -22,7 +20,7 @@ const {
   whenUser,
   removeRefOnce,
   auth,
-  messaging,
+
   goOffline,
   goOnline,
   getUserByEmail,
@@ -46,7 +44,7 @@ const {
   var history = [];
   window.dbHistory = history;
   var startTime = +new Date();
-  let initialWait = true;
+
   // don't worry about going online and offline right now
   const goOffline = () => {
     // history.push(["off", +new Date() - startTime]);
@@ -62,14 +60,13 @@ const {
 
   if (!window.localStorage.admin) {
     setTimeout(() => {
-      initialWait = false;
+      // initialWait = false;
       history.push(["initialWaitOver", +new Date() - startTime]);
       if (!window.localStorage.admin) goOffline();
     }, 15 * 1000);
   }
 
   const auth = getAuth(firebaseApp);
-  let messaging = null;
   // window.firebase shim defined later for dev debugging
 
   // const doOnce = async function(firebasePromiseCallback) {
@@ -80,13 +77,25 @@ const {
   //   });
   // };
 
-  const checkRefOnce = (refPath) => {
+  const checkRefOnce = (refPath, { timeoutMs = 5000, fallback = null } = {}) => {
     return new Promise(function (resolve, reject) {
-      goOnline();
-      get(ref(db, refPath)).then(function (snapshot) {
+      const timer = setTimeout(() => {
         goOffline();
-        resolve(snapshot.val());
-      });
+        resolve(fallback);
+      }, timeoutMs);
+
+      goOnline();
+      get(ref(db, refPath))
+        .then(function (snapshot) {
+          clearTimeout(timer);
+          goOffline();
+          resolve(snapshot.val());
+        })
+        .catch((err) => {
+          clearTimeout(timer);
+          goOffline();
+          reject(err);
+        });
     });
   };
 
@@ -116,82 +125,53 @@ const {
     return new Promise((resolve, reject) => {
       const unsub = onAuthStateChanged(auth, (user) => {
         if (user) {
+          if (timerId) clearTimeout(timerId);
           unsub && unsub();
           resolve(user);
         }
       });
-      timeout &&
-        setTimeout(function () {
-          reject("Timeout");
-        }, timeout);
+
+      const timerId = timeout
+        ? setTimeout(function () {
+            unsub && unsub();
+            reject("Timeout");
+          }, timeout)
+        : null;
     });
   };
 
-  whenUser().then((user) => {
+  // Three months in milliseconds for offline grace period
+  const THREE_MONTHS_MS = 90 * 24 * 60 * 60 * 1000;
+
+  const syncUserData = () => {
     checkRefOnce(`satsang/${auth.currentUser.uid}`).then((val) => {
       if (val) localStorage.presenter = true;
-    });
+    }).catch(console.error);
+
     checkRefOnce(`paid/${auth.currentUser.uid}/expiresOn`).then((val) => {
       if (val) {
         localStorage.expiresOn = val;
+        // Calculate offline grace period: 3 months OR until subscription expires, whichever is sooner
+        const threeMonthsFromNow = Date.now() + THREE_MONTHS_MS;
+        const offlineValidUntil = Math.min(threeMonthsFromNow, +val);
+        localStorage.offlineValidUntil = offlineValidUntil;
       } else {
         delete localStorage.expiresOn;
+        delete localStorage.offlineValidUntil;
       }
       localStorage.lastOnline = +new Date();
+    }).catch((err) => {
+      console.warn("Failed to sync user data, likely offline:", err);
+      // Don't update lastOnline on failure, so we rely on the last successful sync
     });
+  };
+
+  whenUser().then(() => {
+    syncUserData();
+    window.addEventListener('online', syncUserData);
   }, doNothing);
 
-  async function getMessageID() {
-    // if (!localStorage.currentToken) {
-    //   alert({ text: 'Please allow notifications for website updates and more. Unsubscribe at any time.' })
-    // }
-    try {
-      if (!messaging) return;
-      if (typeof Notification !== "undefined") {
-        await Notification.requestPermission();
-      }
-      const token = await getToken(messaging).then((t) => t);
-      if (token) {
-        await whenUser(null);
-        const userMessagesRef = ref(db, `messages/${auth.currentUser.uid}`);
-        const snap = await get(userMessagesRef);
-        if (!snap.val() || !snap.val().tokens) {
-          await set(userMessagesRef, {
-            displayName: auth.currentUser.displayName,
-            email: auth.currentUser.email,
-            tokens: { [token]: 1 },
-          });
-          localStorage.currentToken = token;
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  // Initialize messaging only in production with active service worker and browser support
-  if (
-    typeof navigator !== "undefined" &&
-    "serviceWorker" in navigator &&
-    process.env.NODE_ENV === "production"
-  ) {
-    isSupported()
-      .then((supported) => {
-        if (!supported) return;
-        messaging = getMessaging(firebaseApp);
-        navigator.serviceWorker.ready.then(() => {
-          getMessageID();
-          onMessage(messaging, (payload) => {
-            if (payload && payload.notification && payload.notification.body) {
-              if (typeof window !== "undefined" && window.alert) {
-                window.alert(payload.notification.body);
-              }
-            }
-          });
-          window.messaging = messaging;
-        });
-      })
-      .catch(() => {});
-  }
+
   // functions
   const functions = getFunctions(firebaseApp, "us-central1");
   const getUserByEmail = httpsCallable(functions, "getUserByEmail");
@@ -214,7 +194,7 @@ const {
     whenUser,
     removeRefOnce,
     auth,
-    messaging,
+
     goOnline,
     goOffline,
     getUserByEmail,
@@ -231,7 +211,7 @@ export {
   removeRefOnce,
   auth,
   firebaseShim as firebase,
-  messaging,
+
   goOffline,
   goOnline,
   getUserByEmail,

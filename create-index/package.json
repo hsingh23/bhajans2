@@ -1,0 +1,10 @@
+{
+  "name": "create-index",
+  "version": "1.0.0",
+  "description": "Helper scripts for creating bhajan index",
+  "type": "commonjs",
+  "dependencies": {
+    "jaro-winkler": "^0.2.8",
+    "lodash": "^4.17.21"
+  }
+}
