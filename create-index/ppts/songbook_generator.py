@@ -97,6 +97,22 @@ TITLE_UNDERLINE_THICKNESS = 0.5
 TITLE_UNDERLINE_COLOR = colors.black
 
 # ------------------------------------------------------------------------------
+# PDF TYPOGRAPHY - SEARCHABLE TITLE
+# ------------------------------------------------------------------------------
+# Invisible ASCII version of title for Ctrl+F search functionality
+# This allows users to search "prema-sagarame" and find "prēma-sāgaramē"
+SEARCHABLE_TITLE_ENABLED = True
+SEARCHABLE_TITLE_FONT_SIZE = 1        # 1pt - effectively invisible
+SEARCHABLE_TITLE_LINE_HEIGHT = 1
+SEARCHABLE_TITLE_SPACE_AFTER = 2
+# Transparent color (won't show but is selectable/searchable)
+SEARCHABLE_TITLE_COLOR = colors.Color(1, 1, 1, alpha=0)
+# Alternative: white (blends with white background)
+# SEARCHABLE_TITLE_COLOR = colors.white
+# Alternative: very light gray (barely visible)
+# SEARCHABLE_TITLE_COLOR = colors.Color(0.95, 0.95, 0.95)
+
+# ------------------------------------------------------------------------------
 # PDF TYPOGRAPHY - LYRICS
 # ------------------------------------------------------------------------------
 LYRICS_FONT_SIZE = 13
@@ -110,7 +126,7 @@ LYRICS_SPACE_AFTER = 6
 MEANING_FONT_SIZE = 11
 MEANING_LINE_HEIGHT = 14
 MEANING_SPACE_BEFORE = 4
-MEANING_SPACE_AFTER = 24
+MEANING_SPACE_AFTER = 20
 
 # ------------------------------------------------------------------------------
 # STANZA SPACING
@@ -145,17 +161,194 @@ PDF_EXTENSION = ".pdf"
 TOC_EXTENSION = "_toc.txt"
 
 # ------------------------------------------------------------------------------
-# KNOWN LANGUAGES (for detection)
+# KNOWN LANGUAGES AND DETECTION
 # ------------------------------------------------------------------------------
-KNOWN_LANGUAGES = [
-    "Malayalam", "Tamil", "Telugu", "Kannada", "Hindi", "Sanskrit",
-    "Marathi", "Gujarati", "Bengali", "Punjabi", "Odia", "Assamese",
-    "English", "Spanish", "French", "German",
-    # Add more as needed
-]
+# Full language names and their abbreviations/variations
+# Format: canonical_name -> [list of variations/abbreviations]
+LANGUAGE_MAP = {
+    # Indian Languages
+    "Malayalam": [
+        "malayalam", "mal", "mlm", "malyalam", "malaylam", "malay",
+        "ml", "മലയാളം"
+    ],
+    "Tamil": [
+        "tamil", "tam", "tml", "tamizh", "thamil", "ta", "தமிழ்"
+    ],
+    "Telugu": [
+        "telugu", "tel", "tlg", "telegu", "te", "తెలుగు"
+    ],
+    "Kannada": [
+        "kannada", "kan", "knd", "kannad", "karnataka", "kn", "ಕನ್ನಡ"
+    ],
+    "Hindi": [
+        "hindi", "hin", "hnd", "hdi", "hi", "हिंदी", "हिन्दी"
+    ],
+    "Sanskrit": [
+        "sanskrit", "san", "skt", "samskrit", "samskritam", "sa", "संस्कृत"
+    ],
+    "Bengali": [
+        "bengali", "ben", "bng", "bangla", "bangali", "bn", "বাংলা"
+    ],
+    "Marathi": [
+        "marathi", "mar", "mrt", "marati", "mr", "मराठी"
+    ],
+    "Gujarati": [
+        "gujarati", "guj", "gujrati", "gujarathi", "gu", "ગુજરાતી"
+    ],
+    "Punjabi": [
+        "punjabi", "pun", "pnj", "panjabi", "pa", "ਪੰਜਾਬੀ", "پنجابی"
+    ],
+    "Odia": [
+        "odia", "odi", "oriya", "orya", "odiya", "odhiya", "or", "ଓଡ଼ିଆ"
+    ],
+    "Braj Bhasha": [
+        "braj bhasha", "braj", "braja", "brajabhasha", "brj"
+    ],
+    "Marwari": [
+        "marwari", "marwadi", "mwr", "marvadi"
+    ],
+    "Assamese": [
+        "assamese", "asm", "assam", "asamiya", "as", "অসমীয়া"
+    ],
+    "Konkani": [
+        "konkani", "kon", "knk", "kk", "कोंকণী"
+    ],
+    "Kashmiri": [
+        "kashmiri", "kas", "kash", "ks", "कॉशुर"
+    ],
+    "Nepali": [
+        "nepali", "nep", "npl", "ne", "नेपाली"
+    ],
+    "Sindhi": [
+        "sindhi", "snd", "sind", "sd", "سنڌي"
+    ],
+    "Maithili": [
+        "maithili", "mai", "mth", "मैथिली"
+    ],
+    "Dogri": [
+        "dogri", "doi", "dgr", "डोगरी"
+    ],
+    "Manipuri": [
+        "manipuri", "mni", "mnp", "meitei", "মৈতৈলোন্"
+    ],
+    "Bodo": [
+        "bodo", "bod", "brx", "बड़ो"
+    ],
+    "Santali": [
+        "santali", "sat", "snt", "ᱥᱟᱱᱛᱟᱲᱤ"
+    ],
+    "Urdu": [
+        "urdu", "urd", "ur", "اردو"
+    ],
+    "Tulu": [
+        "tulu", "tcy", "ತುಳು"
+    ],
+    "Bhojpuri": [
+        "bhojpuri", "bho", "bhoj", "भोजपुरी"
+    ],
+    "Rajasthani": [
+        "rajasthani", "raj", "rjs", "राजस्थानी"
+    ],
+    "Chhattisgarhi": [
+        "chhattisgarhi", "chg", "छत्तीसगढ़ी"
+    ],
+    "Haryanvi": [
+        "haryanvi", "har", "hry", "हरियाणवी"
+    ],
+    "Magahi": [
+        "magahi", "mag", "मगही"
+    ],
+    "Awadhi": [
+        "awadhi", "awa", "अवधी"
+    ],
+    
+    # Other Languages
+    "English": [
+        "english", "eng", "en"
+    ],
+    "Spanish": [
+        "spanish", "spa", "español", "espanol", "es"
+    ],
+    "French": [
+        "french", "fra", "fre", "français", "francais", "fr"
+    ],
+    "German": [
+        "german", "ger", "deu", "deutsch", "de"
+    ],
+    "Portuguese": [
+        "portuguese", "por", "português", "pt"
+    ],
+    "Italian": [
+        "italian", "ita", "italiano", "it"
+    ],
+    "Russian": [
+        "russian", "rus", "ru", "русский"
+    ],
+    "Japanese": [
+        "japanese", "jpn", "ja", "日本語"
+    ],
+    "Chinese": [
+        "chinese", "chi", "zho", "zh", "中文", "mandarin"
+    ],
+    "Korean": [
+        "korean", "kor", "ko", "한국어"
+    ],
+    "Arabic": [
+        "arabic", "ara", "ar", "العربية"
+    ],
+    "Persian": [
+        "persian", "fas", "farsi", "fa", "فارسی"
+    ],
+    "Turkish": [
+        "turkish", "tur", "tr", "türkçe"
+    ],
+    "Thai": [
+        "thai", "tha", "th", "ไทย"
+    ],
+    "Vietnamese": [
+        "vietnamese", "vie", "vi", "tiếng việt"
+    ],
+    "Indonesian": [
+        "indonesian", "ind", "id", "bahasa"
+    ],
+    "Malay": [
+        "malay", "msa", "ms", "melayu"
+    ],
+    "Swahili": [
+        "swahili", "swa", "sw", "kiswahili"
+    ],
+    "Hebrew": [
+        "hebrew", "heb", "he", "עברית"
+    ],
+}
 
-# Case-insensitive lookup
-KNOWN_LANGUAGES_LOWER = {lang.lower(): lang for lang in KNOWN_LANGUAGES}
+# Build reverse lookup: variation -> canonical name
+LANGUAGE_LOOKUP: dict[str, str] = {}
+for canonical, variations in LANGUAGE_MAP.items():
+    LANGUAGE_LOOKUP[canonical.lower()] = canonical
+    for var in variations:
+        LANGUAGE_LOOKUP[var.lower()] = canonical
+
+# Common patterns in filenames that indicate language
+# e.g., "Song Name 2025 Mal in Eng.pptx" or "Song_Tamil_2024.pptx"
+FILENAME_LANGUAGE_PATTERNS = [
+    # "Mal in Eng" pattern - source language
+    r'\b([A-Za-z]{2,})\s+in\s+[Ee]ng(?:lish)?\b',
+    # "in Malayalam" pattern
+    r'\bin\s+([A-Za-z]{2,})\b',
+    # Language as a standalone word
+    r'\b([A-Za-z]{3,})\b',
+    # Language code in parentheses: (Mal) or (Tamil)
+    r'\(([A-Za-z]{2,})\)',
+    # Language after year: "2025 Malayalam" or "2025_Tamil"
+    r'20\d{2}[\s_\-]+([A-Za-z]{2,})',
+    # Language before year: "Malayalam 2025"
+    r'([A-Za-z]{3,})[\s_\-]+20\d{2}',
+    # Underscored: "Song_Malayalam_2025"
+    r'_([A-Za-z]{3,})_',
+    # Hyphenated: "Song-Tamil-2025"
+    r'-([A-Za-z]{3,})-',
+]
 
 
 # =============================================================================
@@ -220,8 +413,9 @@ class Song:
     stanzas: list[Stanza] = field(default_factory=list)
     page_number: int = 1
     
-    # Issue tracking
-    year_source: str = ""  # "slide", "folder", "default"
+    # Source tracking
+    year_source: str = ""      # "slide", "folder", "filename", "default"
+    language_source: str = ""  # "slide_parens", "slide_text", "filename", ""
     has_year: bool = True
     has_language: bool = True
     missing_meaning_slides: list[int] = field(default_factory=list)
@@ -247,6 +441,11 @@ class ProcessingReport:
     
     # Issues
     issues: list[Issue] = field(default_factory=list)
+    
+    # Language detection (new)
+    language_sources: dict[str, int] = field(default_factory=lambda: {
+        "slide_parens": 0, "slide_text": 0, "filename": 0, "not_found": 0
+    })
     
     # Aggregated counts
     songs_missing_year: list[str] = field(default_factory=list)
@@ -402,21 +601,42 @@ def register_fonts() -> tuple[str, str, str, str]:
 # =============================================================================
 
 def extract_text_from_shape(shape) -> str:
-    """Extract text from shape, preserving line breaks."""
+    """
+    Extract text from PowerPoint shape, preserving ALL line breaks.
+    
+    PowerPoint stores text in paragraphs. Each paragraph is a separate line.
+    Within a paragraph, there might also be soft line breaks (Shift+Enter).
+    """
     if not shape.has_text_frame:
         return ""
     
     paragraphs = []
+    
     for paragraph in shape.text_frame.paragraphs:
-        text = "".join(run.text for run in paragraph.runs)
-        paragraphs.append(text)
+        # Collect text from all runs in this paragraph
+        para_text_parts = []
+        
+        for run in paragraph.runs:
+            run_text = run.text
+            # Check for soft line breaks (vertical tab character in PPTX)
+            # These are represented as '\v' or '\x0b' in Python
+            run_text = run_text.replace('\v', '\n').replace('\x0b', '\n')
+            para_text_parts.append(run_text)
+        
+        para_text = ''.join(para_text_parts)
+        paragraphs.append(para_text)
     
-    result = "\n".join(paragraphs)
+    # Join paragraphs with newlines
+    result = '\n'.join(paragraphs)
     
-    # Clean up leading/trailing empty lines
+    # Clean up: remove leading/trailing blank lines but preserve internal structure
     lines = result.split('\n')
+    
+    # Strip leading empty lines
     while lines and not lines[0].strip():
         lines.pop(0)
+    
+    # Strip trailing empty lines  
     while lines and not lines[-1].strip():
         lines.pop()
     
@@ -446,51 +666,196 @@ def get_shapes_by_position(slide) -> list[dict]:
 # LANGUAGE DETECTION
 # =============================================================================
 
-def detect_language(text: str) -> Optional[str]:
+def normalize_language(text: str) -> Optional[str]:
     """
-    Detect language from text.
+    Normalize a language string to its canonical form.
+    
+    Examples:
+        "mal" -> "Malayalam"
+        "Tam" -> "Tamil"
+        "KANNADA" -> "Kannada"
+        "sanskrit" -> "Sanskrit"
+    """
+    if not text:
+        return None
+    
+    clean = text.strip().lower()
+    
+    # Direct lookup
+    if clean in LANGUAGE_LOOKUP:
+        return LANGUAGE_LOOKUP[clean]
+    
+    # Try without common suffixes/prefixes
+    for suffix in ['i', 'am', 'u']:
+        if clean.endswith(suffix) and clean[:-len(suffix)] in LANGUAGE_LOOKUP:
+            return LANGUAGE_LOOKUP[clean[:-len(suffix)]]
+    
+    return None
+
+
+def detect_language_from_text(text: str) -> Optional[str]:
+    """
+    Detect language from arbitrary text (slide content, metadata, etc.)
+    
     Handles formats like:
-      - "Malayalam"
-      - "(Malayalam)"
-      - "2025 (Malayalam)"
-      - "2025 Malayalam"
-      - "(malayalam)"  -> "Malayalam"
+        - "Malayalam"
+        - "(Malayalam)"
+        - "2025 (Malayalam)"
+        - "2025 Malayalam"
+        - "(mal)"
+        - "Mal"
     """
     if not text:
         return None
     
     text = text.strip()
     
-    # Check for language in parentheses: "(Malayalam)" or "2025 (Malayalam)"
-    paren_match = re.search(r'$([^)]+)$', text)
-    if paren_match:
-        potential = paren_match.group(1).strip()
-        # Check if it's a known language
-        if potential.lower() in KNOWN_LANGUAGES_LOWER:
-            return KNOWN_LANGUAGES_LOWER[potential.lower()]
-        # If it looks like a language name (single word, alphabetic)
-        if potential.replace(' ', '').isalpha() and len(potential) < 30:
-            return potential.title()
+    # Check for language in parentheses first (highest priority)
+    paren_matches = re.findall(r'\(([^)]+)\)', text)
+    for match in paren_matches:
+        lang = normalize_language(match.strip())
+        if lang:
+            return lang
     
-    # Check for language after year: "2025 Malayalam"
-    after_year = re.search(r'\d{4}\s+([A-Za-z]+)', text)
+    # Check for "in <language>" pattern
+    in_match = re.search(r'\bin\s+([A-Za-z]+)', text, re.IGNORECASE)
+    if in_match:
+        lang = normalize_language(in_match.group(1))
+        if lang and lang != "English":  # Skip "in English" as that's the translation
+            return lang
+    
+    # Check for language after year
+    after_year = re.search(r'20\d{2}\s+([A-Za-z]+)', text)
     if after_year:
-        potential = after_year.group(1).strip()
-        if potential.lower() in KNOWN_LANGUAGES_LOWER:
-            return KNOWN_LANGUAGES_LOWER[potential.lower()]
+        lang = normalize_language(after_year.group(1))
+        if lang:
+            return lang
     
-    # Check if the entire text is a language name
-    clean_text = text.strip('() \t\n')
-    if clean_text.lower() in KNOWN_LANGUAGES_LOWER:
-        return KNOWN_LANGUAGES_LOWER[clean_text.lower()]
+    # Check if entire text (cleaned) is a language
+    clean_text = re.sub(r'[^A-Za-z]', '', text)
+    if clean_text:
+        lang = normalize_language(clean_text)
+        if lang:
+            return lang
     
-    # Check if text contains a known language anywhere
-    text_lower = text.lower()
-    for lang_lower, lang_proper in KNOWN_LANGUAGES_LOWER.items():
-        if lang_lower in text_lower:
-            return lang_proper
+    # Check each word
+    words = re.findall(r'[A-Za-z]+', text)
+    for word in words:
+        lang = normalize_language(word)
+        if lang:
+            return lang
     
     return None
+
+
+def detect_language_from_filename(filename: str) -> Optional[str]:
+    """
+    Extract language from filename.
+    
+    Handles patterns like:
+        - "Prema Sagarame 2025 Mal in Eng.pptx" -> Malayalam
+        - "Bhajan_Tamil_2024.pptx" -> Tamil
+        - "Song (Malayalam) 2025.pptx" -> Malayalam
+        - "2025 Kannada - Song Name.pptx" -> Kannada
+        - "Song Name Telugu.pptx" -> Telugu
+    """
+    if not filename:
+        return None
+    
+    # Remove extension
+    name = os.path.splitext(filename)[0]
+    
+    # Try each pattern
+    for pattern in FILENAME_LANGUAGE_PATTERNS:
+        matches = re.findall(pattern, name, re.IGNORECASE)
+        for match in matches:
+            lang = normalize_language(match)
+            if lang:
+                # Skip "Eng" or "English" as that usually indicates translation target
+                if lang != "English":
+                    return lang
+    
+    # Fallback: check all words in filename
+    words = re.findall(r'[A-Za-z]+', name)
+    for word in words:
+        # Skip common non-language words
+        skip_words = {
+            'in', 'the', 'and', 'of', 'for', 'with', 'eng', 'english',
+            'song', 'bhajan', 'kirtan', 'stotram', 'mantra', 'prayer',
+            'devotional', 'spiritual', 'vol', 'volume', 'part', 'new',
+            'pptx', 'ppt', 'pdf', 'mp3', 'mp4', 'lyrics', 'meaning',
+            'translation', 'trans', 'final', 'draft', 'copy', 'old',
+        }
+        if word.lower() in skip_words:
+            continue
+        
+        lang = normalize_language(word)
+        if lang and lang != "English":
+            return lang
+    
+    return None
+
+
+def detect_language(
+    slide_text: Optional[str] = None,
+    filename: Optional[str] = None,
+    all_slide_texts: Optional[list[str]] = None
+) -> tuple[Optional[str], str]:
+    """
+    Detect language using multiple sources.
+    
+    Priority:
+        1. Explicit language on title slide (in parentheses)
+        2. Language in filename
+        3. Language mentioned anywhere on title slide
+        4. Language from other slides (less reliable)
+    
+    Args:
+        slide_text: Text from title slide
+        filename: The PPTX filename
+        all_slide_texts: Optional list of text from all shapes on title slide
+    
+    Returns:
+        (language, source) where source is one of:
+        "slide_parens", "slide_text", "filename", or ""
+    """
+    # 1. Check for language in parentheses on slide (most explicit)
+    if slide_text:
+        paren_matches = re.findall(r'\(([^)]+)\)', slide_text)
+        for match in paren_matches:
+            lang = normalize_language(match.strip())
+            if lang:
+                return lang, "slide_parens"
+    
+    # 2. Check slide text more broadly
+    if slide_text:
+        lang = detect_language_from_text(slide_text)
+        if lang:
+            return lang, "slide_text"
+    
+    # 3. Check all slide texts
+    if all_slide_texts:
+        for text in all_slide_texts:
+            # First check parentheses
+            paren_matches = re.findall(r'\(([^)]+)\)', text)
+            for match in paren_matches:
+                lang = normalize_language(match.strip())
+                if lang:
+                    return lang, "slide_parens"
+        
+        # Then check text content
+        for text in all_slide_texts:
+            lang = detect_language_from_text(text)
+            if lang:
+                return lang, "slide_text"
+    
+    # 4. Check filename
+    if filename:
+        lang = detect_language_from_filename(filename)
+        if lang:
+            return lang, "filename"
+    
+    return None, ""
 
 
 def detect_year(text: str) -> Optional[str]:
@@ -508,13 +873,14 @@ def parse_title_slide(
     source_file: str, 
     full_path: str,
     folder_year: Optional[str] = None
-) -> tuple[Optional[str], Optional[str], Optional[str], str]:
+) -> tuple[Optional[str], Optional[str], Optional[str], str, str]:
     """
     Parse title slide for title, year, and language.
     
     Returns:
-        (title, year, language, year_source)
-        year_source is one of: "slide", "folder", "default"
+        (title, year, language, year_source, language_source)
+        year_source: "slide", "folder", "filename", "default"
+        language_source: "slide_parens", "slide_text", "filename", ""
     """
     report = get_report()
     shapes = get_shapes_by_position(slide)
@@ -527,12 +893,13 @@ def parse_title_slide(
             slide_number=1,
             details="No text found on title slide (slide 1)",
         ))
-        return None, None, None, ""
+        return None, None, None, "", ""
     
-    # Collect all text for debugging
-    all_text = "\n---\n".join([s['text'] for s in shapes])
+    # Collect all text for analysis
+    all_texts = [s['text'] for s in shapes]
+    all_text_combined = "\n---\n".join(all_texts)
     
-    # First shape is the title
+    # First shape is typically the title
     title_text = shapes[0]['text'].strip()
     
     # Handle multi-line titles
@@ -549,67 +916,63 @@ def parse_title_slide(
             full_path=full_path,
             slide_number=1,
             details="Title text box is empty",
-            raw_text=all_text[:500],
+            raw_text=all_text_combined[:500],
         ))
-        return None, None, None, ""
+        return None, None, None, "", ""
     
-    # Look for year and language in all shapes
+    # --- YEAR DETECTION ---
     year = None
-    language = None
+    year_source = ""
     
-    # Search all shapes (including title shape for multi-line cases)
-    for shape in shapes:
-        text = shape['text']
-        
-        # Look for year
-        if not year:
-            year = detect_year(text)
-        
-        # Look for language
-        if not language:
-            language = detect_language(text)
+    # Check all slide text for year
+    for text in all_texts:
+        found_year = detect_year(text)
+        if found_year:
+            year = found_year
+            year_source = "slide"
+            break
     
-    # Also check individual lines in case year/language are on separate lines
-    for shape in shapes:
-        for line in shape['text'].split('\n'):
-            line = line.strip()
-            if not line:
-                continue
-            
-            if not year:
-                year = detect_year(line)
-            
-            if not language:
-                language = detect_language(line)
-    
-    # Determine year source and apply fallbacks
-    year_source = "slide" if year else ""
-    
+    # Try filename for year
     if not year:
-        if folder_year:
-            year = folder_year
-            year_source = "folder"
-            report.add_issue(Issue(
-                issue_type=IssueType.MISSING_YEAR,
-                source_file=source_file,
-                full_path=full_path,
-                song_title=title,
-                slide_number=1,
-                details=f"Year not found on slide, using folder year: {folder_year}",
-                raw_text=all_text[:300],
-            ))
-        else:
-            year = CURRENT_YEAR
-            year_source = "default"
-            report.add_issue(Issue(
-                issue_type=IssueType.MISSING_YEAR,
-                source_file=source_file,
-                full_path=full_path,
-                song_title=title,
-                slide_number=1,
-                details=f"Year not found, using default: {CURRENT_YEAR}",
-                raw_text=all_text[:300],
-            ))
+        found_year = detect_year(source_file)
+        if found_year:
+            year = found_year
+            year_source = "filename"
+    
+    # Fallback to folder year
+    if not year and folder_year:
+        year = folder_year
+        year_source = "folder"
+        report.add_issue(Issue(
+            issue_type=IssueType.MISSING_YEAR,
+            source_file=source_file,
+            full_path=full_path,
+            song_title=title,
+            slide_number=1,
+            details=f"Year not found on slide or filename, using folder: {folder_year}",
+            raw_text=all_text_combined[:300],
+        ))
+    
+    # Final fallback to default
+    if not year:
+        year = CURRENT_YEAR
+        year_source = "default"
+        report.add_issue(Issue(
+            issue_type=IssueType.MISSING_YEAR,
+            source_file=source_file,
+            full_path=full_path,
+            song_title=title,
+            slide_number=1,
+            details=f"Year not found anywhere, using default: {CURRENT_YEAR}",
+            raw_text=all_text_combined[:300],
+        ))
+    
+    # --- LANGUAGE DETECTION ---
+    language, language_source = detect_language(
+        slide_text=all_text_combined,
+        filename=source_file,
+        all_slide_texts=all_texts
+    )
     
     if not language:
         report.add_issue(Issue(
@@ -618,11 +981,16 @@ def parse_title_slide(
             full_path=full_path,
             song_title=title,
             slide_number=1,
-            details="Language not found on title slide. Expected format: '2025 (Malayalam)' or '2025\\n(Malayalam)'",
-            raw_text=all_text[:300],
+            details=(
+                "Language not found. Checked:\n"
+                f"  - Title slide text\n"
+                f"  - Filename: {source_file}\n"
+                "Expected formats: '(Malayalam)', '2025 Tamil', 'Song_Mal_2025.pptx'"
+            ),
+            raw_text=all_text_combined[:400],
         ))
     
-    return title, year, language, year_source
+    return title, year, language, year_source, language_source
 
 
 def parse_lyric_slide(
@@ -630,7 +998,8 @@ def parse_lyric_slide(
     slide_number: int,
     source_file: str,
     full_path: str,
-    song_title: str
+    song_title: str,
+    language: Optional[str] = None
 ) -> tuple[Optional[str], Optional[str], bool]:
     """
     Parse lyric slide.
@@ -667,15 +1036,18 @@ def parse_lyric_slide(
     if len(shapes) == 1:
         # Only lyrics, no meaning
         lyrics = shapes[0]['text']
-        report.add_issue(Issue(
-            issue_type=IssueType.MISSING_MEANING,
-            source_file=source_file,
-            full_path=full_path,
-            song_title=song_title,
-            slide_number=slide_number,
-            details=f"Slide {slide_number} has lyrics but no English meaning (only 1 text box found)",
-            raw_text=lyrics[:200] if lyrics else None,
-        ))
+        
+        # English songs don't need translation/meaning
+        if language != "English":
+            report.add_issue(Issue(
+                issue_type=IssueType.MISSING_MEANING,
+                source_file=source_file,
+                full_path=full_path,
+                song_title=song_title,
+                slide_number=slide_number,
+                details=f"Slide {slide_number} has lyrics but no English meaning (only 1 text box found)",
+                raw_text=lyrics[:200] if lyrics else None,
+            ))
         return lyrics, None, False
     
     # First shape = lyrics, last shape = meaning
@@ -684,7 +1056,7 @@ def parse_lyric_slide(
     
     # Sanity check: if meaning looks like more lyrics (no English), flag it
     # This is a heuristic - you can adjust or remove
-    if meaning and not any(c.isascii() and c.isalpha() for c in meaning[:50]):
+    if language != "English" and meaning and not any(c.isascii() and c.isalpha() for c in meaning[:50]):
         report.add_issue(Issue(
             issue_type=IssueType.MISSING_MEANING,
             source_file=source_file,
@@ -705,16 +1077,11 @@ def process_pptx_file(
 ) -> Optional[Song]:
     """
     Process a single PPTX file.
-    
-    Args:
-        filepath: Full path to PPTX file
-        folder_year: Year from folder name (e.g., "2025" if in 2025/ folder)
     """
     report = get_report()
     source_file = os.path.basename(filepath)
     full_path = os.path.abspath(filepath)
     
-    # Try to open file
     try:
         prs = Presentation(filepath)
     except Exception as e:
@@ -739,7 +1106,7 @@ def process_pptx_file(
     report.total_slides_processed += len(slides)
     
     # Parse title slide
-    title, year, language, year_source = parse_title_slide(
+    title, year, language, year_source, language_source = parse_title_slide(
         slides[0], source_file, full_path, folder_year
     )
     
@@ -750,9 +1117,9 @@ def process_pptx_file(
     stanzas = []
     missing_meaning_slides = []
     
-    for idx, slide in enumerate(slides[1:], start=2):  # Slide numbers are 1-indexed
+    for idx, slide in enumerate(slides[1:], start=2):
         lyrics, meaning, had_error = parse_lyric_slide(
-            slide, idx, source_file, full_path, title
+            slide, idx, source_file, full_path, title, language
         )
         
         if had_error:
@@ -763,7 +1130,7 @@ def process_pptx_file(
         
         has_meaning = meaning is not None and meaning.strip() != ""
         
-        if not has_meaning:
+        if not has_meaning and language != "English":
             missing_meaning_slides.append(idx)
         
         stanzas.append(Stanza(
@@ -790,6 +1157,7 @@ def process_pptx_file(
         full_path=full_path,
         stanzas=stanzas,
         year_source=year_source,
+        language_source=language_source,
         has_year=(year_source == "slide"),
         has_language=(language is not None),
         missing_meaning_slides=missing_meaning_slides,
@@ -806,7 +1174,6 @@ def process_year_folder(folder_path: str, year: str) -> list[Song]:
         print(f"  ⚠ Folder not found: {folder_path}")
         return songs
     
-    # Find PPTX files (exclude temp files starting with ~$)
     pptx_files = [f for f in sorted(folder.glob("*.pptx")) if not f.name.startswith("~$")]
     
     if not pptx_files:
@@ -830,24 +1197,43 @@ def process_year_folder(folder_path: str, year: str) -> list[Song]:
             y = song.year or "Unknown"
             report.songs_by_year[y] = report.songs_by_year.get(y, 0) + 1
             
-            # Status display
-            warnings = []
+            # Update language source stats
             if not song.has_language:
-                warnings.append("no language")
-            if song.missing_meaning_slides:
-                warnings.append(f"missing meaning on slides {song.missing_meaning_slides}")
-            if song.year_source != "slide":
-                warnings.append(f"year from {song.year_source}")
-            
-            if warnings:
-                print(f"    ⚠ {song.title}")
-                for w in warnings:
-                    print(f"      - {w}")
+                report.language_sources["not_found"] += 1
             else:
-                print(f"    ✓ {song.title}")
+                src = song.language_source or "slide_text" # Fallback
+                report.language_sources[src] = report.language_sources.get(src, 0) + 1
+            
+            # Detailed status
+            issues = []
+            if not song.has_language:
+                issues.append("no language detected")
+            elif song.language_source == "filename":
+                issues.append(f"language from filename: {song.language}")
+            
+            if song.year_source == "folder":
+                issues.append(f"year from folder: {song.year}")
+            elif song.year_source == "filename":
+                issues.append(f"year from filename: {song.year}")
+            elif song.year_source == "default":
+                issues.append(f"year defaulted: {song.year}")
+            
+            if song.missing_meaning_slides:
+                issues.append(f"missing meaning: slides {song.missing_meaning_slides}")
+            
+            # Display
+            lang_display = f" ({song.language})" if song.language else ""
+            
+            if issues:
+                print(f"    ⚠ {song.title}{lang_display}")
+                for issue in issues:
+                    print(f"        └─ {issue}")
+            else:
+                print(f"    ✓ {song.title}{lang_display}")
         else:
             report.skipped_files.append(str(filepath))
-            print(f"    ✗ {filepath.name} (skipped - see report)")
+            print(f"    ✗ {filepath.name}")
+            print(f"        └─ skipped (see report for details)")
     
     return songs
 
@@ -978,6 +1364,53 @@ def xml_to_songs(xml_path: str) -> list[Song]:
 # PDF GENERATION
 # =============================================================================
 
+def normalize_for_search(text: str) -> str:
+    """
+    Normalize text to ASCII for searchability.
+    Removes diacritics, keeps basic punctuation.
+    
+    Examples:
+        "prēma-sāgaramē" -> "prema-sagarame"
+        "Ādhyātmata" -> "Adhyatmata"
+        "hṛdayēśvarī" -> "hrdayesvari"
+    """
+    if not text:
+        return ""
+    
+    # NFD decomposition separates base characters from combining diacritics
+    decomposed = unicodedata.normalize('NFD', text)
+    
+    # Remove combining diacritical marks (category 'Mn')
+    ascii_chars = []
+    for char in decomposed:
+        if unicodedata.category(char) == 'Mn':
+            continue  # Skip diacritics
+        # Handle special characters
+        if char == 'ś' or char == 'ṣ':
+            ascii_chars.append('s')
+        elif char == 'ṇ' or char == 'ñ':
+            ascii_chars.append('n')
+        elif char == 'ṁ' or char == 'ṃ':
+            ascii_chars.append('m')
+        elif char == 'ṛ' or char == 'ṝ':
+            ascii_chars.append('r')
+        elif char == 'ḷ' or char == 'ḹ':
+            ascii_chars.append('l')
+        elif char == 'ṭ' or char == 'ṭh':
+            ascii_chars.append('t')
+        elif char == 'ḍ' or char == 'ḍh':
+            ascii_chars.append('d')
+        else:
+            ascii_chars.append(char)
+    
+    result = ''.join(ascii_chars)
+    
+    # Normalize whitespace
+    result = re.sub(r'\s+', ' ', result).strip()
+    
+    return result
+
+
 class PageTracker(Flowable):
     """Track page numbers for TOC."""
     _registry: dict[str, int] = {}
@@ -1014,19 +1447,43 @@ class HorizontalRule(Flowable):
 
 
 def create_styles(fonts: tuple[str, str, str, str]) -> dict:
-    """Create PDF styles."""
+    """Create PDF styles including searchable title."""
     regular, bold, italic, bold_italic = fonts
     
     return {
-        'title': ParagraphStyle('Title', fontSize=TITLE_FONT_SIZE, fontName=bold,
-                               leading=TITLE_LINE_HEIGHT, spaceBefore=TITLE_SPACE_BEFORE,
-                               spaceAfter=TITLE_SPACE_AFTER),
-        'lyrics': ParagraphStyle('Lyrics', fontSize=LYRICS_FONT_SIZE, fontName=regular,
-                                leading=LYRICS_LINE_HEIGHT, spaceBefore=LYRICS_SPACE_BEFORE,
-                                spaceAfter=LYRICS_SPACE_AFTER),
-        'meaning': ParagraphStyle('Meaning', fontSize=MEANING_FONT_SIZE, fontName=bold_italic,
-                                 leading=MEANING_LINE_HEIGHT, spaceBefore=MEANING_SPACE_BEFORE,
-                                 spaceAfter=MEANING_SPACE_AFTER),
+        'title': ParagraphStyle(
+            'Title',
+            fontSize=TITLE_FONT_SIZE,
+            fontName=bold,
+            leading=TITLE_LINE_HEIGHT,
+            spaceBefore=TITLE_SPACE_BEFORE,
+            spaceAfter=0,  # We'll add our own spacing after searchable title
+        ),
+        'searchable_title': ParagraphStyle(
+            'SearchableTitle',
+            fontSize=SEARCHABLE_TITLE_FONT_SIZE,
+            fontName=regular,
+            leading=SEARCHABLE_TITLE_FONT_SIZE,
+            spaceBefore=0,
+            spaceAfter=SEARCHABLE_TITLE_SPACE_AFTER,
+            textColor=SEARCHABLE_TITLE_COLOR,
+        ),
+        'lyrics': ParagraphStyle(
+            'Lyrics',
+            fontSize=LYRICS_FONT_SIZE,
+            fontName=regular,
+            leading=LYRICS_LINE_HEIGHT,
+            spaceBefore=LYRICS_SPACE_BEFORE,
+            spaceAfter=LYRICS_SPACE_AFTER,
+        ),
+        'meaning': ParagraphStyle(
+            'Meaning',
+            fontSize=MEANING_FONT_SIZE,
+            fontName=bold_italic,
+            leading=MEANING_LINE_HEIGHT,
+            spaceBefore=MEANING_SPACE_BEFORE,
+            spaceAfter=MEANING_SPACE_AFTER,
+        ),
     }
 
 
@@ -1063,7 +1520,12 @@ def text_to_html(text: str) -> str:
 
 
 def generate_pdf(songs: list[Song], output_path: str) -> list[Song]:
-    """Generate PDF."""
+    """
+    Generate PDF with:
+    - Preserved line breaks in lyrics
+    - Searchable ASCII titles (invisible text for Ctrl+F)
+    - Proper Unicode rendering
+    """
     print("  Registering fonts...")
     fonts = register_fonts()
     
@@ -1074,50 +1536,95 @@ def generate_pdf(songs: list[Song], output_path: str) -> list[Song]:
     story = []
     
     for idx, song in enumerate(songs):
+        # === PAGE TRACKING ===
         story.append(PageTracker(f"song_{idx}"))
         
-        # Title
-        title = escape_xml(song.title)
+        # === TITLE ===
+        # Display title with Unicode characters
+        title_display = escape_xml(song.title)
         if song.language:
-            title += f" ({escape_xml(song.language)})"
-        story.append(Paragraph(title, styles['title']))
+            title_display += f" ({escape_xml(song.language)})"
         
+        story.append(Paragraph(title_display, styles['title']))
+        
+        # === SEARCHABLE TITLE (invisible) ===
+        # ASCII-only version for Ctrl+F searching
+        # e.g., "prēma-sāgaramē" becomes "prema-sagarame"
+        ascii_title = normalize_for_search(song.title)
+        if song.language:
+            ascii_title += f" {normalize_for_search(song.language)}"
+        
+        story.append(Paragraph(ascii_title, styles['searchable_title']))
+        
+        # === TITLE UNDERLINE ===
         if TITLE_UNDERLINE_ENABLED:
             story.append(HorizontalRule(content_width))
+        
         story.append(Spacer(1, 8))
         
-        # Stanzas
-        for si, stanza in enumerate(song.stanzas):
-            parts = []
+        # === STANZAS ===
+        for stanza_idx, stanza in enumerate(song.stanzas):
+            stanza_parts = []
             
+            # --- LYRICS ---
             if stanza.lyrics:
-                parts.append(Paragraph(text_to_html(stanza.lyrics), styles['lyrics']))
+                # Use <br/> for line breaks - this is the most reliable method
+                lyrics_html = text_to_html(stanza.lyrics)
+                stanza_parts.append(Paragraph(lyrics_html, styles['lyrics']))
             
+            # --- MEANING ---
             if stanza.meaning:
-                parts.append(Paragraph(text_to_html(stanza.meaning), styles['meaning']))
+                # For English songs, the "meaning" is often just a duplicate 
+                # or redundant. If language is English, we only show it if 
+                # it's clearly different from lyrics (rare in this dataset)
+                # or if it exists and we want to preserve it.
+                # USER said: English songs don't need translation.
+                if song.language != "English":
+                    meaning_html = text_to_html(stanza.meaning)
+                    stanza_parts.append(Paragraph(meaning_html, styles['meaning']))
+                else:
+                    # Optional: only show meaning for English if it looks like a 
+                    # specific variant/meaning rather than just being there.
+                    # For now, following USER'S intent to not have translation.
+                    pass
             
-            if len(parts) > 1:
-                story.append(KeepTogether(parts))
-            elif parts:
-                story.extend(parts)
+            # Keep lyrics + meaning together when possible
+            if len(stanza_parts) > 1:
+                story.append(KeepTogether(stanza_parts))
+            elif stanza_parts:
+                story.extend(stanza_parts)
             
-            if si < len(song.stanzas) - 1:
+            # Space between stanzas
+            if stanza_idx < len(song.stanzas) - 1:
                 story.append(Spacer(1, STANZA_SEPARATOR_HEIGHT))
         
+        # === PAGE BREAK ===
         if idx < len(songs) - 1:
             story.append(PageBreak())
     
-    doc = SimpleDocTemplate(output_path, pagesize=(PAGE_WIDTH, PAGE_HEIGHT),
-                           leftMargin=MARGIN_LEFT, rightMargin=MARGIN_RIGHT,
-                           topMargin=MARGIN_TOP, bottomMargin=MARGIN_BOTTOM)
+    # === BUILD DOCUMENT ===
+    doc = SimpleDocTemplate(
+        output_path,
+        pagesize=(PAGE_WIDTH, PAGE_HEIGHT),
+        leftMargin=MARGIN_LEFT,
+        rightMargin=MARGIN_RIGHT,
+        topMargin=MARGIN_TOP,
+        bottomMargin=MARGIN_BOTTOM,
+    )
     
-    doc.build(story, onFirstPage=lambda c, d: draw_page(c, d, fonts),
-             onLaterPages=lambda c, d: draw_page(c, d, fonts))
+    def page_handler(canvas, doc):
+        draw_page(canvas, doc, fonts)
     
+    doc.build(story, onFirstPage=page_handler, onLaterPages=page_handler)
+    
+    # Update page numbers for TOC
     for idx, song in enumerate(songs):
         song.page_number = PageTracker.get_page(f"song_{idx}") or (idx + 1)
     
     print(f"PDF saved: {output_path}")
+    print(f"  - {len(songs)} songs")
+    print(f"  - Searchable ASCII titles included")
+    
     return songs
 
 
@@ -1194,6 +1701,19 @@ def generate_report(output_path: str, json_path: str):
     for year in sorted(report.songs_by_year.keys()):
         files_count = report.files_by_year.get(year, "?")
         lines.append(f"  {year}: {report.songs_by_year[year]} songs (from {files_count} files)")
+    lines.append("")
+    
+    # Language detection summary
+    lines.extend([
+        "─" * 80,
+        "LANGUAGE DETECTION SUMMARY",
+        "─" * 80,
+    ])
+    ls = report.language_sources
+    lines.append(f"  Languages detected from slide (parentheses): {ls.get('slide_parens', 0)}")
+    lines.append(f"  Languages detected from slide (text):        {ls.get('slide_text', 0)}")
+    lines.append(f"  Languages detected from filename:            {ls.get('filename', 0)}")
+    lines.append(f"  Languages not detected:                      {ls.get('not_found', 0)}")
     lines.append("")
     
     # Issue summary
@@ -1446,16 +1966,104 @@ def run_pipeline(input_path: str, output_dir: str, output_name: str = None,
     print(f"  Report: {report_file}")
 
 
+# =============================================================================
+# TESTS & DEBUGGING
+# =============================================================================
+
+def test_language_detection():
+    """Test suite for language detection logic."""
+    print("\n" + "="*60)
+    print("TESTING LANGUAGE DETECTION")
+    print("="*60)
+    
+    test_cases = [
+        # (slide_text, filename, expected_lang, expected_src)
+        ("2025 (Malayalam)", "Song.pptx", "Malayalam", "slide_parens"),
+        ("Malayalam\n2025", "Song.pptx", "Malayalam", "slide_text"),
+        ("2025\n(mal)", "Song.pptx", "Malayalam", "slide_parens"),
+        ("", "Prema_Sagarame_Mal_2025.pptx", "Malayalam", "filename"),
+        ("", "Tamil_Song.pptx", "Tamil", "filename"),
+        ("2025 (Tamil)", "Malayalam_Song.pptx", "Tamil", "slide_parens"), # Priority check
+        ("Bhajan in Telugu", "Song.pptx", "Telugu", "slide_text"),
+        ("New Song 2024 Kannada", "Song.pptx", "Kannada", "slide_text"),
+        ("(Bengali) Title", "Song.pptx", "Bengali", "slide_parens"),
+        ("", "Song (Mar).pptx", "Marathi", "filename"),
+        ("(braj) Song", "Song.pptx", "Braj Bhasha", "slide_parens"),
+        ("Song in Braja", "Song.pptx", "Braj Bhasha", "slide_text"),
+        ("", "Song_mwr_2025.pptx", "Marwari", "filename"),
+        ("Song (Marwadi)", "Song.pptx", "Marwari", "slide_parens"),
+        ("Song (Odiya)", "Song.pptx", "Odia", "slide_parens"),
+    ]
+    
+    passed = 0
+    for slide, file, exp_lang, exp_src in test_cases:
+        lang, src = detect_language(slide_text=slide, filename=file)
+        
+        status = "✓" if lang == exp_lang and src == exp_src else "✗"
+        slide_display = slide.replace('\n', ' ')
+        print(f"  {status} Input: slide='{slide_display}', file='{file}'")
+        print(f"    Expected: {exp_lang} ({exp_src})")
+        print(f"    Got:      {lang} ({src})")
+        
+        if status == "✓":
+            passed += 1
+    
+    print(f"\nResult: {passed}/{len(test_cases)} passed")
+    return passed == len(test_cases)
+
+
+def test_line_break_preservation(sample_pptx_path: str):
+    """Debug line break preservation for a specific file."""
+    if not os.path.exists(sample_pptx_path):
+        print(f"File not found: {sample_pptx_path}")
+        return
+    
+    print("\n" + "="*60)
+    print(f"DEBUGGING TEXT EXTRACTION: {os.path.basename(sample_pptx_path)}")
+    print("="*60)
+    
+    try:
+        prs = Presentation(sample_pptx_path)
+        for i, slide in enumerate(prs.slides):
+            print(f"\n--- Slide {i+1} ---")
+            shapes = get_shapes_by_position(slide)
+            for s_idx, shape in enumerate(shapes):
+                text = shape['text']
+                # Visualize line breaks
+                visible_breaks = text.replace('\n', '[\\n]\n')
+                print(f"  Shape {s_idx+1}:")
+                print(f"  {visible_breaks}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+
 def main():
     parser = argparse.ArgumentParser(description='Convert PPTX songs to PDF songbook')
-    parser.add_argument('input_path', help='Directory with PPTX files or year folders')
+    parser.add_argument('input_path', nargs='?', help='Directory with PPTX files or year folders')
     parser.add_argument('-o', '--output-dir', default='output')
     parser.add_argument('-n', '--name', default=DEFAULT_OUTPUT_NAME)
     parser.add_argument('--years', nargs='+')
     parser.add_argument('--xml-only', action='store_true')
     parser.add_argument('--from-xml', metavar='FILE')
+    parser.add_argument('--test', action='store_true', help='Run language detection tests')
+    parser.add_argument('--debug-file', metavar='FILE', help='Debug text extraction for a file')
     
     args = parser.parse_args()
+    
+    if args.test:
+        test_language_detection()
+        if not args.input_path:
+            return
+
+    if args.debug_file:
+        test_line_break_preservation(args.debug_file)
+        if not args.input_path:
+            return
+            
+    if not args.input_path:
+        parser.print_help()
+        return
+
     run_pipeline(args.input_path, args.output_dir, args.name, args.years, args.xml_only, args.from_xml)
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<songbook generated="2025-12-31T08:43:15.857577" total_songs="397">
+<songbook generated="2025-12-31T09:19:01.381427" total_songs="397">
   <song>
     <title>ā pādapadmattil</title>
     <year source="slide">2025</year>
@@ -158,9 +158,10 @@ the Ultimate Truth. </meaning>
   <song>
     <title>ādimātastava caraṇa-rēṇu</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Adimatastava 2025 Samskritam in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Adimatastava 2025 Samskritam in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>ādimātastava caraṇa-rēṇumāyā prapañcikādhāra-rēṇu</lyrics>
@@ -578,9 +579,10 @@ our mind pulls us far away.</meaning>
   <song>
     <title>amba tan padatārin dhūḷikaḷ nannāy</title>
     <year source="slide">2025</year>
+    <language>Malayalam</language>
     <source>Amba tan padataril 2025 Mal in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amba tan padataril 2025 Mal in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>amba tan padatārin dhūḷikaḷ nannāyen śirassiṅkal patiyēṇam ennum</lyrics>
@@ -1034,10 +1036,11 @@ our mind pulls us far away.</meaning>
   </song>
   <song>
     <title>amma en bōdha-nilāvāyitā amma en jīvita-saṅgītamāy</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>English</language>
     <source>Amma en bodha nilavayita 2025 Mal in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Amma en bodha nilavayita 2025 Mal in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>amma en ātma-tuḍippumāy
@@ -2335,7 +2338,7 @@ I reached the Guru’s feet too late.</meaning>
     <language>English</language>
     <source>Beloved Amma 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Beloved Amma 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>beloved amma, divine mother sitting with you, there is no other</lyrics>
@@ -2517,9 +2520,10 @@ I reached the Guru’s feet too late.</meaning>
   <song>
     <title>bhavābdhi-tāriṇī</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Bhavabdhi tarini 2025 Samskritam in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Bhavabdhi tarini 2025 Samskritam in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>bhavābdhi-tāriṇī bhavāni bhadrakāḷikēhimādri-nandinī mahēśi mahiṣa-mardinī</lyrics>
@@ -2980,9 +2984,10 @@ I reached the Guru’s feet too late.</meaning>
   <song>
     <title>cinmaya-rūpiṇi kanmaṣa-nāśini</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Chinmaya rupini 2025 Sanskrit in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Chinmaya rupini 2025 Sanskrit in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>cinmaya-rūpiṇi kanmaṣa-nāśinitava padayugaḷam vandē</lyrics>
@@ -3236,7 +3241,7 @@ I fold my palms in reverence to the dark and gracious Sri Bhadrakali.</meaning>
     <language>English</language>
     <source>Did you hear my call 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Did you hear my call 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>did you hear my callmy cry, my prayer</lyrics>
@@ -3316,7 +3321,7 @@ I fold my palms in reverence to the dark and gracious Sri Bhadrakali.</meaning>
     <language>English</language>
     <source>Divine Painter 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Divine Painter 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Divine Painter please paint within me Lessons of wisdom, pearls of the sea</lyrics>
@@ -4516,9 +4521,10 @@ which pervades every atom of this universe.</meaning>
   <song>
     <title>hē nīḷōmaṇi hē jogonnātho</title>
     <year source="slide">2025</year>
+    <language>Odia</language>
     <source>He Nilomani 2025 Odiya in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/He Nilomani 2025 Odiya in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>hē nīḷōmaṇi hē jogonnāthoākhi poḍilē tōrō chūṭṭē samsārō</lyrics>
@@ -4826,7 +4832,7 @@ which pervades every atom of this universe.</meaning>
     <language>English</language>
     <source>I was lost in darkness 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/I was lost in darkness 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>I was lost in the darknessIn the shadows of ignorance</lyrics>
@@ -4863,7 +4869,7 @@ which pervades every atom of this universe.</meaning>
     <language>English</language>
     <source>In the misty mountains 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/In the misty mountains 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>In the misty mountains Is our Mahadeva</lyrics>
@@ -5644,7 +5650,7 @@ which pervades every atom of this universe.</meaning>
     <language>English</language>
     <source>Jump into the river of love 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Jump into the river of love 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Jump into the river of loveSwim through the waves of life,</lyrics>
@@ -5678,9 +5684,10 @@ which pervades every atom of this universe.</meaning>
   <song>
     <title>kahiyō rē prabhu</title>
     <year source="slide">2025</year>
+    <language>Braj Bhasha</language>
     <source>Kahiyo re prabhu 2025 Braj in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kahiyo re prabhu 2025 Braj in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>kahiyō rē prabhu āvan kīāvan kī man bhāvan kīkōī kahiyō rē prabhu āvan kī</lyrics>
@@ -6583,10 +6590,11 @@ Mother Parashakti!</meaning>
   </song>
   <song>
     <title>kaṇṇan varuvān anbu kaṇṇan varuvāngōpiyargaḷ kural kēṭṭu kaṇṇan varuvān</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>Hebrew</language>
     <source>Kannan varuvan 2025 Tamil in English.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kannan varuvan 2025 Tamil in English.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>mannan varuvān maṇivaṇṇan varuvāngōkulamē koṇḍāḍa nammun varuvān</lyrics>
@@ -8073,9 +8081,10 @@ O Mother, I merge.</meaning>
   <song>
     <title>kiṇu saṅg khēlūṅ hōlī</title>
     <year source="slide">2025</year>
+    <language>Marwari</language>
     <source>Kinu sang 2025 Marwari in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Kinu sang 2025 Marwari in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>kiṇu saṅg khēlūṅ hōlīpiyā taj gayē haiṅ akēlī</lyrics>
@@ -8251,10 +8260,11 @@ O Mother, I merge.</meaning>
   </song>
   <song>
     <title>kṛnvantō viśvamāryam amṛtasya putrāḥ vayam</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>Vietnamese</language>
     <source>Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krinvanto visvam aryam Brahman is Bliss 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>oh children of amṛta, let us make a better world</lyrics>
@@ -8447,10 +8457,10 @@ O Mother, I merge.</meaning>
   </song>
   <song>
     <title>Krishna left with the cows, Radha's heart is aching</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
     <source>Krishna left with the cows 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Krishna left with the cows 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"/>
+    <metadata has_year_on_slide="false" has_language="false" year_source="filename" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>in the woods wandering, in despair she's pleading</lyrics>
@@ -8545,7 +8555,7 @@ O Mother, I merge.</meaning>
     <language>English</language>
     <source>Life and Death are within you 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Life and Death are within you 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>life and death are within youheaven and hell are within you</lyrics>
@@ -8588,7 +8598,7 @@ O Mother, I merge.</meaning>
     <language>English</language>
     <source>Love is the face of God 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Love is the face of God 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>love is the face of god the silent song of the soul</lyrics>
@@ -8732,9 +8742,10 @@ O Mother, I merge.</meaning>
   <song>
     <title>mājī sāṅvarē</title>
     <year source="slide">2025</year>
+    <language>Braj Bhasha</language>
     <source>Maji samvare 2025 Braj in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maji samvare 2025 Braj in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>mājī sāṅvarē raṅg rācīsāṅvarē… raṅg rācīmāji sāṅvarē raṅg rācī</lyrics>
@@ -9044,10 +9055,11 @@ O Mother, I merge.</meaning>
   </song>
   <song>
     <title>manamē narajīvitamākum</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>Odia</language>
     <source>Maname Narajivitam 2025 Odiya in Eng v4.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Maname Narajivitam 2025 Odiya in Eng v4.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>bāy mŏno dina jāvūcci bitti reṭāṅkora hĕlā to jībana māṭṭi re</lyrics>
@@ -9974,9 +9986,10 @@ O Mother, I merge.</meaning>
   <song>
     <title>māyī… mainē…</title>
     <year source="slide">2025</year>
+    <language>Braj Bhasha</language>
     <source>Mayi maine Govinda 2025 Braj in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda 2025 Braj in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>māyī… mainē… gōvinda līnō mōlmāyī mainē gōvinda līnō mōl</lyrics>
@@ -9999,9 +10012,10 @@ O Mother, I merge.</meaning>
   <song>
     <title>māyī… mainē…</title>
     <year source="slide">2025</year>
+    <language>Braj Bhasha</language>
     <source>Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi maine Govinda lino Mayi maine  2025 Braj in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>māyī… mainē… gōvinda līnō mōlmāyī mainē gōvinda līnō mōl</lyrics>
@@ -10024,9 +10038,10 @@ O Mother, I merge.</meaning>
   <song>
     <title>māyi mhārō supaṇāmā</title>
     <year source="slide">2025</year>
+    <language>Marwari</language>
     <source>Mayi mharo supanama 2025 Marwari in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mayi mharo supanama 2025 Marwari in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>māyi mhārō supaṇāmā parṇyāṙe dīnānāthō dīnānāth… dīnānāth…</lyrics>
@@ -10323,9 +10338,10 @@ I planted the vine of love. </meaning>
   <song>
     <title>mhārā rē giridhar gōpāl</title>
     <year source="slide">2025</year>
+    <language>Marwari</language>
     <source>Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mhara re Giridhar Gopal 2025 Marwari in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>mhārā rē giridhar gōpāldūsrā ṇa kōyādūsrā ṇa kōyādūsrā ṇa kōyā</lyrics>
@@ -10413,7 +10429,7 @@ I planted the vine of love. </meaning>
     <language>English</language>
     <source>Miles away 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Miles away 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Miles away from youCloser than my breathYour essence in hearts of allI pray to merge in you</lyrics>
@@ -10584,7 +10600,7 @@ I planted the vine of love. </meaning>
     <language>English</language>
     <source>Mother with You as our shield 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Mother with You as our shield 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Mother with you as our shieldthere is nothing left to fearknowing the battles are already wonlet us not waste this life</lyrics>
@@ -11191,9 +11207,10 @@ swiftly flows to merge with the Supreme just like the river.</meaning>
   <song>
     <title>nandanandan diṭh paḍiyā</title>
     <year source="slide">2025</year>
+    <language>Braj Bhasha</language>
     <source>Nandanandan bith padiya 2025 Braj in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nandanandan bith padiya 2025 Braj in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>nandanandan diṭh paḍiyā māyi sāṅvrō sāṅvrō</lyrics>
@@ -11328,9 +11345,10 @@ swiftly flows to merge with the Supreme just like the river.</meaning>
   <song>
     <title>nārāyaṇā śrī rāmā nārāyaṇā śrī rāma</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Narayana Sri Rama 2025 Samskritam in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Narayana Sri Rama 2025 Samskritam in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>nārāyaṇā śrī rāmā nārāyaṇā śrī rāmanārāyaṇā… śrī rāmā… </lyrics>
@@ -11580,10 +11598,11 @@ She’s always within us, have faith and joy</meaning>
   </song>
   <song>
     <title>neñcukku nītiyum tōḷukku vāḷumniṙainta cuḍarmaṇippūṇ</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>Nepali</language>
     <source>Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Nenjukku Nitiyum 2025 Tamil in english with meaning.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>pañcukku nērpala tunpaṅkaḷām, ivaḷpārvaykku nērperuntī</lyrics>
@@ -12645,9 +12664,10 @@ Victory to you…</meaning>
   <song>
     <title>ō kāḷiyā rē ō kāḷiyā rē</title>
     <year source="slide">2025</year>
+    <language>Odia</language>
     <source>O Kaliya re 2025 Odiya in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/O Kaliya re 2025 Odiya in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>ō kāḷiyā rē ō kāḷiyā rēmatē manna lāgē āsa nāccibā rē</lyrics>
@@ -12735,10 +12755,10 @@ Victory to you…</meaning>
   </song>
   <song>
     <title>Oh Ma you are everywhereAll is within you</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
     <source>Oh Ma You are everywhere 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Oh Ma You are everywhere 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
+    <metadata has_year_on_slide="false" has_language="false" year_source="filename" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Search and only Amma is found  </lyrics>
@@ -14002,7 +14022,7 @@ My Satguru, in his compassion, has given me this priceless gift and accepted me 
     <language>English</language>
     <source>Peace to the ocean 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Peace to the ocean 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>Peace to the oceanPeace to the skyPeace to the earthHer mountains high</lyrics>
@@ -14539,10 +14559,11 @@ My Satguru, in his compassion, has given me this priceless gift and accepted me 
   </song>
   <song>
     <title>prāṇēśvarā en hṛdayēśvarāvanamāli kaṇṇā varumō</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>English</language>
     <source>Pranesvara en hridayesvara 2025 Mal in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Pranesvara en hridayesvara 2025 Mal in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>viraha tīyil urukunn-ennilkṛpa māri coriyān varumō?</lyrics>
@@ -15088,9 +15109,10 @@ Janaki-Rama, Vaidehi-Rāma! </meaning>
   <song>
     <title>rādhē rādhē rādhē rādhē kṛṣṇa</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Radhe Radhe Radhe 2025 Samskritam in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Radhe Radhe Radhe 2025 Samskritam in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide" missing_meaning_slides="2,3,4,5"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>rādhē rādhē rādhē rādhē kṛṣṇa rādhē rādhē rādhē rādhē kṛṣṇa </lyrics>
@@ -15436,10 +15458,10 @@ Leaving me behind as a widow.</meaning>
   </song>
   <song>
     <title>samatvam, samatvamsamatvam, samatvam</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
     <source>Samatvam Samatvam 2025 - English.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Samatvam Samatvam 2025 - English.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"/>
+    <metadata has_year_on_slide="false" has_language="false" year_source="filename" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>the key to our mind’s freedomsamatvam, samatvam</lyrics>
@@ -15642,9 +15664,10 @@ Leaving me behind as a widow.</meaning>
   <song>
     <title>sāṅvarā rē mhāri</title>
     <year source="slide">2025</year>
+    <language>Marwari</language>
     <source>Sanvara re mhari 2025 Marwari in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Sanvara re mhari 2025 Marwari in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>sāṅvarā rē mhāri prīt nibhājyō jīmhāri prīt nibhājyō jī…mhāri prīt nibhājyō jī</lyrics>
@@ -15763,9 +15786,10 @@ Leaving me behind as a widow.</meaning>
   <song>
     <title>satyam jñānam anantam</title>
     <year source="slide">2025</year>
+    <language>Sanskrit</language>
     <source>Satyam Jnanam anantam 2025 Samskritam in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Satyam Jnanam anantam 2025 Samskritam in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="false" year_source="slide"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="true">
         <lyrics>satyam jñānam anantamśivatatva viśēṣam</lyrics>
@@ -17177,10 +17201,10 @@ You are Tripurasundari, who creates, sustains, and dissolves the universe.</mean
   </song>
   <song>
     <title>there’s a way of life in this universe leading to true peace</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
     <source>There's a way of life 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/There's a way of life 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
+    <metadata has_year_on_slide="false" has_language="false" year_source="filename" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>sanatana dharma… sanatana dharma…eternal law… eternal way of life…</lyrics>
@@ -17214,7 +17238,7 @@ You are Tripurasundari, who creates, sustains, and dissolves the universe.</mean
     <language>English</language>
     <source>This boat was lost 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/This boat was lost 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>This boat was lost at seauntil you rescued me</lyrics>
@@ -18853,7 +18877,7 @@ tairu kaḍaññōrkarmam-ozhivāy kāla vismṛtarāyi</lyrics>
     <language>English</language>
     <source>Where do you wander 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/Where do you wander 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="true" has_language="true" year_source="slide" missing_meaning_slides="2,3,4,5,6,7,8,9,10,11,12,13,14,15,16"/>
+    <metadata has_year_on_slide="true" has_language="true" year_source="slide"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>where do you wander? where do you go?</lyrics>
@@ -19180,10 +19204,11 @@ tairu kaḍaññōrkarmam-ozhivāy kāla vismṛtarāyi</lyrics>
   </song>
   <song>
     <title>you are the one awake at nightoutside it's darkbut you're full of light</title>
-    <year source="folder">2025</year>
+    <year source="filename">2025</year>
+    <language>Italian</language>
     <source>You are the one 2025 Eng in Eng.pptx</source>
     <full_path>/Users/hisingh1/projects/bhajans2/create-index/ppts/2025/You are the one 2025 Eng in Eng.pptx</full_path>
-    <metadata has_year_on_slide="false" has_language="false" year_source="folder" missing_meaning_slides="2,3,4,5,6"/>
+    <metadata has_year_on_slide="false" has_language="true" year_source="filename" missing_meaning_slides="2,3,4,5,6"/>
     <stanzas>
       <stanza slide="2" has_meaning="false">
         <lyrics>we are the onesawake in the daybut that for youis all just a play</lyrics>
