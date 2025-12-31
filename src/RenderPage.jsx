@@ -66,31 +66,39 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     audioTagRef.current = document.querySelector("#audio");
 
     // Check offline validity - use new offlineValidUntil if available, fallback to legacy check
-    const offlineValidUntil = localStorage.offlineValidUntil;
-    const lastOnline = localStorage.lastOnline;
+    const storedOfflineValidUntil = Number(localStorage.offlineValidUntil);
+    const expiresOn = Number(localStorage.expiresOn);
+    const lastOnline = Number(localStorage.lastOnline);
     const now = Date.now();
+    const hasExpiresOn = Number.isFinite(expiresOn);
+    const hasLastOnline = Number.isFinite(lastOnline);
+    const hasStoredOfflineValidUntil = Number.isFinite(storedOfflineValidUntil);
 
     // Prefer offlineValidUntil (set when user was last online)
     // Fallback to legacy lastOnline + 3 months check
     // If both are missing (e.g. cleared storage), treat as valid until sync occurs
-    const isOfflineTooLong = offlineValidUntil 
-      ? +offlineValidUntil < now
-      : (lastOnline && !isNaN(lastOnline) ? +lastOnline + THREE_MONTHS_MS < now : false);
+    const offlineValidUntil = hasStoredOfflineValidUntil
+      ? storedOfflineValidUntil
+      : hasExpiresOn && hasLastOnline
+        ? Math.min(expiresOn, lastOnline + THREE_MONTHS_MS)
+        : hasExpiresOn
+          ? expiresOn
+          : null;
+    const isOfflineTooLong = offlineValidUntil ? offlineValidUntil < now : false;
 
     if (isOfflineTooLong) {
-      setTimeout(() => showToast("Your offline access period has expired. Please go online to continue using the app.", "warning"), 0);
+      const subscriptionExpired = hasExpiresOn && expiresOn < now;
+      const message = subscriptionExpired
+        ? "Your subscription has expired. Please pay for a new subscription"
+        : "Your offline access period has expired. Please go online to continue using the app.";
+      const severity = subscriptionExpired ? "error" : "warning";
+      const destination = subscriptionExpired ? "/pay" : "/login";
+      setTimeout(() => showToast(message, severity), 0);
       setTimeout(() => {
         removeServiceWorkers();
-        navigate(`/login`);
+        navigate(destination);
       }, 3000);
       return;
-    }
-    if (isNaN(localStorage.expiresOn) || +localStorage.expiresOn < now) {
-      setTimeout(() => showToast("Your subscription has expired. Please pay for a new subscription", "error"), 0);
-      setTimeout(() => {
-        removeServiceWorkers();
-        navigate(`/pay`);
-      }, 3000);
     }
 
     const audio = audioTagRef.current;

@@ -149,17 +149,18 @@ const {
     }).catch(console.error);
 
     checkRefOnce(`paid/${auth.currentUser.uid}/expiresOn`).then((val) => {
+      const now = Date.now();
       if (val) {
         localStorage.expiresOn = val;
         // Calculate offline grace period: 3 months OR until subscription expires, whichever is sooner
-        const threeMonthsFromNow = Date.now() + THREE_MONTHS_MS;
-        const offlineValidUntil = Math.min(threeMonthsFromNow, +val);
+        const threeMonthsFromLastOnline = now + THREE_MONTHS_MS;
+        const offlineValidUntil = Math.min(threeMonthsFromLastOnline, +val);
         localStorage.offlineValidUntil = offlineValidUntil;
       } else {
         delete localStorage.expiresOn;
         delete localStorage.offlineValidUntil;
       }
-      localStorage.lastOnline = +new Date();
+      localStorage.lastOnline = now;
     }).catch((err) => {
       console.warn("Failed to sync user data, likely offline:", err);
       // Don't update lastOnline on failure, so we rely on the last successful sync
