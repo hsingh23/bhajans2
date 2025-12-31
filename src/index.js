@@ -17,6 +17,8 @@ import bugsnag from "bugsnag-js";
 import createPlugin from "bugsnag-react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ThemeProvider } from "./ThemeContext";
+import MUIThemeWrapper from "./MUIThemeProvider";
 const bugsnagClient = bugsnag("a8b3dfbca1bb3f896d6e145d8e58db60");
 const ErrorBoundary = bugsnagClient.use(createPlugin(React));
 const queryClient = new QueryClient();
@@ -35,20 +37,24 @@ window.addEventListener("hashchange", () => {
 // http://bodiddlie.github.io/firebase-auth-with-react-router/
 ReactDOM.render(
   <ErrorBoundary>
-    <QueryClientProvider client={queryClient}>
-      <HashRouter>
-        <Routes>
-          <Route path='/login' element={<WrappedLogin />} />
-          <Route path='/logout' element={<WrappedLogout />} />
-          <Route path='/pay' element={<Pay />} />
-          <Route path='/beta' element={<WrappedBeta />} />
-          <Route path='/admin' element={<RequireAdmin><Admin /></RequireAdmin>} />
-          <Route path='/faq' element={<FAQ />} />
-          <Route path='*' element={<App />} />
-        </Routes>
-      </HashRouter>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <ThemeProvider>
+      <MUIThemeWrapper>
+        <QueryClientProvider client={queryClient}>
+          <HashRouter>
+            <Routes>
+              <Route path='/login' element={<WrappedLogin />} />
+              <Route path='/logout' element={<WrappedLogout />} />
+              <Route path='/pay' element={<Pay />} />
+              <Route path='/beta' element={<WrappedBeta />} />
+              <Route path='/admin' element={<RequireAdmin><Admin /></RequireAdmin>} />
+              <Route path='/faq' element={<FAQ />} />
+              <Route path='*' element={<App />} />
+            </Routes>
+          </HashRouter>
+          <ReactQueryDevtools />
+        </QueryClientProvider>
+      </MUIThemeWrapper>
+    </ThemeProvider>
   </ErrorBoundary>,
   document.getElementById("root")
 );

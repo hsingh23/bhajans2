@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { orderBy, zip } from 'lodash-es';
 import classNames from 'classnames';
 import { PopupButton } from '@typeform/embed-react';
+import DarkModeToggle from './DarkModeToggle';
 
 class Search extends Component {
   constructor(props) {
@@ -357,6 +358,7 @@ class Search extends Component {
               e && e.target && this.filterBhajans({ filter: e.target.value })
             }
           />
+          <DarkModeToggle />
         </div>
         <div className='rest'>
           <nav>

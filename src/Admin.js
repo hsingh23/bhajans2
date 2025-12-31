@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { DebounceInput } from "react-debounce-input";
 import { useQuery } from "@tanstack/react-query";
+import DarkModeToggle from "./DarkModeToggle";
 
 const createBody = encodeURIComponent(`Dear Customer
 
@@ -99,6 +100,7 @@ Harsh Singh`);
         <div className='title'>Amma's Bhajans</div>
         <nav>
           <Link to={"/"}>Back </Link>
+          <DarkModeToggle className="button button-3d button-circle" />
         </nav>
       </div>
       <div className='restPage'>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { PLANS } from "./Plans";
 
 import Button from "@material-ui/core/Button";
+import DarkModeToggle from "./DarkModeToggle";
 
 class Pay extends PureComponent {
   state = { selectedPlan: {} };
@@ -44,6 +45,7 @@ expiresOn: ${expiresOn}`);
           <Link to={"/"} className='title'>
             Amma's Bhajans
           </Link>
+          <DarkModeToggle className="button button-3d button-circle" />
         </div>
         <div className='pay'>
           <h1>Payments</h1>
