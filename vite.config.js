@@ -16,6 +16,7 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: "autoUpdate",
+      filename: "service-worker2.js",
       includeAssets: ["favicon.ico", "apple-touch-icon.png"],
       manifest: {
         name: "Amma's Bhajans",
