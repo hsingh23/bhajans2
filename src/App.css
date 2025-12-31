@@ -457,6 +457,7 @@ mark,
   align-items: center;
   gap: 10px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .header-center {
@@ -464,6 +465,14 @@ mark,
   display: flex;
   align-items: center;
   min-width: 0;
+}
+
+.header-darkmode svg {
+  display: block;
+}
+
+.header-darkmode {
+  line-height: 1;
 }
 
 /* body {

@@ -56,15 +56,28 @@ const Login = () => {
       localStorage.email = user.email;
       localStorage.photoURL = user.photoURL;
 
+      const cameFromMagicLink = window.sessionStorage.getItem('magicLinkSignIn') === '1';
+      if (cameFromMagicLink) {
+        window.sessionStorage.removeItem('magicLinkSignIn');
+      }
+
       if (expiresOn) {
         localStorage.expiresOn = +expiresOn;
         // Check for stored redirect from magic link flow
         const storedNext = localStorage.getItem('loginRedirect');
         localStorage.removeItem('loginRedirect'); // Clean up
         const target = next && next !== "/" ? next : (storedNext || "/");
-        navigate(target, { replace: true });
+        if (cameFromMagicLink) {
+          window.location.replace(target);
+        } else {
+          navigate(target, { replace: true });
+        }
       } else {
-        navigate("/pay", { replace: true });
+        if (cameFromMagicLink) {
+          window.location.replace("/pay");
+        } else {
+          navigate("/pay", { replace: true });
+        }
       }
     } catch (err) {
       console.error(err);
@@ -90,6 +103,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isSignInWithEmailLink(auth, window.location.href)) {
+      window.sessionStorage.setItem('magicLinkSignIn', '1');
       let emailForSignIn = window.localStorage.getItem('emailForSignIn');
       
       if (!emailForSignIn) {
