@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 import { version } from '../package.json';
 
 const Footer = () => {
-  const [hidden, setHidden] = useState(!!sessionStorage.footerHidden);
 
-  useEffect(() => {
-    if (hidden) return;
-
-    const timer = setTimeout(() => {
-      sessionStorage.footerHidden = '1';
-      setHidden(true);
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, [hidden]);
 
   return (
-    <div className={classNames('copyRight', { hidden })}>
+    <div className="copyRight">
       <div className="footer-content">
         <img src="/amma.jpg" alt="MA Center" className="footer-logo" />
         <div className="footer-text">
