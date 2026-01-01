@@ -11,5 +11,6 @@ declare global {
     scrollTop: number;
     dbHistory: any;
     firebase: any;
+    requestServiceWorkerUpdate: () => void;
   }
 }

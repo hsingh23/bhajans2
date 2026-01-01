@@ -62,6 +62,7 @@ const registerServiceWorkers = async () => {
           registration.installing?.scriptURL ||
           "";
         if (scriptURL && !scriptURL.includes("service-worker2.js")) {
+          console.warn("Unregistering old service worker:", scriptURL);
           return registration.unregister();
         }
         return Promise.resolve();
