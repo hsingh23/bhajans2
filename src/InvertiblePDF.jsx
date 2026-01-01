@@ -115,6 +115,7 @@ const InvertiblePDF = ({ file, onDocumentComplete, onPageComplete, page, scale, 
         page={page}
         scale={scale}
         style={style}
+        workerSrc="/pdf.worker.min.js"
         {...props}
       />
     </div>
