@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$SKIP_BUMP_HOOK" = "1" ]; then
+  exit 0
+fi
+
+node scripts/bump-version.cjs
