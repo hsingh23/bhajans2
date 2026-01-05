@@ -6,7 +6,8 @@ import {
   isSignInWithEmailLink,
   signInWithEmailLink,
   signInWithEmailAndPassword,
-  onAuthStateChanged 
+  onAuthStateChanged,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { getNext } from "./util";
@@ -136,6 +137,25 @@ const Login = () => {
     } catch (error) {
        console.error(error);
        showToast(error.message.replace('Firebase: ', ''), "error");
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  const handleResetPassword = async () => {
+    if (!email) {
+      showToast("Please enter your email address first.", "warning");
+      return;
+    }
+    setLoading(true);
+    try {
+      await sendPasswordResetEmail(auth, email, {
+        url: "https://sing.withamma.com"
+      });
+      showToast("Password reset email sent!", "success");
+    } catch (error) {
+      console.error(error);
+      showToast(error.message.replace('Firebase: ', ''), "error");
     } finally {
       setLoading(false);
     }
@@ -328,6 +348,15 @@ const Login = () => {
                     >
                       {loading ? <CircularProgress size={26} color="inherit" /> : "Sign In"}
                     </Button>
+                    <Box sx={{ mt: 1, textAlign: 'right' }}>
+                      <Button
+                        onClick={handleResetPassword}
+                        sx={{ textTransform: 'none', fontSize: '0.85rem' }}
+                        disabled={loading}
+                      >
+                        Forgot Password?
+                      </Button>
+                    </Box>
                   </Box>
                 )}
                 
