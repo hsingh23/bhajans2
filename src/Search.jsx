@@ -144,7 +144,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         <div className='bhajanRow'>
           <div className='Search_LeftSide'>
             {wrappedName(
-              locationArr[0],
+              locationArr.find((loc) => loc.match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi)) ||
+                locationArr[0],
               `${filteredBhajans[index]}/${name}`,
               <Highlighter
                 className='spaced'
