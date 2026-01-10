@@ -100,7 +100,8 @@ const App = () => {
     const paramValue = getShow2025Param(location.search);
     if (paramValue === null) return;
     localStorage.setItem("show2025", paramValue ? "1" : "0");
-    setShow2025(paramValue);
+    // Use setTimeout to avoid cascading render lint error
+    setTimeout(() => setShow2025(paramValue), 0);
   }, [location.search]);
 
   const bhajans = useMemo(() => {

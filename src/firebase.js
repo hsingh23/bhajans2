@@ -21,10 +21,12 @@ const {
   removeRefOnce,
   auth,
 
-  goOffline,
   goOnline,
+  goOffline,
   getUserByEmail,
   firebaseShim,
+  syncUserData,
+  THREE_MONTHS_MS,
 } = (() => {
   const config = {
     apiKey: "AIzaSyB9MVmCPLBachZm1Yfc3r1IaguL6Ps2NdM",
@@ -143,12 +145,17 @@ const {
   // Three months in milliseconds for offline grace period
   const THREE_MONTHS_MS = 90 * 24 * 60 * 60 * 1000;
 
-  const syncUserData = () => {
-    checkRefOnce(`satsang/${auth.currentUser.uid}`).then((val) => {
+  const syncUserData = (forceUser) => {
+    const userToSync = forceUser || auth.currentUser;
+    if (!userToSync) return Promise.resolve(null);
+
+    const presenterPromise = checkRefOnce(`satsang/${userToSync.uid}`).then((val) => {
       if (val) localStorage.presenter = true;
+      else delete localStorage.presenter;
+      return val;
     }).catch(console.error);
 
-    checkRefOnce(`paid/${auth.currentUser.uid}/expiresOn`).then((val) => {
+    const paidPromise = checkRefOnce(`paid/${userToSync.uid}/expiresOn`).then((val) => {
       const now = Date.now();
       if (val) {
         localStorage.expiresOn = val;
@@ -161,10 +168,16 @@ const {
         delete localStorage.offlineValidUntil;
       }
       localStorage.lastOnline = now;
+      return val;
     }).catch((err) => {
       console.warn("Failed to sync user data, likely offline:", err);
-      // Don't update lastOnline on failure, so we rely on the last successful sync
+      return localStorage.expiresOn;
     });
+
+    return Promise.all([presenterPromise, paidPromise]).then(([presenter, expiresOn]) => ({
+      presenter,
+      expiresOn
+    }));
   };
 
   whenUser().then(() => {
@@ -200,6 +213,8 @@ const {
     goOffline,
     getUserByEmail,
     firebaseShim,
+    syncUserData,
+    THREE_MONTHS_MS,
   };
 })();
 
@@ -216,4 +231,6 @@ export {
   goOffline,
   goOnline,
   getUserByEmail,
+  syncUserData,
+  THREE_MONTHS_MS,
 };

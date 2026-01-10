@@ -11,7 +11,6 @@ import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
 import Loader from "./Loader";
 
-const THREE_MONTHS_MS = 7776000000;
 const InvertiblePdfComponent = memo(InvertiblePDF);
 const keyMap = {
   left: "left",
@@ -31,10 +30,13 @@ const removeServiceWorkers = () => {
   }
 };
 
+import { syncUserData, THREE_MONTHS_MS } from "./firebase";
+
 const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   const { id, location: locationParam } = useParams();
   const navigate = useNavigate();
   const [toast, setToast] = useState({ open: false, message: "", severity: "info" });
+  const [verifyingSession, setVerifyingSession] = useState(false);
 
   const showToast = (message, severity = "info") => {
     setToast({ open: true, message, severity });
@@ -65,41 +67,61 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   useEffect(() => {
     audioTagRef.current = document.querySelector("#audio");
 
-    // Check offline validity - use new offlineValidUntil if available, fallback to legacy check
-    const storedOfflineValidUntil = Number(localStorage.offlineValidUntil);
-    const expiresOn = Number(localStorage.expiresOn);
-    const lastOnline = Number(localStorage.lastOnline);
-    const now = Date.now();
-    const hasExpiresOn = Number.isFinite(expiresOn);
-    const hasLastOnline = Number.isFinite(lastOnline);
-    const hasStoredOfflineValidUntil = Number.isFinite(storedOfflineValidUntil);
+    const checkSubscription = async () => {
+      // Check offline validity - use new offlineValidUntil if available, fallback to legacy check
+      const storedOfflineValidUntil = Number(localStorage.offlineValidUntil);
+      const expiresOn = Number(localStorage.expiresOn);
+      const lastOnline = Number(localStorage.lastOnline);
+      const now = Date.now();
+      const hasExpiresOn = Number.isFinite(expiresOn);
+      const hasLastOnline = Number.isFinite(lastOnline);
+      const hasStoredOfflineValidUntil = Number.isFinite(storedOfflineValidUntil);
 
-    // Prefer offlineValidUntil (set when user was last online)
-    // Fallback to legacy lastOnline + 3 months check
-    // If both are missing (e.g. cleared storage), treat as valid until sync occurs
-    const offlineValidUntil = hasStoredOfflineValidUntil
-      ? storedOfflineValidUntil
-      : hasExpiresOn && hasLastOnline
-        ? Math.min(expiresOn, lastOnline + THREE_MONTHS_MS)
-        : hasExpiresOn
-          ? expiresOn
-          : null;
-    const isOfflineTooLong = offlineValidUntil ? offlineValidUntil < now : false;
+      // Prefer offlineValidUntil (set when user was last online)
+      // Fallback to legacy lastOnline + 3 months check
+      // If both are missing (e.g. cleared storage), treat as valid until sync occurs
+      const offlineValidUntil = hasStoredOfflineValidUntil
+        ? storedOfflineValidUntil
+        : hasExpiresOn && hasLastOnline
+          ? Math.min(expiresOn, lastOnline + THREE_MONTHS_MS)
+          : hasExpiresOn
+            ? expiresOn
+            : null;
+      
+      let isOfflineTooLong = offlineValidUntil ? offlineValidUntil < now : false;
 
-    if (isOfflineTooLong) {
-      const subscriptionExpired = hasExpiresOn && expiresOn < now;
-      const message = subscriptionExpired
-        ? "Your subscription has expired. Please pay for a new subscription"
-        : "Your offline access period has expired. Please go online to continue using the app.";
-      const severity = subscriptionExpired ? "error" : "warning";
-      const destination = subscriptionExpired ? "/pay" : "/login";
-      setTimeout(() => showToast(message, severity), 0);
-      setTimeout(() => {
-        removeServiceWorkers();
-        navigate(destination);
-      }, 3000);
-      return;
-    }
+      // If it looks like it expired locally, try to sync one more time if online
+      if (isOfflineTooLong && navigator.onLine) {
+        setVerifyingSession(true);
+        try {
+          const freshData = await syncUserData();
+          setVerifyingSession(false);
+          const freshOfflineValidUntil = Number(localStorage.offlineValidUntil);
+          isOfflineTooLong = freshOfflineValidUntil ? freshOfflineValidUntil < now : false;
+          if (freshData) console.log("Session verified");
+        } catch (e) {
+          console.error("Failed to verify session online", e);
+          setVerifyingSession(false);
+        }
+      }
+
+      if (isOfflineTooLong) {
+        const subscriptionExpired = hasExpiresOn && expiresOn < now;
+        const message = subscriptionExpired
+          ? "Your subscription has expired. Please pay for a new subscription"
+          : "Your offline access period has expired. Please go online to continue using the app.";
+        const severity = subscriptionExpired ? "error" : "warning";
+        const destination = subscriptionExpired ? "/pay" : "/login";
+        showToast(message, severity);
+        setTimeout(() => {
+          removeServiceWorkers();
+          navigate(destination);
+        }, 3000);
+        return;
+      }
+    };
+
+    checkSubscription();
 
     const audio = audioTagRef.current;
     if (audio) {
@@ -213,6 +235,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
             />
           ) : (
             <div className='pdf-center-wrapper'>
+              {(pages === 0 || verifyingSession) && <Loader />}
               <InvertiblePdfComponent
                 file={url.replace(/sharp/i, "%23")}
                 onDocumentComplete={onDocumentComplete}

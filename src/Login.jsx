@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useState, useCallback } from "react";
-import { auth, checkRefOnce } from "./firebase";
+import { auth, checkRefOnce, syncUserData } from "./firebase";
 import { 
   sendSignInLinkToEmail,
   isSignInWithEmailLink,
@@ -43,14 +43,31 @@ const Login = () => {
 
   const redirectOnLogin = useCallback(async (user) => {
     if (!user) return;
+    
+    const next = getNext();
+    const storedNext = localStorage.getItem('loginRedirect');
+    const target = (next && next !== "/") ? next : (storedNext || "/");
+    
+    // Optimistic navigation: if we already have a valid unexpired session in localStorage,
+    // we can skip the blocking fetch and let RenderPage handle final validation.
+    const now = Date.now();
+    const cachedExpiresOn = Number(localStorage.expiresOn);
+    if (cachedExpiresOn && cachedExpiresOn > now) {
+      localStorage.removeItem('loginRedirect');
+      navigate(target, { replace: true });
+      // Still sync in background
+      syncUserData(user);
+      return;
+    }
+
     setLoading(true);
     try {
-      const expiresOn = await checkRefOnce(`/paid/${user.uid}/expiresOn`);
+      // Parallelize fetches for faster first-time login
+      const { expiresOn } = await syncUserData(user);
       const admin = await checkRefOnce(`/admin/${user.uid}`);
-      const next = getNext();
       
-      localStorage.lastOnline = +new Date();
       if (admin !== null) localStorage.admin = 1;
+      else delete localStorage.admin;
       
       localStorage.uid = user.uid;
       localStorage.displayName = user.displayName;
@@ -62,22 +79,20 @@ const Login = () => {
         window.sessionStorage.removeItem('magicLinkSignIn');
       }
 
+      localStorage.removeItem('loginRedirect');
+
       if (expiresOn) {
-        localStorage.expiresOn = +expiresOn;
-        // Check for stored redirect from magic link flow
-        const storedNext = localStorage.getItem('loginRedirect');
-        localStorage.removeItem('loginRedirect'); // Clean up
-        const target = next && next !== "/" ? next : (storedNext || "/");
         if (cameFromMagicLink) {
           window.location.replace(target);
         } else {
           navigate(target, { replace: true });
         }
       } else {
+        const payTarget = "/pay";
         if (cameFromMagicLink) {
-          window.location.replace("/pay");
+          window.location.replace(payTarget);
         } else {
-          navigate("/pay", { replace: true });
+          navigate(payTarget, { replace: true });
         }
       }
     } catch (err) {
