@@ -1,17 +1,6 @@
 [
   [
     {
-      "path": "/samples-cd/01 Anandame Anandam.mp3",
-      "song": "anandame anandam",
-      "sn": "anYanYTameanYanYTam"
-    },
-    [
-      "anYanYTameanYanYTamTamiT",
-      "anYanYTameanYanYTamTamiT[krisnYa]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/01 Dayanidhiye.mp3",
       "song": "dayanidhiye",
       "sn": "TaYanYiTYe"
@@ -34,46 +23,12 @@
   ],
   [
     {
-      "path": "/samples-cd/01 Ganangalin Natha.mp3",
-      "song": "ganangalin natha",
-      "sn": "ganYanYgaTinYnYaTa"
-    },
-    [
-      "ganYanYgaTinYnYaTaTamiT",
-      "ganYanYgaTinYnYaTaTamiT[ganYesa]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/01 Ganapati Gunanidhi.mp3",
-      "song": "ganapati gunanidhi",
-      "sn": "ganYapaTigunYanYiTi"
-    },
-    [
-      "ganYapaTigunYanYiTiinYTi",
-      "ganYapaTigunYanYiTiinYTi[ganYesa]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/01 Hare Tu Hamare.mp3",
-      "song": "hare tu hamare",
-      "sn": "arieTuamarie"
-    },
-    [
-      "arieTuamarieinYTi",
-      "arieTuamarieinYTi[krisnYa]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/01 Ma-Om.mp3",
       "song": "maom",
       "sn": "maom"
     },
     [
       "maomagujariaTi",
-      "maomagujariaTi[amma]",
       "maomagujriaTi",
       "maomamarigujriaTi"
     ]
@@ -87,28 +42,6 @@
     [
       "nYanYTanYanYTanYaTamiT",
       "nYanYTanYanYTanYari"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/01 Nila Kamala.mp3",
-      "song": "nila kamala",
-      "sn": "nYiTakamaTa"
-    },
-    [
-      "nYiTakamaTaTeTugu",
-      "nYiTakamaTaTeTugu"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/01 Oru Nalamma.mp3",
-      "song": "oru nalamma",
-      "sn": "oriunYaTamma"
-    },
-    [
-      "oriunYaTammaTamiT",
-      "oriunYaTammaTamiT"
     ]
   ],
   [
@@ -134,17 +67,6 @@
       "sriTaTiTambikepariasaTimaTaYaTam",
       "sriTaTiTambikesariVsaTe",
       "sriTaTiTambikesariVsaTekanYnYaTaVerisionY"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/02 Amma Napai.mp3",
-      "song": "amma napai",
-      "sn": "ammanYapai"
-    },
-    [
-      "ammanYapaiTeTugu",
-      "ammanYapaiaTiginYTiTeTugu"
     ]
   ],
   [
@@ -230,17 +152,6 @@
   ],
   [
     {
-      "path": "/samples-cd/02 Jnanakkataltannai.mp3",
-      "song": "jnanakkataltannai",
-      "sn": "jnYanYakaTaTTanYnYai"
-    },
-    [
-      "jnYanYakaTaTTanYnYaiTamiT",
-      "jnYanYakaTaTTanYnYaiTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/02 Kadaloram.mp3",
       "song": "kadaloram",
       "sn": "kaTaToriam"
@@ -263,17 +174,6 @@
   ],
   [
     {
-      "path": "/samples-cd/02 Manassil Nila Sarasil.mp3",
-      "song": "manassil nila sarasil",
-      "sn": "manYassiTnYiTasariasiT"
-    },
-    [
-      "manYassiTnYiTasariasiTmaTaYaTam",
-      "manYassiTnYiTasariasiTmaTaYaTam[TonYginYg]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/02 Nanda Nandana.mp3",
       "song": "nanda nandana",
       "sn": "nYanYTanYanYTanYa"
@@ -285,17 +185,6 @@
   ],
   [
     {
-      "path": "/samples-cd/02 Ni Tanda Solletuttu.mp3",
-      "song": "ni tanda solletuttu",
-      "sn": "nYiTanYTasoTTeTuTu"
-    },
-    [
-      "nYiTanYTasoTTeTuTuTamiT",
-      "nYiTanYTasoTTeTuTuTamiT[TispassionY]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/02 Omkaresvara.mp3",
       "song": "omkaresvara",
       "sn": "omkariesVria"
@@ -303,17 +192,6 @@
     [
       "omkariesVriaTeTugu",
       "omkariesVriakaiTasesVriasanYskriT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/02 Rasikaraj.mp3",
-      "song": "rasikaraj",
-      "sn": "riasikariaj"
-    },
-    [
-      "riasikariajinYTi",
-      "riasikariajinYTi"
     ]
   ],
   [
@@ -348,8 +226,7 @@
     [
       "ammaTeVikanYnYaTaVerisionY",
       "ammaTeViTuTuVerisionY",
-      "ammaTeVijagaTisVrisanYasanYskriT",
-      "ammaTeViTanYiTanYTanYakanYnYaTa"
+      "ammaTeVijagaTisVrisanYasanYskriT"
     ]
   ],
   [
@@ -402,23 +279,11 @@
   ],
   [
     {
-      "path": "/samples-cd/03 Callaga Cudu.mp3",
-      "song": "callaga cudu",
-      "sn": "CaTTagacuTu"
-    },
-    [
-      "CaTTagacuTubenYgaTiTrianYsTaTeT",
-      "CaTTagacuTuTeTugu"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/03 Devi Devi Devi.mp3",
       "song": "devi devi devi",
       "sn": "TeViTeViTeVi"
     },
     [
-      "TeViTeViTeVibenYgaTiTrianYsTaTeT",
       "TeViTeViTeVikanYnYaTa",
       "TeViTeViTeViamriTesVri",
       "TeViTeViTeVijaganYmoinYi"
@@ -488,52 +353,7 @@
     },
     [
       "omsaTiTamiT",
-      "omsaTiTamiT[TeVi]",
       "omsaTiomsaTiomsaTiTamiT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/03 Srsti Veru.mp3",
-      "song": "srsti veru",
-      "sn": "srisTiVeriu"
-    },
-    [
-      "srisTiVeriuTamiTTrianYsTaTeT",
-      "srisTiVeriuTeTugu"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/03 Sundari Jaganmohini.mp3",
-      "song": "sundari jaganmohini",
-      "sn": "sunYTarijaganYmoinYi"
-    },
-    [
-      "sunYTarijaganYmoinYikanYnYaTa",
-      "sunYTarijaganYmoinYikanYnYaTa[TeVi]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/03 Tapamanu.mp3",
-      "song": "tapamanu",
-      "sn": "TapamanYu"
-    },
-    [
-      "TapamanYuTeTugu",
-      "TapamanYuTeTugu[TispassionY]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/03 Ulagankal Yavum.mp3",
-      "song": "ulagankal yavum",
-      "sn": "uTaganYkaTYaVum"
-    },
-    [
-      "uTaganYkaTYaVumTamiT",
-      "uTaganYkaTYaVumTeTuguTrianYsTaTeT"
     ]
   ],
   [
@@ -543,22 +363,9 @@
       "sn": "VinYaYaka"
     },
     [
-      "VinYaYakaTamiT",
       "VinYaYakaenYkaTTamiT",
       "VinYaYakaVinYaYaka",
-      "VinYaYakanYeVinYaYTiriTariuTVYTamiT",
-      "VinYaYakanYeVinYaYTiriTariuTVYTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/04 Abhivandanam.mp3",
-      "song": "abhivandanam",
-      "sn": "abiVnYTanYam"
-    },
-    [
-      "abiVnYTanYamTeTugu",
-      "abiVnYTanYamTeTugu[ganYesa]"
+      "VinYaYakanYeVinYaYTiriTariuTVYTamiT"
     ]
   ],
   [
@@ -653,17 +460,6 @@
   ],
   [
     {
-      "path": "/samples-cd/04 Kab Aye Ga.mp3",
-      "song": "kab aye ga",
-      "sn": "kabaYega"
-    },
-    [
-      "kabaYegainYTi",
-      "kabaYegainYTi[TonYginYg]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/04 Krishna Govinda.mp3",
       "song": "krishna govinda",
       "sn": "krisnYagoVinYTa"
@@ -684,17 +480,6 @@
       "manYasaVcamariaTiVerisionY",
       "manYasaVcakarimanYa",
       "manYasaVcakarimanYakanYnYaTa"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/04 Sarananti Sarananti.mp3",
-      "song": "sarananti sarananti",
-      "sn": "sarianYanYTisarianYanYTi"
-    },
-    [
-      "sarianYanYTisarianYanYTiTeTugu",
-      "sarianYanYTisarianYanYTiTeTugu[TeVi]"
     ]
   ],
   [
@@ -744,28 +529,6 @@
   ],
   [
     {
-      "path": "/samples-cd/05 Avo Ma Amma.mp3",
-      "song": "avo ma amma",
-      "sn": "aVomamma"
-    },
-    [
-      "aVomammagujariaTi",
-      "aVomammagujriaTi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/05 Ba Bhrngave Ba.mp3",
-      "song": "ba bhrngave ba",
-      "sn": "babrinYgaVeba"
-    },
-    [
-      "babrinYgaVebakanYnYaTa",
-      "babrinYgaVebakanYnYaTa[amma]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/05 Entinu Shokam.mp3",
       "song": "entinu shokam",
       "sn": "enYTinYusokam"
@@ -773,17 +536,6 @@
     [
       "enYTinYusokamTeTuguVerisionY",
       "enYTinYusokammanYasse"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/05 Etayo Teti.mp3",
-      "song": "etayo teti",
-      "sn": "eTaYoTeTi"
-    },
-    [
-      "eTaYoTeTiTamiT",
-      "eTaYoTeTiTamiT[TispassionY]"
     ]
   ],
   [
@@ -811,17 +563,6 @@
   ],
   [
     {
-      "path": "/samples-cd/05 Maya Loniki Nettakamma.mp3",
-      "song": "maya loniki nettakamma",
-      "sn": "maYaTonYikinYeTakamma"
-    },
-    [
-      "maYaTonYikinYeTakammaTeTugu",
-      "maYaTonYikinYeTakammaTeTugu"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/05 Mayil Peeli.mp3",
       "song": "mayil peeli",
       "sn": "maYiTpiTi"
@@ -829,17 +570,6 @@
     [
       "maYiTpiTimaTaYaTam",
       "maYiTpiTiariakeTiTummaTaYaTam"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/05 Namostute Devi.mp3",
-      "song": "namostute devi",
-      "sn": "nYamosTuTeTeVi"
-    },
-    [
-      "nYamosTuTeTeVimariaTi",
-      "nYamosTuTeTeVimariaTi[TeVi]"
     ]
   ],
   [
@@ -863,7 +593,6 @@
     },
     [
       "omsaTiTamiT",
-      "omsaTiTamiT[TeVi]",
       "omsaTiomsaTiomsaTiTamiT"
     ]
   ],
@@ -887,17 +616,6 @@
   ],
   [
     {
-      "path": "/samples-cd/05 Pattave Padamu.mp3",
-      "song": "pattave padamu",
-      "sn": "paTaVepaTamu"
-    },
-    [
-      "paTaVepaTamuTeTugu",
-      "paTaVepaTamuTeTugu[TispassionY]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/05 Var De.mp3",
       "song": "var de",
       "sn": "VriTe"
@@ -906,28 +624,6 @@
       "VriTeinYTi",
       "VriTemaTajagaTambemaTa",
       "VriTeVriTejaYaVriTe"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/05 Vinayakane Vinay Tirtarulvay.mp3",
-      "song": "vinayakane vinay tirtarulvay",
-      "sn": "VinYaYakanYeVinYaYTiriTariuTVY"
-    },
-    [
-      "VinYaYakanYeVinYaYTiriTariuTVYTamiT",
-      "VinYaYakanYeVinYaYTiriTariuTVYTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/06 Akamanatin Karirulai.mp3",
-      "song": "akamanatin karirulai",
-      "sn": "akamanYaTinYkaririuTai"
-    },
-    [
-      "akamanYaTinYkaririuTaiTamiT",
-      "akamanYaTinYkaririuTaiTamiT[TeVi]"
     ]
   ],
   [
@@ -954,57 +650,12 @@
   ],
   [
     {
-      "path": "/samples-cd/06 Manamendrum Undan Vidu.mp3",
-      "song": "manamendrum undan vidu",
-      "sn": "manYamenYTriumunYTanYViTu"
-    },
-    [
-      "manYamenYTriumunYTanYViTuTamiT",
-      "manYamenYTriumunYTanYViTuTamiT[siV]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/06 Mangala Nayaki.mp3",
-      "song": "mangala nayaki",
-      "sn": "manYgaTanYaYaki"
-    },
-    [
-      "manYgaTanYaYakiTamiT",
-      "manYgaTanYaYakiTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/06 Muraliganamutirkkunnu.mp3",
-      "song": "muraliganamutirkkunnu",
-      "sn": "muriaTiganYamuTirikunYnYu"
-    },
-    [
-      "muriaTiganYamuTirikunYnYumaTaYaTam",
-      "muriaTiganYamuTirikunYnYumaTaYaTam[krisnYa]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/06 Navavidha Bhakti.mp3",
-      "song": "navavidha bhakti",
-      "sn": "nYaVViTabaTi"
-    },
-    [
-      "nYaVViTabaTiTeTugu",
-      "nYaVViTabaTikanYnYaTaTrianYsTaTeT"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/06 Om Shakti.mp3",
       "song": "om shakti",
       "sn": "omsaTi"
     },
     [
       "omsaTiTamiT",
-      "omsaTiTamiT[TeVi]",
       "omsaTiomsaTiomsaTiTamiT"
     ]
   ],
@@ -1038,7 +689,6 @@
     },
     [
       "TariakanYamakanYnYaTa",
-      "TariakanYamamuTeTugu",
       "TariakanYamamuTeTugu"
     ]
   ],
@@ -1051,50 +701,6 @@
     [
       "ainYTeriuTumanYTiriaTinYTamiT",
       "ainYTeriuTuTamiT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/07 Asrutirtthattal.mp3",
-      "song": "asrutirtthattal",
-      "sn": "asriuTiriTaTaT"
-    },
-    [
-      "asriuTiriTaTaTmaTaYaTam",
-      "asriuTiriTaTaTnYinYmaTaYaTam"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/07 Devadideva.mp3",
-      "song": "devadideva",
-      "sn": "TeVTiTeV"
-    },
-    [
-      "TeVTiTeVTeTugu",
-      "TeVTiTeVTeTugu[siV]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/07 Lemmu Nara Kisorama.mp3",
-      "song": "lemmu nara kisorama",
-      "sn": "TemmunYariakisoriama"
-    },
-    [
-      "TemmunYariakisoriamaTeTugu",
-      "TemmunYariakisoriamaTeTugu"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/07 Navilu Gariya.mp3",
-      "song": "navilu gariya",
-      "sn": "nYaViTugarYa"
-    },
-    [
-      "nYaViTugarYakanYnYaTa",
-      "nYaViTugarYanYaYanYaTakanYnYaTa"
     ]
   ],
   [
@@ -1128,7 +734,6 @@
     },
     [
       "priemasagariakanYnYaTa",
-      "priemasagariakanYnYaTa[TeVi]",
       "priemasagariamejagaTisVriammemaTaYaTam"
     ]
   ],
@@ -1145,28 +750,6 @@
   ],
   [
     {
-      "path": "/samples-cd/07 Unmatta Pancakam.mp3",
-      "song": "unmatta pancakam",
-      "sn": "unYmaTapanYcakam"
-    },
-    [
-      "unYmaTapanYcakamTamiT",
-      "unYmaTapanYcakamTamiT[TispassionY]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Bandu Bidabarade.mp3",
-      "song": "bandu bidabarade",
-      "sn": "banYTubiTabariaTe"
-    },
-    [
-      "banYTubiTabariaTekanYnYaTa",
-      "banYTubiTabariaTekanYnYaTa[amma]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/08 De Darshan Ma.mp3",
       "song": "de darshan ma",
       "sn": "TeTarisanYma"
@@ -1174,61 +757,6 @@
     [
       "TeTarisanYmaoTYaVerisionY",
       "TeTarisanYmaTeVi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Durge Durgati.mp3",
-      "song": "durge durgati",
-      "sn": "TurigeTurigaTi"
-    },
-    [
-      "TurigeTurigaTiinYTi",
-      "TurigeTurigaTiarianYeinYTi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Kandarppakoti Sundara.mp3",
-      "song": "kandarppakoti sundara",
-      "sn": "kanYTaripakoTisunYTaria"
-    },
-    [
-      "kanYTaripakoTisunYTariaTeTugu",
-      "kanYTaripakoTisunYTariaTeTugu[krisnYa]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Kanniral Kanna.mp3",
-      "song": "kanniral kanna",
-      "sn": "kanYnYiriaTkanYnYa"
-    },
-    [
-      "kanYnYiriaTkanYnYamaTaYaTam",
-      "kanYnYiriaTkanYnYamaTaYaTam[krisnYa]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Karayalle Paitale.mp3",
-      "song": "karayalle paitale",
-      "sn": "kariaYaTTepaiTaTe"
-    },
-    [
-      "kariaYaTTepaiTaTemaTaYaTam",
-      "kariaYaTTepaiTaTemaTaYaTam[amma]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/08 Kurumbukkara.mp3",
-      "song": "kurumbukkara",
-      "sn": "kuriumbukaria"
-    },
-    [
-      "kuriumbukariaTamiT",
-      "kuriumbukariaTamiT[krisnYa]"
     ]
   ],
   [
@@ -1268,17 +796,6 @@
   ],
   [
     {
-      "path": "/samples-cd/08 Taraka Namamu.mp3",
-      "song": "taraka namamu",
-      "sn": "TariakanYamamu"
-    },
-    [
-      "TariakanYamamuTeTugu",
-      "TariakanYamamuTeTugu"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/09 Adi Shakti.mp3",
       "song": "adi shakti",
       "sn": "aTisaTi"
@@ -1291,28 +808,6 @@
   ],
   [
     {
-      "path": "/samples-cd/09 Amba Sambhavi.mp3",
-      "song": "amba sambhavi",
-      "sn": "ambasambaVi"
-    },
-    [
-      "ambasambaVinYamaVTi",
-      "ambasambaVisanYskriT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/09 Beyond.mp3",
-      "song": "beyond",
-      "sn": "bYonYT"
-    },
-    [
-      "bYonYTTemosTbeauTifuTVoriTs",
-      "bYonYTTemosTbeauTifuTVoriTsenYgTis"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/09 Durge.mp3",
       "song": "durge",
       "sn": "Turige"
@@ -1320,7 +815,6 @@
     [
       "TurigeTukanYiVrinYibaVTarinYiamriTesVrimaTaYaTam",
       "TurigeTurigaTiinYTi",
-      "TurigeTurigaTiarianYeinYTi",
       "TurigeTurige",
       "TurigeiTariekgiTiTubariekanYnYaTa"
     ]
@@ -1333,31 +827,8 @@
     },
     [
       "kaTikaTikaTigujariaTi",
-      "kaTikaTikaTigujriaTi",
       "kaTikaTikaTikaTasVriupinYiTeTugu",
       "kaTikaTikaTikaTiTrisuTiTamiT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/09 Karumaiyile.mp3",
-      "song": "karumaiyile",
-      "sn": "kariumaYiTe"
-    },
-    [
-      "kariumaYiTeTamiT",
-      "kariumaYiTeTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/09 Naiyya Tere.mp3",
-      "song": "naiyya tere",
-      "sn": "nYaYYaTerie"
-    },
-    [
-      "nYaYYaTerieinYTi",
-      "nYaYYaTerieinYTi[TispassionY]"
     ]
   ],
   [
@@ -1371,17 +842,6 @@
       "nYariaYanYari",
       "nYariaYanYanYariaYanYajaYa",
       "nYariaYanYasririamanYariaYanYasririamasanYskriT"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/09 Sakti Ta Jagadamba.mp3",
-      "song": "sakti ta jagadamba",
-      "sn": "saTiTajagaTamba"
-    },
-    [
-      "saTiTajagaTambaTamiT",
-      "saTiTajagaTambaTamiT[amma]"
     ]
   ],
   [
@@ -1410,17 +870,6 @@
   ],
   [
     {
-      "path": "/samples-cd/09 Vighnanasaka.mp3",
-      "song": "vighnanasaka",
-      "sn": "VignYanYasaka"
-    },
-    [
-      "VignYanYasakasriVinYaYaka",
-      "VignYanYasakasriVinYaYakakanYnYaTa"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/10 Amma.mp3",
       "song": "amma",
       "sn": "amma"
@@ -1439,7 +888,6 @@
       "ammaTeVikanYnYaTaVerisionY",
       "ammaTeViTuTuVerisionY",
       "ammaTeVijagaTisVrisanYasanYskriT",
-      "ammaTeViTanYiTanYTanYakanYnYaTa",
       "ammaTubisTmeinYgerimanY",
       "ammaekiTamunYnYinYinYakinYnYumaTaYaTam",
       "ammaenYariaikaYiT",
@@ -1454,7 +902,6 @@
       "ammamYeariTenYgTis",
       "ammanYanYumTamiT",
       "ammanYapaiTeTugu",
-      "ammanYapaiaTiginYTiTeTugu",
       "ammanYiTamiT",
       "ammanYibariuVYakanYnYaTa",
       "ammanYinYiTuaTisuammanYa",
@@ -1501,24 +948,12 @@
   ],
   [
     {
-      "path": "/samples-cd/10 Anbu Vativanaval.mp3",
-      "song": "anbu vativanaval",
-      "sn": "anYbuVTiVnYaVT"
-    },
-    [
-      "anYbuVTiVnYaVTTamiT",
-      "anYbuVTiVnYaVTTamiT[TeVi]"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/10 Bandalo Bandalo.mp3",
       "song": "bandalo bandalo",
       "sn": "banYTaTobanYTaTo"
     },
     [
       "banYTaTobanYTaTokanYnYaTa",
-      "banYTaTobanYTaTokanYnYaTa[amma]",
       "banYTaTobanYTaTogujariaTiVerisionY"
     ]
   ],
@@ -1530,8 +965,7 @@
     },
     [
       "TamTamTumTumTamariuboTe",
-      "TamTamTumTumTamariuboTegujariaTi",
-      "TamTamTumTumTamariuboTegujariaTi[siV]"
+      "TamTamTumTumTamariuboTegujariaTi"
     ]
   ],
   [
@@ -1543,17 +977,6 @@
     [
       "TeVimaTeViinYTi",
       "TeVimaTeTurigemaTaYaTamVeTika"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/10 Krsna Ninna Bala Lile.mp3",
-      "song": "krsna ninna bala lile",
-      "sn": "krisnYanYinYnYabaTaTiTe"
-    },
-    [
-      "krisnYanYinYnYabaTaTiTekanYnYaTa",
-      "krisnYanYinYnYabaTaTiTekanYnYaTa[krisnYa]"
     ]
   ],
   [
@@ -1692,17 +1115,6 @@
     [
       "maTeVimaTaYaTam",
       "maTeVimakaTikanYnYaTa"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Merà Mujh Main.mp3",
-      "song": "mera mujh main",
-      "sn": "meriamujmainY"
-    },
-    [
-      "meriamujmainYpunYjabi",
-      "meriamujmainYpunYjabi[amma]"
     ]
   ],
   [
