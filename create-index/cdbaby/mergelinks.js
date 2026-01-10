@@ -48,7 +48,7 @@ function readBhajanIndex() {
   // Pattern matches: YYYYsuplN-X (supplements), volN-X (volumes), and YYYY-X (year-only like 2025-53)
   bhajans = _.filter(
     bhajans,
-    (value) => !!value.l[0] && value.l[0].match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi)
+    (value) => value.l.some(loc => loc && loc.match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi))
   );
   searchableBhajans = [];
   searchableBhajansObject = {};

@@ -30,18 +30,8 @@
     [
       "maomagujariaTi",
       "maomagujriaTi",
-      "maomamarigujriaTi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/01 Nanda Nandana.mp3",
-      "song": "nanda nandana",
-      "sn": "nYanYTanYanYTanYa"
-    },
-    [
-      "nYanYTanYanYTanYaTamiT",
-      "nYanYTanYanYTanYari"
+      "maomamarigujriaTi",
+      "maomerima"
     ]
   ],
   [
@@ -145,7 +135,9 @@
       "sn": "jaima"
     },
     [
+      "jaimambejaimambe",
       "jaimabaVnYi",
+      "jaimajaijaima",
       "jaimajaikaTima",
       "jaimaTaTi"
     ]
@@ -158,7 +150,8 @@
     },
     [
       "kaTaToriamTamiT",
-      "kaTaToriamTapamcYYum"
+      "kaTaToriamTapamcYYum",
+      "kaTaToriamTaVm"
     ]
   ],
   [
@@ -170,17 +163,6 @@
     [
       "krisnYagoVinYTagopaTainYTi",
       "krisnYagoVinYTagopaTariamarinYamgaVoinYTi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/02 Nanda Nandana.mp3",
-      "song": "nanda nandana",
-      "sn": "nYanYTanYanYTanYa"
-    },
-    [
-      "nYanYTanYanYTanYaTamiT",
-      "nYanYTanYanYTanYari"
     ]
   ],
   [
@@ -213,6 +195,7 @@
     },
     [
       "ambabaVnYijaYajagaTambe",
+      "ambabaVnYinYinYamboja",
       "ambabaVnYipariaTparie",
       "ambabaVnYisariaTe"
     ]
@@ -314,17 +297,6 @@
   ],
   [
     {
-      "path": "/samples-cd/03 Nanda Nandana.mp3",
-      "song": "nanda nandana",
-      "sn": "nYanYTanYanYTanYa"
-    },
-    [
-      "nYanYTanYanYTanYaTamiT",
-      "nYanYTanYanYTanYari"
-    ]
-  ],
-  [
-    {
       "path": "/samples-cd/03 Nijavan Ariyadē.mp3",
       "song": "nijavan ariyade",
       "sn": "nYijaVnYarYaTe"
@@ -377,6 +349,8 @@
     [
       "ammeabaYapriaTemaTaYaTamkrisnYa",
       "ammeaTipariasaTimaTaYaTam",
+      "ammeagaTamaY",
+      "ammeammeamriTanYanYTamaYi",
       "ammeamminYnYaTma",
       "ammeamminYnYumaTaYaTamkuriuVi",
       "ammeammenYiTYamaTaYaTam",
@@ -453,7 +427,9 @@
       "sn": "jaima"
     },
     [
+      "jaimambejaimambe",
       "jaimabaVnYi",
+      "jaimajaijaima",
       "jaimajaikaTima",
       "jaimaTaTi"
     ]
@@ -935,10 +911,12 @@
       "ammanYaTiVYapaTambujagaTige",
       "ammanYanYaTaTuTuTu",
       "ammanYapaTakekanYnYaTa",
+      "ammaViparikapokaTam",
       "ammaYaTTinYmaTaYaTam",
       "ammaYaTTinYTammaYaTTeTeTugu",
       "ammaYaTTinYTammaYaTTe",
       "ammaYekanYanYkoTicoriumaTaYaTam",
+      "ammaYekanYTunYanY",
       "ammaYekanYanYaYinYnYunYanY",
       "ammaYenYnYuTToriaTenYmorikokumo",
       "ammaYenYnYuTToriunYamamoriTiTaVe",
@@ -966,17 +944,6 @@
     [
       "TamTamTumTumTamariuboTe",
       "TamTamTumTumTamariuboTegujariaTi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/10 Devi Mate.mp3",
-      "song": "devi mate",
-      "sn": "TeVimaTe"
-    },
-    [
-      "TeVimaTeViinYTi",
-      "TeVimaTeTurigemaTaYaTamVeTika"
     ]
   ],
   [
