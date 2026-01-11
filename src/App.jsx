@@ -51,7 +51,7 @@ const getShow2025Param = (search) => {
   return null;
 };
 
-const shouldShow2025 = () => localStorage.getItem("show2025") === "1";
+const shouldShow2025 = () => true || localStorage.getItem("show2025") === "1";
 
 const App = () => {
   const [favorites, setFavorites] = useState(() => getJson("favorites") || {});
