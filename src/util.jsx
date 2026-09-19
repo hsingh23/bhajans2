@@ -78,38 +78,36 @@ export const RequireAuth = ({ children }) => {
 export const RequireAdmin = ({ children }) => {
   const { user, initializing } = useAuthState();
   const location = useLocation();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [checking, setChecking] = useState(true);
+  const [authorization, setAuthorization] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
+    if (!user) return;
     async function check() {
-      if (!user) {
-        setChecking(false);
-        return;
-      }
       try {
         const snap = await get(ref(db, `admin/${user.uid}`));
         if (!cancelled) {
-          setIsAdmin(!!snap.val());
-          setChecking(false);
+          setAuthorization({ uid: user.uid, status: snap.val() === '1' ? 'admin' : 'denied' });
         }
       } catch {
-        if (!cancelled) setChecking(false);
+        if (!cancelled) setAuthorization({ uid: user.uid, status: 'error' });
       }
     }
     check();
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [user]);
 
-  if (initializing || checking) return <Loader />;
+  if (initializing) return <Loader />;
   if (!user) {
     const next = encodeURIComponent(location.pathname + location.search + location.hash);
     return <Navigate to={`/login?next=${next}`} replace />;
   }
-  if (!isAdmin) {
+  // A previous user's result must never authorize or redirect a new session.
+  if (authorization?.uid !== user.uid) return <Loader />;
+  if (authorization.status === 'error') {
+    return <p role='alert'>Unable to verify admin access. Please reload and try again.</p>;
+  }
+  if (authorization.status !== 'admin') {
     return <Navigate to='/' replace />;
   }
   return children;

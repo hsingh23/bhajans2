@@ -4,7 +4,14 @@ const { getDatabase } = require("firebase-admin/database");
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
 const { expirationFor } = require("./access.cjs");
 initializeApp();
-const options = { region: "us-central1", maxInstances: 5, invoker: "public" };
+const options = {
+  region: "us-central1",
+  maxInstances: 5,
+  invoker: "public",
+  // Gen 2 otherwise resets this to the Compute identity on every deployment.
+  // The existing Firebase runtime identity has Auth and RTDB permissions.
+  serviceAccount: "bhajans-588f5@appspot.gserviceaccount.com",
+};
 
 async function requireAdmin(request) {
   if (!request.auth)

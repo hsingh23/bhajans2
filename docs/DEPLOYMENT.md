@@ -65,3 +65,23 @@ After deployment, downloaded Cloud Run source archives were compared byte-for-by
 ## Artifact cleanup
 
 Nine obsolete 2022–2023 build-cache images were deleted from the us-central1 `gcf-artifacts` repository. A cleanup policy now deletes artifacts older than 30 days while retaining the three newest versions per package. Current services and unrelated repositories were preserved. The old `paid` function was deleted only after `paidNotification` was deployed successfully.
+
+## Required post-deployment checks
+
+Run `bun run verify:functions:deployed` after each function deployment. This read-only
+check verifies that all six maintained functions are active on Node 24 and use the
+Firebase runtime service account. Then perform an authenticated lookup through the
+production admin UI, including email, UID, and a missing-account case. A successful
+deploy, unauthenticated rejection, or mocked handler test does not prove database access.
+
+On September 19, the admin codebase omitted the explicit `serviceAccount` option.
+The final Firebase deployment therefore selected the default Compute identity, which
+could not read RTDB. Authenticated requests stalled on the admin-role read and timed
+out as INTERNAL. Both admin callables now explicitly select the existing Firebase
+identity, and real SDK endpoint-metadata regression tests cover all maintained functions.
+
+The production verification after the correction exercised authenticated email and UID
+lookup and a missing-account response through the live admin UI. Cloud Run logs also
+confirmed a successful access update (HTTP 200). The frontend route guard now waits
+for both restored authentication and the role read, binds role results to the current
+UID, accepts only the exact admin flag, and displays role-read failures explicitly.

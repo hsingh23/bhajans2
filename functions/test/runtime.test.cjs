@@ -7,8 +7,14 @@ test("actual production modules load and expose all payment handlers and mail fu
     "manuallyAddUser",
     "paidNotification",
     "shopifyWebhook",
-  ])
+  ]) {
     assert.equal(typeof handlers[name], "function");
+    assert.equal(
+      handlers[name].__endpoint.serviceAccountEmail,
+      "bhajans-588f5@appspot.gserviceaccount.com",
+      `${name} must retain its Firebase database-authorized identity`,
+    );
+  }
   const mail = require("../src/mail.js");
   for (const name of [
     "newUserResetPasswordEmail",
