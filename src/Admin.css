@@ -1,0 +1,20 @@
+.admin-dashboard-page {
+  padding: 100px 20px 100px;
+  max-width: 640px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+.admin-dashboard-page p {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.admin-dashboard-page h2 { font-size: 24px; }
+.admin-dashboard-page h3 { font-size: 19px; }
+.admin-dashboard-page [role="alert"] { color: var(--text-main); border-left: 3px solid #bb4433; padding-left: 12px; }
+.admin-dashboard-page [role="status"] { border-left: 3px solid #398059; padding-left: 12px; }
+@media (max-width: 600px) {
+  .admin-dashboard-page { padding-top: 24px; }
+}

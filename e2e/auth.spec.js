@@ -14,7 +14,7 @@ test.describe('Authentication', () => {
     await page.goto('/login');
     
     // Check for branding
-    await expect(page.locator('h3')).toContainText("Amma's Bhajans");
+    await expect(page.getByRole('heading', { name: 'Sing with Amma', exact: true })).toBeVisible();
     
     // Check for email input
     await expect(page.locator('input[type="email"]')).toBeVisible();

@@ -69,12 +69,16 @@ bun run lint         # ESLint
 bun run validate     # tsc --noEmit + lint + tests — run before finishing any task
 ```
 
-Cloud Functions live in `functions/` and use Yarn, not Bun:
+Cloud Functions use Node.js 24 and Yarn in `functions/` and `admin-functions/`:
 
 ```bash
-cd functions && yarn install && yarn build
-firebase deploy --only functions   # requires the Firebase CLI + auth
+yarn --cwd functions install && yarn --cwd functions build
+yarn --cwd admin-functions install
+bun run test:functions
+bun run deploy:functions
 ```
+
+See [deployment and production-source audit](docs/DEPLOYMENT.md) for authentication, secrets, and deployment scope.
 
 ## Project Structure
 
@@ -85,12 +89,13 @@ src/                 React app
   RenderPage.jsx     pdf.js lyrics viewer (pagination, hotkeys, toasts)
   Login.jsx          email/password + magic-link + password reset
   Pay.jsx            membership/plans page
-  Admin.jsx          user lookup, paid/beta approval, activation emails
+  Admin.jsx          admin-only email/UID lookup and membership expiration editing
   firebase.js        Firebase init, auth/db/functions helpers
   ThemeContext.jsx   light/dark/system theme mode
 functions/           Firebase Cloud Functions (Yarn)
-  index.js           getUserByEmail, amritabooks webhook, paid trigger, manuallyAddUser
-  mail.js            Mailjet email templates (welcome/reset)
+  src/index.js       Shopify/Woo webhooks, paidNotification, manuallyAddUser
+  src/mail.js        responsive Mailjet membership email templates
+admin-functions/     protected lookup and membership-access callable functions
 public/              static assets, PDFs (public/pdfs), manifests, reset.html
 create-index/        index-generation pipeline (text -> bhajan-index2.json)
   ppts/              Python PPTX -> PDF songbook generator
@@ -103,7 +108,7 @@ docs/plans/          implementation plan documents
 
 - `favorites/<uid>` — user's hearted bhajans (name -> truthy)
 - `paid/<uid>` — `{ paidOn, expiresOn, orderID, payer, ... }` written when
-  membership is confirmed; the `paid` DB trigger pushes a notification to admins
+  membership is confirmed; the `paidNotification` DB trigger pushes a notification to admins
 - `confirmPayment|confirmedPayment`, `confirmBeta|confirmedBeta` — manual
   admin-approval queues
 - `admin/<uid>` — flag granting admin rights (see `database.rules.json`)
@@ -114,9 +119,8 @@ docs/plans/          implementation plan documents
 
 - The Firebase **web app config is public and committed** in `src/firebase.js`
   (standard Firebase practice; security comes from Auth + database rules).
-- Cloud Functions secrets are stored via Firebase config, not in the repo —
-  key names: `config.amritabooks_secret`, `config.amritabooks_secret_debug`,
-  `config.mailjet_auth_header` (set with `firebase functions:config:set`).
+- Cloud Functions use Secret Manager: `SHOPIFY_SECRET`, `AMRITABOOKS_SECRET`,
+  and `MAILJET_AUTH_HEADER`. Local environment files are ignored by Git and deployment.
 - `scripts/bump-version.cjs` honors `SKIP_BUMP_HOOK=1` to skip the automatic
   version bump.
 - Vite's built-in `import.meta.env.DEV/PROD` flags gate analytics and service
@@ -124,12 +128,11 @@ docs/plans/          implementation plan documents
 
 ## Deployment
 
-Firebase Hosting (`firebase.json`, public dir `dist/`, SPA fallback rewrite,
-HSTS + no-cache headers for the service workers). Deployment typically:
-
-```bash
-bun run build && firebase deploy --only hosting
-```
+Production at `sing.withamma.com` deploys through Netlify from GitHub `master`.
+`netlify.toml` uses Node.js 24, `bun run build`, and the `dist/` directory.
+Firebase Functions deploy separately with `bun run deploy:functions`.
+See [deployment documentation](docs/DEPLOYMENT.md) and the
+[email before/after review](docs/email-review/README.md).
 
 ## Contributing / Agents
 

@@ -1,184 +1,272 @@
 // @ts-nocheck
-import { auth, db, getUserByEmail } from "./firebase";
-import { Link } from "react-router-dom";
-import { PLANS } from "./Plans";
-import { ref, get, set } from "firebase/database";
-
-import { CircularProgress } from "@mui/material";
-
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { DebounceInput } from "react-debounce-input";
-import { useQuery } from "@tanstack/react-query";
-import DarkModeToggle from "./DarkModeToggle";
+import React, { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { get, ref } from "firebase/database";
+import { auth, db, getUserByEmail, updateUserAccess } from "./firebase";
 import Header from "./Header";
+import "./Admin.css";
 
-const createBody = encodeURIComponent(`Dear Customer
+const fieldStyle = {
+  padding: 12,
+  width: "100%",
+  boxSizing: "border-box",
+  background: "var(--input-bg)",
+  color: "var(--text-main)",
+  border: "1px solid var(--border-color)",
+  borderRadius: 8,
+  fontSize: 16,
+};
+const formatDate = (value) =>
+  value
+    ? new Date(value).toLocaleString(undefined, { timeZone: "UTC" }) + " UTC"
+    : "Not set";
 
-Thank you so much for your purchase of the Sing with Amma App and supporting Amma's Charities.
-
-To get started, it is important that you create an account by visiting https://sing.withamma.com/#/login. Once you have created your account, please reply to this email with the email address you used to register. This will allow me to grant you access to the app and ensure that you have a smooth and seamless experience.
-
-**** Without this step, you will not have access to the app.****
-
-So please do not hesitate to reach out to me if you have any questions or need assistance with creating your account.
-
-Thank you for your cooperation and we look forward to helping you get the most out of the Sing with Amma App.
-
-Sincerely,
-Harsh Singh`);
-
-const Admin = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const { isFetching, data } = useQuery({
-    queryKey: ["email", email],
-    queryFn: () => getUserByEmail({ email }).then((x) => x.data),
-    enabled: !!email && email?.length > 3 && email.includes("@"),
-  });
-  const user = data || {};
+export default function Admin() {
+  const [authorization, setAuthorization] = useState("loading");
+  const [query, setQuery] = useState("");
+  const [user, setUser] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
+  const [years, setYears] = useState("1");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
-    async function fetchData() {
-      const uid = (auth.currentUser && auth.currentUser.uid) || localStorage.uid;
-      if (!uid) {
-        console.log("Need to login");
-        navigate(`/login`);
+    let generation = 0;
+    const unsubscribe = onAuthStateChanged(auth, async (signedIn) => {
+      const current = ++generation;
+      setAuthorization("loading");
+      setUser(null);
+      if (!signedIn) {
+        setAuthorization("signed-out");
         return;
       }
       try {
-        const snap = await get(ref(db, `admin/${uid}`));
-        if (!snap.exists()) {
-          navigate(`/login`, { replace: true });
-        }
-      } catch (err) {
-        console.error(err);
-        navigate(`/login`, { replace: true });
+        const snapshot = await get(ref(db, `admin/${signedIn.uid}`));
+        if (current === generation)
+          setAuthorization(snapshot.val() === "1" ? "admin" : "denied");
+      } catch {
+        if (current === generation) setAuthorization("error");
       }
+    });
+    return () => {
+      generation++;
+      unsubscribe();
+    };
+  }, []);
+
+  async function search(event) {
+    event.preventDefault();
+    setError("");
+    setNotice("");
+    setUser(null);
+    setBusy(true);
+    const input = query.trim().replace(/^mailto:/i, "");
+    try {
+      const result = await getUserByEmail(
+        input.includes("@") ? { email: input.toLowerCase() } : { uid: input },
+      );
+      if (!result.data?.uid)
+        throw new Error(
+          "Lookup returned no account. Please retry or check the backend deployment.",
+        );
+      setUser(result.data);
+      setDate(
+        result.data.expiresOn
+          ? new Date(result.data.expiresOn).toISOString().slice(0, 10)
+          : "",
+      );
+    } catch (err) {
+      setError(
+        err.code === "functions/not-found"
+          ? "No account matches this email or UID."
+          : `Lookup failed: ${err.message}`,
+      );
+    } finally {
+      setBusy(false);
     }
-    fetchData();
-  }, [navigate]);
-
-  const activateBody = encodeURIComponent(`Dear ${
-    user?.displayName?.length > 2 ? user.displayName : "Customer"
-  },
-
-Thank you for purchasing a subscription to https://sing.withamma.com/#/ Your account is now active and you will have full access to all the bhajans and sheet music.
-
-We hope you enjoy using the site and encourage you to share any feedback or questions you may have by clicking the bottom left button on the site.
-
-Happy singing!
-
-Sincerely,
-Harsh Singh`);
-
-  let setPaid = async (e) => {
-    let planName = e.target.name || e.target.parentElement.name;
-    let plan = PLANS.find((x) => x.value === planName);
-    if (user?.uid && plan) {
-      try {
-        await set(ref(db, `paid/${user.uid}`), {
-          expiresOn: +new Date() + plan.time,
-          gross_total_amount: {
-            currency: "USD",
-            value: plan.price,
-          },
-          mode: "live",
-          manual: true,
-          orderID: "admin",
-          paidOn: +new Date(),
-          payer: {
-            payer_id: "admin",
-          },
-        });
-      } catch (err) {
-        console.error(err);
-      }
+  }
+  async function save(change) {
+    setBusy(true);
+    setError("");
+    setNotice("");
+    try {
+      const result = await updateUserAccess({ uid: user.uid, ...change });
+      setUser(result.data);
+      setDate(new Date(result.data.expiresOn).toISOString().slice(0, 10));
+      setNotice(`Access saved. Expires ${formatDate(result.data.expiresOn)}.`);
+    } catch (err) {
+      setError(`Access was not saved: ${err.message}`);
+    } finally {
+      setBusy(false);
     }
-  };
+  }
 
   return (
-    <div className='App'>
+    <div className="App">
       <Header back title="Admin Dashboard" />
-      <div className='restPage' style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', paddingTop: '100px' }}>
-        <div style={{ backgroundColor: 'var(--card-bg)', padding: '30px', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}>
-          <h2 style={{ marginTop: 0, marginBottom: '20px', textAlign: 'center' }}>Admin Dashboard</h2>
-          
-          <div style={{ marginBottom: '30px' }}>
-            <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>Find User by Email</label>
-            <div style={{ display: "flex", gap: '10px', alignItems: 'center' }}>
-              <DebounceInput
-                className="form-control"
-                style={{ flex: "1", padding: '12px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', backgroundColor: 'var(--input-bg)', color: 'var(--text-main)', fontSize: '16px' }}
-                debounceTimeout={400}
-                type='text'
-                value={email}
-                placeholder='user@example.com'
-                onChange={(e) =>
-                  setEmail(() => e.target.value.trim().replace(/^mailto:/, ""))
-                }
-              />
-              {isFetching && <CircularProgress size={24} />}
-            </div>
-          </div>
-
-          {user?.uid ? (
-            <div style={{ border: '1px solid var(--border-color)', padding: '20px', borderRadius: 'var(--radius-md)', marginBottom: '30px' }}>
-              <h3 style={{ marginTop: 0 }}>User Details</h3>
-              <p style={{ margin: '5px 0', fontSize: '16px' }}><strong>UID:</strong> {user.uid}</p>
-              <p style={{ margin: '5px 0', fontSize: '16px' }}><strong>Email:</strong> {user.email}</p>
-              <p style={{ margin: '5px 0', fontSize: '16px' }}><strong>Name:</strong> {user.displayName}</p>
-              <p style={{ margin: '5px 0', fontSize: '16px' }}><strong>Paid On:</strong> {user.paidOn ? new Date(user.paidOn).toLocaleDateString() : 'N/A'}</p>
-              <p style={{ margin: '5px 0', fontSize: '16px', color: (user.expiresOn && +user.expiresOn < +new Date()) ? 'red' : 'inherit' }}>
-                <strong>Expires On:</strong> {user.expiresOn ? new Date(user.expiresOn).toLocaleDateString() : 'N/A'}
-              </p>
-              
-              <div style={{ marginTop: '20px' }}>
-                <a
-                  className="button button-action"
-                  style={{ width: '100%', boxSizing: 'border-box' }}
-                  target='_blank'
-                  rel='noreferrer'
-                  href={`mailto:${user.email}?subject=Welcome to Sing with Amma - Full Access Granted&body=${activateBody}`}>
-                  Send Activation Email
-                </a>
-              </div>
-            </div>
-          ) : email && !isFetching && (
-            <div style={{ textAlign: 'center', padding: '20px', border: '1px dashed var(--border-color)', borderRadius: 'var(--radius-md)', marginBottom: '30px' }}>
-              <p style={{ margin: 0, marginBottom: '15px' }}>User not found or hasn&apos;t logged in yet.</p>
-              <a
-                className="button button-primary"
-                style={{ textDecoration: 'none' }}
-                href={`mailto:${email}?subject=Important: Complete Account Setup to Gain Access to Sing with Amma&body=${createBody}`}
-                target='_blank'
-                rel='noreferrer'>
-                Send Setup Instructions
-              </a>
-            </div>
+      <main
+        className="restPage admin-dashboard-page"
+      >
+        <section
+          style={{
+            background: "var(--card-bg)",
+            padding: 24,
+            borderRadius: 16,
+            boxShadow: "var(--shadow-lg)",
+          }}
+        >
+          <h2>Admin Dashboard</h2>
+          {authorization === "loading" && (
+            <p role="status">Checking admin access…</p>
           )}
-
-          {user?.uid && (
-            <div>
-              <h3 style={{ marginBottom: '15px' }}>Grant Access</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                {PLANS.map((x) => (
-                  <button
-                    key={x.value}
-                    onClick={setPaid}
-                    name={x.value}
-                    className="button button-3d button-primary"
-                    style={{ width: '100%' }}>
-                    {x.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+          {authorization === "signed-out" && (
+            <p>
+              <a href="#/login">Sign in</a> to use the admin dashboard.
+            </p>
           )}
-        </div>
-      </div>
+          {authorization === "denied" && (
+            <p role="alert">This account does not have admin access.</p>
+          )}
+          {authorization === "error" && (
+            <p role="alert">
+              Could not check admin access. Check your connection and reload.
+            </p>
+          )}
+          {authorization === "admin" && (
+            <>
+              <form onSubmit={search}>
+                <label htmlFor="user-search">Find user by email or UID</label>
+                <input
+                  id="user-search"
+                  style={fieldStyle}
+                  value={query}
+                  disabled={busy}
+                  required
+                  placeholder="Email address or Firebase UID"
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setUser(null);
+                    setError("");
+                    setNotice("");
+                  }}
+                />
+                <button
+                  className="button button-primary"
+                  disabled={busy || !query.trim()}
+                  type="submit"
+                  style={{ marginTop: 12 }}
+                >
+                  {busy ? "Working…" : "Find user"}
+                </button>
+              </form>
+              {error && <p role="alert">{error}</p>}
+              {notice && <p role="status">{notice}</p>}
+              {user && (
+                <div style={{ marginTop: 24, overflowWrap: "anywhere" }}>
+                  <h3>{user.displayName || "User details"}</h3>
+                  <p>
+                    <strong>Email:</strong> {user.email || "No email address"}
+                  </p>
+                  <p>
+                    <strong>UID:</strong> {user.uid}
+                  </p>
+                  <p>
+                    <strong>Account:</strong>{" "}
+                    {user.disabled ? "Disabled" : "Enabled"}
+                  </p>
+                  <p>
+                    <strong>Paid on:</strong> {formatDate(user.paidOn)}
+                  </p>
+                  <p>
+                    <strong>Expires on:</strong> {formatDate(user.expiresOn)}
+                  </p>
+                  <h3>Extend access</h3>
+                  <p>
+                    Years are added to the existing expiration, or today if
+                    access has expired.
+                  </p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                    <button
+                      className="button button-primary"
+                      disabled={busy}
+                      onClick={() => save({ mode: "years", years: 1 })}
+                    >
+                      Add 1 year
+                    </button>
+                    <button
+                      className="button button-primary"
+                      disabled={busy}
+                      onClick={() => save({ mode: "years", years: 10 })}
+                    >
+                      Add 10 years
+                    </button>
+                  </div>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      save({ mode: "years", years: Number(years) });
+                    }}
+                    style={{ marginTop: 20 }}
+                  >
+                    <label htmlFor="extra-years">Extra years (1–100)</label>
+                    <input
+                      id="extra-years"
+                      type="number"
+                      min="1"
+                      max="100"
+                      step="1"
+                      required
+                      disabled={busy}
+                      value={years}
+                      onChange={(e) => setYears(e.target.value)}
+                      style={fieldStyle}
+                    />
+                    <button
+                      type="submit"
+                      disabled={busy}
+                      className="button button-primary"
+                      style={{ marginTop: 12 }}
+                    >
+                      Add years
+                    </button>
+                  </form>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      save({ mode: "date", date });
+                    }}
+                    style={{ marginTop: 24 }}
+                  >
+                    <label htmlFor="expiration">Set expiration date</label>
+                    <input
+                      id="expiration"
+                      type="date"
+                      required
+                      disabled={busy}
+                      min={new Date().toISOString().slice(0, 10)}
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                      style={fieldStyle}
+                    />
+                    <p>
+                      Replaces the current expiration. Access lasts through the
+                      selected date in UTC.
+                    </p>
+                    <button
+                      type="submit"
+                      disabled={busy}
+                      className="button button-primary"
+                    >
+                      Set expiration
+                    </button>
+                  </form>
+                </div>
+              )}
+            </>
+          )}
+        </section>
+      </main>
     </div>
   );
-};
-
-export default Admin;
+}

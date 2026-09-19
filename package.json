@@ -71,7 +71,9 @@
     "test": "vitest run --coverage",
     "test:e2e": "playwright test",
     "validate": "tsc --noEmit && bun run lint && bun run test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:functions": "bunx --package node@24 node --test functions/test/*.test.cjs admin-functions/*.test.cjs",
+    "deploy:functions": "bunx --package node@24 node functions/node_modules/firebase-tools/lib/bin/firebase.js deploy --project bhajans-588f5 --only functions:admin,functions:default:amritabooks,functions:default:shopifyWebhook,functions:default:manuallyAddUser,functions:default:paidNotification"
   },
   "engines": {
     "node": ">=18.0.0"

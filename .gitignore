@@ -40,3 +40,13 @@ validate_log*.txt
 # python
 __pycache__
 output_test/
+# Local Netlify folder
+.netlify
+
+# Local deployment credentials and generated reports
+.runtimeconfig.json
+functions/.env*
+admin-functions/.env*
+firebase-debug*.log
+playwright-report/
+test-results/

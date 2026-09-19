@@ -1,378 +1,381 @@
-import { newUserResetPasswordEmail } from "./mail";
-const fetch = require("node-fetch");
-const functions = require("firebase-functions");
+const { onRequest } = require("firebase-functions/v2/https");
+const { onValueWritten } = require("firebase-functions/v2/database");
+const { defineSecret } = require("firebase-functions/params");
 const admin = require("firebase-admin");
-const crypto = require("crypto");
-
-const amritabooks_secret = functions.config().config.amritabooks_secret;
-const mailjet_auth_header = functions.config().config.mailjet_auth_header;
-const amritabooks_secret_debug = functions.config().config
-  .amritabooks_secret_debug;
-const PLANS = [
-  {
-    value: "oneIndividual10",
-    label: "1 Year - $9.99",
-    price: 9.99,
-    time: 31536000000,
-  },
-  {
-    value: "tenIndividual50",
-    label: "10 Year - 49.99",
-    price: 49.99,
-    time: 315360000000,
-    isBest: true,
-  },
-  {
-    value: "fiveIndividual40",
-    label: "5 Year - $39.99",
-    price: 39.99,
-    time: 157680000000,
-  },
-];
-const TIMES = {
-  1: 31536000000,
-  5: 157680000000,
-  10: 315360000000,
-};
-const cors = require("cors")({
-  origin: true,
-});
-const generateRandomString = (myLength) => {
-  const chars =
-    "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
-  const randomArray = Array.from(
-    { length: myLength },
-    (v, k) => chars[Math.floor(Math.random() * chars.length)]
-  );
-
-  const randomString = randomArray.join("");
-  return randomString;
+const crypto = require("node:crypto");
+const {
+  newUserResetPasswordEmail,
+  newUserResetPasswordEmailShopify,
+  accountActivated,
+} = require("./mail");
+admin.initializeApp();
+const amritabooksSecret = defineSecret("AMRITABOOKS_SECRET");
+const shopifySecret = defineSecret("SHOPIFY_SECRET");
+const mailjetAuth = defineSecret("MAILJET_AUTH_HEADER");
+const options = {
+  region: "us-central1",
+  maxInstances: 5,
+  serviceAccount: "bhajans-588f5@appspot.gserviceaccount.com",
 };
 
-admin.initializeApp(functions.config().firebase);
+function purchaseDate(value) {
+  const date = value ? new Date(value) : null;
+  return date && Number.isFinite(date.getTime())
+    ? date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      })
+    : "Not recorded";
+}
 
-// gcloud functions add-iam-policy-binding "getUserByEmail" --member='allUsers'  --role='roles/cloudfunctions.invoker'
-export const getUserByEmail = functions
-  .region("us-central1")
-  .https.onCall(async (data, context) => {
-    const rootRef = admin.database().ref();
-    const isAdmin =
-      (
-        await rootRef.child(`/admin/${context.auth.uid}`).once("value")
-      ).val() === "1";
-    if (isAdmin) {
-      try {
-        const { uid, email, displayName } = await admin
-          .auth()
-          .getUserByEmail(data.email)
-          .then((x) => x.toJSON());
-        const { paidOn, expiresOn } =
-          (await rootRef.child(`/paid/${uid}`).once("value")).val() || {};
-        return { uid, email, displayName, paidOn, expiresOn };
-      } catch (e) {
-        console.log(context.auth.uid, data.email, e);
-      }
+exports.amritabooks = onRequest(
+  { ...options, invoker: "public", secrets: [amritabooksSecret, mailjetAuth] },
+  async (req, res) => {
+    if (req.method !== "POST") return res.status(405).send("POST required");
+    const signature = req.headers["x-wc-webhook-signature"];
+    const expected = crypto
+      .createHmac("sha256", amritabooksSecret.value())
+      .update(req.rawBody)
+      .digest("base64");
+    if (
+      typeof signature !== "string" ||
+      Buffer.byteLength(signature) !== Buffer.byteLength(expected) ||
+      !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))
+    ) {
+      return res.status(401).send("Invalid signature");
     }
-    return {};
-  });
-
-export const amritabooks = functions.https.onRequest(async (req, res) => {
-  res.set("Access-Control-Allow-Origin", "*");
-  if (req.method === "OPTIONS") {
-    // Send response to OPTIONS requests
-    res.set("Access-Control-Allow-Methods", "*");
-    res.set("Access-Control-Allow-Headers", "*");
-    res.set("Access-Control-Max-Age", "7200");
-    return res.status(204).send("");
-  } else {
+    let body;
     try {
-      const rawBody = req.rawBody.toString();
-      const body = JSON.parse(rawBody);
-      const hash = crypto
-        .createHmac("SHA256", amritabooks_secret)
-        .update(rawBody)
-        .digest("base64");
-      const expected = req.headers["x-wc-webhook-signature"];
-      console.log(hash, expected, hash === expected);
-      if (hash !== expected && amritabooks_secret_debug !== "1") {
-        return res.status(401).send("");
+      body = JSON.parse(req.rawBody.toString());
+    } catch {
+      return res.status(400).send("Invalid JSON");
+    }
+    const { status, billing, order_key, needs_payment, line_items } = body;
+    if (
+      status !== "processing" ||
+      needs_payment !== false ||
+      !billing?.email ||
+      !line_items?.some((item) => item.sku === "SingWithAmma-1year")
+    ) {
+      return res.status(200).json({ message: "ignored" });
+    }
+    if (typeof order_key !== "string" || !order_key)
+      return res.status(400).send("Missing order key");
+    try {
+      const email = billing.email.trim().toLowerCase();
+      let user;
+      let password;
+      try {
+        user = await admin.auth().getUserByEmail(email);
+      } catch (error) {
+        if (error.code !== "auth/user-not-found") throw error;
+        password = crypto.randomBytes(24).toString("base64url");
+        try {
+          user = await admin.auth().createUser({ email, password });
+        } catch (createError) {
+          if (createError.code !== "auth/email-already-exists")
+            throw createError;
+          user = await admin.auth().getUserByEmail(email);
+          password = undefined;
+        }
       }
-      const {
-        status,
-        billing,
-        order_key,
-        needs_payment,
-        date_paid_gmt,
-        line_items,
-      } = body;
-      if (
-        status === "processing" &&
-        needs_payment === false &&
-        !!billing?.email
-      ) {
-        var time = null;
-        line_items.forEach(({ sku, subtotal }) => {
-          if (sku === "SingWithAmma-1year") {
-            time = TIMES[1];
-          }
-        });
-        if (time) {
-          const email = billing.email;
-          const expiresOn = +new Date(+new Date() + time);
-
-          const password = generateRandomString(10);
-          var uid = null;
-          try {
-            const user = await admin.auth().getUserByEmail(email);
-            uid = user.uid;
-          } catch (error) {
-            // user not found, so create, reset password and send welcome email
-            try {
-              const user = await admin.auth().createUser({ email, password });
-              const resetLink = await admin
-                .auth()
-                .generatePasswordResetLink(email);
-              await newUserResetPasswordEmail({
-                email,
-                password,
-                resetLink,
-                validUntil: new Date(expiresOn).toLocaleDateString(),
-                apiKey: mailjet_auth_header,
-              });
-
-              uid = user.uid;
-            } catch (error) {
-              console.log(`unable to create user ${email} ${error}`);
-              return res.send(500);
-            }
-          }
-          const rootRef = admin.database().ref();
-          const paidOn = +new Date();
-          rootRef.child("paid/" + uid + "/").set({
-            expiresOn,
-            // gross_total_amount: {
-            //   currency: "INR",
-            //   value: plan.price,
-            // },
+      const now = Date.now();
+      const result = await admin
+        .database()
+        .ref(`paid/${user.uid}`)
+        .transaction((current) => {
+          if (
+            current?.orderID === order_key ||
+            current?.processedOrders?.[
+              crypto.createHash("sha256").update(order_key).digest("hex")
+            ]
+          )
+            return current.welcomeEmailPending ? current : undefined;
+          const orderHash = crypto
+            .createHash("sha256")
+            .update(order_key)
+            .digest("hex");
+          return {
+            ...current,
+            expiresOn:
+              Math.max(Number(current?.expiresOn) || 0, now) + 31536000000,
             mode: "live",
             manual: false,
             orderID: order_key,
-            paidOn,
-            payer: {
-              payer_id: email,
-            },
-          });
+            paidOn: now,
+            payer: { payer_id: email },
+            processedOrders: { ...current?.processedOrders, [orderHash]: now },
+            welcomeEmailPending: !!password || !!current?.welcomeEmailPending,
+          };
+        });
+      if (result.committed && result.snapshot.val().welcomeEmailPending) {
+        const resetLink = await admin.auth().generatePasswordResetLink(email);
+        await newUserResetPasswordEmail({
+          email,
+          password,
+          resetLink,
+          validUntil: new Date(
+            result.snapshot.val().expiresOn,
+          ).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            timeZone: "UTC",
+          }),
+          subscriptionName: "1-year subscription · India",
+          purchasedOn: purchaseDate(
+            body.date_paid_gmt
+              ? `${body.date_paid_gmt.replace(/Z$/, "")}Z`
+              : null,
+          ),
+          apiKey: mailjetAuth.value(),
+        });
+        await admin
+          .database()
+          .ref(`paid/${user.uid}`)
+          .child("welcomeEmailPending")
+          .set(false);
+      }
+      return res
+        .status(200)
+        .json({ message: result.committed ? "done" : "already processed" });
+    } catch (error) {
+      console.error("Order processing failed", error.code || error.message);
+      return res.status(500).send("Order processing failed; retry required");
+    }
+  },
+);
+
+// Legacy HTTP clients must authenticate; the dashboard uses updateUserAccess.
+exports.manuallyAddUser = onRequest(
+  { ...options, invoker: "public", cors: true },
+  async (req, res) => {
+    if (req.method !== "POST") return res.status(405).send("POST required");
+    const token = req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
+    if (!token) return res.status(401).send("Authentication required");
+    let caller;
+    try {
+      caller = await admin.auth().verifyIdToken(token, true);
+    } catch {
+      return res.status(401).send("Invalid authentication");
+    }
+    if ((await admin.database().ref(`admin/${caller.uid}`).get()).val() !== "1")
+      return res.status(403).send("Admin access required");
+    let body;
+    try {
+      body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    } catch {
+      return res.status(400).send("Invalid JSON");
+    }
+    const years = {
+      oneIndividual10: 1,
+      tenIndividual50: 10,
+      fiveIndividual40: 5,
+    }[body?.type];
+    if (!years || typeof body?.email !== "string")
+      return res.status(400).send("Valid plan and email required");
+    try {
+      const user = await admin
+        .auth()
+        .getUserByEmail(body.email.trim().toLowerCase());
+      const now = Date.now();
+      await admin
+        .database()
+        .ref(`paid/${user.uid}`)
+        .transaction((current) => {
+          const date = new Date(Math.max(Number(current?.expiresOn) || 0, now));
+          const month = date.getUTCMonth();
+          date.setUTCFullYear(date.getUTCFullYear() + years);
+          if (date.getUTCMonth() !== month) date.setUTCDate(0);
+          return {
+            ...current,
+            expiresOn: date.getTime(),
+            accessUpdatedOn: now,
+            accessUpdatedBy: caller.uid,
+          };
+        });
+      return res.status(200).json({ message: "done" });
+    } catch (error) {
+      return res
+        .status(error.code === "auth/user-not-found" ? 404 : 500)
+        .send("Access was not saved");
+    }
+  },
+);
+
+exports.paidNotification = onValueWritten(
+  { ...options, ref: "/paid/{uid}", instance: "bhajans-588f5" },
+  async (event) => {
+    const payment = event.data.after.val();
+    if (!payment || payment.manual || !payment.gross_total_amount) return;
+    const before = event.data.before.val();
+    if (
+      before?.paidOn === payment.paidOn &&
+      before?.orderID === payment.orderID
+    )
+      return;
+    const { payer, gross_total_amount } = payment;
+    const root = admin.database().ref();
+    const admins = (await root.child("admin").get()).val() || {};
+    const tokens = new Map();
+    await Promise.all(
+      Object.entries(admins)
+        .filter(([, role]) => role === "1")
+        .map(async ([uid]) => {
+          const snapshot = await root.child(`messages/${uid}/tokens`).get();
+          for (const token of Object.keys(snapshot.val() || {}))
+            tokens.set(token, uid);
+        }),
+    );
+    const allTokens = [...tokens.keys()];
+    for (let offset = 0; offset < allTokens.length; offset += 500) {
+      const batch = allTokens.slice(offset, offset + 500);
+      const name =
+        [payer?.name?.given_name, payer?.name?.surname]
+          .filter(Boolean)
+          .join(" ") ||
+        payer?.email_address ||
+        payer?.payer_id ||
+        "A customer";
+      const response = await admin.messaging().sendEachForMulticast({
+        tokens: batch,
+        notification: {
+          title: `${name} signed up!`,
+          body: `${name} paid ${gross_total_amount.value}`,
+        },
+      });
+      await Promise.all(
+        response.responses.map((result, index) => {
+          if (
+            [
+              "messaging/invalid-registration-token",
+              "messaging/registration-token-not-registered",
+            ].includes(result.error?.code)
+          ) {
+            const token = batch[index];
+            return root
+              .child(`messages/${tokens.get(token)}/tokens/${token}`)
+              .remove();
+          }
+        }),
+      );
+    }
+  },
+);
+
+// Product IDs and durations recovered from the deployed Shopify webhook.
+const SHOPIFY_VARIANTS = {
+  37277000728740: 31536000000,
+  37277000794276: 157680000000,
+  37277000827044: 315360000000,
+};
+exports.shopifyWebhook = onRequest(
+  { ...options, invoker: "public", secrets: [shopifySecret, mailjetAuth] },
+  async (req, res) => {
+    if (req.method !== "POST") return res.status(405).send("POST required");
+    const signature = req.headers["x-shopify-hmac-sha256"];
+    const expected = crypto
+      .createHmac("sha256", shopifySecret.value())
+      .update(req.rawBody)
+      .digest("base64");
+    if (
+      typeof signature !== "string" ||
+      Buffer.byteLength(signature) !== Buffer.byteLength(expected) ||
+      !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))
+    ) {
+      return res.status(401).send("Invalid signature");
+    }
+    let body;
+    try {
+      body = JSON.parse(req.rawBody.toString());
+    } catch {
+      return res.status(400).send("Invalid JSON");
+    }
+    const {
+      financial_status,
+      line_items,
+      email,
+      contact_email,
+      order_status_url,
+      order_number,
+      billing_address,
+    } = body;
+    let time;
+    // Preserve deployed behavior: the last recognized variant determines duration.
+    for (const item of line_items || [])
+      if (SHOPIFY_VARIANTS[item.variant_id])
+        time = SHOPIFY_VARIANTS[item.variant_id];
+    if (financial_status !== "paid" || !(contact_email || email) || !time)
+      return res.status(200).json({ message: "ignored" });
+    try {
+      const accountEmail = (contact_email || email).trim().toLowerCase();
+      let user;
+      let password;
+      try {
+        user = await admin.auth().getUserByEmail(accountEmail);
+      } catch (error) {
+        if (error.code !== "auth/user-not-found") throw error;
+        password = crypto.randomBytes(24).toString("base64url");
+        try {
+          user = await admin
+            .auth()
+            .createUser({ email: accountEmail, password });
+        } catch (createError) {
+          if (createError.code !== "auth/email-already-exists")
+            throw createError;
+          user = await admin.auth().getUserByEmail(accountEmail);
+          password = undefined;
         }
       }
-    } catch (e) {
-      console.error(e);
-    }
-  }
-  res.status(200).send({ message: "done" });
-});
-
-export const manuallyAddUser = functions.https.onRequest(async (req, res) => {
-  return cors(req, res, async () => {
-    const { type, email } = JSON.parse(req.body);
-    console.log("LOGGING ", email);
-    const user = await admin.auth().getUserByEmail(email);
-    const plan = PLANS.find((x) => x.value === type);
-    const expiresOn = +new Date(+new Date() + plan.time);
-    const rootRef = admin.database().ref();
-    const paidOn = +new Date();
-    rootRef.child("paid/" + user.uid + "/").set({
-      expiresOn,
-      gross_total_amount: {
-        currency: "USD",
-        value: plan.price,
-      },
-      mode: "live",
-      manual: true,
-      orderID: "admin",
-      paidOn,
-      payer: {
-        payer_id: "admin",
-      },
-    });
-    rootRef.child("transactions/").push({
-      uid: user.uid,
-      expiresOn,
-      gross_total_amount: {
-        currency: "USD",
-        value: plan.price,
-      },
-      mode: "live",
-      manual: true,
-      orderID: "admin",
-      paidOn,
-      payer: {
-        payer_id: "admin",
-      },
-    });
-    res.status(200).send({ message: "done" });
-  });
-});
-
-// export const getUserByEmail = functions.https.onRequest(async (req, res) => {
-//   return cors(req, res, async () => {
-//     // const config = functions.config();
-//     const { email } = JSON.parse(req.body);
-//     console.log("LOGGING ", email);
-//     const user = await admin.auth.getUserByEmail(email).then(x => x.toJSON());
-//     admin.database().ref(``)
-//   });
-// });
-
-// export const process = functions.https.onRequest(async (req, res) => {
-//   return cors(req, res, async () => {
-//     const config = functions.config();
-//     const { mode, type, orderID, uid } = JSON.parse(req.body);
-//     console.log("LOGGING ", mode, type, orderID, uid);
-//     var env = new paypal.core.SandboxEnvironment(
-//       "AYULgCpmdmH30YkpN4wPyPyV8zLVs6xjhAPf4xn5L7630tjjKtVYq36-24QrTOY4ZqsauweNE3IoCoQv",
-//       "EIp7U4Y4Z9RU5moIZrOxW_KaXgPCC94x2fMlXmqHOs9Hp7u-kKjpx5iPv8tULuRXZ7RwJBr3rtXGPo0a"
-//     );
-
-//     if (
-//       mode === "live" &&
-//       config.paypal &&
-//       config.paypal.client_id &&
-//       config.paypal.client_secret
-//     ) {
-//       env = new paypal.core.LiveEnvironment(
-//         config.paypal.client_id,
-//         config.paypal.client_secret
-//       );
-//     }
-//     let client = new paypal.core.PayPalHttpClient(env);
-//     let getOrder = new paypal.v1.orders.OrdersGetRequest(orderID);
-//     client
-//       .execute(getOrder)
-//       .then(
-//         ({
-//           statusCode,
-//           result: { status, gross_total_amount, create_time, payer },
-//         }) => {
-//           console.log(
-//             "Paypal LOGGING ",
-//             mode,
-//             type,
-//             orderID,
-//             uid,
-//             status,
-//             gross_total_amount,
-//             create_time,
-//             payer
-//           );
-//           const plan = PLANS.find((x) => x.value === type);
-//           console.log(plan, type, PLANS);
-
-//           if (
-//             statusCode < 400 &&
-//             status === "COMPLETED" &&
-//             parseFloat(gross_total_amount.value) === plan.price
-//           ) {
-//             const expiresOn = +new Date(+new Date(create_time) + plan.time);
-//             const rootRef = admin.database().ref();
-//             const paidOn = +new Date();
-//             rootRef.child("paid/" + uid + "/").set({
-//               paidOn,
-//               expiresOn,
-//               orderID,
-//               payer,
-//               gross_total_amount,
-//               mode,
-//             });
-//             rootRef.child("transactions/").push({
-//               uid,
-//               paidOn,
-//               expiresOn,
-//               orderID,
-//               payer,
-//               gross_total_amount,
-//               mode,
-//             });
-//             return res.json({ expiresOn, payer: payer });
-//           } else {
-//             return res.status(400).json({
-//               type: "invalid_request_error",
-//               message: "Order invalid",
-//               extra: { orderID, uid, type, mode },
-//             });
-//           }
-//         }
-//       )
-//       .catch((error) => {
-//         console.error(error, mode, type, orderID, uid);
-//         return res.status(500).json({
-//           type: "api_error",
-//           message: error,
-//           extra: { error, orderID, uid, type, mode },
-//         });
-//       });
-//   });
-// });
-
-// This is a Hello World function which writes to the database.
-export const paid = functions.database
-  .ref("/paid/{uid}")
-  .onWrite(async (event) => {
-    const { payer, gross_total_amount } = event.after.val();
-    if (gross_total_amount) {
-      const tokens = {};
-      const rootRef = admin.database().ref();
-      // Get list of admins
-      const admins = Object.keys(
-        (await rootRef.child("/admin").once("value")).val() || {}
-      );
-
-      // For each admin, get tokens
-      await Promise.all(
-        admins.map(async (uid) => {
-          const toks = await admin
-            .database()
-            .ref(`/messages/${uid}/tokens`)
-            .once("value");
-          const toks2 = Object.keys(toks.val() || {});
-          toks2.forEach((token) => {
-            tokens[token] = uid;
-          });
-          return toks2;
-        })
-      );
-      // For each token send message
-      const payload = {
-        notification: {
-          title: `${payer.name.given_name} signed up!`,
-          body: `${payer.name.given_name} ${payer.name.surname} paid ${gross_total_amount.value} - ${payer.email_address}`,
-        },
-      };
-      const tokensList = Object.keys(tokens);
-      return admin
-        .messaging()
-        .sendToDevice(tokensList, payload)
-        .then((response) => {
-          // For each message check if there was an error.
-          const tokensToRemove = [];
-          response.results.forEach((result, index) => {
-            const { error } = result;
-            const token = tokensList[index];
-            if (error) {
-              // Cleanup the tokens who are not registered anymore.
-              if (
-                error.code === "messaging/invalid-registration-token" ||
-                error.code === "messaging/registration-token-not-registered"
-              ) {
-                tokensToRemove.push(
-                  admin
-                    .database()
-                    .ref(`/messages/${tokens[token]}/tokens/${token}`)
-                    .remove()
-                );
-              }
-            }
-          });
-          return Promise.all(tokensToRemove);
+      const paidOn = Date.now();
+      const expiresOn = paidOn + time;
+      await admin
+        .database()
+        .ref(`paid/${user.uid}`)
+        .set({
+          expiresOn,
+          mode: "live",
+          manual: false,
+          order_status_url: order_status_url || null,
+          order_number: order_number || null,
+          billing_address: billing_address || null,
+          line_items,
+          paidOn,
+          payer: { payer_id: accountEmail },
         });
+      const validUntil = purchaseDate(expiresOn);
+      if (password) {
+        const resetLink = await admin
+          .auth()
+          .generatePasswordResetLink(accountEmail);
+        await newUserResetPasswordEmailShopify({
+          email: accountEmail,
+          password,
+          resetLink,
+          validUntil,
+          subscriptionName: `${time / 31536000000}-year subscription`,
+          purchasedOn: purchaseDate(body.processed_at || body.created_at),
+          apiKey: mailjetAuth.value(),
+        });
+      } else {
+        await accountActivated({
+          email: accountEmail,
+          name: user.displayName || billing_address?.name || "Customer",
+          validUntil,
+          subscriptionName: `${time / 31536000000}-year subscription`,
+          purchasedOn: purchaseDate(body.processed_at || body.created_at),
+          apiKey: mailjetAuth.value(),
+        });
+      }
+      return res.status(200).json({ message: "done" });
+    } catch (error) {
+      console.error(
+        "Shopify order processing failed",
+        error.code || error.message,
+      );
+      return res.status(500).send("Order processing failed; retry required");
     }
-  });
+  },
+);

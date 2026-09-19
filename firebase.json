@@ -49,7 +49,36 @@
       }
     ]
   },
-  "functions": {
-    "source": "./functions"
-  }
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs24",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".env*",
+        ".runtimeconfig.json",
+        ".secret.local",
+        "firebase-debug*.log",
+        "test",
+        "*.test.cjs"
+      ]
+    },
+    {
+      "source": "admin-functions",
+      "codebase": "admin",
+      "runtime": "nodejs24",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".env*",
+        ".runtimeconfig.json",
+        ".secret.local",
+        "firebase-debug*.log",
+        "test",
+        "*.test.cjs"
+      ]
+    }
+  ]
 }

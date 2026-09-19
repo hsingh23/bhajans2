@@ -2,35 +2,22 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "cors": "^2.8.5",
-    "firebase": "9.15.0",
-    "firebase-admin": "~9.9.0",
-    "firebase-functions": "3.x",
-    "node-fetch": "^3.3.0"
+    "firebase-admin": "^14.4.0",
+    "firebase-functions": "^7.4.0"
   },
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.7",
-    "@babel/preset-env": "^7.20.2",
-    "firebase-functions-test": "2.x",
-    "firebase-tools": "^11.19.0",
-    "xo": "^0.28.0"
+    "firebase-tools": "^15.30.2"
   },
   "scripts": {
-    "lint": "xo",
-    "setup": "yarn firebase use --add",
-    "build": "babel 'src' --out-dir 'dist' --source-maps",
-    "watch": "yarn build --watch",
-    "serve": "yarn watch & yarn firebase serve --only functions",
-    "predeploy": "yarn build",
-    "deploy": "yarn firebase deploy --only functions"
+    "build": "node --check src/index.js && node --check src/mail.js",
+    "test": "node --test test/*.test.cjs",
+    "deploy": "firebase deploy --config ../firebase.json --only functions:default:amritabooks,functions:default:shopifyWebhook,functions:default:manuallyAddUser,functions:default:paidNotification",
+    "serve": "firebase emulators:start --config ../firebase.json --only functions"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": "24"
   },
-  "xo": {
-    "space": true
-  },
-  "private": true
+  "private": true,
+  "type": "commonjs"
 }

@@ -234,3 +234,5 @@ export {
   syncUserData,
   THREE_MONTHS_MS,
 };
+
+export const updateUserAccess = httpsCallable(getFunctions(firebaseApp, "us-central1"), "updateUserAccess");

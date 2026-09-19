@@ -1,494 +1,115 @@
-const fetch = require("node-fetch");
+const APP_URL = "https://sing.withamma.com/#/login";
+const IMAGE_URL = "https://sing.withamma.com/email-images/amma_singing.jpg";
+const GUIDE_URL =
+  "https://scribehow.com/shared/Sing_With_Amma_Guide__t3Z6fF91QFiQUEqxZfKGHQ";
+const escapeHtml = (value) =>
+  String(value ?? "").replace(
+    /[&<>"']/g,
+    (char) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        char
+      ],
+  );
 
-export async function newUserResetPasswordEmail({
-  email,
-  password,
-  resetLink,
-  validUntil,
-  apiKey,
-}) {
-  fetch("https://api.mailjet.com/v3.1/send", {
+async function sendAccountEmail(
+  {
+    email,
+    name,
+    resetLink,
+    validUntil,
+    apiKey,
+    subscriptionName = "Subscription access",
+    purchasedOn = "Not recorded",
+  },
+  { welcome = false, india = false } = {},
+) {
+  const title = welcome
+    ? "Welcome to Sing with Amma"
+    : "Your next bhajan awaits";
+  const greeting = name ? `Dear ${escapeHtml(name)},` : "Dear friend,";
+  const intro = welcome
+    ? "Your account is ready. Discover Amma’s bhajans, open the lyrics and sheet music, and make space for a little more music in your day."
+    : "Your subscription is active. Your favorite bhajans, lyrics, and sheet music are ready whenever you are.";
+  const cta = welcome ? "Set your password" : "Open Sing with Amma";
+  const actionUrl = welcome ? resetLink : APP_URL;
+  if (!actionUrl || !/^https:\/\//.test(actionUrl))
+    throw new Error("A secure account link is required");
+  const safeEmail = escapeHtml(email);
+  const safeDate = escapeHtml(validUntil);
+  const safeSubscription = escapeHtml(subscriptionName);
+  const safePurchaseDate = escapeHtml(purchasedOn);
+  const regionNote = india
+    ? `<div style="margin-top:24px;padding:16px;background:#fff5e8;border-left:3px solid #b95325;font-size:14px;line-height:1.65;color:#684328;"><strong>Your India subscription</strong><br>This subscription is for use in India. For access elsewhere, please visit <a href="https://theammashop.org/products/sing-with-amma-bhajan-lyrics-app" style="color:#9a3f1c;">The Amma Shop</a>.</div><p lang="hi" style="font-size:15px;line-height:1.7;color:#665a50;">सिंग विथ अम्मा में आपका स्वागत है। अम्मा के भजनों से जुड़ें।</p><p lang="ml" style="font-size:15px;line-height:1.7;color:#665a50;">സിംഗ് വിത്ത് അമ്മയിലേക്ക് സ്വാഗതം. അമ്മയുടെ ഭജനകളുമായി ബന്ധപ്പെടാം.</p>`
+    : "";
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>${title}</title>
+<style>@media only screen and (max-width:620px){.outer{padding:12px 8px!important}.content{padding:28px 24px!important}.headline{font-size:29px!important}.hero{width:78%!important;max-width:280px!important;height:auto!important;margin-left:auto!important;margin-right:auto!important}.button{display:block!important;text-align:center!important}}</style></head>
+<body style="margin:0;padding:0;background:#f4efe7;color:#342b24;font-family:Arial,Helvetica,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">Your access is active through ${safeDate}. Welcome to a world of bhajans.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4efe7;"><tr><td class="outer" align="center" style="padding:32px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#fffdf9;border:1px solid #e7ded2;border-radius:12px;overflow:hidden;">
+<tr><td style="padding:24px 28px;text-align:center;border-bottom:1px solid #e7ded2;"><p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:26px;color:#57361f;">Sing with Amma</p><p style="margin:6px 0 0;font-size:11px;letter-spacing:2px;color:#8a6348;">BHAJANS · LYRICS · SHEET MUSIC</p></td></tr>
+<tr><td align="center" style="text-align:center;background:#f6f0e7;"><img class="hero" src="${IMAGE_URL}" alt="Amma singing with a gathering of devotees" width="600" height="337" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></td></tr>
+<tr><td class="content" style="padding:36px 40px;">
+<p style="margin:0 0 12px;font-size:11px;letter-spacing:1.8px;font-weight:bold;color:#a34d27;">YOUR SUBSCRIPTION IS ACTIVE</p>
+<h1 class="headline" style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.18;font-weight:normal;color:#432c1e;">${title}</h1>
+<p style="margin:0 0 12px;font-size:16px;line-height:1.7;">${greeting}</p>
+<p style="margin:0 0 24px;font-size:16px;line-height:1.7;color:#65594e;">${intro}</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f0e7;border:1px solid #e9ddcd;border-radius:8px;"><tr><td style="padding:20px 22px;">
+<p style="margin:0 0 5px;font-size:11px;letter-spacing:1.2px;color:#82674f;">YOUR ACCOUNT</p><p style="margin:0 0 18px;font-size:16px;line-height:1.5;overflow-wrap:anywhere;word-break:break-word;color:#342b24;">${safeEmail}</p>
+<p style="margin:0 0 5px;font-size:11px;letter-spacing:1.2px;color:#82674f;">YOUR SUBSCRIPTION</p><p style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:21px;line-height:1.4;color:#57361f;">${safeSubscription}</p>
+<p style="margin:0 0 5px;font-size:11px;letter-spacing:1.2px;color:#82674f;">PURCHASED ON</p><p style="margin:0 0 18px;font-size:16px;line-height:1.5;color:#342b24;">${safePurchaseDate}</p>
+<p style="margin:0 0 5px;font-size:11px;letter-spacing:1.2px;color:#82674f;">ACCESS THROUGH</p><p style="margin:0;font-size:18px;line-height:1.5;font-weight:bold;color:#57361f;">${safeDate}</p>
+</td></tr></table>
+<p style="margin:28px 0 18px;"><a class="button" href="${escapeHtml(actionUrl)}" style="display:inline-block;background:#a9441d;border:1px solid #a9441d;border-radius:6px;padding:15px 24px;color:#ffffff;font-size:16px;font-weight:bold;line-height:1.4;text-decoration:none;">${cta} &rarr;</a></p>
+<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:#74685c;">${welcome ? `Choose your password using the button above. You can also <a href="${APP_URL}" style="color:#9a3f1c;">sign in with an email magic link</a> — no password needed.` : `Sign in with the email address shown above. You can request a magic link from the sign-in page.`}</p>
+<p style="margin:0;font-size:14px;line-height:1.7;color:#74685c;">New to the app? <a href="${GUIDE_URL}" style="color:#9a3f1c;">Read the getting-started guide</a>.</p>
+${regionNote}
+<div style="margin:32px 0 0;padding-top:28px;border-top:1px solid #eadfd2;text-align:center;">
+<p style="margin:0 0 18px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.8;color:#756351;">Thank you for supporting<br><strong style="font-weight:normal;color:#57361f;">Amma’s charities.</strong></p>
+<p style="margin:0 0 14px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-style:italic;line-height:1.3;color:#754123;">Happy singing.</p>
+<p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.4px;line-height:1.8;text-transform:uppercase;color:#8a7059;">The Sing with Amma team</p>
+</div>
+</td></tr></table>
+<p style="max-width:520px;margin:20px auto 0;font-size:12px;line-height:1.7;color:#87786a;text-align:center;">You’re receiving this email because your Sing with Amma subscription was activated.<br>Need a hand? <a href="mailto:hisingh1@gmail.com" style="color:#73563f;">Contact support</a> · <a href="https://sing.withamma.com/" style="color:#73563f;">sing.withamma.com</a></p>
+</td></tr></table></body></html>`;
+  const text = `${title}\n\n${name ? `Dear ${name},` : "Dear friend,"}\n\n${intro}\n\nYour account: ${email}\nSubscription: ${subscriptionName}\nPurchased on: ${purchasedOn}\nAccess through: ${validUntil}\n\n${cta}: ${actionUrl}\n\nSign in with an email magic link: ${APP_URL}\nGetting-started guide: ${GUIDE_URL}${india ? "\n\nThis subscription is for use in India. For international access, visit https://theammashop.org/products/sing-with-amma-bhajan-lyrics-app" : ""}\n\nThank you for supporting Amma’s charities. Happy singing!\nThe Sing with Amma team\nSupport: hisingh1@gmail.com`;
+  const response = await fetch("https://api.mailjet.com/v3.1/send", {
+    method: "POST",
+    headers: { Authorization: apiKey, "Content-Type": "application/json" },
     body: JSON.stringify({
       Messages: [
         {
-          From: {
-            Email: "no-reply@withamma.com",
-            Name: "Sing With Amma Processing",
-          },
-          To: [
-            {
-              Email: email,
-              Name: email,
-            },
-          ],
+          From: { Email: "no-reply@withamma.com", Name: "Sing with Amma" },
+          To: [{ Email: email, Name: name || email }],
           Bcc: [
             {
-              Email: "hisingh1+SingWithAmmaIndia@gmail.com",
-              Name: "SingWithAmma India",
+              Email: india
+                ? "hisingh1+SingWithAmmaIndia@gmail.com"
+                : "hisingh1+SingWithAmmaShopify@gmail.com",
+              Name: india ? "SingWithAmma India" : "SingWithAmma Shopify",
             },
           ],
-          Subject: "Sing with Amma, account created and subscription activated",
-          HTMLPart: `<!doctype html>
-                          <html ⚡4email data-css-strict>
-                           <head><meta charset="utf-8"><style amp4email-boilerplate>body{visibility:hidden}</style><script async src="https://cdn.ampproject.org/v0.js"></script>
-                            
-                            <style amp-custom>
-                          .es-desk-hidden {
-                              display:none;
-                              float:left;
-                              overflow:hidden;
-                              width:0;
-                              max-height:0;
-                              line-height:0;
-                          }
-                          s {
-                              text-decoration:line-through;
-                          }
-                          body {
-                              width:100%;
-                          }
-                          body {
-                              font-family:arial, "helvetica neue", helvetica, sans-serif;
-                          }
-                          table {
-                              border-collapse:collapse;
-                              border-spacing:0px;
-                          }
-                          table td, html, body, .es-wrapper {
-                              padding:0;
-                              Margin:0;
-                          }
-                          .es-content, .es-header, .es-footer {
-                              table-layout:fixed;
-                              width:100%;
-                          }
-                          p, hr {
-                              Margin:0;
-                          }
-                          h1, h2, h3, h4, h5 {
-                              Margin:0;
-                              line-height:120%;
-                              font-family:"times new roman", times, baskerville, georgia, serif;
-                          }
-                          .es-left {
-                              float:left;
-                          }
-                          .es-right {
-                              float:right;
-                          }
-                          .es-p5 {
-                              padding:5px;
-                          }
-                          .es-p5t {
-                              padding-top:5px;
-                          }
-                          .es-p5b {
-                              padding-bottom:5px;
-                          }
-                          .es-p5l {
-                              padding-left:5px;
-                          }
-                          .es-p5r {
-                              padding-right:5px;
-                          }
-                          .es-p10 {
-                              padding:10px;
-                          }
-                          .es-p10t {
-                              padding-top:10px;
-                          }
-                          .es-p10b {
-                              padding-bottom:10px;
-                          }
-                          .es-p10l {
-                              padding-left:10px;
-                          }
-                          .es-p10r {
-                              padding-right:10px;
-                          }
-                          .es-p15 {
-                              padding:15px;
-                          }
-                          .es-p15t {
-                              padding-top:15px;
-                          }
-                          .es-p15b {
-                              padding-bottom:15px;
-                          }
-                          .es-p15l {
-                              padding-left:15px;
-                          }
-                          .es-p15r {
-                              padding-right:15px;
-                          }
-                          .es-p20 {
-                              padding:20px;
-                          }
-                          .es-p20t {
-                              padding-top:20px;
-                          }
-                          .es-p20b {
-                              padding-bottom:20px;
-                          }
-                          .es-p20l {
-                              padding-left:20px;
-                          }
-                          .es-p20r {
-                              padding-right:20px;
-                          }
-                          .es-p25 {
-                              padding:25px;
-                          }
-                          .es-p25t {
-                              padding-top:25px;
-                          }
-                          .es-p25b {
-                              padding-bottom:25px;
-                          }
-                          .es-p25l {
-                              padding-left:25px;
-                          }
-                          .es-p25r {
-                              padding-right:25px;
-                          }
-                          .es-p30 {
-                              padding:30px;
-                          }
-                          .es-p30t {
-                              padding-top:30px;
-                          }
-                          .es-p30b {
-                              padding-bottom:30px;
-                          }
-                          .es-p30l {
-                              padding-left:30px;
-                          }
-                          .es-p30r {
-                              padding-right:30px;
-                          }
-                          .es-p35 {
-                              padding:35px;
-                          }
-                          .es-p35t {
-                              padding-top:35px;
-                          }
-                          .es-p35b {
-                              padding-bottom:35px;
-                          }
-                          .es-p35l {
-                              padding-left:35px;
-                          }
-                          .es-p35r {
-                              padding-right:35px;
-                          }
-                          .es-p40 {
-                              padding:40px;
-                          }
-                          .es-p40t {
-                              padding-top:40px;
-                          }
-                          .es-p40b {
-                              padding-bottom:40px;
-                          }
-                          .es-p40l {
-                              padding-left:40px;
-                          }
-                          .es-p40r {
-                              padding-right:40px;
-                          }
-                          .es-menu td {
-                              border:0;
-                          }
-                          a {
-                              text-decoration:underline;
-                          }
-                          p, ul li, ol li {
-                              font-family:arial, "helvetica neue", helvetica, sans-serif;
-                              line-height:150%;
-                          }
-                          ul li, ol li {
-                              Margin-bottom:15px;
-                              margin-left:0;
-                          }
-                          .es-menu td a {
-                              text-decoration:none;
-                              display:block;
-                              font-family:arial, "helvetica neue", helvetica, sans-serif;
-                          }
-                          .es-menu amp-img, .es-button amp-img {
-                              vertical-align:middle;
-                          }
-                          .es-wrapper {
-                              width:100%;
-                              height:100%;
-                              background-repeat:no-repeat;
-                              background-position:center top;
-                              background-image:url(https://sing.withamma.com/email-images/amma_singing.jpg);
-                          }
-                          .es-wrapper-color, .es-wrapper {
-                              background-color:#EAD1DC;
-                          }
-                          .es-header {
-                              background-color:transparent;
-                          }
-                          .es-header-body {
-                              background-color:transparent;
-                          }
-                          .es-header-body p, .es-header-body ul li, .es-header-body ol li {
-                              color:#FFFFFF;
-                              font-size:14px;
-                          }
-                          .es-header-body a {
-                              color:#FFFFFF;
-                              font-size:14px;
-                          }
-                          .es-content-body {
-                              background-color:#FFFFFF;
-                          }
-                          .es-content-body p, .es-content-body ul li, .es-content-body ol li {
-                              color:#666666;
-                              font-size:16px;
-                          }
-                          .es-content-body a {
-                              color:#999999;
-                              font-size:16px;
-                          }
-                          .es-footer {
-                              background-color:transparent;
-                          }
-                          .es-footer-body {
-                              background-color:transparent;
-                          }
-                          .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li {
-                              color:#EFEFEF;
-                              font-size:14px;
-                          }
-                          .es-footer-body a {
-                              color:#EFEFEF;
-                              font-size:14px;
-                          }
-                          .es-infoblock, .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li {
-                              line-height:120%;
-                              font-size:12px;
-                              color:#FFFFFF;
-                          }
-                          .es-infoblock a {
-                              font-size:12px;
-                              color:#FFFFFF;
-                          }
-                          h1 {
-                              font-size:30px;
-                              font-style:normal;
-                              font-weight:normal;
-                              color:#333333;
-                          }
-                          h2 {
-                              font-size:24px;
-                              font-style:normal;
-                              font-weight:normal;
-                              color:#333333;
-                          }
-                          h3 {
-                              font-size:20px;
-                              font-style:normal;
-                              font-weight:normal;
-                              color:#333333;
-                          }
-                          .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a {
-                              font-size:30px;
-                          }
-                          .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a {
-                              font-size:24px;
-                          }
-                          .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a {
-                              font-size:20px;
-                          }
-                          a.es-button, button.es-button {
-                              border-style:solid;
-                              border-color:#333333;
-                              border-width:8px 30px 8px 30px;
-                              display:inline-block;
-                              background:#333333;
-                              border-radius:5px;
-                              font-size:16px;
-                              font-family:arial, "helvetica neue", helvetica, sans-serif;
-                              font-weight:normal;
-                              font-style:normal;
-                              line-height:120%;
-                              color:#FFFFFF;
-                              text-decoration:none;
-                              width:auto;
-                              text-align:center;
-                          }
-                          .es-button-border {
-                              border-style:solid solid solid solid;
-                              border-color:#333333 #333333 #333333 #333333;
-                              background:#333333;
-                              border-width:0px 0px 0px 0px;
-                              display:inline-block;
-                              border-radius:5px;
-                              width:auto;
-                          }
-                          .es-p-default {
-                              padding-top:20px;
-                              padding-right:40px;
-                              padding-bottom:0px;
-                              padding-left:40px;
-                          }
-                          .es-p-all-default {
-                              padding:0px;
-                          }
-                          @media only screen and (max-width:600px) {p, ul li, ol li, a { line-height:150% } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120% } h1 { font-size:38px; text-align:center } h2 { font-size:30px; text-align:center } h3 { font-size:20px; text-align:center } .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size:38px } .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size:30px } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:20px } .es-menu td a { font-size:14px } .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size:14px } .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size:14px } .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:14px } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size:12px } *[class="gmail-fix"] { display:none } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align:center } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right } .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left } .es-m-txt-r amp-img { float:right } .es-m-txt-c amp-img { margin:0 auto } .es-m-txt-l amp-img { float:left } .es-button-border { display:block } a.es-button, button.es-button { font-size:18px; display:block; border-left-width:0px; border-right-width:0px } .es-btn-fw { border-width:10px 0px; text-align:center } .es-adaptive table, .es-btn-fw, .es-btn-fw-brdr, .es-left, .es-right { width:100% } .es-content table, .es-header table, .es-footer table, .es-content, .es-footer, .es-header { width:100%; max-width:600px } .es-adapt-td { display:block; width:100% } .adapt-img { width:100%; height:auto } td.es-m-p0 { padding:0px } td.es-m-p0r { padding-right:0px } td.es-m-p0l { padding-left:0px } td.es-m-p0t { padding-top:0px } td.es-m-p0b { padding-bottom:0 } td.es-m-p20b { padding-bottom:20px } .es-mobile-hidden, .es-hidden { display:none } tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { width:auto; overflow:visible; float:none; max-height:inherit; line-height:inherit } tr.es-desk-hidden { display:table-row } table.es-desk-hidden { display:table } td.es-desk-menu-hidden { display:table-cell } .es-menu td { width:1% } table.es-table-not-adapt, .esd-block-html table { width:auto } table.es-social { display:inline-block } table.es-social td { display:inline-block } .es-desk-hidden { display:table-row; width:auto; overflow:visible; max-height:inherit } }
-                          </style>
-                           </head>
-                           <body>
-                            <div class="es-wrapper-color">
-                             <!--[if gte mso 9]>
-                                      <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
-                                          <v:fill type="tile" src="https://sing.withamma.com/email-images/amma_singing.jpg" color="#ead1dc" origin="0.5, 0" position="0.5, 0"></v:fill>
-                                      </v:background>
-                                  <![endif]-->
-                             <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="background-position: center top">
-                               <tr>
-                                <td valign="top">
-                                 <table class="es-content" cellspacing="0" cellpadding="0" align="center">
-                                   <tr></tr>
-                                   <tr>
-                                    <td class="es-adaptive" align="center">
-                                     <table class="es-content-body" style="background-color: transparent" width="600" cellspacing="0" cellpadding="0" align="center">
-                                       <tr>
-                                        <td class="es-p10" align="left">
-                                         <table width="100%" cellspacing="0" cellpadding="0">
-                                           <tr>
-                                            <td width="580" valign="top" align="center">
-                                             <table width="100%" cellspacing="0" cellpadding="0">
-                                               <tr>
-                                                <td align="center" style="display: none"></td>
-                                               </tr>
-                                             </table></td>
-                                           </tr>
-                                         </table></td>
-                                       </tr>
-                                     </table></td>
-                                   </tr>
-                                 </table>
-                                 <table class="es-header" cellspacing="0" cellpadding="0" align="center">
-                                   <tr>
-                                    <td align="center">
-                                     <table class="es-header-body" style="background-color: transparent" width="600" cellspacing="0" cellpadding="0" align="center">
-                                       <tr>
-                                        <td class="es-p20t es-p40b es-p20r es-p20l" style="background-repeat: no-repeat" align="left">
-                                         <table width="100%" cellspacing="0" cellpadding="0">
-                                           <tr>
-                                            <td width="560" valign="top" align="center">
-                                             <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
-                                               <tr>
-                                                <td class="es-p30t es-p5b" align="center"><h2 style="color: #ffffff;font-size: 57px;font-family: georgia, times, 'times new roman', serif;line-height: 57px">Welcome</h2></td>
-                                               </tr>
-                                               <tr>
-                                                <td align="center" style="font-size:0"><amp-img src="https://sing.withamma.com/email-images/43981525778959712.png" alt="to" style="display: block" title="to" width="42" height="32"></amp-img></td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-p15b" align="center"><h1 style="color: #ffffff;font-size: 69px;font-family: georgia, times, 'times new roman', serif;line-height: 69px">Sing.WithAmma.Com</h1></td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-p25b" align="center"><p style="color: #ffffff;font-size: 16px">Find your favorite bhajans with ease on Sing With Amma</p></td>
-                                               </tr>
-                                             </table></td>
-                                           </tr>
-                                         </table></td>
-                                       </tr>
-                                     </table></td>
-                                   </tr>
-                                 </table>
-                                 <table class="es-content" cellspacing="0" cellpadding="0" align="center">
-                                   <tr>
-                                    <td align="center">
-                                     <table class="es-content-body" width="600" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
-                                       <tr>
-                                        <td class="es-p30t es-p40r es-p40l" style="background-repeat: no-repeat" align="left">
-                                         <table width="100%" cellspacing="0" cellpadding="0">
-                                           <tr>
-                                            <td width="520" valign="top" align="center">
-                                             <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
-                                               <tr>
-                                                <td class="es-m-txt-l" align="left"><h2 style="font-size: 28px">Sing with Amma: Connect with the beauty of bhajans anytime, anywhere</h2></td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-m-txt-l" align="left" style="font-size:0"><a target="_blank" href="https://esputnik.com/viewInBrowser"><amp-img src="https://sing.withamma.com/email-images/99301524564595313.png" alt style="display: block" width="75" height="9"></amp-img></a></td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-p15t" align="left"><p>Welcome to Sing With Amma, the ultimate destination for finding and experiencing the beauty of Amma’s bhajans. Our website is designed with intuitive search to make it easy for you to access the lyrics, sheet music, and audio samples of all of Amma’s bhajans and to help you connect with Amma's bhajans in a meaningful way.<br><br>सिंग विथ अम्मा में आपका स्वागत है, अम्मा के भजनों की सुंदरता को खोजने और उसका अनुभव करने के लिए सर्वश्रेष्ठ वेबसाइट। अम्मा के सभी भजनों के बोल, शीट संगीत और ऑडियो क्लिप तक पहुंचना आपके लिए आसान बनाने के लिए हमारी वेबसाइट को सरल खोज के साथ डिज़ाइन किया गया है।<br><br>അമ്മയുടെ ഭജനകളുടെ ഭംഗി കണ്ടെത്തുന്നതിനും അനുഭവിക്കുന്നതിനുമുള്ള ആത്യന്തിക വെബ്‌സൈറ്റായ Sing With Amma-ലേക്ക് സ്വാഗതം. അമ്മയുടെ എല്ലാ ഭജനകളുടേയും വരികൾ, ഷീറ്റ് മ്യൂസിക്, ഓഡിയോ ക്ലിപ്പുകൾ എന്നിവ എളുപ്പത്തിൽ ആക്‌സസ് ചെയ്യാൻ ഞങ്ങളുടെ വെബ്‌സൈറ്റ് രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്നു.<br><br></p></td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-p25t es-p10b" align="left"><p>Your email: ${email}<br>Your password: ${password}</p><p>You can change password <a target="_blank" href="${resetLink}">here</a>.</p>
-                                                <p>Your subscription is valid until ${validUntil}.</p>
-                                                </td>
-                                               </tr>
-                                               <tr>
-                                                <td class="es-p15t" align="left"><a name="https://scribehow.com/shared/Sing_With_Amma_Guide__t3Z6fF91QFiQUEqxZfKGHQ" href=""></a><p><span class="product-description">You can find our user guide for Sing with Amma <a target="_blank" href="https://scribehow.com/shared/Sing_With_Amma_Guide__t3Z6fF91QFiQUEqxZfKGHQ">here</a>.<br><br>Please note, since you purchased this in India, it will only work in India. If you need a version that will work anywhere - please buy the international version here:&nbsp;https://theammashop.org/products/sing-with-amma-bhajan-lyrics-app?variant=37277000728740</span></p></td>
-                                               </tr>
-                                             </table></td>
-                                           </tr>
-                                         </table></td>
-                                       </tr>
-                                       <tr>
-                                        <td class="es-p20t es-p40b es-p40r es-p40l" align="left">
-                                         <table width="100%" cellspacing="0" cellpadding="0">
-                                           <tr>
-                                            <td width="520" valign="top" align="center">
-                                             <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
-                                               <tr>
-                                                <td class="es-p5t" align="left">
-                                                 <!--[if mso]><a href="https://sing.withamma.com/#/login" target="_blank" hidden>
-                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" esdevVmlButton href="https://sing.withamma.com/#/login" 
-                                          style="height:35px; v-text-anchor:middle; width:165px" arcsize="14%" stroke="f"  fillcolor="#333333">
-                                  <w:anchorlock></w:anchorlock>
-                                  <center style='color:#ffffff; font-family:arial, "helvetica neue", helvetica, sans-serif; font-size:13px; font-weight:400; line-height:13px;  mso-text-raise:1px'>Getting started</center>
-                              </v:roundrect></a>
-                          <![endif]--> 
-                                                 <!--[if !mso]><!-- --><span class="msohide es-button-border"><a href="https://sing.withamma.com/#/login" class="es-button" target="_blank">Getting started</a></span> 
-                                                 <!--<![endif]--></td>
-                                               </tr>
-                                             </table></td>
-                                           </tr>
-                                         </table></td>
-                                       </tr>
-                                     </table></td>
-                                   </tr>
-                                 </table>
-                                 <table cellpadding="0" cellspacing="0" class="es-footer" align="center">
-                                   <tr>
-                                    <td align="center">
-                                     <table class="es-footer-body" width="600" cellspacing="0" cellpadding="0" align="center">
-                                       <tr>
-                                        <td class="es-p20t es-p10r es-p10l" align="left">
-                                         <table width="100%" cellspacing="0" cellpadding="0">
-                                           <tr>
-                                            <td width="580" valign="top" align="center">
-                                             <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
-                                               <tr>
-                                                <td class="es-p10t es-m-txt-c" align="center"><p style="color: #333333">You're receiving this email because you just created an account.</p></td>
-                                               </tr>
-                                             </table></td>
-                                           </tr>
-                                         </table></td>
-                                       </tr>
-                                     </table></td>
-                                   </tr>
-                                 </table></td>
-                               </tr>
-                             </table>
-                            </div>
-                           </body>
-                          </html>`,
+          Subject: welcome
+            ? "Sing with Amma, account created and subscription activated"
+            : "Sing with Amma, Account Activated",
+          HTMLPart: html,
+          TextPart: text,
         },
       ],
     }),
-    headers: {
-      Authorization: apiKey,
-      "Content-Type": "application/json",
-    },
-    method: "POST",
   });
+  if (!response.ok)
+    throw new Error(`Mail delivery failed (${response.status})`);
+  const result = await response.json();
+  if (
+    !result.Messages?.length ||
+    result.Messages.some((message) => message.Status !== "success")
+  )
+    throw new Error("Mail delivery failed: provider rejected message");
 }
+exports.newUserResetPasswordEmailShopify = (data) =>
+  sendAccountEmail(data, { welcome: true });
+exports.newUserResetPasswordEmail = (data) =>
+  sendAccountEmail(data, { welcome: true, india: true });
+exports.accountActivated = (data) => sendAccountEmail(data);
