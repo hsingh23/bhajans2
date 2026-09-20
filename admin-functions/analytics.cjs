@@ -37,7 +37,11 @@ const manual = (row) =>
   row.manual === true ||
   row.manual === "true" ||
   row.orderID === "admin" ||
-  row.payer?.payer_id === "admin";
+  row.payer?.payer_id === "admin" ||
+  (!!row.accessUpdatedOn &&
+    !row.orderID &&
+    row.order_number == null &&
+    !row.paidOn);
 function planFor(row) {
   if (isWoo(row))
     return { plan: "1 year", planBasis: "WooCommerce product integration" };

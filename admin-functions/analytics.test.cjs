@@ -297,3 +297,31 @@ test("conflicting Shopify merchandise estimates are excluded", () => {
   assert.equal(result.quality.conflicts, 1);
   assert.equal(result.revenue.length, 0);
 });
+test("new access-only admin grants are manual without relabeling older purchases", () => {
+  const result = aggregateDashboard(
+    {
+      paid: {
+        grant: {
+          expiresOn: date("2027-01-01"),
+          accessUpdatedOn: date("2026-09-01"),
+          accessUpdatedBy: "admin",
+        },
+        buyer: payment({
+          accessUpdatedOn: date("2026-09-01"),
+          accessUpdatedBy: "admin",
+        }),
+      },
+    },
+    now,
+  );
+  assert.equal(result.summary.manualAccess, 1);
+  assert.equal(
+    result.members.find((row) => row.uid === "grant").plan,
+    "Manual grant",
+  );
+  assert.equal(
+    result.members.find((row) => row.uid === "buyer").manual,
+    false,
+  );
+  assert.equal(result.revenue[0].amount, 10);
+});

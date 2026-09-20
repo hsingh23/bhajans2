@@ -144,3 +144,12 @@ admin-enforced policy could not be verified, so access was not granted” and
 instructed the agent not to bypass browser security controls. The compiled local
 preview is available, but compilation does not establish rendered correctness.
 Production deployment/API checks are a separate operator verification step.
+
+Production verification after the initial deployment: Netlify published the
+feature, all nine maintained functions were ACTIVE on Node 24 with the expected
+Firebase runtime identity, an unauthenticated callable request returned HTTP 401
+`UNAUTHENTICATED`, and a real initial daily snapshot was confirmed persisted.
+Production rules were preserved; analytics was already denied by default.
+Authenticated admin/non-admin callable smoke tests remain unverified because no
+authorized Firebase test token was available and IAM signing was denied. No
+permissions were expanded or customer accounts impersonated for testing.
