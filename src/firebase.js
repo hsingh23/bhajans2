@@ -236,3 +236,5 @@ export {
 };
 
 export const updateUserAccess = httpsCallable(getFunctions(firebaseApp, "us-central1"), "updateUserAccess");
+
+export const getSalesDashboard = httpsCallable(getFunctions(firebaseApp, "us-central1"), "getSalesDashboard", { timeout: 120000 });

@@ -104,7 +104,7 @@ export default function Admin() {
 
   return (
     <div className="App">
-      <Header back title="Admin Dashboard" />
+      <Header back title="Admin Dashboard" rightContent={<a href="/admin/analytics">Sales &amp; engagement</a>} />
       <main
         className="restPage admin-dashboard-page"
       >

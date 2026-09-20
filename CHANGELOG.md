@@ -11,6 +11,13 @@ through the present.
 > 188 of 228 messages were improved; commit hashes before that date are stale.
 > A pre-rewrite backup exists locally at `backup/pre-docs-20260908`.
 
+## 2026-09-19
+
+- **feat: add protected sales and engagement analytics**
+  - Adds the admin sales dashboard with separate recorded receipts and Shopify merchandise estimates, currency/year filters, subscription mix, renewal queues, and current favorites comparisons.
+  - Adds authenticated admin aggregation, an idempotent payment evidence archive, and daily access/favorites snapshots for prospective retention measurement.
+  - Preserves payment behavior, reports missing historical coverage explicitly, and pins all new functions to the Firebase runtime identity on Node 24.
+
 ## 2026-05-27
 
 - **chore: set up codegraph for codex** (`bbf1c9a`)

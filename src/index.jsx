@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import Login from "./Login";
 import Logout from "./Logout";
 import Admin from "./Admin";
+import SalesDashboard from "./SalesDashboard";
 import Pay from "./Pay";
 import FAQ from "./FAQ";
 import Beta from "./Beta";
@@ -112,6 +113,7 @@ const renderApp = () => {
                 <Route path='/logout' element={<WrappedLogout />} />
                 <Route path='/pay' element={<Pay />} />
                 <Route path='/beta' element={<WrappedBeta />} />
+                <Route path='/admin/analytics' element={<RequireAdmin><SalesDashboard /></RequireAdmin>} />
                 <Route path='/admin' element={<RequireAdmin><Admin /></RequireAdmin>} />
                 <Route path='/faq' element={<FAQ />} />
                 <Route path='/privacy' element={<Privacy />} />

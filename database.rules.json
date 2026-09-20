@@ -45,6 +45,10 @@
         ".read": "auth != null && (auth.uid === $userId || root.child('admin').child(auth.uid).val() === '1')",
         ".write": "auth != null && auth.uid === $userId"
       }
+    },
+    "analytics": {
+      ".read": false,
+      ".write": false
     }
   }
 }

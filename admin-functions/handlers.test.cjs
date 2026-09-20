@@ -52,6 +52,7 @@ function load(role = "1") {
     },
     "firebase-functions/v2/https": { onCall: (_, fn) => fn, HttpsError },
     "./access.cjs": require("./access.cjs"),
+    "./dashboard-functions.cjs": {},
   };
   const exports = {};
   vm.runInNewContext(fs.readFileSync(require.resolve("./index.cjs"), "utf8"), {

@@ -99,3 +99,5 @@ exports.updateUserAccess = onCall(options, async (request) => {
     throw new HttpsError("aborted", "Access was not saved. Please retry.");
   return userDetails(user, result.snapshot.val());
 });
+
+Object.assign(exports, require("./dashboard-functions.cjs"));
