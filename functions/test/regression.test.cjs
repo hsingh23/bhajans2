@@ -44,7 +44,20 @@ function load({
     generatePasswordResetLink: async () => "https://example.com/reset",
     verifyIdToken: async () => ({ uid: "admin" }),
   };
+  // Records what the handler passes to the logger, as Cloud Logging would see it.
+  const logs = [];
+  const record = (level) => (message, data) =>
+    logs.push({
+      level,
+      message,
+      data: JSON.parse(JSON.stringify(data ?? {})),
+    });
   const modules = {
+    "firebase-functions/logger": {
+      info: record("info"),
+      warn: record("warn"),
+      error: record("error"),
+    },
     "firebase-functions/v2/https": { onRequest: (_, fn) => fn },
     "firebase-functions/v2/database": {
       onValueWritten: (_, fn) => (event) => fn({ data: event }),
@@ -52,11 +65,10 @@ function load({
     "firebase-functions/params": {
       defineSecret: () => ({ value: () => "test-secret" }),
     },
-    "firebase-admin": {
-      initializeApp() {},
-      database: () => database,
-      auth: () => auth,
-    },
+    "firebase-admin/app": { initializeApp() {} },
+    "firebase-admin/auth": { getAuth: () => auth },
+    "firebase-admin/database": { getDatabase: () => database },
+    "firebase-admin/messaging": { getMessaging: () => ({}) },
     "./mail": {
       newUserResetPasswordEmail: async () => {
         emails++;
@@ -76,6 +88,7 @@ function load({
   );
   return {
     handlers: exports,
+    logs: () => logs,
     payment: () => payment,
     creates: () => creates,
     emails: () => emails,
@@ -103,8 +116,15 @@ function order(signature = true) {
     JSON.stringify({
       status: "processing",
       needs_payment: false,
-      billing: { email: "USER@EXAMPLE.COM" },
-      order_key: "order-1",
+      id: 555,
+      number: "1234",
+      billing: {
+        email: "USER@EXAMPLE.COM",
+        first_name: "Asha",
+        last_name: "Rao",
+        city: "Pune",
+      },
+      order_key: "wc_order_key_secret_7f3a",
       line_items: [{ sku: "SingWithAmma-1year" }],
     }),
   );
@@ -118,6 +138,9 @@ function order(signature = true) {
             .update(rawBody)
             .digest("base64")
         : "bad",
+      "x-wc-webhook-id": "wc-hook-9",
+      "x-wc-webhook-topic": "order.updated",
+      "x-wc-webhook-source": "https://shop.example",
     },
   };
 }
@@ -190,4 +213,24 @@ test("Amritabooks retries a failed welcome email without granting another year",
   assert.equal(ctx.emails(), 2);
   assert.equal(ctx.payment().expiresOn, expires);
   assert.equal(ctx.payment().welcomeEmailPending, false);
+});
+
+test("failed Amritabooks processing logs order identity, customer and order key", async () => {
+  const ctx = load({ saveError: true });
+  const res = response();
+  await ctx.handlers.amritabooks(order(), res);
+  assert.equal(res.statusCode, 500);
+  const errors = ctx.logs().filter((entry) => entry.level === "error");
+  assert.equal(errors.length, 1);
+  assert.equal(errors[0].message, "amritabooks order processing failed");
+  const data = errors[0].data;
+  assert.equal(data.orderId, 555);
+  assert.equal(data.orderNumber, "1234");
+  assert.equal(data.email, "user@example.com");
+  assert.equal(data.customerName, "Asha Rao");
+  assert.equal(data.billingAddress.city, "Pune");
+  assert.equal(data.orderKey, "wc_order_key_secret_7f3a");
+  assert.equal(data.webhookId, "wc-hook-9");
+  assert.equal(data.topic, "order.updated");
+  assert.equal(data.error, "offline");
 });

@@ -1,14 +1,18 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const { onValueWritten } = require("firebase-functions/v2/database");
 const { defineSecret } = require("firebase-functions/params");
-const admin = require("firebase-admin");
+const logger = require("firebase-functions/logger");
+const { initializeApp } = require("firebase-admin/app");
+const { getAuth } = require("firebase-admin/auth");
+const { getDatabase } = require("firebase-admin/database");
+const { getMessaging } = require("firebase-admin/messaging");
 const crypto = require("node:crypto");
 const {
   newUserResetPasswordEmail,
   newUserResetPasswordEmailShopify,
   accountActivated,
 } = require("./mail");
-admin.initializeApp();
+initializeApp();
 const amritabooksSecret = defineSecret("AMRITABOOKS_SECRET");
 const shopifySecret = defineSecret("SHOPIFY_SECRET");
 const mailjetAuth = defineSecret("MAILJET_AUTH_HEADER");
@@ -30,6 +34,104 @@ function purchaseDate(value) {
     : "Not recorded";
 }
 
+// Header lookup that works with Express requests and plain-object test mocks.
+const header = (req, name) => req.get?.(name) ?? req.headers?.[name];
+
+// Copies only the named fields; never the whole address object.
+function pick(source, keys) {
+  if (!source || typeof source !== "object") return undefined;
+  return Object.fromEntries(keys.map((key) => [key, source[key]]));
+}
+
+function fullName(first, last) {
+  return [first, last].filter(Boolean).join(" ") || undefined;
+}
+
+// Order identity for logs. Never include the raw body, HMAC signature or secrets.
+function shopifyHeaders(req) {
+  return {
+    webhookId: header(req, "x-shopify-webhook-id"),
+    eventId: header(req, "x-shopify-event-id"),
+    topic: header(req, "x-shopify-topic"),
+    triggeredAt: header(req, "x-shopify-triggered-at"),
+    shop: header(req, "x-shopify-shop-domain"),
+  };
+}
+
+function shopifySummary(req, body) {
+  const rawEmail = body.contact_email || body.email;
+  return {
+    orderId: body.id,
+    orderNumber: body.order_number,
+    email:
+      typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : undefined,
+    customerName:
+      body.billing_address?.name ||
+      fullName(body.customer?.first_name, body.customer?.last_name),
+    billingAddress: pick(body.billing_address, [
+      "name",
+      "address1",
+      "address2",
+      "city",
+      "province",
+      "zip",
+      "country",
+      "phone",
+    ]),
+    orderStatusUrl: body.order_status_url,
+    financialStatus: body.financial_status,
+    processedAt: body.processed_at || body.created_at,
+    total: body.total_price,
+    currency: body.currency,
+    items: (Array.isArray(body.line_items) ? body.line_items : []).map(
+      (item) => ({
+        variantId: item?.variant_id,
+        sku: item?.sku,
+        quantity: item?.quantity,
+      }),
+    ),
+    ...shopifyHeaders(req),
+  };
+}
+
+function wooHeaders(req) {
+  return {
+    webhookId: header(req, "x-wc-webhook-id"),
+    topic: header(req, "x-wc-webhook-topic"),
+    source: header(req, "x-wc-webhook-source"),
+  };
+}
+
+// Order identity for logs. Never include the raw body, signature or secrets.
+function wooSummary(req, body) {
+  const rawEmail = body.billing?.email;
+  return {
+    orderId: body.id,
+    orderNumber: body.number,
+    orderKey: body.order_key,
+    email:
+      typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : undefined,
+    customerName: fullName(body.billing?.first_name, body.billing?.last_name),
+    billingAddress: pick(body.billing, [
+      "address1",
+      "address2",
+      "city",
+      "state",
+      "postcode",
+      "country",
+      "phone",
+    ]),
+    status: body.status,
+    paidAt: body.date_paid_gmt,
+    total: body.total,
+    currency: body.currency,
+    skus: (Array.isArray(body.line_items) ? body.line_items : []).map(
+      (item) => item?.sku,
+    ),
+    ...wooHeaders(req),
+  };
+}
+
 exports.amritabooks = onRequest(
   { ...options, invoker: "public", secrets: [amritabooksSecret, mailjetAuth] },
   async (req, res) => {
@@ -44,46 +146,71 @@ exports.amritabooks = onRequest(
       Buffer.byteLength(signature) !== Buffer.byteLength(expected) ||
       !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))
     ) {
+      const { webhookId, topic, source } = wooHeaders(req);
+      logger.warn("amritabooks webhook rejected", {
+        reason: "invalid signature",
+        webhookId,
+        topic,
+        source,
+      });
       return res.status(401).send("Invalid signature");
     }
     let body;
     try {
       body = JSON.parse(req.rawBody.toString());
     } catch {
+      logger.warn("amritabooks webhook rejected", {
+        reason: "invalid JSON",
+        ...wooHeaders(req),
+      });
       return res.status(400).send("Invalid JSON");
     }
     const { status, billing, order_key, needs_payment, line_items } = body;
-    if (
-      status !== "processing" ||
-      needs_payment !== false ||
-      !billing?.email ||
-      !line_items?.some((item) => item.sku === "SingWithAmma-1year")
-    ) {
+    let ignoredReason = null;
+    if (status !== "processing") ignoredReason = "not processing";
+    else if (needs_payment !== false) ignoredReason = "needs payment";
+    else if (!billing?.email) ignoredReason = "no email";
+    else if (!line_items?.some((item) => item.sku === "SingWithAmma-1year"))
+      ignoredReason = "no recognized sku";
+    if (ignoredReason) {
+      const { webhookId, topic } = wooHeaders(req);
+      logger.info("amritabooks webhook ignored", {
+        reason: ignoredReason,
+        orderId: body.id,
+        orderNumber: body.number,
+        status,
+        webhookId,
+        topic,
+      });
       return res.status(200).json({ message: "ignored" });
     }
-    if (typeof order_key !== "string" || !order_key)
+    if (typeof order_key !== "string" || !order_key) {
+      logger.warn("amritabooks webhook rejected", {
+        reason: "missing order key",
+        ...wooSummary(req, body),
+      });
       return res.status(400).send("Missing order key");
+    }
     try {
       const email = billing.email.trim().toLowerCase();
       let user;
       let password;
       try {
-        user = await admin.auth().getUserByEmail(email);
+        user = await getAuth().getUserByEmail(email);
       } catch (error) {
         if (error.code !== "auth/user-not-found") throw error;
         password = crypto.randomBytes(24).toString("base64url");
         try {
-          user = await admin.auth().createUser({ email, password });
+          user = await getAuth().createUser({ email, password });
         } catch (createError) {
           if (createError.code !== "auth/email-already-exists")
             throw createError;
-          user = await admin.auth().getUserByEmail(email);
+          user = await getAuth().getUserByEmail(email);
           password = undefined;
         }
       }
       const now = Date.now();
-      const result = await admin
-        .database()
+      const result = await getDatabase()
         .ref(`paid/${user.uid}`)
         .transaction((current) => {
           if (
@@ -103,15 +230,30 @@ exports.amritabooks = onRequest(
               Math.max(Number(current?.expiresOn) || 0, now) + 31536000000,
             mode: "live",
             manual: false,
+            provider: "woocommerce",
+            amountScope: "order",
+            gross_total_amount: {
+              value: body.total ?? null,
+              currency: body.currency ?? null,
+            },
+            line_items: null,
+            order_number: null,
+            order_status_url: null,
             orderID: order_key,
-            paidOn: now,
+            paidOn:
+              Date.parse(
+                body.date_paid_gmt
+                  ? `${body.date_paid_gmt.replace(/Z$/, "")}Z`
+                  : "",
+              ) || now,
+            dateBasis: body.date_paid_gmt ? "provider" : "received",
             payer: { payer_id: email },
             processedOrders: { ...current?.processedOrders, [orderHash]: now },
             welcomeEmailPending: !!password || !!current?.welcomeEmailPending,
           };
         });
       if (result.committed && result.snapshot.val().welcomeEmailPending) {
-        const resetLink = await admin.auth().generatePasswordResetLink(email);
+        const resetLink = await getAuth().generatePasswordResetLink(email);
         await newUserResetPasswordEmail({
           email,
           password,
@@ -132,17 +274,27 @@ exports.amritabooks = onRequest(
           ),
           apiKey: mailjetAuth.value(),
         });
-        await admin
-          .database()
+        await getDatabase()
           .ref(`paid/${user.uid}`)
           .child("welcomeEmailPending")
           .set(false);
       }
-      return res
-        .status(200)
-        .json({ message: result.committed ? "done" : "already processed" });
+      const outcome = result.committed ? "done" : "already processed";
+      logger.info("amritabooks order activated", {
+        ...wooSummary(req, body),
+        uid: user.uid,
+        expiresOn: result.snapshot?.val()?.expiresOn,
+        newAccount: Boolean(password),
+        outcome,
+      });
+      return res.status(200).json({ message: outcome });
     } catch (error) {
-      console.error("Order processing failed", error.code || error.message);
+      logger.error("amritabooks order processing failed", {
+        ...wooSummary(req, body),
+        error: error?.message,
+        code: error?.code,
+        stack: error?.stack,
+      });
       return res.status(500).send("Order processing failed; retry required");
     }
   },
@@ -157,11 +309,11 @@ exports.manuallyAddUser = onRequest(
     if (!token) return res.status(401).send("Authentication required");
     let caller;
     try {
-      caller = await admin.auth().verifyIdToken(token, true);
+      caller = await getAuth().verifyIdToken(token, true);
     } catch {
       return res.status(401).send("Invalid authentication");
     }
-    if ((await admin.database().ref(`admin/${caller.uid}`).get()).val() !== "1")
+    if ((await getDatabase().ref(`admin/${caller.uid}`).get()).val() !== "1")
       return res.status(403).send("Admin access required");
     let body;
     try {
@@ -177,12 +329,11 @@ exports.manuallyAddUser = onRequest(
     if (!years || typeof body?.email !== "string")
       return res.status(400).send("Valid plan and email required");
     try {
-      const user = await admin
-        .auth()
-        .getUserByEmail(body.email.trim().toLowerCase());
+      const user = await getAuth().getUserByEmail(
+        body.email.trim().toLowerCase(),
+      );
       const now = Date.now();
-      await admin
-        .database()
+      await getDatabase()
         .ref(`paid/${user.uid}`)
         .transaction((current) => {
           const date = new Date(Math.max(Number(current?.expiresOn) || 0, now));
@@ -198,6 +349,10 @@ exports.manuallyAddUser = onRequest(
         });
       return res.status(200).json({ message: "done" });
     } catch (error) {
+      logger.error("manual access update failed", {
+        error: error?.message,
+        code: error?.code,
+      });
       return res
         .status(error.code === "auth/user-not-found" ? 404 : 500)
         .send("Access was not saved");
@@ -217,7 +372,7 @@ exports.paidNotification = onValueWritten(
     )
       return;
     const { payer, gross_total_amount } = payment;
-    const root = admin.database().ref();
+    const root = getDatabase().ref();
     const admins = (await root.child("admin").get()).val() || {};
     const tokens = new Map();
     await Promise.all(
@@ -239,7 +394,7 @@ exports.paidNotification = onValueWritten(
         payer?.email_address ||
         payer?.payer_id ||
         "A customer";
-      const response = await admin.messaging().sendEachForMulticast({
+      const response = await getMessaging().sendEachForMulticast({
         tokens: batch,
         notification: {
           title: `${name} signed up!`,
@@ -285,12 +440,23 @@ exports.shopifyWebhook = onRequest(
       Buffer.byteLength(signature) !== Buffer.byteLength(expected) ||
       !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))
     ) {
+      const { webhookId, topic, shop } = shopifyHeaders(req);
+      logger.warn("shopify webhook rejected", {
+        reason: "invalid signature",
+        webhookId,
+        topic,
+        shop,
+      });
       return res.status(401).send("Invalid signature");
     }
     let body;
     try {
       body = JSON.parse(req.rawBody.toString());
     } catch {
+      logger.warn("shopify webhook rejected", {
+        reason: "invalid JSON",
+        ...shopifyHeaders(req),
+      });
       return res.status(400).send("Invalid JSON");
     }
     const {
@@ -307,49 +473,101 @@ exports.shopifyWebhook = onRequest(
     for (const item of line_items || [])
       if (SHOPIFY_VARIANTS[item.variant_id])
         time = SHOPIFY_VARIANTS[item.variant_id];
-    if (financial_status !== "paid" || !(contact_email || email) || !time)
+    // Email is deliberately left out of ignored logs: most are unrelated purchases.
+    let ignoredReason = null;
+    if (financial_status !== "paid") ignoredReason = "not paid";
+    else if (!(contact_email || email)) ignoredReason = "no email";
+    else if (!time) ignoredReason = "no recognized variant";
+    if (ignoredReason) {
+      const { webhookId, topic } = shopifyHeaders(req);
+      logger.info("shopify webhook ignored", {
+        reason: ignoredReason,
+        orderId: body.id,
+        orderNumber: order_number,
+        financialStatus: financial_status,
+        webhookId,
+        topic,
+      });
       return res.status(200).json({ message: "ignored" });
+    }
+    if (body.id == null || order_number == null) {
+      logger.warn("shopify webhook rejected", {
+        reason: "missing order identity",
+        ...shopifySummary(req, body),
+      });
+      return res.status(400).send("Missing order identity");
+    }
     try {
       const accountEmail = (contact_email || email).trim().toLowerCase();
       let user;
       let password;
       try {
-        user = await admin.auth().getUserByEmail(accountEmail);
+        user = await getAuth().getUserByEmail(accountEmail);
       } catch (error) {
         if (error.code !== "auth/user-not-found") throw error;
         password = crypto.randomBytes(24).toString("base64url");
         try {
-          user = await admin
-            .auth()
-            .createUser({ email: accountEmail, password });
+          user = await getAuth().createUser({ email: accountEmail, password });
         } catch (createError) {
           if (createError.code !== "auth/email-already-exists")
             throw createError;
-          user = await admin.auth().getUserByEmail(accountEmail);
+          user = await getAuth().getUserByEmail(accountEmail);
           password = undefined;
         }
       }
-      const paidOn = Date.now();
-      const expiresOn = paidOn + time;
-      await admin
-        .database()
+      const now = Date.now();
+      const paidOn = Date.parse(body.processed_at || body.created_at) || now;
+      const expiresOn = now + time;
+      const orderHash = crypto
+        .createHash("sha256")
+        .update(`shopify:${body.id}`)
+        .digest("hex");
+      const result = await getDatabase()
         .ref(`paid/${user.uid}`)
-        .set({
-          expiresOn,
-          mode: "live",
-          manual: false,
-          order_status_url: order_status_url || null,
-          order_number: order_number || null,
-          billing_address: billing_address || null,
-          line_items,
-          paidOn,
-          payer: { payer_id: accountEmail },
+        .transaction((current) => {
+          if (current?.processedOrders?.[orderHash])
+            return current.shopifyEmailPending === orderHash
+              ? current
+              : undefined;
+          return {
+            ...current,
+            expiresOn,
+            mode: "live",
+            manual: false,
+            provider: "shopify",
+            amountScope: "order",
+            dateBasis:
+              body.processed_at || body.created_at ? "provider" : "received",
+            gross_total_amount: {
+              value: body.total_price ?? null,
+              currency: body.currency ?? null,
+            },
+            orderID: `shopify:${body.id}`,
+            processedOrders: { ...current?.processedOrders, [orderHash]: now },
+            shopifyEmailPending: orderHash,
+            shopifyWelcomePending: !!password,
+            order_status_url: order_status_url || null,
+            order_number: order_number || null,
+            billing_address: billing_address || null,
+            line_items,
+            paidOn,
+            payer: { payer_id: accountEmail },
+          };
         });
-      const validUntil = purchaseDate(expiresOn);
-      if (password) {
-        const resetLink = await admin
-          .auth()
-          .generatePasswordResetLink(accountEmail);
+      if (!result.committed) {
+        logger.info("shopify order activated", {
+          ...shopifySummary(req, body),
+          uid: user.uid,
+          expiresOn: result.snapshot?.val()?.expiresOn,
+          newAccount: Boolean(password),
+          outcome: "already processed",
+        });
+        return res.status(200).json({ message: "already processed" });
+      }
+      const validUntil = purchaseDate(result.snapshot.val().expiresOn);
+      if (result.snapshot.val().shopifyWelcomePending) {
+        const resetLink =
+          await getAuth().generatePasswordResetLink(accountEmail);
         await newUserResetPasswordEmailShopify({
           email: accountEmail,
           password,
@@ -369,12 +587,32 @@ exports.shopifyWebhook = onRequest(
           apiKey: mailjetAuth.value(),
         });
       }
+      await getDatabase()
+        .ref(`paid/${user.uid}`)
+        .transaction((current) =>
+          current?.shopifyEmailPending === orderHash
+            ? {
+                ...current,
+                shopifyEmailPending: null,
+                shopifyWelcomePending: false,
+              }
+            : undefined,
+        );
+      logger.info("shopify order activated", {
+        ...shopifySummary(req, body),
+        uid: user.uid,
+        expiresOn: result.snapshot.val().expiresOn,
+        newAccount: Boolean(password),
+        outcome: "done",
+      });
       return res.status(200).json({ message: "done" });
     } catch (error) {
-      console.error(
-        "Shopify order processing failed",
-        error.code || error.message,
-      );
+      logger.error("shopify order processing failed", {
+        ...shopifySummary(req, body),
+        error: error?.message,
+        code: error?.code,
+        stack: error?.stack,
+      });
       return res.status(500).send("Order processing failed; retry required");
     }
   },

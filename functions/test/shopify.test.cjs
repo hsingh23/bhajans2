@@ -49,13 +49,25 @@ function load({ newUser = false, lookupError, saveError } = {}) {
     accountActivated: async (data) => sent.push({ type: "activated", ...data }),
     newUserResetPasswordEmail: async () => {},
   };
+  // Records what the handler passes to the logger, as Cloud Logging would see it.
+  const logs = [];
+  const record = (level) => (message, data) =>
+    logs.push({
+      level,
+      message,
+      data: JSON.parse(JSON.stringify(data ?? {})),
+    });
   const modules = {
-    "firebase-functions": functions,
-    "firebase-admin": {
-      initializeApp() {},
-      auth: () => auth,
-      database: () => ({ ref: () => ref }),
+    "firebase-functions/logger": {
+      info: record("info"),
+      warn: record("warn"),
+      error: record("error"),
     },
+    "firebase-functions": functions,
+    "firebase-admin/app": { initializeApp() {} },
+    "firebase-admin/auth": { getAuth: () => auth },
+    "firebase-admin/database": { getDatabase: () => ({ ref: () => ref }) },
+    "firebase-admin/messaging": { getMessaging: () => ({}) },
     "paypal-rest-sdk": {},
     cors: () => () => {},
     "firebase-functions/v2/https": { onRequest: (_, fn) => fn },
@@ -91,6 +103,7 @@ function load({ newUser = false, lookupError, saveError } = {}) {
   });
   return {
     handler: exports.shopifyWebhook,
+    logs: () => logs,
     paid: () => paid,
     email: () => queriedEmail,
     created: () => created,
@@ -106,7 +119,7 @@ function req(overrides = {}, valid = true) {
       email: "fallback@example.com",
       order_number: 1001,
       order_status_url: "https://shop.example/order/123",
-      billing_address: { name: "Customer Name" },
+      billing_address: { name: "Customer Name", city: "Mumbai" },
       line_items: [{ variant_id: 37277000728740 }],
       ...overrides,
     }),
@@ -121,6 +134,11 @@ function req(overrides = {}, valid = true) {
             .update(rawBody)
             .digest("base64")
         : "wrong",
+      "x-shopify-webhook-id": "wh-123",
+      "x-shopify-event-id": "evt-456",
+      "x-shopify-topic": "orders/paid",
+      "x-shopify-triggered-at": "2026-09-19T11:59:00Z",
+      "x-shopify-shop-domain": "shop.example",
     },
   };
 }
@@ -213,4 +231,66 @@ test("Shopify email includes purchased subscription and actual order date", asyn
   );
   assert.equal(ctx.sent()[0].subscriptionName, "10-year subscription");
   assert.equal(ctx.sent()[0].purchasedOn, "September 10, 2026");
+});
+
+test("Shopify processing failure logs one error with order identity, customer and webhook id", async () => {
+  const ctx = load({ saveError: true });
+  const response = res();
+  await ctx.handler(req(), response);
+  assert.equal(response.statusCode, 500);
+  assert.equal(response.body, "Order processing failed; retry required");
+  const errors = ctx.logs().filter((entry) => entry.level === "error");
+  assert.equal(errors.length, 1);
+  assert.equal(errors[0].message, "shopify order processing failed");
+  const data = errors[0].data;
+  assert.equal(data.orderId, 123);
+  assert.equal(data.orderNumber, 1001);
+  assert.equal(data.email, "customer@example.com");
+  assert.equal(data.customerName, "Customer Name");
+  assert.equal(data.billingAddress.city, "Mumbai");
+  assert.equal(data.orderStatusUrl, "https://shop.example/order/123");
+  assert.deepEqual(
+    data.items.map((item) => item.variantId),
+    [37277000728740],
+  );
+  assert.equal(data.webhookId, "wh-123");
+  assert.equal(data.topic, "orders/paid");
+  assert.equal(data.error, "offline");
+  assert.ok(data.stack);
+});
+
+test("ignored unpaid Shopify order logs a reason and no customer email, name or address", async () => {
+  const ctx = load();
+  await ctx.handler(req({ financial_status: "pending" }), res());
+  assert.equal(ctx.logs().length, 1);
+  const [entry] = ctx.logs();
+  assert.equal(entry.level, "info");
+  assert.equal(entry.message, "shopify webhook ignored");
+  assert.equal(entry.data.reason, "not paid");
+  assert.equal(entry.data.orderId, 123);
+  assert.equal(entry.data.webhookId, "wh-123");
+  assert.equal("email" in entry.data, false);
+  assert.equal("customerName" in entry.data, false);
+  assert.equal("billingAddress" in entry.data, false);
+  assert.doesNotMatch(
+    JSON.stringify(ctx.logs()),
+    /customer@example\.com|fallback@example\.com|Customer Name|Mumbai/,
+  );
+});
+
+test("successful Shopify activation logs uid and outcome done", async () => {
+  const ctx = load();
+  const response = res();
+  await ctx.handler(req(), response);
+  assert.equal(response.statusCode, 200);
+  const activated = ctx.logs().filter(
+    (entry) => entry.message === "shopify order activated",
+  );
+  assert.equal(activated.length, 1);
+  assert.equal(activated[0].level, "info");
+  assert.equal(activated[0].data.uid, "existing");
+  assert.equal(activated[0].data.outcome, "done");
+  assert.equal(activated[0].data.newAccount, false);
+  assert.equal(activated[0].data.orderId, 123);
+  assert.equal(activated[0].data.expiresOn, NOW + 31536000000);
 });
