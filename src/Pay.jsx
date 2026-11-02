@@ -7,10 +7,15 @@ const Pay = () => {
 
   const { email, displayName, expiresOn = undefined, uid } = localStorage;
   const cleanedDisplayName = displayName || "";
+  const expiry = new Date(+expiresOn);
+  const otherAccountHint =
+    " If you paid with a different email address, please log out and sign in with that address.";
   const paymentMessage =
-    new Date(+expiresOn) > new Date()
-      ? ` and your membership expires on ${new Date(+expiresOn).toLocaleDateString()}.`
-      : " and you have not yet paid for the app.";
+    expiry > new Date()
+      ? ` and your membership expires on ${expiry.toLocaleDateString()}.`
+      : expiresOn
+        ? ` and your membership expired on ${expiry.toLocaleDateString()}.${otherAccountHint}`
+        : ` and you have not yet paid for the app.${otherAccountHint}`;
 
   const body = encodeURIComponent(`Om namaha shivaya,
 I'm having payment issues. My Paypal transaction number is:

@@ -108,3 +108,29 @@ test("email includes subscription and purchase date in HTML and plain text", asy
     global.fetch = original;
   }
 });
+
+test("emails link to the login page, not the retired hash route", async () => {
+  let payload;
+  const original = global.fetch;
+  global.fetch = async (_url, options) => {
+    payload = JSON.parse(options.body);
+    return {
+      ok: true,
+      json: async () => ({ Messages: [{ Status: "success" }] }),
+    };
+  };
+  try {
+    for (const send of [
+      mail.accountActivated,
+      mail.newUserResetPasswordEmailShopify,
+    ]) {
+      await send(data);
+      const { HTMLPart, TextPart } = payload.Messages[0];
+      assert.ok(HTMLPart.includes('href="https://sing.withamma.com/login"'));
+      assert.ok(TextPart.includes("https://sing.withamma.com/login"));
+      assert.doesNotMatch(`${HTMLPart}${TextPart}`, /withamma\.com\/#/);
+    }
+  } finally {
+    global.fetch = original;
+  }
+});

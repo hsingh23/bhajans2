@@ -1,4 +1,4 @@
-const APP_URL = "https://sing.withamma.com/#/login";
+const APP_URL = "https://sing.withamma.com/login";
 const IMAGE_URL = "https://sing.withamma.com/email-images/amma_singing.jpg";
 const GUIDE_URL =
   "https://scribehow.com/shared/Sing_With_Amma_Guide__t3Z6fF91QFiQUEqxZfKGHQ";
