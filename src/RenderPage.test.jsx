@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import RenderPage from './RenderPage';
 import { ThemeProvider } from "./ThemeContext";
@@ -77,11 +77,13 @@ const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan') =>
   localStorage.setItem('lastOnline', String(Date.now()));
   localStorage.setItem('expiresOn', String(Date.now() + 86400000));
   
+  const entries = [].concat(route);
+
   return render(
     <ThemeProvider>
       <MUIThemeWrapper>
         <QueryClientProvider client={queryClient}>
-          <MemoryRouter initialEntries={[route]}>
+          <MemoryRouter initialEntries={entries} initialIndex={entries.length - 1}>
             <Routes>
               <Route 
                 path="/pdf/:location/:id/:name" 
@@ -199,6 +201,136 @@ describe('RenderPage Audio Controls', () => {
     
     // The audio element's event listener should be cleaned up
     expect(mockAudio.removeEventListener).toHaveBeenCalled();
+  });
+});
+
+describe('RenderPage hideable header', () => {
+  const PHONE_LANDSCAPE = [844, 390];
+  const PHONE_PORTRAIT = [390, 844];
+  const LAPTOP = [1024, 768];
+  const originalSize = [window.innerWidth, window.innerHeight];
+
+  const setViewport = ([width, height]) => {
+    Object.defineProperty(window, 'innerWidth', { configurable: true, writable: true, value: width });
+    Object.defineProperty(window, 'innerHeight', { configurable: true, writable: true, value: height });
+  };
+  const advance = (ms) => act(() => vi.advanceTimersByTime(ms));
+  const isHidden = (container) => container.querySelector('.App').classList.contains('header-hidden');
+  const floatingBack = (container) => container.querySelector('.viewer-back');
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+    setViewport(originalSize);
+    localStorage.clear();
+  });
+
+  it.each([
+    ['landscape', PHONE_LANDSCAPE],
+    ['portrait', PHONE_PORTRAIT],
+  ])('hides the header 3 seconds after opening on a phone in %s', (_, size) => {
+    setViewport(size);
+    const { container } = renderRenderPage();
+
+    advance(2999);
+    expect(isHidden(container)).toBe(false);
+    expect(floatingBack(container)).toBeNull();
+
+    advance(1);
+    expect(isHidden(container)).toBe(true);
+    expect(floatingBack(container)).not.toBeNull();
+  });
+
+  it('keeps the header on larger screens', () => {
+    setViewport(LAPTOP);
+    const { container } = renderRenderPage();
+
+    advance(10000);
+    expect(isHidden(container)).toBe(false);
+  });
+
+  it('hides automatically when a window shrinks to a phone-sized height', () => {
+    setViewport(LAPTOP);
+    const { container } = renderRenderPage();
+
+    setViewport(PHONE_LANDSCAPE);
+    act(() => {
+      window.dispatchEvent(new Event('resize'));
+    });
+    advance(3000);
+
+    expect(isHidden(container)).toBe(true);
+  });
+
+  it('toggles the header from the pull tab on any screen', () => {
+    setViewport(LAPTOP);
+    const { container } = renderRenderPage();
+
+    fireEvent.click(screen.getByRole('button', { name: /hide top bar/i }));
+    expect(isHidden(container)).toBe(true);
+
+    fireEvent.click(screen.getByRole('button', { name: /show top bar/i }));
+    expect(isHidden(container)).toBe(false);
+  });
+
+  it('does not re-hide a header the user brought back', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage();
+
+    advance(3000);
+    fireEvent.click(screen.getByRole('button', { name: /show top bar/i }));
+    advance(10000);
+
+    expect(isHidden(container)).toBe(false);
+  });
+
+  it('does not auto-hide over a choice made during the first 3 seconds', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage();
+
+    advance(1000);
+    fireEvent.click(screen.getByRole('button', { name: /hide top bar/i }));
+    fireEvent.click(screen.getByRole('button', { name: /show top bar/i }));
+    advance(10000);
+
+    expect(isHidden(container)).toBe(false);
+  });
+
+  it('returns to the previous page from the floating back button', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage({}, ['/', '/pdf/vol1-10/0/Test%20Bhajan']);
+
+    advance(3000);
+    fireEvent.click(floatingBack(container));
+
+    expect(mockNavigate).toHaveBeenCalledWith(-1);
+  });
+
+  it('goes to search when the viewer was the first page opened', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage();
+
+    advance(3000);
+    fireEvent.click(floatingBack(container));
+
+    expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
+  });
+
+  it('still turns pages by tapping while the header is hidden', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage({}, '/pdf/vol1-1/0/Test%20Bhajan');
+
+    advance(3000);
+    expect(isHidden(container)).toBe(true);
+
+    fireEvent.click(container.querySelector('.pdf-next'));
+    advance(0);
+
+    expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 2');
   });
 });
 
