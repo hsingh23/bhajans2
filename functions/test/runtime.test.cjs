@@ -23,3 +23,19 @@ test("actual production modules load and expose all payment handlers and mail fu
   ])
     assert.equal(typeof mail[name], "function");
 });
+test("every firebase-admin export the handlers import exists in the installed SDK", () => {
+  const source = require("node:fs").readFileSync(
+    require.resolve("../src/index.js"),
+    "utf8",
+  );
+  const imports = [
+    ...source.matchAll(
+      /const \{([^}]+)\} = require\("(firebase-admin[^"]*)"\);/g,
+    ),
+  ];
+  assert.ok(imports.length > 0);
+  assert.doesNotMatch(source, /require\("firebase-admin"\)/);
+  for (const [, names, path] of imports)
+    for (const name of names.split(",").map((n) => n.trim()))
+      assert.equal(typeof require(path)[name], "function", `${path}.${name}`);
+});

@@ -1,17 +1,10 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import DarkModeToggle from './DarkModeToggle';
+import { useGoBack } from './useGoBack';
 
 const Header = ({ children = null, back = false, title = "", rightContent = null }) => {
-  const navigate = useNavigate();
-  
-  const handleBack = () => {
-    if (window.history.length <= 1) {
-      window.location.href = window.location.origin + "/#/";
-    } else {
-      navigate(-1);
-    }
-  };
+  const handleBack = useGoBack();
 
   return (
     <div className='App-header'>

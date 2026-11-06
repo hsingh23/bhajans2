@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef, memo } from "react";
 import { HotKeys } from "react-hotkeys";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import classNames from "classnames";
 import { 
   Snackbar, 
   Alert 
@@ -10,8 +12,13 @@ import InvertiblePDF from "./InvertiblePDF";
 import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
 import Loader from "./Loader";
+import { useGoBack } from "./useGoBack";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
+const HEADER_AUTO_HIDE_MS = 3000;
+// Phones in either orientation: narrow in portrait, short in landscape.
+const isPhoneSized = (width, height) => width < 768 || height <= 500;
+
 const keyMap = {
   left: "left",
   right: "right",
@@ -182,16 +189,32 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   const handlers = { left: handlePrevious, right: handleNext };
 
   // Handle window resize to switch between embed and InvertiblePDF
-  const [width, setWidth] = useState(window.innerWidth);
+  const [{ width, height }, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
+    const handleResize = () => setViewport({ width: window.innerWidth, height: window.innerHeight });
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const goBack = useGoBack();
+  const [headerHidden, setHeaderHidden] = useState(false);
+  const [headerToggled, setHeaderToggled] = useState(false);
+  const shouldAutoHide = isPhoneSized(width, height) && !headerToggled;
+
+  useEffect(() => {
+    if (!shouldAutoHide) return;
+    const timer = setTimeout(() => setHeaderHidden(true), HEADER_AUTO_HIDE_MS);
+    return () => clearTimeout(timer);
+  }, [shouldAutoHide]);
+
+  const toggleHeader = () => {
+    setHeaderToggled(true);
+    setHeaderHidden((hidden) => !hidden);
+  };
+
   return (
     <HotKeys keyMap={keyMap} handlers={handlers}>
-      <div className='App'>
+      <div className={classNames('App', { 'header-hidden': headerHidden })}>
         <Header 
           back 
           title={name}
@@ -227,11 +250,24 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
             </>
           }
         />
+        {headerHidden && (
+          <button type='button' aria-label='Go back' className='viewer-back' onClick={goBack}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+        )}
+        <button
+          type='button'
+          aria-label={headerHidden ? 'Show top bar' : 'Hide top bar'}
+          aria-expanded={!headerHidden}
+          className='viewer-header-toggle'
+          onClick={toggleHeader}>
+          <FontAwesomeIcon icon={headerHidden ? faChevronDown : faChevronUp} />
+        </button>
         <div className='rest'>
           {localStorage.presenter && width > 1200 ? (
             <InvertibleEmbed
               src={`${url}#page=${page}`}
-              style={{ width: "100vw", height: "calc( 100vh - 56px )" }}
+              style={{ width: "100vw", height: headerHidden ? "100vh" : "calc( 100vh - 64px )" }}
             />
           ) : (
             <div className='pdf-center-wrapper'>

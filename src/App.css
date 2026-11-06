@@ -387,18 +387,18 @@ mark,
 .pdf-next {
   z-index: 2;
   position: fixed;
-  height: calc(100vh - 56px);
+  height: calc(100vh - var(--viewer-top, 64px));
   width: 50vw;
-  top: 56px;
+  top: var(--viewer-top, 64px);
   right: 0;
 }
 
 .pdf-previous {
   z-index: 2;
   position: fixed;
-  height: calc(100vh - 56px);
+  height: calc(100vh - var(--viewer-top, 64px));
   width: 50vw;
-  top: 56px;
+  top: var(--viewer-top, 64px);
   left: 0;
 }
 
@@ -502,7 +502,7 @@ mark {
   z-index: 2;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
-  top: calc(50% + 56px);
+  top: calc(50% + var(--viewer-top, 64px) / 2);
   left: 20px;
   animation: grow-next 1s forwards;
 }
@@ -511,7 +511,7 @@ mark {
   position: fixed;
   z-index: 2;
   transform: rotate(-45deg);
-  top: calc(50% + 56px);
+  top: calc(50% + var(--viewer-top, 64px) / 2);
   right: 20px;
   animation: grow-prev 1s forwards;
 }
@@ -791,6 +791,88 @@ button.button-action {
   align-items: center;
   min-height: calc(100vh - 64px); /* Updated to match new header height */
   width: 100%;
+}
+
+/* Sheet music viewer: header slides away so the music gets the full screen */
+.App-header,
+.rest {
+  transition: transform 0.2s ease, padding-top 0.2s ease;
+}
+
+.header-hidden {
+  --viewer-top: 0px;
+}
+
+.header-hidden .App-header {
+  transform: translateY(-100%);
+  visibility: hidden;
+  transition: transform 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.header-hidden .rest {
+  padding-top: 0;
+}
+
+.header-hidden .pdf-center-wrapper {
+  min-height: 100vh;
+}
+
+/* Translucent dark controls stay legible on white paper and in dark mode.
+   z-index 3 keeps them above the full-screen page-turn tap zones. */
+.viewer-back,
+.viewer-header-toggle {
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.viewer-back {
+  top: 8px;
+  left: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.viewer-header-toggle {
+  top: var(--viewer-top, 64px);
+  left: 50%;
+  width: 64px;
+  height: 24px;
+  margin-left: -32px;
+  border-radius: 0 0 12px 12px;
+  font-size: 14px;
+  transition: top 0.2s ease;
+}
+
+/* Grows the tap target to 44px without covering more of the music */
+.viewer-header-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 -20px;
+}
+
+.viewer-back:focus-visible,
+.viewer-header-toggle:focus-visible {
+  outline: 2px solid var(--primary-color, #e65100);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .App-header,
+  .rest,
+  .header-hidden .App-header,
+  .viewer-header-toggle {
+    transition: none;
+  }
 }
 
 .no-results {

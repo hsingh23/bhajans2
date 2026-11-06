@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { version } from '../package.json';
 
-const Footer = () => {
+const VISIBLE_MS = 3000;
 
+const Footer = () => {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHidden(true), VISIBLE_MS);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (hidden) return null;
 
   return (
     <div className="copyRight">
