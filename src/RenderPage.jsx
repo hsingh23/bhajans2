@@ -7,12 +7,13 @@ import {
   Snackbar, 
   Alert 
 } from "@mui/material";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import InvertiblePDF from "./InvertiblePDF";
 import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
 import Loader from "./Loader";
 import { useGoBack } from "./useGoBack";
+import { groupSheetMusic, parseSheetMusicName } from "./sheetMusicGroups";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
 const HEADER_AUTO_HIDE_MS = 3000;
@@ -40,8 +41,9 @@ const removeServiceWorkers = () => {
 import { syncUserData, THREE_MONTHS_MS } from "./firebase";
 
 const RenderPage = ({ bhajans = {}, renderFavorite }) => {
-  const { id, location: locationParam } = useParams();
+  const { id, location: locationParam, name: nameParam } = useParams();
   const navigate = useNavigate();
+  const { state: navState } = useLocation();
   const [toast, setToast] = useState({ open: false, message: "", severity: "info" });
   const [verifyingSession, setVerifyingSession] = useState(false);
 
@@ -197,7 +199,8 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   }, []);
 
   const goBack = useGoBack();
-  const [headerHidden, setHeaderHidden] = useState(false);
+  // A key change remounts the page; keep the top bar as the reader left it.
+  const [headerHidden, setHeaderHidden] = useState(Boolean(navState?.headerHidden));
   const [headerToggled, setHeaderToggled] = useState(false);
   const shouldAutoHide = isPhoneSized(width, height) && !headerToggled;
 
@@ -206,6 +209,28 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     const timer = setTimeout(() => setHeaderHidden(true), HEADER_AUTO_HIDE_MS);
     return () => clearTimeout(timer);
   }, [shouldAutoHide]);
+
+  const currentSheet = parseSheetMusicName(locationParam);
+  const keyChoices = currentSheet
+    ? groupSheetMusic(bhajans?.[id]?.sm).groups.find((group) => group.song === currentSheet.song)?.keys ?? []
+    : [];
+  const [keysOpen, setKeysOpen] = useState(false);
+  useEffect(() => {
+    if (!keysOpen) return;
+    const closeOnEscape = (event) => event.key === "Escape" && setKeysOpen(false);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [keysOpen]);
+
+  const changeKey = (file) => {
+    setKeysOpen(false);
+    if (file === locationParam) return;
+    // Replace, so the back button still returns to search after changing keys.
+    navigate(`/pdf/${encodeURIComponent(file)}/${id}/${encodeURIComponent(nameParam)}`, {
+      replace: true,
+      state: { headerHidden },
+    });
+  };
 
   const toggleHeader = () => {
     setHeaderToggled(true);
@@ -254,6 +279,38 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           <button type='button' aria-label='Go back' className='viewer-back' onClick={goBack}>
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
+        )}
+        {keyChoices.length > 1 && (
+          <>
+            <button
+              type='button'
+              className='viewer-key'
+              aria-label={`Change key, now ${currentSheet.key}`}
+              aria-expanded={keysOpen}
+              aria-controls='viewer-key-menu'
+              onClick={() => setKeysOpen((open) => !open)}>
+              <FontAwesomeIcon icon='music' />
+              <span>{currentSheet.key}</span>
+            </button>
+            {keysOpen && (
+              <>
+                <div className='viewer-key-backdrop' onClick={() => setKeysOpen(false)} />
+                <div id='viewer-key-menu' className='viewer-key-menu' role='menu' aria-label='Keys'>
+                  {keyChoices.map(({ file, key }) => (
+                    <button
+                      key={file}
+                      type='button'
+                      role='menuitemradio'
+                      aria-checked={file === locationParam}
+                      className={classNames({ current: file === locationParam })}
+                      onClick={() => changeKey(file)}>
+                      {key}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         )}
         <button
           type='button'

@@ -9,6 +9,7 @@ import { zip } from 'lodash-es';
 import classNames from 'classnames';
 import { PopupButton } from '@typeform/embed-react';
 import Header from './Header';
+import { groupSheetMusic } from './sheetMusicGroups';
 
 const makeSearchable = (line) =>
   line
@@ -197,6 +198,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const myFavoritesMode = path.includes('/my-favorites');
   const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
   const cdbabyLinks = zip(infoSampleUrls, infoNames);
+  const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
 
   return (
     <div className='App'>
@@ -241,7 +243,24 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
           {infoSheetMusic.length > 0 && (
             <div>
               <strong>Sheet Music: </strong>
-              {infoSheetMusic.map((pdf) => (
+              {sheetMusicGroups.groups.map(({ song, label, keys }) => (
+                <div key={song} className='sheet-music-song'>
+                  <span className='sheet-music-title'>{label}</span>
+                  <div className='sheet-music-keys'>
+                    {keys.map(({ file, key }) => (
+                      <Link
+                        key={file}
+                        to={`/pdf/${file}/${infoFilteredIndex}/${infoName}`}
+                        className='sheet-music-key'
+                        title={file}
+                        aria-label={`${label} in ${key}`}>
+                        {key}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {sheetMusicGroups.other.map((pdf) => (
                 <Link key={pdf} to={`/pdf/${pdf}/${infoFilteredIndex}/${infoName}`} className='block'>
                   {pdf}
                 </Link>

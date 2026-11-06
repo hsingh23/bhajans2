@@ -547,6 +547,10 @@ mark {
 .modal-window > div {
   width: calc(100vw - 64px - 20px);
   max-width: 600px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -586,6 +590,34 @@ mark {
 
 .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
+}
+
+.sheet-music-song {
+  margin: 12px 0;
+}
+.sheet-music-title {
+  display: block;
+  font-size: 90%;
+  margin-bottom: 6px;
+}
+.modal-window .sheet-music-keys {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0;
+}
+.sheet-music-key {
+  min-width: 2.75em;
+  padding: 6px 8px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-sizing: border-box;
+}
+.sheet-music-key:hover,
+.sheet-music-key:focus-visible {
+  border-color: currentColor;
 }
 
 .mr-8 {
@@ -820,6 +852,8 @@ button.button-action {
 /* Translucent dark controls stay legible on white paper and in dark mode.
    z-index 3 keeps them above the full-screen page-turn tap zones. */
 .viewer-back,
+.viewer-key,
+.viewer-key-menu,
 .viewer-header-toggle {
   position: fixed;
   z-index: 3;
@@ -842,6 +876,62 @@ button.button-action {
   font-size: 18px;
 }
 
+/* Current key pill: top right, under the top bar while it shows */
+.viewer-key {
+  top: calc(var(--viewer-top, 64px) + 8px);
+  right: 8px;
+  gap: 6px;
+  min-width: 44px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.viewer-key svg {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.viewer-key-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+}
+
+.viewer-key-menu {
+  z-index: 4;
+  top: calc(var(--viewer-top, 64px) + 50px);
+  right: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 4px;
+  padding: 6px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.75);
+  max-height: calc(100dvh - var(--viewer-top, 64px) - 64px);
+  overflow-y: auto;
+}
+
+.viewer-key-menu button {
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: transparent;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.viewer-key-menu button.current {
+  color: black;
+  background-color: white;
+  font-weight: 600;
+}
+
 .viewer-header-toggle {
   top: var(--viewer-top, 64px);
   left: 50%;
@@ -861,6 +951,8 @@ button.button-action {
 }
 
 .viewer-back:focus-visible,
+.viewer-key:focus-visible,
+.viewer-key-menu button:focus-visible,
 .viewer-header-toggle:focus-visible {
   outline: 2px solid var(--primary-color, #e65100);
   outline-offset: 2px;
@@ -870,6 +962,7 @@ button.button-action {
   .App-header,
   .rest,
   .header-hidden .App-header,
+  .viewer-key,
   .viewer-header-toggle {
     transition: none;
   }

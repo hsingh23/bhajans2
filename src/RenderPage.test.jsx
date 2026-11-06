@@ -337,3 +337,57 @@ describe('RenderPage hideable header', () => {
 // Note: Navigation tests with pagination controls and subscription redirect tests 
 // are more reliable in E2E tests due to timing issues with fake timers and 
 // document.querySelector in jsdom. See e2e/app.spec.js for comprehensive tests.
+
+describe('RenderPage key picker', () => {
+  const sheetBhajans = {
+    3: {
+      n: 'Fragrance',
+      sm: ['FragranceC.pdf', 'IrulTingiC.pdf', 'FragranceDb.pdf', 'FragranceBb.pdf', 'IrulTingiD.pdf'],
+    },
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it('shows the current key and lists only the same song in other keys', () => {
+    renderRenderPage({ bhajans: sheetBhajans }, '/pdf/FragranceDb.pdf/3/Fragrance');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Db' }));
+
+    const keys = screen.getAllByRole('menuitemradio');
+    expect(keys.map((k) => k.textContent)).toEqual(['C', 'Db', 'Bb']);
+    expect(screen.getByRole('menuitemradio', { name: 'Db' })).toHaveAttribute('aria-checked', 'true');
+  });
+
+  it('replaces the page with the chosen key so back still returns to search', () => {
+    renderRenderPage({ bhajans: sheetBhajans }, '/pdf/FragranceDb.pdf/3/Fragrance');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Db' }));
+    fireEvent.click(screen.getByRole('menuitemradio', { name: 'Bb' }));
+
+    expect(mockNavigate).toHaveBeenCalledWith('/pdf/FragranceBb.pdf/3/Fragrance', {
+      replace: true,
+      state: { headerHidden: false },
+    });
+    expect(screen.queryByRole('menu')).toBeNull();
+  });
+
+  it('closes the key list with Escape', () => {
+    renderRenderPage({ bhajans: sheetBhajans }, '/pdf/FragranceDb.pdf/3/Fragrance');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Db' }));
+    fireEvent.keyDown(window, { key: 'Escape' });
+
+    expect(screen.queryByRole('menu')).toBeNull();
+  });
+
+  it('has no key picker for book pages or a single key', () => {
+    renderRenderPage({ bhajans: { 3: { n: 'Solo', sm: ['SoloC.pdf'] } } }, '/pdf/SoloC.pdf/3/Solo');
+    expect(screen.queryByRole('button', { name: /Change key/ })).toBeNull();
+  });
+});
