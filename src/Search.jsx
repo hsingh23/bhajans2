@@ -289,6 +289,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   };
 
   const myFavoritesMode = path.includes('/my-favorites');
+  const favoriteCount = useMemo(() => bhajans.filter((b) => favorites[b?.n]).length, [bhajans, favorites]);
   const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
   const cdbabyLinks = infoSampleUrls.map((sample, i) => [sample, infoNames[i]]);
   const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
@@ -430,15 +431,23 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
       </Header>
       <div className='rest'>
         <nav>
-          {!myFavoritesMode ? (
-            <Link to='/my-favorites' className='button button-rounded button-raised button-action full'>
-              Filter to my Favorites
+          <div className='view-switch' role='group' aria-label='Show'>
+            <Link
+              to='/'
+              className={myFavoritesMode ? 'view-option' : 'view-option active'}
+              aria-current={myFavoritesMode ? undefined : 'page'}>
+              <span>All bhajans</span>
+              <span className='view-count'>{bhajans.length}</span>
             </Link>
-          ) : (
-            <Link to='/' className='button full button-rounded button-raised button-primary'>
-              Show All Bhajans
+            <Link
+              to='/my-favorites'
+              className={myFavoritesMode ? 'view-option active' : 'view-option'}
+              aria-current={myFavoritesMode ? 'page' : undefined}>
+              <Icon name='heart' filled={myFavoritesMode} className='view-heart' />
+              <span>Favorites</span>
+              <span className='view-count'>{favoriteCount}</span>
             </Link>
-          )}
+          </div>
           {hasCategories && (
             <div className='category-filters' role='group' aria-label='Filter bhajans'>
               <FilterSelect
@@ -487,14 +496,24 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     autoHeight
                     height={height}
                     isScrolling={isScrolling}
-                    noRowsRenderer={() => (
+                    noRowsRenderer={() =>
+                      myFavoritesMode && favoriteCount === 0 ? (
+                        <div className='no-results favorites-empty'>
+                          <Icon name='heart' filled={false} size='40px' />
+                          <p>No favorites yet.</p>
+                          <p>
+                            Tap the heart on any bhajan to keep it here. <Link to='/'>Browse all bhajans</Link>
+                          </p>
+                        </div>
+                      ) : (
                       <div className="no-results">
                         <p>
                           {filter ? <>No bhajans found matching &quot;{filter}&quot;</> : 'No bhajans found'}
                           {(language || deity) && ` for ${[deity, language].filter(Boolean).join(' · ')}`}
                         </p>
                       </div>
-                    )}
+                      )
+                    }
                     onScroll={onChildScroll}
                     rowCount={filteredBhajans.length}
                     rowHeight={200}

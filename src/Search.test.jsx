@@ -84,14 +84,21 @@ describe('Search Component', () => {
     expect(screen.getByAltText(/Amma/i)).toBeInTheDocument();
   });
 
-  it('shows filter to favorites button on main page', () => {
-    renderSearch({}, '/');
-    expect(screen.getByText(/Filter to my Favorites/i)).toBeInTheDocument();
+  it('switches between all bhajans and favorites, marking the current view', () => {
+    renderSearch({ 'Krishna Krishna': 1, 'Not In Index': 1 }, '/');
+    const all = screen.getByRole('link', { name: /All bhajans/ });
+    const favs = screen.getByRole('link', { name: /Favorites/ });
+    expect(all).toHaveAttribute('aria-current', 'page');
+    expect(all).toHaveTextContent('5');
+    expect(favs).toHaveAttribute('href', '/my-favorites');
+    // Only favorites that are in the index are counted.
+    expect(favs).toHaveTextContent('1');
   });
 
-  it('shows all bhajans button when on favorites page', () => {
+  it('marks favorites as current on the favorites page', () => {
     renderSearch({}, '/my-favorites');
-    expect(screen.getByText(/Show All Bhajans/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Favorites/ })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: /All bhajans/ })).toHaveAttribute('href', '/');
   });
 
   it('updates search filter on input change', () => {

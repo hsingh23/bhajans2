@@ -1123,3 +1123,77 @@ mark {
   padding: 0;
   flex: none;
 }
+
+/* ALL BHAJANS / FAVORITES SWITCH */
+.view-switch {
+  display: flex;
+  gap: 4px;
+  margin: 12px 10px 10px;
+  padding: 4px;
+  background: rgba(128, 128, 128, 0.12);
+  border-radius: var(--radius-full);
+}
+.view-option {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.view-option:hover {
+  color: var(--text-main);
+}
+.view-option.active {
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+.view-option:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.view-option .view-heart {
+  width: 18px;
+  height: 18px;
+  color: #e53935;
+}
+.view-count {
+  min-width: 24px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  line-height: 1.4;
+  background: rgba(128, 128, 128, 0.18);
+}
+.view-option.active .view-count {
+  background: rgba(230, 81, 0, 0.12);
+  color: var(--primary-dark);
+}
+[data-theme="dark"] .view-option.active {
+  background: #333;
+}
+[data-theme="dark"] .view-option.active .view-count {
+  background: rgba(255, 183, 77, 0.18);
+  color: var(--primary-color);
+}
+
+.favorites-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-secondary);
+}
+.favorites-empty .icon {
+  color: #e53935;
+  margin-bottom: 8px;
+}
+.favorites-empty p {
+  margin: 4px 0;
+}
