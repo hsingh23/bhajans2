@@ -8,41 +8,14 @@ import {
   auth,
 } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { omit, get, orderBy } from "lodash-es";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { RequireAuth } from "./util";
 import Search from "./Search";
 import Profile from "./Profile";
 import RenderPage from "./RenderPage";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faHeart,
-  faMusic,
-  faPlay,
-  faStop,
-  faCompactDisc,
-  faCartArrowDown,
-  faInfo,
-  faSearch,
-  faArrowLeft,
-  faBookOpen,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "./Icon";
 import Pay from "./Pay";
 import Footer from "./Footer";
-
-library.add(
-  faHeart,
-  faMusic,
-  faPlay,
-  faStop,
-  faCompactDisc,
-  faCartArrowDown,
-  faInfo,
-  faBookOpen,
-  faSearch,
-  faArrowLeft
-);
 
 const getShow2025Param = (search) => {
   const value = new URLSearchParams(search).get("2025");
@@ -81,7 +54,7 @@ const App = () => {
       .fetch("/bhajan-index2.json")
       .then((data) => data.json())
       .then((fetchedBhajans) => {
-        const sorted = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
+        const sorted = [...fetchedBhajans].sort((a, b) => (a.n < b.n ? -1 : a.n > b.n ? 1 : 0));
         window.fetchedBhajans = sorted;
         setAllBhajans(sorted);
       });
@@ -127,7 +100,7 @@ const App = () => {
   const addFavorite = useCallback((name) => {
     setFavorites((prev) => {
       const updated = Object.assign({ [name]: 1 }, prev);
-      const uid = get(auth, "currentUser.uid");
+      const uid = auth?.currentUser?.uid;
       uid && setRefOnce(`favorites/${uid}/${name}`, "1");
       return updated;
     });
@@ -135,8 +108,9 @@ const App = () => {
 
   const removeFavorite = useCallback((name) => {
     setFavorites((prev) => {
-      const updated = omit(prev, name);
-      const uid = get(auth, "currentUser.uid");
+      const updated = { ...prev };
+      delete updated[name];
+      const uid = auth?.currentUser?.uid;
       uid && removeRefOnce(`favorites/${uid}/${name}`);
       return updated;
     });
@@ -153,7 +127,7 @@ const App = () => {
         aria-label='unlike'
         role='presentation'
         tabIndex={-1}>
-        <FontAwesomeIcon icon='heart' style={{ color: '#f44336' }} />
+        <Icon name='heart' color='#f44336' />
       </button>
     ) : (
       <button
@@ -164,7 +138,7 @@ const App = () => {
         aria-label='like'
         role='presentation'
         tabIndex={-1}>
-        <FontAwesomeIcon icon='heart' style={{ color: 'grey' }} />
+        <Icon name='heart' filled={false} color='grey' />
       </button>
     );
   }, [favorites, addFavorite, removeFavorite]);

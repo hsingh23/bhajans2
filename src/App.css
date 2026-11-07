@@ -736,10 +736,6 @@ a,
   background-color: var(--button-bg);
 }
 
-/* Ensure FontAwesome icons inside buttons respect theme or specific colors */
-.button .fa-heart.active {
-  color: #f44336 !important;
-}
 
 
 .App-header {
@@ -978,4 +974,147 @@ button.button-action {
   font-size: 1.2rem;
   font-style: italic;
   opacity: 0.7;
+}
+
+/* ICONS (inline SVG, see Icon.jsx) */
+.icon {
+  flex-shrink: 0;
+}
+.button .icon {
+  width: 22px;
+  height: 22px;
+}
+.button-jumbo .icon {
+  width: 24px;
+  height: 24px;
+}
+.lyrics .lyrics-icon {
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 2px;
+  opacity: 0.8;
+}
+.icon-play {
+  margin-left: 2px; /* optical centring of the triangle */
+}
+
+mark {
+  background: rgba(255, 183, 77, 0.45);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+/* DEITY / LANGUAGE FILTERS */
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 0 10px 6px;
+}
+.filter-select {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 140px;
+  min-width: 0;
+  gap: 4px;
+}
+.filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.filter-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 36px 0 12px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--text-main);
+  background-color: var(--card-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+.filter-select select:focus-visible,
+.filter-clear:focus-visible,
+.category-chip:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.filter-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  background: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+.result-count {
+  margin: 4px 12px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.bhajan-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 10px 0;
+}
+.category-chip {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.category-chip.deity {
+  color: #8a3b00;
+  background: #fff1e0;
+  border-color: #ffd6a8;
+}
+.category-chip.language {
+  color: #155c5c;
+  background: #e3f4f4;
+  border-color: #b5e0e0;
+}
+.category-chip.active {
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+[data-theme="dark"] .category-chip.deity {
+  color: #ffcc80;
+  background: rgba(255, 167, 38, 0.14);
+  border-color: rgba(255, 167, 38, 0.35);
+}
+[data-theme="dark"] .category-chip.language {
+  color: #80cbc4;
+  background: rgba(77, 182, 172, 0.14);
+  border-color: rgba(77, 182, 172, 0.35);
+}
+
+/* Keep every round icon button a true circle, even with .button-jumbo or .spaced padding. */
+.button.button-circle {
+  padding: 0;
+  flex: none;
 }

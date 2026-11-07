@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef, memo } from "react";
-import { HotKeys } from "react-hotkeys";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import classNames from "classnames";
+import Icon from "./Icon";
 import { 
   Snackbar, 
   Alert 
@@ -19,11 +16,6 @@ const InvertiblePdfComponent = memo(InvertiblePDF);
 const HEADER_AUTO_HIDE_MS = 3000;
 // Phones in either orientation: narrow in portrait, short in landscape.
 const isPhoneSized = (width, height) => width < 768 || height <= 500;
-
-const keyMap = {
-  left: "left",
-  right: "right",
-};
 
 const removeServiceWorkers = () => {
   if ("serviceWorker" in navigator) {
@@ -188,7 +180,17 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     </span>
   ) : null;
 
-  const handlers = { left: handlePrevious, right: handleNext };
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+      if (event.key === "ArrowLeft") handlePrevious();
+      else if (event.key === "ArrowRight") handleNext();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [handlePrevious, handleNext]);
 
   // Handle window resize to switch between embed and InvertiblePDF
   const [{ width, height }, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -238,8 +240,8 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   };
 
   return (
-    <HotKeys keyMap={keyMap} handlers={handlers}>
-      <div className={classNames('App', { 'header-hidden': headerHidden })}>
+    <>
+      <div className={headerHidden ? "App header-hidden" : "App"}>
         <Header 
           back 
           title={name}
@@ -253,7 +255,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
                   rel='noopener noreferrer'
                   aria-label='Buy on Amazon'>
                   <span role='img' aria-label='cd'>
-                    <FontAwesomeIcon icon='cart-arrow-down' />
+                    <Icon name='cart' />
                   </span>
                 </a>
               )}
@@ -263,7 +265,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
                   className='button button-3d button-circle button-action'
                   onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0]))}>
                   <span role='img' aria-label='music sample'>
-                    <FontAwesomeIcon icon={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
+                    <Icon name={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
                   </span>
                 </button>
               )}
@@ -277,7 +279,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
         />
         {headerHidden && (
           <button type='button' aria-label='Go back' className='viewer-back' onClick={goBack}>
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <Icon name='arrow-left' />
           </button>
         )}
         {keyChoices.length > 1 && (
@@ -289,7 +291,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               aria-expanded={keysOpen}
               aria-controls='viewer-key-menu'
               onClick={() => setKeysOpen((open) => !open)}>
-              <FontAwesomeIcon icon='music' />
+              <Icon name='music' />
               <span>{currentSheet.key}</span>
             </button>
             {keysOpen && (
@@ -302,7 +304,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
                       type='button'
                       role='menuitemradio'
                       aria-checked={file === locationParam}
-                      className={classNames({ current: file === locationParam })}
+                      className={file === locationParam ? "current" : undefined}
                       onClick={() => changeKey(file)}>
                       {key}
                     </button>
@@ -318,7 +320,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           aria-expanded={!headerHidden}
           className='viewer-header-toggle'
           onClick={toggleHeader}>
-          <FontAwesomeIcon icon={headerHidden ? faChevronDown : faChevronUp} />
+          <Icon name={headerHidden ? 'chevron-down' : 'chevron-up'} />
         </button>
         <div className='rest'>
           {localStorage.presenter && width > 1200 ? (
@@ -358,7 +360,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           {toast.message}
         </Alert>
       </Snackbar>
-    </HotKeys>
+    </>
   );
 };
 
