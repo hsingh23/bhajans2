@@ -4,6 +4,7 @@ import 'react-virtualized/styles.css';
 import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
+import { track } from './analytics';
 import { PopupButton } from '@typeform/embed-react';
 import Header from './Header';
 import { groupSheetMusic } from './sheetMusicGroups';
@@ -157,7 +158,25 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     window.searchDeity = deity;
   }, [filter, language, deity]);
 
-  const play = (url) => {
+  // Record what people search for once they pause typing.
+  useEffect(() => {
+    const term = filter.trim();
+    if (term.length < 2) return;
+    const timer = setTimeout(() => track('search', { search_term: term }), 1500);
+    return () => clearTimeout(timer);
+  }, [filter]);
+
+  const chooseDeity = (value) => {
+    setDeity(value);
+    if (value) track('filter_bhajans', { filter_type: 'deity', filter_value: value });
+  };
+  const chooseLanguage = (value) => {
+    setLanguage(value);
+    if (value) track('filter_bhajans', { filter_type: 'language', filter_value: value });
+  };
+
+  const play = (url, bhajanName) => {
+    if (bhajanName) track('play_sample', { bhajan_name: bhajanName });
     if (audioTagRef.current) {
       audioTagRef.current.src = url;
       audioTagRef.current.play();
@@ -231,7 +250,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     className={deity === bhajanDeity ? 'category-chip deity active' : 'category-chip deity'}
                     aria-pressed={deity === bhajanDeity}
                     aria-label={`Show only ${bhajanDeity} bhajans`}
-                    onClick={() => setDeity(deity === bhajanDeity ? '' : bhajanDeity)}>
+                    onClick={() => chooseDeity(deity === bhajanDeity ? '' : bhajanDeity)}>
                     {bhajanDeity}
                   </button>
                 )}
@@ -241,7 +260,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     className={language === bhajanLanguage ? 'category-chip language active' : 'category-chip language'}
                     aria-pressed={language === bhajanLanguage}
                     aria-label={`Show only ${bhajanLanguage} bhajans`}
-                    onClick={() => setLanguage(language === bhajanLanguage ? '' : bhajanLanguage)}>
+                    onClick={() => chooseLanguage(language === bhajanLanguage ? '' : bhajanLanguage)}>
                     {bhajanLanguage}
                   </button>
                 )}
@@ -277,7 +296,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <button
                 aria-label='play sample'
                 className='button button-3d button-circle button-jumbo spaced'
-                onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0]))}>
+                onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0], name))}>
                 <Icon name={playing === cdbabySampleUrls[0] ? 'stop' : 'play'} />
               </button>
             )}
@@ -373,7 +392,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 <div key={sample}>
                   <button
                     aria-label='toggle sample'
-                    onClick={() => (playing === sample ? stop() : play(sample))}>
+                    onClick={() => (playing === sample ? stop() : play(sample, infoName))}>
                     <Icon name={playing === sample ? 'stop' : 'play'} />
                   </button>
                   {' Buy on Amazon (if available) '}
@@ -456,7 +475,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 allLabel='All deities'
                 value={deity}
                 counts={deityCounts}
-                onChange={setDeity}
+                onChange={chooseDeity}
               />
               <FilterSelect
                 id='language-filter'
@@ -464,7 +483,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 allLabel='All languages'
                 value={language}
                 counts={languageCounts}
-                onChange={setLanguage}
+                onChange={chooseLanguage}
               />
               {(language || deity) && (
                 <button
@@ -528,7 +547,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         </WindowScroller>
         <div className='report-problem'>
           <p>Wrong page, typo or missing bhajan?</p>
-          <PopupButton id='EVBTgcG5' className='report-problem-button'>
+          <PopupButton id='EVBTgcG5' className='report-problem-button' onReady={() => track('report_problem')} onSubmit={() => track('report_problem_submitted')}>
             <Icon name='flag' /> Report a bhajan problem
           </PopupButton>
         </div>

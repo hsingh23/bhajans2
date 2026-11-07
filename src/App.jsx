@@ -14,6 +14,7 @@ import Search from "./Search";
 import Profile from "./Profile";
 import RenderPage from "./RenderPage";
 import Icon from "./Icon";
+import { setUserState, track } from "./analytics";
 import Pay from "./Pay";
 import Footer from "./Footer";
 
@@ -61,6 +62,9 @@ const App = () => {
 
     // Subscribe to auth state changes to sync favorites on every login
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      // GA4 splits signed-in and signed-out visitors on this; the subscription
+      // part is refreshed again once syncUserData has read paid/{uid}.
+      setUserState({ uid: user?.uid, expiresOn: user ? localStorage.expiresOn : undefined });
       if (user) {
         handleUser(user);
       }
@@ -98,6 +102,7 @@ const App = () => {
   }, [allBhajans, show2025]);
 
   const addFavorite = useCallback((name) => {
+    track("add_to_favorites", { bhajan_name: name });
     setFavorites((prev) => {
       const updated = Object.assign({ [name]: 1 }, prev);
       const uid = auth?.currentUser?.uid;
@@ -107,6 +112,7 @@ const App = () => {
   }, []);
 
   const removeFavorite = useCallback((name) => {
+    track("remove_from_favorites", { bhajan_name: name });
     setFavorites((prev) => {
       const updated = { ...prev };
       delete updated[name];

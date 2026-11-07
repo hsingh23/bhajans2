@@ -23,7 +23,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
 import { schedulePdfPrefetch } from "./pdfPrefetch";
-import { loadGoogleAnalytics } from "./analytics";
+import { loadTagManager, track } from "./analytics";
 
 
 const queryClient = new QueryClient();
@@ -149,11 +149,13 @@ function doOnce() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ur, s);
   })();
-  loadGoogleAnalytics();
+  loadTagManager();
 }
 if (import.meta.env.PROD) {
   setTimeout(doOnce, 5 * 1000);
 }
+
+window.addEventListener("appinstalled", () => track("app_installed"));
 
 // Get a wake lock if possible
 let wakeLock = null;

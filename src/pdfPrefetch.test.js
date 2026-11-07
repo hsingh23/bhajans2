@@ -16,16 +16,15 @@ describe('whenUserInteracts', () => {
 
 describe('whenAnalyticsReady', () => {
   afterEach(() => {
-    delete window.gtag;
+    delete window.dataLayer;
     vi.useRealTimers();
   });
 
-  it('resolves when gtag.js answers its ready callback', async () => {
-    let ready;
-    window.gtag = vi.fn((command, id, field, cb) => (ready = cb));
+  it('resolves when Tag Manager runs the queued eventCallback', async () => {
     const promise = whenAnalyticsReady(60000);
-    expect(window.gtag).toHaveBeenCalledWith('get', 'G-X9L5Q47RLJ', 'client_id', expect.any(Function));
-    ready('client-123');
+    const queued = window.dataLayer.find((entry) => entry.event === 'analytics_ready_check');
+    expect(queued.eventCallback).toEqual(expect.any(Function));
+    queued.eventCallback('GTM-KF3RQXP');
     await expect(promise).resolves.toBeUndefined();
   });
 

@@ -1,6 +1,27 @@
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Header from "./Header";
+import { track, gaClientId } from "./analytics";
+import { setRefOnce } from "./firebase";
+
+// Shopify variant -> plan shown on the buttons below.
+export const PLANS = [
+  { variant: "37277000728740", plan: "1 year", label: "1 Years", value: 10 },
+  { variant: "37277000794276", plan: "5 years", label: "5 Years", value: 40 },
+  { variant: "37277000827044", plan: "10 years", label: "10 Years", value: 50 },
+];
+
+const startCheckout = ({ variant, plan, value }, uid) => {
+  track("begin_checkout", {
+    plan,
+    value,
+    currency: "USD",
+    items: [{ item_id: variant, item_name: `Sing with Amma ${plan}`, price: value, quantity: 1 }],
+  });
+  // Lets the Shopify webhook attribute the purchase to this visitor in GA4.
+  const clientId = gaClientId();
+  if (uid && clientId) setRefOnce(`messages/${uid}/gaClientId`, clientId);
+};
 
 const Pay = () => {
 
@@ -91,24 +112,16 @@ expiresOn: ${expiresOn}`);
               justifyContent: "space-around",
               margin: "20px",
             }}>
-            <Button
-              variant='contained'
-              color='primary'
-              href={`http://theammashop.com/cart/37277000728740:1?email=${email}`}>
-              1 Years - $10
-            </Button>
-            <Button
-              variant='contained'
-              color='primary'
-              href={`http://theammashop.com/cart/37277000794276:1?email=${email}`}>
-              5 Years - $40
-            </Button>
-            <Button
-              variant='contained'
-              color='primary'
-              href={`http://theammashop.com/cart/37277000827044:1?email=${email}`}>
-              10 Years - $50
-            </Button>
+            {PLANS.map((option) => (
+              <Button
+                key={option.variant}
+                variant='contained'
+                color='primary'
+                onClick={() => startCheckout(option, uid)}
+                href={`http://theammashop.com/cart/${option.variant}:1?email=${email}`}>
+                {option.label} - ${option.value}
+              </Button>
+            ))}
           </div>
           </>
         )}

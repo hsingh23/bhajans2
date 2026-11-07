@@ -53,7 +53,7 @@ export const whenNetworkQuiet = (quietMs = QUIET_MS) =>
   });
 
 /**
- * Resolves when gtag.js has loaded (Google Analytics 4),
+ * Resolves when Google Tag Manager has loaded and fired its tags,
  * or after `timeoutMs` so a blocked or missing analytics script can't stall
  * offline caching forever.
  */
@@ -67,12 +67,8 @@ export const whenAnalyticsReady = (timeoutMs = ANALYTICS_TIMEOUT_MS) =>
       resolve();
     };
     const timeout = setTimeout(done, timeoutMs);
-    const poll = () => {
-      if (settled) return;
-      if (typeof window.gtag === "function") onAnalyticsReady(done);
-      else setTimeout(poll, 500);
-    };
-    poll();
+    // Queued in the dataLayer; Tag Manager runs the callback once it has loaded.
+    onAnalyticsReady(done);
   });
 
 const whenIdle = () =>

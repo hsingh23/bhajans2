@@ -11,6 +11,8 @@ import Header from "./Header";
 import Loader from "./Loader";
 import { useGoBack } from "./useGoBack";
 import { groupSheetMusic, parseSheetMusicName } from "./sheetMusicGroups";
+import { track } from "./analytics";
+import { rememberOpened } from "./engagement";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
 const HEADER_AUTO_HIDE_MS = 3000;
@@ -183,6 +185,28 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   }, [pages]);
 
   const name = bhajans && bhajans[id] && bhajans[id].n;
+  const isSheetMusic = locationParam.includes(".pdf");
+
+  // One view event per bhajan opened (page turns don't remount this page).
+  useEffect(() => {
+    if (!name) return;
+    if (isSheetMusic) {
+      track("view_sheet_music", { bhajan_name: name, music_key: parseSheetMusicName(locationParam)?.key });
+    } else {
+      track("view_lyrics", {
+        bhajan_name: name,
+        book: locationParam.split("-")[0],
+        page_number: initialPage,
+        language: bhajans[id]?.lg,
+        deity: bhajans[id]?.d,
+      });
+    }
+  }, [name, isSheetMusic, locationParam, initialPage, bhajans, id]);
+
+  // Keep "recently opened" pointing at the page being read, for resuming later.
+  useEffect(() => {
+    if (name && !isSheetMusic) rememberOpened({ name, location: locationParam, page });
+  }, [name, isSheetMusic, locationParam, page]);
   const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
   const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
   
@@ -287,7 +311,11 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
                 <button
                   aria-label='play sample'
                   className='button button-circle'
-                  onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0]))}>
+                  onClick={() => {
+                    if (playing === cdbabySampleUrls[0]) return stop();
+                    track("play_sample", { bhajan_name: name });
+                    play(cdbabySampleUrls[0]);
+                  }}>
                   <span role='img' aria-label='music sample'>
                     <Icon name={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
                   </span>

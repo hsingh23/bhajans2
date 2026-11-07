@@ -23,6 +23,7 @@ import {
   Fade
 } from "@mui/material";
 import Header from "./Header";
+import { track } from "./analytics";
 
 // Query params Firebase adds to the return URL of an email link
 const LINK_PARAMS = ['apiKey', 'oobCode', 'mode', 'lang'];
@@ -150,6 +151,7 @@ const Login = () => {
     setLoading(true);
     try {
       const { user } = await signInWithEmailLink(auth, emailToUse, window.location.href);
+      track("login", { method: "magic_link" });
       window.localStorage.removeItem('emailForSignIn');
       showToast("Successfully signed in!", "success");
       linkPending.current = false;
@@ -210,6 +212,7 @@ const Login = () => {
     setLoading(true);
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
+      track("login", { method: "password" });
       showToast("Successfully signed in!", "success");
       // onAuthStateChanged doesn't fire if this user was already signed in
       await redirectOnLogin(user);
