@@ -1290,3 +1290,93 @@ mark {
   background: #2a2a2a;
   color: #e0e0e0;
 }
+
+/* HOME EXTRAS: resume reading and bhajan of the day */
+.home-extras {
+  display: grid;
+  gap: 10px;
+  margin: 0 10px 12px;
+}
+.home-eyebrow {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.resume-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.resume-item {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 260px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background: var(--card-bg);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.resume-item .icon {
+  color: var(--primary-color);
+}
+.resume-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.resume-page {
+  flex: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.bhajan-of-the-day {
+  display: grid;
+  gap: 2px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: #4a2400;
+  background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+  box-shadow: var(--shadow-sm);
+}
+.bhajan-of-the-day .home-eyebrow {
+  margin: 0;
+  color: #8a4b00;
+}
+.botd-name {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.botd-meta {
+  font-size: 14px;
+  color: #7a4a14;
+}
+[data-theme="dark"] .resume-item {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+[data-theme="dark"] .bhajan-of-the-day {
+  background: linear-gradient(135deg, #4a2f12, #5c3410);
+  color: #ffe0b2;
+}
+[data-theme="dark"] .bhajan-of-the-day .home-eyebrow,
+[data-theme="dark"] .botd-meta {
+  color: #ffcc80;
+}

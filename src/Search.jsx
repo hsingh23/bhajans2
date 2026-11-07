@@ -5,6 +5,7 @@ import { List, WindowScroller, AutoSizer } from 'react-virtualized';
 import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import { track } from './analytics';
+import { recentBhajans, bhajanOfTheDay, viewerPath } from './engagement';
 import { PopupButton } from '@typeform/embed-react';
 import Header from './Header';
 import { groupSheetMusic } from './sheetMusicGroups';
@@ -309,6 +310,24 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
 
   const myFavoritesMode = path.includes('/my-favorites');
   const favoriteCount = useMemo(() => bhajans.filter((b) => favorites[b?.n]).length, [bhajans, favorites]);
+
+  // Home extras: read once per visit so they don't jump around while browsing.
+  const [recent] = useState(() => recentBhajans());
+  const [favoritesAtVisit] = useState(() => favorites);
+  const resumeItems = useMemo(
+    () =>
+      recent
+        .map((item) => ({ ...item, path: viewerPath(bhajans, item) }))
+        .filter((item) => item.path)
+        .slice(0, 3),
+    [recent, bhajans]
+  );
+  const todaysPick = useMemo(
+    () => (bhajans.length ? bhajanOfTheDay(bhajans, { favorites: favoritesAtVisit, recent }) : null),
+    [bhajans, favoritesAtVisit, recent]
+  );
+  const todaysPath = todaysPick && viewerPath(bhajans, { name: todaysPick.bhajan.n, location: todaysPick.location });
+  const showHomeExtras = !myFavoritesMode && !filter && !language && !deity && (todaysPath || resumeItems.length > 0);
   const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
   const cdbabyLinks = infoSampleUrls.map((sample, i) => [sample, infoNames[i]]);
   const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
@@ -467,6 +486,42 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <span className='view-count'>{favoriteCount}</span>
             </Link>
           </div>
+          {showHomeExtras && (
+            <section className='home-extras' aria-label='For you'>
+              {resumeItems.length > 0 && (
+                <div className='resume'>
+                  <h2 className='home-eyebrow'>Continue where you left off</h2>
+                  <div className='resume-list'>
+                    {resumeItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className='resume-item'
+                        onClick={() => track('resume_reading', { bhajan_name: item.name })}>
+                        <Icon name='book' />
+                        <span className='resume-name'>{item.name}</span>
+                        {item.page && <span className='resume-page'>p. {item.page}</span>}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {todaysPath && (
+                <Link
+                  to={todaysPath}
+                  className='bhajan-of-the-day'
+                  onClick={() => track('open_bhajan_of_the_day', { bhajan_name: todaysPick.bhajan.n })}>
+                  <span className='home-eyebrow'>Bhajan of the day</span>
+                  <span className='botd-name'>{todaysPick.bhajan.n}</span>
+                  <span className='botd-meta'>
+                    {[todaysPick.reason && 'Picked for you', todaysPick.bhajan.d, todaysPick.bhajan.lg]
+                      .filter(Boolean)
+                      .join(' · ')}
+                  </span>
+                </Link>
+              )}
+            </section>
+          )}
           {hasCategories && (
             <div className='category-filters' role='group' aria-label='Filter bhajans'>
               <FilterSelect
