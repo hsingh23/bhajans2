@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
-import babel from "@rolldown/plugin-babel";
+import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import { readdirSync } from "node:fs";
 
@@ -18,9 +17,8 @@ export default defineConfig({
     __LYRICS_PDFS__: JSON.stringify(LYRICS_PDFS),
   },
   plugins: [
-    react(),
-    // plugin-react 6 no longer runs Babel itself; the React Compiler goes through @rolldown/plugin-babel.
-    babel({ presets: [reactCompilerPreset({ target: "19" })] }),
+    // React Compiler through plugin-react's native (oxc) port; no Babel in our build.
+    react({ compiler: { target: "19" } }),
     VitePWA({
       registerType: "autoUpdate",
       filename: "service-worker2.js",

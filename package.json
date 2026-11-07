@@ -1,6 +1,6 @@
 {
   "name": "bhajans",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -19,11 +19,9 @@
     "react-virtualized": "9.22.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
     "@commitlint/cli": "^21",
     "@commitlint/config-conventional": "^21",
     "@playwright/test": "^1.65.0",
-    "@rolldown/plugin-babel": "^0.3.0",
     "@testing-library/jest-dom": "^7",
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
@@ -32,7 +30,6 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6",
     "@vitest/coverage-v8": "^5",
-    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
@@ -40,6 +37,7 @@
     "husky": "^9.1.7",
     "jsdom": "^31",
     "msw": "^3",
+    "oxc-transform-react": "^0.157.0",
     "prettier": "^3.9.10",
     "standard-version": "^9.5.0",
     "typescript": "^7",
