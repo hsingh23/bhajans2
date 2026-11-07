@@ -37,11 +37,15 @@ describe('whenAnalyticsReady', () => {
 });
 
 describe('prefetchLyricsPdfs', () => {
-  let cached;
+  let stored;
   beforeEach(() => {
-    cached = new Set(['/pdfs/vol1.pdf']);
+    localStorage.clear();
+    stored = new Map([['/pdfs/vol1.pdf', 'old copy']]);
     globalThis.caches = {
-      open: vi.fn(async () => ({ match: async (url) => cached.has(url) })),
+      open: vi.fn(async () => ({
+        match: async (url) => stored.get(url),
+        put: async (url, response) => stored.set(url, response.body),
+      })),
     };
     Object.defineProperty(navigator, 'connection', { configurable: true, value: undefined });
   });
@@ -49,34 +53,47 @@ describe('prefetchLyricsPdfs', () => {
     delete globalThis.caches;
   });
 
-  const okFetch = () =>
-    vi.fn(async (url) => {
-      cached.add(url);
-      return { ok: true, arrayBuffer: async () => new ArrayBuffer(0) };
-    });
+  const okFetch = () => vi.fn(async (source) => ({ ok: true, body: `fresh ${source}` }));
 
-  it('fetches only the PDFs not cached yet, one at a time, at low priority', async () => {
+  it('downloads missing books once, at low priority, under their plain URL', async () => {
     const fetchImpl = okFetch();
-    const fetched = await prefetchLyricsPdfs(['/pdfs/vol1.pdf', '/pdfs/vol2.pdf', '/pdfs/vol3.pdf'], { fetchImpl });
-    expect(fetched).toEqual(['/pdfs/vol2.pdf', '/pdfs/vol3.pdf']);
-    expect(fetchImpl).toHaveBeenCalledTimes(2);
-    expect(fetchImpl.mock.calls[0][1]).toMatchObject({ priority: 'low' });
+    const entries = [{ url: '/pdfs/vol2.pdf', rev: 'aaa' }, { url: '/pdfs/vol3.pdf', rev: 'bbb' }];
+    expect(await prefetchLyricsPdfs(entries, { fetchImpl })).toEqual(['/pdfs/vol2.pdf', '/pdfs/vol3.pdf']);
+    expect(fetchImpl.mock.calls[0]).toEqual(['/pdfs/vol2.pdf?rev=aaa', { priority: 'low', credentials: 'same-origin' }]);
+    expect(stored.get('/pdfs/vol2.pdf')).toBe('fresh /pdfs/vol2.pdf?rev=aaa');
     expect(caches.open).toHaveBeenCalledWith(PDF_CACHE);
+    // Second visit: nothing to do.
+    expect(await prefetchLyricsPdfs(entries, { fetchImpl })).toEqual([]);
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 
-  it('keeps going after a failed download', async () => {
-    const fetchImpl = vi
-      .fn()
-      .mockRejectedValueOnce(new Error('offline'))
-      .mockResolvedValue({ ok: true, arrayBuffer: async () => new ArrayBuffer(0) });
-    const fetched = await prefetchLyricsPdfs(['/pdfs/vol2.pdf', '/pdfs/vol3.pdf'], { fetchImpl });
-    expect(fetched).toEqual(['/pdfs/vol3.pdf']);
+  it('keeps books cached before revisions were recorded, without downloading again', async () => {
+    const fetchImpl = okFetch();
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r1' }], { fetchImpl })).toEqual([]);
+    expect(fetchImpl).not.toHaveBeenCalled();
+    expect(stored.get('/pdfs/vol1.pdf')).toBe('old copy');
+  });
+
+  it('replaces a book whose content changed', async () => {
+    const fetchImpl = okFetch();
+    await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r1' }], { fetchImpl });
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r2' }], { fetchImpl })).toEqual(['/pdfs/vol1.pdf']);
+    expect(stored.get('/pdfs/vol1.pdf')).toBe('fresh /pdfs/vol1.pdf?rev=r2');
+  });
+
+  it('keeps the old copy when a refresh fails', async () => {
+    await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r1' }], { fetchImpl: okFetch() });
+    const failing = vi.fn().mockRejectedValue(new Error('offline'));
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r2' }], { fetchImpl: failing })).toEqual([]);
+    expect(stored.get('/pdfs/vol1.pdf')).toBe('old copy');
+    // It tries again next time.
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: 'r2' }], { fetchImpl: okFetch() })).toEqual(['/pdfs/vol1.pdf']);
   });
 
   it('skips everything when the visitor asked to save data', async () => {
     Object.defineProperty(navigator, 'connection', { configurable: true, value: { saveData: true } });
     const fetchImpl = okFetch();
-    expect(await prefetchLyricsPdfs(['/pdfs/vol2.pdf'], { fetchImpl })).toEqual([]);
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol2.pdf', rev: 'a' }], { fetchImpl })).toEqual([]);
     expect(fetchImpl).not.toHaveBeenCalled();
   });
 });

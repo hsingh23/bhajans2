@@ -7,6 +7,23 @@ import { onAnalyticsReady } from "./analytics";
 // never competes with the first screen.
 
 export const PDF_CACHE = "pdfs-cache";
+// { url: rev } for the copies in PDF_CACHE, so changed books get refreshed.
+const REVISIONS_KEY = "lyricsPdfRevisions";
+
+const readRevisions = () => {
+  try {
+    return JSON.parse(localStorage.getItem(REVISIONS_KEY) || "{}") || {};
+  } catch {
+    return {};
+  }
+};
+const saveRevisions = (revisions) => {
+  try {
+    localStorage.setItem(REVISIONS_KEY, JSON.stringify(revisions));
+  } catch {
+    // Without the record a book may be fetched again later; nothing breaks.
+  }
+};
 const QUIET_MS = 2000;
 const ANALYTICS_TIMEOUT_MS = 20000;
 const CONTROLLER_TIMEOUT_MS = 10000;
@@ -101,30 +118,64 @@ const onSlowOrMeteredConnection = () => {
 };
 
 /**
- * Fetches each PDF that isn't cached yet, one at a time and at low priority.
- * The service worker's CacheFirst route for /pdfs/ stores each response.
- * Returns the URLs it fetched.
+ * Makes sure every lyrics book is in the offline cache at its current
+ * revision. Entries are { url, rev } (a plain URL string means "any rev").
+ * - Cached with the same rev, or cached before revs were recorded: kept.
+ * - Missing or changed: downloaded at low priority as `url?rev=…` (which
+ *   bypasses the service worker's cached copy) and stored under `url`,
+ *   replacing the old copy only once the new one has fully arrived.
+ * Returns the URLs it downloaded.
  */
-export const prefetchLyricsPdfs = async (urls, { fetchImpl = fetch } = {}) => {
+export const prefetchLyricsPdfs = async (entries, { fetchImpl = fetch } = {}) => {
   if (!("caches" in window) || onSlowOrMeteredConnection()) return [];
   const cache = await caches.open(PDF_CACHE);
+  const revisions = readRevisions();
   const fetched = [];
-  for (const url of urls) {
-    if (await cache.match(url)) continue;
+  for (const entry of entries) {
+    const { url, rev } = typeof entry === "string" ? { url: entry, rev: undefined } : entry;
+    const cached = await cache.match(url);
+    if (cached && (!rev || revisions[url] === rev)) continue;
+    if (cached && rev && revisions[url] === undefined) {
+      // Cached before revisions were recorded (the books haven't changed since).
+      revisions[url] = rev;
+      saveRevisions(revisions);
+      continue;
+    }
     try {
+      const source = rev ? `${url}?rev=${rev}` : url;
       // @ts-ignore: fetch priority hints are not in every DOM typing yet
-      const response = await fetchImpl(url, { priority: "low", credentials: "same-origin" });
+      const response = await fetchImpl(source, { priority: "low", credentials: "same-origin" });
       if (response?.ok) {
-        // Read the body so the service worker finishes writing it to the cache.
-        await response.arrayBuffer();
+        await cache.put(url, response);
+        if (rev) {
+          revisions[url] = rev;
+          saveRevisions(revisions);
+        }
         fetched.push(url);
       }
     } catch {
-      // Offline or interrupted: the next visit tries again.
+      // Offline or interrupted: the old copy (if any) stays; the next visit tries again.
     }
     await whenIdle();
   }
+  await keepStorageForInstalledApp();
   return fetched;
+};
+
+/**
+ * Asks the browser not to evict this site's storage under disk pressure, for
+ * people who installed the app (they rely on it offline). Chrome decides
+ * silently; Firefox may ask the person.
+ */
+const keepStorageForInstalledApp = async () => {
+  try {
+    const installed = window.matchMedia?.("(display-mode: standalone)")?.matches || navigator.standalone;
+    if (installed && navigator.storage?.persist && !(await navigator.storage.persisted())) {
+      await navigator.storage.persist();
+    }
+  } catch {
+    // Persistence is best effort.
+  }
 };
 
 /** Waits for the right moment, then caches the lyrics PDFs. Production only. */
