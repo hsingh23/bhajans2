@@ -1,19 +1,15 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 import { VitePWA } from "vite-plugin-pwa";
 
-const ReactCompilerConfig = {
-  target: "19",
-};
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      babel: {
-        plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
-      },
-    }),
+    react(),
+    // plugin-react 6 no longer runs Babel itself; the React Compiler goes through @rolldown/plugin-babel.
+    babel({ presets: [reactCompilerPreset({ target: "19" })] }),
     VitePWA({
       registerType: "autoUpdate",
       filename: "service-worker2.js",
@@ -77,10 +73,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          firebase: ['firebase/app', 'firebase/auth', 'firebase/database', 'firebase/functions'],
-          mui: ['@mui/material', '@emotion/react', '@emotion/styled'],
+        // Rolldown (Vite 8) only accepts the function form.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) return 'vendor';
+          if (/node_modules\/(@firebase|firebase)\//.test(id)) return 'firebase';
+          if (/node_modules\/(@mui|@emotion)\//.test(id)) return 'mui';
+          return undefined;
         },
       },
     },
