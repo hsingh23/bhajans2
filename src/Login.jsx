@@ -55,7 +55,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [isPasswordLogin, setIsPasswordLogin] = useState(false);
-  const [confirmEmail, setConfirmEmail] = useState(false);
+  // A sign-in link opened without a saved address asks for the email to confirm it.
+  const [confirmEmail, setConfirmEmail] = useState(
+    () => isSignInWithEmailLink(auth, window.location.href) && !window.localStorage.getItem('emailForSignIn')
+  );
   const [toast, setToast] = useState({ open: false, message: "", severity: "info" });
 
   const showToast = (message, severity = "info") => {
@@ -185,11 +188,9 @@ const Login = () => {
       window.sessionStorage.setItem('magicLinkSignIn', '1');
       let emailForSignIn = window.localStorage.getItem('emailForSignIn');
 
+      // Without a saved address, confirmEmail starts true and the form asks for it.
       if (emailForSignIn) {
         setTimeout(() => handleCompleteSignIn(emailForSignIn), 0);
-      } else {
-        // If email is missing, we need the user to provide it for confirmation
-        setConfirmEmail(true);
       }
     }
 
