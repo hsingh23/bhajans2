@@ -49,3 +49,28 @@ export const groupSheetMusic = (files = []) => {
   }));
   return { groups: result, other };
 };
+
+/**
+ * The sheet music file to open for a bhajan: the reader's remembered key for
+ * the default file's song when that key exists, otherwise the default file.
+ * `rememberedKey(song)` returns a key name such as "Db", or undefined.
+ */
+export const preferredSheetFile = (files = [], rememberedKey) => {
+  const fallback = files[0];
+  const first = fallback && parseSheetMusicName(fallback);
+  const wanted = first && rememberedKey(first.song);
+  if (!wanted || wanted === first.key) return fallback;
+  const match = files.map(parseSheetMusicName).find((p) => p && p.song === first.song && p.key === wanted);
+  return match ? match.file : fallback;
+};
+
+/**
+ * The key one step lower (-1) or higher (+1) than `file` in a song's
+ * pitch-sorted keys, or null at either end (no wrap-around).
+ */
+export const stepKey = (keys = [], file, direction) => {
+  const byPitch = [...keys].sort((a, b) => a.pitch - b.pitch || a.minor - b.minor);
+  const index = byPitch.findIndex((k) => k.file === file);
+  if (index < 0) return null;
+  return byPitch[index + direction] || null;
+};

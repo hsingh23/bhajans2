@@ -10,7 +10,18 @@ import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
 import Loader from "./Loader";
 import { useGoBack } from "./useGoBack";
-import { groupSheetMusic, parseSheetMusicName } from "./sheetMusicGroups";
+import { groupSheetMusic, parseSheetMusicName, stepKey } from "./sheetMusicGroups";
+import { useViewerPrefs, rememberedSheetKey } from "./prefs";
+import { useMusicianMode, useSongMusic, SongMusicSection } from "./MusicianMode";
+import { musicChips } from "./MusicChips";
+
+// "G · Mohanam": the key and raga, short enough for a floating button.
+const musicPillText = (entry, music) => {
+  const chips = musicChips(entry, music);
+  const shruti = chips.find((c) => c.kind === "shruti")?.text.split(" · ")[0];
+  const raga = chips.find((c) => c.kind === "raga")?.text;
+  return [shruti, raga].filter(Boolean).join(" · ") || "Musician";
+};
 import { track } from "./analytics";
 import { rememberOpened } from "./engagement";
 
@@ -275,8 +286,11 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   }, []);
 
   const goBack = useGoBack();
-  // A key change remounts the page; keep the top bar as the reader left it.
-  const [headerHidden, setHeaderHidden] = useState(Boolean(navState?.headerHidden));
+  const viewerPrefs = useViewerPrefs();
+  const { setHeaderHidden: saveHeaderHidden, sheetKeys, rememberSheetKey } = viewerPrefs;
+  // The top bar stays as the reader last left it, on this song and the next.
+  // A key change passes it along too, so it holds even before prefs are read.
+  const [headerHidden, setHeaderHidden] = useState(() => Boolean(navState?.headerHidden ?? viewerPrefs.headerHidden));
 
   // Open at the line where the song starts; every page turn after that starts
   // at the top of the new page instead of wherever the last one was scrolled.
@@ -296,7 +310,8 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     scrollToPageFraction(wrapperRef.current, fraction, headerHidden ? 0 : HEADER_HEIGHT);
   }, [shownPage, initialPage, isLyrics, indexLoaded, startFraction, headerHidden]);
   const [headerToggled, setHeaderToggled] = useState(false);
-  const shouldAutoHide = isPhoneSized(width, height) && !headerToggled;
+  // Phones hide the bar after a moment, unless the reader has chosen for themselves.
+  const shouldAutoHide = isPhoneSized(width, height) && !headerToggled && viewerPrefs.headerHidden === undefined;
 
   useEffect(() => {
     if (!shouldAutoHide) return;
@@ -309,6 +324,32 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     ? groupSheetMusic(bhajans?.[id]?.sm).groups.find((group) => group.song === currentSheet.song)?.keys ?? []
     : [];
   const [keysOpen, setKeysOpen] = useState(false);
+  const lowerKey = currentSheet ? stepKey(keyChoices, locationParam, -1) : null;
+  const higherKey = currentSheet ? stepKey(keyChoices, locationParam, 1) : null;
+
+  // Reopening this song from search opens the key the reader was last using.
+  const currentSong = currentSheet?.song;
+  const currentKey = currentSheet?.key;
+  useEffect(() => {
+    if (currentSong && currentKey && rememberedSheetKey(sheetKeys, currentSong) !== currentKey) {
+      rememberSheetKey(currentSong, currentKey);
+    }
+  }, [currentSong, currentKey, sheetKeys, rememberSheetKey]);
+
+  // Musician mode marks the PDF in the key the recording is sung in. PDFs are named by the
+  // arranger's key root, which is not always Sa (hindolam is often written as a minor key whose
+  // fifth is Sa), so prefer the data's pdf_pc and fall back to Sa.
+  const songMusic = useSongMusic(name);
+  const { music } = useMusicianMode();
+  const sh = songMusic?.sh;
+  const recordingPc = Number.isInteger(sh?.pdf_pc) ? sh.pdf_pc : Number.isInteger(sh?.pc) ? sh.pc : null;
+  const [musicOpen, setMusicOpen] = useState(false);
+  useEffect(() => {
+    if (!musicOpen) return;
+    const closeOnEscape = (event) => event.key === "Escape" && setMusicOpen(false);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [musicOpen]);
   useEffect(() => {
     if (!keysOpen) return;
     const closeOnEscape = (event) => event.key === "Escape" && setKeysOpen(false);
@@ -326,9 +367,27 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     });
   };
 
+  // "-" and "=" / "+" step the key down or up on a keyboard.
+  useEffect(() => {
+    if (!lowerKey && !higherKey) return;
+    const onKeyDown = (event) => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+      const next = event.key === "-" ? lowerKey : event.key === "=" || event.key === "+" ? higherKey : null;
+      if (!next) return;
+      event.preventDefault();
+      changeKey(next.file);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  });
+
   const toggleHeader = () => {
+    const hidden = !headerHidden;
     setHeaderToggled(true);
-    setHeaderHidden((hidden) => !hidden);
+    setHeaderHidden(hidden);
+    saveHeaderHidden(hidden);
   };
 
   return (
@@ -376,33 +435,87 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
         )}
         {keyChoices.length > 1 && (
           <>
-            <button
-              type='button'
-              className='viewer-key'
-              aria-label={`Change key, now ${currentSheet.key}`}
-              aria-expanded={keysOpen}
-              aria-controls='viewer-key-menu'
-              onClick={() => setKeysOpen((open) => !open)}>
-              <Icon name='music' />
-              <span>{currentSheet.key}</span>
-            </button>
+            <div className='viewer-keybar' role='group' aria-label='Key'>
+              <button
+                type='button'
+                className='viewer-key-step'
+                aria-label='Lower key'
+                title={lowerKey ? `Lower key: ${lowerKey.key} (-)` : 'Lowest key'}
+                disabled={!lowerKey}
+                onClick={() => lowerKey && changeKey(lowerKey.file)}>
+                <span aria-hidden='true'>−</span>
+              </button>
+              <button
+                type='button'
+                className='viewer-key'
+                aria-label={`Change key, now ${currentSheet.key}`}
+                aria-expanded={keysOpen}
+                aria-controls='viewer-key-menu'
+                onClick={() => setKeysOpen((open) => !open)}>
+                <Icon name='music' />
+                <span>{currentSheet.key}</span>
+              </button>
+              <button
+                type='button'
+                className='viewer-key-step'
+                aria-label='Higher key'
+                title={higherKey ? `Higher key: ${higherKey.key} (+)` : 'Highest key'}
+                disabled={!higherKey}
+                onClick={() => higherKey && changeKey(higherKey.file)}>
+                <span aria-hidden='true'>+</span>
+              </button>
+            </div>
             {keysOpen && (
               <>
                 <div className='viewer-key-backdrop' onClick={() => setKeysOpen(false)} />
                 <div id='viewer-key-menu' className='viewer-key-menu' role='menu' aria-label='Keys'>
-                  {keyChoices.map(({ file, key }) => (
-                    <button
-                      key={file}
-                      type='button'
-                      role='menuitemradio'
-                      aria-checked={file === locationParam}
-                      className={file === locationParam ? "current" : undefined}
-                      onClick={() => changeKey(file)}>
-                      {key}
-                    </button>
-                  ))}
+                  {keyChoices.map(({ file, key, pitch }) => {
+                    const recording = pitch === recordingPc;
+                    return (
+                      <button
+                        key={file}
+                        type='button'
+                        role='menuitemradio'
+                        aria-checked={file === locationParam}
+                        aria-label={recording ? `${key} · recording` : undefined}
+                        title={recording ? "The key the recording is sung in" : undefined}
+                        className={[file === locationParam && "current", recording && "recording"].filter(Boolean).join(" ") || undefined}
+                        onClick={() => changeKey(file)}>
+                        {key}
+                      </button>
+                    );
+                  })}
+                  {recordingPc !== null && keyChoices.some((k) => k.pitch === recordingPc) && (
+                    <p className='viewer-key-legend'>
+                      <span className='viewer-key-dot' aria-hidden='true' /> recording
+                    </p>
+                  )}
                 </div>
               </>
+            )}
+          </>
+        )}
+        {songMusic && (
+          <>
+            <button
+              type='button'
+              className='viewer-music'
+              aria-label='For musicians: key, raga and taal'
+              aria-expanded={musicOpen}
+              aria-haspopup='dialog'
+              onClick={() => setMusicOpen(true)}>
+              <Icon name='music-note' />
+              <span>{musicPillText(songMusic, music)}</span>
+            </button>
+            {musicOpen && (
+              <div className='modal-window open viewer-music-dialog' onClick={() => setMusicOpen(false)} role='dialog' aria-modal='true' aria-label={`For musicians: ${name}`}>
+                <div onClick={(e) => e.stopPropagation()}>
+                  <button type='button' className='modal-close' autoFocus aria-label='close musician details' onClick={() => setMusicOpen(false)}>
+                    Close
+                  </button>
+                  <SongMusicSection name={name} />
+                </div>
+              </div>
             )}
           </>
         )}

@@ -20,6 +20,7 @@
 //   begin_checkout    { plan, value, currency, items }
 //   report_problem / report_problem_submitted {}
 //   notification_prompt { result: "granted" | "denied" | "dismissed" }
+//   toggle_musician_mode { musician_mode: "on" | "off" }
 //   app_installed     {}
 // purchase is sent server-side by the Shopify webhook (Measurement Protocol).
 

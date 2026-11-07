@@ -37,6 +37,19 @@
         ".write": "auth.uid === $userId"
       }
     },
+    "prefs": {
+      "$userId": {
+        ".read": "auth.uid === $userId",
+        ".write": "auth.uid === $userId",
+        "musicianMode": { ".validate": "newData.isBoolean()" },
+        "viewer": {
+          "headerHidden": { ".validate": "newData.isBoolean()" },
+          "sheetKeys": {
+            "$song": { ".validate": "newData.isString() && newData.val().length <= 8" }
+          }
+        }
+      }
+    },
     "satsang": {
       "$userId": {
         ".read": "auth.uid === $userId",

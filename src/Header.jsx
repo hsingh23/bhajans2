@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import DarkModeToggle from './DarkModeToggle';
+import { MusicianModeToggle } from './MusicianMode';
 import { useGoBack } from './useGoBack';
 
 const Header = ({ children = null, back = false, title = "", rightContent = null }) => {
@@ -30,6 +31,7 @@ const Header = ({ children = null, back = false, title = "", rightContent = null
 
       <nav className="header-right">
         {rightContent}
+        <MusicianModeToggle className="button button-circle header-musician" />
         <DarkModeToggle className="button button-circle header-darkmode" />
       </nav>
     </div>

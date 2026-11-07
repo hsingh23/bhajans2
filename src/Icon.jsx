@@ -12,6 +12,12 @@ const PATHS = {
       <circle cx='17' cy='16' r='3' />
     </>
   ),
+  'music-note': (
+    <>
+      <path d='M12 18V3.5c1.2 2.3 3.6 3.3 6 4' />
+      <circle cx='8.5' cy='18' r='3.5' />
+    </>
+  ),
   play: <path d='M7 4.5v15a.8.8 0 0 0 1.2.7l12-7.5a.8.8 0 0 0 0-1.4l-12-7.5A.8.8 0 0 0 7 4.5z' />,
   stop: <rect x='5.5' y='5.5' width='13' height='13' rx='2' />,
   cart: (

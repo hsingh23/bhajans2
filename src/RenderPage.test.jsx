@@ -7,6 +7,10 @@ import RenderPage from './RenderPage';
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MusicianModeProvider } from "./MusicianMode";
+import { setPref, getPrefs } from "./prefs";
+import songsFixture from "./__fixtures__/bhajan-music.json";
+import referenceFixture from "./__fixtures__/music-reference.json";
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -117,6 +121,7 @@ const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan', el
     <ThemeProvider>
       <MUIThemeWrapper>
         <QueryClientProvider client={queryClient}>
+          <MusicianModeProvider>
           <MemoryRouter initialEntries={entries} initialIndex={entries.length - 1}>
             <Routes>
               <Route 
@@ -133,6 +138,7 @@ const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan', el
               />
             </Routes>
           </MemoryRouter>
+          </MusicianModeProvider>
         </QueryClientProvider>
       </MUIThemeWrapper>
     </ThemeProvider>
@@ -574,5 +580,150 @@ describe('opening at the line where the song starts', () => {
   it('measures from the top of the window once the header is hidden', async () => {
     renderRenderPage({ bhajans }, [{ pathname: route, state: { headerHidden: true } }]);
     await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 750));
+  });
+});
+
+describe('quick key change', () => {
+  // C, Db, Eb and Bb only: stepping skips the missing keys.
+  const gappy = { 3: { n: 'Fragrance', sm: ['FragranceBb.pdf', 'FragranceC.pdf', 'FragranceEb.pdf', 'FragranceDb.pdf'] } };
+  const openAt = (file) => renderRenderPage({ bhajans: gappy }, `/pdf/${file}/3/Fragrance`);
+  const opened = (file) => [`/pdf/${file}/3/Fragrance`, { replace: true, state: { headerHidden: false, entryPoint: true } }];
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it('steps to the next available key down and up', () => {
+    openAt('FragranceEb.pdf');
+    fireEvent.click(screen.getByRole('button', { name: 'Lower key' }));
+    expect(mockNavigate).toHaveBeenLastCalledWith(...opened('FragranceDb.pdf'));
+    fireEvent.click(screen.getByRole('button', { name: 'Higher key' }));
+    expect(mockNavigate).toHaveBeenLastCalledWith(...opened('FragranceBb.pdf'));
+  });
+
+  it('stops at the lowest and highest keys', () => {
+    const { unmount } = openAt('FragranceC.pdf');
+    expect(screen.getByRole('button', { name: 'Lower key' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Higher key' })).toBeEnabled();
+    unmount();
+
+    openAt('FragranceBb.pdf');
+    expect(screen.getByRole('button', { name: 'Higher key' })).toBeDisabled();
+    fireEvent.keyDown(window, { key: '=' });
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it('steps with - and = or + on a keyboard, but not while typing or zooming', () => {
+    openAt('FragranceDb.pdf');
+    fireEvent.keyDown(window, { key: '-' });
+    expect(mockNavigate).toHaveBeenLastCalledWith(...opened('FragranceC.pdf'));
+    fireEvent.keyDown(window, { key: '+' });
+    expect(mockNavigate).toHaveBeenLastCalledWith(...opened('FragranceEb.pdf'));
+    mockNavigate.mockClear();
+
+    fireEvent.keyDown(window, { key: '=', ctrlKey: true });
+    const input = document.createElement('input');
+    document.body.appendChild(input);
+    fireEvent.keyDown(input, { key: '-' });
+    input.remove();
+    expect(mockNavigate).not.toHaveBeenCalled();
+  });
+
+  it('remembers the key being read for the next time the song opens', () => {
+    openAt('FragranceEb.pdf');
+    expect(getPrefs().viewer.sheetKeys).toEqual({ Fragrance: 'Eb' });
+  });
+
+  it('marks the key of the recording when musician mode is on', async () => {
+    global.fetch = vi.fn((url) =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(url === '/bhajan-music.json' ? songsFixture : referenceFixture),
+      })
+    );
+    setPref('musicianMode', true);
+    const kali = { 5: { n: 'kali kali kali (gujarati)', sm: ['KaliKaliKaliBb.pdf', 'KaliKaliKaliC.pdf', 'KaliKaliKaliG.pdf'] } };
+    renderRenderPage({ bhajans: kali }, '/pdf/KaliKaliKaliBb.pdf/5/kali%20kali%20kali');
+
+    fireEvent.click(await screen.findByRole('button', { name: 'For musicians: key, raga and taal' }));
+    expect(await screen.findByRole('region', { name: 'For musicians' })).toHaveTextContent('G A B D E');
+    fireEvent.click(screen.getByRole('button', { name: 'close musician details' }));
+
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Bb' }));
+    expect(screen.getByRole('menuitemradio', { name: 'G · recording' })).toBeInTheDocument();
+    expect(screen.getByRole('menuitemradio', { name: 'C' })).toBeInTheDocument();
+  });
+
+  it('marks the PDF named for the arranger\'s key when Sa is not the key root', async () => {
+    // Hindolam on F# is written as B minor (its fifth is Sa), so the recording's PDF is Bm, not F#m.
+    const songs = { 'atulya tayute': { sh: { pc: 6, k: '4.5', c: 0.96, src: 'box', pdf_pc: 11 }, r: [{ id: 'mohanam', sec: 'all', c: 0.9 }], c: 0.9 } };
+    global.fetch = vi.fn((url) =>
+      Promise.resolve({ ok: true, json: () => Promise.resolve(url === '/bhajan-music.json' ? songs : referenceFixture) })
+    );
+    setPref('musicianMode', true);
+    const song = { 7: { n: 'atulya tayute', sm: ['AtulyaTayuteBm.pdf', 'AtulyaTayuteCm.pdf', 'AtulyaTayuteFsharpm.pdf'] } };
+    renderRenderPage({ bhajans: song }, '/pdf/AtulyaTayuteCm.pdf/7/atulya%20tayute');
+
+    await screen.findByRole('button', { name: 'For musicians: key, raga and taal' });
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Cm' }));
+    expect(await screen.findByRole('menuitemradio', { name: 'Bm · recording' })).toBeInTheDocument();
+    expect(screen.getByRole('menuitemradio', { name: 'F#m' })).toBeInTheDocument();
+  });
+
+  it('shows no musician button or recording mark while the mode is off', () => {
+    const kali = { 5: { n: 'kali kali kali (gujarati)', sm: ['KaliKaliKaliBb.pdf', 'KaliKaliKaliG.pdf'] } };
+    renderRenderPage({ bhajans: kali }, '/pdf/KaliKaliKaliBb.pdf/5/kali%20kali%20kali');
+    expect(screen.queryByRole('button', { name: /For musicians/ })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Bb' }));
+    expect(screen.getByRole('menuitemradio', { name: 'G' })).toBeInTheDocument();
+  });
+});
+
+describe('remembered top bar', () => {
+  const setViewport = ([width, height]) => {
+    Object.defineProperty(window, 'innerWidth', { configurable: true, writable: true, value: width });
+    Object.defineProperty(window, 'innerHeight', { configurable: true, writable: true, value: height });
+  };
+  const originalSize = [window.innerWidth, window.innerHeight];
+  const isHidden = (container) => container.querySelector('.App').classList.contains('header-hidden');
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.useFakeTimers();
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+    setViewport(originalSize);
+    localStorage.clear();
+  });
+
+  it('stays hidden when the reader opens a different song', () => {
+    setViewport([1024, 768]);
+    const first = renderRenderPage();
+    fireEvent.click(screen.getByRole('button', { name: /hide top bar/i }));
+    expect(getPrefs().viewer.headerHidden).toBe(true);
+    first.unmount();
+
+    const { container } = renderRenderPage({}, '/pdf/vol2-5/1/Another%20Bhajan');
+    expect(isHidden(container)).toBe(true);
+  });
+
+  it('keeps the bar on a phone when the reader chose to show it', () => {
+    setPref('viewer/headerHidden', false);
+    setViewport([390, 844]);
+    const { container } = renderRenderPage();
+    act(() => vi.advanceTimersByTime(10000));
+    expect(isHidden(container)).toBe(false);
+  });
+
+  it('does not save the automatic phone hide as a choice', () => {
+    setViewport([390, 844]);
+    const { container } = renderRenderPage();
+    act(() => vi.advanceTimersByTime(3000));
+    expect(isHidden(container)).toBe(true);
+    expect(getPrefs().viewer?.headerHidden).toBeUndefined();
   });
 });
