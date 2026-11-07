@@ -16,6 +16,20 @@ import { rememberOpened } from "./engagement";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
 const HEADER_AUTO_HIDE_MS = 3000;
+const HEADER_HEIGHT = 64;
+// The PDF page itself; the loading animation draws on a canvas of its own.
+const PDF_CANVAS = ".invertible-pdf-container canvas";
+
+/**
+ * Scrolls the window so the point `fraction` of the way down the rendered
+ * page sits just below the header (`headerOffset` px tall).
+ */
+const scrollToPageFraction = (wrapper, fraction, headerOffset) => {
+  const canvas = wrapper?.querySelector(PDF_CANVAS);
+  if (!canvas) return;
+  const { top, height } = canvas.getBoundingClientRect();
+  window.scrollTo(0, Math.max(0, Math.round(top + window.scrollY + fraction * height - headerOffset)));
+};
 // Phones in either orientation: narrow in portrait, short in landscape.
 const isPhoneSized = (width, height) => width < 768 || height <= 500;
 
@@ -158,7 +172,19 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   }, []);
 
   const pagesRef = useRef(0);
-  const onPageComplete = useCallback((p) => setPage(pagesRef.current && p > pagesRef.current ? pagesRef.current : p), []);
+  // The page the PDF viewer last drew. react-pdf-js has no page-drawn
+  // callback, but it sets the canvas's height as it starts drawing a page.
+  const [shownPage, setShownPage] = useState(0);
+  const wrapperRef = useRef(null);
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper || typeof MutationObserver !== "function") return;
+    const observer = new MutationObserver((records) => {
+      if (records.some((record) => record.target instanceof Element && record.target.matches(PDF_CANVAS))) setShownPage(page);
+    });
+    observer.observe(wrapper, { subtree: true, attributes: true, attributeFilter: ["height"] });
+    return () => observer.disconnect();
+  }, [page]);
 
   useEffect(() => {
     if (searchParams.get("page") === String(page)) return;
@@ -251,6 +277,24 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   const goBack = useGoBack();
   // A key change remounts the page; keep the top bar as the reader left it.
   const [headerHidden, setHeaderHidden] = useState(Boolean(navState?.headerHidden));
+
+  // Open at the line where the song starts; every page turn after that starts
+  // at the top of the new page instead of wherever the last one was scrolled.
+  const scrolledPageRef = useRef(0);
+  const isLyrics = !locationParam.includes(".pdf");
+  // The index arrives after the viewer mounts, so wait for it before the first scroll.
+  const indexLoaded = Boolean(bhajans && Object.keys(bhajans).length);
+  // Where the song starts on its first page, as a fraction of the page height
+  // (see create-index/song-starts.py). Missing means the top.
+  const startFraction = (isLyrics && bhajans?.[id]?.lo?.[locationParam]) || 0;
+  useEffect(() => {
+    if (!shownPage || shownPage === scrolledPageRef.current) return;
+    const opening = scrolledPageRef.current === 0 && shownPage === initialPage;
+    if (opening && isLyrics && !indexLoaded) return;
+    scrolledPageRef.current = shownPage;
+    const fraction = opening ? startFraction : 0;
+    scrollToPageFraction(wrapperRef.current, fraction, headerHidden ? 0 : HEADER_HEIGHT);
+  }, [shownPage, initialPage, isLyrics, indexLoaded, startFraction, headerHidden]);
   const [headerToggled, setHeaderToggled] = useState(false);
   const shouldAutoHide = isPhoneSized(width, height) && !headerToggled;
 
@@ -377,12 +421,11 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               style={{ width: "100vw", height: headerHidden ? "100vh" : "calc( 100vh - 64px )" }}
             />
           ) : (
-            <div className='pdf-center-wrapper'>
+            <div className='pdf-center-wrapper' ref={wrapperRef}>
               {(pages === 0 || verifyingSession) && <Loader />}
               <InvertiblePdfComponent
                 file={url.replace(/sharp/i, "%23")}
                 onDocumentComplete={onDocumentComplete}
-                onPageComplete={onPageComplete}
                 page={page}
                 scale={scale}
                 style={{

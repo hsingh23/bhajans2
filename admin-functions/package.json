@@ -9,7 +9,7 @@
     "test": "node --test *.test.cjs"
   },
   "dependencies": {
-    "firebase-admin": "^14.4.0",
+    "firebase-admin": "^14.5.0",
     "firebase-functions": "^7.4.0"
   },
   "type": "commonjs"

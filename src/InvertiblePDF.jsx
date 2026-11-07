@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import PDF from 'react-pdf-js';
 import { useTheme } from './ThemeContext';
 
-const InvertiblePDF = ({ file, onDocumentComplete, onPageComplete, page, scale, style, ...props }) => {
+const InvertiblePDF = ({ file, onDocumentComplete, page, scale, style, ...props }) => {
   const { isDarkMode } = useTheme();
   const containerRef = useRef(null);
 
@@ -82,24 +82,6 @@ const InvertiblePDF = ({ file, onDocumentComplete, onPageComplete, page, scale, 
     }
   };
 
-  const handlePageComplete = (pageNum) => {
-    // Small delay to ensure canvas is rendered
-    setTimeout(() => {
-      const container = containerRef.current;
-      if (container && isDarkMode) {
-        const canvases = container.querySelectorAll('canvas');
-        canvases.forEach(canvas => {
-          canvas.style.filter = 'invert(1) hue-rotate(180deg)';
-          canvas.style.backgroundColor = 'white';
-        });
-      }
-    }, 100);
-    
-    if (onPageComplete) {
-      onPageComplete(pageNum);
-    }
-  };
-
   return (
     <div 
       ref={containerRef} 
@@ -111,7 +93,6 @@ const InvertiblePDF = ({ file, onDocumentComplete, onPageComplete, page, scale, 
       <PDF
         file={file}
         onDocumentComplete={handleDocumentComplete}
-        onPageComplete={handlePageComplete}
         page={page}
         scale={scale}
         style={style}
