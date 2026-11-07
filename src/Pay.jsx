@@ -33,14 +33,23 @@ expiresOn: ${expiresOn}`);
       <Header title="Payments" />
       <div className='pay'>
         <h1>Payments</h1>
-        <p className='yellowBg'>
-          {helloText}, you are signed in with the email {email}{" "}
-          {paymentMessage}
-          <br />
-          <Link to='/'>Home (Bhajan List)</Link>
-          <br />
-          <Link to='/logout'>Logout / Change User</Link>
-        </p>
+        {email ? (
+          <p className='yellowBg'>
+            {helloText}, you are signed in with the email {email}{" "}
+            {paymentMessage}
+            <br />
+            <Link to='/'>Home (Bhajan List)</Link>
+            <br />
+            <Link to='/logout'>Logout / Change User</Link>
+          </p>
+        ) : (
+          <p className='yellowBg'>
+            Please <Link to={`/login?next=${encodeURIComponent('/pay')}`}>sign in</Link> first so
+            your payment is linked to your account.
+            <br />
+            <Link to='/'>Home (Bhajan List)</Link>
+          </p>
+        )}
 
         <iframe
           width='100%'
@@ -62,43 +71,47 @@ expiresOn: ${expiresOn}`);
             before paying!
           </strong>
         </p>
-        <h4>
-          Important: When checking out, please use the email - {email}{" "}
-          (should be autofilled). DO NOT change this as this will make it
-          harder to link your account.
-        </h4>
+        {email && (
+          <>
+          <h4>
+            Important: When checking out, please use the email - {email}{" "}
+            (should be autofilled). DO NOT change this as this will make it
+            harder to link your account.
+          </h4>
 
-        <h3>
-          Please allow two business day for your account to be enabled - the
-          process is manual.
-        </h3>
+          <h3>
+            Please allow two business day for your account to be enabled - the
+            process is manual.
+          </h3>
 
-        <h2 style={{ textAlign: "center" }}>Payment links</h2>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            margin: "20px",
-          }}>
-          <Button
-            variant='contained'
-            color='primary'
-            href={`http://theammashop.com/cart/37277000728740:1?email=${email}`}>
-            1 Years - $10
-          </Button>
-          <Button
-            variant='contained'
-            color='primary'
-            href={`http://theammashop.com/cart/37277000794276:1?email=${email}`}>
-            5 Years - $40
-          </Button>
-          <Button
-            variant='contained'
-            color='primary'
-            href={`http://theammashop.com/cart/37277000827044:1?email=${email}`}>
-            10 Years - $50
-          </Button>
-        </div>
+          <h2 style={{ textAlign: "center" }}>Payment links</h2>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              margin: "20px",
+            }}>
+            <Button
+              variant='contained'
+              color='primary'
+              href={`http://theammashop.com/cart/37277000728740:1?email=${email}`}>
+              1 Years - $10
+            </Button>
+            <Button
+              variant='contained'
+              color='primary'
+              href={`http://theammashop.com/cart/37277000794276:1?email=${email}`}>
+              5 Years - $40
+            </Button>
+            <Button
+              variant='contained'
+              color='primary'
+              href={`http://theammashop.com/cart/37277000827044:1?email=${email}`}>
+              10 Years - $50
+            </Button>
+          </div>
+          </>
+        )}
 
         <p>
           For any payment complications please send your email{" "}
