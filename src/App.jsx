@@ -125,8 +125,7 @@ const App = () => {
         }
         onClick={() => removeFavorite(name)}
         aria-label='unlike'
-        role='presentation'
-        tabIndex={-1}>
+        type='button'>
         <Icon name='heart' color='#f44336' />
       </button>
     ) : (
@@ -136,8 +135,7 @@ const App = () => {
         }
         onClick={() => addFavorite(name)}
         aria-label='like'
-        role='presentation'
-        tabIndex={-1}>
+        type='button'>
         <Icon name='heart' filled={false} color='grey' />
       </button>
     );
