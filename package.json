@@ -1,6 +1,6 @@
 {
   "name": "bhajans",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -65,7 +65,7 @@
     "verify:functions:deployed": "bun scripts/verify-function-runtime.cjs"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.19.0"
   },
   "browserslist": [
     "last 1 version",
