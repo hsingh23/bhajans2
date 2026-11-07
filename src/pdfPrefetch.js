@@ -7,22 +7,21 @@ import { onAnalyticsReady } from "./analytics";
 // never competes with the first screen.
 
 export const PDF_CACHE = "pdfs-cache";
-// { url: rev } for the copies in PDF_CACHE, so changed books get refreshed.
-const REVISIONS_KEY = "lyricsPdfRevisions";
+// Each cached book carries its content fingerprint in this header, so the
+// record lives with the file itself (localStorage is cleared on sign-out).
+export const REV_HEADER = "x-content-rev";
 
-const readRevisions = () => {
-  try {
-    return JSON.parse(localStorage.getItem(REVISIONS_KEY) || "{}") || {};
-  } catch {
-    return {};
-  }
+/** First 12 hex characters of the SHA-256 of a body, as vite.config.js computes revs. */
+export const contentRev = async (buffer) => {
+  const digest = await crypto.subtle.digest("SHA-256", buffer);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("").slice(0, 12);
 };
-const saveRevisions = (revisions) => {
-  try {
-    localStorage.setItem(REVISIONS_KEY, JSON.stringify(revisions));
-  } catch {
-    // Without the record a book may be fetched again later; nothing breaks.
-  }
+
+/** A copy of `body` to store, labelled with its rev. */
+const labelled = (body, source, rev) => {
+  const headers = new Headers(source.headers);
+  headers.set(REV_HEADER, rev);
+  return new Response(body, { status: 200, statusText: source.statusText || "OK", headers });
 };
 const QUIET_MS = 2000;
 const ANALYTICS_TIMEOUT_MS = 20000;
@@ -120,37 +119,40 @@ const onSlowOrMeteredConnection = () => {
 /**
  * Makes sure every lyrics book is in the offline cache at its current
  * revision. Entries are { url, rev } (a plain URL string means "any rev").
- * - Cached with the same rev, or cached before revs were recorded: kept.
- * - Missing or changed: downloaded at low priority as `url?rev=…` (which
- *   bypasses the service worker's cached copy) and stored under `url`,
- *   replacing the old copy only once the new one has fully arrived.
+ * - Cached copy labelled with the same rev: kept.
+ * - Cached copy without a label (cached before revs existed, or opened in
+ *   the viewer first): hashed locally; labelled and kept if it matches.
+ * - Missing, or a different rev: downloaded at low priority as
+ *   `url?rev=…` (which skips the service worker's cached copy) and stored
+ *   under `url`, replacing the old copy only once the new one has arrived.
  * Returns the URLs it downloaded.
  */
 export const prefetchLyricsPdfs = async (entries, { fetchImpl = fetch } = {}) => {
   if (!("caches" in window) || onSlowOrMeteredConnection()) return [];
   const cache = await caches.open(PDF_CACHE);
-  const revisions = readRevisions();
   const fetched = [];
   for (const entry of entries) {
     const { url, rev } = typeof entry === "string" ? { url: entry, rev: undefined } : entry;
     const cached = await cache.match(url);
-    if (cached && (!rev || revisions[url] === rev)) continue;
-    if (cached && rev && revisions[url] === undefined) {
-      // Cached before revisions were recorded (the books haven't changed since).
-      revisions[url] = rev;
-      saveRevisions(revisions);
-      continue;
+    if (cached && !rev) continue;
+    if (cached) {
+      const label = cached.headers.get(REV_HEADER);
+      if (label === rev) continue;
+      if (!label) {
+        const body = await cached.arrayBuffer();
+        if ((await contentRev(body)) === rev) {
+          await cache.put(url, labelled(body, cached, rev));
+          continue;
+        }
+      }
     }
     try {
       const source = rev ? `${url}?rev=${rev}` : url;
       // @ts-ignore: fetch priority hints are not in every DOM typing yet
       const response = await fetchImpl(source, { priority: "low", credentials: "same-origin" });
       if (response?.ok) {
-        await cache.put(url, response);
-        if (rev) {
-          revisions[url] = rev;
-          saveRevisions(revisions);
-        }
+        const body = await response.arrayBuffer();
+        await cache.put(url, rev ? labelled(body, response, rev) : new Response(body, { headers: response.headers }));
         fetched.push(url);
       }
     } catch {
