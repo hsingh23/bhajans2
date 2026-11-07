@@ -16,15 +16,16 @@ describe('whenUserInteracts', () => {
 
 describe('whenAnalyticsReady', () => {
   afterEach(() => {
-    delete window.ga;
+    delete window.gtag;
     vi.useRealTimers();
   });
 
-  it('resolves when analytics.js runs its ready callback', async () => {
+  it('resolves when gtag.js answers its ready callback', async () => {
     let ready;
-    window.ga = vi.fn((cb) => (ready = cb));
+    window.gtag = vi.fn((command, id, field, cb) => (ready = cb));
     const promise = whenAnalyticsReady(60000);
-    ready();
+    expect(window.gtag).toHaveBeenCalledWith('get', 'G-X9L5Q47RLJ', 'client_id', expect.any(Function));
+    ready('client-123');
     await expect(promise).resolves.toBeUndefined();
   });
 

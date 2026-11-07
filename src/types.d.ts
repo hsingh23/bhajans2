@@ -5,7 +5,8 @@ declare global {
   const __LYRICS_PDFS__: string[];
 
   interface Window {
-    ga: any;
+    gtag: (...args: any[]) => void;
+    dataLayer: any[];
     _urq: any[];
     setGAUid: boolean;
     fetchedBhajans: any[];

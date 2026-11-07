@@ -67,13 +67,6 @@ export default defineConfig({
               },
             },
           },
-          {
-            urlPattern: /^https:\/\/.*\.google-analytics\.com\/.*/,
-            handler: "StaleWhileRevalidate",
-            options: {
-              cacheName: "google-analytics",
-            },
-          },
         ],
       },
     }),

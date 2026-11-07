@@ -1,4 +1,6 @@
 // @ts-nocheck
+import { onAnalyticsReady } from "./analytics";
+
 // Downloads the lyrics book PDFs into the service worker's cache for offline
 // use, but only once the visitor has interacted with the page, the app's own
 // start-up traffic has settled and Google Analytics has loaded, so the ~15 MB
@@ -51,7 +53,7 @@ export const whenNetworkQuiet = (quietMs = QUIET_MS) =>
   });
 
 /**
- * Resolves when analytics.js has loaded (ga() runs a callback at that point),
+ * Resolves when gtag.js has loaded (Google Analytics 4),
  * or after `timeoutMs` so a blocked or missing analytics script can't stall
  * offline caching forever.
  */
@@ -67,7 +69,7 @@ export const whenAnalyticsReady = (timeoutMs = ANALYTICS_TIMEOUT_MS) =>
     const timeout = setTimeout(done, timeoutMs);
     const poll = () => {
       if (settled) return;
-      if (typeof window.ga === "function") window.ga(done);
+      if (typeof window.gtag === "function") onAnalyticsReady(done);
       else setTimeout(poll, 500);
     };
     poll();
