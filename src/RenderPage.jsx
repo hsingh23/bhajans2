@@ -273,7 +273,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
             <>
               {cdbabyBuyUrls && (
                 <a
-                  className='button button-3d button-circle button-action'
+                  className='button button-circle'
                   href={`https://www.amazon.com/s?k=${encodeURIComponent(name)} amma`}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -286,18 +286,14 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               {cdbabySampleUrls && (
                 <button
                   aria-label='play sample'
-                  className='button button-3d button-circle button-action'
+                  className='button button-circle'
                   onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0]))}>
                   <span role='img' aria-label='music sample'>
                     <Icon name={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
                   </span>
                 </button>
               )}
-              {renderFavorite(
-                name,
-                "button button-3d button-caution button-circle",
-                "button button-3d button-circle"
-              )}
+              {renderFavorite(name, "button button-circle", "button button-circle")}
             </>
           }
         />

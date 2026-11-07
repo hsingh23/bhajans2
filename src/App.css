@@ -120,16 +120,6 @@ body {
   background-color: var(--secondary-dark) !important;
 }
 
-/* Yellow/Red Heart Button for active state (Color Theory: Warm dynamic pairing) */
-.button.button-favorite-active {
-  background-color: #FFD700 !important; /* Gold/Yellow */
-  border-bottom-color: #DAA520 !important; /* Darker gold for 3D effect */
-}
-
-/* Keep favorite active in dark mode slightly different if needed, or follow the warm theme */
-[data-theme="dark"] .button.button-favorite-active {
-  background-color: #FFB300 !important; /* Slightly darker amber for dark mode */
-}
 
 
 .button.button-caution {
@@ -1196,4 +1186,107 @@ mark {
 }
 .favorites-empty p {
   margin: 4px 0;
+}
+
+/* FAVORITE (HEART) BUTTON: grey outline when off, red heart on a soft red tint when on */
+.favorite-button .icon {
+  color: var(--text-secondary);
+}
+.button.favorite-button.is-favorite {
+  background-color: #fdecea;
+  border-bottom-color: #f5c6c2;
+}
+.favorite-button.is-favorite .icon {
+  color: #e53935;
+}
+[data-theme="dark"] .button.favorite-button.is-favorite {
+  background-color: rgba(239, 83, 80, 0.2);
+  border-bottom-color: rgba(239, 83, 80, 0.35);
+}
+[data-theme="dark"] .favorite-button.is-favorite .icon {
+  color: #ef5350;
+}
+
+/* TOOLBAR BUTTONS: one style for every button on the orange bar */
+.App-header .header-right .button {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #7a3a00 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+.App-header .header-right .button:hover {
+  background-color: #fff !important;
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+.App-header .header-right .button .icon {
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+[data-theme="dark"] .App-header .header-right .button {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+  color: #fff !important;
+  box-shadow: none;
+}
+[data-theme="dark"] .App-header .header-right .button:hover {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+.App-header .header-right .favorite-button.is-favorite .icon {
+  color: #e53935;
+}
+[data-theme="dark"] .App-header .header-right .favorite-button.is-favorite {
+  background-color: #fff !important;
+}
+.App-header .header-right .button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* REPORT A PROBLEM */
+.report-problem {
+  margin: 32px 16px 96px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+.report-problem p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.report-problem-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--card-bg);
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.report-problem-button:hover {
+  box-shadow: var(--shadow-md);
+}
+.report-problem-button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.report-problem-button .icon {
+  color: var(--primary-color);
+}
+[data-theme="dark"] .report-problem-button {
+  background: #2a2a2a;
+  color: #e0e0e0;
 }

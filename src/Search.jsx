@@ -526,9 +526,12 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
             </>
           )}
         </WindowScroller>
-        <PopupButton id='EVBTgcG5' style={{ fontSize: 20 }} className='my-button'>
-          Bhajan Problem
-        </PopupButton>
+        <div className='report-problem'>
+          <p>Wrong page, typo or missing bhajan?</p>
+          <PopupButton id='EVBTgcG5' className='report-problem-button'>
+            <Icon name='flag' /> Report a bhajan problem
+          </PopupButton>
+        </div>
       </div>
     </div>
   );

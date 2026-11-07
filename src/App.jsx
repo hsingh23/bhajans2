@@ -119,24 +119,21 @@ const App = () => {
   const renderFavorite = useCallback((name, activeClassName, inactiveClassName) => {
     return favorites[name] ? (
       <button
-        className={
-          activeClassName ||
-          "button button-3d button-circle button-jumbo button-favorite-active"
-        }
+        className={`${activeClassName || "button button-3d button-circle button-jumbo"} favorite-button is-favorite`}
         onClick={() => removeFavorite(name)}
         aria-label='unlike'
+        aria-pressed='true'
         type='button'>
-        <Icon name='heart' color='#f44336' />
+        <Icon name='heart' />
       </button>
     ) : (
       <button
-        className={
-          inactiveClassName || "button button-3d button-circle button-jumbo"
-        }
+        className={`${inactiveClassName || "button button-3d button-circle button-jumbo"} favorite-button`}
         onClick={() => addFavorite(name)}
         aria-label='like'
+        aria-pressed='false'
         type='button'>
-        <Icon name='heart' filled={false} color='grey' />
+        <Icon name='heart' filled={false} />
       </button>
     );
   }, [favorites, addFavorite, removeFavorite]);

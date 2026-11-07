@@ -57,6 +57,12 @@ const PATHS = {
   ),
   filter: <path d='M3 4.5h18l-7 8.3v6l-4 2v-8z' />,
   close: <path d='M6 6l12 12M18 6L6 18' />,
+  flag: (
+    <>
+      <path d='M5 21V4' />
+      <path d='M5 4h11l-1.5 4L16 12H5' />
+    </>
+  ),
 };
 
 const FILLED = new Set(['heart', 'play', 'stop']);
