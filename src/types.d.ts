@@ -1,6 +1,9 @@
 export {};
 
 declare global {
+  /** Lyrics book PDF URLs, injected by vite.config.js. */
+  const __LYRICS_PDFS__: string[];
+
   interface Window {
     ga: any;
     _urq: any[];
@@ -8,6 +11,8 @@ declare global {
     fetchedBhajans: any[];
     searchableBhajans: string[];
     searchFilter: string;
+    searchLanguage: string;
+    searchDeity: string;
     scrollTop: number;
     dbHistory: any;
     firebase: any;

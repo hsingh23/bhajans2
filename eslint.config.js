@@ -15,6 +15,8 @@ export default [
         ...globals.node,
         ...globals.es2021,
         ...globals.vitest,
+        // Injected by vite.config.js `define`.
+        __LYRICS_PDFS__: "readonly",
       },
       parserOptions: {
         ecmaFeatures: {

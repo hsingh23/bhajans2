@@ -2,10 +2,21 @@ import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import { VitePWA } from "vite-plugin-pwa";
+import { readdirSync } from "node:fs";
+
+// Lyrics books under public/pdfs. They are not precached at install; the app
+// fetches them later (src/pdfPrefetch.js) once the page is idle.
+const LYRICS_PDFS = readdirSync(new URL("./public/pdfs", import.meta.url))
+  .filter((file) => /\.pdf$/i.test(file))
+  .sort()
+  .map((file) => `/pdfs/${file}`);
 
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __LYRICS_PDFS__: JSON.stringify(LYRICS_PDFS),
+  },
   plugins: [
     react(),
     // plugin-react 6 no longer runs Babel itself; the React Compiler goes through @rolldown/plugin-babel.
@@ -39,7 +50,7 @@ export default defineConfig({
         navigateFallback: "/index.html",
         navigateFallbackDenylist: [/^\/api\//, /^\/__\/auth\//, /reset\.html$/],
         globPatterns: [
-          "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,pdf,json,woff,woff2,ttf,wasm,lottie}",
+          "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,json,woff,woff2,ttf,wasm,lottie}",
         ],
         runtimeCaching: [
           {
@@ -47,6 +58,8 @@ export default defineConfig({
             handler: "CacheFirst",
             options: {
               cacheName: "pdfs-cache",
+              // PDF.js asks for byte ranges; serve them from the cached full file.
+              rangeRequests: true,
               expiration: {
                 maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days

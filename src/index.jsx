@@ -22,6 +22,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
+import { schedulePdfPrefetch } from "./pdfPrefetch";
 
 
 const queryClient = new QueryClient();
@@ -132,6 +133,9 @@ const renderApp = () => {
 const bootstrap = async () => {
   try {
     await registerServiceWorkers();
+    if (import.meta.env.PROD) {
+      schedulePdfPrefetch().catch((error) => console.warn("Lyrics PDF caching stopped:", error));
+    }
     await enableMocking();
   } catch (error) {
     console.error("Failed to enable mocking:", error);
