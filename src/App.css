@@ -404,6 +404,7 @@ mark,
 
 #search {
   flex-grow: 1;
+  min-width: 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 10px;
