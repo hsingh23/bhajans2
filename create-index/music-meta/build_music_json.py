@@ -159,15 +159,17 @@ def main():
     by = {r["name"]: r for r in table}
 
     def title(n):
-        return re.sub(r"(?<=[a-z])(?=(bhairavi|kalyani|kalyan|sarang|kanada|todi|varali|gowla|bhushani)$)", " ", n).title()
+        return re.sub(r"(?<=[a-z])(?=(bhairavi|kalyani|kalyan|sarang|kanada|kannada|malhar|todi|varali|gowla|bhushani)$)", " ", n).title()
 
+    renamed = {k: v for k, v in json.loads((HERE / "reference/renamed-songs.json").read_text()).items() if not k.startswith("_")}
     music, used_r, used_t, unknown = {}, set(), set(), Counter()
     for s in index:
         n = s["n"]
         e = {}
-        sh = pick_shruti(tonic.get(n))
+        old = renamed.get(n)  # features stored under the song's name before an index correction
+        sh = pick_shruti(tonic.get(n) or tonic.get(old))
         base_pc = sh["pc"] if sh else None  # Sa before any labeller shift; the sheet offset is relative to it
-        rr = raga_out.get(n)
+        rr = raga_out.get(n) or raga_out.get(old)
         if rr:
             shift = int(rr.get("sa_shift") or 0) % 12
             if sh and shift:
@@ -200,7 +202,7 @@ def main():
                 # PDFs are named by the arranger's key root, which sits so semitones below Sa.
                 sh = {**sh, "pdf_pc": (base_pc - so) % 12}
             e["sh"] = sh
-        t = taal.get(n)
+        t = taal.get(n) or taal.get(old)
         if t and t.get("beats_class") in TAAL_BY_CLASS:
             tid, alt = TAAL_BY_CLASS[t["beats_class"]]
             mg = (t.get("audio_pred") or {}).get("meter_group") or ""
@@ -219,7 +221,8 @@ def main():
         if not e:
             continue
         cs = [x for x in [e.get("sh", {}).get("c"), *(r["c"] for r in e.get("r", [])[:1]), e.get("t", {}).get("c")] if x is not None]
-        e["c"] = round(sum(cs) / len(cs), 2)
+        if cs:  # a song with only chords (sheet music, no recording or raga) has no overall confidence
+            e["c"] = round(sum(cs) / len(cs), 2)
         music[n] = e
 
     ragas_ref = {}

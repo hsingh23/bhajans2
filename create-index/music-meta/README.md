@@ -16,7 +16,7 @@ extracted features, model-rater outputs and the export of the shruti spreadsheet
 | Match songs to recordings | `match_box.py`, then `rematch.py` / `build_verified.py` | `box-matches-verified.json` |
 | Cache audio (24 kHz mono Opus) | `cache_audio.py` | `audio/` |
 | Audio features (Melodia f0, tonic, beats) | `extract_audio.py` | `features/audio/` |
-| Sheet music notes, keys, chords, meter | `sheet_features.py`, `sheet_meter.py` | `features/sheet*.json` |
+| Sheet music notes, keys, chords, meter | `sheet_features.py`, then `sheet_meter.py` (it reads `features/sheet.json`, so not in parallel) | `features/sheet*.json` |
 | Is a sheet really this song? | `sheet_trust.py` | `features/sheet_trust.json` |
 | Where Sa sits in a sheet | `sheet_sa.py`, `tonic_sheet_sa.py` | `features/tonic_sheet_sa.json` |
 | Shruti model | `tonic_*.py` (see `reference/tonic-report.md`) | `features/tonic.json` |

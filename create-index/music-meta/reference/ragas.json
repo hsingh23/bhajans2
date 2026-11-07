@@ -11916,7 +11916,9 @@
    "shuddh sarang",
    "shudh sarang",
    "shuddha sarang",
-   "suddh sarang"
+   "suddh sarang",
+   "shuddha saranga",
+   "suddha saranga"
   ],
   "system": "hindustani",
   "parent_mela": 65,
@@ -13131,6 +13133,364 @@
     "source": "wikipedia:Gaud_Malhar",
     "notation": "text",
     "pcs_match": true
+   }
+  ]
+ },
+ {
+  "name": "miyanmalhar",
+  "aliases": [
+   "miyan malhar",
+   "miyan ki malhar",
+   "mian malhar",
+   "miyan malhaar"
+  ],
+  "system": "hindustani",
+  "parent_mela": 22,
+  "thaat": "Kafi",
+  "aroha": [
+   "S",
+   "R2",
+   "P",
+   "M1",
+   "P",
+   "n2",
+   "D2",
+   "N3",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "n2",
+   "P",
+   "M1",
+   "P",
+   "g2",
+   "M1",
+   "R2",
+   "S"
+  ],
+  "pcs": [
+   0,
+   2,
+   3,
+   5,
+   7,
+   9,
+   10,
+   11
+  ],
+  "vakra": true,
+  "anya_swaras": [
+   "N3"
+  ],
+  "extra_pcs": [],
+  "notes": "Kafi thaat. Both ni (komal ni before dha, shuddha ni rising to Sa); komal ga oscillates in the descent (g m R S).",
+  "hindustani_equiv": "Miyan ki Malhar",
+  "western": "Dorian with a major 7 rising to the octave - degrees 1 2 b3 4 5 6 b7 7",
+  "mood": "monsoon, longing",
+  "sources": [
+   {
+    "source": "tanarang.com/raag-miyan-malhar",
+    "thaat": "Kafi"
+   }
+  ]
+ },
+ {
+  "name": "hamsavinodini",
+  "aliases": [
+   "hamsa vinodini",
+   "hamsavinodhini"
+  ],
+  "system": "carnatic",
+  "parent_mela": 29,
+  "aroha": [
+   "S",
+   "R2",
+   "G3",
+   "M1",
+   "D2",
+   "N3",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "N3",
+   "D2",
+   "M1",
+   "G3",
+   "R2",
+   "S"
+  ],
+  "pcs": [
+   0,
+   2,
+   4,
+   5,
+   9,
+   11
+  ],
+  "vakra": false,
+  "anya_swaras": [],
+  "extra_pcs": [],
+  "notes": "Janya of 29 Dheerasankarabharanam without Pa.",
+  "hindustani_equiv": "no standard Hindustani equivalent",
+  "western": "major scale without the 5th - degrees 1 2 3 4 6 7",
+  "mood": "bright, light",
+  "sources": [
+   {
+    "source": "karnatik.com",
+    "parent": "29 dhIrashankarAbharaNam janya"
+   }
+  ]
+ },
+ {
+  "name": "navarasakannada",
+  "aliases": [
+   "navarasa kannada",
+   "navarasa kanada",
+   "navarasakanada"
+  ],
+  "system": "carnatic",
+  "parent_mela": 28,
+  "aroha": [
+   "S",
+   "G3",
+   "M1",
+   "P",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "n2",
+   "D2",
+   "M1",
+   "G3",
+   "R2",
+   "S"
+  ],
+  "pcs": [
+   0,
+   2,
+   4,
+   5,
+   7,
+   9,
+   10
+  ],
+  "vakra": false,
+  "anya_swaras": [],
+  "extra_pcs": [],
+  "notes": "Janya of 28 Harikambhoji: S G M P S up, S N D M G R S down.",
+  "hindustani_equiv": "no standard Hindustani equivalent",
+  "western": "Mixolydian, skipping notes going up - degrees 1 2 3 4 5 6 b7",
+  "mood": "devotional, gentle",
+  "sources": [
+   {
+    "source": "karnatik.com",
+    "parent": "28 harikAmbhOji janya"
+   }
+  ]
+ },
+ {
+  "name": "hamirkalyani",
+  "aliases": [
+   "hamir kalyani",
+   "hameer kalyani",
+   "hamirkalyan"
+  ],
+  "system": "carnatic",
+  "parent_mela": 65,
+  "aroha": [
+   "S",
+   "P",
+   "M2",
+   "P",
+   "D2",
+   "N3",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "N3",
+   "D2",
+   "P",
+   "M2",
+   "G3",
+   "P",
+   "M1",
+   "R2",
+   "S"
+  ],
+  "pcs": [
+   0,
+   2,
+   4,
+   5,
+   6,
+   7,
+   9,
+   11
+  ],
+  "vakra": true,
+  "anya_swaras": [
+   "M1"
+  ],
+  "extra_pcs": [],
+  "notes": "Janya of 65 Mechakalyani with shuddha ma in the descent; the Carnatic form of Hindustani Kedar.",
+  "hindustani_equiv": "Kedar",
+  "western": "major scale with both 4 and #4 - degrees 1 2 3 4 #4 5 6 7",
+  "mood": "devotional, evening",
+  "sources": [
+   {
+    "source": "karnatik.com",
+    "parent": "65 mEcakalyANi janya"
+   }
+  ]
+ },
+ {
+  "name": "bahudari",
+  "aliases": [
+   "bahudhari",
+   "bahu dari"
+  ],
+  "system": "carnatic",
+  "parent_mela": 28,
+  "aroha": [
+   "S",
+   "G3",
+   "M1",
+   "P",
+   "D2",
+   "n2",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "n2",
+   "P",
+   "M1",
+   "G3",
+   "S"
+  ],
+  "pcs": [
+   0,
+   4,
+   5,
+   7,
+   9,
+   10
+  ],
+  "vakra": false,
+  "anya_swaras": [],
+  "extra_pcs": [],
+  "notes": "Janya of 28 Harikambhoji without Ri (and without Dha going down).",
+  "hindustani_equiv": "close to Khamaj without Re",
+  "western": "Mixolydian without the 2nd - degrees 1 3 4 5 6 b7",
+  "mood": "playful, bright",
+  "sources": [
+   {
+    "source": "karnatik.com",
+    "parent": "28 harikAmbhOji janya"
+   }
+  ]
+ },
+ {
+  "name": "mandari",
+  "aliases": [
+   "mandaari"
+  ],
+  "system": "carnatic",
+  "parent_mela": 51,
+  "aroha": [
+   "S",
+   "r1",
+   "G3",
+   "M2",
+   "P",
+   "N3",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "N3",
+   "P",
+   "M2",
+   "G3",
+   "r1",
+   "S"
+  ],
+  "pcs": [
+   0,
+   1,
+   4,
+   6,
+   7,
+   11
+  ],
+  "vakra": false,
+  "anya_swaras": [],
+  "extra_pcs": [],
+  "notes": "Janya of 51 Kamavardhini (Pantuvarali) without Dha.",
+  "hindustani_equiv": "close to Marwa/Puriya family colours",
+  "western": "degrees 1 b2 3 #4 5 7",
+  "mood": "plaintive, devotional",
+  "sources": [
+   {
+    "source": "karnatik.com",
+    "parent": "51 kAmavardhani janya"
+   }
+  ]
+ },
+ {
+  "name": "nayakikanada",
+  "aliases": [
+   "nayaki kanada",
+   "nayaki kanhada",
+   "naiki kanada"
+  ],
+  "system": "hindustani",
+  "parent_mela": 22,
+  "thaat": "Kafi",
+  "aroha": [
+   "S",
+   "R2",
+   "g2",
+   "M1",
+   "P",
+   "n2",
+   "P",
+   "S"
+  ],
+  "avaroha": [
+   "S",
+   "n2",
+   "P",
+   "M1",
+   "P",
+   "g2",
+   "M1",
+   "R2",
+   "S"
+  ],
+  "pcs": [
+   0,
+   2,
+   3,
+   5,
+   7,
+   10
+  ],
+  "vakra": true,
+  "anya_swaras": [],
+  "extra_pcs": [],
+  "notes": "Kafi thaat, Kanada family: no Dha; the Kanada turn g m R S in the descent.",
+  "hindustani_equiv": "Nayaki Kanada",
+  "western": "Dorian without the 6th - degrees 1 2 b3 4 5 b7",
+  "mood": "deep, devotional",
+  "sources": [
+   {
+    "source": "tanarang.com/raag-nayaki-kanada",
+    "thaat": "Kafi"
    }
   ]
  }
