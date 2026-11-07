@@ -537,12 +537,16 @@ mark {
   left: 0;
   z-index: 999;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: all 0.3s;
+  /* Fade out, then hide so the closed modal leaves the tab order and accessibility tree */
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
 }
 .modal-window.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
+  transition: opacity 0.3s;
 }
 .modal-window > div {
   width: calc(100vw - 64px - 20px);

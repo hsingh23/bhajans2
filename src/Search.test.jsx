@@ -195,3 +195,42 @@ describe('Highlight', () => {
     expect(container.textContent).toBe('Om (Siva) om');
   });
 });
+
+describe('Bhajan details modal', () => {
+  // react-virtualized only renders rows when its containers have a size
+  const sizes = {};
+  beforeEach(() => {
+    window.searchableBhajans = null;
+    window.searchFilter = '';
+    window.searchLanguage = '';
+    window.searchDeity = '';
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      sizes[prop] = Object.getOwnPropertyDescriptor(HTMLElement.prototype, prop);
+      Object.defineProperty(HTMLElement.prototype, prop, { configurable: true, get: () => 1000 });
+    }
+  });
+  afterEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      Object.defineProperty(HTMLElement.prototype, prop, sizes[prop]);
+    }
+  });
+
+  it('stays out of the accessibility tree until opened', () => {
+    renderCategorized();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('opens with focus on Close and closes on Escape', () => {
+    renderCategorized();
+    const opener = screen.getAllByRole('button', { name: 'bhajan details' })[0];
+    opener.focus();
+    fireEvent.click(opener);
+    const dialog = screen.getByRole('dialog');
+    expect(dialog).toHaveTextContent('amme narayana');
+    expect(screen.getByRole('button', { name: 'close details modal' })).toHaveFocus();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(opener).toHaveFocus();
+  });
+});

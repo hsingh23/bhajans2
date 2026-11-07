@@ -178,6 +178,23 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     setInfoFilteredIndex(index);
   };
 
+  // While the details modal is open: focus Close, close on Escape, then hand focus back.
+  const closeButtonRef = useRef(null);
+  const isInfoOpen = Boolean(infoOpen);
+  useEffect(() => {
+    if (!isInfoOpen) return;
+    const opener = document.activeElement;
+    closeButtonRef.current?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setInfoOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      if (opener instanceof HTMLElement && opener.isConnected) opener.focus();
+    };
+  }, [isInfoOpen]);
+
   const wrappedName = (loc, name, child) => {
     // Pattern matches: YYYYsuplN-X (supplements), volN-X (volumes), and YYYY-X (year-only like 2025-53)
     const match = loc.match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi);
@@ -284,9 +301,12 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
+        aria-hidden={!infoOpen}
+        inert={!infoOpen}
       >
         <div onClick={(e) => e.stopPropagation()}>
           <button
+            ref={closeButtonRef}
             aria-label='close details modal'
             onClick={(e) => {
               e.stopPropagation();
