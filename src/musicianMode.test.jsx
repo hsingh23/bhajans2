@@ -176,6 +176,17 @@ describe('musician details in search', () => {
     expect(musicFetches().sort()).toEqual([...MUSIC_URLS].sort());
   });
 
+  it('marks a best-guess raga as approximate and states a confident one plainly', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+
+    const sure = await within(rowFor('kali kali kali (gujarati)')).findByTestId('music-chips');
+    expect(sure).not.toHaveTextContent('≈');
+    const guess = within(rowFor('arivenum akakkan (tamil)')).getByTestId('music-chips');
+    expect(guess).toHaveTextContent('≈');
+    expect(within(guess).getByTitle(/^Raga close to /)).toBeInTheDocument();
+  });
+
   it('shows nothing for a song with no entry', async () => {
     setPref('musicianMode', true);
     renderSearch();
@@ -218,8 +229,8 @@ describe('musician details in search', () => {
 
     fireEvent.click(within(rowFor('arivenum akakkan (tamil)')).getByRole('button', { name: 'bhajan details' }));
     let section = await screen.findByRole('region', { name: 'For musicians' });
-    expect(section).toHaveTextContent('pallavi: Maand');
-    expect(section).toHaveTextContent('charanam: Sarasangi');
+    expect(section).toHaveTextContent('pallavi: Close to Maand');
+    expect(section).toHaveTextContent('charanam: Close to Sarasangi');
     expect(section).toHaveTextContent('D E F# G A Bb C# D');
 
     fireEvent.click(screen.getByRole('button', { name: 'close details modal' }));
@@ -251,16 +262,44 @@ describe('musician details in search', () => {
   });
 });
 
-describe('music data fixtures', () => {
-  it('keep the public copies (used in development) the same as the test copies', () => {
-    const read = (file) => JSON.parse(readFileSync(join(process.cwd(), 'public', file), 'utf8'));
-    expect(read('bhajan-music.json')).toEqual(songsFixture);
-    expect(read('music-reference.json')).toEqual(referenceFixture);
+describe('music data', () => {
+  const readPublic = (file) => JSON.parse(readFileSync(join(process.cwd(), 'public', file), 'utf8'));
+  const KATTAI = ['1', '1.5', '2', '2.5', '3', '4', '4.5', '5', '5.5', '6', '6.5', '7'];
+  const SWARAS = new Set(['S', 'r1', 'R2', 'g2', 'G3', 'M1', 'M2', 'P', 'd1', 'D2', 'n2', 'N3']);
+
+  // The shipped files come from create-index/music-meta/build_music_json.py; check them against the contract
+  // the UI relies on (create-index/music-meta/reference/music-data-spec.md), for the fixtures and the real data.
+  const checkContract = (songs, reference) => {
+    const problems = [];
+    for (const [name, e] of Object.entries(songs)) {
+      if (e.sh) {
+        if (!(Number.isInteger(e.sh.pc) && e.sh.pc >= 0 && e.sh.pc < 12)) problems.push(`${name}: sh.pc`);
+        if (e.sh.k !== KATTAI[e.sh.pc]) problems.push(`${name}: kattai ${e.sh.k} does not match pc ${e.sh.pc}`);
+      }
+      for (const r of e.r || []) if (!reference.ragas[r.id]) problems.push(`${name}: unknown raga ${r.id}`);
+      if (e.t) {
+        // A taal id is optional: Western songs carry only a time signature.
+        if (e.t.id && !reference.taals[e.t.id]) problems.push(`${name}: unknown taal ${e.t.id}`);
+        if (e.t.alt && !reference.taals[e.t.alt]) problems.push(`${name}: unknown taal ${e.t.alt}`);
+        if (!/^\d+\/\d+$/.test(e.t.ts)) problems.push(`${name}: time signature ${e.t.ts}`);
+      }
+      if (!(e.c >= 0 && e.c <= 1)) problems.push(`${name}: confidence ${e.c}`);
+    }
+    for (const [id, r] of Object.entries(reference.ragas)) {
+      for (const s of [...r.aroha, ...r.avaroha]) if (!SWARAS.has(s)) problems.push(`raga ${id}: swara ${s}`);
+    }
+    return problems;
+  };
+
+  it('fixtures and the shipped files follow the data contract', () => {
+    expect(checkContract(songsFixture, referenceFixture)).toEqual([]);
+    expect(checkContract(readPublic('bhajan-music.json'), readPublic('music-reference.json'))).toEqual([]);
   });
 
   it('only name songs that are in the bhajan index', () => {
-    const index = JSON.parse(readFileSync(join(process.cwd(), 'public', 'bhajan-index2.json'), 'utf8'));
-    const names = new Set(index.map((b) => b.n));
-    expect(Object.keys(songsFixture).filter((name) => !names.has(name))).toEqual([]);
+    const names = new Set(readPublic('bhajan-index2.json').map((b) => b.n));
+    for (const songs of [songsFixture, readPublic('bhajan-music.json')]) {
+      expect(Object.keys(songs).filter((name) => !names.has(name))).toEqual([]);
+    }
   });
 });

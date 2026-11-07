@@ -4,7 +4,7 @@
 // mode; loaded on demand so other readers never download it.
 import React, { useId } from 'react';
 import { KEY_NAMES, chordsInKey, countPhrase, kattaiFor, keySpelling, markMeaning, swarasToNotes, thekaGroups } from './musicTheory';
-import { firstRagaSwaras, ragaName, shrutiShort, taalName } from './MusicChips';
+import { RAGA_SURE, firstRagaSwaras, ragaName, shrutiShort, taalName } from './MusicChips';
 
 const SOURCE = { box: 'from the full recording', cd: 'from a CD sample', sheet: 'from the sheet music' };
 const SYSTEM = { carnatic: 'Carnatic', hindustani: 'Hindustani' };
@@ -30,6 +30,7 @@ const Raga = ({ part, raga, saPc }) => {
     <div className='md-raga'>
       <p className='md-heading'>
         {sec && <span className='md-section'>{sec}: </span>}
+        {(part.c ?? 1) < RAGA_SURE && <span className='md-aside'>Close to </span>}
         <strong>{ragaName({ [part.id]: raga }, part.id)}</strong>
         {raga?.hi && <span className='md-aside'> · Hindustani: {raga.hi}</span>}
       </p>

@@ -1,0 +1,930 @@
+{
+ "beat_count_note": "Bhajan song sheets often give only a beat count, e.g. 'Taal (5,6,7,8)'. These counts are the beats the singer/clapper feels per cycle, not the number of tabla matras, so score labels at the beat-count level first and treat names as candidates: 8 -> keherwa (Hindustani) / adi (Carnatic) - also bhajani theka and dhumali; a 16-beat teentaal/tilwada/addha is usually felt as 8+8. 6 -> dadra (Hindustani) / tisra-nadai or rupakam (Carnatic light music) - also khemta; a fast 6 is often notated 3. 7 -> rupak (Hindustani) / misra chapu (Carnatic, 3+2+2) - also tisra triputa. 5 -> khanda chapu (Carnatic, 2+3); jhaptaal (10 = 2+3+2+3) is half-cycle-equivalent only loosely (it is really 10). Counts related by a factor of 2 (3/6/12, 4/8/16, 5/10, 7/14) describe the same metre at a different counting level and should be scored as compatible but not equal.",
+ "beat_count_map": {
+  "3": [
+   "tisraeka",
+   "dadra (counted in 3)"
+  ],
+  "4": [
+   "chatusraeka",
+   "keherwa (half cycle)"
+  ],
+  "5": [
+   "khandachapu",
+   "jhaptaal (half cycle, loose)"
+  ],
+  "6": [
+   "dadra",
+   "khemta",
+   "rupakam",
+   "tisranadaiadi (light-music 6/8 feel)"
+  ],
+  "7": [
+   "rupak",
+   "mishrachapu",
+   "triputa"
+  ],
+  "8": [
+   "keherwa",
+   "adi",
+   "bhajanitheka",
+   "dhumali"
+  ],
+  "10": [
+   "jhaptaal",
+   "sooltaal",
+   "jhampa",
+   "matya"
+  ],
+  "12": [
+   "ektaal",
+   "chautaal"
+  ],
+  "14": [
+   "deepchandi",
+   "chanchar",
+   "jhoomra",
+   "dhamar",
+   "ata",
+   "dhruva"
+  ],
+  "16": [
+   "teentaal",
+   "tilwada",
+   "addha"
+  ]
+ },
+ "compatible_beat_counts": [
+  [
+   3,
+   6,
+   12
+  ],
+  [
+   4,
+   8,
+   16
+  ],
+  [
+   5,
+   10
+  ],
+  [
+   7,
+   14
+  ]
+ ],
+ "symbols": {
+  "X": "sam (first beat, clap)",
+  "0": "khali (wave / empty beat)",
+  "2,3,4": "tali (claps) by vibhag",
+  "I<n>": "laghu of n counts (clap + finger counts)",
+  "O": "drutam (clap + wave, 2 counts)",
+  "U": "anudrutam (single clap, 1 count)",
+  "-": "rest/sustain in a theka"
+ },
+ "taals": [
+  {
+   "name": "keherwa",
+   "system": "hindustani",
+   "aliases": [
+    "kaharwa",
+    "kaherwa",
+    "keharwa",
+    "kherwa",
+    "kehrwa",
+    "kaharva",
+    "bhajan keherwa"
+   ],
+   "beats": 8,
+   "vibhag": [
+    4,
+    4
+   ],
+   "clap_wave": "X 0",
+   "theka_bols": [
+    "dha",
+    "ge",
+    "na",
+    "ti",
+    "na",
+    "ka",
+    "dhi",
+    "na"
+   ],
+   "western": "4/4 (often written 8/8; light swing)",
+   "equivalents": "adi tala (Carnatic light music); chatusra eka x2",
+   "feel": "The default bhajan, folk and film-song taal; steady 4-beat pulse."
+  },
+  {
+   "name": "dadra",
+   "system": "hindustani",
+   "aliases": [
+    "daadra",
+    "dadara",
+    "dadra taal"
+   ],
+   "beats": 6,
+   "vibhag": [
+    3,
+    3
+   ],
+   "clap_wave": "X 0",
+   "theka_bols": [
+    "dha",
+    "dhi",
+    "na",
+    "dha",
+    "ti",
+    "na"
+   ],
+   "theka_note": "Also commonly 'dha dhin na | na tin na'.",
+   "western": "6/8 (two dotted-quarter beats; slow versions counted 3/4)",
+   "equivalents": "tisra nadai / tisra eka x2 and rupakam (6 aksharas) in Carnatic light music",
+   "feel": "Lilting 6-beat taal of bhajans, ghazals, lullabies and folk songs."
+  },
+  {
+   "name": "rupak",
+   "system": "hindustani",
+   "aliases": [
+    "rupaktaal",
+    "roopak",
+    "rupak taal",
+    "rupaka (hindustani)"
+   ],
+   "beats": 7,
+   "vibhag": [
+    3,
+    2,
+    2
+   ],
+   "clap_wave": "0 2 3 (sam is khali)",
+   "theka_bols": [
+    "tin",
+    "tin",
+    "na",
+    "dhi",
+    "na",
+    "dhi",
+    "na"
+   ],
+   "western": "7/8 (3+2+2)",
+   "equivalents": "misra chapu (3+2+2) - near-identical grouping; tisra triputa (3+2+2)",
+   "feel": "Asymmetric 7 that starts on the empty (khali) beat; light classical, bhajans, film songs."
+  },
+  {
+   "name": "jhaptaal",
+   "system": "hindustani",
+   "aliases": [
+    "jhaptal",
+    "jhap taal",
+    "japtaal",
+    "jhap tal"
+   ],
+   "beats": 10,
+   "vibhag": [
+    2,
+    3,
+    2,
+    3
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dhi",
+    "na",
+    "dhi",
+    "dhi",
+    "na",
+    "ti",
+    "na",
+    "dhi",
+    "dhi",
+    "na"
+   ],
+   "western": "10/8 (2+3+2+3)",
+   "equivalents": "khanda chapu x2 (2+3 twice) in feel; Carnatic jhampa (7+1+2) and matya (4+2+4) share only the count",
+   "feel": "Medium-tempo classical and semi-classical; bhajans set in 'half' groupings of 5."
+  },
+  {
+   "name": "teentaal",
+   "system": "hindustani",
+   "aliases": [
+    "tintal",
+    "teental",
+    "trital",
+    "tritaal",
+    "teen taal",
+    "tin taal"
+   ],
+   "beats": 16,
+   "vibhag": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dha",
+    "dhin",
+    "dhin",
+    "dha",
+    "dha",
+    "dhin",
+    "dhin",
+    "dha",
+    "dha",
+    "tin",
+    "tin",
+    "ta",
+    "ta",
+    "dhin",
+    "dhin",
+    "dha"
+   ],
+   "western": "4/4 (one cycle = 4 bars, or 16/8)",
+   "equivalents": "adi tala in 2-kalai (16 counts) / adi counted at double speed",
+   "feel": "The most common classical taal; in bhajans usually heard as two cycles of a 4/4 feel."
+  },
+  {
+   "name": "ektaal",
+   "system": "hindustani",
+   "aliases": [
+    "ektal",
+    "ek taal",
+    "ekatal"
+   ],
+   "beats": 12,
+   "vibhag": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "clap_wave": "X 0 2 0 3 4",
+   "theka_bols": [
+    "dhin",
+    "dhin",
+    "dhage",
+    "tirakita",
+    "tu",
+    "na",
+    "kat",
+    "ta",
+    "dhage",
+    "tirakita",
+    "dhi",
+    "na"
+   ],
+   "western": "12/8 or 6/4 (six pairs); drut ektaal is felt as 4 groups of 3",
+   "equivalents": "no standard Carnatic equivalent (12 counts; loosely tisra-nadai adi or 3 x chatusra eka)",
+   "feel": "Vilambit and drut khayal; occasionally slow devotional pieces."
+  },
+  {
+   "name": "deepchandi",
+   "system": "hindustani",
+   "aliases": [
+    "dipchandi",
+    "deepchandee",
+    "deep chandi",
+    "chanchar deepchandi"
+   ],
+   "beats": 14,
+   "vibhag": [
+    3,
+    4,
+    3,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dha",
+    "dhin",
+    "-",
+    "dha",
+    "dha",
+    "tin",
+    "-",
+    "ta",
+    "tin",
+    "-",
+    "dha",
+    "dha",
+    "dhin",
+    "-"
+   ],
+   "western": "14/8 (3+4+3+4), often felt as 7/4 or two bars of 7/8",
+   "equivalents": "Carnatic dhruva/ata share the count only; in light music close to misra chapu x2",
+   "feel": "Thumri, dadra-style light classical, Holi and devotional songs; lilting long-short swing."
+  },
+  {
+   "name": "chanchar",
+   "system": "hindustani",
+   "aliases": [
+    "chachar",
+    "chaanchar",
+    "chanchar taal"
+   ],
+   "beats": 14,
+   "vibhag": [
+    3,
+    4,
+    3,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": null,
+   "theka_note": "No single standard theka: many treat chanchar as a folk/light form of deepchandi (same 3+4+3+4 cycle); bol sets vary by region and gharana.",
+   "western": "14/8 (3+4+3+4) / 7/4",
+   "equivalents": "same as deepchandi",
+   "feel": "Folk and light-classical (Punjabi, Rajasthani, Holi songs); faster and bouncier than deepchandi."
+  },
+  {
+   "name": "bhajanitheka",
+   "system": "hindustani",
+   "aliases": [
+    "bhajani",
+    "bhajani theka",
+    "bhajan theka",
+    "bhajani thekaa"
+   ],
+   "beats": 8,
+   "vibhag": [
+    4,
+    4
+   ],
+   "clap_wave": "X 0",
+   "theka_bols": null,
+   "theka_note": "An 8-beat dholak/pakhawaj theka of Marathi and North-Indian bhajan singing; its bols vary by region and player, so no single standard theka is given.",
+   "western": "4/4 with a strong triplet/swung feel (often transcribed 12/8)",
+   "equivalents": "keherwa (same count); adi in tisra nadai feel",
+   "feel": "Driving, swung 8 of community bhajan and kirtan singing, usually with manjira/kartal."
+  },
+  {
+   "name": "khemta",
+   "system": "hindustani",
+   "aliases": [
+    "khemta taal",
+    "khemtaa",
+    "khemata"
+   ],
+   "beats": 6,
+   "vibhag": [
+    3,
+    3
+   ],
+   "clap_wave": "X 0",
+   "theka_bols": null,
+   "theka_note": "Bengali/folk 6-beat taal; bols vary by region and player (sometimes counted as 12), so no single standard theka is given.",
+   "western": "6/8 (fast)",
+   "equivalents": "dadra (same count); tisra nadai in Carnatic light music",
+   "feel": "Fast, swinging 6 of Bengali folk, kirtan and light songs."
+  },
+  {
+   "name": "dhumali",
+   "system": "hindustani",
+   "aliases": [
+    "dhumaali",
+    "dhumali taal"
+   ],
+   "beats": 8,
+   "vibhag": [
+    4,
+    4
+   ],
+   "clap_wave": "X 0",
+   "theka_bols": null,
+   "theka_note": "8-beat light/devotional taal close to keherwa; thekas vary by gharana and region, so none is asserted.",
+   "western": "4/4",
+   "equivalents": "keherwa; adi (light music)",
+   "feel": "Light devotional, bhajan and qawwali-style accompaniment with syncopated accents."
+  },
+  {
+   "name": "addha",
+   "system": "hindustani",
+   "aliases": [
+    "adha",
+    "addha taal",
+    "sitarkhani",
+    "sitarkhani taal",
+    "punjabi theka",
+    "adha teentaal"
+   ],
+   "beats": 16,
+   "vibhag": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dha",
+    "dhin",
+    "-",
+    "dha",
+    "dha",
+    "dhin",
+    "-",
+    "dha",
+    "dha",
+    "tin",
+    "-",
+    "ta",
+    "ta",
+    "dhin",
+    "-",
+    "dha"
+   ],
+   "theka_note": "Commonly cited form; addha / sitarkhani / punjabi thekas vary by gharana.",
+   "western": "4/4 with a dotted (swung) feel (16 = 4 bars)",
+   "equivalents": "teentaal (same structure); adi 2-kalai",
+   "feel": "Swung 16 for thumri, tappa, bhajans and qawwali."
+  },
+  {
+   "name": "tilwada",
+   "system": "hindustani",
+   "aliases": [
+    "tilwara",
+    "tilwada taal",
+    "tilvada"
+   ],
+   "beats": 16,
+   "vibhag": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dha",
+    "tirakita",
+    "dhin",
+    "dhin",
+    "dha",
+    "dha",
+    "tin",
+    "tin",
+    "ta",
+    "tirakita",
+    "dhin",
+    "dhin",
+    "dha",
+    "dha",
+    "dhin",
+    "dhin"
+   ],
+   "western": "16/8 slow (4 x 4)",
+   "equivalents": "teentaal (same structure); adi 2-kalai",
+   "feel": "Very slow (vilambit) khayal accompaniment."
+  },
+  {
+   "name": "jhoomra",
+   "system": "hindustani",
+   "aliases": [
+    "jhumra",
+    "jhoomra taal",
+    "jhumara"
+   ],
+   "beats": 14,
+   "vibhag": [
+    3,
+    4,
+    3,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "dhin",
+    "-dha",
+    "tirakita",
+    "dhin",
+    "dhin",
+    "dhage",
+    "tirakita",
+    "tin",
+    "-ta",
+    "tirakita",
+    "dhin",
+    "dhin",
+    "dhage",
+    "tirakita"
+   ],
+   "western": "14/8 (3+4+3+4), very slow",
+   "equivalents": "deepchandi (same grouping, different theka); Carnatic dhruva/ata by count only",
+   "feel": "Very slow (vilambit) khayal; distinguished from deepchandi by its dense 'tirakita' theka."
+  },
+  {
+   "name": "chautaal",
+   "system": "hindustani",
+   "aliases": [
+    "chautal",
+    "chartal",
+    "chowtal",
+    "chau taal"
+   ],
+   "beats": 12,
+   "vibhag": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "clap_wave": "X 0 2 0 3 4",
+   "theka_bols": [
+    "dha",
+    "dha",
+    "din",
+    "ta",
+    "kita",
+    "dha",
+    "din",
+    "ta",
+    "tita",
+    "kata",
+    "gadi",
+    "gana"
+   ],
+   "theka_note": "Pakhawaj theka.",
+   "western": "12/8 or 6/4 (six pairs)",
+   "equivalents": "ektaal (same count and divisions)",
+   "feel": "Dhrupad and temple/haveli devotional singing on pakhawaj."
+  },
+  {
+   "name": "dhamar",
+   "system": "hindustani",
+   "aliases": [
+    "dhamaar",
+    "dhamar taal"
+   ],
+   "beats": 14,
+   "vibhag": [
+    5,
+    2,
+    3,
+    4
+   ],
+   "clap_wave": "X 2 0 3",
+   "theka_bols": [
+    "ka",
+    "dhi",
+    "ta",
+    "dhi",
+    "ta",
+    "dha",
+    "-",
+    "ga",
+    "ti",
+    "ta",
+    "ti",
+    "ta",
+    "ta",
+    "-"
+   ],
+   "theka_note": "Pakhawaj theka.",
+   "western": "14/8 (5+2+3+4)",
+   "equivalents": "Carnatic ata/dhruva by count only",
+   "feel": "Dhrupad-style Holi (hori) compositions."
+  },
+  {
+   "name": "sooltaal",
+   "system": "hindustani",
+   "aliases": [
+    "sultal",
+    "sool taal",
+    "shooltaal",
+    "sulfakta"
+   ],
+   "beats": 10,
+   "vibhag": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "clap_wave": "X 0 2 3 0",
+   "theka_bols": [
+    "dha",
+    "dha",
+    "din",
+    "ta",
+    "kita",
+    "dha",
+    "tita",
+    "kata",
+    "gadi",
+    "gana"
+   ],
+   "theka_note": "Pakhawaj theka.",
+   "western": "10/8 (2+2+2+2+2) or 5/4",
+   "equivalents": "jhaptaal (count only); Carnatic matya/jhampa by count only",
+   "feel": "Dhrupad; occasionally temple bhajans."
+  },
+  {
+   "name": "adi",
+   "system": "carnatic",
+   "aliases": [
+    "aadi",
+    "adi tala",
+    "adi talam",
+    "chatusra jati triputa",
+    "chaturashra triputa"
+   ],
+   "beats": 8,
+   "vibhag": "I4 O O",
+   "groups": [
+    4,
+    2,
+    2
+   ],
+   "jati": "chatusra (triputa family)",
+   "clap_wave": "clap, pinky, ring, middle | clap, wave | clap, wave",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "4/4 (8 beats = one 8/8 bar or two 4/4 bars; 2-kalai adi = 16)",
+   "equivalents": "keherwa (light music); teentaal for 2-kalai adi",
+   "feel": "The default Carnatic tala for kritis and most South-Indian bhajans."
+  },
+  {
+   "name": "rupakam",
+   "system": "carnatic",
+   "aliases": [
+    "rupaka",
+    "rupaka tala",
+    "rupakam tala",
+    "chatusra jati rupaka",
+    "roopakam"
+   ],
+   "beats": 6,
+   "vibhag": "O I4",
+   "groups": [
+    2,
+    4
+   ],
+   "jati": "chatusra",
+   "clap_wave": "clap, wave | clap, pinky, ring, middle",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given. In practice it is often counted as 3 beats (6 aksharas at 2 per beat), especially in light music.",
+   "western": "6/8 or 3/4 (2+4 aksharas; commonly felt in 3)",
+   "equivalents": "dadra (6) in light music; NOT Hindustani rupak (7)",
+   "feel": "Common in kritis and devotional songs; a 3-feel in light music."
+  },
+  {
+   "name": "mishrachapu",
+   "system": "carnatic",
+   "aliases": [
+    "misra chapu",
+    "mishra chapu",
+    "misrachapu",
+    "chapu",
+    "mishra chaapu"
+   ],
+   "beats": 7,
+   "vibhag": "3+2+2 (chapu; no laghu/drutam angas)",
+   "groups": [
+    3,
+    2,
+    2
+   ],
+   "jati": "misra",
+   "clap_wave": "wave (or silent) on 1, clap on 4, clap on 6 - 'ta ki ta | ta ka | dhi mi'",
+   "theka_bols": [
+    "ta",
+    "ki",
+    "ta",
+    "ta",
+    "ka",
+    "dhi",
+    "mi"
+   ],
+   "theka_note": "Solkattu counting syllables, not a drum theka; mridangam patterns vary.",
+   "western": "7/8 (3+2+2)",
+   "equivalents": "rupak (Hindustani, 3+2+2, also starting on an unaccented beat)",
+   "feel": "Lilting 7 used for padams, devotional songs and many bhajans."
+  },
+  {
+   "name": "khandachapu",
+   "system": "carnatic",
+   "aliases": [
+    "khanda chapu",
+    "kanda chapu",
+    "khandachaapu"
+   ],
+   "beats": 5,
+   "vibhag": "2+3 (chapu)",
+   "groups": [
+    2,
+    3
+   ],
+   "jati": "khanda",
+   "clap_wave": "clap on 1 and 3 - 'ta ka | ta ki ta'",
+   "theka_bols": [
+    "ta",
+    "ka",
+    "ta",
+    "ki",
+    "ta"
+   ],
+   "theka_note": "Solkattu counting syllables, not a drum theka.",
+   "western": "5/8 (2+3)",
+   "equivalents": "jhaptaal (10 = 2+3+2+3) is two cycles of the same grouping",
+   "feel": "Brisk 5 used in devotional songs, tillanas and javalis."
+  },
+  {
+   "name": "tisraeka",
+   "system": "carnatic",
+   "aliases": [
+    "tisra eka",
+    "thisra eka",
+    "tisra ekam",
+    "tisra jati eka"
+   ],
+   "beats": 3,
+   "vibhag": "I3",
+   "groups": [
+    3
+   ],
+   "jati": "tisra",
+   "clap_wave": "clap, pinky, ring",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "3/4 (or 3/8)",
+   "equivalents": "dadra counted in 3 (dadra = 2 cycles)",
+   "feel": "Simple triple metre; light and devotional songs."
+  },
+  {
+   "name": "tisranadaiadi",
+   "system": "carnatic",
+   "aliases": [
+    "tisra nadai adi",
+    "tisra gati adi",
+    "tisra nadai",
+    "tisra gati",
+    "adi tisra nadai"
+   ],
+   "beats": 8,
+   "vibhag": "I4 O O (each beat subdivided in 3)",
+   "groups": [
+    4,
+    2,
+    2
+   ],
+   "jati": "chatusra triputa, tisra nadai (gati)",
+   "clap_wave": "as adi: clap, pinky, ring, middle | clap, wave | clap, wave - with three pulses per beat",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "12/8 (8 beats x 3 = 24 pulses = two bars of 12/8)",
+   "equivalents": "dadra / khemta feel (6-feel) and bhajani theka (swung 8)",
+   "feel": "Triplet-feel adi; what many 'Taal 6' South-Indian bhajans actually use."
+  },
+  {
+   "name": "chatusraeka",
+   "system": "carnatic",
+   "aliases": [
+    "chatusra eka",
+    "chaturashra eka",
+    "eka",
+    "eka tala",
+    "chatushra ekam"
+   ],
+   "beats": 4,
+   "vibhag": "I4",
+   "groups": [
+    4
+   ],
+   "jati": "chatusra",
+   "clap_wave": "clap, pinky, ring, middle",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "4/4",
+   "equivalents": "half a keherwa cycle",
+   "feel": "Simple duple metre; fast pieces, tillanas, devotional songs."
+  },
+  {
+   "name": "jhampa",
+   "system": "carnatic",
+   "aliases": [
+    "jampa",
+    "jhampe",
+    "misra jati jhampa",
+    "jhampa tala"
+   ],
+   "beats": 10,
+   "vibhag": "I7 U O",
+   "groups": [
+    7,
+    1,
+    2
+   ],
+   "jati": "misra (default)",
+   "clap_wave": "clap + 6 finger counts | clap (anudrutam) | clap, wave",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "10/8 (7+1+2)",
+   "equivalents": "jhaptaal by count only (grouping differs: 2+3+2+3)",
+   "feel": "Rare in light music; used in some kritis and dasa padas (Purandara Dasa 'jhampe')."
+  },
+  {
+   "name": "triputa",
+   "system": "carnatic",
+   "aliases": [
+    "tisra triputa",
+    "tisra jati triputa",
+    "triputa tala",
+    "tripuTa"
+   ],
+   "beats": 7,
+   "vibhag": "I3 O O",
+   "groups": [
+    3,
+    2,
+    2
+   ],
+   "jati": "tisra (default; adi is the chatusra form)",
+   "clap_wave": "clap, pinky, ring | clap, wave | clap, wave",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "7/8 (3+2+2)",
+   "equivalents": "rupak / misra chapu (same 3+2+2 grouping)",
+   "feel": "Used in some kritis and dasa padas; same grouping as misra chapu but counted with angas."
+  },
+  {
+   "name": "ata",
+   "system": "carnatic",
+   "aliases": [
+    "atta",
+    "ata tala",
+    "khanda jati ata",
+    "aTa"
+   ],
+   "beats": 14,
+   "vibhag": "I5 I5 O O",
+   "groups": [
+    5,
+    5,
+    2,
+    2
+   ],
+   "jati": "khanda (default)",
+   "clap_wave": "clap + 4 counts | clap + 4 counts | clap, wave | clap, wave",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "14/8 (5+5+2+2)",
+   "equivalents": "Hindustani 14-beat taals (deepchandi, dhamar) by count only",
+   "feel": "Slow varnams and some dasa padas."
+  },
+  {
+   "name": "dhruva",
+   "system": "carnatic",
+   "aliases": [
+    "dhruva tala",
+    "chatusra jati dhruva",
+    "druva"
+   ],
+   "beats": 14,
+   "vibhag": "I4 O I4 I4",
+   "groups": [
+    4,
+    2,
+    4,
+    4
+   ],
+   "jati": "chatusra (default)",
+   "clap_wave": "clap + 3 counts | clap, wave | clap + 3 counts | clap + 3 counts",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "14/8 (4+2+4+4)",
+   "equivalents": "Hindustani 14-beat taals by count only",
+   "feel": "Rare; alankaras and a few compositions."
+  },
+  {
+   "name": "matya",
+   "system": "carnatic",
+   "aliases": [
+    "matya tala",
+    "chatusra jati matya",
+    "mathya"
+   ],
+   "beats": 10,
+   "vibhag": "I4 O I4",
+   "groups": [
+    4,
+    2,
+    4
+   ],
+   "jati": "chatusra (default)",
+   "clap_wave": "clap + 3 counts | clap, wave | clap + 3 counts",
+   "theka_bols": null,
+   "theka_note": "Carnatic talas have no fixed theka; the mridangam improvises within the tala using sollukattu patterns, so no standard bol sequence is given.",
+   "western": "10/8 (4+2+4)",
+   "equivalents": "jhaptaal / sooltaal by count only",
+   "feel": "Rare; alankaras and a few compositions."
+  }
+ ]
+}

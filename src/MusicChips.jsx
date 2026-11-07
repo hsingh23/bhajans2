@@ -6,6 +6,8 @@ import { keyName, kattaiFor } from './musicTheory';
 const titleCase = (id) => String(id || '').replace(/(^|[\s-])\w/g, (c) => c.toUpperCase());
 
 export const ragaName = (ragas, id) => ragas?.[id]?.name || titleCase(id);
+/** Raga confidence at or above which the name is stated plainly (blind re-check: 96% agreement). */
+export const RAGA_SURE = 0.85;
 export const taalName = (taals, id) => taals?.[id]?.name || titleCase(id);
 
 /** Swaras of a song's first raga, used to spell its key (C# or Db?). */
@@ -30,8 +32,11 @@ export const musicChips = (entry, music) => {
   if (shruti) chips.push({ kind: 'shruti', ...shruti });
   const ragas = Array.isArray(entry.r) ? entry.r.filter((r) => r?.id) : [];
   if (ragas.length) {
-    const text = ragas.map((r) => ragaName(music.ragas, r.id)).join(' + ');
-    chips.push({ kind: 'raga', text, label: `Raga ${text}` });
+    const names = ragas.map((r) => ragaName(music.ragas, r.id)).join(' + ');
+    // Below this the name is a best guess (close ragas share the scale); say so on the chip too.
+    const approximate = (ragas[0].c ?? 1) < RAGA_SURE;
+    const text = approximate ? `≈ ${names}` : names;
+    chips.push({ kind: 'raga', text, label: approximate ? `Raga close to ${names}` : `Raga ${names}` });
   }
   const t = entry.t;
   if (t && (t.id || t.ts || t.b)) {

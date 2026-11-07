@@ -1,0 +1,15 @@
+# Large or private pipeline data stays local: cached audio, extracted features,
+# rater outputs, and anything derived from the private shruti spreadsheet.
+.venv/
+audio/
+features/
+work/
+sheet/
+*.wav
+*.log
+box-matches*.json
+rubric*.json
+reference/raga_alias_additions.json
+reference/raga-adjudication.md
+reference/matching-report.md
+work_*
