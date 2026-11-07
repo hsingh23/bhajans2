@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import { track } from './analytics';
 import { recentBhajans, bhajanOfTheDay, viewerPath } from './engagement';
-import NotificationPrompt from './NotificationPrompt';
-import { PopupButton } from '@typeform/embed-react';
+// Push opt-in pulls in Firebase Messaging; load it only after the list is up.
+const NotificationPrompt = React.lazy(() => import('./NotificationPrompt'));
 import Header from './Header';
 import { groupSheetMusic } from './sheetMusicGroups';
 
@@ -77,6 +77,18 @@ const ScrollMonitor = ({ isScrolling }) => {
     }
   }, [isScrolling]);
   return null;
+};
+
+// The Typeform report form (and its ~100 KB script) loads only when asked for.
+const openProblemReport = async () => {
+  const [{ createPopup }] = await Promise.all([
+    import('@typeform/embed'),
+    import('@typeform/embed/build/css/popup.css'),
+  ]);
+  createPopup('EVBTgcG5', {
+    onReady: () => track('report_problem'),
+    onSubmit: () => track('report_problem_submitted'),
+  }).open();
 };
 
 const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
@@ -310,6 +322,20 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   };
 
   const myFavoritesMode = path.includes('/my-favorites');
+
+  // The push opt-in (and the Firebase it needs) waits until the list is up and the browser is idle.
+  const [promptReady, setPromptReady] = useState(false);
+  const listLoaded = bhajans.length > 0;
+  useEffect(() => {
+    if (!listLoaded) return;
+    const ready = () => setPromptReady(true);
+    if (typeof window.requestIdleCallback !== 'function') {
+      const timer = setTimeout(ready, 2000);
+      return () => clearTimeout(timer);
+    }
+    const id = window.requestIdleCallback(ready, { timeout: 5000 });
+    return () => window.cancelIdleCallback(id);
+  }, [listLoaded]);
   const favoriteCount = useMemo(() => bhajans.filter((b) => favorites[b?.n]).length, [bhajans, favorites]);
 
   // Home extras: read once per visit so they don't jump around while browsing.
@@ -452,6 +478,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         </div>
       </div>
       <Header>
+        <form role='search' className='search-form' onSubmit={(e) => e.preventDefault()}>
         <input
           type='search'
           placeholder='Search Bhajans'
@@ -460,13 +487,13 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
           className='form-control'
           name='search'
           id='search'
-          role='search'
           aria-label='search'
           value={filter}
           onChange={(e) => {
             setFilter(e.target.value);
           }}
         />
+        </form>
       </Header>
       <div className='rest'>
         <nav>
@@ -487,7 +514,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <span className='view-count'>{favoriteCount}</span>
             </Link>
           </div>
-          {!myFavoritesMode && <NotificationPrompt />}
+          {!myFavoritesMode && <React.Suspense fallback={null}>{promptReady && <NotificationPrompt />}</React.Suspense>}
           {showHomeExtras && (
             <section className='home-extras' aria-label='For you'>
               {resumeItems.length > 0 && (
@@ -562,6 +589,9 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
             </p>
           )}
         </nav>
+        {bhajans.length === 0 ? (
+          <div className='list-loading' aria-busy='true' />
+        ) : (
         <WindowScroller>
           {({ height, isScrolling, onChildScroll, scrollTop }) => (
             <>
@@ -602,12 +632,15 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
             </>
           )}
         </WindowScroller>
-        <div className='report-problem'>
-          <p>Wrong page, typo or missing bhajan?</p>
-          <PopupButton id='EVBTgcG5' className='report-problem-button' onReady={() => track('report_problem')} onSubmit={() => track('report_problem_submitted')}>
-            <Icon name='flag' /> Report a bhajan problem
-          </PopupButton>
-        </div>
+        )}
+        {bhajans.length > 0 && (
+          <div className='report-problem'>
+            <p>Wrong page, typo or missing bhajan?</p>
+            <button type='button' className='report-problem-button' onClick={openProblemReport}>
+              <Icon name='flag' /> Report a bhajan problem
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

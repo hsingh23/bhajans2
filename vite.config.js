@@ -12,11 +12,30 @@ const LYRICS_PDFS = readdirSync(new URL("./public/pdfs", import.meta.url))
 
 
 // https://vitejs.dev/config/
+// Inlines the entry stylesheet into index.html so it doesn't block the first paint.
+const inlineEntryCss = () => ({
+  name: "inline-entry-css",
+  apply: "build",
+  enforce: "post",
+  generateBundle(_, bundle) {
+    const page = bundle["index.html"];
+    if (!page || page.type !== "asset") return;
+    page.source = String(page.source).replace(
+      /<link rel="stylesheet"[^>]*href="\/(assets\/[^"]+\.css)"[^>]*>/g,
+      (tag, file) => {
+        const css = bundle[file];
+        return css && css.type === "asset" ? `<style>${css.source}</style>` : tag;
+      }
+    );
+  },
+});
+
 export default defineConfig({
   define: {
     __LYRICS_PDFS__: JSON.stringify(LYRICS_PDFS),
   },
   plugins: [
+    inlineEntryCss(),
     // React Compiler through plugin-react's native (oxc) port; no Babel in our build.
     react({ compiler: { target: "19" } }),
     VitePWA({
@@ -85,7 +104,6 @@ export default defineConfig({
           if (!id.includes('node_modules')) return undefined;
           if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) return 'vendor';
           if (/node_modules\/(@firebase|firebase)\//.test(id)) return 'firebase';
-          if (/node_modules\/(@mui|@emotion)\//.test(id)) return 'mui';
           return undefined;
         },
       },

@@ -1,17 +1,15 @@
+// Self-hosted fonts (latin only), so no third-party stylesheet blocks the first paint.
+import "@fontsource/lato/latin-400.css";
+import "@fontsource/lato/latin-700.css";
+import "@fontsource/lora/latin-400.css";
+import "@fontsource/playfair-display/latin-700-italic.css";
+import "@fontsource/playfair-display/latin-900.css";
 import "./index.css";
 import "./App.css";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import Login from "./Login";
-import Logout from "./Logout";
-import Admin from "./Admin";
-import SalesDashboard from "./SalesDashboard";
-import Pay from "./Pay";
-import FAQ from "./FAQ";
-import Beta from "./Beta";
-import Privacy from "./Privacy";
-import Terms from "./Terms";
 import App from "./App";
+import { lazyPage } from "./lazyPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { withRouterCompat, RequireAdmin } from "./util";
 import ErrorBoundary from "./ErrorBoundary";
@@ -19,16 +17,24 @@ import ErrorBoundary from "./ErrorBoundary";
 import { registerSW } from "virtual:pwa-register";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "./ThemeContext";
-import MUIThemeWrapper from "./MUIThemeProvider";
 import { schedulePdfPrefetch } from "./pdfPrefetch";
 import { loadTagManager, track } from "./analytics";
 
 
 const queryClient = new QueryClient();
-const WrappedLogout = withRouterCompat(Logout);
-const WrappedBeta = withRouterCompat(Beta);
+const Login = lazyPage(() => import("./Login"), { mui: true });
+const Pay = lazyPage(() => import("./Pay"), { mui: true });
+const Privacy = lazyPage(() => import("./Privacy"), { mui: true });
+const Terms = lazyPage(() => import("./Terms"), { mui: true });
+const Admin = lazyPage(() => import("./Admin"));
+const SalesDashboard = lazyPage(() => import("./SalesDashboard"));
+const FAQ = lazyPage(() => import("./FAQ"));
+const WrappedLogout = lazyPage(() => import("./Logout").then((m) => ({ default: withRouterCompat(m.default) })));
+const WrappedBeta = lazyPage(() => import("./Beta").then((m) => ({ default: withRouterCompat(m.default) })));
+const ReactQueryDevtools = import.meta.env.DEV
+  ? React.lazy(() => import("@tanstack/react-query-devtools").then((m) => ({ default: m.ReactQueryDevtools })))
+  : () => null;
 
 
 async function enableMocking() {
@@ -95,7 +101,6 @@ const renderApp = () => {
   root.render(
     <ErrorBoundary>
       <ThemeProvider>
-        <MUIThemeWrapper>
           <QueryClientProvider client={queryClient}>
             <BrowserRouter>
               <Routes>
@@ -111,9 +116,12 @@ const renderApp = () => {
                 <Route path='*' element={<App />} />
               </Routes>
             </BrowserRouter>
-            {import.meta.env.DEV && <ReactQueryDevtools />}
+            {import.meta.env.DEV && (
+              <React.Suspense fallback={null}>
+                <ReactQueryDevtools />
+              </React.Suspense>
+            )}
           </QueryClientProvider>
-        </MUIThemeWrapper>
       </ThemeProvider>
     </ErrorBoundary>
   );
@@ -121,16 +129,26 @@ const renderApp = () => {
 
 const bootstrap = async () => {
   try {
-    await registerServiceWorkers();
-    if (import.meta.env.PROD) {
-      schedulePdfPrefetch().catch((error) => console.warn("Lyrics PDF caching stopped:", error));
-    }
+    // Dev only: the mock API must be ready before the app's first request.
     await enableMocking();
   } catch (error) {
     console.error("Failed to enable mocking:", error);
-  } finally {
-    renderApp();
   }
+  renderApp();
+  // The service worker precaches ~4 MB, so it waits until the page has loaded
+  // (the preloaded bhajan index included) and the browser is idle.
+  await new Promise((resolve) => {
+    const idle = () => (window.requestIdleCallback ? window.requestIdleCallback(resolve, { timeout: 5000 }) : setTimeout(resolve, 1));
+    if (document.readyState === "complete") idle();
+    else window.addEventListener("load", idle, { once: true });
+  });
+  registerServiceWorkers()
+    .then(() => {
+      if (import.meta.env.PROD) {
+        schedulePdfPrefetch().catch((error) => console.warn("Lyrics PDF caching stopped:", error));
+      }
+    })
+    .catch((error) => console.warn("Service worker setup failed:", error));
 };
 
 bootstrap();
