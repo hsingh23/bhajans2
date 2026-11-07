@@ -180,9 +180,12 @@ describe('Favorites Sync with Auth Changes', () => {
       mockAuthStateCallback({ uid: 'test-uid' });
     }
     
+    // One read for favorites and one for the reader's prefs (musician mode, viewer settings).
     await waitFor(() => {
-      expect(mockCheckRefOnce).toHaveBeenCalledTimes(1);
+      expect(mockCheckRefOnce).toHaveBeenCalledTimes(2);
     });
+    expect(mockCheckRefOnce).toHaveBeenCalledWith('favorites/test-uid');
+    expect(mockCheckRefOnce).toHaveBeenCalledWith('prefs/test-uid');
     
     // Clear and simulate second login (e.g., after sign out and sign in)
     mockCheckRefOnce.mockClear();

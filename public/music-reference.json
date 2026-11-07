@@ -1,0 +1,114 @@
+{
+  "ragas": {
+    "mohanam": {
+      "name": "Mohanam",
+      "hi": "Bhupali",
+      "aroha": ["S", "R2", "G3", "P", "D2", "S"],
+      "avaroha": ["S", "D2", "P", "G3", "R2", "S"],
+      "pcs": [0, 2, 4, 7, 9],
+      "western": "major pentatonic",
+      "mood": "joyful"
+    },
+    "natabhairavi": {
+      "name": "Natabhairavi",
+      "hi": "Asavari (Jaunpuri)",
+      "aroha": ["S", "R2", "g2", "M1", "P", "d1", "n2", "S"],
+      "avaroha": ["S", "n2", "d1", "P", "M1", "g2", "R2", "S"],
+      "pcs": [0, 2, 3, 5, 7, 8, 10],
+      "western": "natural minor (Aeolian)",
+      "mood": "pathos, longing"
+    },
+    "maand": {
+      "name": "Maand",
+      "aroha": ["S", "G3", "M1", "D2", "N3", "S"],
+      "avaroha": ["S", "N3", "D2", "P", "M1", "G3", "R2", "S"],
+      "pcs": [0, 2, 4, 5, 7, 9, 11],
+      "western": "major scale with folk turns",
+      "mood": "folk, longing"
+    },
+    "sarasangi": {
+      "name": "Sarasangi",
+      "aroha": ["S", "R2", "G3", "M1", "P", "d1", "N3", "S"],
+      "avaroha": ["S", "N3", "d1", "P", "M1", "G3", "R2", "S"],
+      "pcs": [0, 2, 4, 5, 7, 8, 11],
+      "western": "harmonic major (major with a flat 6)"
+    },
+    "jog": {
+      "name": "Jog",
+      "aroha": ["S", "G3", "M1", "P", "n2", "S"],
+      "avaroha": ["S", "n2", "P", "M1", "G3", "M1", "g2", "S"],
+      "pcs": [0, 3, 4, 5, 7, 10],
+      "western": "major third going up, minor third coming down (blues-like)",
+      "mood": "romantic, longing"
+    },
+    "hindolam": {
+      "name": "Hindolam",
+      "hi": "Malkauns",
+      "aroha": ["S", "g2", "M1", "d1", "n2", "S"],
+      "avaroha": ["S", "n2", "d1", "M1", "g2", "S"],
+      "pcs": [0, 3, 5, 8, 10],
+      "western": "minor pentatonic without the 5th (1 b3 4 b6 b7)",
+      "mood": "serene, meditative"
+    },
+    "khamas": {
+      "name": "Khamas",
+      "hi": "Khamaj",
+      "aroha": ["S", "M1", "G3", "M1", "P", "D2", "n2", "S"],
+      "avaroha": ["S", "n2", "D2", "P", "M1", "G3", "R2", "S"],
+      "pcs": [0, 2, 4, 5, 7, 9, 10],
+      "western": "Mixolydian (major with a flat 7)",
+      "mood": "romantic, light"
+    }
+  },
+  "taals": {
+    "keherwa": {
+      "name": "Keherwa",
+      "system": "hindustani",
+      "beats": 8,
+      "vibhag": [4, 4],
+      "bols": ["dha", "ge", "na", "ti", "na", "ka", "dhi", "na"],
+      "clap": "X 0",
+      "western": "4/4",
+      "feel": "the common bhajan groove"
+    },
+    "adi": {
+      "name": "Adi",
+      "system": "carnatic",
+      "beats": 8,
+      "vibhag": [4, 2, 2],
+      "bols": null,
+      "clap": "I4 O O",
+      "western": "4/4",
+      "feel": "the most common Carnatic tala"
+    },
+    "dadra": {
+      "name": "Dadra",
+      "system": "hindustani",
+      "beats": 6,
+      "vibhag": [3, 3],
+      "bols": ["dha", "dhi", "na", "dha", "ti", "na"],
+      "clap": "X 0",
+      "western": "6/8",
+      "feel": "a lilting two-in-a-bar swing"
+    },
+    "rupakam": {
+      "name": "Rupakam",
+      "system": "carnatic",
+      "beats": 6,
+      "vibhag": [2, 4],
+      "clap": "O I4",
+      "western": "6/8 or 3/4",
+      "feel": "light-music six, felt in three"
+    },
+    "rupak": {
+      "name": "Rupak",
+      "system": "hindustani",
+      "beats": 7,
+      "vibhag": [3, 2, 2],
+      "bols": ["tin", "tin", "na", "dhi", "na", "dhi", "na"],
+      "clap": "0 2 3",
+      "western": "7/8 (3+2+2)",
+      "feel": "an uneven seven that starts on a wave"
+    }
+  }
+}

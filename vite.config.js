@@ -77,7 +77,14 @@ export default defineConfig({
         globPatterns: [
           "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,json,woff,woff2,ttf,wasm,lottie}",
         ],
+        // Musician-mode data downloads only for readers who turn the mode on.
+        globIgnores: ["**/bhajan-music.json", "**/music-reference.json"],
         runtimeCaching: [
+          {
+            urlPattern: /\/(bhajan-music|music-reference)\.json$/,
+            handler: "StaleWhileRevalidate",
+            options: { cacheName: "music-data" },
+          },
           {
             urlPattern: /\/pdfs\/.*\.(pdf|PDF)$/,
             handler: "CacheFirst",

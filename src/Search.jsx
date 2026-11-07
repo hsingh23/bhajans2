@@ -9,7 +9,14 @@ import { recentBhajans, bhajanOfTheDay, viewerPath } from './engagement';
 // Push opt-in pulls in Firebase Messaging; load it only after the list is up.
 const NotificationPrompt = React.lazy(() => import('./NotificationPrompt'));
 import Header from './Header';
-import { groupSheetMusic } from './sheetMusicGroups';
+import { groupSheetMusic, preferredSheetFile } from './sheetMusicGroups';
+import { useMusicianMode, SongMusicSection } from './MusicianMode';
+import MusicChips from './MusicChips';
+import { useViewerPrefs, rememberedSheetKey } from './prefs';
+
+// react-virtualized needs one fixed row height; musician mode adds a line of chips.
+const ROW_HEIGHT = 200;
+const MUSICIAN_ROW_HEIGHT = 240;
 
 const makeSearchable = (line) =>
   line
@@ -102,6 +109,9 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const [deity, setDeity] = useState(window.searchDeity || '');
   
   const audioTagRef = useRef(null);
+  const { enabled: musicianMode, music } = useMusicianMode();
+  const showMusic = musicianMode && Boolean(music);
+  const { sheetKeys } = useViewerPrefs();
   
   useEffect(() => {
     if (!audioTagRef.current) {
@@ -245,6 +255,9 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     if (!bhajan) return null;
     const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, cn: cdbabyNames, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
     const tagContent = tags ? ` (${tags})` : '';
+    const songMusic = showMusic ? music.songs[name] : null;
+    // Open sheet music in the key this reader last chose for the song.
+    const sheetFile = sheetmusic && preferredSheetFile(sheetmusic, (song) => rememberedSheetKey(sheetKeys, song));
 
     return (
       <div key={key} style={style}>
@@ -280,6 +293,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 )}
               </span>
             )}
+            {songMusic && <MusicChips entry={songMusic} music={music} />}
           </div>
           <span className='Search_RightSide'>
             <button
@@ -292,7 +306,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <Link
                 className='button button-3d button-circle button-jumbo spaced'
                 aria-label='open sheet music'
-                to={`/pdf/${sheetmusic[0]}/${filteredBhajans[index]}/${name}`}>
+                to={`/pdf/${sheetFile}/${filteredBhajans[index]}/${name}`}>
                 <Icon name='music' />
               </Link>
             )}
@@ -430,6 +444,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <hr />
             </div>
           )}
+
+          <SongMusicSection name={infoName} />
 
           {cdbabyLinks.length > 0 && (
             <div>
@@ -622,7 +638,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     }
                     onScroll={onChildScroll}
                     rowCount={filteredBhajans.length}
-                    rowHeight={200}
+                    rowHeight={showMusic ? MUSICIAN_ROW_HEIGHT : ROW_HEIGHT}
                     rowRenderer={rowRenderer}
                     scrollTop={scrollTop}
                     width={width}

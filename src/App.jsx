@@ -9,6 +9,7 @@ import { lazyPage } from "./lazyPage";
 import Icon from "./Icon";
 import { setUserState, track } from "./analytics";
 import Footer from "./Footer";
+import { applyRemotePrefs } from "./prefs";
 
 const Profile = lazyPage(() => import("./Profile"));
 const RenderPage = lazyPage(() => import("./RenderPage"), { mui: true });
@@ -36,6 +37,8 @@ const App = () => {
   useEffect(() => {
     const handleUser = async (user, checkRefOnce) => {
       if (!user) return;
+      // Musician mode and song-page settings follow the reader across devices.
+      checkRefOnce(`prefs/${user.uid}`).then(applyRemotePrefs).catch(console.error);
       const remoteFavorites = await checkRefOnce(`favorites/${user.uid}`);
       setFavorites((prev) => {
         // Treat null remote favorites as empty object to prevent downstream errors

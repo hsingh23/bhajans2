@@ -853,7 +853,9 @@ button.button-action {
    z-index 3 keeps them above the full-screen page-turn tap zones. */
 .viewer-back,
 .viewer-key,
+.viewer-key-step,
 .viewer-key-menu,
+.viewer-music,
 .viewer-header-toggle {
   position: fixed;
   z-index: 3;
@@ -890,6 +892,37 @@ button.button-action {
   transition: top 0.2s ease;
 }
 
+/* Key bar: lower / current key / higher, thumb-sized, under the top bar */
+.viewer-keybar {
+  position: fixed;
+  z-index: 3;
+  top: calc(var(--viewer-top, 64px) + 8px);
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: top 0.2s ease;
+}
+.viewer-keybar .viewer-key,
+.viewer-keybar .viewer-key-step {
+  position: static;
+  height: 44px;
+}
+.viewer-keybar .viewer-key {
+  border-radius: 22px;
+}
+.viewer-key-step {
+  width: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+.viewer-key-step:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
 .viewer-key svg {
   font-size: 12px;
   opacity: 0.8;
@@ -903,7 +936,7 @@ button.button-action {
 
 .viewer-key-menu {
   z-index: 4;
-  top: calc(var(--viewer-top, 64px) + 50px);
+  top: calc(var(--viewer-top, 64px) + 58px);
   right: 8px;
   display: grid;
   grid-template-columns: repeat(4, 44px);
@@ -932,6 +965,48 @@ button.button-action {
   font-weight: 600;
 }
 
+/* Musician mode: the key the recording is sung in */
+.viewer-key-menu button.recording {
+  box-shadow: inset 0 -3px 0 #ffb74d;
+}
+.viewer-key-legend {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.viewer-key-dot {
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #ffb74d;
+}
+
+/* Musician details button on the song page: bottom left, clear of the
+   back button, key bar and top-bar pull tab, and in reach of a thumb */
+.viewer-music {
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  left: 8px;
+  gap: 6px;
+  max-width: calc(100vw - 96px);
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 22px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.viewer-music span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.viewer-music-dialog {
+  text-transform: none;
+}
+
 .viewer-header-toggle {
   top: var(--viewer-top, 64px);
   left: 50%;
@@ -952,6 +1027,8 @@ button.button-action {
 
 .viewer-back:focus-visible,
 .viewer-key:focus-visible,
+.viewer-key-step:focus-visible,
+.viewer-music:focus-visible,
 .viewer-key-menu button:focus-visible,
 .viewer-header-toggle:focus-visible {
   outline: 2px solid var(--primary-color, #e65100);
@@ -963,6 +1040,8 @@ button.button-action {
   .rest,
   .header-hidden .App-header,
   .viewer-key,
+  .viewer-keybar,
+  .viewer-music,
   .viewer-header-toggle {
     transition: none;
   }
@@ -1485,4 +1564,250 @@ mark {
 .view-count {
   min-width: 3.2em;
   text-align: center;
+}
+
+/* Read by screen readers, not shown */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* MUSICIAN MODE */
+.App-header .header-right .musician-toggle.is-active {
+  background-color: #4527a0 !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .App-header .header-right .musician-toggle.is-active {
+  background-color: #fff !important;
+  color: #4527a0 !important;
+}
+
+/* One line of chips per row, so every row keeps the same height */
+.music-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  min-width: 0;
+  padding: 6px 10px 0;
+  overflow: hidden;
+}
+.category-chip.music {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  cursor: default;
+}
+.category-chip.music.shruti {
+  flex-shrink: 0;
+  color: #4527a0;
+  background: #ede7f6;
+  border-color: #d1c4e9;
+}
+.category-chip.music.raga {
+  color: #6a1b9a;
+  background: #f6e9f8;
+  border-color: #e1bee7;
+}
+.category-chip.music.taal {
+  color: #37474f;
+  background: #eceff1;
+  border-color: #cfd8dc;
+}
+[data-theme="dark"] .category-chip.music.shruti {
+  color: #b39ddb;
+  background: rgba(149, 117, 205, 0.16);
+  border-color: rgba(149, 117, 205, 0.4);
+}
+[data-theme="dark"] .category-chip.music.raga {
+  color: #ce93d8;
+  background: rgba(186, 104, 200, 0.14);
+  border-color: rgba(186, 104, 200, 0.38);
+}
+[data-theme="dark"] .category-chip.music.taal {
+  color: #b0bec5;
+  background: rgba(144, 164, 174, 0.14);
+  border-color: rgba(144, 164, 174, 0.38);
+}
+
+.musician-details {
+  --md-accent: #4527a0;
+  --md-muted: var(--text-secondary, #757575);
+  margin: 4px 0 15px;
+  padding: 12px 14px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  text-transform: none;
+  color: var(--text-color);
+  border: 1px solid #d1c4e9;
+  border-radius: var(--radius-md, 8px);
+  background: rgba(237, 231, 246, 0.45);
+}
+[data-theme="dark"] .musician-details {
+  --md-accent: #b39ddb;
+  border-color: rgba(149, 117, 205, 0.4);
+  background: rgba(149, 117, 205, 0.08);
+}
+.modal-window .musician-details div {
+  margin-bottom: 0;
+}
+.musician-details p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+  color: inherit;
+}
+.md-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: var(--md-accent);
+}
+.md-approx {
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px dashed currentColor;
+  border-radius: var(--radius-full, 9999px);
+  color: var(--md-muted);
+}
+.musician-details .md-summary {
+  margin-bottom: 4px;
+}
+.musician-details .md-block {
+  margin-top: 10px;
+}
+.md-label {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-accent);
+}
+.musician-details .md-aside,
+.musician-details .md-section {
+  color: var(--md-muted);
+  font-size: 14px;
+}
+.md-section {
+  text-transform: capitalize;
+}
+.musician-details .md-raga + .md-raga {
+  margin-top: 8px;
+}
+.md-scale {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  margin: 4px 0;
+}
+.md-scale-row {
+  display: contents;
+}
+.md-scale-label {
+  grid-row: span 2;
+  align-self: center;
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.md-swaras,
+.md-notes,
+.md-bol,
+.md-mark,
+.md-numeral,
+.md-chord,
+.md-ts {
+  font-variant-numeric: tabular-nums;
+}
+.md-swaras {
+  font-size: 13px;
+  color: var(--md-muted);
+}
+.md-notes {
+  margin-bottom: 4px;
+  font-weight: 700;
+  word-spacing: 0.25em;
+}
+.md-theka {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0;
+}
+.md-vibhag {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 8px 4px;
+  border-left: 2px solid var(--md-accent);
+}
+.md-mark {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--md-accent);
+}
+.md-mark-meaning {
+  font-weight: 400;
+  color: var(--md-muted);
+}
+.md-bols {
+  display: flex;
+  gap: 6px;
+}
+.md-bol {
+  min-width: 1.4em;
+}
+.md-ts {
+  font-weight: 700;
+}
+.md-chords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.md-chords li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2.75em;
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #d4b9b9);
+  border-radius: var(--radius-md, 8px);
+}
+.md-numeral {
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.md-chord {
+  font-weight: 700;
+}
+.musician-details .md-footnote {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.viewer-music-dialog .musician-details {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
 }
