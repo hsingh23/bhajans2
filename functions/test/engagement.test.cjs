@@ -8,7 +8,9 @@ const NOW = Date.parse("2026-11-07T15:00:00Z");
 
 test("reminders fire once in the 7-day window and once in the last day", () => {
   assert.equal(reminderDue(NOW + 6.5 * DAY, NOW), "7d");
-  assert.equal(reminderDue(NOW + 7 * DAY, NOW), null);
+  assert.equal(reminderDue(NOW + 7 * DAY, NOW), "7d");
+  assert.equal(reminderDue(NOW + 7 * DAY + 1, NOW), null);
+  assert.equal(reminderDue(NOW + 6 * DAY, NOW), null);
   assert.equal(reminderDue(NOW + 3 * DAY, NOW), null);
   assert.equal(reminderDue(NOW + 0.5 * DAY, NOW), "1d");
   assert.equal(reminderDue(NOW - 1, NOW), null);
@@ -72,4 +74,10 @@ test("renewal reminder email names the date and links to payment", () => {
   assert.match(week.html, /https:\/\/sing\.withamma\.com\/pay/);
   const tomorrow = renderRenewalReminder({ daysLeft: 1, validUntil: "November 8, 2026" });
   assert.match(tomorrow.text, /ends tomorrow/);
+});
+
+test("a failed reminder can be retried within its window by the 6-hourly job", () => {
+  // Failed at 6.9 days left; the next run is 6 hours later.
+  for (const left of [6.9, 1.0])
+    assert.equal(reminderDue(NOW + left * DAY - 6 * 3600000, NOW), left > 6 ? "7d" : "1d");
 });

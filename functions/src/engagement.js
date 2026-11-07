@@ -68,12 +68,17 @@ async function tokensFor(uids) {
 
 // ------------------------------------------------------- renewal reminders
 
-/** "7d" when 6–7 days are left, "1d" when under a day is left, else null. */
+/**
+ * "7d" when 6–7 days are left, "1d" when under a day is left, else null.
+ * The job runs every 6 hours, so each window is checked about four times:
+ * the claim below sends once, and a failed send is retried on a later run
+ * while the subscription is still in the window.
+ */
 function reminderDue(expiresOn, now) {
   const left = Number(expiresOn) - now;
   if (!Number.isFinite(left)) return null;
-  if (left >= 6 * DAY && left < 7 * DAY) return "7d";
-  if (left > 0 && left < DAY) return "1d";
+  if (left > 6 * DAY && left <= 7 * DAY) return "7d";
+  if (left > 0 && left <= DAY) return "1d";
   return null;
 }
 
@@ -85,11 +90,11 @@ const longDate = (ms) =>
     timeZone: "UTC",
   });
 
-/** Runs daily; each subscription gets at most one reminder per window. */
+/** Runs every 6 hours; each subscription gets at most one reminder per window. */
 exports.sendRenewalReminders = onSchedule(
   {
     ...options,
-    schedule: "every day 15:00",
+    schedule: "every 6 hours",
     timeZone: "UTC",
     secrets: [mailjetAuth],
   },
@@ -106,6 +111,7 @@ exports.sendRenewalReminders = onSchedule(
     ).val() || {};
     let emails = 0;
     let pushes = 0;
+    let failures = 0;
     for (const [uid, record] of Object.entries(due)) {
       const kind = reminderDue(record?.expiresOn, now);
       if (!kind) continue;
@@ -137,12 +143,17 @@ exports.sendRenewalReminders = onSchedule(
         });
         pushes += result.sent;
       } catch (error) {
-        // Release the claim so tomorrow's run can try again.
+        // Release the claim so the next run (6 hours later, still inside
+        // the window) tries again.
+        failures += 1;
         await db.ref(`messages/${uid}/reminders/${record.expiresOn}_${kind}`).remove();
         logger.error("renewal reminder failed", { uid, kind, code: error?.code, message: error?.message });
       }
     }
-    logger.info("renewal reminders sent", { emails, pushes });
+    logger.info("renewal reminders sent", { emails, pushes, failures });
+    // Mark the run as failed so it shows up in monitoring; claims for the
+    // reminders that did go out stay in place, so nothing is sent twice.
+    if (failures) throw new Error(`${failures} renewal reminder(s) failed; they will be retried`);
   },
 );
 

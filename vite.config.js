@@ -62,7 +62,8 @@ export default defineConfig({
               rangeRequests: true,
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                // Outlasts the 90-day offline period the app allows (src/firebase.js).
+                maxAgeSeconds: 60 * 60 * 24 * 100, // 100 days
               },
               cacheableResponse: {
                 statuses: [0, 200],
