@@ -69,6 +69,12 @@ function load({
     "firebase-admin/auth": { getAuth: () => auth },
     "firebase-admin/database": { getDatabase: () => database },
     "firebase-admin/messaging": { getMessaging: () => ({}) },
+    "./engagement": {
+      ga4ApiSecret: { value: () => "test-secret" },
+      recordGa4Purchase: async () => true,
+      sendRenewalReminders: () => {},
+      sendAnnouncement: () => {},
+    },
     "./mail": {
       newUserResetPasswordEmail: async () => {
         emails++;

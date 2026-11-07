@@ -4,6 +4,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { get, ref } from "firebase/database";
 import { auth, db, getUserByEmail, updateUserAccess } from "./firebase";
 import Header from "./Header";
+import AnnouncementForm from "./AnnouncementForm";
 import "./Admin.css";
 
 const fieldStyle = {
@@ -266,6 +267,7 @@ export default function Admin() {
             </>
           )}
         </section>
+        {authorization === "admin" && <AnnouncementForm />}
       </main>
     </div>
   );
