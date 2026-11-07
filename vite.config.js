@@ -43,6 +43,8 @@ export default defineConfig({
       },
       workbox: {
         cleanupOutdatedCaches: true,
+        // Shows Firebase Cloud Messaging pushes (opt-in, see src/notifications.js).
+        importScripts: ["push-handler.js"],
         clientsClaim: true,
         skipWaiting: true,
         navigateFallback: "/index.html",

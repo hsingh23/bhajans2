@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Icon from './Icon';
 import { track } from './analytics';
 import { recentBhajans, bhajanOfTheDay, viewerPath } from './engagement';
+import NotificationPrompt from './NotificationPrompt';
 import { PopupButton } from '@typeform/embed-react';
 import Header from './Header';
 import { groupSheetMusic } from './sheetMusicGroups';
@@ -486,6 +487,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               <span className='view-count'>{favoriteCount}</span>
             </Link>
           </div>
+          {!myFavoritesMode && <NotificationPrompt />}
           {showHomeExtras && (
             <section className='home-extras' aria-label='For you'>
               {resumeItems.length > 0 && (

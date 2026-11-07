@@ -1380,3 +1380,64 @@ mark {
 [data-theme="dark"] .botd-meta {
   color: #ffcc80;
 }
+
+/* PUSH NOTIFICATION OPT-IN */
+.notify-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin: 0 10px 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-main);
+}
+.notify-card > .icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-color);
+}
+.notify-text {
+  flex: 1 1 200px;
+  display: grid;
+  gap: 2px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.notify-text strong {
+  font-size: 15px;
+  color: var(--text-main);
+}
+.notify-actions {
+  display: flex;
+  gap: 8px;
+}
+.notify-yes,
+.notify-no {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-full);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.notify-yes {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+}
+.notify-no {
+  border: 1px solid rgba(128, 128, 128, 0.35);
+  background: transparent;
+  color: var(--text-main);
+}
+[data-theme="dark"] .notify-card {
+  background: #2a2a2a;
+}
+[data-theme="dark"] .notify-yes {
+  color: #2a1600;
+}

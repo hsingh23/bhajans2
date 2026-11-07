@@ -15,6 +15,7 @@ import Profile from "./Profile";
 import RenderPage from "./RenderPage";
 import Icon from "./Icon";
 import { setUserState, track } from "./analytics";
+import { refreshNotificationToken } from "./notifications";
 import Pay from "./Pay";
 import Footer from "./Footer";
 
@@ -67,6 +68,7 @@ const App = () => {
       setUserState({ uid: user?.uid, expiresOn: user ? localStorage.expiresOn : undefined });
       if (user) {
         handleUser(user);
+        refreshNotificationToken(user.uid);
       }
     });
 
