@@ -81,3 +81,81 @@ test("a failed reminder can be retried within its window by the 6-hourly job", (
   for (const left of [6.9, 1.0])
     assert.equal(reminderDue(NOW + left * DAY - 6 * 3600000, NOW), left > 6 ? "7d" : "1d");
 });
+
+// Loads engagement.js with in-memory Firebase, FCM and mail stand-ins.
+function loadReminderJob({ pushResults }) {
+  const fs = require("node:fs");
+  const vm = require("node:vm");
+  const tree = {};
+  const parts = (path) => path.split("/").filter(Boolean);
+  const read = (path) => parts(path).reduce((node, key) => (node == null ? undefined : node[key]), tree);
+  const write = (path, value) => {
+    const keys = parts(path);
+    let node = tree;
+    for (const key of keys.slice(0, -1)) node = node[key] = typeof node[key] === "object" && node[key] ? node[key] : {};
+    if (value === undefined) delete node[keys.at(-1)];
+    else node[keys.at(-1)] = value;
+  };
+  const ref = (path) => ({
+    get: async () => ({ val: () => structuredClone(read(path) ?? null) }),
+    remove: async () => write(path, undefined),
+    update: async (values) => Object.entries(values).forEach(([key, value]) => write(`${path}/${key}`, value)),
+    transaction: async (fn) => {
+      const next = fn(read(path) ?? null);
+      if (next === undefined) return { committed: false };
+      write(path, next);
+      return { committed: true };
+    },
+    orderByChild: () => ({ startAt: () => ({ endAt: () => ({ get: async () => ({ val: () => structuredClone(read(path)) }) }) }) }),
+    child: (sub) => ref(`${path}/${sub}`),
+  });
+  const emails = [];
+  const pushes = [];
+  const modules = {
+    "firebase-functions/v2/scheduler": { onSchedule: (_, fn) => fn },
+    "firebase-functions/v2/https": { onCall: (_, fn) => fn, HttpsError: Error },
+    "firebase-functions/params": { defineSecret: () => ({ value: () => "secret" }) },
+    "firebase-functions/logger": { info() {}, warn() {}, error() {} },
+    "firebase-admin/auth": { getAuth: () => ({ getUser: async (uid) => ({ uid, email: `${uid}@example.com` }) }) },
+    "firebase-admin/database": { getDatabase: () => ({ ref: (path = "") => ref(path) }) },
+    "firebase-admin/messaging": {
+      getMessaging: () => ({
+        sendEachForMulticast: async ({ tokens }) => {
+          pushes.push([...tokens]);
+          const outcome = pushResults.shift() || "success";
+          const responses = tokens.map(() =>
+            outcome === "success" ? { success: true } : { success: false, error: { code: outcome } },
+          );
+          return { successCount: responses.filter((r) => r.success).length, responses };
+        },
+      }),
+    },
+    "./mail": { renewalReminderEmail: async (args) => emails.push(args.email) },
+  };
+  const exports = {};
+  vm.runInNewContext(fs.readFileSync(require.resolve("../src/engagement.js"), "utf8"), {
+    exports,
+    require: (name) => modules[name] || require(name),
+    URL,
+    structuredClone,
+    Date,
+  });
+  return { run: exports.sendRenewalReminders, tree, emails, pushes, write };
+}
+
+test("a transient push failure is retried without resending the email", async () => {
+  const job = loadReminderJob({ pushResults: ["messaging/server-unavailable", "success"] });
+  job.write("paid/u1/expiresOn", Date.now() + 6.5 * DAY);
+  job.write("messages/u1/tokens/tok-1", 1);
+
+  await assert.rejects(job.run(), /will be retried/);
+  assert.deepEqual(job.emails, ["u1@example.com"]);
+  assert.equal(job.pushes.length, 1);
+
+  await job.run();
+  assert.deepEqual(job.emails, ["u1@example.com"], "email is not sent twice");
+  assert.deepEqual(job.pushes, [["tok-1"], ["tok-1"]], "push is retried");
+
+  await job.run();
+  assert.equal(job.pushes.length, 2, "a delivered push is not repeated");
+});

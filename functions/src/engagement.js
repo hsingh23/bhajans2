@@ -28,12 +28,18 @@ const INVALID_TOKEN = new Set([
   "messaging/registration-token-not-registered",
 ]);
 
-/** Sends one notification to many tokens; removes tokens FCM says are dead. */
+/**
+ * Sends one notification to many tokens; removes tokens FCM says are dead.
+ * `delivered` lists tokens that got it; `retryable` lists tokens that failed
+ * for another reason (e.g. FCM temporarily unavailable) and can be retried.
+ */
 async function pushToTokens(tokenOwners, { title, body, link }) {
   const root = getDatabase().ref();
   const tokens = [...tokenOwners.keys()];
   let sent = 0;
   let removed = 0;
+  const delivered = [];
+  const retryable = [];
   for (let offset = 0; offset < tokens.length; offset += 500) {
     const batch = tokens.slice(offset, offset + 500);
     const response = await getMessaging().sendEachForMulticast({
@@ -44,14 +50,21 @@ async function pushToTokens(tokenOwners, { title, body, link }) {
     sent += response.successCount;
     await Promise.all(
       response.responses.map((result, index) => {
-        if (!INVALID_TOKEN.has(result.error?.code)) return null;
-        removed += 1;
         const token = batch[index];
+        if (result.success) {
+          delivered.push(token);
+          return null;
+        }
+        if (!INVALID_TOKEN.has(result.error?.code)) {
+          retryable.push(token);
+          return null;
+        }
+        removed += 1;
         return root.child(`messages/${tokenOwners.get(token)}/tokens/${token}`).remove();
       }),
     );
   }
-  return { sent, failed: tokens.length - sent, removed };
+  return { sent, failed: tokens.length - sent, removed, delivered, retryable };
 }
 
 async function tokensFor(uids) {
@@ -115,25 +128,41 @@ exports.sendRenewalReminders = onSchedule(
     for (const [uid, record] of Object.entries(due)) {
       const kind = reminderDue(record?.expiresOn, now);
       if (!kind) continue;
-      const claim = await db
-        .ref(`messages/${uid}/reminders/${record.expiresOn}_${kind}`)
-        .transaction((current) => (current ? undefined : now));
-      if (!claim.committed) continue;
+      // Email and push are tracked apart, so retrying one never repeats the other:
+      //   .../email           claimed once; released if sending fails
+      //   .../pushed/{token}  each device that received the push
+      const base = `messages/${uid}/reminders/${record.expiresOn}_${kind}`;
       const daysLeft = kind === "7d" ? 7 : 1;
       const validUntil = longDate(Number(record.expiresOn));
-      try {
-        const user = await getAuth().getUser(uid);
-        if (user.email) {
-          await renewalReminderEmail({
-            email: user.email,
-            name: user.displayName,
-            daysLeft,
-            validUntil,
-            apiKey: mailjetAuth.value(),
-          });
-          emails += 1;
+
+      const emailClaim = await db.ref(`${base}/email`).transaction((current) => (current ? undefined : now));
+      if (emailClaim.committed) {
+        try {
+          const user = await getAuth().getUser(uid);
+          if (user.email) {
+            await renewalReminderEmail({
+              email: user.email,
+              name: user.displayName,
+              daysLeft,
+              validUntil,
+              apiKey: mailjetAuth.value(),
+            });
+            emails += 1;
+          }
+        } catch (error) {
+          // The next run (6 hours later, still inside the window) tries again.
+          failures += 1;
+          await db.ref(`${base}/email`).remove();
+          logger.error("renewal reminder email failed", { uid, kind, code: error?.code, message: error?.message });
         }
-        const result = await pushToTokens(await tokensFor([uid]), {
+      }
+
+      try {
+        const already = (await db.ref(`${base}/pushed`).get()).val() || {};
+        const owners = await tokensFor([uid]);
+        for (const token of Object.keys(already)) owners.delete(token);
+        if (!owners.size) continue;
+        const result = await pushToTokens(owners, {
           title:
             daysLeft === 1
               ? "Your Sing with Amma access ends tomorrow"
@@ -142,12 +171,16 @@ exports.sendRenewalReminders = onSchedule(
           link: "/pay",
         });
         pushes += result.sent;
+        if (result.delivered.length)
+          await db.ref(`${base}/pushed`).update(Object.fromEntries(result.delivered.map((token) => [token, now])));
+        if (result.retryable.length) {
+          // Undelivered devices are retried on the next run; delivered ones are skipped.
+          failures += 1;
+          logger.warn("renewal reminder push will be retried", { uid, kind, devices: result.retryable.length });
+        }
       } catch (error) {
-        // Release the claim so the next run (6 hours later, still inside
-        // the window) tries again.
         failures += 1;
-        await db.ref(`messages/${uid}/reminders/${record.expiresOn}_${kind}`).remove();
-        logger.error("renewal reminder failed", { uid, kind, code: error?.code, message: error?.message });
+        logger.error("renewal reminder push failed", { uid, kind, code: error?.code, message: error?.message });
       }
     }
     logger.info("renewal reminders sent", { emails, pushes, failures });
@@ -260,4 +293,4 @@ async function recordGa4Purchase({ uid, orderId, value, currency, lineItems, pai
 
 exports.ga4ApiSecret = ga4ApiSecret;
 exports.recordGa4Purchase = recordGa4Purchase;
-exports.helpers = { reminderDue, safeLink, fallbackClientId, ga4PurchasePayload };
+exports.helpers = { reminderDue, safeLink, fallbackClientId, ga4PurchasePayload, pushToTokens };
