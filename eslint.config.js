@@ -1,7 +1,6 @@
 import js from "@eslint/js";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import reactCompilerPlugin from "eslint-plugin-react-compiler";
 import globals from "globals";
 
 export default [
@@ -32,7 +31,6 @@ export default [
     plugins: {
       react: reactPlugin,
       "react-hooks": reactHooksPlugin,
-      "react-compiler": reactCompilerPlugin,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -40,7 +38,6 @@ export default [
       ...reactHooksPlugin.configs.recommended.rules,
       "react/react-in-jsx-scope": "off", // Not needed in React 17+
       "react/prop-types": "off",
-      "react-compiler/react-compiler": "error",
       "no-unused-vars": "warn",
     },
   },

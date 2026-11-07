@@ -1,6 +1,6 @@
 {
   "name": "bhajans",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -35,7 +35,6 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17",
     "husky": "^9.1.7",
@@ -48,8 +47,7 @@
     "vite-plugin-pwa": "^2",
     "vitest": "^5",
     "workbox-build": "^7.4.1",
-    "workbox-window": "^7.4.1",
-    "zod-validation-error": "^5.0.0"
+    "workbox-window": "^7.4.1"
   },
   "scripts": {
     "dev": "vite",
