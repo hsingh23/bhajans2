@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
+import { useEffect, useState } from 'react';
 import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RenderPage from './RenderPage';
 import { ThemeProvider } from "./ThemeContext";
@@ -50,15 +51,47 @@ vi.mock('react-router-dom', async () => {
 });
 
 // Mock InvertiblePDF to avoid PDF.js issues
-vi.mock('./InvertiblePDF', () => ({
-  default: ({ page, onPageComplete, onDocumentComplete }) => {
+vi.mock('./InvertiblePDF', async () => {
+  const { useEffect, useRef } = await import('react');
+  const MockPdf = ({ page, onDocumentComplete }) => {
     // Like react-pdf-js: report 0 pages before the document loads, then 5.
+    // The document takes longer than the loading animation (mocked below).
     setTimeout(() => onDocumentComplete?.(0), 0);
-    setTimeout(() => onDocumentComplete?.(5), 0);
-    setTimeout(() => onPageComplete?.(page), 0);
-    return <div data-testid="pdf-viewer">PDF Page {page}</div>;
-  },
-}));
+    setTimeout(() => onDocumentComplete?.(5), 10);
+    const canvasRef = useRef(null);
+    // Like react-pdf-js: size the canvas once the page has been fetched.
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (canvasRef.current) canvasRef.current.height = 1000;
+      }, 10);
+      return () => clearTimeout(timer);
+    }, [page]);
+    return (
+      <div data-testid="pdf-viewer" className="invertible-pdf-container">
+        <canvas ref={canvasRef} />PDF Page {page}
+      </div>
+    );
+  };
+  return { default: MockPdf };
+});
+
+// The real loader is a Lottie animation drawn on a canvas of its own, which
+// react sizes before the PDF page arrives; the viewer must not mistake it for the page.
+vi.mock('./Loader', async () => {
+  const { useEffect, useRef } = await import('react');
+  const MockLoader = () => {
+    const canvasRef = useRef(null);
+    // Like the animation library: the canvas gets its size once the animation has loaded.
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (canvasRef.current) canvasRef.current.height = 300;
+      }, 0);
+      return () => clearTimeout(timer);
+    }, []);
+    return <canvas ref={canvasRef} data-testid='loader-canvas' />;
+  };
+  return { default: MockLoader };
+});
 
 vi.mock('./InvertibleEmbed', () => ({
   default: ({ src }) => <div data-testid="pdf-embed">{src}</div>,
@@ -69,7 +102,7 @@ const mockBhajans = {
   1: { n: 'Another Bhajan', cu: null, cs: null },
 };
 
-const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan') => {
+const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan', element) => {
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false } }
   });
@@ -89,12 +122,14 @@ const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan') =>
               <Route 
                 path="/pdf/:location/:id/:name" 
                 element={
-                  <RenderPage 
-                    bhajans={mockBhajans} 
-                    renderFavorite={() => <button data-testid="favorite-btn">♥</button>}
-                    {...props}
-                  />
-                } 
+                  element ?? (
+                    <RenderPage
+                      bhajans={mockBhajans}
+                      renderFavorite={() => <button data-testid="favorite-btn">♥</button>}
+                      {...props}
+                    />
+                  )
+                }
               />
             </Routes>
           </MemoryRouter>
@@ -462,5 +497,82 @@ describe('page number in the address', () => {
     renderAt('/pdf/vol1-3/0/Test%20Bhajan?page=99');
     // The mocked PDF has 5 pages.
     await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 5'));
+  });
+});
+
+describe('opening at the line where the song starts', () => {
+  // The rendered page: 1000px tall, starting 100px below the top of the window.
+  const canvasRect = { top: 100, height: 1000 };
+  const original = HTMLCanvasElement.prototype.getBoundingClientRect;
+  // bhajans[0] starts 65% of the way down page 3 of volume 1.
+  const bhajans = { 0: { n: 'Test Bhajan', lo: { 'vol1-3': 0.65 } } };
+  const route = '/pdf/vol1-3/0/Test%20Bhajan';
+
+  beforeEach(() => {
+    window.scrollTo = vi.fn();
+    // A canvas has no height on the page until the viewer has sized it.
+    HTMLCanvasElement.prototype.getBoundingClientRect = function () {
+      return this.height === 1000 ? canvasRect : { top: canvasRect.top, height: 0 };
+    };
+  });
+
+  afterEach(() => {
+    HTMLCanvasElement.prototype.getBoundingClientRect = original;
+  });
+
+  it('scrolls the song title to just below the header', async () => {
+    renderRenderPage({ bhajans }, route);
+    // 100 (page top) + 650 (65% of 1000) - 64 (header)
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 686));
+  });
+
+  it('waits for the index to arrive before scrolling', async () => {
+    // Like App: the viewer mounts with an empty index and gets the real one later.
+    const LateIndex = () => {
+      const [loaded, setLoaded] = useState({});
+      useEffect(() => {
+        const timer = setTimeout(() => setLoaded(bhajans), 50);
+        return () => clearTimeout(timer);
+      }, []);
+      return <RenderPage bhajans={loaded} renderFavorite={() => null} />;
+    };
+    renderRenderPage({}, route, <LateIndex />);
+    await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 3'));
+    expect(window.scrollTo).not.toHaveBeenCalled();
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 686));
+  });
+
+  it('waits for the page itself, not the loading animation drawn beside it', async () => {
+    // The mocked Loader sizes its own canvas before the page's canvas is sized.
+    renderRenderPage({ bhajans }, route);
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 686));
+    // Never measured while the page still had no height.
+    expect(window.scrollTo).not.toHaveBeenCalledWith(0, 36);
+  });
+
+  it('starts at the top when the index has no start position', async () => {
+    renderRenderPage({ bhajans: { 0: { n: 'Test Bhajan' } } }, route);
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 36));
+  });
+
+  it('starts at the top when reopened on a later page', async () => {
+    renderRenderPage({ bhajans }, `${route}?page=4`);
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 36));
+    expect(window.scrollTo).not.toHaveBeenCalledWith(0, 686);
+  });
+
+  it('starts each turned page at the top', async () => {
+    renderRenderPage({ bhajans }, route);
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 686));
+    // Wait until the mocked 5-page document has loaded, so "next" is allowed.
+    await act(() => new Promise((resolve) => setTimeout(resolve, 20)));
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
+    await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 4'));
+    await waitFor(() => expect(window.scrollTo).toHaveBeenLastCalledWith(0, 36));
+  });
+
+  it('measures from the top of the window once the header is hidden', async () => {
+    renderRenderPage({ bhajans }, [{ pathname: route, state: { headerHidden: true } }]);
+    await waitFor(() => expect(window.scrollTo).toHaveBeenCalledWith(0, 750));
   });
 });
