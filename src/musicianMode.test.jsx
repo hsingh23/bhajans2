@@ -74,6 +74,9 @@ beforeEach(() => {
   window.dataLayer = [];
   window.searchFilter = '';
   window.searchableBhajans = null;
+  window.searchMusic = undefined;
+  window.searchLanguage = '';
+  window.searchDeity = '';
   global.fetch = serveFixtures();
 });
 
@@ -185,6 +188,41 @@ describe('musician details in search', () => {
     const guess = within(rowFor('arivenum akakkan (tamil)')).getByTestId('music-chips');
     expect(guess).toHaveTextContent('≈');
     expect(within(guess).getByTitle(/^Raga close to /)).toBeInTheDocument();
+  });
+
+  it('offers music filters only in musician mode', async () => {
+    renderSearch();
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    expect(screen.queryByText('Music filters')).toBeNull();
+  });
+
+  it('filters the list by raga and clears back to everything', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    await within(rowFor('kali kali kali (gujarati)')).findByTestId('music-chips');
+
+    fireEvent.click(screen.getByText('Music filters'));
+    const raga = screen.getByLabelText('Raga');
+    expect(within(raga).getByRole('option', { name: 'Mohanam (1)' })).toBeInTheDocument();
+    fireEvent.change(raga, { target: { value: 'mohanam' } });
+
+    expect(rowFor('kali kali kali (gujarati)')).toBeTruthy();
+    expect(screen.queryByText('arivenum akakkan (tamil)')).toBeNull();
+    expect(screen.getByText('1 bhajan')).toBeInTheDocument();
+    expect(window.dataLayer).toContainEqual({ event: 'filter_bhajans', filter_type: 'raga', filter_value: 'mohanam' });
+
+    fireEvent.click(screen.getByRole('button', { name: 'Clear music filters' }));
+    expect(rowFor('arivenum akakkan (tamil)')).toBeTruthy();
+  });
+
+  it('finds songs by raga or taal name typed in the search box', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    await within(rowFor('kali kali kali (gujarati)')).findByTestId('music-chips');
+
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'sarasangi' } });
+    expect(rowFor('arivenum akakkan (tamil)')).toBeTruthy();
+    expect(screen.queryByText('kali kali kali (gujarati)')).toBeNull();
   });
 
   it('shows nothing for a song with no entry', async () => {

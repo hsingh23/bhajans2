@@ -1811,3 +1811,50 @@ mark {
   border: 0;
   background: none;
 }
+
+/* MUSIC FILTERS (musician mode) */
+.music-filter-panel {
+  margin: 0 10px 6px;
+}
+.music-filter-panel > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 4px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  list-style: none;
+}
+.music-filter-panel > summary::-webkit-details-marker {
+  display: none;
+}
+.music-filter-panel > summary:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+.music-filter-count {
+  padding: 2px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: rgba(103, 58, 183, 0.15);
+}
+.music-filters {
+  margin: 4px 0 0;
+}
+.filter-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 15px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+.filter-check input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-color);
+}
