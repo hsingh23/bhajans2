@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { whenUserInteracts, whenAnalyticsReady, prefetchLyricsPdfs, PDF_CACHE } from './pdfPrefetch';
+import { whenUserInteracts, whenAnalyticsReady, prefetchLyricsPdfs, PDF_CACHE, REV_HEADER, contentRev } from './pdfPrefetch';
 
 describe('whenUserInteracts', () => {
   it('waits for the first interaction', async () => {
@@ -37,11 +37,19 @@ describe('whenAnalyticsReady', () => {
 });
 
 describe('prefetchLyricsPdfs', () => {
-  let cached;
+  const bytes = (text) => new TextEncoder().encode(text).buffer;
+  let stored;
+  const cachedText = async (url) => new TextDecoder().decode(await stored.get(url).clone().arrayBuffer());
+  const label = (url) => stored.get(url)?.headers.get(REV_HEADER);
+
   beforeEach(() => {
-    cached = new Set(['/pdfs/vol1.pdf']);
+    localStorage.clear();
+    stored = new Map();
     globalThis.caches = {
-      open: vi.fn(async () => ({ match: async (url) => cached.has(url) })),
+      open: vi.fn(async () => ({
+        match: async (url) => stored.get(url)?.clone(),
+        put: async (url, response) => stored.set(url, response),
+      })),
     };
     Object.defineProperty(navigator, 'connection', { configurable: true, value: undefined });
   });
@@ -49,34 +57,71 @@ describe('prefetchLyricsPdfs', () => {
     delete globalThis.caches;
   });
 
-  const okFetch = () =>
-    vi.fn(async (url) => {
-      cached.add(url);
-      return { ok: true, arrayBuffer: async () => new ArrayBuffer(0) };
-    });
+  // The server's copy of each book, by URL without the ?rev query.
+  const serve = (books) =>
+    vi.fn(async (source) => new Response(books[source.split('?')[0]], { status: 200, headers: { 'content-type': 'application/pdf' } }));
 
-  it('fetches only the PDFs not cached yet, one at a time, at low priority', async () => {
-    const fetchImpl = okFetch();
-    const fetched = await prefetchLyricsPdfs(['/pdfs/vol1.pdf', '/pdfs/vol2.pdf', '/pdfs/vol3.pdf'], { fetchImpl });
-    expect(fetched).toEqual(['/pdfs/vol2.pdf', '/pdfs/vol3.pdf']);
-    expect(fetchImpl).toHaveBeenCalledTimes(2);
-    expect(fetchImpl.mock.calls[0][1]).toMatchObject({ priority: 'low' });
+  it('downloads missing books once, at low priority, labelled with their rev', async () => {
+    const v2 = await contentRev(bytes('book two'));
+    const fetchImpl = serve({ '/pdfs/vol2.pdf': 'book two' });
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol2.pdf', rev: v2 }], { fetchImpl })).toEqual(['/pdfs/vol2.pdf']);
+    expect(fetchImpl.mock.calls[0]).toEqual([`/pdfs/vol2.pdf?rev=${v2}`, { priority: 'low', credentials: 'same-origin' }]);
+    expect(await cachedText('/pdfs/vol2.pdf')).toBe('book two');
+    expect(label('/pdfs/vol2.pdf')).toBe(v2);
+    expect(stored.get('/pdfs/vol2.pdf').headers.get('content-type')).toBe('application/pdf');
     expect(caches.open).toHaveBeenCalledWith(PDF_CACHE);
+    // Second visit: nothing to do.
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol2.pdf', rev: v2 }], { fetchImpl })).toEqual([]);
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
-  it('keeps going after a failed download', async () => {
-    const fetchImpl = vi
-      .fn()
-      .mockRejectedValueOnce(new Error('offline'))
-      .mockResolvedValue({ ok: true, arrayBuffer: async () => new ArrayBuffer(0) });
-    const fetched = await prefetchLyricsPdfs(['/pdfs/vol2.pdf', '/pdfs/vol3.pdf'], { fetchImpl });
-    expect(fetched).toEqual(['/pdfs/vol3.pdf']);
+  it('checks an unlabelled cached copy by hashing it, and keeps it when it matches', async () => {
+    stored.set('/pdfs/vol1.pdf', new Response('book one'));
+    const fetchImpl = serve({});
+    const rev = await contentRev(bytes('book one'));
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev }], { fetchImpl })).toEqual([]);
+    expect(fetchImpl).not.toHaveBeenCalled();
+    expect(label('/pdfs/vol1.pdf')).toBe(rev);
+  });
+
+  it('replaces an unlabelled copy that is out of date, even after sign-out cleared storage', async () => {
+    // Cached by the viewer, then the user signed out (localStorage cleared) and the book changed.
+    stored.set('/pdfs/vol1.pdf', new Response('old edition'));
+    localStorage.clear();
+    const rev = await contentRev(bytes('new edition'));
+    const fetchImpl = serve({ '/pdfs/vol1.pdf': 'new edition' });
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev }], { fetchImpl })).toEqual(['/pdfs/vol1.pdf']);
+    expect(await cachedText('/pdfs/vol1.pdf')).toBe('new edition');
+  });
+
+  it('replaces a labelled book whose content changed', async () => {
+    const r1 = await contentRev(bytes('first'));
+    await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: r1 }], { fetchImpl: serve({ '/pdfs/vol1.pdf': 'first' }) });
+    const r2 = await contentRev(bytes('second'));
+    const fetchImpl = serve({ '/pdfs/vol1.pdf': 'second' });
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: r2 }], { fetchImpl })).toEqual(['/pdfs/vol1.pdf']);
+    expect(await cachedText('/pdfs/vol1.pdf')).toBe('second');
+    expect(label('/pdfs/vol1.pdf')).toBe(r2);
+  });
+
+  it('keeps the old copy when a refresh fails, and tries again next time', async () => {
+    const r1 = await contentRev(bytes('first'));
+    await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: r1 }], { fetchImpl: serve({ '/pdfs/vol1.pdf': 'first' }) });
+    const r2 = await contentRev(bytes('second'));
+    const failing = vi.fn().mockRejectedValue(new Error('offline'));
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: r2 }], { fetchImpl: failing })).toEqual([]);
+    expect(await cachedText('/pdfs/vol1.pdf')).toBe('first');
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol1.pdf', rev: r2 }], { fetchImpl: serve({ '/pdfs/vol1.pdf': 'second' }) })).toEqual(['/pdfs/vol1.pdf']);
+  });
+
+  it('matches the build: rev is the first 12 hex characters of SHA-256', async () => {
+    expect(await contentRev(bytes('abc'))).toBe('ba7816bf8f01');
   });
 
   it('skips everything when the visitor asked to save data', async () => {
     Object.defineProperty(navigator, 'connection', { configurable: true, value: { saveData: true } });
-    const fetchImpl = okFetch();
-    expect(await prefetchLyricsPdfs(['/pdfs/vol2.pdf'], { fetchImpl })).toEqual([]);
+    const fetchImpl = serve({ '/pdfs/vol2.pdf': 'x' });
+    expect(await prefetchLyricsPdfs([{ url: '/pdfs/vol2.pdf', rev: 'a' }], { fetchImpl })).toEqual([]);
     expect(fetchImpl).not.toHaveBeenCalled();
   });
 });
