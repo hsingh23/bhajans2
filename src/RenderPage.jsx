@@ -4,7 +4,7 @@ import {
   Snackbar, 
   Alert 
 } from "@mui/material";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import InvertiblePDF from "./InvertiblePDF";
 import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
@@ -35,7 +35,10 @@ import { syncUserData, THREE_MONTHS_MS } from "./firebase";
 const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   const { id, location: locationParam, name: nameParam } = useParams();
   const navigate = useNavigate();
-  const { state: navState } = useLocation();
+  const { state: navState, key: locationKey } = useLocation();
+  // Rewriting the URL in place gives it a new key, so remember that this page
+  // was the one the app opened on; useGoBack then still goes to search.
+  const entryPoint = Boolean(navState?.entryPoint) || locationKey === "default";
   const [toast, setToast] = useState({ open: false, message: "", severity: "info" });
   const [verifyingSession, setVerifyingSession] = useState(false);
 
@@ -54,7 +57,12 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     initialPageVal = 1;
   }
 
-  const [page, setPage] = useState(initialPageVal);
+  // The current page lives in ?page=N so a reload reopens the same page.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(() => {
+    const fromUrl = Number(searchParams.get("page"));
+    return Number.isInteger(fromUrl) && fromUrl >= initialPageVal ? fromUrl : initialPageVal;
+  });
   const [initialPage] = useState(initialPageVal);
   const [pages, setPages] = useState(0);
   
@@ -147,8 +155,24 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     }
   }, []);
 
-  const onPageComplete = useCallback((p) => setPage(p), []);
-  const onDocumentComplete = useCallback((p) => setPages(p), []);
+  const pagesRef = useRef(0);
+  const onPageComplete = useCallback((p) => setPage(pagesRef.current && p > pagesRef.current ? pagesRef.current : p), []);
+
+  useEffect(() => {
+    if (searchParams.get("page") === String(page)) return;
+    const next = new URLSearchParams(searchParams);
+    next.set("page", String(page));
+    // Replace, so turning pages doesn't fill the back history; keep the header state.
+    setSearchParams(next, { replace: true, state: { ...navState, entryPoint } });
+  }, [page, searchParams, setSearchParams, navState, entryPoint]);
+  const onDocumentComplete = useCallback((p) => {
+    // react-pdf-js reports 0 pages once before the document has loaded.
+    if (!(p > 0)) return;
+    pagesRef.current = p;
+    setPages(p);
+    // A ?page= past the end of this PDF falls back to its last page.
+    setPage((prev) => Math.min(prev, p));
+  }, []);
   
   const handlePrevious = useCallback(() => {
     setPage((prev) => (prev > initialPage ? prev - 1 : prev));
@@ -230,7 +254,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     // Replace, so the back button still returns to search after changing keys.
     navigate(`/pdf/${encodeURIComponent(file)}/${id}/${encodeURIComponent(nameParam)}`, {
       replace: true,
-      state: { headerHidden },
+      state: { headerHidden, entryPoint },
     });
   };
 
