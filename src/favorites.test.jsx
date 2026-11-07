@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "./ThemeContext";
@@ -204,5 +204,30 @@ describe('Favorites Sync with Auth Changes', () => {
     }, { timeout: 100 });
     
     expect(mockCheckRefOnce).not.toHaveBeenCalledWith(expect.stringContaining('favorites/'));
+  });
+});
+
+describe('Favorite buttons', () => {
+  const sizes = {};
+  beforeEach(() => {
+    localStorage.clear();
+    window.fetchedBhajans = null;
+    mockCheckRefOnce.mockResolvedValue({});
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      sizes[prop] = Object.getOwnPropertyDescriptor(HTMLElement.prototype, prop);
+      Object.defineProperty(HTMLElement.prototype, prop, { configurable: true, get: () => 1000 });
+    }
+  });
+  afterEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      Object.defineProperty(HTMLElement.prototype, prop, sizes[prop]);
+    }
+  });
+
+  it('are keyboard-reachable buttons', async () => {
+    renderWithProviders(<App />);
+    const likes = await screen.findAllByRole('button', { name: 'like' });
+    expect(likes).toHaveLength(2);
+    likes.forEach((button) => expect(button).not.toHaveAttribute('tabindex', '-1'));
   });
 });

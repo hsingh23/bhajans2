@@ -25,12 +25,12 @@ const Header = ({ children = null, back = false, title = "", rightContent = null
         
         {title && <div className="header-title" style={{ marginLeft: children ? '10px' : '0' }}>{title}</div>}
         
-        {children && <div style={{ marginLeft: '10px', flex: 1, display: 'flex' }}>{children}</div>}
+        {children && <div style={{ marginLeft: '10px', flex: 1, minWidth: 0, display: 'flex' }}>{children}</div>}
       </div>
 
       <nav className="header-right">
         {rightContent}
-        <DarkModeToggle className="button button-3d button-circle header-darkmode" />
+        <DarkModeToggle className="button button-circle header-darkmode" />
       </nav>
     </div>
   );

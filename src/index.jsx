@@ -12,7 +12,7 @@ import Beta from "./Beta";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 import App from "./App";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { withRouterCompat, RequireAdmin } from "./util";
 import ErrorBoundary from "./ErrorBoundary";
 // @ts-expect-error: virtual module not found in TS context
@@ -22,23 +22,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
+import { schedulePdfPrefetch } from "./pdfPrefetch";
+import { loadTagManager, track } from "./analytics";
 
 
 const queryClient = new QueryClient();
 const WrappedLogout = withRouterCompat(Logout);
 const WrappedBeta = withRouterCompat(Beta);
 
-const RouteTracker = () => {
-  const location = useLocation();
-
-  React.useEffect(() => {
-    if (window.ga) {
-      window.ga("send", "pageview", location.pathname + location.search);
-    }
-  }, [location]);
-
-  return null;
-};
 
 async function enableMocking() {
   if (!import.meta.env.DEV) {
@@ -107,7 +98,6 @@ const renderApp = () => {
         <MUIThemeWrapper>
           <QueryClientProvider client={queryClient}>
             <BrowserRouter>
-              <RouteTracker />
               <Routes>
                 <Route path='/login' element={<Login />} />
                 <Route path='/logout' element={<WrappedLogout />} />
@@ -132,6 +122,9 @@ const renderApp = () => {
 const bootstrap = async () => {
   try {
     await registerServiceWorkers();
+    if (import.meta.env.PROD) {
+      schedulePdfPrefetch().catch((error) => console.warn("Lyrics PDF caching stopped:", error));
+    }
     await enableMocking();
   } catch (error) {
     console.error("Failed to enable mocking:", error);
@@ -156,37 +149,13 @@ function doOnce() {
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(ur, s);
   })();
-  (function (i, s, o, g, r, a, m) {
-    i["GoogleAnalyticsObject"] = r;
-    (i[r] =
-      i[r] ||
-      function () {
-        (i[r].q = i[r].q || []).push(arguments);
-      }),
-      // @ts-ignore
-      (i[r].l = 1 * new Date());
-    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m);
-  })(
-    window,
-    document,
-    "script",
-    "https://www.google-analytics.com/analytics.js",
-    "ga"
-  );
-
-  if (window.ga && !window.setGAUid && localStorage.uid) {
-    window.ga("create", "UA-101960783-1", "auto");
-    window.ga("send", "pageview");
-    window.setGAUid = true;
-    window.ga("set", { userId: localStorage.uid });
-  }
+  loadTagManager();
 }
 if (import.meta.env.PROD) {
   setTimeout(doOnce, 5 * 1000);
 }
+
+window.addEventListener("appinstalled", () => track("app_installed"));
 
 // Get a wake lock if possible
 let wakeLock = null;

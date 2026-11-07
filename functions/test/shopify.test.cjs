@@ -9,6 +9,7 @@ function load({ newUser = false, lookupError, saveError } = {}) {
   let queriedEmail;
   let created;
   let sent = [];
+  const purchases = [];
   const auth = {
     getUserByEmail: async (email) => {
       queriedEmail = email;
@@ -76,6 +77,15 @@ function load({ newUser = false, lookupError, saveError } = {}) {
       defineSecret: () => ({ value: () => "test-secret" }),
     },
     "./mail": mails,
+    "./engagement": {
+      ga4ApiSecret: { value: () => "ga4-test-secret" },
+      recordGa4Purchase: async (details) => {
+        purchases.push(details);
+        return true;
+      },
+      sendRenewalReminders: () => {},
+      sendAnnouncement: () => {},
+    },
   };
   let source = fs.readFileSync(
     process.env.SHOPIFY_BASELINE_SOURCE || require.resolve("../src/index.js"),
@@ -103,6 +113,7 @@ function load({ newUser = false, lookupError, saveError } = {}) {
   });
   return {
     handler: exports.shopifyWebhook,
+    purchases: () => purchases,
     logs: () => logs,
     paid: () => paid,
     email: () => queriedEmail,
@@ -293,4 +304,18 @@ test("successful Shopify activation logs uid and outcome done", async () => {
   assert.equal(activated[0].data.newAccount, false);
   assert.equal(activated[0].data.orderId, 123);
   assert.equal(activated[0].data.expiresOn, NOW + 31536000000);
+});
+
+test("a completed Shopify order is sent to GA4 as a purchase once", async () => {
+  const ctx = load();
+  await ctx.handler(req(), res());
+  assert.equal(ctx.purchases().length, 1);
+  const [purchase] = ctx.purchases();
+  assert.equal(purchase.uid, "existing");
+  assert.equal(purchase.orderId, "shopify:123");
+  assert.equal(purchase.apiSecret, "ga4-test-secret");
+  assert.ok(Array.isArray(purchase.lineItems));
+  // A redelivered webhook is "already processed" and must not count twice.
+  await ctx.handler(req(), res());
+  assert.equal(ctx.purchases().length, 1);
 });

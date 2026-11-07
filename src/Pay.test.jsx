@@ -67,3 +67,15 @@ describe('Pay membership message', () => {
     expect(message).not.toHaveTextContent(/different email address/);
   });
 });
+
+describe('Pay when signed out', () => {
+  beforeEach(() => localStorage.clear());
+
+  it('asks to sign in instead of offering payment links without an email', () => {
+    renderPay();
+
+    expect(screen.queryByText(/you are signed in/)).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /sign in/i })).toHaveAttribute('href', '/login?next=%2Fpay');
+    expect(screen.queryByRole('link', { name: /1 Years/ })).not.toBeInTheDocument();
+  });
+});

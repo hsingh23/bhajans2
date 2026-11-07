@@ -113,3 +113,55 @@ exports.newUserResetPasswordEmailShopify = (data) =>
 exports.newUserResetPasswordEmail = (data) =>
   sendAccountEmail(data, { welcome: true, india: true });
 exports.accountActivated = (data) => sendAccountEmail(data);
+
+// Renewal reminder, sent 7 days and 1 day before a subscription ends.
+function renderRenewalReminder({ name, daysLeft, validUntil }) {
+  const when = daysLeft === 1 ? "tomorrow" : `in ${daysLeft} days`;
+  const title = daysLeft === 1 ? "Your access ends tomorrow" : "A week left on your access";
+  const greeting = name ? `Dear ${escapeHtml(name)},` : "Dear friend,";
+  const payUrl = "https://sing.withamma.com/pay";
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>${title}</title></head>
+<body style="margin:0;padding:0;background:#f4efe7;color:#342b24;font-family:Arial,Helvetica,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">Your Sing with Amma access ends ${when}, on ${escapeHtml(validUntil)}.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4efe7;"><tr><td align="center" style="padding:32px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#fffdf9;border:1px solid #e7ded2;border-radius:12px;overflow:hidden;">
+<tr><td style="padding:24px 28px;text-align:center;border-bottom:1px solid #e7ded2;"><p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:26px;color:#57361f;">Sing with Amma</p></td></tr>
+<tr><td style="padding:36px 40px;">
+<p style="margin:0 0 12px;font-size:11px;letter-spacing:1.8px;font-weight:bold;color:#a34d27;">RENEWAL REMINDER</p>
+<h1 style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:32px;line-height:1.2;font-weight:normal;color:#432c1e;">${title}</h1>
+<p style="margin:0 0 12px;font-size:16px;line-height:1.7;">${greeting}</p>
+<p style="margin:0 0 24px;font-size:16px;line-height:1.7;color:#65594e;">Your access to the lyrics and sheet music ends ${when}, on <strong>${escapeHtml(validUntil)}</strong>. Renew now to keep singing without a break. Every subscription supports Amma’s charities.</p>
+<p style="margin:0 0 24px;"><a href="${payUrl}" style="display:inline-block;background:#a9441d;border:1px solid #a9441d;border-radius:6px;padding:15px 24px;color:#ffffff;font-size:16px;font-weight:bold;text-decoration:none;">Renew my subscription &rarr;</a></p>
+<p style="margin:0;font-size:14px;line-height:1.7;color:#74685c;">Already renewed? Thank you, and please ignore this note.</p>
+</td></tr></table>
+<p style="max-width:520px;margin:20px auto 0;font-size:12px;line-height:1.7;color:#87786a;text-align:center;">You’re receiving this because your Sing with Amma subscription is ending soon.<br>Need a hand? <a href="mailto:hisingh1@gmail.com" style="color:#73563f;">Contact support</a></p>
+</td></tr></table></body></html>`;
+  const text = `${title}\n\n${name ? `Dear ${name},` : "Dear friend,"}\n\nYour access to the lyrics and sheet music ends ${when}, on ${validUntil}. Renew to keep singing without a break: ${payUrl}\n\nAlready renewed? Thank you, and please ignore this note.\nThe Sing with Amma team`;
+  return { subject: `Sing with Amma: ${title.toLowerCase()}`, html, text };
+}
+
+async function renewalReminderEmail({ email, name, daysLeft, validUntil, apiKey }) {
+  const { subject, html, text } = renderRenewalReminder({ name, daysLeft, validUntil });
+  const response = await fetch("https://api.mailjet.com/v3.1/send", {
+    method: "POST",
+    headers: { Authorization: apiKey, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      Messages: [
+        {
+          From: { Email: "no-reply@withamma.com", Name: "Sing with Amma" },
+          To: [{ Email: email, Name: name || email }],
+          Subject: subject,
+          HTMLPart: html,
+          TextPart: text,
+        },
+      ],
+    }),
+  });
+  if (!response.ok) throw new Error(`Mail delivery failed (${response.status})`);
+  const result = await response.json();
+  if (!result.Messages?.length || result.Messages.some((m) => m.Status !== "success"))
+    throw new Error("Mail delivery failed: provider rejected message");
+}
+exports.renderRenewalReminder = renderRenewalReminder;
+exports.renewalReminderEmail = renewalReminderEmail;

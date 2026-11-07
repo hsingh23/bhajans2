@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "24"
+  # Match the Bun that writes bun.lock; older Bun hoists packages differently.
+  BUN_VERSION = "1.4.4"
 
 [[headers]]
   for = "/service-worker2.js"

@@ -1,19 +1,24 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
+import { readdirSync } from "node:fs";
 
-const ReactCompilerConfig = {
-  target: "19",
-};
+// Lyrics books under public/pdfs. They are not precached at install; the app
+// fetches them later (src/pdfPrefetch.js) once the page is idle.
+const LYRICS_PDFS = readdirSync(new URL("./public/pdfs", import.meta.url))
+  .filter((file) => /\.pdf$/i.test(file))
+  .sort()
+  .map((file) => `/pdfs/${file}`);
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __LYRICS_PDFS__: JSON.stringify(LYRICS_PDFS),
+  },
   plugins: [
-    react({
-      babel: {
-        plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
-      },
-    }),
+    // React Compiler through plugin-react's native (oxc) port; no Babel in our build.
+    react({ compiler: { target: "19" } }),
     VitePWA({
       registerType: "autoUpdate",
       filename: "service-worker2.js",
@@ -38,12 +43,14 @@ export default defineConfig({
       },
       workbox: {
         cleanupOutdatedCaches: true,
+        // Shows Firebase Cloud Messaging pushes (opt-in, see src/notifications.js).
+        importScripts: ["push-handler.js"],
         clientsClaim: true,
         skipWaiting: true,
         navigateFallback: "/index.html",
         navigateFallbackDenylist: [/^\/api\//, /^\/__\/auth\//, /reset\.html$/],
         globPatterns: [
-          "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,pdf,json,woff,woff2,ttf,wasm,lottie}",
+          "**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,gif,json,woff,woff2,ttf,wasm,lottie}",
         ],
         runtimeCaching: [
           {
@@ -51,20 +58,16 @@ export default defineConfig({
             handler: "CacheFirst",
             options: {
               cacheName: "pdfs-cache",
+              // PDF.js asks for byte ranges; serve them from the cached full file.
+              rangeRequests: true,
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                // Outlasts the 90-day offline period the app allows (src/firebase.js).
+                maxAgeSeconds: 60 * 60 * 24 * 100, // 100 days
               },
               cacheableResponse: {
                 statuses: [0, 200],
               },
-            },
-          },
-          {
-            urlPattern: /^https:\/\/.*\.google-analytics\.com\/.*/,
-            handler: "StaleWhileRevalidate",
-            options: {
-              cacheName: "google-analytics",
             },
           },
         ],
@@ -77,10 +80,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          firebase: ['firebase/app', 'firebase/auth', 'firebase/database', 'firebase/functions'],
-          mui: ['@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],
+        // Rolldown (Vite 8) only accepts the function form.
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return undefined;
+          if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) return 'vendor';
+          if (/node_modules\/(@firebase|firebase)\//.test(id)) return 'firebase';
+          if (/node_modules\/(@mui|@emotion)\//.test(id)) return 'mui';
+          return undefined;
         },
       },
     },

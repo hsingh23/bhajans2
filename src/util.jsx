@@ -49,7 +49,7 @@ export const withRouterCompat = (Wrapped) => {
 };
 
 // Hook: auth state (with initialization guard)
-const useAuthState = () => {
+export const useAuthState = () => {
   const [user, setUser] = useState(auth.currentUser || null);
   const [initializing, setInitializing] = useState(true);
   useEffect(() => {

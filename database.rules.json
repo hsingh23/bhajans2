@@ -6,7 +6,10 @@
     },
     "paid": {
       ".read": "auth != null",
-      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'"
+      ".write": "auth != null && root.child('admin').child(auth.uid).val() === '1'",
+      ".indexOn": [
+        "expiresOn"
+      ]
     },
     "confirmPayment": {
       ".read": "auth != null",

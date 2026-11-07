@@ -157,9 +157,16 @@ def write_outputs(script_dir, bhajans):
                    for (bhajan, info) in sorted(bhajans.items())]
     
     # Create structured dict for JSON2
+    # Language ("lg") and deity ("d") labels, keyed by bhajan name. Classified
+    # from the lyrics PDFs; edit bhajan-categories.json to correct a label.
+    categories_file = script_dir / 'bhajan-categories.json'
+    categories = json.loads(categories_file.read_text()) if categories_file.exists() else {}
     bhajans2 = {}
     for bhajan, location in bhajans.items():
-        bhajans2[bhajan] = {"l": location, 'n': bhajan}
+        bhajans2[bhajan] = {"l": location, 'n': bhajan, **categories.get(bhajan, {})}
+    missing = [b for b in bhajans if b not in categories]
+    if missing:
+        print(f"Warning: {len(missing)} bhajans have no language/deity in bhajan-categories.json, e.g. {missing[:5]}")
     
     # Write outputs
     with open(script_dir / 'bhajan-index.txt', 'w+') as f:

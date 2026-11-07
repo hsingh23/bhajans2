@@ -1,29 +1,23 @@
 import React, { useState, useEffect, useCallback, useRef, memo } from "react";
-import { HotKeys } from "react-hotkeys";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import classNames from "classnames";
+import Icon from "./Icon";
 import { 
   Snackbar, 
   Alert 
 } from "@mui/material";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import InvertiblePDF from "./InvertiblePDF";
 import InvertibleEmbed from "./InvertibleEmbed";
 import Header from "./Header";
 import Loader from "./Loader";
 import { useGoBack } from "./useGoBack";
 import { groupSheetMusic, parseSheetMusicName } from "./sheetMusicGroups";
+import { track } from "./analytics";
+import { rememberOpened } from "./engagement";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
 const HEADER_AUTO_HIDE_MS = 3000;
 // Phones in either orientation: narrow in portrait, short in landscape.
 const isPhoneSized = (width, height) => width < 768 || height <= 500;
-
-const keyMap = {
-  left: "left",
-  right: "right",
-};
 
 const removeServiceWorkers = () => {
   if ("serviceWorker" in navigator) {
@@ -43,7 +37,10 @@ import { syncUserData, THREE_MONTHS_MS } from "./firebase";
 const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   const { id, location: locationParam, name: nameParam } = useParams();
   const navigate = useNavigate();
-  const { state: navState } = useLocation();
+  const { state: navState, key: locationKey } = useLocation();
+  // Rewriting the URL in place gives it a new key, so remember that this page
+  // was the one the app opened on; useGoBack then still goes to search.
+  const entryPoint = Boolean(navState?.entryPoint) || locationKey === "default";
   const [toast, setToast] = useState({ open: false, message: "", severity: "info" });
   const [verifyingSession, setVerifyingSession] = useState(false);
 
@@ -62,7 +59,12 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     initialPageVal = 1;
   }
 
-  const [page, setPage] = useState(initialPageVal);
+  // The current page lives in ?page=N so a reload reopens the same page.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(() => {
+    const fromUrl = Number(searchParams.get("page"));
+    return Number.isInteger(fromUrl) && fromUrl >= initialPageVal ? fromUrl : initialPageVal;
+  });
   const [initialPage] = useState(initialPageVal);
   const [pages, setPages] = useState(0);
   
@@ -155,8 +157,24 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     }
   }, []);
 
-  const onPageComplete = useCallback((p) => setPage(p), []);
-  const onDocumentComplete = useCallback((p) => setPages(p), []);
+  const pagesRef = useRef(0);
+  const onPageComplete = useCallback((p) => setPage(pagesRef.current && p > pagesRef.current ? pagesRef.current : p), []);
+
+  useEffect(() => {
+    if (searchParams.get("page") === String(page)) return;
+    const next = new URLSearchParams(searchParams);
+    next.set("page", String(page));
+    // Replace, so turning pages doesn't fill the back history; keep the header state.
+    setSearchParams(next, { replace: true, state: { ...navState, entryPoint } });
+  }, [page, searchParams, setSearchParams, navState, entryPoint]);
+  const onDocumentComplete = useCallback((p) => {
+    // react-pdf-js reports 0 pages once before the document has loaded.
+    if (!(p > 0)) return;
+    pagesRef.current = p;
+    setPages(p);
+    // A ?page= past the end of this PDF falls back to its last page.
+    setPage((prev) => Math.min(prev, p));
+  }, []);
   
   const handlePrevious = useCallback(() => {
     setPage((prev) => (prev > initialPage ? prev - 1 : prev));
@@ -167,6 +185,28 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   }, [pages]);
 
   const name = bhajans && bhajans[id] && bhajans[id].n;
+  const isSheetMusic = locationParam.includes(".pdf");
+
+  // One view event per bhajan opened (page turns don't remount this page).
+  useEffect(() => {
+    if (!name) return;
+    if (isSheetMusic) {
+      track("view_sheet_music", { bhajan_name: name, music_key: parseSheetMusicName(locationParam)?.key });
+    } else {
+      track("view_lyrics", {
+        bhajan_name: name,
+        book: locationParam.split("-")[0],
+        page_number: initialPage,
+        language: bhajans[id]?.lg,
+        deity: bhajans[id]?.d,
+      });
+    }
+  }, [name, isSheetMusic, locationParam, initialPage, bhajans, id]);
+
+  // Keep "recently opened" pointing at the page being read, for resuming later.
+  useEffect(() => {
+    if (name && !isSheetMusic) rememberOpened({ name, location: locationParam, page });
+  }, [name, isSheetMusic, locationParam, page]);
   const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
   const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
   
@@ -188,7 +228,17 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     </span>
   ) : null;
 
-  const handlers = { left: handlePrevious, right: handleNext };
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+      if (event.key === "ArrowLeft") handlePrevious();
+      else if (event.key === "ArrowRight") handleNext();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [handlePrevious, handleNext]);
 
   // Handle window resize to switch between embed and InvertiblePDF
   const [{ width, height }, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -228,7 +278,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     // Replace, so the back button still returns to search after changing keys.
     navigate(`/pdf/${encodeURIComponent(file)}/${id}/${encodeURIComponent(nameParam)}`, {
       replace: true,
-      state: { headerHidden },
+      state: { headerHidden, entryPoint },
     });
   };
 
@@ -238,8 +288,8 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   };
 
   return (
-    <HotKeys keyMap={keyMap} handlers={handlers}>
-      <div className={classNames('App', { 'header-hidden': headerHidden })}>
+    <>
+      <div className={headerHidden ? "App header-hidden" : "App"}>
         <Header 
           back 
           title={name}
@@ -247,37 +297,37 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
             <>
               {cdbabyBuyUrls && (
                 <a
-                  className='button button-3d button-circle button-action'
+                  className='button button-circle'
                   href={`https://www.amazon.com/s?k=${encodeURIComponent(name)} amma`}
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label='Buy on Amazon'>
                   <span role='img' aria-label='cd'>
-                    <FontAwesomeIcon icon='cart-arrow-down' />
+                    <Icon name='cart' />
                   </span>
                 </a>
               )}
               {cdbabySampleUrls && (
                 <button
                   aria-label='play sample'
-                  className='button button-3d button-circle button-action'
-                  onClick={() => (playing === cdbabySampleUrls[0] ? stop() : play(cdbabySampleUrls[0]))}>
+                  className='button button-circle'
+                  onClick={() => {
+                    if (playing === cdbabySampleUrls[0]) return stop();
+                    track("play_sample", { bhajan_name: name });
+                    play(cdbabySampleUrls[0]);
+                  }}>
                   <span role='img' aria-label='music sample'>
-                    <FontAwesomeIcon icon={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
+                    <Icon name={playing === cdbabySampleUrls[0] ? "stop" : "play"} />
                   </span>
                 </button>
               )}
-              {renderFavorite(
-                name,
-                "button button-3d button-caution button-circle",
-                "button button-3d button-circle"
-              )}
+              {renderFavorite(name, "button button-circle", "button button-circle")}
             </>
           }
         />
         {headerHidden && (
           <button type='button' aria-label='Go back' className='viewer-back' onClick={goBack}>
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <Icon name='arrow-left' />
           </button>
         )}
         {keyChoices.length > 1 && (
@@ -289,7 +339,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               aria-expanded={keysOpen}
               aria-controls='viewer-key-menu'
               onClick={() => setKeysOpen((open) => !open)}>
-              <FontAwesomeIcon icon='music' />
+              <Icon name='music' />
               <span>{currentSheet.key}</span>
             </button>
             {keysOpen && (
@@ -302,7 +352,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
                       type='button'
                       role='menuitemradio'
                       aria-checked={file === locationParam}
-                      className={classNames({ current: file === locationParam })}
+                      className={file === locationParam ? "current" : undefined}
                       onClick={() => changeKey(file)}>
                       {key}
                     </button>
@@ -318,7 +368,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           aria-expanded={!headerHidden}
           className='viewer-header-toggle'
           onClick={toggleHeader}>
-          <FontAwesomeIcon icon={headerHidden ? faChevronDown : faChevronUp} />
+          <Icon name={headerHidden ? 'chevron-down' : 'chevron-up'} />
         </button>
         <div className='rest'>
           {localStorage.presenter && width > 1200 ? (
@@ -358,7 +408,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           {toast.message}
         </Alert>
       </Snackbar>
-    </HotKeys>
+    </>
   );
 };
 

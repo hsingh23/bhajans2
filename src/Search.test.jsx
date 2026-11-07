@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from "./ThemeContext";
-import Search from './Search';
+import Search, { Highlight } from './Search';
 
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
@@ -84,14 +84,21 @@ describe('Search Component', () => {
     expect(screen.getByAltText(/Amma/i)).toBeInTheDocument();
   });
 
-  it('shows filter to favorites button on main page', () => {
-    renderSearch({}, '/');
-    expect(screen.getByText(/Filter to my Favorites/i)).toBeInTheDocument();
+  it('switches between all bhajans and favorites, marking the current view', () => {
+    renderSearch({ 'Krishna Krishna': 1, 'Not In Index': 1 }, '/');
+    const all = screen.getByRole('link', { name: /All bhajans/ });
+    const favs = screen.getByRole('link', { name: /Favorites/ });
+    expect(all).toHaveAttribute('aria-current', 'page');
+    expect(all).toHaveTextContent('5');
+    expect(favs).toHaveAttribute('href', '/my-favorites');
+    // Only favorites that are in the index are counted.
+    expect(favs).toHaveTextContent('1');
   });
 
-  it('shows all bhajans button when on favorites page', () => {
+  it('marks favorites as current on the favorites page', () => {
     renderSearch({}, '/my-favorites');
-    expect(screen.getByText(/Show All Bhajans/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Favorites/ })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('link', { name: /All bhajans/ })).toHaveAttribute('href', '/');
   });
 
   it('updates search filter on input change', () => {
@@ -116,3 +123,121 @@ describe('Search Component', () => {
 
 // Note: Tests for filtering and virtualized list content are better suited for E2E tests
 // because react-virtualized requires actual DOM dimensions to render items
+
+const categorizedBhajans = [
+  { n: 'amme narayana', l: ['vol1-10'], lg: 'Malayalam', d: 'Devi' },
+  { n: 'devi devi devi', l: ['vol2-5'], lg: 'Sanskrit', d: 'Devi' },
+  { n: 'gopala gopala', l: ['vol1-25'], lg: 'Hindi', d: 'Krishna' },
+  { n: 'kanna va', l: ['vol3-1'], lg: 'Malayalam', d: 'Krishna' },
+  { n: 'om namah sivaya', l: ['vol2-15'], lg: 'Sanskrit', d: 'Shiva' },
+];
+
+const renderCategorized = () =>
+  render(
+    <ThemeProvider>
+      <MemoryRouter>
+        <Search path='/' favorites={{}} renderFavorite={() => null} bhajans={categorizedBhajans} />
+      </MemoryRouter>
+    </ThemeProvider>
+  );
+
+describe('Search deity and language filters', () => {
+  beforeEach(() => {
+    window.searchableBhajans = null;
+    window.searchFilter = '';
+    window.searchLanguage = '';
+    window.searchDeity = '';
+  });
+
+  it('lists each deity and language with its count', () => {
+    renderCategorized();
+    const deity = screen.getByLabelText('Deity');
+    expect([...deity.options].map((o) => o.textContent)).toEqual([
+      'All deities',
+      'Devi (2)',
+      'Krishna (2)',
+      'Shiva (1)',
+    ]);
+    const language = screen.getByLabelText('Language');
+    expect([...language.options].map((o) => o.textContent)).toEqual([
+      'All languages',
+      'Malayalam (2)',
+      'Sanskrit (2)',
+      'Hindi (1)',
+    ]);
+  });
+
+  it('narrows results by deity, then by language, and clears both', () => {
+    renderCategorized();
+    fireEvent.change(screen.getByLabelText('Deity'), { target: { value: 'Krishna' } });
+    expect(screen.getByText('2 bhajans')).toBeInTheDocument();
+    // Language counts follow the chosen deity.
+    expect([...screen.getByLabelText('Language').options].map((o) => o.textContent)).toEqual([
+      'All languages',
+      'Hindi (1)',
+      'Malayalam (1)',
+    ]);
+
+    fireEvent.change(screen.getByLabelText('Language'), { target: { value: 'Malayalam' } });
+    expect(screen.getByText('1 bhajan')).toBeInTheDocument();
+    expect(window.searchDeity).toBe('Krishna');
+    expect(window.searchLanguage).toBe('Malayalam');
+
+    fireEvent.click(screen.getByRole('button', { name: /clear deity and language filters/i }));
+    expect(screen.getByLabelText('Deity')).toHaveValue('');
+    expect(screen.getByLabelText('Language')).toHaveValue('');
+    expect(screen.queryByText(/^\d+ bhajans?$/)).not.toBeInTheDocument();
+  });
+
+  it('hides the filters when the index has no categories', () => {
+    renderSearch();
+    expect(screen.queryByLabelText('Deity')).not.toBeInTheDocument();
+  });
+});
+
+describe('Highlight', () => {
+  it('marks every case-insensitive match and escapes regex characters', () => {
+    const { container } = render(<Highlight text='Om (Siva) om' words={['OM', '(siva)', '']} />);
+    expect([...container.querySelectorAll('mark')].map((m) => m.textContent)).toEqual(['Om', '(Siva)', 'om']);
+    expect(container.textContent).toBe('Om (Siva) om');
+  });
+});
+
+describe('Bhajan details modal', () => {
+  // react-virtualized only renders rows when its containers have a size
+  const sizes = {};
+  beforeEach(() => {
+    window.searchableBhajans = null;
+    window.searchFilter = '';
+    window.searchLanguage = '';
+    window.searchDeity = '';
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      sizes[prop] = Object.getOwnPropertyDescriptor(HTMLElement.prototype, prop);
+      Object.defineProperty(HTMLElement.prototype, prop, { configurable: true, get: () => 1000 });
+    }
+  });
+  afterEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      Object.defineProperty(HTMLElement.prototype, prop, sizes[prop]);
+    }
+  });
+
+  it('stays out of the accessibility tree until opened', () => {
+    renderCategorized();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('opens with focus on Close and closes on Escape', () => {
+    renderCategorized();
+    const opener = screen.getAllByRole('button', { name: 'bhajan details' })[0];
+    opener.focus();
+    fireEvent.click(opener);
+    const dialog = screen.getByRole('dialog');
+    expect(dialog).toHaveTextContent('amme narayana');
+    expect(screen.getByRole('button', { name: 'close details modal' })).toHaveFocus();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(opener).toHaveFocus();
+  });
+});

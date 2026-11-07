@@ -12,6 +12,7 @@ const {
   newUserResetPasswordEmailShopify,
   accountActivated,
 } = require("./mail");
+const { ga4ApiSecret, recordGa4Purchase } = require("./engagement");
 initializeApp();
 const amritabooksSecret = defineSecret("AMRITABOOKS_SECRET");
 const shopifySecret = defineSecret("SHOPIFY_SECRET");
@@ -427,7 +428,7 @@ const SHOPIFY_VARIANTS = {
   37277000827044: 315360000000,
 };
 exports.shopifyWebhook = onRequest(
-  { ...options, invoker: "public", secrets: [shopifySecret, mailjetAuth] },
+  { ...options, invoker: "public", secrets: [shopifySecret, mailjetAuth, ga4ApiSecret] },
   async (req, res) => {
     if (req.method !== "POST") return res.status(405).send("POST required");
     const signature = req.headers["x-shopify-hmac-sha256"];
@@ -605,6 +606,16 @@ exports.shopifyWebhook = onRequest(
         newAccount: Boolean(password),
         outcome: "done",
       });
+      // GA4 purchase for revenue and attribution; never fails the order.
+      await recordGa4Purchase({
+        uid: user.uid,
+        orderId: `shopify:${body.id}`,
+        value: body.total_price,
+        currency: body.currency,
+        lineItems: line_items,
+        paidOn,
+        apiSecret: ga4ApiSecret.value(),
+      });
       return res.status(200).json({ message: "done" });
     } catch (error) {
       logger.error("shopify order processing failed", {
@@ -617,3 +628,8 @@ exports.shopifyWebhook = onRequest(
     }
   },
 );
+
+// Engagement: daily renewal reminders and admin push announcements.
+const engagement = require("./engagement");
+exports.sendRenewalReminders = engagement.sendRenewalReminders;
+exports.sendAnnouncement = engagement.sendAnnouncement;

@@ -8,41 +8,16 @@ import {
   auth,
 } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { omit, get, orderBy } from "lodash-es";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { RequireAuth } from "./util";
 import Search from "./Search";
 import Profile from "./Profile";
 import RenderPage from "./RenderPage";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faHeart,
-  faMusic,
-  faPlay,
-  faStop,
-  faCompactDisc,
-  faCartArrowDown,
-  faInfo,
-  faSearch,
-  faArrowLeft,
-  faBookOpen,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "./Icon";
+import { setUserState, track } from "./analytics";
+import { refreshNotificationToken } from "./notifications";
 import Pay from "./Pay";
 import Footer from "./Footer";
-
-library.add(
-  faHeart,
-  faMusic,
-  faPlay,
-  faStop,
-  faCompactDisc,
-  faCartArrowDown,
-  faInfo,
-  faBookOpen,
-  faSearch,
-  faArrowLeft
-);
 
 const getShow2025Param = (search) => {
   const value = new URLSearchParams(search).get("2025");
@@ -81,15 +56,19 @@ const App = () => {
       .fetch("/bhajan-index2.json")
       .then((data) => data.json())
       .then((fetchedBhajans) => {
-        const sorted = orderBy(fetchedBhajans, ["n", "t"], ["asc", "asc"]);
+        const sorted = [...fetchedBhajans].sort((a, b) => (a.n < b.n ? -1 : a.n > b.n ? 1 : 0));
         window.fetchedBhajans = sorted;
         setAllBhajans(sorted);
       });
 
     // Subscribe to auth state changes to sync favorites on every login
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      // GA4 splits signed-in and signed-out visitors on this; the subscription
+      // part is refreshed again once syncUserData has read paid/{uid}.
+      setUserState({ uid: user?.uid, expiresOn: user ? localStorage.expiresOn : undefined });
       if (user) {
         handleUser(user);
+        refreshNotificationToken(user.uid);
       }
     });
 
@@ -125,18 +104,21 @@ const App = () => {
   }, [allBhajans, show2025]);
 
   const addFavorite = useCallback((name) => {
+    track("add_to_favorites", { bhajan_name: name });
     setFavorites((prev) => {
       const updated = Object.assign({ [name]: 1 }, prev);
-      const uid = get(auth, "currentUser.uid");
+      const uid = auth?.currentUser?.uid;
       uid && setRefOnce(`favorites/${uid}/${name}`, "1");
       return updated;
     });
   }, []);
 
   const removeFavorite = useCallback((name) => {
+    track("remove_from_favorites", { bhajan_name: name });
     setFavorites((prev) => {
-      const updated = omit(prev, name);
-      const uid = get(auth, "currentUser.uid");
+      const updated = { ...prev };
+      delete updated[name];
+      const uid = auth?.currentUser?.uid;
       uid && removeRefOnce(`favorites/${uid}/${name}`);
       return updated;
     });
@@ -145,26 +127,21 @@ const App = () => {
   const renderFavorite = useCallback((name, activeClassName, inactiveClassName) => {
     return favorites[name] ? (
       <button
-        className={
-          activeClassName ||
-          "button button-3d button-circle button-jumbo button-favorite-active"
-        }
+        className={`${activeClassName || "button button-3d button-circle button-jumbo"} favorite-button is-favorite`}
         onClick={() => removeFavorite(name)}
         aria-label='unlike'
-        role='presentation'
-        tabIndex={-1}>
-        <FontAwesomeIcon icon='heart' style={{ color: '#f44336' }} />
+        aria-pressed='true'
+        type='button'>
+        <Icon name='heart' />
       </button>
     ) : (
       <button
-        className={
-          inactiveClassName || "button button-3d button-circle button-jumbo"
-        }
+        className={`${inactiveClassName || "button button-3d button-circle button-jumbo"} favorite-button`}
         onClick={() => addFavorite(name)}
         aria-label='like'
-        role='presentation'
-        tabIndex={-1}>
-        <FontAwesomeIcon icon='heart' style={{ color: 'grey' }} />
+        aria-pressed='false'
+        type='button'>
+        <Icon name='heart' filled={false} />
       </button>
     );
   }, [favorites, addFavorite, removeFavorite]);

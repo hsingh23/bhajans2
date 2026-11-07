@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { initializeApp } from "firebase/app";
+import { setUserState } from "./analytics";
 import {
   getDatabase,
   ref,
@@ -168,6 +169,7 @@ const {
         delete localStorage.offlineValidUntil;
       }
       localStorage.lastOnline = now;
+      setUserState({ uid: userToSync.uid, expiresOn: val });
       return val;
     }).catch((err) => {
       console.warn("Failed to sync user data, likely offline:", err);

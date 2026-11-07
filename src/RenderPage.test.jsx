@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
 import RenderPage from './RenderPage';
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
@@ -52,7 +52,8 @@ vi.mock('react-router-dom', async () => {
 // Mock InvertiblePDF to avoid PDF.js issues
 vi.mock('./InvertiblePDF', () => ({
   default: ({ page, onPageComplete, onDocumentComplete }) => {
-    // Simulate document loaded with 5 pages
+    // Like react-pdf-js: report 0 pages before the document loads, then 5.
+    setTimeout(() => onDocumentComplete?.(0), 0);
     setTimeout(() => onDocumentComplete?.(5), 0);
     setTimeout(() => onPageComplete?.(page), 0);
     return <div data-testid="pdf-viewer">PDF Page {page}</div>;
@@ -310,6 +311,16 @@ describe('RenderPage hideable header', () => {
     expect(mockNavigate).toHaveBeenCalledWith(-1);
   });
 
+  it('goes to search from a page whose URL was rewritten in place', () => {
+    setViewport(PHONE_LANDSCAPE);
+    const { container } = renderRenderPage({}, [{ pathname: '/pdf/vol1-10/0/Test%20Bhajan', search: '?page=11', state: { entryPoint: true }, key: 'rewritten' }]);
+
+    advance(3000);
+    fireEvent.click(floatingBack(container));
+
+    expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
+  });
+
   it('goes to search when the viewer was the first page opened', () => {
     setViewport(PHONE_LANDSCAPE);
     const { container } = renderRenderPage();
@@ -372,7 +383,8 @@ describe('RenderPage key picker', () => {
 
     expect(mockNavigate).toHaveBeenCalledWith('/pdf/FragranceBb.pdf/3/Fragrance', {
       replace: true,
-      state: { headerHidden: false },
+      // Opened directly, so the next page must still send back to search.
+      state: { headerHidden: false, entryPoint: true },
     });
     expect(screen.queryByRole('menu')).toBeNull();
   });
@@ -389,5 +401,66 @@ describe('RenderPage key picker', () => {
   it('has no key picker for book pages or a single key', () => {
     renderRenderPage({ bhajans: { 3: { n: 'Solo', sm: ['SoloC.pdf'] } } }, '/pdf/SoloC.pdf/3/Solo');
     expect(screen.queryByRole('button', { name: /Change key/ })).toBeNull();
+  });
+});
+
+describe('page number in the address', () => {
+  const LocationProbe = () => <output data-testid='location'>{useLocation().search}</output>;
+  const renderAt = (route) =>
+    render(
+      <ThemeProvider>
+        <MUIThemeWrapper>
+          <QueryClientProvider client={new QueryClient()}>
+            <MemoryRouter initialEntries={[route]}>
+              <Routes>
+                <Route
+                  path='/pdf/:location/:id/:name'
+                  element={
+                    <>
+                      <RenderPage bhajans={mockBhajans} renderFavorite={() => null} />
+                      <LocationProbe />
+                    </>
+                  }
+                />
+              </Routes>
+            </MemoryRouter>
+          </QueryClientProvider>
+        </MUIThemeWrapper>
+      </ThemeProvider>
+    );
+
+  beforeEach(() => {
+    localStorage.setItem('lastOnline', String(Date.now()));
+    localStorage.setItem('expiresOn', String(Date.now() + 86400000));
+  });
+
+  it('records the starting page so a reload can find it', async () => {
+    renderAt('/pdf/vol1-3/0/Test%20Bhajan');
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('?page=3'));
+  });
+
+  it('reopens the page from the address after a reload', async () => {
+    renderAt('/pdf/vol1-3/0/Test%20Bhajan?page=4');
+    await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 4'));
+  });
+
+  it('updates the address as pages turn', async () => {
+    renderAt('/pdf/vol1-3/0/Test%20Bhajan');
+    // Wait until the mocked 5-page document has loaded, so "next" is allowed.
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('?page=3'));
+    await act(() => new Promise((resolve) => setTimeout(resolve, 20)));
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('?page=4'));
+  });
+
+  it('ignores a page before the song starts or past the end', async () => {
+    renderAt('/pdf/vol1-3/0/Test%20Bhajan?page=1');
+    await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 3'));
+  });
+
+  it('falls back to the last page when the address points past the end', async () => {
+    renderAt('/pdf/vol1-3/0/Test%20Bhajan?page=99');
+    // The mocked PDF has 5 pages.
+    await waitFor(() => expect(screen.getByTestId('pdf-viewer')).toHaveTextContent('PDF Page 5'));
   });
 });
