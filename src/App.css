@@ -683,11 +683,19 @@ mark {
    The user reported "unused space", so I'll use display: none.
 */
 
-.yellowBg {
-  background-color: yellow;
-  border-radius: 20px;
-  margin: 40px -40px;
-  padding: 20px 35px;
+.pay-notice {
+  margin: 32px 0;
+  padding: 18px 22px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--notice-bg);
+  border: 1px solid var(--notice-border);
+  border-left: 4px solid var(--notice-accent);
+  border-radius: var(--radius-lg);
+}
+.pay-notice a {
+  color: var(--notice-link);
+  font-weight: 600;
 }
 
 /* Dark mode styles */
@@ -702,7 +710,10 @@ mark {
   --button-text: #666;
   --lyrics-color: #156161;
   --modal-bg: #ffffff;
-  --yellow-bg: yellow;
+  --notice-bg: #fff4e5;
+  --notice-border: #ffd6a8;
+  --notice-accent: #e65100;
+  --notice-link: #bf360c;
 }
 
 [data-theme="dark"] {
@@ -716,7 +727,10 @@ mark {
   --button-text: #ccc;
   --lyrics-color: #66b2b2;
   --modal-bg: #2d2d2d;
-  --yellow-bg: #b8860b;
+  --notice-bg: rgba(255, 167, 38, 0.12);
+  --notice-border: rgba(255, 167, 38, 0.35);
+  --notice-accent: #ffb74d;
+  --notice-link: #ffcc80;
 }
 
 html,
@@ -764,10 +778,6 @@ a,
 
 .modal-window > div {
   background: var(--modal-bg);
-}
-
-.yellowBg {
-  background-color: var(--yellow-bg);
 }
 
 .copyRight {

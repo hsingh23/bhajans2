@@ -34,7 +34,7 @@ expiresOn: ${expiresOn}`);
       <div className='pay'>
         <h1>Payments</h1>
         {email ? (
-          <p className='yellowBg'>
+          <p className='pay-notice'>
             {helloText}, you are signed in with the email {email}{" "}
             {paymentMessage}
             <br />
@@ -43,7 +43,7 @@ expiresOn: ${expiresOn}`);
             <Link to='/logout'>Logout / Change User</Link>
           </p>
         ) : (
-          <p className='yellowBg'>
+          <p className='pay-notice'>
             Please <Link to={`/login?next=${encodeURIComponent('/pay')}`}>sign in</Link> first so
             your payment is linked to your account.
             <br />
