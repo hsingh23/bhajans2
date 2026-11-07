@@ -26,8 +26,6 @@
       type="application/json"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     
 
     <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin />
@@ -60,7 +58,8 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <noscript> You need to enable JavaScript to run this app. </noscript>
-    <div id="root"></div>
+    <!-- Painted before the app's JavaScript runs; React replaces it with the same header. -->
+    <div id="root"><div class="App-header" aria-hidden="true"><div class="header-center"><a class="title" href="/" tabindex="-1"><img src="/amma.jpg" alt="" class="header-logo" /></a></div></div></div>
     <audio id="audio"></audio>
     <script type="module" src="/src/index.jsx"></script>
   </body>

@@ -2,7 +2,7 @@ export {};
 
 declare global {
   /** Lyrics book PDF URLs, injected by vite.config.js. */
-  const __LYRICS_PDFS__: string[];
+  const __LYRICS_PDFS__: { url: string; rev: string }[];
 
   interface Window {
     gtag: (...args: any[]) => void;

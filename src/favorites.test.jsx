@@ -35,6 +35,11 @@ let mockAuthStateCallback = null;
 vi.mock('./firebase', () => ({
   auth: {
     currentUser: { uid: 'test-uid' },
+    // App subscribes through the auth instance once Firebase has loaded.
+    onAuthStateChanged: (callback) => {
+      mockAuthStateCallback = callback;
+      return () => { mockAuthStateCallback = null; };
+    },
   },
   checkRefOnce: (...args) => mockCheckRefOnce(...args),
   setRefOnce: (...args) => mockSetRefOnce(...args),
@@ -99,6 +104,7 @@ describe('Favorites Sync', () => {
     renderWithProviders(<App />);
     
     // Simulate user login
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback({ uid: 'test-uid' });
     }
@@ -121,6 +127,7 @@ describe('Favorites Sync', () => {
     renderWithProviders(<App />);
     
     // Simulate user login  
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback({ uid: 'test-uid' });
     }
@@ -140,6 +147,7 @@ describe('Favorites Sync', () => {
     
     renderWithProviders(<App />);
     
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback({ uid: 'test-uid' });
     }
@@ -167,6 +175,7 @@ describe('Favorites Sync with Auth Changes', () => {
     renderWithProviders(<App />);
     
     // First login
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback({ uid: 'test-uid' });
     }
@@ -179,6 +188,7 @@ describe('Favorites Sync with Auth Changes', () => {
     mockCheckRefOnce.mockClear();
     mockCheckRefOnce.mockResolvedValue({ 'Song B': 1 });
     
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback({ uid: 'test-uid-2' });
     }
@@ -194,6 +204,7 @@ describe('Favorites Sync with Auth Changes', () => {
     renderWithProviders(<App />);
     
     // Simulate signed out state
+    await waitFor(() => expect(mockAuthStateCallback).toBeTruthy());
     if (mockAuthStateCallback) {
       mockAuthStateCallback(null);
     }

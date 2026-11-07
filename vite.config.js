@@ -1,22 +1,47 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
-import { readdirSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
-// Lyrics books under public/pdfs. They are not precached at install; the app
-// fetches them later (src/pdfPrefetch.js) once the page is idle.
-const LYRICS_PDFS = readdirSync(new URL("./public/pdfs", import.meta.url))
+// Lyrics books under public/pdfs, each with a content fingerprint ("rev").
+// They are not precached at install; the app downloads them later
+// (src/pdfPrefetch.js) and re-downloads a book only when its rev changes.
+const PDF_DIR = new URL("./public/pdfs/", import.meta.url);
+const LYRICS_PDFS = readdirSync(PDF_DIR)
   .filter((file) => /\.pdf$/i.test(file))
   .sort()
-  .map((file) => `/pdfs/${file}`);
+  .map((file) => ({
+    url: `/pdfs/${file}`,
+    rev: createHash("sha256").update(readFileSync(new URL(file, PDF_DIR))).digest("hex").slice(0, 12),
+  }));
 
 
 // https://vitejs.dev/config/
+// Inlines the entry stylesheet into index.html so it doesn't block the first paint.
+const inlineEntryCss = () => ({
+  name: "inline-entry-css",
+  apply: "build",
+  enforce: "post",
+  generateBundle(_, bundle) {
+    const page = bundle["index.html"];
+    if (!page || page.type !== "asset") return;
+    page.source = String(page.source).replace(
+      /<link rel="stylesheet"[^>]*href="\/(assets\/[^"]+\.css)"[^>]*>/g,
+      (tag, file) => {
+        const css = bundle[file];
+        return css && css.type === "asset" ? `<style>${css.source}</style>` : tag;
+      }
+    );
+  },
+});
+
 export default defineConfig({
   define: {
     __LYRICS_PDFS__: JSON.stringify(LYRICS_PDFS),
   },
   plugins: [
+    inlineEntryCss(),
     // React Compiler through plugin-react's native (oxc) port; no Babel in our build.
     react({ compiler: { target: "19" } }),
     VitePWA({
@@ -60,11 +85,8 @@ export default defineConfig({
               cacheName: "pdfs-cache",
               // PDF.js asks for byte ranges; serve them from the cached full file.
               rangeRequests: true,
-              expiration: {
-                maxEntries: 100,
-                // Outlasts the 90-day offline period the app allows (src/firebase.js).
-                maxAgeSeconds: 60 * 60 * 24 * 100, // 100 days
-              },
+              // No expiration: lyrics books stay available offline indefinitely.
+              // Updated books are replaced by src/pdfPrefetch.js when their rev changes.
               cacheableResponse: {
                 statuses: [0, 200],
               },
@@ -85,7 +107,6 @@ export default defineConfig({
           if (!id.includes('node_modules')) return undefined;
           if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) return 'vendor';
           if (/node_modules\/(@firebase|firebase)\//.test(id)) return 'firebase';
-          if (/node_modules\/(@mui|@emotion)\//.test(id)) return 'mui';
           return undefined;
         },
       },
