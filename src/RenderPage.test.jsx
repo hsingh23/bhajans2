@@ -657,6 +657,22 @@ describe('quick key change', () => {
     expect(screen.getByRole('menuitemradio', { name: 'C' })).toBeInTheDocument();
   });
 
+  it('marks the PDF named for the arranger\'s key when Sa is not the key root', async () => {
+    // Hindolam on F# is written as B minor (its fifth is Sa), so the recording's PDF is Bm, not F#m.
+    const songs = { 'atulya tayute': { sh: { pc: 6, k: '4.5', c: 0.96, src: 'box', pdf_pc: 11 }, r: [{ id: 'mohanam', sec: 'all', c: 0.9 }], c: 0.9 } };
+    global.fetch = vi.fn((url) =>
+      Promise.resolve({ ok: true, json: () => Promise.resolve(url === '/bhajan-music.json' ? songs : referenceFixture) })
+    );
+    setPref('musicianMode', true);
+    const song = { 7: { n: 'atulya tayute', sm: ['AtulyaTayuteBm.pdf', 'AtulyaTayuteCm.pdf', 'AtulyaTayuteFsharpm.pdf'] } };
+    renderRenderPage({ bhajans: song }, '/pdf/AtulyaTayuteCm.pdf/7/atulya%20tayute');
+
+    await screen.findByRole('button', { name: 'For musicians: key, raga and taal' });
+    fireEvent.click(screen.getByRole('button', { name: 'Change key, now Cm' }));
+    expect(await screen.findByRole('menuitemradio', { name: 'Bm · recording' })).toBeInTheDocument();
+    expect(screen.getByRole('menuitemradio', { name: 'F#m' })).toBeInTheDocument();
+  });
+
   it('shows no musician button or recording mark while the mode is off', () => {
     const kali = { 5: { n: 'kali kali kali (gujarati)', sm: ['KaliKaliKaliBb.pdf', 'KaliKaliKaliG.pdf'] } };
     renderRenderPage({ bhajans: kali }, '/pdf/KaliKaliKaliBb.pdf/5/kali%20kali%20kali');

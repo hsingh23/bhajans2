@@ -4,7 +4,7 @@
 // mode; loaded on demand so other readers never download it.
 import React, { useId } from 'react';
 import { KEY_NAMES, chordsInKey, countPhrase, kattaiFor, keySpelling, markMeaning, swarasToNotes, thekaGroups } from './musicTheory';
-import { RAGA_SURE, firstRagaSwaras, ragaName, shrutiShort, taalName } from './MusicChips';
+import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, shrutiShort, taalName } from './MusicChips';
 
 const SOURCE = { box: 'from the full recording', cd: 'from a CD sample', sheet: 'from the sheet music' };
 const SYSTEM = { carnatic: 'Carnatic', hindustani: 'Hindustani' };
@@ -82,6 +82,7 @@ const Taal = ({ t, taals }) => {
   return (
     <div className='md-taal'>
       <p className='md-heading'>
+        {(t.c ?? 1) < TAAL_SURE && <span className='md-aside'>Probably </span>}
         <strong>{t.id ? taalName(taals, t.id) : 'Rhythm'}</strong>
         {beats && <span className='md-aside'> · {beats} beats</span>}
         {altLabel && <span className='md-aside'> · {altLabel}</span>}
@@ -128,6 +129,7 @@ const MusicianDetails = ({ entry, music }) => {
         <div className='md-block'>
           <h3 className='md-label'>Key / Shruti</h3>
           <p className='md-heading'>
+            {(entry.sh.c ?? 1) < SHRUTI_SURE && <span className='md-aside'>Probably </span>}
             <strong>{shruti.text.split(' · ')[0]}</strong>
             {kattai && <span> ({kattai} kattai)</span>}
             {SOURCE[entry.sh.src] && <span className='md-aside'> · {SOURCE[entry.sh.src]}</span>}

@@ -8,6 +8,10 @@ const titleCase = (id) => String(id || '').replace(/(^|[\s-])\w/g, (c) => c.toUp
 export const ragaName = (ragas, id) => ragas?.[id]?.name || titleCase(id);
 /** Raga confidence at or above which the name is stated plainly (blind re-check: 96% agreement). */
 export const RAGA_SURE = 0.85;
+/** Shruti and taal confidence at or above which they are stated plainly (held-out accuracy 96-99% there). */
+export const SHRUTI_SURE = 0.8;
+export const TAAL_SURE = 0.8;
+const unsure = (part, sure) => typeof part?.c === 'number' && part.c < sure;
 export const taalName = (taals, id) => taals?.[id]?.name || titleCase(id);
 
 /** Swaras of a song's first raga, used to spell its key (C# or Db?). */
@@ -29,7 +33,10 @@ export const musicChips = (entry, music) => {
   if (!entry || !music) return [];
   const chips = [];
   const shruti = shrutiShort(entry, music.ragas);
-  if (shruti) chips.push({ kind: 'shruti', ...shruti });
+  if (shruti) {
+    const approx = unsure(entry.sh, SHRUTI_SURE);
+    chips.push({ kind: 'shruti', text: approx ? `≈ ${shruti.text}` : shruti.text, label: approx ? `Probably ${shruti.label}` : shruti.label });
+  }
   const ragas = Array.isArray(entry.r) ? entry.r.filter((r) => r?.id) : [];
   if (ragas.length) {
     const names = ragas.map((r) => ragaName(music.ragas, r.id)).join(' + ');
@@ -41,8 +48,10 @@ export const musicChips = (entry, music) => {
   const t = entry.t;
   if (t && (t.id || t.ts || t.b)) {
     const beats = t.b || music.taals?.[t.id]?.beats;
-    const text = t.id ? [taalName(music.taals, t.id), beats].filter(Boolean).join(' ') : t.ts || `${beats} beats`;
-    chips.push({ kind: 'taal', text, label: t.id ? `Taal ${text}${beats ? ' beats' : ''}` : `Time ${text}` });
+    const plain = t.id ? [taalName(music.taals, t.id), beats].filter(Boolean).join(' ') : t.ts || `${beats} beats`;
+    const approx = unsure(t, TAAL_SURE);
+    const label = t.id ? `Taal ${plain}${beats ? ' beats' : ''}` : `Time ${plain}`;
+    chips.push({ kind: 'taal', text: approx ? `≈ ${plain}` : plain, label: approx ? `Probably ${label}` : label });
   }
   return chips;
 };

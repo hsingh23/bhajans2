@@ -47,17 +47,36 @@ def load_jsonl(pattern):
     return out
 
 
+NEW_RENDITION_FOLDERS = ("1 MP3/Amma/Amma Bhajans 2024",)  # Box key matches the CD only ~30% here
+
+
 def pick_shruti(t):
+    """Shruti of what the app plays (the CD sample) when we can, else the full Box recording.
+
+    The 2020/2021 Box folders are the CD recordings (same key 99-100%); the 2024 folder holds new
+    renditions, usually 1-2 semitones lower. When the CD estimate and the Box estimate disagree, the
+    other one goes in `alt` and confidence drops so the UI does not state the key as certain.
+    """
     recs = [r for r in (t or {}).get("recordings", []) if r.get("tonic_pc") is not None]
     if not recs:
         return None
     cd = [r for r in recs if r["source"].startswith("cd:")]
     box = [r for r in recs if r["source"].startswith("box:")]
-    order = [r for r in cd if r.get("high_confidence")] + [r for r in box if r.get("high_confidence")] + cd + box
-    best = order[0]
-    alt = sorted({r["tonic_pc"] for r in recs if r["tonic_pc"] != best["tonic_pc"] and r.get("high_confidence")})
-    return {"pc": best["tonic_pc"], "k": KATTAI[best["tonic_pc"]], "alt": alt,
-            "c": round(min(float(best.get("confidence", 0.5)), 0.97), 2),
+    new_rendition = any((r.get("box_folder") or "").startswith(NEW_RENDITION_FOLDERS) for r in box)
+    if cd and (cd[0].get("high_confidence") or new_rendition or not box):
+        best = cd[0]
+    elif box and box[0].get("high_confidence"):
+        best = box[0]
+    else:
+        best = (cd + box)[0]
+    c = min(float(best.get("confidence", 0.5)), 0.97)
+    others = {r["tonic_pc"] for r in recs if r["tonic_pc"] != best["tonic_pc"]}
+    if others and (cd and best is not cd[0]):
+        c = min(c, 0.75)  # the sample the app plays may be in another key
+    elif others and new_rendition and best is cd[0]:
+        c = min(c, 0.85 if best.get("high_confidence") else 0.7)
+    alt = sorted(others if (cd and box) else {r["tonic_pc"] for r in recs if r["tonic_pc"] != best["tonic_pc"] and r.get("high_confidence")})
+    return {"pc": best["tonic_pc"], "k": KATTAI[best["tonic_pc"]], "alt": alt, "c": round(c, 2),
             "src": "cd" if best["source"].startswith("cd:") else "box"}
 
 
@@ -147,6 +166,7 @@ def main():
         n = s["n"]
         e = {}
         sh = pick_shruti(tonic.get(n))
+        base_pc = sh["pc"] if sh else None  # Sa before any labeller shift; the sheet offset is relative to it
         rr = raga_out.get(n)
         if rr:
             shift = int(rr.get("sa_shift") or 0) % 12
@@ -175,6 +195,10 @@ def main():
                 if rs:
                     e["r"] = rs
         if sh:
+            so = (sa_over.get(n) or {}).get("sa_offset", 0)
+            if so and trust.get(n, {}).get("trust") in ("trusted", "trusted-unique", "unverified"):
+                # PDFs are named by the arranger's key root, which sits so semitones below Sa.
+                sh = {**sh, "pdf_pc": (base_pc - so) % 12}
             e["sh"] = sh
         t = taal.get(n)
         if t and t.get("beats_class") in TAAL_BY_CLASS:
@@ -185,7 +209,9 @@ def main():
                 {8: "4/4", 6: "6/8" if t.get("subdivision") == 3 or mg == "68" else "3/4", 7: "7/8", 5: "5/8"}[t["beats_class"]])
             e["t"] = {"id": tid, **({"alt": alt} if alt else {}), "b": t["beats_class"], "ts": ts,
                       **({"bpm": int(t["bpm"])} if t.get("bpm") else {}), "pulse": t.get("pulse") or "quarter",
-                      "sub": t.get("subdivision") or 2, "c": round(float(t.get("confidence", 0.5)), 2)}
+                      "sub": t.get("subdivision") or 2,
+                      # Not high-confidence (e.g. audio model unvalidated for this album): keep below the UI's 0.8 bar.
+                      "c": round(float(t.get("confidence", 0.5)) if t.get("high_confidence") else min(float(t.get("confidence", 0.5)), 0.6), 2)}
             used_t.update(x for x in (tid, alt) if x)
         ch = chords(n, sheet, sa_over, trust)
         if ch:

@@ -336,10 +336,13 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
     }
   }, [currentSong, currentKey, sheetKeys, rememberSheetKey]);
 
-  // Musician mode marks the key the recording is sung in.
+  // Musician mode marks the PDF in the key the recording is sung in. PDFs are named by the
+  // arranger's key root, which is not always Sa (hindolam is often written as a minor key whose
+  // fifth is Sa), so prefer the data's pdf_pc and fall back to Sa.
   const songMusic = useSongMusic(name);
   const { music } = useMusicianMode();
-  const recordingPc = Number.isInteger(songMusic?.sh?.pc) ? songMusic.sh.pc : null;
+  const sh = songMusic?.sh;
+  const recordingPc = Number.isInteger(sh?.pdf_pc) ? sh.pdf_pc : Number.isInteger(sh?.pc) ? sh.pc : null;
   const [musicOpen, setMusicOpen] = useState(false);
   useEffect(() => {
     if (!musicOpen) return;
