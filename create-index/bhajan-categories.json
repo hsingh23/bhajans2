@@ -1507,10 +1507,6 @@
 "lg": "Malayalam",
 "d": "Universal"
 },
-"arupalai vilu (tamil)": {
-"lg": "Tamil",
-"d": "Murugan"
-},
 "arute makkal nangal": {
 "lg": "Malayalam",
 "d": "Devi"
@@ -2847,7 +2843,7 @@
 "lg": "Malayalam",
 "d": "Krishna"
 },
-"ennule jivita (kannada version)": {
+"ennute jivita (kannada version)": {
 "lg": "Kannada",
 "d": "Devi"
 },
@@ -3399,7 +3395,7 @@
 "lg": "Swahili",
 "d": "Amma"
 },
-"hamasa vahini devi": {
+"hamsa vahina devi": {
 "lg": "Sanskrit",
 "d": "Devi"
 },
@@ -4151,7 +4147,7 @@
 "lg": "Malayalam",
 "d": "Devi"
 },
-"jamuna ke tal par (hindi)": {
+"jamuna ke tat par (hindi)": {
 "lg": "Hindi",
 "d": "Krishna"
 },
@@ -4463,7 +4459,7 @@
 "lg": "Hindi",
 "d": "Universal"
 },
-"kaitorunnen krsna": {
+"kaitozhunnen krsna": {
 "lg": "Malayalam",
 "d": "Krishna"
 },
@@ -5439,10 +5435,6 @@
 "lg": "Japanese",
 "d": "Amma"
 },
-"kolanukoli (gujrati version)": {
-"lg": "Gujarati",
-"d": "Krishna"
-},
 "kom hjem mit barn (danish)": {
 "lg": "Danish",
 "d": "Amma"
@@ -5746,10 +5738,6 @@
 "love is you love is me (english)": {
 "lg": "English",
 "d": "Universal"
-},
-"lrmmossr tuulen (finnish)": {
-"lg": "Finnish",
-"d": "Other"
 },
 "lumiere du dharma (french)": {
 "lg": "French",
@@ -6875,10 +6863,6 @@
 "lg": "Arabic",
 "d": "Universal"
 },
-"nalakam onlru (tamil)": {
-"lg": "Tamil",
-"d": "Universal"
-},
 "nalanchu nalekyu": {
 "lg": "Malayalam",
 "d": "Devi"
@@ -7319,7 +7303,7 @@
 "lg": "Malayalam",
 "d": "Krishna"
 },
-"nilanjana miri": {
+"nilanjana mizhi": {
 "lg": "Malayalam",
 "d": "Krishna"
 },
@@ -10695,7 +10679,7 @@
 "lg": "Malayalam",
 "d": "Devi"
 },
-"vilhal smaran kara (marathi)": {
+"vithal smaran kara (marathi)": {
 "lg": "Marathi",
 "d": "Krishna"
 },
@@ -11066,5 +11050,29 @@
 "you're the essence (ullakattin adhara)": {
 "lg": "English",
 "d": "Amma"
+},
+"jay ganesa jay ganesa (dinom ke dukh harta)": {
+"lg": "Hindi",
+"d": "Ganesha"
+},
+"anjani putra (sreyas, malayalam)": {
+"lg": "Malayalam",
+"d": "Hanuman"
+},
+"arupatai vitu (tamil)": {
+"lg": "Tamil",
+"d": "Murugan"
+},
+"kotanukoti (gujrati version)": {
+"lg": "Gujarati",
+"d": "Krishna"
+},
+"natakam onru (tamil)": {
+"lg": "Tamil",
+"d": "Universal"
+},
+"lammossa tuulen (finnish)": {
+"lg": "Finnish",
+"d": "Other"
 }
 }

@@ -123,6 +123,9 @@
 "agamanta porule": {
 "vol1-9": 0.093
 },
+"agatanayi": {
+"vol1-10": 0.634
+},
 "agraganya agrapujya (telugu)": {
 "2019supl-7": 0.593
 },
@@ -855,6 +858,9 @@
 "ananda janani": {
 "vol4-25": 0.659
 },
+"ananda mayi": {
+"vol1-35": 0.571
+},
 "ananda rupini amme enikku": {
 "vol3-32": 0.099
 },
@@ -957,6 +963,9 @@
 },
 "anjana-kannane (malayalam)": {
 "2021supl5-7": 0.086
+},
+"anjani putra (sreyas, malayalam)": {
+"2020supl3-22": 0.108
 },
 "ankh na palka": {
 "vol5-27": 0.299
@@ -1130,7 +1139,7 @@
 "arunodayattinkal (malayalam)": {
 "2020supl-31": 0.769
 },
-"arupalai vilu (tamil)": {
+"arupatai vitu (tamil)": {
 "2018supl-16": 0.601
 },
 "arute makkal nangal": {
@@ -1144,6 +1153,9 @@
 },
 "asaiyennum asuranvandu (tamil)": {
 "2021supl5-10": 0.086
+},
+"asato ma sad gamaya": {
+"vol1-259": 0.699
 },
 "asrutirtthattal (malayalam)": {
 "vol7-33": 0.199
@@ -1680,6 +1692,9 @@
 "colte colte (bengali)": {
 "vol6-49": 0.706
 },
+"come children (omkara divya porule) (english)": {
+"vol4-237": 0.111
+},
 "come running my darling children": {
 "vol6-226": 0.119
 },
@@ -1727,6 +1742,9 @@
 },
 "dari nivu dari nivu (telugu)": {
 "2025-99": 0.058
+},
+"darsan dena rama": {
+"vol1-62": 0.622
 },
 "darsan ki icha he to": {
 "vol4-40": 0.411
@@ -1822,6 +1840,9 @@
 "devi devi devi (kannada)": {
 "vol6-60": 0.116
 },
+"devi devi devi amrtesvari": {
+"vol1-65": 0.269
+},
 "devi devi devi jaganmohini": {
 "vol1-65": 0.269
 },
@@ -1860,6 +1881,9 @@
 },
 "devi triloki (hindi)": {
 "vol7-71": 0.656
+},
+"dhanye dhanye janani": {
+"vol1-71": 0.298
 },
 "dhim dhimi takadhimi (malayalam)": {
 "2025-103": 0.058
@@ -2125,9 +2149,6 @@
 "ennu kelkkum (malayalam)": {
 "2020supl3-32": 0.086
 },
-"ennule jivita (kannada version)": {
-"2018supl-33": 0.092
-},
 "ennullil minnunna": {
 "vol4-48": 0.45
 },
@@ -2136,6 +2157,9 @@
 },
 "ennute jivita": {
 "vol1-76": 0.728
+},
+"ennute jivita (kannada version)": {
+"2018supl-33": 0.092
 },
 "enta citramu enta vairudhyamu (telugu)": {
 "2025-120": 0.058
@@ -2329,6 +2353,9 @@
 "garbhattin nilaiyai (tamil)": {
 "2021supl5-24": 0.086
 },
+"garudha vahana": {
+"vol4-50": 0.659
+},
 "gatakala-smaranakal (malayalam)": {
 "2021supl4-15": 0.086
 },
@@ -2437,6 +2464,9 @@
 "gopiyarkoncum (tamil)": {
 "vol7-93": 0.623
 },
+"gopiye chinthichu": {
+"vol2-75": 0.102
+},
 "gotts himmel (german)": {
 "2020supl2-28": 0.155
 },
@@ -2521,6 +2551,9 @@
 "gurukrpa anjan payo": {
 "vol3-66": 0.343
 },
+"gurur brahma gurur visnuh": {
+"vol1-259": 0.316
+},
 "guruvativanavale": {
 "vol3-67": 0.288
 },
@@ -2533,7 +2566,7 @@
 "hakuna matata (swahili)": {
 "2020supl2-28": 0.769
 },
-"hamasa vahini devi": {
+"hamsa vahina devi": {
 "vol1-91": 0.729
 },
 "hana mo tori mo (japanese)": {
@@ -2788,6 +2821,9 @@
 "i was lost in the darkness2025(english) (english)": {
 "2025-156": 0.058
 },
+"i'm longing for you (milna tujhe) (english)": {
+"vol4-241": 0.111
+},
 "ichamayi": {
 "vol3-268": 0.221
 },
@@ -2857,6 +2893,9 @@
 "inke irukkum (tamil)": {
 "vol7-108": 0.551
 },
+"innallo karthika nalu": {
+"vol2-89": 0.595
+},
 "innallo kartika nalu": {
 "vol3-74": 0.814
 },
@@ -2904,6 +2943,9 @@
 },
 "isar tumi": {
 "vol5-66": 0.567
+},
+"ishwara lele yitellam": {
+"vol3-76": 0.099
 },
 "isori jogodisari": {
 "vol5-67": 0.466
@@ -3058,6 +3100,9 @@
 "jai jai satguru": {
 "vol4-69": 0.431
 },
+"jai kalyani jai bhavani (hindi,marathi)": {
+"vol4-72": 0.1
+},
 "jai ma ambe jai ma ambe": {
 "vol3-77": 0.775
 },
@@ -3088,7 +3133,7 @@
 "jalabindu tannilum mazhavil tirkkum (malayalam)": {
 "2025-173": 0.058
 },
-"jamuna ke tal par (hindi)": {
+"jamuna ke tat par (hindi)": {
 "2018supl-46": 0.162
 },
 "jamuna kinare (hindi)": {
@@ -3327,7 +3372,7 @@
 "kaise dharun main dhirprabhuji (hindi)": {
 "2025-183": 0.058
 },
-"kaitorunnen krsna": {
+"kaitozhunnen krsna": {
 "vol1-112": 0.423
 },
 "kaitozhunnen nan sakhe (malayalam)": {
@@ -3986,6 +4031,9 @@
 "kayambuniladyuti": {
 "vol5-96": 0.815
 },
+"kayena vaca": {
+"vol1-259": 0.138
+},
 "kayilaiyile sivaperuman (tamil)": {
 "vol7-145": 0.459
 },
@@ -4061,9 +4109,6 @@
 "kokoroyo nanio (japanese)": {
 "2020supl2-42": 0.254
 },
-"kolanukoli (gujrati version)": {
-"2018supl-60": 0.611
-},
 "kom hjem mit barn (danish)": {
 "2020supl2-43": 0.349
 },
@@ -4072,6 +4117,9 @@
 },
 "kondattamam (tamil, advait)": {
 "2020supl3-54": 0.086
+},
+"kotanukoti (gujrati version)": {
+"2018supl-60": 0.611
 },
 "kotha tumi jonani (bengali)": {
 "vol6-119": 0.499
@@ -4116,7 +4164,7 @@
 "2021supl5-37": 0.086
 },
 "krsna govinda gopala (hindi)": {
-"vol2-122": 0.297
+"vol2-123": 0.495
 },
 "krsna govinda gopala ram hari nam gavo (hindi)": {
 "vol6-120": 0.53
@@ -4249,6 +4297,9 @@
 "lambodara pahi mam": {
 "vol1-141": 0.371
 },
+"lammossa tuulen (finnish)": {
+"2020supl2-46": 0.219
+},
 "le lo sarana me ma": {
 "vol4-96": 0.462
 },
@@ -4293,9 +4344,6 @@
 },
 "love is you love is me (english)": {
 "2020supl2-48": 0.493
-},
-"lrmmossr tuulen (finnish)": {
-"2020supl2-46": 0.219
 },
 "lumiere du dharma (french)": {
 "2025-273": 0.058
@@ -4975,6 +5023,9 @@
 "mother of love (anpiyannamba) english": {
 "vol3-272": 0.099
 },
+"mother send your love to me": {
+"vol4-246": 0.24
+},
 "mother with you as our shield (english)": {
 "2025-334": 0.058
 },
@@ -5143,9 +5194,6 @@
 },
 "nakhtalifu (arabic-egyptian)": {
 "2020supl2-56": 0.746
-},
-"nalakam onlru (tamil)": {
-"2018supl-68": 0.373
 },
 "nalanchu nalekyu": {
 "vol2-140": 0.322
@@ -5337,6 +5385,9 @@
 "nasvara-prapancattil (malayalam)": {
 "2025-359": 0.058
 },
+"natakam onru (tamil)": {
+"2018supl-68": 0.373
+},
 "nataraja nataraja nartana": {
 "vol2-146": 0.523
 },
@@ -5351,6 +5402,9 @@
 },
 "navilu gariya (kannada)": {
 "vol7-216": 0.382
+},
+"navinte tumbil nin": {
+"vol2-147": 0.102
 },
 "navvu navvu (telugu)": {
 "2020supl-133": 0.235
@@ -5473,7 +5527,7 @@
 "nilameghangale": {
 "vol1-164": 0.093
 },
-"nilanjana miri": {
+"nilanjana mizhi": {
 "vol2-148": 0.804
 },
 "nilanjana mizhi (kannada version)": {
@@ -5741,6 +5795,9 @@
 "om jagad janani devi mata": {
 "vol3-141": 0.099
 },
+"om kali om mata": {
+"vol2-155": 0.591
+},
 "om mangalam (sanskrit)": {
 "vol6-168": 0.116,
 "vol7-223": 0.227
@@ -5760,6 +5817,9 @@
 },
 "om sakti om sakti om sakti (tamil)": {
 "vol6-171": 0.116
+},
+"om sri mata jaganmata": {
+"vol2-173": 0.102
 },
 "omkar guru ma omkar": {
 "vol2-172": 0.45
@@ -5781,6 +5841,9 @@
 },
 "omkara divya porule - 6": {
 "vol2-155": 0.788
+},
+"omkara divya porule - 7": {
+"vol2-164": 0.102
 },
 "omkara divya porule viii": {
 "vol3-141": 0.441
@@ -5905,6 +5968,9 @@
 "oru nalil varumo hrdaya": {
 "vol1-195": 0.298
 },
+"oru nalum piriyatto": {
+"vol2-174": 0.102
+},
 "oru neduvirppumay anayunnu nan amme (malayalam)": {
 "2025-416": 0.058
 },
@@ -6010,6 +6076,9 @@
 "pagalaina reyaina (telugu)": {
 "vol6-174": 0.116
 },
+"pahi gajanana (jai jai gananath gajanana)": {
+"vol5-72": 0.775
+},
 "pahi pahi devi pahi (telugu)": {
 "vol6-175": 0.22
 },
@@ -6053,6 +6122,9 @@
 },
 "panduranga nam gya (marathi)": {
 "vol7-235": 0.081
+},
+"panduranga vithala": {
+"vol2-175": 0.102
 },
 "panduritsa deva tujhi (marathi)": {
 "vol6-175": 0.791
@@ -6107,6 +6179,9 @@
 },
 "paravasamanen hrdayam": {
 "vol2-175": 0.418
+},
+"parayu sakhi mama": {
+"vol2-176": 0.199
 },
 "parayuvanavatilla (malayalam)": {
 "vol7-237": 0.081
@@ -6371,6 +6446,9 @@
 "puntinkalayi (malayalam)": {
 "2021supl2-19": 0.506
 },
+"purnam adah purnam idam": {
+"vol1-260": 0.385
+},
 "purusa suktam": {
 "vol4-230": 0.097
 },
@@ -6477,6 +6555,9 @@
 "radhesyam radhesyam (hindi)": {
 "vol7-248": 0.566
 },
+"radhika manohara (hare rama)": {
+"vol2-183": 0.171
+},
 "radhika tan karal (malayalam)": {
 "2021supl4-41": 0.086
 },
@@ -6494,6 +6575,9 @@
 },
 "raghu nandana": {
 "vol1-214": 0.093
+},
+"raghupati raghava": {
+"vol2-184": 0.102
 },
 "raja rama": {
 "vol1-214": 0.443
@@ -6521,6 +6605,9 @@
 },
 "rama nama tarakam": {
 "vol1-216": 0.093
+},
+"rama pujari pada": {
+"vol2-185": 0.102
 },
 "rama raghava": {
 "vol2-186": 0.296
@@ -6591,6 +6678,9 @@
 "reflect on life (english)": {
 "2020supl-165": 0.375
 },
+"rise up mother kali (jago ma)": {
+"vol4-247": 0.111
+},
 "rote jag me": {
 "vol5-146": 0.321
 },
@@ -6658,6 +6748,9 @@
 "sagarattin agadhatayum (malayalam)": {
 "2021supl6-39": 0.128
 },
+"saha navavatu": {
+"vol1-259": 0.473
+},
 "saka varamarulvay rama (tamil)": {
 "vol6-183": 0.116
 },
@@ -6707,6 +6800,9 @@
 "sambho sambho sambho(telugu 2025) (telugu)": {
 "2025-487": 0.058
 },
+"sambho sankara": {
+"vol2-188": 0.102
+},
 "sambho sankara (tamil)": {
 "2020supl3-84": 0.086
 },
@@ -6748,6 +6844,9 @@
 },
 "sankaranandana (hindi)": {
 "2018supl-80": 0.232
+},
+"sankari sambhavi": {
+"vol2-190": 0.102
 },
 "sankarji ka damaru bole": {
 "vol4-171": 0.735
@@ -6847,6 +6946,9 @@
 },
 "sarvavyapiye (tamil)": {
 "vol6-189": 0.116
+},
+"sarvesam svastir bhavatu": {
+"vol1-260": 0.202
 },
 "sasvata-santi (malayalam)": {
 "2021supl2-22": 0.487
@@ -7067,7 +7169,7 @@
 "vol7-270": 0.468
 },
 "sri krsna govinda": {
-"vol2-202": 0.199
+"vol2-201": 0.578
 },
 "sri krsna govinda gopala": {
 "vol2-122": 0.297
@@ -7199,7 +7301,7 @@
 "vol6-196": 0.116
 },
 "sundara kanna kanna": {
-"vol2-212": 0.299
+"vol2-211": 0.757
 },
 "sundara vadana (hindi)": {
 "vol7-274": 0.468
@@ -7294,6 +7396,9 @@
 },
 "taka tinantom taka taka taka-tinantom (malayalam)": {
 "2025-519": 0.058
+},
+"take me away": {
+"vol2-216": 0.667
 },
 "take me deep in your eyes": {
 "vol4-247": 0.485
@@ -7639,6 +7744,9 @@
 "ul uraikintra": {
 "vol5-170": 0.314
 },
+"ulagam oru puntottam (tamil)": {
+"2020supl-197": 0.094
+},
 "ulagamaga mari nirkkum (tamil)": {
 "vol7-297": 0.081
 },
@@ -7961,9 +8069,6 @@
 "vilayeṙum (malayalam)": {
 "2021supl6-45": 0.128
 },
-"vilhal smaran kara (marathi)": {
-"2018supl-99": 0.389
-},
 "vilichal vilikelkkan": {
 "vol2-230": 0.102
 },
@@ -8071,6 +8176,7 @@
 "2020supl-207": 0.306
 },
 "vithal smaran kara (marathi)": {
+"2018supl-99": 0.389,
 "vol7-322": 0.646
 },
 "vithala hari vithala": {
@@ -8238,5 +8344,8 @@
 },
 "you mean everything to me english": {
 "vol3-277": 0.099
+},
+"you're the essence (ullakattin adhara)": {
+"vol4-249": 0.111
 }
 }

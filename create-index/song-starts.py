@@ -12,9 +12,11 @@ Each book sets its titles in one large bold style, so the title is the
 line in that style whose text is closest to the index name (the books
 spell names with their own diacritics, which translation.csv maps back).
 Songs that share a page are matched best fit first, so one title line is
-only taken by two songs when both fit it closely (one song indexed twice). When no title-styled line is close enough, the
-first line anywhere on the page whose words are the song's words is used
-instead.
+only taken by two songs when both fit it closely or are two spellings of
+the same name (one song indexed twice). When no title-styled line is
+close enough, the first line anywhere on the page whose words are the
+song's words is used instead, then the first line that begins with the
+song's name (mantras are indexed by their first words and have no title).
 
 Writes bhajan-starts.json ({name: {location: fraction}}), which
 create-index.py merges into bhajan-index2.json as "lo";
@@ -44,6 +46,14 @@ MIN_FRACTION = 0.03
 MIN_TITLE_SCORE = 0.65
 # A title line two index entries may share (one song, two spellings).
 SHARED_TITLE_SCORE = 0.85
+# ...or two index names alike enough to be the same song.
+SAME_SONG_SCORE = 0.7
+# Titles a point smaller than the book's usual size still count as titles.
+TITLE_SIZE_TOLERANCE = 1.0
+# How alike a word of a title must be to the name's word in that position.
+WORD_SCORE = 0.8
+# How alike the start of a line must be to the name for the line to begin with it.
+PREFIX_SCORE = 0.85
 
 
 def load_translation(path=SCRIPT_DIR / "translation.csv"):
@@ -95,12 +105,47 @@ def words_match(block, variants):
     return False
 
 
+def words_fit(block, variants):
+    """
+    Each word of the line is (nearly) the name's word in that position and
+    the line covers at least half of the name: "dhanya dhanye" for
+    "dhanye dhanye janani".
+    """
+    tokens = block.split()
+    if not tokens or len(block) > 80:
+        return False
+    for variant in variants:
+        vtokens = variant.split()
+        if len(tokens) > len(vtokens) or len(tokens) < len(vtokens) / 2:
+            continue
+        if all(SequenceMatcher(None, t, v).ratio() >= WORD_SCORE for t, v in zip(tokens, vtokens)):
+            return True
+    return False
+
+
+def starts_with_name(block, variants):
+    """
+    The line begins with the song's name, give or take a letter, after a
+    leading "om": mantras are indexed by their first words and have no title.
+    """
+    tokens = block.split()
+    if tokens and tokens[0] in ("om", "o", "oe", "aum"):
+        tokens = tokens[1:]
+    squashed = "".join(tokens)
+    for variant in variants:
+        vsquashed = variant.replace(" ", "")
+        n = len(vsquashed)
+        if n >= 8 and len(squashed) >= n and SequenceMatcher(None, squashed[:n], vsquashed).ratio() >= PREFIX_SCORE:
+            return True
+    return False
+
+
 def similarity(block, variants):
     """0-1: how alike the line and the song's name are, ignoring spaces."""
     if not block:
         return 0.0
     squashed = block.replace(" ", "")
-    best = 1.0 if words_match(block, variants) else 0.0
+    best = 1.0 if words_match(block, variants) else 0.9 if words_fit(block, variants) else 0.0
     for variant in variants:
         vsquashed = variant.replace(" ", "")
         if not vsquashed:
@@ -150,16 +195,28 @@ class Book:
             self.title_size = sizes.most_common(1)[0][0]
 
     def title_candidates(self, page):
-        """(y0, text) of each title-styled line, with a wrapped second line joined on."""
+        """
+        (y0, texts, alternative) of each title-styled line, with a wrapped
+        second line joined on. A line in parentheses under a title is an
+        alternative name for the song above, not a language tag, so it only
+        counts against a song's full name.
+        """
         if not self.title_size:
             return []
-        lines = [l for l in page_lines(page) if l[3] >= self.title_size - 0.5]
+        lines = [l for l in page_lines(page) if l[3] >= self.title_size - TITLE_SIZE_TOLERANCE]
         candidates = []
         for i, (y0, text, font, size) in enumerate(lines):
+            alternative = re.fullmatch(r"\s*\((.*)\)\s*", text)
+            if alternative:
+                # A second name under the title, "(DEVI DEVI DEVI AMRITESVARI)":
+                # that song starts at the title above it.
+                start = candidates[-1][0] if candidates and y0 - candidates[-1][0] < 2 * size else y0
+                candidates.append((start, [alternative.group(1)], True))
+                continue
             texts = [text]
             if i + 1 < len(lines) and lines[i + 1][0] - y0 < 2 * size:
                 texts.append(text + " " + lines[i + 1][1])
-            candidates.append((y0, texts))
+            candidates.append((y0, texts, False))
         return candidates
 
     def find_starts(self, page, names):
@@ -171,21 +228,24 @@ class Book:
         variants = {name: title_variants(name) for name in names}
         scores = []
         for name in names:
-            for c, (y0, texts) in enumerate(candidates):
-                score = max(similarity(normalize(t), variants[name]) for t in texts)
+            for c, (y0, texts, alternative) in enumerate(candidates):
+                against = variants[name][:1] if alternative else variants[name]
+                score = max(similarity(normalize(t), against) for t in texts)
                 if score >= MIN_TITLE_SCORE:
                     scores.append((score, -y0, name, c))
         found = {}
-        taken = set()
+        taken = {}
         for score, _, name, c in sorted(scores, reverse=True):
             # A title line already claimed by another song can only be shared
-            # by a song that fits it closely: the same song indexed twice
-            # under slightly different spellings.
-            if name in found or (c in taken and score < SHARED_TITLE_SCORE):
+            # by a song that fits it closely or whose name is a spelling of
+            # the other's: the same song indexed twice.
+            if name in found:
                 continue
-            y0, texts = candidates[c]
+            if c in taken and score < SHARED_TITLE_SCORE and not self.same_song(name, taken[c]):
+                continue
+            y0, texts, _ = candidates[c]
             found[name] = (y0 / page.rect.height, score, "title", texts[0])
-            taken.add(c)
+            taken.setdefault(c, name)
         for name in names:
             if name in found:
                 continue
@@ -193,7 +253,18 @@ class Book:
                 if words_match(normalize(text), variants[name]):
                     found[name] = (y0 / page.rect.height, 1.0, "words", text)
                     break
+        for name in names:
+            if name in found:
+                continue
+            for y0, text, font, size in page_lines(page):
+                if starts_with_name(normalize(text), variants[name]):
+                    found[name] = (y0 / page.rect.height, PREFIX_SCORE, "prefix", text)
+                    break
         return found
+
+    @staticmethod
+    def same_song(name, other):
+        return similarity(normalize(name), title_variants(other)) >= SAME_SONG_SCORE
 
 
 def parse_location(location):
@@ -242,12 +313,11 @@ def main():
     OUT_FILE.write_text(json.dumps(dict(sorted(starts.items())), indent=0, ensure_ascii=False) + "\n")
     REVIEW_FILE.write_text("\n".join(review) + "\n")
     UNMATCHED_FILE.write_text("\n".join(unmatched) + ("\n" if unmatched else ""))
-    print(f"{'book':12} {'title':>6} {'words':>6} {'none':>6}")
+    methods = ("title", "words", "prefix", "unmatched")
+    print(f"{'book':12} {'title':>6} {'words':>6} {'prefix':>6} {'none':>6}")
     for book_name in sorted(by_book):
-        t, w, u = (stats[book_name, k] for k in ("title", "words", "unmatched"))
-        print(f"{book_name:12} {t:6} {w:6} {u:6}")
-    t, w, u = (sum(v for (_, k2), v in stats.items() if k2 == k) for k in ("title", "words", "unmatched"))
-    print(f"{'total':12} {t:6} {w:6} {u:6}")
+        print(f"{book_name:12} " + " ".join(f"{stats[book_name, k]:6}" for k in methods))
+    print(f"{'total':12} " + " ".join(f"{sum(v for (_, k2), v in stats.items() if k2 == k):6}" for k in methods))
     print(f"wrote {OUT_FILE.name} ({sum(len(v) for v in starts.values())} offsets), {REVIEW_FILE.name}, {UNMATCHED_FILE.name}")
     return 0
 
