@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
-import { auth, db } from './firebase';
-import { ref, get } from 'firebase/database';
+import { loadFirebase } from './loadFirebase';
 import Loader from './Loader';
 
 // const LoadingScreen = () => (
@@ -50,14 +49,22 @@ export const withRouterCompat = (Wrapped) => {
 
 // Hook: auth state (with initialization guard)
 export const useAuthState = () => {
-  const [user, setUser] = useState(auth.currentUser || null);
+  const [user, setUser] = useState(null);
   const [initializing, setInitializing] = useState(true);
   useEffect(() => {
-    const unsub = auth.onAuthStateChanged((u) => {
-      setUser(u || null);
-      setInitializing(false);
+    let cancelled = false;
+    let unsub = () => {};
+    loadFirebase().then(({ auth }) => {
+      if (cancelled) return;
+      unsub = auth.onAuthStateChanged((u) => {
+        setUser(u || null);
+        setInitializing(false);
+      });
     });
-    return () => unsub();
+    return () => {
+      cancelled = true;
+      unsub();
+    };
   }, []);
   return { user, initializing };
 };
@@ -85,6 +92,7 @@ export const RequireAdmin = ({ children }) => {
     if (!user) return;
     async function check() {
       try {
+        const [{ db }, { ref, get }] = await Promise.all([loadFirebase(), import('firebase/database')]);
         const snap = await get(ref(db, `admin/${user.uid}`));
         if (!cancelled) {
           setAuthorization({ uid: user.uid, status: snap.val() === '1' ? 'admin' : 'denied' });

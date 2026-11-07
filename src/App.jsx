@@ -1,23 +1,18 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { getJson, setJson } from "./util";
-import {
-  setRefOnce,
-  removeRefOnce,
-  checkRefOnce,
-  auth,
-} from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { loadFirebase, loadFirebaseWhenIdle } from "./loadFirebase";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { RequireAuth } from "./util";
 import Search from "./Search";
-import Profile from "./Profile";
-import RenderPage from "./RenderPage";
+import { lazyPage } from "./lazyPage";
 import Icon from "./Icon";
 import { setUserState, track } from "./analytics";
-import { refreshNotificationToken } from "./notifications";
-import Pay from "./Pay";
 import Footer from "./Footer";
+
+const Profile = lazyPage(() => import("./Profile"));
+const RenderPage = lazyPage(() => import("./RenderPage"), { mui: true });
+const Pay = lazyPage(() => import("./Pay"), { mui: true });
 
 const getShow2025Param = (search) => {
   const value = new URLSearchParams(search).get("2025");
@@ -39,7 +34,7 @@ const App = () => {
   }, [favorites]);
 
   useEffect(() => {
-    const handleUser = async (user) => {
+    const handleUser = async (user, checkRefOnce) => {
       if (!user) return;
       const remoteFavorites = await checkRefOnce(`favorites/${user.uid}`);
       setFavorites((prev) => {
@@ -52,27 +47,38 @@ const App = () => {
       });
     };
 
-    window
+    const indexLoaded = window
       .fetch("/bhajan-index2.json")
       .then((data) => data.json())
       .then((fetchedBhajans) => {
         const sorted = [...fetchedBhajans].sort((a, b) => (a.n < b.n ? -1 : a.n > b.n ? 1 : 0));
         window.fetchedBhajans = sorted;
         setAllBhajans(sorted);
-      });
+      })
+      .catch((error) => console.error("Could not load the bhajan index:", error));
 
-    // Subscribe to auth state changes to sync favorites on every login
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // GA4 splits signed-in and signed-out visitors on this; the subscription
-      // part is refreshed again once syncUserData has read paid/{uid}.
-      setUserState({ uid: user?.uid, expiresOn: user ? localStorage.expiresOn : undefined });
-      if (user) {
-        handleUser(user);
-        refreshNotificationToken(user.uid);
-      }
+    // Subscribe to auth state changes to sync favorites on every login.
+    // Firebase loads once the list is up, so it doesn't delay the first screen.
+    let cancelled = false;
+    let unsubscribe = () => {};
+    // Firebase waits for the index, so the two don't share bandwidth on a slow phone.
+    indexLoaded.then(() => loadFirebaseWhenIdle()).then(({ auth, checkRefOnce }) => {
+      if (cancelled) return;
+      unsubscribe = auth.onAuthStateChanged((user) => {
+        // GA4 splits signed-in and signed-out visitors on this; the subscription
+        // part is refreshed again once syncUserData has read paid/{uid}.
+        setUserState({ uid: user?.uid, expiresOn: user ? localStorage.expiresOn : undefined });
+        if (user) {
+          handleUser(user, checkRefOnce);
+          import("./notifications").then(({ refreshNotificationToken }) => refreshNotificationToken(user.uid));
+        }
+      });
     });
 
-    return () => unsubscribe();
+    return () => {
+      cancelled = true;
+      unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -107,8 +113,10 @@ const App = () => {
     track("add_to_favorites", { bhajan_name: name });
     setFavorites((prev) => {
       const updated = Object.assign({ [name]: 1 }, prev);
-      const uid = auth?.currentUser?.uid;
-      uid && setRefOnce(`favorites/${uid}/${name}`, "1");
+      loadFirebase().then(({ auth, setRefOnce }) => {
+        const uid = auth?.currentUser?.uid;
+        if (uid) setRefOnce(`favorites/${uid}/${name}`, "1");
+      });
       return updated;
     });
   }, []);
@@ -118,8 +126,10 @@ const App = () => {
     setFavorites((prev) => {
       const updated = { ...prev };
       delete updated[name];
-      const uid = auth?.currentUser?.uid;
-      uid && removeRefOnce(`favorites/${uid}/${name}`);
+      loadFirebase().then(({ auth, removeRefOnce }) => {
+        const uid = auth?.currentUser?.uid;
+        if (uid) removeRefOnce(`favorites/${uid}/${name}`);
+      });
       return updated;
     });
   }, []);

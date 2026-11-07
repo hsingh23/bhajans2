@@ -76,7 +76,7 @@ describe('Search Component', () => {
 
   it('renders search input', () => {
     renderSearch();
-    expect(screen.getByRole('search')).toBeInTheDocument();
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
   });
 
   it('renders the app header with logo', () => {
@@ -104,7 +104,7 @@ describe('Search Component', () => {
   it('updates search filter on input change', () => {
     renderSearch();
     
-    const searchInput = screen.getByRole('search');
+    const searchInput = screen.getByRole('searchbox');
     fireEvent.change(searchInput, { target: { value: 'shiva' } });
     
     expect(searchInput).toHaveValue('shiva');
@@ -113,7 +113,7 @@ describe('Search Component', () => {
   it('persists search filter to window object', () => {
     renderSearch();
     
-    const searchInput = screen.getByRole('search');
+    const searchInput = screen.getByRole('searchbox');
     fireEvent.change(searchInput, { target: { value: 'test' } });
     
     // The filter is stored in window.searchFilter for persistence

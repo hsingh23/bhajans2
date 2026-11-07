@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { Box } from '@mui/material';
+import React, { lazy, Suspense, useState } from 'react';
+
+const DotLottieReact = lazy(() =>
+  import('@lottiefiles/dotlottie-react').then((m) => ({ default: m.DotLottieReact }))
+);
 
 const ANIMATIONS = [
   '/Audio playing animation.lottie',
@@ -15,30 +17,13 @@ const Loader = () => {
   });
 
   return (
-    <Box
-      sx={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'background.default', // Use theme background
-        zIndex: 9999,
-      }}
-      role="status"
-      aria-label="Loading"
-    >
-      <Box sx={{ width: 300, height: 300 }}>
-        <DotLottieReact
-          src={animationSrc}
-          loop
-          autoplay
-        />
-      </Box>
-    </Box>
+    <div className='app-loader' role="status" aria-label="Loading">
+      <div className='app-loader-animation'>
+        <Suspense fallback={null}>
+          <DotLottieReact src={animationSrc} loop autoplay />
+        </Suspense>
+      </div>
+    </div>
   );
 };
 

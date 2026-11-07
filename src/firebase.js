@@ -8,7 +8,12 @@ import {
   set,
   remove,
 } from "firebase/database";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import {
+  initializeAuth,
+  indexedDBLocalPersistence,
+  browserLocalPersistence,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
 
 // this is the perfect place to use mobx or redux to observe an object or dispatch an update event
@@ -69,7 +74,11 @@ const {
     }, 15 * 1000);
   }
 
-  const auth = getAuth(firebaseApp);
+  // Sign-in is by email link or password only, so no popup/redirect resolver:
+  // that skips Google's auth iframe and gapi script on every page load.
+  const auth = initializeAuth(firebaseApp, {
+    persistence: [indexedDBLocalPersistence, browserLocalPersistence],
+  });
   // window.firebase shim defined later for dev debugging
 
   // const doOnce = async function(firebasePromiseCallback) {
