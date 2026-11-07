@@ -12,6 +12,7 @@ import Header from './Header';
 import { groupSheetMusic, preferredSheetFile } from './sheetMusicGroups';
 import { useMusicianMode, SongMusicSection } from './MusicianMode';
 import MusicChips from './MusicChips';
+import { EMPTY_MUSIC_FILTERS, MUSIC_FACETS, activeMusicFilters, matchesMusic, musicFacetCounts, musicSearchText } from './musicFilters';
 import { useViewerPrefs, rememberedSheetKey } from './prefs';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
@@ -59,19 +60,19 @@ const countBy = (items, key) =>
     return counts;
   }, {});
 
-const FilterSelect = ({ id, label, allLabel, value, counts, onChange }) => (
+const FilterSelect = ({ id, label, allLabel, value, counts, onChange, optionLabel = (option) => option, order }) => (
   <label className='filter-select' htmlFor={id}>
     <span className='filter-label'>{label}</span>
     <select id={id} value={value} onChange={(e) => onChange(e.target.value)}>
       <option value=''>{allLabel}</option>
       {Object.entries(counts)
-        .sort(([a, x], [b, y]) => y - x || a.localeCompare(b))
+        .sort(([a, x], [b, y]) => (order ? order(a, b) : y - x || a.localeCompare(b)))
         .map(([option, count]) => (
           <option key={option} value={option}>
-            {option} ({count})
+            {optionLabel(option)} ({count})
           </option>
         ))}
-      {value && !counts[value] && <option value={value}>{value} (0)</option>}
+      {value && !counts[value] && <option value={value}>{optionLabel(value)} (0)</option>}
     </select>
   </label>
 );
@@ -107,6 +108,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const [filter, setFilter] = useState(window.searchFilter || '');
   const [language, setLanguage] = useState(window.searchLanguage || '');
   const [deity, setDeity] = useState(window.searchDeity || '');
+  const [musicFilters, setMusicFilters] = useState(window.searchMusic || EMPTY_MUSIC_FILTERS);
+  const [musicPanelOpen, setMusicPanelOpen] = useState(() => activeMusicFilters(window.searchMusic));
   
   const audioTagRef = useRef(null);
   const { enabled: musicianMode, music } = useMusicianMode();
@@ -131,6 +134,13 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     window.searchableBhajans = searchable;
   }, [searchable]);
 
+  // In musician mode the search box also finds raga and taal names ("mohanam", "keherwa").
+  const musicSearchable = useMemo(
+    () => (showMusic ? bhajans.map((b) => makeSearchable(musicSearchText(music.songs[b?.n], music))) : null),
+    [showMusic, bhajans, music]
+  );
+  const musicFiltering = showMusic && activeMusicFilters(musicFilters);
+
   const filteredBhajans = useMemo(() => {
     const searchableFilter = makeSearchable(filter);
     const filterFavorites = path.includes('/my-favorites');
@@ -141,10 +151,14 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
       }
       if (language && bhajans[i]?.lg !== language) return memo;
       if (deity && bhajans[i]?.d !== deity) return memo;
-      if (searchableBhajan.includes(searchableFilter)) memo.push(i);
+      if (musicFiltering) {
+        const entry = music.songs[bhajans[i]?.n];
+        if (!entry || !matchesMusic(entry, music, musicFilters)) return memo;
+      }
+      if (searchableBhajan.includes(searchableFilter) || musicSearchable?.[i]?.includes(searchableFilter)) memo.push(i);
       return memo;
     }, []) || [];
-  }, [filter, favorites, path, bhajans, searchable, language, deity]);
+  }, [filter, favorites, path, bhajans, searchable, language, deity, musicFiltering, music, musicFilters, musicSearchable]);
 
   // Counts reflect the current page (all bhajans or just favorites) and the other dropdown.
   const countable = useMemo(
@@ -160,6 +174,12 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     [countable, language]
   );
   const hasCategories = bhajans.some((b) => b?.lg || b?.d);
+  // Music option counts follow the deity and language choices and the other music filters.
+  const musicCounts = useMemo(() => {
+    if (!showMusic) return null;
+    const names = countable.filter((b) => (!deity || b.d === deity) && (!language || b.lg === language)).map((b) => b.n);
+    return musicFacetCounts(names, music, musicFilters);
+  }, [showMusic, countable, deity, language, music, musicFilters]);
 
   useEffect(() => {
     // Scroll restoration logic
@@ -180,7 +200,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     window.searchFilter = filter;
     window.searchLanguage = language;
     window.searchDeity = deity;
-  }, [filter, language, deity]);
+    window.searchMusic = musicFilters;
+  }, [filter, language, deity, musicFilters]);
 
   // Record what people search for once they pause typing.
   useEffect(() => {
@@ -197,6 +218,10 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const chooseLanguage = (value) => {
     setLanguage(value);
     if (value) track('filter_bhajans', { filter_type: 'language', filter_value: value });
+  };
+  const chooseMusic = (facet, value) => {
+    setMusicFilters((current) => ({ ...current, [facet]: value }));
+    if (value) track('filter_bhajans', { filter_type: facet, filter_value: value });
   };
 
   const play = (url, bhajanName) => {
@@ -368,7 +393,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     [bhajans, favoritesAtVisit, recent]
   );
   const todaysPath = todaysPick && viewerPath(bhajans, { name: todaysPick.bhajan.n, location: todaysPick.location });
-  const showHomeExtras = !myFavoritesMode && !filter && !language && !deity && (todaysPath || resumeItems.length > 0);
+  const showHomeExtras = !myFavoritesMode && !filter && !language && !deity && !musicFiltering && (todaysPath || resumeItems.length > 0);
   const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
   const cdbabyLinks = infoSampleUrls.map((sample, i) => [sample, infoNames[i]]);
   const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
@@ -599,7 +624,49 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               )}
             </div>
           )}
-          {(language || deity || filter) && (
+          {showMusic && musicCounts && (
+            <details className='music-filter-panel' open={musicPanelOpen} onToggle={(e) => setMusicPanelOpen(e.currentTarget.open)}>
+              <summary>
+                <Icon name='music' /> Music filters
+                {activeMusicFilters(musicFilters) && (
+                  <span className='music-filter-count'>{MUSIC_FACETS.filter((f) => musicFilters[f.id]).length} on</span>
+                )}
+              </summary>
+            <div className='category-filters music-filters' role='group' aria-label='Filter by music'>
+              {MUSIC_FACETS.map((facet) => (
+                <FilterSelect
+                  key={facet.id}
+                  id={`music-filter-${facet.id}`}
+                  label={facet.title}
+                  allLabel={facet.allLabel}
+                  value={musicFilters[facet.id] || ''}
+                  counts={musicCounts[facet.id]}
+                  optionLabel={(value) => facet.label(value, music)}
+                  order={facet.order}
+                  onChange={(value) => chooseMusic(facet.id, value)}
+                />
+              ))}
+              <label className='filter-check'>
+                <input
+                  type='checkbox'
+                  checked={Boolean(musicFilters.sureOnly)}
+                  onChange={(e) => setMusicFilters((current) => ({ ...current, sureOnly: e.target.checked }))}
+                />
+                Only confident matches
+              </label>
+              {activeMusicFilters(musicFilters) && (
+                <button
+                  type='button'
+                  className='filter-clear'
+                  aria-label='Clear music filters'
+                  onClick={() => setMusicFilters(EMPTY_MUSIC_FILTERS)}>
+                  <Icon name='close' /> Clear
+                </button>
+              )}
+            </div>
+            </details>
+          )}
+          {(language || deity || filter || musicFiltering) && (
             <p className='result-count' aria-live='polite'>
               {filteredBhajans.length} {filteredBhajans.length === 1 ? 'bhajan' : 'bhajans'}
             </p>
