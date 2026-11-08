@@ -117,5 +117,5 @@ yarn serve           # Local development with Firebase emulators
 
 The `create-index/` directory contains Python scripts for processing bhajan data and generating searchable indices and PDFs. This is separate from the main React app.
 
-- **Amazon buy links** (`az` in the index, the ASIN of Amma's own track) come from `create-index/amazon/` (see its README): search results checked by album artist. After index changes, rerun `combine.py` then `write_index.py`; songs new to the index need a worker pass first.
+- **Amazon buy links** (`az` in the index, the ASIN of Amma's own recording of that exact song) come from `create-index/amazon/` (see its README): search results checked by album artist. After index changes, rerun `combine.py` then `write_index.py`; songs new to the index need a worker pass first.
 - **Sheet music links** (`sm` in the index) come from `create-index/sheet-match/` (see its README): each PDF's printed lyrics are matched against the songbook pages, not names. Rerun `match.py` then `write_index.py` after adding PDFs to `sheetmusiclist.txt` or changing the index; `golden.json` must stay green. `cdbaby/mergelinks.js` only copies `sheet-match/sm.json` back in.
