@@ -12,29 +12,32 @@ export const INSTRUMENTS = {
 const MAX_FRET = 15;
 const mod12 = (n) => ((n % 12) + 12) % 12;
 
+// A step against the line's direction no larger than this (a major third) is a
+// zig-zag (vakra) turn; anything larger is a leap the other way.
+const VAKRA_STEP = 4;
+
 /**
- * Semitones from Sa for a swara line in the order sung, with octaves: each
- * note sits nearest the one before, so S at the end of an aroha is the upper
- * Sa and a zig-zag (vakra) step stays a step. `descending` starts on upper Sa.
+ * Semitones from Sa for a swara line in the order sung, with octaves. An aroha
+ * climbs (S P M2 P ... S = 0 7 6 7 ... 12) and an avaroha falls, apart from small
+ * vakra turns. An aroha that opens on Pa-Ni starts below Sa (Behag: N3 S ...);
+ * an avaroha that opens on S starts on upper Sa.
  */
 export const swaraLine = (swaras = [], descending = false) => {
   const out = [];
   for (const token of swaras) {
     const s = parseSwara(token);
     if (!s) continue;
+    const t = s.semitone;
     if (!out.length) {
-      out.push(descending && s.semitone === 0 ? 12 : s.semitone);
+      out.push(descending ? (t === 0 ? 12 : t) : t >= 7 ? t - 12 : t);
       continue;
     }
     const prev = out[out.length - 1];
-    const options = [s.semitone - 12, s.semitone, s.semitone + 12, s.semitone + 24];
-    let best = options[0];
-    for (const v of options) {
-      const d = Math.abs(v - prev) - Math.abs(best - prev);
-      // On a tie (a tritone away) follow the line's direction.
-      if (d < 0 || (d === 0 && (descending ? v < best : v > best))) best = v;
-    }
-    out.push(best);
+    const up = prev + mod12(t - prev); // nearest at or above
+    const down = up === prev ? prev : up - 12; // nearest below
+    if (up === prev) out.push(prev);
+    else if (descending) out.push(up - prev <= VAKRA_STEP ? up : down);
+    else out.push(prev - down <= VAKRA_STEP ? down : up);
   }
   return out;
 };
@@ -86,7 +89,24 @@ export const scaleTab = (instrument, saPc, swaras, descending = false) => {
   const line = swaraLine(swaras, descending);
   if (!line.length) return null;
   const sa = inst.saFrom + mod12(saPc - inst.saFrom);
-  return placePitches(line.map((v) => sa + v), inst.open) || placePitches(line.map((v) => sa - 12 + v), inst.open);
+  for (const shift of [0, -12, 12]) {
+    const placed = placePitches(line.map((v) => sa + shift + v), inst.open);
+    if (placed) return placed;
+  }
+  // Wider than the instrument: play the notes that fall outside it an octave up or down.
+  const low = Math.min(...inst.open);
+  const high = Math.max(...inst.open) + MAX_FRET;
+  const folded = line.map((v) => {
+    let p = sa + v;
+    while (p < low) p += 12;
+    while (p > high) p -= 12;
+    return { p, folded: p !== sa + v };
+  });
+  const placed = placePitches(
+    folded.map(({ p }) => p),
+    inst.open
+  );
+  return placed && placed.map((spot, i) => (folded[i].folded ? { ...spot, folded: true } : spot));
 };
 
 /**

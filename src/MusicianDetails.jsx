@@ -23,7 +23,7 @@ import PianoKeys from './PianoKeys';
 import { BansuriChart, ChordDiagram, SargamLine, ScaleTab } from './InstrumentViews';
 import { bolGuide, dugun, tablaTaal } from './tabla';
 import { setMyKey, useMyKey } from './myKey';
-import { setPref, usePref } from './prefs';
+import { INSTRUMENT_PREF, MUSIC_INSTRUMENTS, setPref, usePref } from './prefs';
 
 const INSTRUMENT_TABS = [
   ['voice', 'Voice'],
@@ -32,10 +32,9 @@ const INSTRUMENT_TABS = [
   ['ukulele', 'Ukulele'],
   ['bansuri', 'Bansuri'],
 ];
-const INSTRUMENT_PREF = 'musicInstrument';
 const useInstrument = () => {
   const value = usePref(INSTRUMENT_PREF);
-  return INSTRUMENT_TABS.some(([id]) => id === value) ? value : 'piano';
+  return MUSIC_INSTRUMENTS.includes(value) ? value : 'piano';
 };
 
 /** Piano / Guitar / Ukulele: which instrument the scales and chords are drawn for (remembered). */
@@ -185,14 +184,26 @@ const Transpose = ({ saPc, recordingPc, myKey, swaras, onChange }) => {
       </div>
       <div className='md-transpose-row'>
         {hasKey && saPc !== myKey && (
-          <button type='button' className='md-text-button md-save-key' onClick={() => setMyKey(saPc)}>
+          <button
+            type='button'
+            className='md-text-button md-save-key'
+            onClick={() => {
+              setMyKey(saPc);
+              onChange(null);
+            }}>
             Show every song in {keyLabel(saPc, swaras)}
           </button>
         )}
         {isPitchClass(myKey) && (
           <span className='md-aside md-my-key'>
             {saPc === myKey ? 'This is your key for every song.' : `Your key for every song: ${keyLabel(myKey, swaras)}.`}{' '}
-            <button type='button' className='md-text-button' onClick={() => setMyKey(undefined)}>
+            <button
+              type='button'
+              className='md-text-button'
+              onClick={() => {
+                setMyKey(undefined);
+                onChange(null); // drop this song's own pick too, so it shows the recording key
+              }}>
               Use recording keys
             </button>
           </span>

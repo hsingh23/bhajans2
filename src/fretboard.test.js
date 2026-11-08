@@ -59,6 +59,19 @@ describe('scale tabs', () => {
     expect(swaraLine(['S', 'R2', 'G3', 'R2', 'M1', 'P', 'S'])).toEqual([0, 2, 4, 2, 5, 7, 12]);
   });
 
+  it('keeps an ascending leap going up (Hamirkalyani: S P M2 P D2 N3 S)', () => {
+    expect(swaraLine(['S', 'P', 'M2', 'P', 'D2', 'N3', 'S'])).toEqual([0, 7, 6, 7, 9, 11, 12]);
+  });
+
+  it('starts below Sa when an aroha opens on Pa-Ni, and follows an avaroha past lower Sa', () => {
+    expect(swaraLine(['N3', 'S', 'G3', 'M1', 'P', 'N3', 'S'])).toEqual([-1, 0, 4, 5, 7, 11, 12]); // Behag
+    expect(swaraLine(['n2', 'S', 'R2', 'g2', 'R2', 'S', 'M1', 'P', 'd1', 'n2', 'S'])).toEqual([-2, 0, 2, 3, 2, 0, 5, 7, 8, 10, 12]); // Darbari
+    expect(swaraLine(['n2', 'D2', 'P', 'M1', 'G3', 'R2', 'S', 'n2', 'D2', 'P', 'D2', 'S'], true)).toEqual([
+      10, 9, 7, 5, 4, 2, 0, -2, -3, -5, -3, 0,
+    ]); // Chenchurutti
+    expect(swaraLine(['M1', 'G3', 'R2', 'S', 'N3', 'D2', 'P'], true)).toEqual([5, 4, 2, 0, -1, -3, -5]); // Navaroj
+  });
+
   it('writes Mohanam in G as guitar tab with the note names on top', () => {
     const placed = scaleTab('guitar', 7, ['S', 'R2', 'G3', 'P', 'D2', 'S']);
     expect(tabLines('guitar', placed, ['G', 'A', 'B', 'D', 'E', 'G'])).toEqual([
@@ -77,6 +90,14 @@ describe('scale tabs', () => {
     expect(placed).toHaveLength(8);
     const open = [67, 60, 64, 69];
     expect(placed.map(({ string, fret }) => open[string] + fret)).toEqual([60, 62, 64, 65, 67, 69, 71, 72]);
+  });
+
+  it('folds notes outside the instrument by an octave rather than giving up (Desh down on ukulele)', () => {
+    const desh = ['S', 'n2', 'D2', 'P', 'D2', 'M1', 'G3', 'R2', 'P', 'M1', 'G3', 'R2', 'G3', 'N3', 'S'];
+    const placed = scaleTab('ukulele', 0, desh, true);
+    expect(placed).toHaveLength(15);
+    expect(placed.some((spot) => spot.folded)).toBe(true);
+    expect(placed.every(({ fret }) => fret >= 0 && fret <= 15)).toBe(true);
   });
 
   it('gives nothing without a key or an instrument', () => {

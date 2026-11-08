@@ -423,6 +423,19 @@ describe('piano keys and transposing', () => {
     expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
   });
 
+  it('goes back to the recording key after saving a transposed key and clearing it', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Show every song in Ab (5.5 kattai)' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
+    expect(getPrefs().musicKey).toBeUndefined();
+    expect(section).toHaveTextContent('G (5 kattai) · from the full recording');
+    expect(section).toHaveTextContent('G A B D E G');
+    expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
+  });
+
   it("syncs the saved key to a signed-in reader's account and back", async () => {
     mockAuth.currentUser = { uid: 'u1' };
     setPref('musicKey', 9);
@@ -433,9 +446,12 @@ describe('piano keys and transposing', () => {
     applyRemotePrefs({ musicKey: 12 });
     applyRemotePrefs({ musicKey: '7' });
     expect(getPrefs().musicKey).toBe(4);
-    applyRemotePrefs({ musicInstrument: 'guitar' });
+    for (const instrument of ['voice', 'piano', 'guitar', 'ukulele', 'bansuri']) {
+      applyRemotePrefs({ musicInstrument: instrument });
+      expect(getPrefs().musicInstrument).toBe(instrument);
+    }
     applyRemotePrefs({ musicInstrument: 'sitar' });
-    expect(getPrefs().musicInstrument).toBe('guitar');
+    expect(getPrefs().musicInstrument).toBe('bansuri');
   });
 });
 

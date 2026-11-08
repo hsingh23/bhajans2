@@ -86,9 +86,14 @@ export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names =
   return (
     <figure className='scale-tab'>
       {label && <figcaption className='pk-label'>{label}</figcaption>}
-      <pre role='img' aria-label={`${inst.name} tab${label ? `, ${label.toLowerCase()}` : ''}: ${spoken}`}>
-        {tabLines(instrument, placed, names).join('\n')}
-      </pre>
+      <div>
+        <pre role='img' aria-label={`${inst.name} tab${label ? `, ${label.toLowerCase()}` : ''}: ${spoken}`}>
+          {tabLines(instrument, placed, names).join('\n')}
+        </pre>
+        {placed.some((spot) => spot.folded) && (
+          <p className='md-hint'>Wider than the {inst.name.toLowerCase()}: some notes are played an octave up or down.</p>
+        )}
+      </div>
     </figure>
   );
 };

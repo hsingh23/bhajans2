@@ -16,7 +16,8 @@ describe('sung notes', () => {
       { syllable: 'Sa', kind: null, octave: 1, semitone: 0 },
     ]);
     expect(sargamLine(['S', 'n2', 'S'], true).map((n) => n.octave)).toEqual([1, 0, 1]);
-    expect(sargamLine(['P', 'D2', 'N3', 'S']).map((n) => n.octave)).toEqual([0, 0, 0, 1]);
+    // An aroha that opens on Pa climbs from the lower octave to middle Sa
+    expect(sargamLine(['P', 'D2', 'N3', 'S']).map((n) => n.octave)).toEqual([-1, -1, -1, 0]);
   });
 });
 
