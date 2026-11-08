@@ -114,6 +114,91 @@ exports.newUserResetPasswordEmail = (data) =>
   sendAccountEmail(data, { welcome: true, india: true });
 exports.accountActivated = (data) => sendAccountEmail(data);
 
+// Sign-in (magic link) and password reset emails, sent instead of Firebase's
+// plain default templates. Same look as the account emails above.
+const AUTH_COPY = {
+  signin: {
+    subject: "Your Sing with Amma sign-in link",
+    preheader: "Tap the button to sign in. The link works once and expires in an hour.",
+    eyebrow: "SIGN IN",
+    title: "Welcome back",
+    intro: "Tap the button below to sign in to Sing with Amma. No password needed.",
+    cta: "Sign in to Sing with Amma",
+    note: "For your security, this link works once and expires in an hour. Open it on the device where you asked for it, or you’ll be asked to confirm your email.",
+    ignore: "Didn’t ask to sign in? You can safely ignore this email; nobody can sign in without this link.",
+  },
+  reset: {
+    subject: "Reset your Sing with Amma password",
+    preheader: "Choose a new password. The link expires in an hour.",
+    eyebrow: "PASSWORD RESET",
+    title: "Let’s get you back in",
+    intro: "We received a request to reset the password for your Sing with Amma account. Choose a new one with the button below.",
+    cta: "Choose a new password",
+    note: "This link expires in an hour. Prefer not to use a password at all? You can always sign in with an email magic link from the sign-in page.",
+    ignore: "Didn’t ask for this? You can safely ignore this email; your password stays the same.",
+  },
+};
+
+function renderAuthEmail({ email, link, type }) {
+  const copy = AUTH_COPY[type];
+  if (!copy) throw new Error(`Unknown auth email type: ${type}`);
+  if (!link || !/^https:\/\//.test(link)) throw new Error("A secure link is required");
+  const safeLink = escapeHtml(link);
+  const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>${copy.subject}</title>
+<style>@media only screen and (max-width:620px){.outer{padding:12px 8px!important}.content{padding:28px 24px!important}.headline{font-size:28px!important}.button{display:block!important;text-align:center!important}}</style></head>
+<body style="margin:0;padding:0;background:#f4efe7;color:#342b24;font-family:Arial,Helvetica,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${copy.preheader}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4efe7;"><tr><td class="outer" align="center" style="padding:32px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#fffdf9;border:1px solid #e7ded2;border-radius:12px;overflow:hidden;">
+<tr><td style="padding:24px 28px;text-align:center;border-bottom:1px solid #e7ded2;"><p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:26px;color:#57361f;">Sing with Amma</p><p style="margin:6px 0 0;font-size:11px;letter-spacing:2px;color:#8a6348;">BHAJANS · LYRICS · SHEET MUSIC</p></td></tr>
+<tr><td class="content" style="padding:36px 40px;">
+<p style="margin:0 0 12px;font-size:11px;letter-spacing:1.8px;font-weight:bold;color:#a34d27;">${copy.eyebrow}</p>
+<h1 class="headline" style="margin:0 0 20px;font-family:Georgia,'Times New Roman',serif;font-size:32px;line-height:1.2;font-weight:normal;color:#432c1e;">${copy.title}</h1>
+<p style="margin:0 0 24px;font-size:16px;line-height:1.7;color:#65594e;">${copy.intro}</p>
+<p style="margin:0 0 6px;font-size:11px;letter-spacing:1.2px;color:#82674f;">FOR</p>
+<p style="margin:0 0 26px;font-size:16px;line-height:1.5;overflow-wrap:anywhere;word-break:break-word;color:#342b24;">${escapeHtml(email)}</p>
+<p style="margin:0 0 26px;"><a class="button" href="${safeLink}" style="display:inline-block;background:#a9441d;border:1px solid #a9441d;border-radius:6px;padding:15px 26px;color:#ffffff;font-size:16px;font-weight:bold;line-height:1.4;text-decoration:none;">${copy.cta} &rarr;</a></p>
+<p style="margin:0 0 18px;font-size:14px;line-height:1.7;color:#74685c;">${copy.note}</p>
+<p style="margin:0 0 8px;font-size:13px;line-height:1.6;color:#87786a;">Button not working? Copy this link into your browser:</p>
+<p style="margin:0 0 24px;font-size:12px;line-height:1.6;overflow-wrap:anywhere;word-break:break-all;"><a href="${safeLink}" style="color:#9a3f1c;">${safeLink}</a></p>
+<div style="margin:8px 0 0;padding-top:24px;border-top:1px solid #eadfd2;">
+<p style="margin:0 0 16px;font-size:13px;line-height:1.7;color:#87786a;">${copy.ignore}</p>
+<p style="margin:0 0 6px;font-family:Georgia,'Times New Roman',serif;font-size:24px;font-style:italic;color:#754123;">Happy singing.</p>
+<p style="margin:0;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#8a7059;">The Sing with Amma team</p>
+</div>
+</td></tr></table>
+<p style="max-width:520px;margin:20px auto 0;font-size:12px;line-height:1.7;color:#87786a;text-align:center;">Need a hand? <a href="mailto:hisingh1@gmail.com" style="color:#73563f;">Contact support</a> · <a href="https://sing.withamma.com/" style="color:#73563f;">sing.withamma.com</a></p>
+</td></tr></table></body></html>`;
+  const text = `${copy.title}\n\n${copy.intro}\n\nFor: ${email}\n\n${copy.cta}: ${link}\n\n${copy.note}\n\n${copy.ignore}\n\nHappy singing!\nThe Sing with Amma team\nSupport: hisingh1@gmail.com`;
+  return { subject: copy.subject, html, text };
+}
+
+async function sendAuthEmail({ email, link, type, apiKey }) {
+  const { subject, html, text } = renderAuthEmail({ email, link, type });
+  const response = await fetch("https://api.mailjet.com/v3.1/send", {
+    method: "POST",
+    headers: { Authorization: apiKey, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      Messages: [
+        {
+          From: { Email: "no-reply@withamma.com", Name: "Sing with Amma" },
+          To: [{ Email: email }],
+          Subject: subject,
+          HTMLPart: html,
+          TextPart: text,
+        },
+      ],
+    }),
+  });
+  if (!response.ok) throw new Error(`Mail delivery failed (${response.status})`);
+  const result = await response.json();
+  if (!result.Messages?.length || result.Messages.some((m) => m.Status !== "success"))
+    throw new Error("Mail delivery failed: provider rejected message");
+}
+exports.renderAuthEmail = renderAuthEmail;
+exports.sendAuthEmail = sendAuthEmail;
+
 // Renewal reminder, sent 7 days and 1 day before a subscription ends.
 function renderRenewalReminder({ name, daysLeft, validUntil }) {
   const when = daysLeft === 1 ? "tomorrow" : `in ${daysLeft} days`;

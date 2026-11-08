@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { auth, checkRefOnce, syncUserData } from "./firebase";
+import { auth, checkRefOnce, syncUserData, sendBrandedAuthEmail } from "./firebase";
 import { 
   sendSignInLinkToEmail,
   isSignInWithEmailLink,
@@ -231,9 +231,14 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      await sendPasswordResetEmail(auth, email, {
-        url: `${window.location.origin}/login`
-      });
+      const continueUrl = `${window.location.origin}/login`;
+      try {
+        await sendBrandedAuthEmail({ email, type: "reset", continueUrl });
+      } catch (brandedError) {
+        // Fall back to Firebase's own email if the branded sender is unavailable.
+        console.warn("Branded reset email failed, using Firebase's", brandedError);
+        await sendPasswordResetEmail(auth, email, { url: continueUrl });
+      }
       showToast("Password reset email sent!", "success");
     } catch (error) {
       console.error(error);
@@ -270,7 +275,13 @@ const Login = () => {
     };
 
     try {
-      await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+      try {
+        await sendBrandedAuthEmail({ email, type: "signin", continueUrl: redirectUrl });
+      } catch (brandedError) {
+        // Fall back to Firebase's own email if the branded sender is unavailable.
+        console.warn("Branded sign-in email failed, using Firebase's", brandedError);
+        await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+      }
       window.localStorage.setItem('emailForSignIn', email);
       showToast("Magic link sent! Check your inbox.", "success");
     } catch (err) {

@@ -71,7 +71,16 @@ function load({ newUser = false, lookupError, saveError } = {}) {
     "firebase-admin/messaging": { getMessaging: () => ({}) },
     "paypal-rest-sdk": {},
     cors: () => () => {},
-    "firebase-functions/v2/https": { onRequest: (_, fn) => fn },
+    "firebase-functions/v2/https": {
+      onRequest: (_, fn) => fn,
+      onCall: (_, fn) => fn,
+      HttpsError: class HttpsError extends Error {
+        constructor(code, message) {
+          super(message);
+          this.code = code;
+        }
+      },
+    },
     "firebase-functions/v2/database": { onValueWritten: (_, fn) => fn },
     "firebase-functions/params": {
       defineSecret: () => ({ value: () => "test-secret" }),

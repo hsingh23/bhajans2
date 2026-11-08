@@ -1,4 +1,4 @@
-const { onRequest } = require("firebase-functions/v2/https");
+const { onRequest, onCall, HttpsError } = require("firebase-functions/v2/https");
 const { onValueWritten } = require("firebase-functions/v2/database");
 const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
@@ -11,6 +11,7 @@ const {
   newUserResetPasswordEmail,
   newUserResetPasswordEmailShopify,
   accountActivated,
+  sendAuthEmail,
 } = require("./mail");
 const { ga4ApiSecret, recordGa4Purchase } = require("./engagement");
 initializeApp();
@@ -626,6 +627,59 @@ exports.shopifyWebhook = onRequest(
       });
       return res.status(500).send("Order processing failed; retry required");
     }
+  },
+);
+
+// Sends the magic sign-in link or password reset link in a branded email,
+// instead of Firebase's plain default templates. The client falls back to
+// Firebase's own email if this fails.
+const AUTH_EMAIL_HOSTS = new Set([
+  "sing.withamma.com",
+  "bhajans-588f5.web.app",
+  "bhajans-588f5.firebaseapp.com",
+  "localhost",
+]);
+const isAllowedContinueUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return (
+      AUTH_EMAIL_HOSTS.has(url.hostname) ||
+      /^deploy-preview-\d+--bhajans\.netlify\.app$/.test(url.hostname)
+    );
+  } catch {
+    return false;
+  }
+};
+exports.sendAuthEmail = onCall(
+  { ...options, secrets: [mailjetAuth] },
+  async (request) => {
+    const { email: rawEmail, type, continueUrl } = request.data || {};
+    const email = typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : "";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254)
+      throw new HttpsError("invalid-argument", "A valid email address is required");
+    if (!["signin", "reset"].includes(type))
+      throw new HttpsError("invalid-argument", "Unknown email type");
+    if (!isAllowedContinueUrl(continueUrl))
+      throw new HttpsError("invalid-argument", "Unsupported return address");
+    let link;
+    try {
+      link =
+        type === "signin"
+          ? await getAuth().generateSignInWithEmailLink(email, {
+              url: continueUrl,
+              handleCodeInApp: true,
+            })
+          : await getAuth().generatePasswordResetLink(email, { url: continueUrl });
+    } catch (error) {
+      // Don't reveal whether an account exists.
+      if (error?.code === "auth/user-not-found" || error?.code === "auth/email-not-found")
+        return { sent: true };
+      logger.error("Auth link generation failed", { type, code: error?.code });
+      throw new HttpsError("internal", "Could not create the link");
+    }
+    await sendAuthEmail({ email, link, type, apiKey: mailjetAuth.value() });
+    logger.info("Auth email sent", { type });
+    return { sent: true };
   },
 );
 
