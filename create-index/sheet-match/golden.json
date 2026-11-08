@@ -1,0 +1,251 @@
+{
+ "_comment": "Regression set from the user issue sheet (Missing Bhajan tab) and manual review. must_not: [song, stem] pairs that are wrong links; must: [song, stem] pairs that are known correct.",
+ "must_not": [
+  [
+   "jai kalyani jai bhavani (hindi,marathi)",
+   "A-IBhavani"
+  ],
+  [
+   "mai bhavani (marathi)",
+   "A-IBhavani"
+  ],
+  [
+   "amme saranam devi saranam (malayalam)",
+   "Amme"
+  ],
+  [
+   "amme abhayaprade (malayalam, krishna)",
+   "Amme"
+  ],
+  [
+   "entamme nin makkale",
+   "Amme"
+  ],
+  [
+   "lalitambike amme (malayalam, pranav)",
+   "Amme"
+  ],
+  [
+   "anandamrta rupini amme",
+   "Amme"
+  ],
+  [
+   "amme amrtesvari (devi mukambike)",
+   "Amme"
+  ],
+  [
+   "amme amrtesvari (devi mukambike)",
+   "VarDe"
+  ],
+  [
+   "amrtapuresvari devi",
+   "VarDe"
+  ],
+  [
+   "varde mata jagadambe mata",
+   "VarDe"
+  ],
+  [
+   "amrtanandamayi jay jay",
+   "AmrtanandamayiMata"
+  ],
+  [
+   "amrtanandamayi ma tucch ko",
+   "AmrtanandamayiMata"
+  ],
+  [
+   "amrtamayi anandamayi",
+   "AmrtanandamayiMata"
+  ],
+  [
+   "durga amba bhavani",
+   "AmbaBhavani"
+  ],
+  [
+   "durge durge",
+   "DurgeDurgatiHarane"
+  ],
+  [
+   "one tiny atom",
+   "OneInAMillion"
+  ],
+  [
+   "please give me refuge (devi sharanam) english",
+   "GiveMeRefuge"
+  ],
+  [
+   "jivitamennum",
+   "Chittamennum"
+  ],
+  [
+   "amma devi jagadisvari (sahana, sanskrit)",
+   "Jagadishvari"
+  ],
+  [
+   "narahari narayana (kannada)",
+   "Narayana"
+  ],
+  [
+   "narahari narayana (kannada)",
+   "HariNarayana"
+  ],
+  [
+   "narayana hari",
+   "Narayana"
+  ],
+  [
+   "narayana narayana jaya",
+   "Narayana"
+  ],
+  [
+   "nandalala yadu nandalala (hindi)",
+   "NandalalaNandalalaHari"
+  ],
+  [
+   "nandalal nandalal",
+   "NandalalaNandalalaHari"
+  ],
+  [
+   "nandalala navanita",
+   "NandalalaNandalalaHari"
+  ],
+  [
+   "nanda nandana hari",
+   "NandalalaNandalalaHari"
+  ],
+  [
+   "devi devi devi jaganmohini",
+   "DeviDeviDevi"
+  ],
+  [
+   "devi mate",
+   "DeviMahadevi"
+  ],
+  [
+   "ma jai jagadambe ma jay",
+   "JaiJagadambe"
+  ],
+  [
+   "om sakti om sakti om sakti (tamil)",
+   "OmSakti "
+  ],
+  [
+   "sankari sambhavi",
+   "SambhoSankara"
+  ],
+  [
+   "sambho sankara",
+   "SambhoSankara"
+  ],
+  [
+   "om namo namah sivaya",
+   "OmNamahSivaya"
+  ],
+  [
+   "om namo namah sivaya",
+   "OmNamahSivayaA-"
+  ],
+  [
+   "jago jago re manva (hindi)",
+   "ReManva"
+  ]
+ ],
+ "must": [
+  [
+   "abhayam abhayam amma",
+   "AbhayamAbhayamAmma"
+  ],
+  [
+   "a-i bhavani (marathi)",
+   "A-IBhavani"
+  ],
+  [
+   "jagadisvari daya karo",
+   "Jagadishvari"
+  ],
+  [
+   "var de (hindi)",
+   "VarDe"
+  ],
+  [
+   "adi sakti maha layamkari",
+   "AdiSakti"
+  ],
+  [
+   "amrtanandamayi ma tucch ko",
+   "AmrtanandamayiMaTucchKo"
+  ],
+  [
+   "anandamrta rupini amme",
+   "AnandamrtaRupini"
+  ],
+  [
+   "durge durge",
+   "DurgeDurge"
+  ],
+  [
+   "one tiny atom",
+   "OneTinyAtom"
+  ],
+  [
+   "please give me refuge (devi sharanam) english",
+   "PleaseGiveMeRefuge"
+  ],
+  [
+   "jivitamennum",
+   "Jivitamennum"
+  ],
+  [
+   "devi devi devi jaganmohini",
+   "DeviDeviDeviJaganMohini"
+  ],
+  [
+   "devi mate",
+   "DeviMate"
+  ],
+  [
+   "elo elo (malayalam)",
+   "EloElo"
+  ],
+  [
+   "akatarilarivinte oli namam telichu",
+   "AkatarilArivinteOlinalam"
+  ],
+  [
+   "amme amrtesvari (devi mukambike)",
+   "DeviMukambike"
+  ],
+  [
+   "mahisasura mardini stotram",
+   "SriMahisasuraMardini"
+  ],
+  [
+   "om sakti (tamil)",
+   "OmSakti "
+  ],
+  [
+   "om sakti om sakti om sakti (tamil)",
+   "OmSaktiOmSaktiOmSakti"
+  ],
+  [
+   "sambho sankara umapathe",
+   "SambhoSankara"
+  ],
+  [
+   "teti unnai saranataintom",
+   "MuttumariAmma"
+  ],
+  [
+   "take me away",
+   "TakeMeAway"
+  ],
+  [
+   "jay ganesa jay ganesa (dinom ke dukh harta)",
+   "JayGanesaJayGanesa"
+  ],
+  [
+   "come running my darling children",
+   "EveryoneInTheWorld"
+  ]
+ ]
+}

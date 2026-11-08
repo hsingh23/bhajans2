@@ -1,0 +1,68 @@
+{
+ "en manah kovilin": {
+  "add": [
+   "04 En Mana Kovililin (Vintage).mp3"
+  ],
+  "why": "the recording sings 'en manak-kovilin vadil' (Whisper, Tamil): the title's 'Kovililin' is a typo of this song's name"
+ },
+ "chodi de manthi": {
+  "add": [
+   "03 Chod De Manathi (Chod De Manase).mp3"
+  ],
+  "why": "the recording (Gujarati Bhajans Vol.1) sings 'chodi de manthi dukh ni chinta', the printed first line of this song (vol5-47)"
+ },
+ "chod de manase (odiya version)": {
+  "drop": [
+   "03 Chod De Manathi (Chod De Manase).mp3"
+  ],
+  "why": "the recording sings the Gujarati 'chodi de manthi' (vol5-47), not the Odiya version"
+ },
+ "ardiente es el llanto (spanish)": {
+  "add": [
+   "Caliente Es El Llanto.mp3"
+  ],
+  "why": "the recording sings the refrain 'amor infinito'; the printed song (2025-59) has 'gotitas de amor infinito'; the album retitled the first word"
+ },
+ "isar tumi": {
+  "add": [
+   "02 Iswar Tumhi.mp3"
+  ],
+  "why": "the recording sings 'ise tumi daya kare ... jag ko re jane wala tu' (Whisper, Hindi); the printed first line (vol5-66) is 'Isar tumi daya karo'"
+ },
+ "unnum sorum": {
+  "add": [
+   "01 Unnam Sorum (Classic).mp3"
+  ],
+  "why": "the recording sings (Whisper, Tamil, 150 s) 'unnam sorum parukum nirum ... yaru tantatu namakku yaru tantatu ... adiyanta ... illa annai tantatu amrtamana anandamayi annai tantatu', the sheet's first four lines (UnnumSorum)"
+ },
+ "dasarathe raghuramana (kannada)": {
+  "add": [
+   "01 Dasharate Raghu.mp3"
+  ],
+  "why": "the recording sings (Whisper, 90 s) 'ramana nenedare, chira suga sambhava ... dosharahita ... ramana nenedare', the sheet's lines 'raghuramana nenedare ... dosharahita sri ramana nenedare, chira sukha sampada dorakuvudu' (DasaratheRaghuramana)"
+ },
+ "vadikorinetra": {
+  "add": [
+   "06 Vadikkozhinyetra (Vintage).mp3"
+  ],
+  "why": "the recording sings (Whisper, Tamil script, 30 s) 'vadil puritarikkum ... madiyunarttuvar vindum talirttuvan naleykku nirajanotsavam', the sheet's lines 'vadiyil koritarikyunna pukkale, madiyunarttuvan vindum talirtta pu chuduvan naley kyu nirajanotsava' (Vadikorinetra)"
+ },
+ "sri raghavam": {
+  "add": [
+   "02 Sri Raghavum (Classic).mp3"
+  ],
+  "why": "the recording opens (Whisper, Hindi, 0-60 s) with 'sri ra..rathatmajam aprame.. ..kulanvaya ratna dipam', 'ajanubahum aravinda dalayatakshamm', 'ramam nisacara vinasakaram namami', the sheet's four lines (SriRaghavam); Raghupati Raghava follows at 90 s as a medley"
+ },
+ "yatha yariyiykkan": {
+  "add": [
+   "2-03 Vyathariyikkan (harikambhoji).mp3"
+  ],
+  "why": "vol3-259 prints the heading 'Yatha yariyiykkan' and the first line 'Vyatha yariyiykkan vazhi yariyativan'; the recording is titled with the first line's word; the sheet VyathaAriyikkan links to this entry"
+ },
+ "nencakaë ventitunnu (malayalam)": {
+  "add": [
+   "04 Nenchakam Ventitunnu.mp3"
+  ],
+  "why": "the index name's final 'ë' is the font-map transcription artefact seen in the other renamed names (ṭ→l, ä→r); read as 'nencakam ventitunnu' the recording's title is identical word for word; the entry is printed in no book we have, so no lyrics exist to read, and the audio was unintelligible in nine windows"
+ }
+}

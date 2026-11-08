@@ -3,42 +3,45 @@ var path = require("path");
 var _ = require("lodash");
 var distance = require("jaro-winkler");
 
+const { bkey, devoice, oneWordKey } = require("../../src/bkey.js");
+
+// The key of a name as one word, so that word breaks that differ between a track
+// list and the index ("Devi Dayakari" / "devi daya kari ma") agree.
+const oneWord = (name) => oneWordKey(name);
+
+// Levenshtein distance, giving up once it exceeds max.
+const editDistance = (a, b, max) => {
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i += 1) {
+    const cur = [i];
+    let rowMin = i;
+    for (let j = 1; j <= b.length; j += 1) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (cur[j] < rowMin) rowMin = cur[j];
+    }
+    if (rowMin > max) return max + 1;
+    prev = cur;
+  }
+  return prev[b.length];
+};
+
 /**
- * The makeSearchable function takes a bhajan name and returns a modified version of the name
- *  with certain characters replaced or removed.
- * This modified string is intended to be used as a search key for matching with entries in the JSON file.
+ * Phonetic key shared with the app's search (src/bkey.js): "amriteshwari",
+ * "amrtesvari" and "Amrteshvari" all give the same string. Replaces the old regex
+ * chain that collapsed t/d/l and dropped every h.
  * @param {string} bhajanName
- * @returns
+ * @returns {string}
  */
-const makeSearchable = (bhajanName) =>
-  bhajanName
-    .toLowerCase()
-    .replace(/[^A-z0-9]/g, "")
-    .replace(/va/g, "v") //bhava ~= bhav
-    .replace(/h/g, "")
-    .replace(/z/g, "r")
-    .replace(/ri?/g, "ri")
-    .replace(/a+/g, "a")
-    // .replace(/ai?/g, "ai")
-    .replace(/ee/g, "i")
-    .replace(/oo|uu/g, "u")
-    .replace(/[kg]il/g, "kgil") // 2
-    .replace(/[cj]al/g, "Cal")
-    .replace(/[vw]/g, "V")
-    .replace(/ny?/g, "ny")
-    .replace(/(t|k|c){2}/g, "$1")
-    .replace(/(g|p|j){2}/g, "$1")
-    .replace(/[ie]*y/g, "Y")
-    .replace(/[tdl]/g, "T");
+const makeSearchable = (bhajanName) => bkey(bhajanName).key;
 
 var bhajans,
   searchableBhajans,
   searchableBhajansObject,
+  devoicedBhajansObject = {},
+  oneWordBhajans = [],
   count,
   noMatch,
-  manyMatches,
-  noMatchSheet,
-  manyMatchesSheet;
+  manyMatches;
 
 function readBhajanIndex() {
   bhajans = JSON.parse(
@@ -56,8 +59,11 @@ function readBhajanIndex() {
     !bhajan.n && console.log(bhajan, i);
     var s = makeSearchable(bhajan.n);
     if (bhajan.t) bhajan.t = _.sortedUniq(bhajan.t);
-    searchableBhajansObject[s] = i;
+    // several index entries can share a key (two spellings of one song): keep them all
+    (searchableBhajansObject[s] = searchableBhajansObject[s] || []).push(i);
+    (devoicedBhajansObject[devoice(s)] = devoicedBhajansObject[devoice(s)] || []).push(i);
     searchableBhajans.push(s);
+    oneWordBhajans.push(oneWord(bhajan.n));
   });
 }
 
@@ -76,15 +82,25 @@ function readFiles() {
   const searchable = {};
 
   // define a function to add data to the 'bhajans' array
-  const addSong = (fullSearch, song) => {
-    const realBhajan = bhajans[searchableBhajansObject[fullSearch]];
-    realBhajan.cs = realBhajan.cs || []; // sample url
-    realBhajan.cn = realBhajan.cn || []; // song
-    realBhajan.cs.push("https://bhajan-samples.withamma.com" + song.path);
-    realBhajan.cn.push(song.song);
+  const addSong = (fullSearch, song, only) => {
+    (only === undefined ? searchableBhajansObject[fullSearch] || [] : [only]).forEach((index) => {
+      const realBhajan = bhajans[index];
+      realBhajan.cs = realBhajan.cs || []; // sample url
+      realBhajan.cn = realBhajan.cn || []; // song
+      const url = "https://bhajan-samples.withamma.com" + song.path;
+      if (!realBhajan.cs.includes(url)) {
+        realBhajan.cs.push(url);
+        realBhajan.cn.push(song.song);
+      }
+    });
     count += 1;
   };
 
+  // start from a clean slate so a rerun never keeps links an older matcher made
+  bhajans.forEach((bhajan) => {
+    delete bhajan.cs;
+    delete bhajan.cn;
+  });
   // read all JSON files in the current directory
   fs.readdirSync(path.resolve(__dirname))
     .filter((x) => x.endsWith("json"))
@@ -99,26 +115,44 @@ function readFiles() {
           song.sn = searchableName;
           searchable[song.song] = song;
 
-          // if the searchable name is found in the searchableBhajansObject object, add the song data to the 'bhajans' array
-          if (searchableBhajansObject[searchableName]) {
-            addSong(searchableName, song);
+          // Songs this sample belongs to: the same key, the same key in Tamil spelling
+          // (ambadi/ambati), or titles that start with the sample's words. A short or
+          // very common title ("Amma", "Amme") opens too many songs to pick from.
+          const matches = new Set(searchableBhajansObject[searchableName] || []);
+          (devoicedBhajansObject[devoice(searchableName)] || []).forEach((i) => matches.add(i));
+          const exact = new Set(matches); // kept as the fallback when prefixes open too many songs
+          if (searchableName.length >= 5) {
+            searchableBhajans.forEach((b, i) => {
+              if (b.startsWith(`${searchableName} `)) matches.add(i);
+            });
+          }
+          // Word breaks differ between a track list and the index ("Arikilundengilum" /
+          // "arikil undenkilum", "Devi Dayakari" / "devi daya kari ma"): compare without spaces.
+          const joined = oneWord(song.song.replace(/[\[\(].*[\]\)]/gi, ""));
+          if (joined.length >= 7) {
+            oneWordBhajans.forEach((bj, i) => {
+              if (bj.startsWith(joined) || (bj.length >= 7 && joined.startsWith(bj)) ||
+                  devoice(bj).startsWith(devoice(joined))) matches.add(i);
+            });
+          }
+          if (matches.size === 0 && joined.length >= 8) {
+            // a misspelt track name ("Bhaktavalsale", "Mizhinirlazhnna"): one edit per eight letters, unique
+            const allowed = Math.max(1, Math.floor(joined.length / 8));
+            const near = [];
+            oneWordBhajans.forEach((bj, i) => {
+              if (Math.abs(bj.length - joined.length) <= allowed && editDistance(joined, bj, allowed) <= allowed) near.push(i);
+            });
+            if (near.length === 1) matches.add(near[0]);
+          }
+          if (matches.size > 4 && exact.size > 0) {
+            matches.clear(); // "Radhe Shyam" opens six titles: keep only the exact one(s)
+            exact.forEach((i) => matches.add(i));
+          }
+          if (matches.size === 0 || matches.size > 4) {
+            noMatch.push(song);
           } else {
-            // if the searchable name is not found, find matches that start with or contain the searchable name
-            const matches = searchableBhajans.filter(
-              (b) =>
-                b.startsWith(searchableName) || b.includes(`(${searchableName}`)
-            );
-            // if there is one match, add the song data to the 'bhajans' array
-            if (matches.length === 1) {
-              addSong(matches[0], song);
-              // if there are no matches, add the song to the 'noMatch' array
-            } else if (matches.length === 0) {
-              noMatch.push(song);
-              // if there are many matches, add the song data to the 'bhajans' array for each match and add the song and matches to the 'manyMatches' array
-            } else {
-              matches.forEach((fullSearch) => addSong(fullSearch, song));
-              manyMatches.push([song, matches]);
-            }
+            matches.forEach((i) => addSong(makeSearchable(bhajans[i].n), song, i));
+            if (matches.size > 1) manyMatches.push([song, [...matches].map((i) => bhajans[i].n)]);
           }
         }
       );
@@ -151,64 +185,27 @@ function readFiles() {
   return searchable;
 }
 
+// Sheet music (`sm`) is no longer matched here by name: that produced links such as
+// the English "Amme" sheet on 70 Malayalam songs. create-index/sheet-match/match.py
+// matches each PDF's printed lyrics against the songbook pages and write_index.py
+// saves the result as sheet-match/sm.json ({song name: [pdf files]}), copied in here.
 function readSheetMusic() {
-  var smCount = 0;
-  var total = 0;
-  noMatchSheet = [];
-  manyMatchesSheet = [];
-  function addSheetMusic(searchableName, filename) {
-    var realBhajan = bhajans[searchableBhajansObject[searchableName]];
-    realBhajan.sm = realBhajan.sm || [];
-    realBhajan.sm.push(filename);
-    smCount += 1;
+  const smFile = path.resolve(__dirname, "../sheet-match/sm.json");
+  if (!fs.existsSync(smFile)) {
+    console.log("No sheet-match/sm.json: run sheet-match/match.py and write_index.py; sheet music links unchanged.");
+    return;
   }
-  fs.readFileSync(path.resolve(__dirname, "../sheetmusiclist.txt"))
-    .toString()
-    .split("\n")
-    // fs.readdirSync(path.resolve(__dirname, "../../public/pdfs/sheetmusic/"))
-    .filter((x) => x.endsWith("pdf"))
-    .map((filename) => {
-      var name = filename
-        .replace(/[A-Z][mb]*(?:sharp)?[mb]*\.pdf$/, "")
-        .replace(/\(.*\)|\d*/, "");
-      // console.log(name);
-      total += 1;
-      var searchableName = makeSearchable(name);
-      if (searchableBhajansObject[searchableName]) {
-        addSheetMusic(searchableName, filename);
-      } else {
-        var matches = searchableBhajans.filter(
-          (b) => b.startsWith(searchableName) || b.includes(`${searchableName}`)
-        );
-        if (matches.length === 1) {
-          addSheetMusic(matches[0], filename);
-        } else if (matches.length === 0) {
-          console.log(filename, name, searchableName);
-          const matched = [];
-          searchableBhajans.map((searchableBhajan) => {
-            const d = distance(searchableBhajan, searchableName, {
-              caseSensitive: false,
-            });
-            if (d >= 0.89) {
-              matched.push(searchableBhajan);
-              addSheetMusic(searchableBhajan, filename);
-              console.log(name, searchableName, searchableBhajan, d);
-            }
-          });
-          // if (matched.length === 0) console.log(name, searchableName);
-        } else {
-          matches.forEach((fullSearch) => addSheetMusic(fullSearch, filename));
-          manyMatchesSheet.push([filename, matches]);
-        }
-      }
-    });
-  const noMatch = Object.keys(noMatchSheet).length;
-  const manyMatch = Object.keys(manyMatchesSheet).length;
-  console.log(
-    `Total sheetmusic: ${total}, Match: ${
-      total - noMatch - manyMatch
-    }, No Match: ${noMatch}, Many Matches: ${manyMatch}`
-  );
+  const sm = JSON.parse(fs.readFileSync(smFile));
+  let linked = 0;
+  bhajans.forEach((bhajan) => {
+    if (sm[bhajan.n]) {
+      bhajan.sm = sm[bhajan.n];
+      linked += 1;
+    } else {
+      delete bhajan.sm;
+    }
+  });
+  console.log(`Sheet music: ${linked} songs linked from sheet-match/sm.json`);
 }
 
 readBhajanIndex();

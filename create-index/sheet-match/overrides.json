@@ -1,0 +1,30 @@
+{
+ "_comment": "Manual decisions after reading the sheet lyrics against the songbook pages. stem -> list of index song names ([] = link nothing).",
+ "ClosingPrayers": [
+  "asato ma sad gamaya",
+  "lokah samastah sukhino"
+ ],
+ "MaOMaPukaru": [
+  "saranagat ko apnavo ma (hindi)"
+ ],
+ "JaiSaradeMa": [
+  "jai sarade ma"
+ ],
+ "Narayana": [],
+ "RadheRadheShyama": [
+  "radhe radhe syama",
+  "radhe radhe radhe syam"
+ ],
+ "EngrossedIsTheBee": [],
+ "FromPlaceToPlace": [],
+ "ThousandsOfLamps": [],
+ "KeepARemembrance": [],
+ "OhMindOfMine": [],
+ "RajaRam": [],
+ "SriMahisasuraMardini": [
+  "mahisasura mardini stotram"
+ ],
+ "EveryoneInTheWorld": [
+  "come running my darling children"
+ ]
+}

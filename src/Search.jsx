@@ -14,30 +14,11 @@ import { useMusicianMode, SongMusicSection } from './MusicianMode';
 import MusicChips from './MusicChips';
 import { EMPTY_MUSIC_FILTERS, MUSIC_FACETS, activeMusicFilters, matchesMusic, musicFacetCounts, musicSearchText } from './musicFilters';
 import { useViewerPrefs, rememberedSheetKey } from './prefs';
+import { buildSearchIndex, rankBhajans } from './searchRank';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
 const ROW_HEIGHT = 200;
 const MUSICIAN_ROW_HEIGHT = 240;
-
-const makeSearchable = (line) =>
-  line
-    .toLowerCase()
-    .replace(/[^A-z0-9]/g, '')
-    .replace(/va/g, 'v')
-    .replace(/h/g, '')
-    .replace(/z/g, 'r')
-    .replace(/ri?/g, 'ri')
-    .replace(/a+/g, 'a')
-    .replace(/ee/g, 'i')
-    .replace(/oo|uu/g, 'u')
-    .replace(/[kg]il/g, 'kgil')
-    .replace(/[cj]al/g, 'Cal')
-    .replace(/[vw]/g, 'V')
-    .replace(/ny?/g, 'ny')
-    .replace(/(t|k|c){2}/g, '$1')
-    .replace(/(g|p|j){2}/g, '$1')
-    .replace(/[ie]*y/g, 'Y')
-    .replace(/[tdl]/g, 'T');
 
 const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -122,12 +103,13 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     }
   }, []);
 
+  // Phonetic search keys (see searchRank.js); kept on window so a remount reuses them.
   const searchable = useMemo(() => {
-    if (window.searchableBhajans && window.searchableBhajans.length === bhajans.length) {
-      return window.searchableBhajans;
+    const cached = window.searchableBhajans;
+    if (cached && cached.length === bhajans.length && cached.every((e) => e && typeof e.joined === 'string')) {
+      return cached;
     }
-    const computed = bhajans.map((o) => makeSearchable(o.n + o.l.join('') + (o.t || '')));
-    return computed;
+    return buildSearchIndex(bhajans);
   }, [bhajans]);
 
   useEffect(() => {
@@ -136,28 +118,33 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
 
   // In musician mode the search box also finds raga and taal names ("mohanam", "keherwa").
   const musicSearchable = useMemo(
-    () => (showMusic ? bhajans.map((b) => makeSearchable(musicSearchText(music.songs[b?.n], music))) : null),
+    () => (showMusic ? bhajans.map((b) => musicSearchText(music.songs[b?.n], music).toLowerCase()) : null),
     [showMusic, bhajans, music]
   );
   const musicFiltering = showMusic && activeMusicFilters(musicFilters);
 
   const filteredBhajans = useMemo(() => {
-    const searchableFilter = makeSearchable(filter);
     const filterFavorites = path.includes('/my-favorites');
-
-    return searchable.reduce((memo, searchableBhajan, i) => {
-      if (filterFavorites) {
-        if (!favorites[bhajans[i]?.n]) return memo;
-      }
-      if (language && bhajans[i]?.lg !== language) return memo;
-      if (deity && bhajans[i]?.d !== deity) return memo;
+    const passes = (i) => {
+      if (filterFavorites && !favorites[bhajans[i]?.n]) return false;
+      if (language && bhajans[i]?.lg !== language) return false;
+      if (deity && bhajans[i]?.d !== deity) return false;
       if (musicFiltering) {
         const entry = music.songs[bhajans[i]?.n];
-        if (!entry || !matchesMusic(entry, music, musicFilters)) return memo;
+        if (!entry || !matchesMusic(entry, music, musicFilters)) return false;
       }
-      if (searchableBhajan.includes(searchableFilter) || musicSearchable?.[i]?.includes(searchableFilter)) memo.push(i);
-      return memo;
-    }, []) || [];
+      return true;
+    };
+    // Best match first; an empty filter keeps the index order.
+    const ranked = rankBhajans(searchable, filter).filter(passes);
+    const query = filter.trim().toLowerCase();
+    if (!musicSearchable || !query) return ranked;
+    // Raga and taal names typed in musician mode come after the title matches.
+    const seen = new Set(ranked);
+    musicSearchable.forEach((text, i) => {
+      if (!seen.has(i) && text.includes(query) && passes(i)) ranked.push(i);
+    });
+    return ranked;
   }, [filter, favorites, path, bhajans, searchable, language, deity, musicFiltering, music, musicFilters, musicSearchable]);
 
   // Counts reflect the current page (all bhajans or just favorites) and the other dropdown.

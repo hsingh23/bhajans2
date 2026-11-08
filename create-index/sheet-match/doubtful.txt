@@ -1,0 +1,389 @@
+
+==================== AdidumAmme  [accept] title=Âdidûm Ammê refs=[] lang=['Malayalam']
+SHEET: Ādi-dūmammē ā-didūm nin nā mampā-dinyān ā-di-dum | Kā ḷi kā-ḷi ma-hā kā-ḷī kā ḷi kā-ḷi bhai-ra vī | Kē ṇu kē ṇī kūn nyu vī ṇu ka-ru-ṇa tū kū kā ḷi kē | Kaṇ-ṇū-nī-rāl kāl ka-zhūkām rak tha puṣnyānta-rām | Ka-ru-ṇa tū kū kā ḷi-kē A mṛ ta ma-yi kā ḷi-kē
+  [ACCEPTED] 'patitum amme atitum' ly=0.758 ln=0.91 co=0.31 ti=56.0 ref=False vol3-186 locs=['vol3-186']
+      PAGE: 186 Bhajanamritam 3 Pāṭīṭum ammē āṭīṭum Pāṭīṭum ammē āṭīṭum nin nāmam pāṭi ñān āṭīṭum Kāḷi kāḷi mahakāḷi kāḷi kāḷi bhairavī Oh Mother, I will sing Your Name and dance. I will sing and I will dance. Oh Kali, Kali, Mahakali, Kali, Kali, Bhairavi (Consort of Shiva). Kēṇu kēṇī kuññuvīṇu karuṇa tūkū kāḷikē Kaṇṇunīrāl kāl kazhukām rakta puṣpaṅgaḷ ñān tarām Karuṇa tūkū kāḷike... Āmṛtamayī kāḷikē... Āmṛtamayī kāḷikē Ānandama
+
+==================== Agatanayi  [review] title=Âgatanâyi refs=[{'book': 'I', 'page': '59'}] lang=['Malayalam']
+SHEET: Ā ga ta-nāi ā ga ta-nāi viṣ ṇu dē van | ā śam sa-kaḷ nām dē va-nu nit yam | Lō kā dhi nā ya-kan van nal lō | Lō kat ti nāś wā sa mē ku vā nāi | Lō kā dhi nā ya-kan van nal lō
+  [cand] 'agamanta porule' ly=0.848 ln=1.0 co=0.1 ti=54.5 ref=False vol1-9 locs=['vol1-9', 'voli1-8', 'voli1-83']
+      PAGE: 9 Devotional songs ĀGAMĀNTAPPORUḶE āgamāntapporuḷē jaganmayī āraṛiyunnu ninne vidyāmayī ānandātmikē nityē nirāmayī ādiśakti parāśakti pāhimām O Essence of the Agamas (revealed Scriptures), Thou who fillest the universe, who knows Thee who art full of Wisdom? O Self of Bliss, Eternal Being devoid of sorrow, O Primal Power, Supreme Power, protect me. sarvāntaranga nivāsini sarvajña nirvāṇa saukhya pradāna parāyaṇi duṣṭ
+
+==================== AiyeGuruMaharani  [accept] title=Âiye Guru Mahârâñî refs=[{'book': 'I', 'page': '173'}] lang=['Hindi']
+SHEET: Āyi yē gu ru ma hā rā ṇi mā tā a mṛ tā nan da ma yī | Jay jay jay ma hā rā ṇī mā tā a mṛ tā nan da ma yī | Āyi yē gu ru ma hā rā ṇi mā tā a mṛ tā nan da ma yī | Jay jay jay ma hā rā ṇī mā tā a mṛ tā nan da ma yī | Śa ra ṇam śa ra ṇam am mā a bha yam a bha yam am mā
+  [ACCEPTED] 'atma rama ananta nama' ly=0.906 ln=1.0 co=0.15 ti=40.0 ref=False vol2-45 locs=['vol2-45', 'voli2-48']
+      PAGE: llow the teachings of the Divine chants. ātma rāma Ananta nāma ātma rāma ananta nāma ānanda mōhana śrī parandhāma māyabhirāma mānasa prēma sundara nāma suguṇabhirāma ātma rāma - Delighter in the Self ananta nāma - Of infinite names ānanda mōhana - Blissful Enchanter śrī parandhama - Supreme Goal māyabhirāma - Charming mānasa prēma - Having a mind full of love sundara nāma - Having beautiful names suguṇabhirāma - Char
+  [ACCEPTED] 'aiye guru maharani' ly=0.891 ln=1.0 co=0.32 ti=100.0 ref=True vol1-48 locs=['vol1-48', 'voli1-173', 'voli0-9', 'voli2-45', 'voli2-5']
+      PAGE: me that unequalled peace without delay. ĀYIYĒ GURU MAHARĀNI āyiyē guru maharāni mātā amṛtānandamayi jai jai jai maharāni mātā amṛtānandamayi śaraṇam śaraṇam ammā abhayam abhayam ammā varuvāyi varuvāyi ammā varām taruvāyi taruvāyi ammā Please come Mother and grant me the boon! āyiyē - Please come guru maharāni - Queen among Realized Masters saraṇam - Protect us abhayam - Give us refuge BANDHAM ILLA bandham illa bandhu
+  [ACCEPTED] 'ayiye guru maharani' ly=0.891 ln=1.0 co=0.32 ti=100.0 ref=True vol1-48 locs=['vol1-48', 'voli1-173', 'voli0-9', 'voli2-45', 'voli2-5']
+      PAGE: me that unequalled peace without delay. ĀYIYĒ GURU MAHARĀNI āyiyē guru maharāni mātā amṛtānandamayi jai jai jai maharāni mātā amṛtānandamayi śaraṇam śaraṇam ammā abhayam abhayam ammā varuvāyi varuvāyi ammā varām taruvāyi taruvāyi ammā Please come Mother and grant me the boon! āyiyē - Please come guru maharāni - Queen among Realized Masters saraṇam - Protect us abhayam - Give us refuge BANDHAM ILLA bandham illa bandhu
+  [cand] 'amrta padattil anaykkuka' ly=0.469 ln=0.33 co=0.02 ti=36.4 ref=False vol3-20 locs=['vol3old-20', 'voli3-20', 'vol3-20']
+      PAGE:  Deity of the entire cosmos, the Supreme Goddess? AmṚta padattil anaykkuka Amṛta padattil aṇaykkuka ñaṅgaḷe ammē snēhamayī amṛtapureśvari dēvī bhavānī amṛtānandamayī amme... amṛtānandamayī 
+
+==================== Akatarilennennum  [accept] title=Akatârilennennum Añayâte Nilkkumô refs=[{'year': '2013'}] lang=[]
+SHEET: A ka tā ril en nen num a ṇa yā te nilk ku mō | a mṛ ta pra bhā dī pa māyi? | A ka lāy ka o ru nā lu mi va nil nin nam bi kē | a va lam ba mā ram ma yen yē? Am | mē hṛ da yēś va rī am
+  [ACCEPTED] 'akatarilennennum (malayalam)' ly=0.94 ln=1.0 co=0.41 ti=66.7 ref=False vol7-9 locs=['vol7-9']
+      PAGE:  Vedas- please come and save this child of Yours! Akatārilennennum (Malayalam) akatārilennennum aṇayāte nilkkumō amṛtaprabhādīpamāyi? akalāyka orunālumivanil ninnambikē avalambamārammayenyē? ammē hṛdayēśvarī ammē hṛdayēśvarī Will You not remain within me as a constant, unwavering light? Please do not separate from me, O Mother. What do I have but Your compassion? Mother, Queen of my heart. mada matsarāsura samarāgni 
+
+==================== AmmaDeviTanitantana  [accept] title=Ammâ Dêvî Tanitantânâ refs=[{'year': '2015', 'page': '6'}] lang=['Kannada']
+SHEET: Am mā dē vī tā ni tan dā nā dē vī dē vī tan da na nī nā | Nin na mo ga da mun ka ru lāṭ ṭā min chu ti ru vā man da hā sā | Kaṇ ḍu nā nū so tu hō de | kā ḷi dē vī | Kaṇ ḍu nā nū so tu hō de
+  [ACCEPTED] 'amma devi - kannada version' ly=0.966 ln=1.0 co=0.93 ti=63.2 ref=False vol7-16 locs=['vol7-16']
+      PAGE: Bhajanamritam Volume 7 16 Ammā dēvī (Kannada version) ammā dēvī tāni-tandānā dēvī dēvī tandana nīnā ninna mogada munkarulāṭṭā miñcu tiruvā mandahāsā kaṇḍu nānū sotuhōde - kāḷī... dēvī... tattva śāstra ontu ariye sādhane sankalpa ariye ninna mātra bayasi bandē nā - durgē... dēvī... puṭṭa magu nānammā keṭṭa ammā nīnallā taḍa yāke ettikkoḷḷalu - caṇḍī... dēvī... Ammā dēvi (Tulu version) ammā dēvi tānitantānā dēvi dēvi t
+  [cand] 'amma devi - tulu version' ly=0.308 ln=0.1 co=0.25 ti=56.0 ref=False vol7-16 locs=['vol7-16']
+      PAGE: allā taḍa yāke ettikkoḷḷalu - caṇḍī... dēvī... Ammā dēvi (Tulu version) ammā dēvi tānitantānā dēvi dēvi tantana nīnā irnā mukhada munkuruḷāṭṭā miñcōntuppuna mandahāsa irentūdu mātta madēttē - kāḷī...… dēvī...… tattvaśāstra enku gottijji sādhana sankalpa gottijji iranmātra tūdu batteyān - durgē... dēvi...… iranā bālē yānammā īratte ēnkḷēgu māttalā taṭadāne yenan tūvarē - caṇḍī... dēvī...… 
+
+==================== AmmeYennuLoru  [accept] title=Amme Yennu Öoru refs=[{'book': 'I', 'page': '115'}] lang=['Malayalam']
+SHEET: Am me yen nuḷ ḷo-ru nā ma mōrt tī da-vē rō-māñ cha | mā kun na ten dē? Am ma en nam-ma ī | chin ta yil in nu nyān el lām ma ṛak-kun-na ten dē | el-lām ma ṛak-kun na ten dē? | Dā ha vum il la vi śap pu mil lin nahō snā-nā di
+  [ACCEPTED] 'ammayennulloru nama morttidave' ly=0.83 ln=0.88 co=0.39 ti=57.1 ref=False vol1-25 locs=['vol1-25', 'voli1-123', 'voli1-118']
+      PAGE: of the ambrosia of bliss. AMMAYENNUḶḶORU ammayennuḷḷoru nāmamōrttīṭavē rōmāñcamākunna tentē? ‘amma-ennamma’ ī chintayilinnu ñān ellām maṛakkunnatentē? Why is it that my hairs stand on end when I happen to remember the word ‘Amma’? Why am I forgetting everything else when I think of Mother, my Mother? dāhavumilla viśappumillinnahō snānādiyum viṭṭu pōyi. 
+
+==================== AmrtanandaSvarupa  [accept] title=Amëtânanda Svarûpa refs=[{'book': 'I', 'page': '20'}] lang=['Malayalam']
+SHEET: Amṛ tā nan da swa rū pa ma nō ha ri | mā tā a mṛ ta ma yi | hṛ da ya sa rō ru-ha da ḷa ma ti len num | a mṛ tam tū ki-yor a mṛ ta ma yi | a mṛ tam tū ki-yor a mṛ ta ma yi
+  [ACCEPTED] 'amrtananda svarupa' ly=0.866 ln=1.0 co=0.46 ti=100.0 ref=True vol1-33 locs=['vol1-33', 'voli1-20', 'voli1-22']
+      PAGE: things fit only for the intellect. AMṚTĀNANDA SVARŪPA amṛtānanda svarūpa manōhari..... mātā amṛtamayī hṛdaya sarōruha daḷamatilennum amṛtam tūkiyor amṛtamayī Enchanter of the mind, whose nature is Immortal Bliss, O Ambrosial Mother, the petals of the heart lotus are ever sprinkled with nectar by You, ambrosial One. praṇavapporuḷāyi vilasum tava mṛdu- charaṇa sarōjam mama śaraṇam taḷarum jīvanu taṇal aruḷīṭum surataru
+  [ACCEPTED] 'ananda mayi' ly=0.866 ln=1.0 co=0.46 ti=53.8 ref=False vol1-33 locs=['vol1-32', 'voli1-2']
+      PAGE: 33 Devotional songs nīkki unmādamēkū ninṭe bhakti unmādamēkū Please feed me daily with Thy own beautiful hand the nectar of love and thus remove my pride arising from the identification of the Self with the body and make me infatuated with that love. kāḷiyennōtumbōḷ en nayanam sadā kaṇṇīr pozhiykkumeṅkil chuṭu kaṇṇīr pozhiykkumeṅkil āgamakkātalē vēda vēdāntangaḷ apradhānangaḷallō atu buddhiykku mātramallō O Mother, t
+
+==================== AmrtanandamayiJanani  [accept] title=Amrtânandamayi Janani refs=[{'book': 'II', 'page': '22'}] lang=['Malayalam']
+SHEET: Am ma am ma | am ma | A mṛ tā nan da ma yi ja na-ni | a mṛ tā nan da ma yi ka-ru | nā ma yi nī kṛ pā ma yi nī vi
+  [ACCEPTED] 'karunamayi ni krpamayi ni' ly=0.919 ln=1.0 co=0.41 ti=56.4 ref=False vol2-116 locs=['vol2-116', 'voli2-130']
+      PAGE: 116 Bhajanamritam 2 karuṇāmayi nī kṛpāmayī nī karuṇāmayi nī kṛpāmayī nī vijñānamayī ānandamayī ammā amṛtānandamayī jananī amṛtānandamayī O Mother Amritanandamayi, Thou art the embodiment of compassion, grace, knowledge, and bliss. vighnavināśinī vināyaka jananī divyamayī ammā vidyāmayī buddhī pradāyinī vēda svarūpiṇī bōdhamayī ammā satcinmayī ammā amṛtānandamayī O Mother, Destroyer of obstacles, Mother of Ganesha, Em
+  [ACCEPTED] 'amrtanandamayi janani' ly=0.908 ln=1.0 co=0.36 ti=100.0 ref=True vol2-23 locs=['vol2-23', 'voli2-22']
+      PAGE: 23 Devotional songs amṚtānandamayĪ janani amṛtānandamayī janani karuṇāmayī nī kṛpāmayī nī vijñānamayī ānandamayī ammā amṛtānandamayī Mother Amritanandamayi, Thou art the embodiment of mercy, of compassion, of wisdom, and of bliss. vijña vināśini vināyaka janani divya mayī amma vidyāmayi buddhi pradāyini vēda svarūpiṇi bōdhamayī amma satcinmayī amma amṛtānandamayī Thou art the remover of all obstacles, Thou, Who art t
+
+==================== AnandamayiBrahmamayi  [review] title=Ânandamayî Brahmamayî refs=[{'book': 'I', 'page': '2'}] lang=['Malayalam']
+SHEET: Ā nan da ma yī brah ma ma yī | Ā nan da ma yī brah ma ma yī | A tu li ta saun dar ya rū pi ṇī | ā nan da ma yī brah ma ma yī | Ā rā dhā ran gaḷ ka dan nu yō gi kaḷ
+  [cand] 'amrtanandamayi' ly=0.818 ln=0.83 co=0.11 ti=60.0 ref=False vol1-34 locs=['vol1-34', 'voli1-9']
+      PAGE: um ninnuṭe chinmaya bhāva muṇarttū..... dēvī (amṛtānanda) For the man drowning in the repeated cycle of birth and death Thou art the refuge forever. May Thou always awaken in my mind Thy Divine Consciousness, O Devi. AMṚTĀNANDAMAYĪ amṛtānandamayī mātā amarādhīśe namō namaḥ akatāril vannudayam cheyyuka amṛtānandamayī mātā amṛtānandamayī (amṛtā) To Mother Amritanandamayi, the Goddess of the Immortals, salutations again
+
+==================== AnbuVativanaval  [accept] title=Anbu Vaøivânavaö refs=[{'book': 'VI', 'page': '27'}] lang=['Tamil']
+SHEET: An bu vaṭivā na vaḷ annaiya vaḷ va ru ki rāḷ a kilat | til vi zhāk kō lam an nai makka ḷin porkkā lam | amudamazhayāy a va ni yil ā nanda mē pozhi ya | ā di śak ti bhuvanat til ba va ni va ru ki rāḷ am | mā ba va ni va ru ki rāḷ
+  [ACCEPTED] 'jhala jhalavena (tamil)' ly=0.966 ln=1.0 co=0.33 ti=44.4 ref=False vol7-120 locs=['vol7-120']
+      PAGE: nowledge and bliss, and You are fond of devotion. Jhala jhalavena (Tamil) anbu vaṭivānavaḷ annaiyavaḷ varukirāḷ akilattil vizhākkōlam annai makkaḷin porkkālam amudamazhayāy avaniyil ānandamē pozhiya ādiśakti bhuvanattil bavani varukirāḷ That embodiment of love, the divine Mother, is coming! It is a universal festival, the golden age for the children of the divine Mother. The Goddess of supreme power is coming, leadin
+  [ACCEPTED] 'anbu vativanaval (tamil)' ly=0.96 ln=1.0 co=0.34 ti=100.0 ref=True vol6-27 locs=['vol6-27']
+      PAGE: e remove our worries, Mother, as we bow down before You with hands joined in prayer! ANBU VAṬIVĀNAVAḶ (TAMIL) JHALA JHALA anbu vaṭivānavaḷ annaiyavaḷ varukirāḷ akilattil vizhākkōlam annai makkaḷin porkkālam amudamazhayāy avaniyil ānandamē pozhiya ādiśakti bhuvanattil bavani varukirāḷ 
+  [ACCEPTED] 'jhala jhala (tamil)' ly=0.96 ln=1.0 co=0.34 ti=34.8 ref=True vol6-27 locs=['vol6-27']
+      PAGE: s we bow down before You with hands joined in prayer! ANBU VAṬIVĀNAVAḶ (TAMIL) JHALA JHALA anbu vaṭivānavaḷ annaiyavaḷ varukirāḷ akilattil vizhākkōlam annai makkaḷin porkkālam amudamazhayāy avaniyil ānandamē pozhiya ādiśakti bhuvanattil bavani varukirāḷ 
+
+==================== Bhagavane  [accept] title=Bhagavânê refs=[{'book': 'I', 'page': '174'}] lang=['Malayalam']
+SHEET: Bha-ga vānē bha-ga-vānē | bhak ta sa lā bha ga vā nē | Pā va-na pū ru-ṣā pā pa vi nāśa-nā | Pā pi-kaḷ mā tra-māi pā ri-dat til til | Nē rā ya mārggan-gaḷ nal ku-vān ārun-du
+  [ACCEPTED] 'balakrsnam kalaya' ly=0.805 ln=0.82 co=0.22 ti=33.3 ref=False vol2-46 locs=['vol2-46', 'voli2-49']
+      PAGE:  - Enchanter of Sita bālakṛṣṇakam kalaya bālakṛṣṇam kalaya sakhī sundaram kṛṣṇam kalaya sakhī sundaram anganāmanganām antarēmādhavō mādhavam mādhavam cantare nānganā itthamakalpite mandale madhyakam sanchitau vēṇunā dēvakī nandanam śrī kṛṣṇa gōvinda harē murārē hē nātha nārāyaṇa vāsudēva Oh my friends, the beautiful and youthful Krishna is calling. O my friends, the beautiful and youthful Krishna is calling. O ladies
+  [ACCEPTED] 'bhagavane bhagavane' ly=0.785 ln=0.73 co=0.38 ti=66.7 ref=True vol1-50 locs=['vol1-50', 'voli1-174', 'voli0-9', 'voli2-47', 'voli2-50']
+      PAGE: 50 Bhajanamritam 1 BHAGAVĀNE bhagavānē...bhagavānē... bhaktavatsalā bhagavānē (bhagavānē) O Lord...O Lord... O Lord Who art the Lover of the devotees pāvana pūrūṣā pāpa vināśanā pāpikaḷ mātramāyi pāriṭattil (bhagavānē) O Pure One, Destroyer of sin, there seem to be only sinners in this world. nērāya mārggangaḷ nalkkuvān ārundu nārayaṇā nanma pōyi maraññu.... (bhagavānē) Who is there to show the correct path? O Naraya
+
+==================== Cenmile  [accept] title=Cênmilê refs=[{'book': 'VI', 'page': '45'}] lang=['Hindi']
+SHEET: Chē n mi lē ā rā m mi lē śā n ti ōr viś rā m mi lē | Chē n mi lē ā rā m mi lē śā n ti ōr viś rā m mi lē | Vō he mā ki gō d vi mal jahā bhaktōn kō prē m mi lē prēm milē | Snig dha snē h a pā r mi le ka ru ṇā a pa ram pā r mi lē | Vō hē mā kā hṛ da ya ka mal hṛ da ya ka mal
+  [ACCEPTED] 'cenmile (hindi)' ly=0.882 ln=1.0 co=0.31 ti=100.0 ref=True vol6-45 locs=['vol6-45', 'vol7-59']
+      PAGE: eparation any longer. Please have mercy on me! CĒNMILĒ (HINDI) cēnmilē ārām milē śānti ōr viśrām milē vō he mā kigōd vimal jahā bhaktōn kō prēm milē Our sweet Mother’s lap is so soft. Her devotees find qui- etude, peace, and unconditional love there. snigdhasnēh apār mile karuṇā aparampārmilē vō hē mā kā hṛdayakamal jahā hari ōmkār mile Our sweet Mother’s heart is like a lotus flower where Her devotees experience div
+  [ACCEPTED] 'chen mile' ly=0.838 ln=1.0 co=0.31 ti=100.0 ref=False vol5-41 locs=['vol5-41']
+      PAGE: 41 Devotional songs Chēn milē Chēn milē ārām milē śānti ōr viśṛām milē vō hē mā kī gōd vimal jahā bhaktōm kō prēm milē One finds calm and relief there; one finds peace and rest. In the lap of the Mother; there is found pure love. Snigdha snēha apār milē karuṇā aparampār milē vō hē mā kā hṛdaya kamal jahā hari ōm kār milē One finds unlimited love and affection there. One finds unparalleled compassion. That is the lotu
+
+==================== ChodDeManse  [accept] title=Chôè dê Mansê refs=[{'book': 'V', 'page': '46'}] lang=['Hindi']
+SHEET: Chō ḍ dē ma n sē duḥ kha kī chin tā | nit yē su mi r tū sat ya rē | dē h tū na hī ma n bhī tū na hī | tū he āt mā jā n lē | Hā r ga yā tū khō j mē su kh kē
+  [ACCEPTED] 'chod de manse' ly=0.905 ln=1.0 co=0.32 ti=100.0 ref=True vol5-46 locs=['vol5-46']
+      PAGE: feet. Chōḍ dē mansē Chōḍ dē mansē duḥkha kī chintā nit yē sumir tū satya rē dēh tū nahī man bhī tū nahī tū he ātmā jān lē Give up thoughts of sorrow and remember always that you are the Truth. You are neither the body nor the mind, know that you are the Atman (Self). Hār gayā tū khōj mē sukh kē is jag kē sab bhōg mē No One But You vol. 2 (World Tour 2003 CD) 
+  [ACCEPTED] 'chenthalir padangal' ly=0.813 ln=0.88 co=0.15 ti=32.0 ref=False vol2-51 locs=['vol2-51', 'voli2-54']
+      PAGE: 51 Devotional songs centhaḶir pādaṄgal centhaḷir pādaṅgaḷ cintichu cintichu antarangattile cinta nīṅgī santāpa muktanāyi santatam vāzhuvān nin snēha tīrttham pozhikukammē... Pondering over the lilac‑bloom of Thy feet, all other thoughts have vanished from the mind. To remain ever free from sorrow, Mother, please pour out the Holy Waters of Thy Love. anti chuvappinṭe cantam ūṛunna nin mandahāsattin madhuvozhukkī en ka
+
+==================== ClosingPrayers  [review] title=Closing Prayers refs=[{'book': 'I', 'page': '272'}] lang=['Sanskrit']
+SHEET: Om a sa to mā sadgamaya Tamaso mā jyotir gama ya Mrityor mā | a mṛtam gama ya Om śān tiḥ śān tiḥ śān ti ḥi | Om lo ka ḥ sa mas ta ḥ su khi no bhavan tū | Lo ka ḥ sa mas ta ḥ su khi no bhavan tū Lo ka ḥ sa mas ta | ḥ sukhi nobhavan tū Om śān tiḥ śān tiḥ śān ti ḥi
+  [cand] 'yasoda ke bala' ly=0.954 ln=1.0 co=0.13 ti=23.1 ref=False vol1-257 locs=['vol1-257', 'voli1-267', 'voli0-103']
+      PAGE: na’s Beloved. mādhava = Goddess Lakshmi’s Consort. YAŚŌDA KĒ BĀLĀ yaśōdā kē bālā yadukula nāthā dvāraka vāsī śrī kṛṣṇā... nanda nandanā navanīta chōrā rādhāvilōlā śrī kṛṣṇā 
+  [cand] 'lokah samastah sukhino' ly=0.32 ln=0.5 co=0.52 ti=40.0 ref=False vol3-281 locs=['vol3-281']
+      PAGE: e world. namo namaḥ śrī guru pādukābhyām Lokaḥ samastaḥ sukHino lokaḥ samastaḥ sukhino bhavantū lokaḥ samastaḥ sukhino bhavantū lokaḥ samastaḥ sukhino bhavantū om śanti śanti śantiḥ oṁ śrī gurubhyo namaḥ hariḥ oṁ Let the whole world be happy. (3x). Om peace, peace, peace. Om salutations to Sri Guru. Na karmaṇā na prajayā (ślokas usually chanted during the pāda pūja) Na karmaṇā na prajayā dhanena tyāgenaike amṛta tvam
+
+==================== DamDamDumDumDamaruBole  [accept] title=Èam Èam Èum Èum Èamarû Bôle refs=[{'book': '6', 'page': '51'}] lang=['Gujarati']
+SHEET: Ḍa m ḍa m ḍu m ḍu m ḍa ma rū bō le ha r ha r ha r ha r ma hā de vā | Śiv śiv śiv śiv śivagaṇa bō le namaḥ śivāya ōm na maḥ śi vā ya | Nī la nī la ā kā ś bō le ha r ha r ha r ha r ma hā de vā | Garj ja nā kar tā mē gh bō le na maḥ śivā ya ōm na maḥ śivā ya | Sā ga r na dī sa rī tā bō le ha r ha r ha r ha r ma hā de vā
+  [ACCEPTED] 'dam dam dum dum damaru bole' ly=0.938 ln=1.0 co=0.4 ti=100.0 ref=True vol6-51 locs=['vol6-51']
+      PAGE: inaivai taruga nī ḌAM ḌAM ḌUM ḌUM ḌAMARŪ BŌLE (GUJRATI) ḍam ḍam ḍum ḍum ḍamarū bōle har har har har mahādevā śiv śiv śiv śiv śivagaṇa bōle namaḥ śivāya ōm namaḥ śivāya The damaru is chanting ‘har har har har mahadeva’- in response the Shiva Ganas are chanting ‘namah shivaya.’ 
+  [ACCEPTED] 'dam dam dum dum damaru bole (gujarati)' ly=0.926 ln=1.0 co=0.38 ti=100.0 ref=False vol7-62 locs=['vol7-62']
+      PAGE: ng Mother, You are the eye of the eye. Ḍam ḍam ḍum ḍum ḍamarū bōle (Gujarati) ḍam ḍam ḍum ḍum ḍamarū bōle har har har har mahādevā śiv śiv śiv śiv śivagaṇa bōle namaḥ śivāya ōm namaḥ śivāya The damaru is chanting ‘har har har har mahadeva’- in response the Shiva Ganas are chanting ‘namah shivaya om namah shi- vaya’ 
+
+==================== DayaKaroMata  [accept] title=Dayâ Karo Mâtâ refs=[{'book': 'I', 'page': '165'}] lang=['Hindi']
+SHEET: Da yā ka ro mā tā am bā kri pā ka ro ja na nī | Kri pā ka ro mā tā am bā rak ṣā ka ro ja na nī | Ka ly ā ṇa rū pi ṇī kā lī ka pā li nī | Ka ru ṇā ma yī am bā mām pā hi | Om mā tā om mā tā om mā tā ā nan da ma yī
+  [ACCEPTED] 'daya karo hari narayana' ly=0.925 ln=1.0 co=0.2 ti=64.5 ref=False vol2-56 locs=['vol2-56', 'voli2-60']
+      PAGE:  obliterates the evils of the Kali age. daya karŌ hari nārāyaṅa Daya karō hari nārāyaṇa kṛpā karō hē jagat vandana bhāvātita bhāgya vidhāta dīna nātha anātha kē nātha O Hari, Narayana, Lord of the universe, have mercy on me and shower Your Grace upon me. Beyond all conception, Lord of the helpless, You are the bestower of good fortune. dayā karō mātā ambā dayā karō mātā ambā kṛpā karō jananī kṛpā karō mātā ambā rakṣā
+  [ACCEPTED] 'daya karo mata' ly=0.914 ln=1.0 co=0.41 ti=100.0 ref=True vol1-63 locs=['vol1-63', 'voli1-165', 'voli1-167', 'voli2-60']
+      PAGE: s Subtle sundara rūpa = Of beautiful Form DAYĀ KARO MĀTĀ dayā karō mātā ambā kṛpā karō janani kṛpā karō mātā ambā rakṣā karō janani 
+
+==================== DeviDeviDeviJaganMohini  [accept] title=Devî Devî Devî Jagan Mohinî refs=[{'book': 'I', 'page': '266'}] lang=['Sanskrit']
+SHEET: De vī de vī de vī ja gan mo hi nī | Chaṇ ḍi kā de vī chaṇ ḍa muṇ ḍa hā ri ṇī | Chā muṇ ḍeś wa rī am bi ke de vī | Saä sā ra sā ga ram tā ra ṇam chey yu vān | Ne rā ya mār gam kāt ta ne de vī
+  [ACCEPTED] 'devi devi devi jaganmohini' ly=0.943 ln=1.0 co=0.16 ti=100.0 ref=True vol1-65 locs=['vol1-65', 'voli1-266', 'voli0-102']
+      PAGE: ect us from the fear of enemies’ assaults. DĒVI DĒVI DĒVI JAGANMŌHINĪ (DĒVI DĒVI DĒVI AMṚITEŚVARI) dēvi dēvi dēvi jagan mōhinī (dēvi dēvi dēvi amṛitēśvari) chaṇḍikā dēvi chaṇḍa munda harinī chāmundēśvarī ambikē dēvi samsāra sāgaram taranam cheyyuvān nērāya mārgam kāttanē dēvī O Goddess, Enchantress of the World (O Immortal Goddess), Chandika, Destroyer of the demons Chanda and Munda, O Chamundesvari, Divine Mother, s
+  [ACCEPTED] 'devi devi devi amrtesvari' ly=0.943 ln=1.0 co=0.16 ti=70.6 ref=True vol1-65 locs=['vol1-65', 'voli1-266', 'voli0-102']
+      PAGE: ect us from the fear of enemies’ assaults. DĒVI DĒVI DĒVI JAGANMŌHINĪ (DĒVI DĒVI DĒVI AMṚITEŚVARI) dēvi dēvi dēvi jagan mōhinī (dēvi dēvi dēvi amṛitēśvari) chaṇḍikā dēvi chaṇḍa munda harinī chāmundēśvarī ambikē dēvi samsāra sāgaram taranam cheyyuvān nērāya mārgam kāttanē dēvī O Goddess, Enchantress of the World (O Immortal Goddess), Chandika, Destroyer of the demons Chanda and Munda, O Chamundesvari, Divine Mother, s
+  [ACCEPTED] 'devi jaganmata' ly=0.943 ln=1.0 co=0.16 ti=57.1 ref=False vol1-65 locs=['vol1-65', 'voli1-231', 'voli0-66']
+      PAGE: m the fear of enemies’ assaults. DĒVI DĒVI DĒVI JAGANMŌHINĪ (DĒVI DĒVI DĒVI AMṚITEŚVARI) dēvi dēvi dēvi jagan mōhinī (dēvi dēvi dēvi amṛitēśvari) chaṇḍikā dēvi chaṇḍa munda harinī chāmundēśvarī ambikē dēvi samsāra sāgaram taranam cheyyuvān nērāya mārgam kāttanē dēvī O Goddess, Enchantress of the World (O Immortal Goddess), Chandika, Destroyer of the demons Chanda and Munda, O Chamundesvari, Divine Mother, show us the
+
+==================== DhyanaSloka  [accept] title=Dhyâna Åloka refs=[] lang=['Sanskrit']
+SHEET: Dhyā yā mo dha va lā va guṇ ṭha na va tīm te jo ma | yīm naiṣ thi kīm Snig dhā pān ga vi | lo ki nīm bha ga va tīm Man da smi ta śrī mu khīm | Vāt sal yā mṛ ta var ṣi ṇīm su ma dhu ram | Sam kīrt ta nā lā pi nīm śyā mān gīm ma dhu
+  [ACCEPTED] 'om amrtesvariyai namah' ly=0.942 ln=1.0 co=0.18 ti=35.7 ref=False vol3-139 locs=['vol3-139']
+      PAGE: e! Let me be one with You and bring forth songs of love. Ōm amṛteśvariyai namaḥ Dhyāyāmo–dhavalāvaguṇṭhanavatīṁ) tejomayīm–naiṣṭhikīṁ snigdhāpāṅga–vilokinīm bhagavatīṁ mandasmita–śrī–mukhīṁ vātsalyāmṛta–vaṛṣiṇīm sumadhuraṁ saṅkīṛttanālāpinīṁ ṣyāmāṅgīṁ madhu–sikta–sūktīṁ amṛtānandāmikāmīśvarīṁ Ōm amṛteśvariyai namaḥ... (4x) Pūṛṇa–brahma–svarūpiṇyai saccidānanda mūrttaye ātmā–rāmāgragaṇyāyai yoga–līnāntarātmane Ōm amṛt
+
+==================== EngrossedIsTheBee  [review] title=Engrossed Is the Bee refs=[] lang=['English']
+SHEET: En grossed is the bee of my mind on the | blue lo tus feet of my di vine mo ther En vine mo ther | Di vine mo ther my di vine mo ther | di vine mo ther my di vine mo ther vine mo ther En
+  [cand] 'oru tulli-amrtam (malayalam)' ly=0.313 ln=0.0 co=0.03 ti=22.2 ref=False 2025-420 locs=['2025-420']
+      PAGE: l Songs of Sri Mata Amritanandamayi 420 Oru Tuḷḷi-Amṛtam Malayalam oru tulli-amrtam Malayalam oru tuḷḷi-amṛtam nalkīḍuvāntiruvuḷḷattil kaniv-ēkumō O Mother! Will you have the compassion to grant me a drop of nectar? mativiṭṭu maruvunna mānasa-bhṛṅgattinumadhuram tellu nalki aṇaccīḍumō The honeybee of my mind, wandering in delusion, may it be drawn near by a single drop of your sweetness. rāgamēgha śūnyamāya vānilnīla
+
+==================== FromPlaceToPlace  [review] title=From Place to Place refs=[] lang=['English']
+SHEET: Fromplace to place I waswan der ing With no where to | claim as my own. But once I took ref-uge in you, | You gave my life a des ti na tion. | Mil lions of times, mil lions of times, I | bow down to you, Am ma.
+  [cand] 'dar dar me' ly=0.393 ln=0.13 co=0.24 ti=25.0 ref=False vol5-49 locs=['vol5-49']
+      PAGE: Gopal enchants everyone with His divine drama. Dar dar mē Dar dar mē bhaṭaktā rahā mansil kahā nahī thā patā arth milā is jīvan kō jab mā tērē śaraṇā āyā I was wandering from place to place having no idea where my destination was. But when I took refuge in You, Mother, this life became meaningful. Kōṭi pranāṁ kōṭi praṇām śatakōṭi pranāṁ ammā Salutations to You, hundreds of millions of salutations to You, Amma! 
+
+==================== GovardhanaGiri  [accept] title=Gôvardhana Giri refs=[{'book': 'I', 'page': '184'}] lang=['Sanskrit']
+SHEET: Gō vard dha na gi ri dhā rī | go pi kā ja na hṛ da ya vi hā ri | Gō ku la lā lī lā lō lā | Gō ku la lā lī lā lō lā | Gān ā mṛ ta mu ra ḷī ra va dhā rī
+  [ACCEPTED] 'govardhana giri' ly=0.839 ln=0.91 co=0.23 ti=100.0 ref=True vol1-88 locs=['vol1-88', 'voli1-184', 'voli0-20']
+      PAGE: GŌPĪ VALLABHA gōpī vallabha gōpāla kṛṣṇā gōvardhana giri dhārī rādhā mānasa rājīvalōchanā kāyām pūvuṭal varṇṇā kṛṣṇā (gōpī) O Gopala Krishna, Beloved of the Gopis, Uplifter of the Govardhana Hill, Lotus-eyed One in Radha’s mind, Thy color is that of a blue lotus... vṛndāvana sañchāriyām kṛṣṇā chen tāmara daḷa nayanā bandhama kattuka nanda kumārā sundara bāla- mukundā- kṛṣṇā..... (gōpī) O Krishna who moves about in Vr
+  [ACCEPTED] 'gopi vallabha' ly=0.839 ln=0.91 co=0.23 ti=52.2 ref=False vol1-88 locs=['vol1-88', 'voli1-196', 'voli0-32']
+      PAGE: 88 Bhajanamritam 1 GŌPĪ VALLABHA gōpī vallabha gōpāla kṛṣṇā gōvardhana giri dhārī rādhā mānasa rājīvalōchanā kāyām pūvuṭal varṇṇā kṛṣṇā (gōpī) O Gopala Krishna, Beloved of the Gopis, Uplifter of the Govardhana Hill, Lotus-eyed One in Radha’s mind, Thy color is that of a blue lotus... vṛndāvana sañchāriyām kṛṣṇā chen tāmara daḷa nayanā bandhama kattuka nanda kumārā sundara bāla- mukundā- kṛṣṇā..... (gōpī) O Krishna wh
+
+==================== JaiSaradeMa  [review] title=Jai Åarade Mâ refs=[{'book': 'II', 'page': '107'}] lang=['Hindi']
+SHEET: Jay śa ra de mā jay śa ra de mā | A mṛ tēś wa rī mā a mṛ tēś wa rī mā | Jay śa ra de mā jay śa ra de mā | A mṛ tēś wa rī mā a mṛ tēś wa rī mā | Jay śa ra de mā jay śa ra de mā
+  [cand] 'amrtesvari ma amrtesvari' ly=0.692 ln=0.5 co=0.03 ti=43.8 ref=False vol3-28 locs=['vol3old-26', 'voli3-28', 'vol3-28']
+      PAGE: i amṛtēśi brahma jyōti (Amṛtēśvari...) You are the light that illumines the world, the light which shines in the cave of the “heart”, the light which is responsible for creation, preservation and destruction; O Amriteshi, You are the Light of the Supreme Brahman! Amṛtēśvari mā amṛtēśvari (he śārade mā) Amṛtēśvari mā amṛtēśvari mā (he śārade mā) ajñanata se hamē par dē mā O Mother Amriteshwari, please take us beyond t
+  [cand] 'ma amrtesvari' ly=0.5 ln=0.5 co=0.04 ti=36.4 ref=False vol5-105 locs=['vol5-105']
+      PAGE: 105 Devotional songs Mā amṛtēśvari Mā amṛtēśvari maṅgala dāyini mā jaya jagadhō dhāriṇi jaya jaga jananī mā mā amṛtēśvari (3x) mā Mother, the Immortal Goddess who showers auspiciousness upon us, victory to You who uplift the whole universe. Bhakti dijō mā prēma dijō mā darṣan dijō mā kṛpā karō mā mā amṛtēśvari (3x) mā Please grant us devotion, please grant us love, please be- stow upon us the vision of You. Shower Yo
+  [cand] 'jag ki trsna mitane ko (jai jagadambe jai jagadambe)' ly=0.462 ln=0.5 co=0.01 ti=48.3 ref=False vol4-66 locs=['vol4-66']
+      PAGE: or the humble. Jay jagadambē jay jagadambē (Jag kī tṛṣṇā miṭānē kō) Jay jagadambē jay jagadambē jay jagadambē mā jay jay mā jay jay mā jay amṛtēśvarī mā Glory to the Mother of the universe, the immortal Goddess. Jag kī tṛṣṇā miṭānē kō prēmamayī tum āyī hō jagajananī amṛtēṣvarī mām karuṇā kī avatār hō 
+  [cand] 'jai jagadambe jai jagadambe (jag ki trsna mitane ko)' ly=0.462 ln=0.5 co=0.01 ti=45.7 ref=False vol4-66 locs=['vol4-66']
+      PAGE: ess us, You grant protec- tion for the humble. Jay jagadambē jay jagadambē (Jag kī tṛṣṇā miṭānē kō) Jay jagadambē jay jagadambē jay jagadambē mā jay jay mā jay jay mā jay amṛtēśvarī mā Glory to the Mother of the universe, the immortal Goddess. Jag kī tṛṣṇā miṭānē kō prēmamayī tum āyī hō jagajananī amṛtēṣvarī mām karuṇā kī avatār hō 
+
+==================== JayGanesaJayGanesa  [accept] title=Jay Gañêåa Jay Gañêåa refs=[{'book': 'IV', 'page': '64'}] lang=['Hindi']
+SHEET: Dī-nōm kē duhk-ha harta tūm śān ti pra dā tā | A nā tha kē nā th tūm jay jay ga ṇa nā thā | Jay jay ga ṇa nā thā | Jay ga-ṇē śa jay ga-ṇē śa jay ga ṇē śa dē va | Śri ga-ṇē śa śri ga-ṇē śa śri ga ṇē śa dē vā
+  [ACCEPTED] 'jaya janakijivana rama' ly=0.868 ln=0.93 co=0.16 ti=57.9 ref=False vol4-63 locs=['vol4-63']
+      PAGE: r in the world, O embodiment of immortality. Jaya jānakijīvana rāma Jaya jānakijīvana rāma smarakōḍi manōjña śarīrā mithilāpati hṛdayanivāsā munimānasa patmavihārā Victory to Rama, the life of Janaki (Rama’s wife, Sita Devi.) Remembrance to one with a body as handsome as a hundred thousand Gods. The Lord of the heart of Sita Devi, residing in the lotus of the hearts of the saints. Jay jay rām sītā rām jay jay rām sīt
+
+==================== JayaMaJayaMa  [review] title=Jaya Mâ Jaya Mâ refs=[{'book': 'II', 'page': '111'}] lang=['Hindi']
+SHEET: Ja-ya mā ja-ya mā ja-ga dīś-wa-rī pā hi mām Ja-ya | mām Ja-gadīśwa-rī sarveś wa-rī bhu-vaneś-wa-rī pāhi māmJa-ga | mām Ja-ya mā ja-ya mā ja-ga dīś-wa-rī pā hi mām Ja-ya | mām Ja-ya mā ja-ya mā ja-ga dīś-wa-rī pā hi mām Ja-ya | mām Ja-ga dīś wa-rī sar veś wa rī bhu-va
+  [cand] 'jaya ma jaya ma' ly=0.72 ln=0.83 co=0.32 ti=100.0 ref=True vol2-100 locs=['vol2-100', 'voli2-111']
+      PAGE: 100 Bhajanamritam 2 jaya mā jaya mā jaya mā jaya mā jagadīśvari pāhi mām jagadīśvari sarvēvari bhuvanēvari pāhi mām Victory, victory to Mother. Protect me, O Empress of the Universe. O Empress of the Universe, Empress of all, Empress of the Earth, protect me. jaya śiva śaṅkara jaya śiva śaṅkara jaya abhayaṅkara sāmba sadāśiva śiva harare śiva harare śiva harare jaya śiva śaṅkara jaya abhayaṅkara jaya gangādhara jaya 
+  [cand] 'amma devi jagadisvari (sahana, sanskrit)' ly=0.54 ln=0.33 co=0.09 ti=46.7 ref=False 2020supl3-8 locs=['2020supl3-8']
+      PAGE: Ammā Dēvi Jagadīśvari (Sahana, Sanskrit) ammā dēvi jagadīśvari karuṇāmayi dēvi hṛdayēśvarī sarvēśvari māhēśvari paramēśvari bhuvanēśvari śāntipradāyini puṣpavarṣiṇi śōkavināśini abhayaṅkari ānandadāyini bhairavi mā bhavabhaya bhañjini bhārgavi mā prēmasvarūpiṇi jagajjanani ātmaprakāśini ādiśakti mākāra-rūpiṇi pārvati mā ōmkāra-rūpini sarasvati mā tripurasundari śvētāmbari hṛdayavāsini sanātani sumandahāsini kāḷī mā p
+  [cand] 'cesedi nivamma (telugu)' ly=0.44 ln=0.0 co=0.04 ti=41.7 ref=False 2020supl-44 locs=['2020supl-44']
+      PAGE:  chanting Radhe Shyam. Chant the name Radhe Shyam with love! cēsēdi nīvamma (Telugu) cēsēdi nīvamma ceppukonēdi mēmamma idi ēmi ñāyamamma (2) O Mother, though You do all the work, we take credit for it. Why is that? sūryuni veligiñcitivamma candruniki śōbhaniccitivamma viśvamunē sṛṣṭiñcitivamma māku garvamu ēla icitivamma? You endow the sun with light and energy. You lend beauty to the moon. You created the whole uni
+  [cand] 'engum un arul mazhaiye' ly=0.42 ln=0.0 co=0.03 ti=34.5 ref=False vol4-47 locs=['vol4-47']
+      PAGE: Mother, won’t You remove my sorrows? Eṅgum un arul mazhaiyē Ēṅgum un arul mazhaiyē poṅgum kaṭal alai pōlē perukiṭumē śānti tāyē un sannidiyil O Mother, Your grace is overflowing like the waves of the sea. In Your divine presence peace prevails. Aṅjukindra en manadin tañjam untan tāy maḍiyē anbozhugum pēchil tuyar pañju pōla parantiṭum Your lap is the only refuge for this child’s frightened mind. When I hear Your soot
+
+==================== Kadaloram  [accept] title=Kaèalôram refs=[{'book': 'VI', 'page': '95'}] lang=['Tamil']
+SHEET: Ka ḍa lō ram ta vam sey yum kā ḷi yam mā | ka ni vō ḍu e mai kāk kum śak ti yam mā | Ma ḍal vi rik kum ma lar kal e na bhak ti veḷ ḷam | maṇ pa dai yil pāy chu kin tra śak ti yam mā | Kā ḷi yam mā en kaḷ dē vi yam mā
+  [ACCEPTED] 'kadaloram (tamil)' ly=0.938 ln=0.92 co=0.42 ti=100.0 ref=True vol6-95 locs=['vol6-95']
+      PAGE: 95 Devotional songs KAḌALŌRAM (TAMIL) kaḍalōram tavam seyyum kāḷiyammā kanivōḍu emai kākkum śaktiyammā maḍal virikkum malarkal ena bhakti veḷḷam maṇ padaiyil pāycukintra śaktiyammā kāḷiyammā... enkaḷ dēviyammā... Mother Kali, who meditates on the seashore, Shakti Amma compassionately protects me. As a flower unfolds its petals, Shakti Amma removes the dirt with the water of devotion. O Mother Kali! Our divine Mother!
+  [ACCEPTED] 'kataloram tapamceyyum' ly=0.688 ln=0.62 co=0.33 ti=100.0 ref=False vol4-91 locs=['vol4-91']
+      PAGE: 91 Devotional songs Kaṭalōram tapamceyyum Kaṭalōram tapamceyyum kāliyammā kanivōṭu emai kākkum śaktiyammā maṭal virikkum tāzhai ena bhaktivellam maṇpathayil pāychukintra śaktiyammā O Mother Kali, You engage in severe penance on the shore of the ocean. You are the supreme energy that lovingly pro- tects all of us. You are flooding the whole Earth with the river of divine love. Piraviyenum kaṭal kaṭakka tōṇi āvāi pirpa
+  [ACCEPTED] 'kataloram tavam' ly=0.557 ln=0.15 co=0.26 ti=100.0 ref=False vol3-109 locs=['vol3old-85', 'voli3-109', 'vol3-109']
+      PAGE: 109 Devotional songs Kaṭalōram tavam kaṭalōram tavam ceyyum kāḷiyammā kanilōṭu emāi kākkum śaktiyammā maṭal viriykkum tāzhai ena bhakti veḷḷam maṇpatayil pāyccu kintra śaktiyamma O Mother Kali! Who does penance by the sea shore, who compassionately protects me, who irrigates the hearts of devotees with the floods of devotion, like a fully blossomed flower spreading its fragrance… piravi yenum kaṭal kaṭakka tōṇi āvāḷ 
+
+==================== MaOMaPukaru  [review] title=Mâ Ô Mâ Pukârû refs=[{'book': 'VI', 'page': '131'}] lang=['Hindi']
+SHEET: Śaraṇā ga t kō a p nā vō mu j kō śara ṇ mē lē lō | mā rā h bat tā dō mā i s śa ra ṇ mē mā mē | ā sakū mā tē rī ma hi mā mē sa kū | Mā ō mā pu kā rū mē tē rā hī gu ṇ gā vū mē | Tē rē su mi ra ṇ sē ni t mā sa chā dha n ba s pā mē
+  [cand] 'saranagat ko apnavo ma (hindi)' ly=0.705 ln=0.8 co=0.31 ti=33.3 ref=False vol6-186 locs=['vol6-186']
+      PAGE: l my mind (with joy) and destroy my ego. ŚARAṆĀGAT KŌ APNĀVŌ MĀ (HINDI) śaraṇāgat kō apnāvō mā 
+
+==================== MahishasuraMardiniStotram  [review] title=Mahiæhasuramardini Stôtram refs=[{'book': 'V', 'page': '184'}] lang=['Malayalam']
+SHEET: Ayi gi ri nan di ni nan di ta mē di ni viś wa vi nō di ni nan di nu tē | gi ri va ra vin dhya śi rō dhi ni vā si ni viṣ ṇu vi lā si ni jiṣ ṇu nu tē | bhaga va ti hē śi ti kaṇ ṭha ku dumbi ni bhū ri ku dumbi ni bhū ri kṛ tē | Ja ya ja ya hē ma hi ṣā su ra mar di ni ram ya ka pard di ni śay la su tē | Su ra varavarṣi ṇi durddhara dharṣiṇi durmmukha marṣiṇi har ṣa ra tē
+  [cand] 'mahisasura mardini stotram' ly=0.349 ln=0.52 co=0.34 ti=100.0 ref=True vol5-184 locs=['vol5-184']
+      PAGE: f Shiva; all the three worlds are my native lands. Mahiṣāsura mardinī stōtram Ayi giri nandini nandita mēdini viśva vinōdini nanda nutē giri varavindya śirōdhi nivāsini viṣṇu vilāsini jiṣṇunutē bhagavati hē śitikaṇṭha kuṭumbini bhūrikuṭumbini bhūrikṛtē jaya jaya hē mahiṣāsura mardini ramya kapardini śaila sutē/1/ Salutations, O Mother. You are a supreme delight to Your father (the Himalayas) as it is You who have cre
+
+==================== MandahasavadaneManonmani  [accept] title=Mandahâsa Vadanê Manônmani refs=[{'book': 'I', 'page': '206'}] lang=['Sanskrit']
+SHEET: Manda-hā sa va-da nē ma-nōn ma-ni manga-ḷa dāyi | ni mṛ du ma dhū ra bhā ṣi ṇi | mṛ du ma dhū ra bhā ṣi ṇi | Bha va tā pa hā ri ṇi bha vā ni | a-bha-ya pra-dā yi ni bha-va bha-ya vi mō chi
+  [ACCEPTED] 'mandahasa vadane' ly=0.922 ln=1.0 co=0.33 ti=74.3 ref=False vol3-120 locs=['vol3-120']
+      PAGE: 120 Bhajanamritam 3 Mandahāsa vadanē Mandahāsa vadanē manōnmani mangaḷa dāyini mṛdu madhura bhāṣiṇi... mṛdu madhura bhāṣiṇi O Smiling One, the bestower of auspiciousness, who speaks softly and sweetly! Bhava tāpa hāriṇi bhavāni abhaya pradāyini bhava bhaya vimōcini... bhava bhaya vimōcini O Mother Parvati, who allays the sorrows of existence, the bestower of protection, who liberates one from the great fear of transm
+
+==================== NaJivana  [accept] title=Nâ Jîvana refs=[{'year': '2007', 'page': '7'}] lang=[]
+SHEET: Ā di pa ra ma jyō ti vay ā di pra ṇa va nā da may | sa ka la jī vu la jī va may ve li gē day vamā | Nā jī va na prā ṇa mā sa ka la bhu va na | tē ja mā ā la kin chu nā vē da na | a khi la lō ka pā la nā a khi la lō ka pā la nā
+  [ACCEPTED] 'adiparama jyotivai (telugu)' ly=0.941 ln=1.0 co=0.4 ti=40.0 ref=False vol6-6 locs=['vol6-6']
+      PAGE: f the Divine Mother who removes obstacles. ĀDIPARAMA JYŌTIVAI (TELUGU) ādiparama jyōtivai 
+
+==================== NaiyyaTere  [accept] title=Naiyyâ Têrê refs=[{'book': 'VI', 'page': '157'}] lang=['Hindi']
+SHEET: Naiy yā tē rē jī va n kī | gu m rāh kai sē hō ga yi | Su kh ki or nik li thi | du kh sā ga r mē khō ga yi | Ta n dha n pa r hī dhyān di yā
+  [ACCEPTED] 'namostute devi (marathi)' ly=0.882 ln=1.0 co=0.22 ti=47.6 ref=False vol6-156 locs=['vol6-156', 'vol7-204']
+      PAGE:  us, O Amma. If not You, who else is our refuge? NAMŌSTUTĒ DĒVĪ (MARATHI) namōstutē dēvī durgē mahēśvarī kāḷī Devi, Durga, Maheshvari, Kali, our salutations to You! ambā bhavānī bhagavatī mātā mantra japunī tuja nāmācā akhaṇḍa gāū tujhīca gāthā karū tujhī prārthanā dēvī karū tujhī prārthanā Mother, Bhavānī, Bhagavatī, chanting the mantra of Your name and singing Your glories, we pray to You. jaya jagadambē ambē mā ! 
+  [ACCEPTED] 'naiyya tere (hindi)' ly=0.878 ln=1.0 co=0.36 ti=100.0 ref=False vol7-199 locs=['vol7-199']
+      PAGE: liss bloom like a flower! Naiyyā tērē (Hindi) naiyyā tērē jīvankī gumrāh kaisē hō gayi sukhki or nikli thi dukh sāgarmē khō gayi How did the boat of your life lose its way? It started its course towards happiness, but got lost in the ocean of sorrow. tan dhan par hī dhyān diyā apnē sat kō bisrā diyā parāyē kō tū apnā samjhā apnē kō ṭukrā diyā You paid attention to wealth and body alone, forgetting your true self. You
+
+==================== Narayana  [review] title=Nârâyaña refs=[] lang=['Sanskrit']
+SHEET: Nā rā ya ṇa nā rā ya ṇa nā rā ya ṇa | nā rā ya ṇa nā rā ya ṇa nā rā ya ṇa | Nā rā ya ṇa nā rā ya ṇa nā rā ya-ṇa | nā rā ya ṇa nā rā ya ṇa nā rā ya ṇa
+  [cand] 'narayana hare (kalina kanan en kanna)' ly=1.0 ln=1.0 co=0.23 ti=100.0 ref=False vol1-113 locs=['vol1-113', 'voli1-57', 'voli1-59']
+      PAGE: , merge in Thy beautiful tune. KĀLIṆA KĀṆĀN (NĀRĀYAṆĀ HARĒ) nārāyaṇā harē nārāyaṇā harē nārāyaṇā harē nārāyaṇā nārāyaṇā nārāyaṇā śrī vāsudēvā murārē śrī vāsudēvā murārē kāliṇa kāṇānen kaṇṇu kaḷāhanta - kāḷunnu kāyāmbū varṇṇā kālikaḷoṭum kuzhal viḷiyōṭum nī ōṭi vā tāmara kaṇṇā... ōṭi vā tāmara kaṇṇā O dark-colored One, my eyes are pitifully burning for the sight of Thy Feet. O lotus-eyed One, come running with the cow
+  [cand] 'narayana hari' ly=1.0 ln=1.0 co=0.01 ti=100.0 ref=False vol1-158 locs=['vol1-158', 'voli1-86', 'voli1-88']
+      PAGE: ss Lakshmi, who is dear to Radha, O Son of Nanda... NĀRĀYANA HARI nārāyaṇā hari nārāyaṇā hari nārāyaṇā hari nārāyaṇā sachidānanda ghana nārāyaṇā achyutānanda gōvinda nārāyaṇā śrī kṛṣṇa kṛṣṇa sakha nārāyaṇā- kamala patrākṣa adhōkṣaja nārāyaṇā nandagōpa kumārā nārāyaṇā - rādhikā ramaṇa gōvinda nārāyaṇā 
+  [cand] 'narayana narayana jaya' ly=1.0 ln=1.0 co=0.09 ti=100.0 ref=False vol2-145 locs=['vol2-145', 'voli2-163', 'voli2-164']
+      PAGE: e Guru O Krishna, Existence-Awareness-Bliss. nārāyaṇa nārāyaṇa jaya nārāyaṇa nārāyaṇa jaya govinda harē nārāyaṇa nārāyaṇa jaya gōpāla harē Victory to Narayana, Lord of the cows, Hari! Victory to Naryana, Cowherd Boy, Hari! 
+  [cand] 'narahari narayana (kannada)' ly=1.0 ln=1.0 co=0.01 ti=72.7 ref=False vol7-210 locs=['vol7-210']
+      PAGE: stage, there will be none other than You, O Mother. Narahari nārāyaṇa (Kannada) narahari nārāyaṇa hari hari nārāyaṇa narahari nārāyaṇa hari hari nārāyaṇa yēnu heḷali ninna mahime yaṣtu hogaḷali narasimha narasimha narahari narasimha Narayana, what can I say about You? Your glories cannot be described enough. O Narasimha (man-lion form of Vishnu)! 
+
+==================== NarayanaNarayana Jaya  [review] title=Nârâyaña Nârâyaña Jaya refs=[{'book': 'II', 'page': '163'}] lang=['Sanskrit']
+SHEET: NOTE: Syncopation (dotted eighths and sixteenths) is added to the first two measures. This bhajan is often | sung as such, but is also played without the syncopation ( eighth notes).
+
+==================== NaviluGariyaNayanada  [accept] title=Navilu Gariya Nayanada refs=[{'year': '2015', 'page': '44'}] lang=['Kannada']
+SHEET: Na vi lu ga ri ya na ya na da krṣ na nī la var na na vi li na krṣ na | pan cha ma dā kō gi le krṣ na ō di bā rō | Na gu ta li ru va na va nī ta krṣ na bā yo ḷa ge brah mān ḍa krṣ na | beṭ ṭe sā ku beṭ ṭak ke krṣ na ō ḍi bā rō rō Ha re | kṛṣ ṇa ha re kṛṣ ṇa ha re kṛṣ ṇa ha re kṛṣ ṇa Ha re kṛṣ ṇa Ha re
+  [ACCEPTED] 'navilu gariya (kannada)' ly=0.927 ln=1.0 co=0.38 ti=73.3 ref=False vol7-216 locs=['vol7-216']
+      PAGE: hin, reach the abode of eternal bliss, O mind! Navilu gariya (Kannada) navilu gariya nayanada kṛṣṇa nīlavarna navilina kṛṣṇa Peacock feather eyed Krishna, blue colored peacock Krishna, pancamadā kōgile kṛṣṇa ōdi bārō Melodious nightingale Krishna, come running! nagutaliruva navanīta kṛṣṇa bāyoḷage brahmānḍa kṛṣṇa beṭṭesāku beṭṭakke kṛṣṇa ōḍi bārō Ever smiling butter Krishna, You show the entire universe in Your mouth
+
+==================== NilanjanaMiri  [accept] title=Nîlâñjana Miçi refs=[{'book': 'II', 'page': '166'}] lang=['Malayalam']
+SHEET: Nī lāñ ja na mi zhi nī ra da varṇ ṇā | nī yē ga ti yi van en num kaṇ ṇā | nī yē ga ti yi van en num | Poi la vi dun nal lā ta di ya nu | il lo-ru śa-ra-ṇam kṛṣ-ṇā
+  [ACCEPTED] 'nilanjana miri' ly=0.848 ln=0.82 co=0.33 ti=92.3 ref=True vol2-148 locs=['vol2-148', 'voli2-166', 'voli2-168']
+      PAGE: consoling words for my peace of mind? nīlāñjana miZHI nīlāñjana mizhi nīrada varṇṇā nīyē gatiyivanennum, kaṇṇā, kaṇṇā.. 
+  [ACCEPTED] 'nilanjana mizhi (kannada version)' ly=0.559 ln=0.47 co=0.49 ti=92.3 ref=False 2020supl-137 locs=['2020supl-137']
+      PAGE: rden. You are the divine idol enshrined in the temple of my heart. nīlāñjana mizhi (Kannada version) nīlāñjana nētra nīrada varṇā nīnē gati yenagendu kṛṣṇā husiyallā prabhu nīnē gatiyu ēkādhāra nī kṛṣṇā bālakumārana līlegaḷāḍuve śyāmala kōmala kṛṣṇā nārada tumburu nādapriyane mānasa mōhana kṛṣṇā kīrtana nartana ārtivināśana śāśvata bhāsura kṛṣṇā ēṣaṇa nīguva vīkṣaṇe nīḍu 
+
+==================== NintraTiruKolam  [accept] title=Nintra Tiru Kolam refs=[{'book': 'VI', 'page': '165'}] lang=['Tamil']
+SHEET: Nin ṭra ti ruk kō lam kan den ni ray ti rup | pā dam kan den an dra larn da ma la ray po la | a kam ku li rum si ri pay kan den | Nin ṭra ti ruk kō lam kan den | A la il a dik kyu kan dēn
+  [ACCEPTED] 'nintra tiru kolam kanten (tamil)' ly=0.719 ln=0.5 co=0.32 ti=93.3 ref=True vol6-165 locs=['vol6-165']
+      PAGE: 165 Devotional songs NINTRA TIRU KOLAM KANTEN (TAMIL) nintra tiru kolam kanten nirai tiruppādam kanṭen anṭralarnda malarai pola akam kulirum siripai kanṭen I am focused on Your beautiful form and Your divine feet, I see Your smile as charming as a freshly bloomed flower, and that calms my mind. alail aṭikku kanṭen karaittanil aṭanka kanṭen alai pāyum entan manamum annai anbil aṭanka kanṭen I see the waves lashing but
+  [ACCEPTED] 'nintra tirukkolam kanten' ly=0.573 ln=0.38 co=0.25 ti=93.3 ref=False vol4-128 locs=['vol4-128']
+      PAGE: please give me refuge at Your side, in Your service. Ninṭra tirukkōlam kaṇṭēn Ninṭra tirukkōlam kaṇṭēn nirai tiruppādam kaṇṭēn anṭralarnda malarai pōla akam kulirum cirippaikkaṇṭēn 
+
+==================== NoOneIsYourOwn  [accept] title=No One Is Your Own refs=[{'book': 'III', 'page': '270'}] lang=['English']
+SHEET: O mind, be comesurrendered, al-low on-ly truthto be your | friend. No-bod-y be longs just to you, no one is your own. | Roundandround this worldyouwander, notseeing the reason why you're | here. By do-ing such mean-ing-less act-ions, you can-not es cape. | Asyou lis-ten to theprais-es ofthose who ad mire you
+  [ACCEPTED] 'no one is your own (manase nin svantamayi) english' ly=0.98 ln=1.0 co=0.95 ti=81.2 ref=True vol3-270 locs=['vol3-270']
+      PAGE: ngly bow at Thy Feet. Manase nīn svantamayi (no one is your own) O mind, become surrendered, allow only truth to be your friend. Nobody belongs just to you, no one is your own. Round and round this world you wander, not seeing the reason why you’re here. By doing such meaningless actions, you cannot escape. As you listen to the praises of those who admire all you 
+  [ACCEPTED] 'o mind become surrendered (english)' ly=0.979 ln=1.0 co=0.93 ti=35.3 ref=False vol6-228 locs=['vol6-228']
+      PAGE: e we need to strive To care for all of life O MIND BECOME SURRENDERED O mind, become surrendered, 
+
+==================== OMindBecome(English 2008)  [accept] title=O Mind Become Surrendered refs=[{'book': 'VI', 'page': '228'}] lang=['English']
+SHEET: O mind, be comesur-ren-dered, al-low on-ly truth to be your | friend. No-bod-y be longs just to you, no one is your own. | Roundandround this worldyou wan-der, notsee-ing the rea-son why you're | here. Bydo-ing such mean ing-less act-ions, you can-not es cape. | As you lis-ten to the prais-es of those who ad mire you
+  [ACCEPTED] 'no one is your own (manase nin svantamayi) english' ly=0.976 ln=1.0 co=0.84 ti=35.0 ref=False vol3-270 locs=['vol3-270']
+      PAGE: ngly bow at Thy Feet. Manase nīn svantamayi (no one is your own) O mind, become surrendered, allow only truth to be your friend. Nobody belongs just to you, no one is your own. Round and round this world you wander, not seeing the reason why you’re here. By doing such meaningless actions, you cannot escape. As you listen to the praises of those who admire all you 
+  [ACCEPTED] 'o mind become surrendered (english)' ly=0.974 ln=1.0 co=0.83 ti=100.0 ref=True vol6-228 locs=['vol6-228']
+      PAGE: e we need to strive To care for all of life O MIND BECOME SURRENDERED O mind, become surrendered, 
+
+==================== OMindBecome(English2008)  [accept] title=O Mind Become Surrendered refs=[{'book': 'VI', 'page': '228'}] lang=['English']
+SHEET: O mind, be comesur-ren-dered, al-low on-ly truth to be your | friend. No-bod-y be longs just to you, no one is your own. | Roundandround this worldyou wan-der, notsee-ing the rea-son why you're | here. Bydo-ing such mean ing-less act-ions, you can-not es cape. | As you lis-ten to the prais-es of those who ad mire you
+  [ACCEPTED] 'no one is your own (manase nin svantamayi) english' ly=0.976 ln=1.0 co=0.84 ti=35.0 ref=False vol3-270 locs=['vol3-270']
+      PAGE: ngly bow at Thy Feet. Manase nīn svantamayi (no one is your own) O mind, become surrendered, allow only truth to be your friend. Nobody belongs just to you, no one is your own. Round and round this world you wander, not seeing the reason why you’re here. By doing such meaningless actions, you cannot escape. As you listen to the praises of those who admire all you 
+  [ACCEPTED] 'o mind become surrendered (english)' ly=0.974 ln=1.0 co=0.83 ti=100.0 ref=True vol6-228 locs=['vol6-228']
+      PAGE: e we need to strive To care for all of life O MIND BECOME SURRENDERED O mind, become surrendered, 
+
+==================== OMindBecome(SantaFe)  [accept] title=O Mind Become Surrendered refs=[{'book': 'III', 'page': '270'}] lang=['English']
+SHEET: O mind, be comesurrendered, al-low on-ly truthto be your | friend. No-bod-y be longs just to you, no one is your own. | Roundandround this worldyouwander, notseeing the reason why you're | here. By do-ing such mean-ing-less act-ions, you can-not es cape. | Asyou lis-ten to theprais-es ofthose who ad mire you
+  [ACCEPTED] 'no one is your own (manase nin svantamayi) english' ly=0.98 ln=1.0 co=0.95 ti=35.0 ref=True vol3-270 locs=['vol3-270']
+      PAGE: ngly bow at Thy Feet. Manase nīn svantamayi (no one is your own) O mind, become surrendered, allow only truth to be your friend. Nobody belongs just to you, no one is your own. Round and round this world you wander, not seeing the reason why you’re here. By doing such meaningless actions, you cannot escape. As you listen to the praises of those who admire all you 
+  [ACCEPTED] 'o mind become surrendered (english)' ly=0.979 ln=1.0 co=0.93 ti=100.0 ref=False vol6-228 locs=['vol6-228']
+      PAGE: e we need to strive To care for all of life O MIND BECOME SURRENDERED O mind, become surrendered, 
+
+==================== OmKaliOmMata  [review] title=Om Kâlî Om Mâtâ refs=[{'book': 'II', 'page': '175'}] lang=['Hindi']
+SHEET: Om kā lī om mā tā | dur gā te na mo na-maḥ Om dur gā te na mo na-maḥ | Śak-ti kuṇ-ḍa li nī ja-gad te mā tā | ja-gad te mā tā Om ja gad te mā tā
+  [cand] 'om guru mata' ly=0.698 ln=0.33 co=0.15 ti=57.1 ref=False vol2-155 locs=['vol2-155', 'voli2-174', 'voli2-176']
+      PAGE: 155 Devotional songs ōm guru mātā ōm guru mātā sad guru mātā amṛtānandamayī mama jananī OM, Mother Who is the Guru, the Perfect Master, my Mother Amritanandamayi. jaya guru mātā śrī guru mātā amṛtānandamayī mama jananī Victory to the Mother Who is the Master, the Auspicious Guru, my Mother Amritanandamayi. jagad guru mātā param guru mātā amṛtānandamayī mama jananī O Mother Who is the Master of the Universe, the Supre
+  [cand] 'kali durge namo nama' ly=0.333 ln=0.0 co=0.16 ti=50.0 ref=False vol2-102 locs=['vol2-102', 'voli2-114']
+      PAGE: hat lovable form, should ever taste the bliss of union! kāli durge namō namā kāli durgē namō namā kāli durgē namō namā śakti kuṇḍalīnī namō namā kāli durgē namō namā ūmā pārvati namō namā kāli durgē namō namā Salutations to Kali and Durga, to the Kundalini Śakti, to Uma and Parvati (Daughter of the Mountain Himalaya) 
+
+==================== OmkaraSvararupini  [accept] title=Ômkâra Svararûpiñî refs=[{'book': 'VI', 'page': '172'}] lang=['Malayalam']
+SHEET: Ōm kā ra swa ra rū pi ṇī u ṇa rū | nī en ḍe hṛ da yān ta rā ḷan ga ḷil | Mṛ du tan tri yil o ru man tra māi | āt mā vil va ra vī ṇa yil u ṇa rū | ōm kā ra swa ra rū pi ṇī
+  [ACCEPTED] 'omkara svarupini unaru' ly=0.688 ln=0.53 co=0.34 ti=93.8 ref=False vol5-133 locs=['vol5-133']
+      PAGE: i, You grant to us all things that are auspicious. Ōmkāra svarūpiṇi Ōmkāra svarūpiṇi uṇarū nīyente hṛdayāntarālaṅgalil mṛdu tantriyil orumantramāy ātmāvin varavīṇayil uṇarū ōmkāra svarūpiṇi O embodiment of “OM,” awaken. You who are the mantra that emanates from the soft strings of the veena of the Self in the depths of my heart, awaken. Āhlādaniravinte malarvāṭiyil sāmōdamāṭum mayūripōle ānandanarttanam āṭān ninakent
+  [ACCEPTED] 'omkara svararupini unaru (malayalam)' ly=0.684 ln=0.67 co=0.39 ti=87.2 ref=True vol6-172 locs=['vol6-172']
+      PAGE: 172 Bhajanamritam 6 ŌMKĀRA SVARARŪPIṆĪ UṆARŪ (MALAYALAM) ōmkāra svararūpiṇī uṇarū nī enḍe hṛdayāntarāḷangaḷil mṛdutantriyil oru mantramāyi ātmāvil varaviṇayail unarū ōmkāra svararūpiṇī Awake, O form of the cosmic sound, as a sweet mantra in my heart, resonating to the chords of celestial vina in my soul. āhlādaniraviṇṭe malarvādiyil sāmōdamādum mayūripōle ānandanarttanam āḍān ninakkeṇḍe jīvitārāmamorungi nīḷe Like th
+
+==================== RadheRadheShyama  [review] title=Râdhê Râdhê Åhyâma refs=[{'book': 'II', 'page': '209'}] lang=['Hindi']
+SHEET: Rā dhē rā dhē śyā m rā dhē rā dhē rā dhē śyām | Rā-dhe rā-dhē śyā m rā-dhē rā-dhē rā dhē śyām | Rā dhē rā dhē śyā m rā dhē rā dhē rā dhē śyām | Rā-dhē rā-dhēśyā m rā-dhē rā-dhē rā dhēśyām rā-dhērā-dhēśyāmRā-dhē | śyām rā-dhē śyām rā-dhē śyām Rā-dhē śyām Rā-dhē
+  [cand] 'radhe radhe syama' ly=1.0 ln=1.0 co=0.03 ti=100.0 ref=True vol2-182 locs=['vol2-182', 'voli2-209', 'voli2-210']
+      PAGE: namritam 2 prēma śyām sundara śyām rādhē rādhē rādhē śyām gōpī mōhana kṛṣṇa śyām rādhē kṛṣṇa gōkula vāsi kuñjavihāri rādha mādhava kṛṣṇa kṛṣṇa kṛṣṇa rādhākṛṣṇa muralī mōhana kṛṣṇa (4x) gōvardhana giridhāri vṛndāvana sañcāri nanda kumārā navanīta cōrā manasija mōhana kṛṣṇa kṛṣṇa kṛṣṇa rādkṛṣṇa (4x) gōkula vāsi - One who lives in Gokul gōpimōhan - One who enchants the cowherd girls gōvardhanagiridhari - One who support
+  [cand] 'radhe radhe radhe syam' ly=1.0 ln=1.0 co=0.23 ti=82.8 ref=True vol2-181 locs=['vol2-181', 'voli2-208', 'voli2-209']
+      PAGE: nda rādhā ramaṇa hari rādhē gōvinda rādhē rādhē rādhē rādhē rādhē gōvinda rādhē - Beloved of Krishna gōvinda - Lord of the cows bhajō = Worship ramaṇa - Beautiful One hari - Who relieves distress rādhē rādhē rādhē śyām rādhē rādhē rādhē śyām rādhā mādhava śyām 
+  [cand] 'radhe syam radhe syam' ly=1.0 ln=1.0 co=0.01 ti=82.8 ref=False vol3-194 locs=['vol3-194']
+      PAGE: 194 Bhajanamritam 3 Rādhe śyām Rādhe śyām rādhe śyām (3x) Vṛndāvana candra kṛṣṇa kanhaiya tu hi āśraya rādhe gōvinda Anātha nātha dīna bandhō rādhe gōvinda (2x) O Radhe Shyam, the shining moon of Vrindavana, Krishna, You are my sole refuge and protector of cows. You are the lord of the destitute, You are the friend and relative of the downtrodden. Mīra ke prabhu giridhara nāgara dēdo bhakti ham kō mādhav Nanda kumāra
+  [cand] 'radhe syam' ly=1.0 ln=1.0 co=0.01 ti=76.2 ref=False vol3-194 locs=['vol3-194']
+      PAGE: 194 Bhajanamritam 3 Rādhe śyām Rādhe śyām rādhe śyām (3x) Vṛndāvana candra kṛṣṇa kanhaiya tu hi āśraya rādhe gōvinda Anātha nātha dīna bandhō rādhe gōvinda (2x) O Radhe Shyam, the shining moon of Vrindavana, Krishna, You are my sole refuge and protector of cows. You are the lord of the destitute, You are the friend and relative of the downtrodden. Mīra ke prabhu giridhara nāgara dēdo bhakti ham kō mādhav Nanda kumāra
+
+==================== RajaRam  [review] title=Râja Râm refs=[] lang=[]
+SHEET: Rā-ja rām rā ja rām rā ja rām rā ja | rām sī tā rām sī tā rām sī tā | śyām rādhe śyām rādhe śyām rādhe | rām rā ja rām rā ja rām rā ja rām rā ja | tā rām rām sī tā
+  [cand] 'sita ram radhe syam' ly=0.427 ln=0.43 co=0.16 ti=45.5 ref=False vol3-213 locs=['vol3old-162', 'voli3-213', 'vol3-213']
+      PAGE: hey enter into a state of natural samadhi. Sita rām rādhe Śyam Sita rām sita rām sita rām rāma rām Rādhe śyām rādhe śyām rādhe śyām śyām śyām Jai raghu nandana sita rām Jai yadu nandana rādhe śyām Praise Sita Ram, born in the Raghu dynasty. Praise Radhe Syam, born in the clan of Yadu. Daśaratha nandana raja rām Vasudeva nandana rādhe śyām Son of Dasharatha, king Ram Son of Vasudeva, Radhe Syam Sita rām rādhe śyām Sit
+  [cand] 'japonam japonam (bengali)' ly=0.36 ln=0.43 co=0.03 ti=57.1 ref=False 2018supl-47 locs=['2018supl-47']
+      PAGE: together. This was Krishna’s amazing and great rasa. Japonām japonām (Bengali) rāmāya rāmabhadrāya rāmacandrāya mānase raghu nāthāya nāthāya sītayā pataye namo namaḥ japo śrīrām bhajo śrīrām gāvo śrīrām Obeisance to Lord Sri Rama (the embodiment of the perfect son, friend, king - the ideal one), consort of Sita (Rama’s wife – symbolizes all that is great and noble in womanhood)... Chant the name of Sri Rama, sing the
+  [cand] 'kana kana (marathi)' ly=0.307 ln=0.29 co=0.03 ti=40.0 ref=False 2020supl-90 locs=['2020supl-90']
+      PAGE: Lord dawned clearly in the lake of Radha’s heart. kaṇā kaṇā (Marathi) kaṇā kaṇā madhē kṛṣṇ kanhaiyyā rōm rōmāt rām rē kṣaṇōkṣaṇi jīvan dēyi tō nij sarvānca saṅgi rē You (Sri Krishna, Sri Rama) are the constant companion in and through- out everything in the Universe. śruti sāṅgatē saccidānand tō sarvāntaryāmi rē svayamprakāś tū sarvātmā rē nij paramātmā tūca rē sarv-vyāpt tū… sarv-vyāpt tū dēhaśrōtrādi pañcēndriyādi 
+
+==================== SambhoSankara  [review] title=Åambhô Åankara refs=[{'book': 'II', 'page': '215'}] lang=['Sanskrit']
+SHEET: Śambhōśanka-ra u-mā pathe pā hiśanka-ra pa-śu pa-the | Nan-di vā ha-na nā-ga-bhūṣa-nā chān-draśekha-rā ja-dādha-rā | Gangā dhāra śiva gaurima-nōha-rā pāhiśan kā-ra sadā-śiva | Sambhōśanka-ra u-mā pa-the pā hi śanka-ra pa-su pa-the | Kai-lā śavā-sa ka-na-kasabheśa sun dareśwa-ra viśweśā
+  [cand] 'sankari sambhavi' ly=0.659 ln=0.44 co=0.17 ti=53.8 ref=False vol2-189 locs=['vol2-189', 'voli2-217', 'voli2-218']
+      PAGE: 189 Devotional songs nandi vāhana nāgabhūṣanā cāndraśēkharā jadādharā gangādhāra śiva gauri manōharā pāhi śaṇkāra sadāśiva O Shiva, Lord of Parvati, protect us. You who are Lord of all created beings, You ride on the bull Nandi and are adorned with snakes. You wear the moon and matted locks on Your crown. The Ganges issues from Your head. O Shiva, Enchanter of Parvati, protect us, ever- auspicious Shiva. kailāsa vāsa
+  [cand] 'sambho sankara umapathe' ly=0.345 ln=0.56 co=0.8 ti=77.4 ref=False vol2-188 locs=['vol2-188', 'voli2-216', 'voli2-217']
+      PAGE: 188 Bhajanamritam 2 śambhō śankara śambhō śaṇkara śambhō śaṇkara śambhō śaṇkara śiva śambhō śambhō śaṇkara śambhō śaṇkara śambhō śaṇkara śiva śambhō indu kalā dhara ganga jaṭā dharā śambhō śaṇkara gaurīśā pannaga bhūshaṇa parimaḷa gātrā pāvana caraṇā paramēśvarā O Sambu! O Sankara, the Lord of Gouri (Devi), who wears the crescent moon and the Ganges in his matted hair knot, whose ornaments are serpents, whose body is
+
+==================== Satyaslesam  [accept] title=Satyâålêæam refs=[{'year': '2007', 'page': '44'}] lang=['Malayalam']
+SHEET: Ā lam ba hī nark ko rat tā ṇi yā ṇu nī, | ā ga mō dyā na su gan dham! | Āt maswā tan try ā bhi vāñ chitark kam ma nī | bhā va nā tī tā va bō dham | bhā va nā tī tā va bō dham!
+  [ACCEPTED] 'alambahina (malayalam)' ly=0.893 ln=1.0 co=0.41 ti=40.0 ref=False vol6-11 locs=['vol6-11']
+      PAGE:  Vedas- please come and save this child of Yours! ĀLAMBAHĪNA (MALAYALAM) ālambahīnarkkorattāṇiyānū nī, āgamōdyāna sugandham! ātmasvātantryābhi vāṇcchitarkkamma nī bhāvanātītāvabōdham! You are the support for the destitutes, the fragrance of garden of scriptures. Amma, You are the unimaginable insight for those who wish for the freedom of soul. 
+
+==================== SendYourLove  [accept] title=Send Your Love refs=[] lang=['English']
+SHEET: Thesun is drown-ing in the western sea, a-nother day gone by. | Moth-er sendYour love to me, wipe these tears from my eyes. | Moth er send Your love to me, wipe these tears | wipethese tears frommy eyes.The sun isdrowning in the eyes. | Dayaf-terday I go on like this, an emp-tyhearted fool.
+  [ACCEPTED] 'mother send your love to me' ly=0.777 ln=0.86 co=0.42 ti=72.7 ref=False vol4-245 locs=['vol4-245']
+      PAGE: 245 Devotional songs O how brilliant is Thy presence. All the heavens bow to Thee. In the song of life eternal, You’re the precious melody. In the sunshine of Your smile, pure compassion floods the world. Goodness blooms like tender flowers in the hearts of everyone. Mother of immortal bliss (snehamritanandani) Mother of immortal bliss, gently reverent in robes soft and white, Master of wisdom and charm, Amma, suprem
+  [ACCEPTED] 'mother of immortal bliss (snehamritanandani)' ly=0.777 ln=0.86 co=0.42 ti=33.3 ref=False vol4-245 locs=['vol4-245']
+      PAGE: s like tender flowers in the hearts of everyone. Mother of immortal bliss (snehamritanandani) Mother of immortal bliss, gently reverent in robes soft and white, Master of wisdom and charm, Amma, supreme Goddess divine. Amma, enchanting Mother of bliss, You hold us in universal love. Rivers of nectar flow from Your heart. You show us the true Essence of Om. You have compassion for all, giving meaning to supreme love. 
+
+==================== SivaSivaHaraHara  [accept] title=Åiva Åiva Hara Hara refs=[{'book': 'I', 'page': '223'}] lang=['Hindi']
+SHEET: Śi-va śi-va ha-ra ha ra śi-va śi-va ha ra ha-ra | Mē ghā ba-ra dha-ra ḍa-ma-ru sun da ra ha-ra | Śi-va śi-va ha-ra ha ra śi-va śi-va ha ra ha-ra | Ka-ra tri śū la dha-ra a-bha-ya su vā ra ha-ra | Bhas mā an ga dha-ra ja-dā jū dā dha-ra
+  [ACCEPTED] 'sarasvati sarasvati sarasija' ly=0.876 ln=0.96 co=0.2 ti=47.4 ref=False vol2-195 locs=['vol2-195', 'voli2-224', 'voli2-225']
+      PAGE:  actions benefit the whole world. sarasvatī sarasvatī sarasvatī sarasvatī sarasija nayanē sarasvatī vīnā pāni sarasvatī vēda vilāsini sarasvatī vidyādāyini sarasvatī varapradāyini sarasvatī saṅkata hāriṇi maṅgala kāriṇi sarasvatī jagadōdhāriṇi sarasvatī ānanda dāyini sarasvatī Sarasvati, Sarasvati, O lotus eyed, Sarasvati. Holding the veena, You are blossoming with knowledge of the Vedas, O Sarasvati. You are the Giv
+  [ACCEPTED] 'siva siva hara hara' ly=0.784 ln=0.91 co=0.29 ti=100.0 ref=True vol1-229 locs=['vol1-229', 'voli1-223', 'voli0-59', 'voli2-226', 'voli2-228']
+      PAGE: , Madhava, Govinda!” ŚIVA ŚIVA HARA HARA śiva śiva hara hara śiva śiva hara hara mēghāmbara dhara ḍamaru sundara hara śiva śiva hara hara śiva śiva hara hara O Auspicious One, Destroyer who is clothed in the clouds, the Beautiful One playing the damaru (small drum)... kara triśūla dhara abhaya suvara dhara bhasm ānga dhara jaṭā jūṭa dhara phāla candra dhara dīna nayana dhara nāga hāra dhara muṇda māla dhara 3 
+  [cand] 'sri saila-vasinam (sanskrit)' ly=0.301 ln=0.65 co=0.08 ti=51.9 ref=False 2021supl4-45 locs=['2021supl4-45']
+      PAGE: Śrī Śaila-Vāsinam (Sanskrit) śrī śaila-vāsinam dēvadēvam bhajē śrī paramēśvaram dēvam gaṅgā-dharam śivam candra-cūḍham bhajē śrī mahādēvam bhajēham I worship the God of gods who dwells in Sri Shailam, the supreme Lord. I worship Lord Shiva who wears the Ganga on his head, who is adorned with the crescent moon. I worship the great Lord Shiva! maṅgaḷa-dāyakam dēvam sajjana-pūjitam dēvam/ pārvati-vallabham pañca-bhūtēśv
+
+==================== SivayaParameshvaraya  [accept] title=Åivâya Parameåvarâya refs=[{'book': 'I', 'page': '269'}] lang=['Hindi']
+SHEET: Śi vā ya pa ra meś wa rā ya śa si | śe kha rā ya na māḥ om | Bha vā ya gu ṇa sam bha vā ya śi va | tāṇ ḍa vā ya na māḥ om | Śi vā ya pa ra meś wa rā ya chan dra
+  [ACCEPTED] 'sivaya paramesvaraya' ly=1.0 ln=1.0 co=0.38 ti=100.0 ref=True vol1-230 locs=['vol1-230', 'voli1-269', 'voli0-104', 'voli2-197', 'voli2-227', 'voli2-229']
+      PAGE: iva śambhō mahādēva śaṅkarā O Auspicious One, the Great God... ŚIVĀYA PARAMEŚVARĀYA śivāya paramēśvarāya sasisēkharāya namō ōm bhavāya guṇasambhavāya śiva tāndavāya nama ōm śivāya paramēśvarāya chandraśēkharāya nama ōm bhavāya guṇasambhavāya śiva tāndavāya nama ōm Prostrations to Shiva, the Supreme Lord, the one having the moon on His head. Prostrations to that Lord who dances the Cosmic Dance and has all good qualit
+  [ACCEPTED] 'siva siva mahadeva' ly=1.0 ln=1.0 co=0.19 ti=60.6 ref=False vol2-196 locs=['vol2-196', 'voli2-227', 'voli2-229']
+      PAGE:  Destroyer, the Great God... śiva śiva mahādēva śiva śiva mahādēva nama śivāya sadā śiva kāli kāli mahā mātā nāma kālikē namō namā durga durga mahā māyā nāma durgāya namō namā śiva - Auspicious One mahadēva - Great God nāma - Salutations sadā - Always kali - Devi as the Destroyer mahā mātā - Great Mother kalikē - Goddess Kali durga - Devi mahā māyā - Great Illusion 
+  [cand] 'chandrasekaraya namah om' ly=0.44 ln=0.25 co=0.19 ti=46.2 ref=False vol1-58 locs=['vol1-58', 'voli1-176', 'voli0-11']
+      PAGE:  mā O Goddess Chamundi, O Mother Kali... CHANDRAŚĒKARĀYA NAMAḤ ŌM chandraśēkarāya namaḥ ōm gangādharāya namaḥ ōm ōm namaḥ śivāya namaḥ ōm hara hara harāya namaḥ ōm śiva śiva śivāya namaḥ ōm paramēśvarāya namaḥ ōm chandraśēkara - Having the crescent moon on the forehead gangādhara - Wears the Ganges River in His locks hara - The Destroyer śiva - The Auspicious One paramēśvara - Supreme Lord CHILANKA KEṬṬI Chilaṅka keṭ
+  [cand] 'mrtyunjaya hara (saipriya, namavali)' ly=0.413 ln=0.25 co=0.05 ti=38.7 ref=False 2020supl3-60 locs=['2020supl3-60']
+      PAGE: Mṛtyuñjaya Hara (Saipriya, Namavali) mṛtyuñjaya hara śambhō śaṅkara pārvati śaṅkara girijā śaṅkara O great Lord Shiva, Shankara, conqueror of death, consort of goddess Parvati who was born from the mountain! jaḍājūṭadhara tējōvigraha candrakalādhara jaya gaṅgādhara trayambakēśvara mahāyōgīśvara pāpavināśaka parama dayākara You have matted locks and Your form is resplendent. You are the three-eyed Rudra, and the great
+
+==================== SubhraSaroruha  [accept] title=Åubhra Sarôruha refs=[{'book': 'IV', 'page': '181'}] lang=['Sanskrit']
+SHEET: Śu bhra sa rō ru ha ni la yē dē vī | A mṛ tā nan da ma yī | Śu bhra sa rō ru ha ni la yē dē vī | a mṛ tā nan da ma yī jay mā jay mā | vī ṇā pus taka dhā ri sa ra swa ti a mṛ tā nan da ma yī ōm mā tā
+  [ACCEPTED] 'subhra saroruha nilaye devi' ly=0.868 ln=1.0 co=0.35 ti=70.6 ref=False vol4-180 locs=['vol4-180']
+      PAGE:  rām śrī rām jaya rām śrī rāma jaya rāma sītā rāma Śubhra sarōruha nilayē dēvi Śubhra sarōruha nilayē dēvi amṛtānandamayī jay mā jay mā vīṇā pustakadhāri sarasvati amṛtānandamayī 
+
+==================== SundaraKannaKanna  [accept] title=Sundara Kaññâ Kaññâ refs=[{'book': 'II', 'page': '245'}] lang=['Malayalam']
+SHEET: Sun da ra kaṇ ṇā kaṇ-ṇā van di ta rū pā | nan da ku-mā rā kaṇ ṇā man ju ḷa hā sā | Pā va na nā mā kaṇ-ṇā pā pa vi nā śā | pā hi pā hi mām kaṇ-ṇā pā la ya śau rē | Sun da ra kaṇ ṇā kan-nā van di ta rū pā
+  [ACCEPTED] 'sukhamenni tirayunna' ly=0.942 ln=1.0 co=0.17 ti=51.6 ref=False vol2-211 locs=['vol2-211', 'voli2-244', 'voli2-246']
+      PAGE: 211 Devotional songs sukhameṇṇi tiraYunna sukhameṇṇi tirayunna manujā ninnabhimānam veṭiyāte bhūvanattil sukham enginī dayā rūpi jagadamba akatāril teḷiyāte manujā nin manassinnū sukham ētini You who search all around for happiness, how can you get it without shedding your vanity? How can you be happy until the compassionate Mother of the Universe shines in your heart? parābhakti uṇarātta manujante manamennum maṇāmat
+  [cand] 'govardhana giri' ly=0.32 ln=0.0 co=0.05 ti=35.7 ref=False vol1-88 locs=['vol1-88', 'voli1-184', 'voli0-20']
+      PAGE: GŌPĪ VALLABHA gōpī vallabha gōpāla kṛṣṇā gōvardhana giri dhārī rādhā mānasa rājīvalōchanā kāyām pūvuṭal varṇṇā kṛṣṇā (gōpī) O Gopala Krishna, Beloved of the Gopis, Uplifter of the Govardhana Hill, Lotus-eyed One in Radha’s mind, Thy color is that of a blue lotus... vṛndāvana sañchāriyām kṛṣṇā chen tāmara daḷa nayanā bandhama kattuka nanda kumārā sundara bāla- mukundā- kṛṣṇā..... (gōpī) O Krishna who moves about in Vr
+  [cand] 'gopi vallabha' ly=0.32 ln=0.0 co=0.05 ti=24.0 ref=False vol1-88 locs=['vol1-88', 'voli1-196', 'voli0-32']
+      PAGE: 88 Bhajanamritam 1 GŌPĪ VALLABHA gōpī vallabha gōpāla kṛṣṇā gōvardhana giri dhārī rādhā mānasa rājīvalōchanā kāyām pūvuṭal varṇṇā kṛṣṇā (gōpī) O Gopala Krishna, Beloved of the Gopis, Uplifter of the Govardhana Hill, Lotus-eyed One in Radha’s mind, Thy color is that of a blue lotus... vṛndāvana sañchāriyām kṛṣṇā chen tāmara daḷa nayanā bandhama kattuka nanda kumārā sundara bāla- mukundā- kṛṣṇā..... (gōpī) O Krishna wh
+  [cand] 'gananatha om gananatha' ly=0.307 ln=0.07 co=0.06 ti=48.5 ref=False vol4-49 locs=['vol4-49']
+      PAGE: mbodiment of love, to worship Your form with my tears. Gaṇanāthā ōm gaṇanāthā Gaṇanāthā ōm gaṇanāthā ōm sidhi vināyaka gaṇanāthā O Lord of the Ganas (Ganapati), greatest of the siddhis. Praṇava śarīrā prapanna śaraṇā pārvatī putrā parāt parā gaṇapati dēvā gajamukha ramyā guruguhavandyā śivātmajā 
+
+==================== SundariNiVayo  [accept] title=Sundarî Nî Vâyô refs=[{'book': 'I', 'page': '255'}] lang=['Malayalam']
+SHEET: Sun-darī nī vā yō pu-randa rī nī vā yō | śan ka rī nī vā yō ni ran ta rī nī vā yō | Sun da rī nī vā yō | Kan tan tan tak kyu vā māk-ṣi nī en num | Kān ti pū rat te chin tum kā māk ṣi nī
+  [ACCEPTED] 'sundari ni vayo' ly=0.862 ln=0.85 co=0.37 ti=100.0 ref=True vol1-240 locs=['vol1-240', 'voli1-255', 'voli0-90', 'voli2-213', 'voli2-246', 'voli2-248']
+      PAGE: 240 Bhajanamritam 1 SUNDARĪ NĪ VĀYŌ sundarī nī vāyō...... purandarī nī vāyo...... śaṅkarī nī vāyo...... nirantarī nī vāyo...... Please come, O Beautiful One. Consort of Shiva, please come. O Auspicious One, please come. Please come, O Endless One. skandan tantaykku vāmākṣi nī ennum kānti pūratte chintum kāmākṣi nī bandhuvāyi kāṇmōrkku svantam nīyē - en chintaykku muṛavāyī ninnīṭammā...... (sundarī) O Vamakshi, Consor
+  [ACCEPTED] 'sundara kanna kanna' ly=0.831 ln=0.85 co=0.32 ti=57.1 ref=False vol2-212 locs=['vol2-212', 'voli2-245', 'voli2-247']
+      PAGE: 212 Bhajanamritam 2 O beautiful Kanna (Krishna), with a form that inspires the mood of worship, the son of Nanda, with a captivating smile — Kanna, the Destroyer of imperfection, Whose Name is hallowed, please protect me. vēṇugōpālā kaṇṇā vēda svarūpā gāna vilōlā kaṇṇā gōkula nātha gōpa kumāra kaṇṇā gōpī vallabhā rāsa vilōlā kaṇṇā rājiva lōcana kaṇṇā kaṇṇā kaṇṇā kaṇṇā... O lotus-eyed Venugopala, Who embodies the Trut
+
+==================== ThousandsOfLamps  [review] title=Thousands of Lamps refs=[] lang=['English']
+SHEET: Thou sands of lamps I have lit for you Am ma | To the in car na tion of pure love di vine. | You are com pas sion of in fi nite ness. | Aren't You the true One, my Sat gu ru deep with in? | You spread the cool ness of love on the souls that are
+  [cand] 'ayiram dipangal' ly=0.341 ln=0.0 co=0.11 ti=28.6 ref=False vol5-33 locs=['vol5-33']
+      PAGE:  instant if I am separated again from my Nandalal. āyiram dīpaṅgal Āyiram dīpaṅgal ārati uzhiyum avanītan avatāram mātṛatvamē nilakkyātta alivindē alakaṭalē nī allayō ammē satyamām satguru To the incarnation of the Divine Mother we offer arati with a thousand lamps. Mother, the ocean of infinite compassion, aren’t You the true sat guru? Jīvita jvālā tāpattil urugīṭum jīvanilēkku nī paninīru tūkavē aliyunnu ammē nin s
+
+==================== VittalaVittala  [review] title=Vittalâ Vittalâ refs=[{'book': 'II', 'page': '274'}] lang=['Hindi']
+SHEET: Vit-ta lā vit-ta lā vit-ta-lā Jai jai vit-ta-lā Mā-tā | vit ta lā pān du ran-gā O mā tā ran-gā Jai jai | vit-ta lā vit-ta lā vit-ta-lā Jai jai vit-ta-lā Mā-tā | vit ta lā pān du ran-gā O mā tā ran-gā Jai jai | vit-ta lā vit-talā vit-ta-lā Jai jai vit-ta-lā Jaijai
+  [cand] 'vithala vithala' ly=0.771 ln=1.0 co=0.23 ti=100.0 ref=True vol2-235 locs=['vol2-235', 'voli2-274', 'voli2-278']
+      PAGE: refuge. O Mother, I can’t live without You! viṭHalā viṭHalā viṭhalā viṭhalā viṭhalā viṭhalā viṭhalā viṭhalā ō mātā viṭhalā pāṇḍurangā jai jai viṭhalā viṭhalā viṭhalā jai jai viṭhalā viṭhalā viṭhalā Vishnu, Vishnu, Vishnu. O Mother (Lakshmi) and the Lord Panduranga. Victory, victory to Vishnu (Vithala specifically refers to Krishna’s (Vishnu) form as Panduranga in PandariPur near Poona). 
+  [cand] 'jaya hari vithala (gau re tujhe abhanga)' ly=0.646 ln=0.57 co=0.03 ti=66.7 ref=False vol4-51 locs=['vol4-51']
+      PAGE: bhāvēna harē nāmaiva kēvalam jaya hari viṭṭhala viṭṭhala pānduranga jaya hari viṭṭhala viṭṭhala pānduranga The Lord always looks after those who remember Him and sing His praises with devotion. Salutations to Lord Vithala, the Lord of Pandharpur. Gāū rē tujhē abhanga jay jay viṭṭhala pānduranga hē dēvā tujhā sūṭē na sanga dharuna ghē malā pānduranga dharuna ghē malā pānduranga gāū rē tujhē abhanga jay jay viṭṭhala pā
+  [cand] 'tulasimala gala (marathi)' ly=0.542 ln=0.29 co=0.04 ti=53.8 ref=False 2020supl-193 locs=['2020supl-193']
+      PAGE: e sight of Your divine form confers peace. tuḷaśīmāḷā gaḷā (Marathi) tuḷaśīmāḷā gaḷā ubhā viṭhōbā sāvḷā paṇḍharī nāthā śrī raṅgā viṭṭhal pāṇḍuraṅgā viṭṭhal viṭṭhal pāṇḍuraṅgā viṭṭhal viṭṭhal pāṇḍuraṅgā Lord Krishna, with His dark complexion, stands with a garland of tulasi around His neck. Victory to Lord Vithala, the Lord of Pandari and Sriranga! bhakt puṇḍalikā gharī ubhā viṭṭhal viṭṭēvarī avataralī karuṇā gaṅgā ja
+  [cand] 'pundalika varada (marathi)' ly=0.542 ln=0.29 co=0.04 ti=44.4 ref=False 2019supl-70 locs=['2019supl-70']
+      PAGE: blossom, and by this my life will be fulfilled. puṇḍalika varadā (Marathi) puṇḍalika varadā karuṇākarā śrīharī ubhā bhīmā tīrā nārāyaṇa harī pāṇḍurangā viṭṭhala viṭṭhala śrīpāṇḍurangā Hari is standing on the banks of the river Bhima; He is the compassionate one who bestowed his blessings on Pundalika. Lose yourself in the sweet names of the Lord – Narayana, Vitthala, Panduranga! dēvakī nandana prēmasindhō ānāth-nāthā
+
+==================== WondrousGoddess(Pray&Serve)  [accept] title=Wondrous Goddess refs=[{'book': 'V', 'page': '201'}] lang=['English']
+SHEET: Won drous God dess, pre cious God dess, Giv er of the | gift of grace. Light ing fires of lib er a tion, | please re move my man y sor rows. | With its plea sures and its trou bles, | I have seen this world ly life. Must I suf fer
+  [ACCEPTED] 'wondrous goddess precious goddess' ly=0.937 ln=0.94 co=0.87 ti=66.7 ref=True vol5-201 locs=['vol5-201']
+      PAGE: d grow? Where can I just be me? Amma, where can I just be me? Wondrous goddess precious goddess Wondrous Goddess precious Goddess giver of the gift of grace, lighting fires of liberation please remove my many sorrows. With its pleasures and its troubles I have seen this worldly life. Must I suffer like the moth who blindly flies into the fire? I am pleading for Thy grace to hold me firmly on the path. Pray And Serve 
+  [ACCEPTED] 'wondrous goddes (ishwari jagadishwari) english' ly=0.761 ln=0.69 co=0.55 ti=81.2 ref=False vol3-269 locs=['vol3-269']
+      PAGE: n from my deepest memory. Ishwari jagadishwari (wondrous goddess) Wondrous Goddess, precious Goddess, giver of the gift of Grace, lighting fires of liberation, 
+
+==================== WondrousGoddess(SantaFe)  [accept] title=Wondrous Goddess refs=[{'book': 'III', 'page': '269'}] lang=['English']
+SHEET: Won drous Goddess, precious God dess, Giv er of the | gift of grace. Light ing fires of lib er a-tion, | ple ase rid me of these man y sor rows. | With its pleas ures and its troub les, | I have seen this world ly life. Must I suf fer
+  [ACCEPTED] 'wondrous goddes (ishwari jagadishwari) english' ly=0.975 ln=1.0 co=0.92 ti=81.2 ref=True vol3-269 locs=['vol3-269']
+      PAGE: n from my deepest memory. Ishwari jagadishwari (wondrous goddess) Wondrous Goddess, precious Goddess, giver of the gift of Grace, lighting fires of liberation, 
+  [ACCEPTED] 'wondrous goddess precious goddess' ly=0.578 ln=0.44 co=0.7 ti=66.7 ref=False vol5-201 locs=['vol5-201']
+      PAGE: d grow? Where can I just be me? Amma, where can I just be me? Wondrous goddess precious goddess Wondrous Goddess precious Goddess giver of the gift of grace, lighting fires of liberation please remove my many sorrows. With its pleasures and its troubles I have seen this worldly life. Must I suffer like the moth who blindly flies into the fire? I am pleading for Thy grace to hold me firmly on the path. Pray And Serve 

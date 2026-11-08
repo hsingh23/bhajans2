@@ -1,0 +1,314 @@
+
+==== A-IBhavani [accept] linked=['a-i bhavani (marathi)'] title=Â-Î Bhavânî refs=[{'book': 'VI', 'page': '8'}]
+   SHEET: Ā ī bha vā nī ā nan da dā yi nī aṣ dabhu jā tū sim ha vā hi nī | Bhak ta val sa lē pā pa nā śi nī | Na ma na tu lā hē tuḷ ja bha vā nī tuḷ ja bha vā nī Ā ī
+   page vol6-8: lines=0.94 cont=0.88 songs nearby=['a-i bhavani (marathi)', 'abhivandanam (telugu)', 'adiparama jyotivai (telugu)', 'ajnabi rah ke (hindi)', 'akamanatin karirulai (tamil)']
+       8 Bhajanamritam 6 You are the cool breeze that pacifies the heat of the illusory world; manifest as my unfading, fragrant love and flow through me. Come soon, O light of my life! Dispelling the darkness of the notion of “I”, take me to Your lotus feet. Ā-Ī BHAVĀNĪ (MARATHI) ā-ī bhavānī ānandadāyinī 
+   page vol6-7: lines=0.56 cont=0.58 songs nearby=['a-i bhavani (marathi)', 'abhivandanam (telugu)', 'adiparama jyotivai (telugu)', 'ajnabi rah ke (hindi)']
+       7 Devotional songs ādi pranava nādamai śakala jīvula jīvamai veligē daivamā O Supreme effulgence, who manifests as the primordial light. You are the pranava sound (om) and the life of all existence. nā jīvana prāṇamā sakala bhuvana tējamā ālakiñcu nā vēdana akhila lōka pālanā O my life’s Life, illum
+
+==== AdiSakti [accept] linked=['adi sakti maha layamkari'] title=Âdi Åakti refs=[{'book': 'II', 'page': '4'}]
+   SHEET: Ā di śak-ti ma hā la-yam ka-ri nit-ya śān-ti san dāyi-ni | kā ḷi kā ḷi sa nā ta nī a mṛ tānan-da ma-yī bhaira-vī | Sat-ya-mā-i śi-va rū-pa-māi śu-bha nit-ya sun-da-ra sā ra-māi
+   page vol2-9: lines=0.77 cont=0.77 songs nearby=['abhayam tan aruluka', 'abhayattinimakan', 'abhista varadayike', 'adi sakti maha layamkari', 'akhila loka nayaki']
+       9 Devotional songs O Kamalambike (Divine Mother), Bestower of all desired boons, Giver of Supreme Knowledge, Arbiter of my destiny, come, let me welcome You, Indweller of my heart. ōrmakaḷ taḷiriṭṭa nāḷ mutal ñān ninte ārādhanā puṣpamāyirunnu ōrāyiram bhāva gītangaḷāl ninne ātmāvil tētukayāyirunnu m
+   page vol2-10: lines=0.69 cont=0.79 songs nearby=['abhayattinimakan', 'abhista varadayike', 'adi sakti maha layamkari', 'akhila loka nayaki', 'allah tumaho', 'amala prakasame']
+       10 Bhajanamritam 2 satyamāy śiva rūpamāy śubha nitya sundara sāramāy etra kalpangaḷāyi rasippu nī śāśvatē durgē kai tozhām (ādi śakti...) O Durga, the timelessly existing One, how many aeons have You been watching this world-play in delight, while remaining as the auspicious, non-changing Pure Essen
+
+==== AkatarilArivinteOlinalam [accept] linked=['akatarilarivinte oli namam telichu'] title=Akatâril Arivinte refs=[{'book': 'IV', 'page': '7'}]
+   SHEET: A ka tā ril a ri vin de o ḷi nā ḷam te ḷi chu | a vi rā mam vi ja yip pōr a bhi rā ma mūrt tē | A mṛ tēś wa rī en nil u ṇa rum vī chā ran gaḷ
+   page vol4-7: lines=0.94 cont=0.89 songs nearby=['adisakti brahmamrta', 'adisesa ananta sayana', 'akatarilarivinte oli namam telichu', 'akattil irruppavale']
+       7 Devotional songs Ādiṣēṣa ananta ṣayana Ādiṣēṣa ananta ṣayana śrīnivāsa śrī vēnkatēṣa O Vishnu, lying in ananta shayana, on the bed formed by the great serpent king Adishesha. You dwell in Lakshmi’s heart, O Lord Venkatesha. Pannaga bhūṣaṇa kailasa vasa gauri patē śambhō śamkara gauri patē śambhō h
+   page vol4-8: lines=0.81 cont=0.73 songs nearby=['adisakti brahmamrta', 'adisesa ananta sayana', 'akatarilarivinte oli namam telichu', 'akattil irruppavale', 'akhilandesvari ambe']
+       8 Bhajanamritam 4 You light the lamp of knowledge in the heart, O ever- victorious one, O personification of beauty. Amṛtēśvarī ennil uṇarum vīcāraṅgal amṛta sughandhikal ākkū Immortal Goddess, let the thoughts that arise in me possess the fragrance of nectar. Kuññilam tennalāl tenni vīṇuṭayunna mañ
+
+==== AmbaAmrteshwari [accept] linked=['amba bhavani nin ambhoja'] title=Amba Amëitêåwari refs=[{'book': 'III', 'page': '11'}]
+   SHEET: Am ba a mṛ tēś shi nin am bhō ja nē trat tin | san ta tā nan da pra kā śa dhā ra | En ni la harn ni śam sam dīp ta mā ku vān
+   page vol3-11: lines=0.92 cont=0.92 songs nearby=['akhila manamma', 'alaya maniosai kekkudamma', 'amba bhavani nin ambhoja', 'ambati kanna', 'ambe ma jagadambe ma']
+       11 Devotional songs Pannīril kuḷikka vaittu paṭṭāṭai uṭukka vaittu Candanattāl cānteṭuttu aṅkam ellām pūśivaiyttu Nīrpūśi tilakam vaittu neñcattil unnaivaiyttu Anpu pūtta malarā lunnai arccippēn varuvāy appā After bathing You in rose scented water and adorning You in silk, I decorate You applying sa
+   page vol3-10: lines=0.92 cont=0.9 songs nearby=['akataril arivinte', 'akhila manamma', 'alaya maniosai kekkudamma', 'amba bhavani nin ambhoja', 'ambati kanna']
+       10 Bhajanamritam 3 Ālaya maṇiōsai kēkkudammā Ālaya maṇiōsai kēkkudammā kēkkudammā Āṇḍhavan kuṛaḷ nammai azhaikkutammā azhaikutammā Aruḷmiku jyōti onru tōntutammā... ammā Ārumukham atilē kāṇudammā kāṇudammā O Mother, the sound of the temple bells are being heard, the voice of God is beckoning us. A D
+
+==== AmrtanandamayiMata [accept] linked=['amrtanandamayi'] title=Amëtânandamayi Mâtâ refs=[{'book': 'I', 'page': '9'}]
+   SHEET: A mṛ tā nan da ma yi mā tā a ma rā dhī śē | na-mō na-maḥ a ka-tā ril van nu da-yam chey yu ka | a-mṛ-tā nan-da-ma yi mā tā a-mṛ-tā-nanda-ma yi yi
+   page vol1-34: lines=1.0 cont=0.92 songs nearby=['amme ulakam', 'amrtananda svarupa', 'amrtanandamayi', 'ananda mayi', 'anandamrta rupini amme']
+       34 Bhajanamritam 1 janmāntarangaḷil mungum manujarkku unnaṭi ennum nīyē... en mānasamatil ennum ninnuṭe chinmaya bhāva muṇarttū..... dēvī (amṛtānanda) For the man drowning in the repeated cycle of birth and death Thou art the refuge forever. May Thou always awaken in my mind Thy Divine Consciousness
+   page vol1-33: lines=0.56 cont=0.51 songs nearby=['amme kannu turakkule', 'amme ulakam', 'amrtananda svarupa', 'amrtanandamayi', 'ananda mayi']
+       33 Devotional songs nīkki unmādamēkū ninṭe bhakti unmādamēkū Please feed me daily with Thy own beautiful hand the nectar of love and thus remove my pride arising from the identification of the Self with the body and make me infatuated with that love. kāḷiyennōtumbōḷ en nayanam sadā kaṇṇīr pozhiykkum
+   page vol1-35: lines=0.44 cont=0.51 songs nearby=['amrtananda svarupa', 'amrtanandamayi', 'anandamrta rupini amme']
+       35 Devotional songs O Detached One, Bestower of destiny, Universal Enchantress, continue Thy dance. O Ambrosial One, by the radiance of hy gentle smile my heart is overflowing with sweet nectar. snēha manantamām śaktiyen en amma ōtunnu pratyakṣa mākkiṭunnu ammatan vātsalya dugdham nukarunna dhanyark
+
+==== AnandaRupini [accept] linked=['ananda rupini amme enikku'] title=Ânanda Rûpiñi refs=[{'book': 'III', 'page': '31'}]
+   SHEET: Ā nan da rū pi ṇi am mē e nik kyu nī | ā nan da tē vi lak ki? | Āt ma pra kā śam ni ran nya nit yā nan da
+   page vol3-31: lines=0.81 cont=0.81 songs nearby=['amrtesvari susmita', 'amrtesvari vandanam', 'ananda rupini amme enikku', 'anara vinara']
+       31 Devotional songs muni mānasa rañjinī Amma amma amma amma... O Daughter of He with four faces (Brahma)! Who protects all who take refuge in Her… Who demolishes all the fear arising out of bondage…Who gives enjoyment and happiness to the minds of sages… Karuṇā rasa sāgarē kavitāmṛta dāyikē nigamāga
+   page vol3-32: lines=0.75 cont=0.81 songs nearby=['amrtesvari vandanam', 'ananda rupini amme enikku', 'anara vinara', 'annaikku niratta ventum']
+       32 Bhajanamritam 3 Ānanda rūpiṇi ammē enikku Ānanda rūpiṇi ammē enikku nī ananda mentē vilakki Ātma prakāśam nirañña nityānanda nirvṛti entē muṭakki O Blissful Mother! Why have You denied bliss to me? Why have You not granted me the fulfillment of eternal bliss, radiant with Self-effulgence? Amme...
+
+==== AparaKrpalo [accept] linked=['apara krpalo arikil'] title=Apâra Këpâlô refs=[{'book': 'II', 'page': '42'}]
+   SHEET: A pā ra kṛ pā lō a ri kil nī vā yō | a va nīś wa rā kṛṣ ṇā a ruḷ va ram tā yō A tā yō | A ri mul lap pun chi ri a ka tā ril vi ri yik kyū
+   page vol2-40: lines=0.93 cont=0.83 songs nearby=['anjana sridhara', 'apara krpalo arikil', 'apara sachid', 'arari unnu nin maha']
+       40 Bhajanamritam 2 eṭalar bananu tulya mūrtē kṛṣṇā eṛiya mōdenā kaitozhunnēn O Krishna with a body equal in beauty to Cupid, with great joy I salute Thee with joined palms. ayihikamāya sukhattinkal āgraham alpavum tōnalle gōpabālā O Cowherd Boy, let me not feel even the least bit of desire for world
+   page vol2-41: lines=0.64 cont=0.61 songs nearby=['anjana sridhara', 'apara krpalo arikil', 'apara sachid', 'arari unnu nin maha', 'arivay amrtay']
+       41 Devotional songs smile blossom in my heart, cooling it and making all sorrows disappear. kanivinte tikavuttorazhakarnna nayanattin oḷiyālennakatā ronnuzhiyān nī vā kanal kattum hṛdayāntarāḷattilittiri karuna mazha coriyān nī akatāril vā kṛṣṇa With Your beautiful eyes, full of boundless compassion
+
+==== Chandrasekhara [accept] linked=['chandrasekaraya namah om'] title=Chandra Åekharâya refs=[{'book': 'I', 'page': '176'}]
+   SHEET: Chan dra śe kharā ya na maḥ om Chandra om Gan | gā dha rā ya na maḥ om Gan om Chan dra | śe kha rā ya na maḥ om Chan dra om Gan
+   page vol1-58: lines=1.0 cont=0.78 songs nearby=['bolo bolo sab mil bolo', 'brahmanda paksikal', 'chamundhaye kali ma', 'chandrasekaraya namah om', 'chilanka ketti', 'chitta chora']
+       58 Bhajanamritam 1 CHĀMUṆḌAYĒ KĀLI MĀ chāmuṇḍāyē kāḷi mā kāḷi mā kāḷi mā chāmuṇḍāye kāḷi mā kāḷi mā kāḷi mā O Goddess Chamundi, O Mother Kali... CHANDRAŚĒKARĀYA NAMAḤ ŌM chandraśēkarāya namaḥ ōm gangādharāya namaḥ ōm ōm namaḥ śivāya namaḥ ōm hara hara harāya namaḥ ōm śiva śiva śivāya namaḥ ōm paramē
+   page vol1-57: lines=1.0 cont=0.78 songs nearby=['bhramarame', 'bolo bolo sab mil bolo', 'brahmanda paksikal', 'chamundhaye kali ma', 'chandrasekaraya namah om', 'chilanka ketti']
+       57 Devotional songs BRAHMĀṆḌA PAKṢHIKAL brahmāṇda pakṣikal vannu chēkkēṛum pukazhārnna jñānadrumam nī... ammē enneyaṛiññu ñān ninnilettum vare nin taṇalil nī vaḷarttū... ammē nintaṇalil nī vaḷarttū... (brahmāṇḍa) O Mother, Thou art that glorious Tree of Knowledge into which galaxies, like birds, ent
+   page vol2-196: lines=0.1 cont=0.52 songs nearby=['sarasija nayane', 'sarasvati sarasvati sarasija', 'siva siva mahadeva', 'skanda muruka varuvaye', 'sneha mayi sri bhagavati']
+       196 Bhajanamritam 2 kara triśūla dhara abhaya suvara hara bhasma anga dhara jadā jūda dhara bāla candra dhara dīna nayana dhara nāga hara dhara munda māla dhara Who holds the Trident in His hands bestowing fearlessness and boons, Who wears ash on His limbs and has matted locks, Who bears the crescen
+
+==== Chittamennum [accept] linked=['chittamenum'] title=Chittamenum refs=[{'book': 'V', 'page': '45'}]
+   SHEET: Chit ta me num si ra yi ni lē vaṭ ṭa mi dum pa ṛa va yai pōl | sik ki nān kaḷ ta vik ki rōm am mā kāt ti du vāi | Śi va jnyā na ka la yai nī en ka l ku bō dhip pāy
+   page vol5-45: lines=1.0 cont=0.93 songs nearby=['chidananda govinda mukunda', 'chinna kanna', 'chittamenum', 'chod de manse', 'chodi de manthi']
+       45 Devotional songs alai alaiyāy yamunainadi pāṭatu kaṇṇā ata salasalavena tālāṭṭu pāṭatu kaṇṇā The dark clouds have slowly gathered in the sky, Kanna! Even they are singing lullabies to You. The waves of the Yamuna sing to the lapping, gentle lullaby of the river. Nandavana malar chūḍi ninṭrāy kaṇṇ
+   page vol5-46: lines=0.75 cont=0.7 songs nearby=['chinna kanna', 'chittamenum', 'chod de manse', 'chodi de manthi', 'choto choto gayi']
+       46 Bhajanamritam 5 Śivajñāna kalayai nī enkalku bōdhippāy chitrinba siṛayilirundu viṭutalai aḷittiṭuvāy Please awaken the supreme knowledge within us; free us from the prison of sensual pleasures. Aḷavillā un anbē ennālum uṇmaiyenṭrē enkal manam nāṭi ninṭrē unnaṭi sērndiṭumē Your boundless love is a
+
+==== DeDarshanMa [accept] linked=['de darsan ma devi'] title=Dê Daråhan Mâ refs=[{'book': 'III', 'page': '51'}]
+   SHEET: Dē dar śa-n mā dē vī mā am bē mā bha-vā nī mā | Dē dar śa-n mā dē vī mā am bē mā bha-vā nī mā | Riś-tē nā tē bhan dha n jhū ṭhe
+   page vol3-51: lines=0.77 cont=0.72 songs nearby=['cinna cinna', 'darsanam ambike mohanam', 'de darsan ma devi', 'devi mate', 'devi ninne kani kantittu', 'dinatarini durita varini']
+       51 Devotional songs O Devi! Your remembrance is the ultimate cause that destroys all temporal existence, O Kali! Prostrations unto Thee forever, O Shankari! Bestow on me all that is good and auspicious. Dē darśan mā dēvī Dē darśan mā dēvī mā ambē mā bhavāni mā (2x) O Divine Mother, bless me with You
+   page vol3-50: lines=0.77 cont=0.71 songs nearby=['cinna cinna', 'darsanam ambike mohanam', 'de darsan ma devi', 'devi mate']
+       50 Bhajanamritam 3 Darśanam ambikē mōhanam Darśnam ambikē mōhanam sparśanam kāḷikē pāvanam Vigraham tāvakam śyāmaḷam ugrasa tvōjvalam kōmaḷam Darśnam ambikē mōhanam Your darshan is enchanting, O Mother! O Kali! Your touch is purifying. Your dark form, though terrible, is resplendent and charming. Am
+
+==== DeviDayakari [accept] linked=['devi dayakari (kannada)'] title=Dêvi Dayâkari refs=[{'year': '2015', 'page': '18'}]
+   SHEET: Dē vi da yā ka ri tā yē pa ri pā la ki pū ra ṇi mā tē | tūṣ ṭi yu nī nē puṣ ṭi yu nī nē an na pūr ṇēś va ri tā yē | Ja la ni dhi bat ti de bha vāg ni su ṭu ti de
+   page vol7-69: lines=1.0 cont=0.96 songs nearby=['dayayale urukondu (tamil)', 'devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)', 'devi triloki (hindi)']
+       Devotional Songs of Sri Mata Amritanandamayi 69 bhūtagaṇanāthuḍā śavabhūmivāsuḍā praṇavākāruḍā nīpraḷayakāruḍā śrīśailavāsuḍā bhramarāmbanāthuḍā nīvē śaraṇayyā darijērcavayyā O Lord of ghouls (Shiva’s companions), dweller of the cremation grounds, the form of the primordial sound, Om, the cause of d
+   page vol7-70: lines=0.54 cont=0.53 songs nearby=['devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)', 'devi triloki (hindi)']
+       Bhajanamritam Volume 7 70 anāvṛṣṭi undeṭe ativṛṣṭi bēreṭe ellellu hāhākārā āśraya nīṭe sāntvana nīṭe bāramma bēgane tāyē Heavy rains here, drought elsewhere, everywhere is in panic! Give us support, please give us comfort. Come quickly Mother! durāse biṭiri atyāse tyajisi prakṛtige vandisi makkaḷe p
+
+==== EntinuSokam [accept] linked=['entinu sokam manasse'] title=Entinu Åôkam refs=[{'book': 'III', 'page': '57'}]
+   SHEET: En ti nu śō kam ma nas sē | nin ni ja bhā vam a tal la | Sān dra su khā mṛ ta sām rā jyat tin
+   page vol3-57: lines=1.0 cont=0.95 songs nearby=['ekasrayamam amma', 'ellam ariyunnar amme', 'entinu sokam manasse', 'gajamukha gajamukha', 'gam ganapataye namo namah', 'ganesa namah om']
+       57 Devotional songs O Love incarnate, Mother, won’t You shower compassion on me? Please do come Mother, and reign in my heart day and night. vēdānta vēdiyall ammē - avi- vēkiyā yuḷḷoru paital mātāvu nī amṛtānanda maya - pālūṭṭi nirvṛtiyēkū I am not a knower of Vedanta I am only an ignorant child, My
+   page vol3-56: lines=1.0 cont=0.95 songs nearby=['ekasrayamam amma', 'ellam ariyunnar amme', 'entinu sokam manasse', 'gajamukha gajamukha', 'gam ganapataye namo namah']
+       56 Bhajanamritam 3 To walk with unfaltering steps on the path woven by the hands of time, I, with a yearning heart, worship forever the Mother who fulfills all desires. Aśaraṇar kāśvāsa mēkumā pādattil aharnniśam aham arppippū Amaratvam ēkum amṛtēśi pādaṅgaḷ ātaṅka muktikkāy ñān bhajippū Ever surren
+
+==== GajananaHeGajanana [accept] linked=['gajanana'] title=Gajânanâ Hê Gajânanâ refs=[{'book': 'I', 'page': '227'}]
+   SHEET: Ga jā na nā hē ga jā na nā ga jā na nā hē ga ja va da na | Ga jā na nā hē ga jā na nā ga jā na nā hē ga ja va da na | Vā ra ṇa ma dha ha ra ga jā na nā parvva tī nanda na ga jā nana
+   page vol1-80: lines=1.0 cont=0.87 songs nearby=['entamme nin makkale', 'ente kannunir', 'etrayo nalayi', 'gajanana', 'gangadhara hara']
+       80 Bhajanamritam 1 lōkaṅgalkkellām adīśan āṇangunnu kēvalam ñān oru nissāra jīviyum Thou art the Lord of all the worlds and I am only an insignificant creature. sādhu vāmennuṭe chittattil angaye vāzhikkuvān uḷḷa mōham vṛthāvillō... How can I ask Thee to come and dwell within my poor heart? koḷḷarutā
+   page vol1-79: lines=0.73 cont=0.36 songs nearby=['entamme nin makkale', 'ente kannunir', 'etrayo nalayi', 'gajanana', 'gangadhara hara']
+       79 Devotional songs ENTE KAṆṆUNĪR ente kaṇṇunīr etra kandālum manassaliyuka illē ammē nin manassaliyuka illē? Though seeing my tears, O Mother, how is it that Thou feelest no compassion, Thou feelest no compassion? etrayō nāḷukaḷāyi nin pādam aṇayunnu enniṭṭum anguḷḷil - prasādam illē- ammē anguḷḷil
+   page vol7-86: lines=0.6 cont=0.24 songs nearby=['en piravi mutinditumo (tamil)', 'etayo teti (tamil)', 'ettanai vedanai (tamil)', 'gajanana he gajanana (tamil)', 'gananatha he gananatha (tamil)', 'ganangalin natha (tamil)']
+       Bhajanamritam Volume 7 86 iṭayūru kaṇḍu varunneccarittu tirukkaikaḷ iruka kōrttennai piṭittu kāttiṭum sumayai muzhuvatum ēttru enakkāka tāy paṭum pāṭṭai kaṇḍēn Cautioning me about the obstacles, You held me tightly in Your divine arms. I saw how much You suffered by accepting the total responsibilit
+   page vol7-85: lines=0.53 cont=0.2 songs nearby=['en piravi mutinditumo (tamil)', 'etayo teti (tamil)', 'ettanai vedanai (tamil)', 'gajanana he gajanana (tamil)', 'gananatha he gananatha (tamil)', 'ganangalin natha (tamil)']
+       Devotional Songs of Sri Mata Amritanandamayi 85 Etayō tēṭi (Tamil) etayō tēṭi alaintu inṭru unai tēṭukirēn kaṇmaṇiyē karuṇaimazhayē iruppiṭam tanai sol All these years, I ran after worthless things. Today I look for the one who is full of compassion- please tell me where You live. maunattil lakṣam p
+
+==== GauReTujheAbhanga [accept] linked=['jaya hari vithala (gau re tujhe abhanga)'] title=Gâû Rê Tujhê Abhanga refs=[{'book': 'IV', 'page': '51'}]
+   SHEET: freely | Ha riḥ sa dā va-sēt ta-tra ya-tra bhāga-vatā nā ḥ | gā-yan ti bhak-tibhā vēna ha-rēr nā maiva kē-va-lam.
+   page vol4-51: lines=0.78 cont=0.7 songs nearby=['gananatha om gananatha', 'gau re tujhe abhanga (jaya hari vithala)', 'git nahi', 'jaya hari vithala (gau re tujhe abhanga)']
+       51 Devotional songs Kamala lōcanā kṛṣṇā kāruṇārupā kadana nāśanā kṛṣṇā kamsamardana caraṇa pallavam kṛṣṇā taruṇakōmalam tāvaka nāmam kṛṣṇā mōkṣadāyakam Your eyes resemble lotus petals, O Krishna, You are the embodiment of compassion. Krishna, Your tender feet are enchanting, the constant repetition 
+   page vol4-52: lines=0.56 cont=0.48 songs nearby=['gau re tujhe abhanga (jaya hari vithala)', 'git nahi', 'govinda gopala hari hari', 'jaya hari vithala (gau re tujhe abhanga)']
+       52 Bhajanamritam 4 Jay hari viṭṭhala pānduranga gāū rē tujhē abhanga (gāū rē tujhē....) Salutations to Lord Vithala, the Lord of Pandharpur, we are singing Your abhangas. Jīva mājhā phasalā asā samsāra pāra karu mī kasā kṛpā tujhī hī āśā mājhī nakō rē......nakō rē malā sukha samsārāchī My life is ca
+
+==== GuruCharanam [accept] linked=['guru caranam sadguru'] title=Guru Charañam refs=[{'book': 'III', 'page': '65'}]
+   SHEET: Gu-ru cha-ra-ṇamsad gu-ru cha-ra-ṇam a-mṛ-tānan-da-ma yī cha-ra-ṇam | gu-rucha-ra-ṇambha-va bha-ya ha-ra-ṇam a-mṛ-tā-nanda-ma yī cha-ra-ṇam | Akhi-la janār-chi-ta satcharaṇam ja-nimṛi-ti nāśaka śrī cha-raṇam
+   page vol3-65: lines=1.0 cont=0.96 songs nearby=['gopi gopala venu gopala', 'govinda damodara', 'guru caranam sadguru', 'guru deva', 'gurukrpa anjan payo', 'guruvativanavale']
+       65 Devotional songs Guru caraṇam sadguru Guru caraṇam sad guru caraṇam amṛtānandamayī caraṇam guru caraṇam bhavabhaya haraṇam amṛtānandamayī caraṇam The Guru’s feet, the Satguru’s feet, Amritanandamayi’s feet - they annihilate the fear of transmigratory existence. Akhila janārcchita satcaraṇam jani 
+   page vol3-64: lines=1.0 cont=0.96 songs nearby=['gopala krsna giridhari', 'gopi gopala venu gopala', 'govinda damodara', 'guru caranam sadguru', 'guru deva', 'gurukrpa anjan payo']
+       64 Bhajanamritam 3 Chant the names of Rama and Krishna! Victory to the Lord of the senses, the protector of the cows, the divine flute player, the bestower of liberation, the beloved of Lakshmi, the irresistible Lord. Hari (Vishnu) and Shankar (Shiva), they are all your names. Lord, take all my happ
+
+==== Ichamayi [accept] linked=['ichamayi (english)'] title=Ichâmayi refs=[{'book': 'I', 'page': '152'}]
+   SHEET: I-chā ma yiyāmnin i cha-pō lal la-yō viśwa ti len-tum na | da pa-tammē ti len-tum na da pa-tammē | viśwa
+   page vol1-102: lines=0.87 cont=0.75 songs nearby=['hrdaya puspame', 'hrim kali', 'ichamayi (english)', 'idamilla', 'ini oru janmam']
+       102 Bhajanamritam 1 ICHCHĀMĀYI ichchāmayiyām nin ichcha polallayō viśvattil entum naṭappatammē nī cheyyum karmangaḷ ōrōnnum mānuṣar tān cheyvatennu tān ōrkkayallō O Mother who is of the form of volition (will), everything in this Universe moves according to Thy wishes. Everything is really done by T
+   page vol1-101: lines=0.8 cont=0.75 songs nearby=['hrdaya puspame', 'hrim kali', 'ichamayi (english)', 'idamilla']
+       101 Devotional songs O Goddess Kali identified with the sound ‘Hrim’, the Great Kali, Mother Amritanandamayi, who takes one across the Ocean of Becoming, an Incarnation of Compassion and Bliss, Mother Amritanandamayi. ādiyil ennamma tāmara kaṇṇanāyu pinne kāḷitan sākṣāt svarūpamāyu kāḷi śāntamāyu la
+
+==== Jagadishvari [accept] linked=['jagadisvari daya karo'] title=Jagadîåvarî refs=[{'book': 'I', 'page': '230'}]
+   SHEET: Ja ga dīś wa rī da yā ka ro mā | Śi va śan ka rī kṛ pā ka ro mā mā | Sar vēś wa rī rak ṣā ka ro mā
+   page vol1-106: lines=1.0 cont=0.86 songs nearby=['ini oru janmam', 'isvari jagadisvari', 'jagadisvari daya karo', 'jai ambe', 'jai jai jai gananayaka', 'jai jai ramakrsna']
+       106 Bhajanamritam 1 Without showing the wrong path, shed Thy Grace on me, O Eternal One. O Mother, Destroyer of misery, remove my burden of sorrow. marttya janma phalam varuttuvān lōkamātāvē kaitozhām lōkanāyakī sarva rūpiṇi kumpiṭunnu ñān nin pādam O Mother of the World, for achieving the fruit of 
+   page vol1-105: lines=1.0 cont=0.86 songs nearby=['idamilla', 'ini oru janmam', 'isvari jagadisvari', 'jagadisvari daya karo', 'jai ambe', 'jai jai jai gananayaka']
+       105 Devotional songs ĪŚVARĪ JAGADĪŚVARĪ īśvarī jagadīśvarī paripālakī karuṇākarī śāśvata mukti dāyakī mama khēdamokke ozhikkaṇṇē O Goddess, Goddess of the Universe, Preserver and Giver of Grace and Eternal Liberation, please rid me of all my sorrows. klēśa sampūrṇṇamākumī lōka jīvita sukham kandu ñā
+
+==== KarunardraManasan [accept] linked=['karunardra manassan'] title=Karuñâëdra Mânasan refs=[{'book': 'II', 'page': '131'}]
+   SHEET: Ka ru ṇār dra mā na-san ka-danārt ti nā śa-kan | ka ma nī ya vi gra han pō y ma ṛan nyu | Ka ra kā ṇā ka da li lī e zha kaḷ vī zhu vān
+   page vol2-117: lines=0.89 cont=0.88 songs nearby=['karuna mayi devi', 'karuna yille', 'karunamayi ni krpamayi ni', 'karunardra manassan', 'kattittayir taram']
+       117 Devotional songs karuṇārdramānasan karuṇārdramānasan kadanārtti nāśakan kamaniya vigrahan pōyi maṛaññu karakāṇā kaṭalilī ezhakaḷ vīzhuvān aparādhamentiṅgu ceytu śaure The One whose mind is full of compassion, the One who removes all sorrows, the One who has enchanting features has gone! What wro
+   page vol2-116: lines=0.89 cont=0.88 songs nearby=['karoli chandran', 'karuna mayi devi', 'karuna yille', 'karunamayi ni krpamayi ni', 'karunardra manassan', 'kattittayir taram']
+       116 Bhajanamritam 2 karuṇāmayi nī kṛpāmayī nī karuṇāmayi nī kṛpāmayī nī vijñānamayī ānandamayī ammā amṛtānandamayī jananī amṛtānandamayī O Mother Amritanandamayi, Thou art the embodiment of compassion, grace, knowledge, and bliss. vighnavināśinī vināyaka jananī divyamayī ammā vidyāmayī buddhī pradāy
+
+==== KrshnaGovindaGopala [accept] linked=['sri krsna govinda gopala'] title=Këæhña Gôvinda Gopâlâ refs=[{'book': 'II', 'page': '137'}]
+   SHEET: Kṛṣ ṇa gō vin da go pā lā Śrī lā Śrī | kṛṣ ṇa gō vin da go pā lā Śrī lā Ha ri | gō vin da gō vin da go pā lā Ha ri lā Śrī
+   page vol2-122: lines=1.0 cont=0.88 songs nearby=['kayambu varnna varika ni', 'krsna govinda gopala (hindi)', 'krsna govinda govinda gopala', 'krsna jinka nam he', 'krsna mana mohana', 'sri krsna govinda gopala']
+       122 Bhajanamritam 2 kaha ta kabīra suno bāyi sādhō āya vaisā gayā kamala mukha rāma bhajana kō diyā We come and we go but we never sing the devotional songs of the lotus-faced Rama. Kabir is saying, “O listen brother sadhus, sing the devotional songs of the lotus-faced Rama.” krishna gōvinda gōpāla 
+   page vol2-123: lines=0.72 cont=0.7 songs nearby=['krsna govinda gopala (hindi)', 'krsna govinda govinda gopala', 'krsna jinka nam he', 'krsna mana mohana', 'krsna mukunda madhava', 'krsnam vande']
+       123 Devotional songs nandakumāra gōpālā navanīta cōra gōpālā śrī kṛṣṇa gōvinda murali manōhara gōkula nandana gōpālā nandakumara - Son of Nanda navanīta cōra - Butter-thief gōkula nandana gōpi manōhara gōvardhanōdhara gōpālā gōkula nandana gōpālā gōvardhanōdhara gōpālā gōpi manōhara - Enchanter of t
+   page vol2-121: lines=0.67 cont=0.59 songs nearby=['kayambu varnna varika ni', 'krsna govinda gopala (hindi)', 'krsna govinda govinda gopala', 'krsna jinka nam he', 'sri krsna govinda gopala']
+       121 Devotional songs with the exalting songs of Your flute. The sweet flowery creepers intertwine in the light of the full moon, setting the fragrant stage for Your festive dance. mama manam oru pūjā maṭumalar kaṇṇā tava pada taḷir cūṭi nirupama bhangī mati varuvōḷavum mana mayilēṛi vihāra murāri hṛ
+   page vol3-192: lines=0.44 cont=0.61 songs nearby=['radha madhava gopala', 'radhaye tozhare', 'radhe krsna', 'radhe radhe govinda', 'radhe syam', 'radhe syam radhe syam']
+       192 Bhajanamritam 3 Kaṇṇā tāmara kaṇṇā (4x) Sri Krishna, beloved of Vrindavan, this destitute Radha has no more tears to shed. Desiring nothing else from the fourteen worlds except Her Lord, Radha waits for You alone. Rādhe Kṛṣṇa Rādhe kṛṣṇa rādhe kṛṣṇa kṛṣṇa kṛṣṇa rādhe rādhe (2x) Gōpi kṛṣṇa gopāla
+
+==== KrshnaKrshnaRadhaKrshna [accept] linked=['krsna krsna radha'] title=Këæhñâ Këæhñâ Râdhâ Këæhñâ refs=[{'book': 'I', 'page': '202'}]
+   SHEET: Kṛṣ-ṇā kṛṣ-ṇā rā-dhā kṛṣ-ṇā Rā-dhā kṛṣ-ṇā | Go-pī kṛṣ-ṇā Rā-dhā kṛṣ-ṇā Go-pī kṛṣ-ṇā | Gō vin da gō pā la vē ṇu kṛṣ-ṇā
+   page vol1-139: lines=1.0 cont=0.84 songs nearby=['kodanu koti', 'krsna kannaya', 'krsna krsna mukunda', 'krsna krsna radha', 'krsna mukunda murari', 'kumbhodara varada']
+       139 Devotional songs muraḷi kṛṣṇa murāre mana mōhana nanda nandana nārayaṇa harē O Thou Who flies on Garuda, Slayer of Kamsa and the demon Madhu, Flute Player, Slayer of the demon Mura, Enchanter of the mind, Son of Nanda... nārāyaṇa nārāyaṇa nārāyaṇa nārāyaṇa nārāyaṇa nārāyaṇa nārāyaṇa namō nārāyaṇ
+   page vol1-140: lines=0.8 cont=0.84 songs nearby=['krsna kannaya', 'krsna krsna mukunda', 'krsna krsna radha', 'krsna mukunda murari', 'kumbhodara varada', 'lambodara pahi mam']
+       140 Bhajanamritam 1 KṚṢṆA KṚṢṆA RĀDHĀ kṛṣṇa kṛṣṇa rādhā kṛṣṇa gōvinda gōpāla vēṇu kṛṣṇa mōhana kṛṣṇa madhusūdana kṛṣṇa mana mōhana kṛṣṇa madhusūdana kṛṣṇa murāre kṛṣṇa mukunda kṛṣṇa KṚṢṆA MUKUNDA kṛṣṇa mukunda murāri jaya kṛṣṇa mukunda murāri rādhe gōvinda kṛṣṇa mukunda rādhe gōvinda kṛṣṇa murāri na
+   page vol2-136: lines=0.8 cont=0.72 songs nearby=['mukunda murari gopala', 'munna morayiram', 'murali dhara gopala', 'murali krsna mukunda', 'murali ninadam']
+       136 Bhajanamritam 2 murali dhara... amara vanditā śyāma śarīrā pītāmbara vasanā adhara niyōjita murali manōhara jagadabhirāma harē murali dhara... makara kundalā malayaja tilakā mayūra mukuṭa dharā manda manda hasitānana mōhana nanda gōpa tanayā murali dhara... indīvara śyāma sundara nayanā candra b
+   page vol2-137: lines=0.6 cont=0.7 songs nearby=['murali dhara gopala', 'murali krsna mukunda', 'murali ninadam', 'muralivale']
+       137 Devotional songs karunalaya varada - The compassionate bestower of boons amaravandita - Who is worshipped by immortals śyāmasarīra - One who is dark-complexioned pitambaravasana - One who has yellow robes adhara niyōgita murali manōhara - One who is very charming because he keeps the flute on hi
+
+==== ManasaVacha [accept] linked=['manasa vacha karmana'] title=Manasâ Vâchâ refs=[{'book': 'I', 'page': '21'}]
+   SHEET: Ma na sā vā chā karm ma-ṇā | ni ran ta ram nin ne sma ri kyun nu | En niṭ ṭu nō ḍu ka ni vu kāṭṭān
+   page vol1-145: lines=0.79 cont=0.84 songs nearby=['malarum manavum', 'maname narajivitam', 'manasa vacha karmana', 'manase nin svantamayi']
+       145 Devotional songs kadanamezhunnoru karayalināl vigaḷitamayi nin kaumāram taruṇi viharaṇa ratanāyi takarukayāyi nava tāruṇyam The early part of life is spent in helpless cries and youth is spent in lustful attachment. kāzhivukaḷ muzhuvan kizhivākum kizhavan nīyoru puzhuvākum tozhilil ninnuṭanozhiv
+   page vol1-146: lines=0.56 cont=0.58 songs nearby=['maname narajivitam', 'manasa vacha karmana', 'manase nin svantamayi']
+       146 Bhajanamritam 1 kāttilakappeṭṭa tōṇipōlē alayunnammēyen mānasam chittarōgiyāyi māṛātirikkān ittiri manaḥśānti nalkū ammē ittiri manaḥśānti nalkū ammē (manasā) My mind sways like a boat caught in a storm. O Mother, give me a little peace of mind lest I become a lunatic. vayyayennammē sahiyātāyi v
+
+==== ManasavachaKarmana [accept] linked=['manasavaca karmana (kannada)'] title=Manasavâcha Karmañâ refs=[{'year': '2014', 'page': '40'}]
+   SHEET: A ga lī vi vē ka sū r ya | na u da ya a ra ḷa li hṛ da ya | ka ma la vi ma la
+   page vol7-174: lines=1.0 cont=0.97 songs nearby=['manamirukka ahankaram (tamil)', 'manan karo man (hindi)', 'manasavaca karmana (kannada)', 'manasaviniya (telugu)', 'manase kelu (kannada)', 'manassil nila sarasil (malayalam)']
+       Bhajanamritam Volume 7 174 Manasavāca karmaṇā (Kannada) āgalī vivēka sūryana udaya araḷali hṛdaya kamala vimala May the sun of discrimination dawn. May the pure flower of the heart blossom. manasavāca karmaṇā śaraṇembenu nina ichage śaraṇu sankalpake śaraṇu I surrender to You, O Mother, by thought, 
+   page vol7-173: lines=1.0 cont=0.97 songs nearby=['manamendrum undan vidu (tamil)', 'manamirukka ahankaram (tamil)', 'manan karo man (hindi)', 'manasavaca karmana (kannada)', 'manasaviniya (telugu)']
+       Devotional Songs of Sri Mata Amritanandamayi 173 Manan karo man (Hindi) manan karo man yatn karo man ahankār ko dūr karo Introspect, O mind! Remember, O mind: distance yourself from pride. guru caraṇan kā smaraṇ karo man guru vacanan kā dhyān dharo hṛday me prem aur bhakti bharo man bhav sāgar kā pā
+
+==== MandahasavadaneManonmani [accept] linked=['mandahasa vadane'] title=Mandahâsa Vadanê Manônmani refs=[{'book': 'I', 'page': '206'}]
+   SHEET: Manda-hā sa va-da nē ma-nōn ma-ni manga-ḷa dāyi | ni mṛ du ma dhū ra bhā ṣi ṇi | mṛ du ma dhū ra bhā ṣi ṇi
+   page vol3-120: lines=1.0 cont=0.93 songs nearby=['manamohana krsna', 'manasa malaril', 'mandahasa vadane', 'manikkyacilaiye', 'mata mahesvari', 'matr vatsalya']
+       120 Bhajanamritam 3 Mandahāsa vadanē Mandahāsa vadanē manōnmani mangaḷa dāyini mṛdu madhura bhāṣiṇi... mṛdu madhura bhāṣiṇi O Smiling One, the bestower of auspiciousness, who speaks softly and sweetly! Bhava tāpa hāriṇi bhavāni abhaya pradāyini bhava bhaya vimōcini... bhava bhaya vimōcini O Mother P
+   page vol3-119: lines=1.0 cont=0.92 songs nearby=['mahesvari raja rajesvari', 'manamohana krsna', 'manasa malaril', 'mandahasa vadane', 'manikkyacilaiye']
+       119 Devotional songs Mānasa malaril Mānasa malaril maṇi varṇṇan enttunna sudinattin āyiram abhivādanam hṛdayattil anavadya sukhadānam coriyunna sudinattin āyiram abhivādanam Welcome to that auspicious day when charming Krishna comes into the blossom of my heart. Greetings to that day when my heart w
+
+==== Mizhinirilazhnna [accept] linked=['mizhinirilazhnna (malayalam)'] title=Mizhinîrilâzhnna refs=[{'year': '2014', 'page': '48'}]
+   SHEET: Mi zhi nī ri lāzhn na ma na tā ri lin nu ma dhu | villayen dejana nī ma dhu vil la yen dejana nī Mi zhi nī Ta zha nī | yā te yon nu tu ṇa yā yi van nu ta zhu kī ṭu ken ne sa da
+   page vol7-190: lines=0.56 cont=0.76 songs nearby=['mayilirakani madhavane (tamil)', 'mera mujh main (punjabi)', 'mere guruvan di vani (punjabi)', 'mizhinirilazhnna (malayalam)', 'mokeda ammanu (tulu)']
+       Bhajanamritam Volume 7 190 Mere guruvāṅ di vāṇi (Punjabi) mere guruvāṅ di vāṇi sun lo – mere guruvādi vāṇī sun lo e hegī – cāṣnī nālon mīṭhī e hegī - pānī nālon patlī e hegī - sāre jagtī nyārī Listen to the words of my great masters! These words are sweeter than concentrated sugar syrup and at the s
+   page vol7-191: lines=0.38 cont=0.56 songs nearby=['mere guruvan di vani (punjabi)', 'mizhinirilazhnna (malayalam)', 'mokeda ammanu (tulu)', 'mother nature (english)']
+       Devotional Songs of Sri Mata Amritanandamayi 191 O Mother, there is no honey in the flower of my heart, which is wilting in tears. Forsake me not, come to my aid, and caress me compassionately. verute viriñña vanasūnamoṭṭu niramārnnatalla vanajē padatārilēykku patiyānorittu kanivēkiyamba kaniyū O Va
+
+==== MuttumariAmma [accept] linked=['teti unnai saranataintom'] title=Muttumâri Amma refs=[{'book': 'III', 'page': '241'}]
+   SHEET: Tē-di un-nay ṣa-ra ṇa-dain-dom de-śa mut tu mā ri | tē-di un-nay ṣa-ra ṇa-dain-dōm en-kal mut tu mā ri | Mut tu mā ri am ma mut tu mā ri
+   page vol3-241: lines=0.92 cont=0.82 songs nearby=['tenmazhayaka untan', 'teti unnai saranataintom', 'tuyarang kalai kurum', 'ullam urukutayya muruka']
+       241 Devotional songs Tēṭi unnai ṣaraṇaṭAintōm (muttumari) Tēṭi unnai ṣaraṇa ṭaintōm deśa muttumārī [amṛtamāyi tāye] tēṭi unnai ṣaraṇa ṭaintōm eṅkal muttumārī [amṛtamāyi tāye] Muttumārī amma muttumāri... (2x) [Amṛitēśvari ammā amṛtēśvari...(2x)] We searched and found refuge in You, O dear Muttumari. 
+   page vol3-240: lines=0.92 cont=0.82 songs nearby=['tatan avitunnu nangal makkal', 'tenmazhayaka untan', 'teti unnai saranataintom', 'tuyarang kalai kurum']
+       240 Bhajanamritam 3 I have been seeking, pining for love, I am alone, forlorn, dejected; I have wandered far chasing a vague vision,and have wept long and am tired. Kaṇkaḷil kaṇṇīr illai azhutiṭa tenpum illai uṭalil tunnpakkanalil entan idayamō ventu nīrākiratu My parched heart is crushed to pieces,
+
+==== NamoNamah [accept] linked=['namo namah (telugu)'] title=Namo Namah refs=[{'year': '2013', 'page': '18'}]
+   SHEET: Na mo na mah na mo na mah kā li cha ra nā lu | mā ma na su na ko lu vai na kā li cha ra nā lu | Vai rā gya sī ma lo ā ḍu cha ra nā lu
+   page vol7-203: lines=1.0 cont=0.96 songs nearby=['nam japo (hindi)', 'nambinor (tamil)', 'namo namah (telugu)', 'namostute devi (marathi)', 'nane ariyata ennai (tamil)']
+       Devotional Songs of Sri Mata Amritanandamayi 203 nām japat pāpom kā kṣay ho nām raṭat man nāmī may ho nām ki mahimā kahi na jāye nām jape so hi gati pāye By chanting the Lord’s name, one’s bad karma comes to an end and the mind merges in the divine. No one can express the glory of chanting that name
+   page vol7-204: lines=0.71 cont=0.72 songs nearby=['nam japo (hindi)', 'namo namah (telugu)', 'namostute devi (marathi)', 'nan enbatai (tamil)', 'nane ariyata ennai (tamil)']
+       Bhajanamritam Volume 7 204 yenalēni andāla jilugu caranālu dharani dēvi cumbince kāli caranālu manasune mōhinche madhura caranālu mā manasuna koluvaina kāli caranālu The holy feet, whose beauty is beyond measure, are kissed by Mother Earth; those sweet feet that capture the minds of devo- tees, are 
+   page vol7-202: lines=0.57 cont=0.47 songs nearby=['nalnallatakum (tamil)', 'nam japo (hindi)', 'nambinor (tamil)', 'namo namah (telugu)', 'namostute devi (marathi)']
+       Bhajanamritam Volume 7 202 kōyilillā nagaramē narakamentru solvārkaḷ kōyilāy manam māra sorkamākum enpārkaḷ kōyilin karuvarai uraintiṭum māriyamma – mana kōyilil vīttriruntu mangaḷam aruḷvāyē It is said that a city without a temple is like hell, and a heart that enshrines God is heaven. O One who dw
+
+==== NandalalaNandalalaHari [accept] linked=['nandalala nandalala (sanskrit)'] title=Nandalâlâ Nandalâlâ refs=[{'book': 'VI', 'page': '159'}]
+   SHEET: Nan da lā lā nan da lā lā | Nan da lā lā ha ri nan da lā lā | Na va ja la dha ra sa ma nī la kṛṣ ṇa
+   page vol6-159: lines=0.89 cont=0.74 songs nearby=['nan enna seyyavendum (tamil)', 'nanagenu beda (kannada)', 'nandalala nandalala (sanskrit)', 'nannu cusi (telugu)', 'nene manave ammana ninu (kannada)']
+       159 Devotional songs O Mother, I don’t need anything other than to seek Your feet. nanagēnu tiḷidilla nanagēnu gottilla nannavarāru illavē illa nannēya tāy tandē nīnē tannēya bandhū baḷakāvu nīnē I have nothing, I have no one. You are my mother and father, relative and friend. mandirada oḷigē mūrtti
+   page vol6-158: lines=0.67 cont=0.54 songs nearby=['namostute devi (marathi)', 'nan enna seyyavendum (tamil)', 'nanagenu beda (kannada)', 'nandalala nandalala (sanskrit)', 'nannu cusi (telugu)']
+       158 Bhajanamritam 6 NĀN ENNA SEYYAVĒṆḌUM (TAMIL) nān enna seyyavēṇḍum tāye un nalmakanāy āvateppaḍi unakkuṇḍu uttamarāy makkaḷāyiram atil nalmakanāy āvateppaṭi What should I do, Mother, to become Your good son? You have thousands of excellent children; how will I also become good? amudamenum alaikaṭ
+
+==== OhMindOfMine [override] linked=[] title= refs=[]
+   SHEET: Hear this oh mind, live ev ery mo ment in re | mem brance of Am ma's name. name. Grate-ful | ly we bow at Her feet, o cean of com
+
+==== OmNamahSivaya [none] linked=[] title=Ôm Namaï Åivâya refs=[]
+   SHEET: Ōm na maḥ śi vā ya ōm na maḥ śi vā ya | ōm na maḥ śi vā ya śi va ōm na maḥ
+   page vol7-69: lines=1.0 cont=1.0 songs nearby=['dayayale urukondu (tamil)', 'devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)', 'devi triloki (hindi)']
+       Devotional Songs of Sri Mata Amritanandamayi 69 bhūtagaṇanāthuḍā śavabhūmivāsuḍā praṇavākāruḍā nīpraḷayakāruḍā śrīśailavāsuḍā bhramarāmbanāthuḍā nīvē śaraṇayyā darijērcavayyā O Lord of ghouls (Shiva’s companions), dweller of the cremation grounds, the form of the primordial sound, Om, the cause of d
+   page vol7-68: lines=1.0 cont=1.0 songs nearby=['dayatoru he kalike (kannada)', 'dayayale urukondu (tamil)', 'devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)']
+       Bhajanamritam Volume 7 68 O Mother, source of everything! Each thought originates in You before coming to the jiva’s mind (living being). You are the subtle supreme aspect (of the entire creation). You incarnate Yourself in all ages. Your divine play is really amazing! ariyātu pōnālum prapaṅcattil y
+   page vol6-59: lines=1.0 cont=1.0 songs nearby=['dehachya muralita gitecha vara (marathi)', 'devadideva (telugu)', 'devi devi devi (kannada)', 'devi mahesvari kali karunakari (kannada)']
+       59 Devotional songs O Lord of the ascetics with matted hair and ash-marks over their bodies, destroyer of birth and death, giver of auspiciousness and destroyer of inauspiciousness! Lord of Kalahasti, destroyer of evils of Kali Yuga (age of darkness) we take refuge in You, take us to the goal! rakṣi
+   page vol6-58: lines=1.0 cont=1.0 songs nearby=['dayagala ma amma (telugu)', 'dehachya muralita gitecha vara (marathi)', 'devadideva (telugu)', 'devi devi devi (kannada)']
+       58 Bhajanamritam 6 While doing the Lord’s work, Lord Hari’s name is always on my lips. My devotion is always without motive. My devo- tion of Lord Hari is always without any motive! hṛdayāta dēva jasā pūṣpāta gandh nātsat mī asā hōun dhūndh āpaṇ tyāchē karūyā pūjan śradhēnē nit nēmē vandan The Lord 
+
+==== OmNamahSivayaA- [none] linked=[] title=Ôm Namaï Åivâya A refs=[]
+   SHEET: Ōm na-maḥ śi vā ya ōm na-maḥ śi vā ya | Ōm na-maḥ śi vā ya ōm na-maḥ śi vā ya
+   page vol7-209: lines=1.0 cont=1.0 songs nearby=['nanendu kanuve (kannada)', 'nanna hudottada (kannada)', 'nannodeya (kannada)', 'nanu embudilla (kannada)', 'narahari narayana (kannada)']
+       Devotional Songs of Sri Mata Amritanandamayi 209 Here lies the fulfillment of Nature. Listen - ‘satyam shivam sundaram’. Nannōḍeya (Kannada) nannōḍeya tiruka nānavana sēvaka bhaktigē oliyuva sumanōpama sumukha My Lord is a vagabond , and I am His servant. The One who is delighted by devotion, the On
+   page vol7-208: lines=1.0 cont=1.0 songs nearby=['nan enbatai (tamil)', 'nanendu kanuve (kannada)', 'nanna hudottada (kannada)', 'nannodeya (kannada)', 'nanu embudilla (kannada)', 'narahari narayana (kannada)']
+       Bhajanamritam Volume 7 208 You bestowed divine knowledge on Dhruva and Prahlada. You banished the poverty of Your dear friend Kuchela. I want noth- ing but Your darshan. Without further delay, please shower Your grace and liberate me. Nanna hudōṭṭada (Kannada) nanna hudōṭṭada mallige sampigē ammani 
+   page vol7-69: lines=1.0 cont=1.0 songs nearby=['dayayale urukondu (tamil)', 'devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)', 'devi triloki (hindi)']
+       Devotional Songs of Sri Mata Amritanandamayi 69 bhūtagaṇanāthuḍā śavabhūmivāsuḍā praṇavākāruḍā nīpraḷayakāruḍā śrīśailavāsuḍā bhramarāmbanāthuḍā nīvē śaraṇayyā darijērcavayyā O Lord of ghouls (Shiva’s companions), dweller of the cremation grounds, the form of the primordial sound, Om, the cause of d
+   page vol7-68: lines=1.0 cont=1.0 songs nearby=['dayatoru he kalike (kannada)', 'dayayale urukondu (tamil)', 'devadideva (telugu)', 'devi dayakari (kannada)', 'devi mahadevi (hindi)']
+       Bhajanamritam Volume 7 68 O Mother, source of everything! Each thought originates in You before coming to the jiva’s mind (living being). You are the subtle supreme aspect (of the entire creation). You incarnate Yourself in all ages. Your divine play is really amazing! ariyātu pōnālum prapaṅcattil y
+
+==== OruNalilNyanEn [accept] linked=['oru nalil nanen kannane'] title=Oru Nâöil Nyân En refs=[{'book': 'I', 'page': '106'}]
+   SHEET: O-ru nā ḷil nyān en kaṇ ṇa-ne kā ṇum | o ru gā na mā dhu ri keḷk kum | Ō ma na chuṇ du ka ḷil ō da ku zha-lu mai
+   page vol1-194: lines=1.0 cont=0.88 songs nearby=['omkaram engum', 'oru nalil nanen kannane', 'oru nalil varumo hrdaya', 'oru tulli sneham']
+       194 Bhajanamritam 1 uḷḷil niraññu kaviña dīptī munnil teḷiyunna nāḷ varumbōḷ unmatta bhaktiyāl nin rūpakāntiyil- onnāyicchērnnu layikkumallō (ōmkāra) When the overflowing inner light fills within and overflowing without, shines before me, I will merge in the beauty of Thy Form through the intoxicati
+   page vol1-193: lines=0.67 cont=0.64 songs nearby=['omkaram engum', 'oru nalil nanen kannane', 'oru nalil varumo hrdaya']
+       193 Devotional songs Thee well when this Universe is understood to be worthless which so far was felt as great. aṇapoṭṭi ozhukunnu śoka bāṣpam tuṇayamba mātramāyi tīrnni tippōḷ vṛṇatuchcha bhōgam tyajicchivanē aṇikaramēki anugrahikkū (ōmkāra) Tears of sorrow are overflowing and now Mother is the onl
+
+==== RadheKrishna [accept] linked=['radhe krsna (gopika ramana)'] title=Râdhê Këæhñâ (Gôpikâ Ramaña) refs=[{'book': 'IV', 'page': '161'}]
+   SHEET: Rā-dhē kṛṣ-ṇā rā-dhē kṛṣ-ṇā rā-dhē rā dhē rā-dhē kṛṣ-ṇā | rā dhē kṛṣ ṇā rā dhē rā dhē kṛṣ-ṇā rā dhē rā dhē | Gō pi kā ra ma ṇā kṛṣ-ṇā gō ku la pā lā
+   page vol4-161: lines=1.0 cont=0.94 songs nearby=['radha tan sandesam', 'radhe krsna (gopika ramana)', 'radhe radhe govinda bhajo', 'raga vairikal ningitum']
+       161 Devotional songs Rādhē kṛṣṇā (gōpikā ramaṇa) Rādhē kṛṣṇā rādhē kṛṣḥṇā rādhē rādhē rādhē kṛṣṇā rādhē kṛṣṇā rādhē rādhē kṛṣṇā rādhē rādhē Gōpikā ramaṇā kṛṣṇā gōkulabālā mōhana rūpā kṛṣṇā nīla śarīrā kuñjavihārā kṛṣṇā mañjulapādā sundaravadanā kṛṣṇā rañjitalōkā O enchanter of the Gopis, O Krishna o
+   page vol4-160: lines=1.0 cont=0.93 songs nearby=['prema me jiyo', 'radha tan sandesam', 'radhe krsna (gopika ramana)', 'radhe radhe govinda bhajo']
+       160 Bhajanamritam 4 Rādha tan sandēśam Rādha tan sandēśam ettī mathurayil kaṇṇaniṅgōṭṭonnu vannīṭaṇē ennuṭe vīṭṭil varēṇṭa sakhē vṛndāvanattilēkkettīṭaṇē Radha’s message reached Mathura: “O Krishna, please come just once! You need not come to my house and visit me, but, I pray, come to Vrindavan at 
+
+==== RadhesyamRadhesyam [accept] linked=['radhesyam radhesyam (hindi)'] title=Râdheåyâm Râdheåyâm refs=[{'year': '2015', 'page': '49'}]
+   SHEET: Rā dhe śy ā m rā dhe śyām | Ta ṭ pa t hū n mem yā d mem te rī, nā jā nū vi śrām | Bā v ri ke h ke mī rā pa r sa b has te ha i hai O
+   page vol7-248: lines=1.0 cont=0.83 songs nearby=['queen of my heart (english)', 'radha govinda (telugu)', 'radhesyam radhesyam (hindi)', 'rasikaraj (hindi)', 'rat din dalati jay (hindi)']
+       Bhajanamritam Volume 7 248 do arguments about creation-illusion benefit us? When You, the all-pervading entity alone exist as creation. mannu tinna nōru cūpu kṛṣṇā viśvamē nīlō unnadi kṛṣṇā jagamē nīlīlā svapnamu kṛṣṇā brahmamu nīvē kādā kṛṣṇā kṛṣṇā Please show us inside Your mouth with the mud You 
+   page vol7-247: lines=0.81 cont=0.53 songs nearby=['putta krsna (kannada)', 'queen of my heart (english)', 'radha govinda (telugu)', 'radhesyam radhesyam (hindi)', 'rasikaraj (hindi)']
+       Devotional Songs of Sri Mata Amritanandamayi 247 I await that day like the coming of the dawn, when your eyes will meet mine finally. though the night is drawing near, your name is on my tongue if it’s my fate that we won’t meet, then in my heart I’ll sing you this song. light of the morning, hope o
+   page vol4-32: lines=0.5 cont=0.1 songs nearby=['anbatikkannante padangal', 'asu bhare', 'ati ananda de', 'ayi he holi', 'bhagavan krsna akar']
+       32 Bhajanamritam 4 Tū na āyā to sunalē śyām asuvan ki jamunā bahēgi dūbēgi yē vṛndāvan rādhā phir kabhi nahi milēgi rādhē śyām ō....rādhē śyām If You will not return, O Lord, my tears will flow like the river Yamuna, and the whole of Vrindavan will be submerged in the river of grief. Then, You will 
+   page vol4-31: lines=0.5 cont=0.07 songs nearby=['ananta rupini', 'anbatikkannante padangal', 'asu bhare', 'ati ananda de', 'ayi he holi']
+       31 Devotional songs If only I could forget everything by constantly remembering Your beautiful form. With folded hands I cry for You - O Deva, have mercy! O Kanna, have mercy! Āsū bharē Āsū bharē nayanōm sē pūchē rādhā śyām sē rādhē śyām ō....rādhē śyām kyō ham kō chōḍ gayē With tear-filled eyes, Ra
+
+==== RajaRam [override] linked=[] title=Râja Râm refs=[]
+   SHEET: Rā-ja rām rā ja rām rā ja rām rā ja | rām sī tā rām sī tā rām sī tā | śyām rādhe śyām rādhe śyām rādhe
+
+==== ReManva [none] linked=[] title=Re Manva refs=[]
+   SHEET: Re ma n va re ma n va | pyā r pra bhu se ka r le | ka ya phe re shwa s ke ma n ke
+
+==== SambhoSankara [accept] linked=['sambho sankara umapathe'] title=Åambhô Åankara refs=[{'book': 'II', 'page': '215'}]
+   SHEET: Śambhōśanka-ra u-mā pathe pā hiśanka-ra pa-śu pa-the | Nan-di vā ha-na nā-ga-bhūṣa-nā chān-draśekha-rā ja-dādha-rā | Gangā dhāra śiva gaurima-nōha-rā pāhiśan kā-ra sadā-śiva
+   page vol2-188: lines=1.0 cont=0.95 songs nearby=['rama raghava', 'rama rahima ko', 'sakti de bhakti de', 'sambho mahadeva', 'sambho sankara', 'sambho sankara umapathe']
+       188 Bhajanamritam 2 śambhō śankara śambhō śaṇkara śambhō śaṇkara śambhō śaṇkara śiva śambhō śambhō śaṇkara śambhō śaṇkara śambhō śaṇkara śiva śambhō indu kalā dhara ganga jaṭā dharā śambhō śaṇkara gaurīśā pannaga bhūshaṇa parimaḷa gātrā pāvana caraṇā paramēśvarā O Sambu! O Sankara, the Lord of Gouri
+   page vol2-189: lines=0.67 cont=0.86 songs nearby=['sambho mahadeva', 'sambho sankara', 'sambho sankara umapathe', 'sankari sambhavi', 'santamay orukatte jivitam', 'sapta svarangalkkum']
+       189 Devotional songs nandi vāhana nāgabhūṣanā cāndraśēkharā jadādharā gangādhāra śiva gauri manōharā pāhi śaṇkāra sadāśiva O Shiva, Lord of Parvati, protect us. You who are Lord of all created beings, You ride on the bull Nandi and are adorned with snakes. You wear the moon and matted locks on Your 
+
+==== SamsaraDukha [accept] linked=['samsara dukha samanam'] title=Samsâra Dukha Åamanam refs=[{'book': 'I', 'page': '108'}]
+   SHEET: Sam-sā-raduḥ kha śa-ma-namchey-yum an-put-ta lō ka ja-na-nī! | Nin div-ya has ta ta-ṇa-lā ṇen-num en-num na-muk ko ra bha-yam | An-dhat-vamārn nu ma-ru-vumjī-va vṛn-dat-tin am ba śa-ra-ṇam
+   page vol1-223: lines=1.0 cont=0.94 songs nearby=['sachitananda guru', 'samsara dukha samanam', 'sarvam brahma mayam', 'satchitananda guru']
+       223 Devotional songs chāḷatteruvil śunikaḷ kaṇakkē alayunnu māyayālē tāye! nin makkaḷāṇennuṛacchāl lōka vairuddhyam snēhamākum.... dharmam engum ānandam ēkum (śakti) Like the dogs in the slum streets, man wanders in Maya. O Mother, if one looks upon all as being Your children, the contradictions of 
+   page vol1-222: lines=0.75 cont=0.79 songs nearby=['sakti rupe ninte', 'samsara dukha samanam', 'sarvam brahma mayam']
+       222 Bhajanamritam 1 bimbam namikkum śirassaham bhāvattāl engum vinaya mattāl ambikē sarvatra vyāpta chaitanyamē dambham nin munnil allē.... mada matsaram ninnoṭallē? (śakti) O Mother, all-pervading Awareness, is it not deceitful to humbly bow one’s head to Thee though full of pride? Through self- im
+
+==== SarvaMangala [accept] linked=['sarva mamgala lalitambika'] title=Sarva Mangala refs=[{'book': 'IV', 'page': '174'}]
+   SHEET: Sar va man ga la la li tām bi ka | Bhakta ma na sa ham si ka Bhak ti matkal pa ra si ka | La li tām bi ka
+   page vol4-174: lines=1.0 cont=0.9 songs nearby=['saranam saranam kali', 'sarva mamgala lalitambika', 'sarvajagattinum adharam', 'siva saktyaikya rupini', 'siva siva siva siva nama']
+       174 Bhajanamritam 4 Nutanamennum nin rūpam nitya vasantakatir pōle mānasasarasin hamsini nī māmaka jīvana cirabanḍhō Your form is ever fresh, ever new, like the flower of eternal spring. You are the swan in the lake of the mind and the unfailing friend of my life. Cintāmalarāl kōrttorumālyam amba, n
+   page vol4-173: lines=0.62 cont=0.63 songs nearby=['samkara siva samkara', 'sankarji ka damaru bole', 'saranam saranam kali', 'sarva mamgala lalitambika', 'sarvajagattinum adharam', 'siva saktyaikya rupini']
+       173 Devotional songs Śaraṇam śaraṇam kāli Śaraṇam śaraṇam kāli śaraṇam śaraṇam satatam jagadambā śaraṇam śaraṇam bhairavi bhadrē śaraṇam śaraṇam satatam śiva śakti śaraṇam Grant us refuge, O Kali. O Beautiful wife of Siva, please grant us refuge. Pārvati śaraṇam pāvani śaraṇam pāpa vināśiṇi mē śaraṇ
+
+==== SriPadaMahatmya [accept] linked=['amrtesvari padam vande (sri pada mahatmyam)'] title=Årî Pada Mâhâtmya refs=[{'book': 'II', 'page': '234'}]
+   SHEET: Śrī pā da mā hāt mya mārk ka ṛi yām gu ru | pā dat tin vai bha va mārk ka ṛi yām | A mṛ tēś va rī am mē ā nan da sā ra mē
+   page vol2-203: lines=0.9 cont=0.89 songs nearby=['amrtesvari padam vande (sri pada mahatmyam)', 'sri krsna chaitanya', 'sri krsna govinda', 'sri mata jagan mata', 'sri pada mahatmyam (amrtesvari padam vande)', 'sruti padamillate']
+       203 Devotional songs śrī pāda māhātmyaM śrī pāda māhātmyam ārkkariyām - guru pādattin vaibhavamārkkariyām amṛteśvarī ammē ānanda sāramē kaivalya dhāmamē ñān namikkām amṛtēṣvari pādam vandē . . . (2) Who knows the importance of the lotus feet of the Guru? Who knows the grandeur of the Guru’s feet? Am
+   page vol2-202: lines=0.9 cont=0.88 songs nearby=['amrtesvari padam vande (sri pada mahatmyam)', 'sri kari krpa kari', 'sri krsna chaitanya', 'sri krsna govinda', 'sri mata jagan mata', 'sri pada mahatmyam (amrtesvari padam vande)']
+       202 Bhajanamritam 2 gōvinda gōvinda gōvinda vāsudēva nārāyaṇa nārāyaṇa nārāyaṇa vāsudēva hē nātha nārāyaṇa vāsudēva śrī kṛṣṇa - The Glorious All-attracting One gōvinda - Lord of the cows harē - Reliever of the distressed murāre - Destroyer of the demon Mura hē nātha - O Lord nārāyaṇa - The One Who r
+
+==== SriRamaNamame [accept] linked=['sri rama namame (tamil)'] title=Årî Râma Nâmamê refs=[{'year': '2014', 'page': '53'}]
+   SHEET: Śrī rā ma nā ma mē son nāl an | kē va ru vān ha nu mān Śrī mān | Kṣē man gaḷ yā vum ta ru vān śrī
+   page vol7-271: lines=1.0 cont=0.84 songs nearby=['sri devi lalita (tamil)', 'sri krsna deva (malayalam)', 'sri rama namame (tamil)', 'srsti veru (telugu)', 'sukh karta (hindi)']
+       Devotional Songs of Sri Mata Amritanandamayi 271 trētā yuga śrīrāma-raghūttama dvāpara yādava kṛṣṇā kātaramām kali kāla matilvann- ādhiyakattuka dēva In the Treta Yuga You came as Rama. In Dwapara Yuga You came as Krishna. In this fierce Kali Yuga You come and remove all worries. jñānālaya śrī sādhu
+   page vol7-270: lines=0.86 cont=0.63 songs nearby=['sivke (hindi)', 'sri devi lalita (tamil)', 'sri krsna deva (malayalam)', 'sri rama namame (tamil)', 'srsti veru (telugu)']
+       Bhajanamritam Volume 7 270 ūnamatai akattum umāśankariyē vīṇai nādaṁ mīṭṭiṭuṁ maṇgaḷāmbikē prāṇa śaktiyākum karppakāmbikē praṇava rūpiṇi śaraṇaṁ tāyē You are Goddess Uma Sankari who saves us from the cycle of birth and death. You are Goddess Mangalambika who plays the veena. You are Goddess Karpakam
+   page vol7-272: lines=0.5 cont=0.44 songs nearby=['sri krsna deva (malayalam)', 'sri rama namame (tamil)', 'srsti veru (telugu)', 'sukh karta (hindi)', 'sundara vadana (hindi)']
+       Bhajanamritam Volume 7 272 He razed Lanka with his tail. He defied the Lord of Lanka (Ravana). Hanuman, son of Anjana, is Lord Rama’s devotee. sañjīvani malayai koṇḍu vandavan sirañjīvi ennum peyar pettravan añjana makanavanām śrī rāma bhakta hanumān He brought back the Sanjivani mountain. He earned
+
+==== SyamRadheShyam [accept] linked=['arati kunja vihari (syam radhe syam)'] title=Åhyâm Râdhe Åhyâm refs=[{'book': 'II', 'page': '224'}]
+   SHEET: Śyām rā-dheśyām rādhe śyām rā-dheśyāmrādhe śyām rā-dheśyām rādhe | śyām rā dhe śyām śyām rā dheśyām Ā ra-ti kuñ-ja-vi | hā rī ki śrī gi ri dha ra kṛṣ-ṇa mu rā rī ki Ā
+   page vol2-215: lines=0.77 cont=0.63 songs nearby=['arati kunja vihari (syam radhe syam)', 'sri sabarisa (svami saranam ayyappa)', 'svami saranam ayyappa (sri sabarisa)', 'syam radhe syam (arati kunja vihari ki)', 'syamne murali', 'tamara kanna varu']
+       215 Devotional songs Śyām rādhe Śyām (ĀRATI KUñJavihari) śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām āratī kuñjavihāri kī śrī giridhara kṛṣṇa murāri kī śyām rādhe śyām... This is the arati for Lord Krishna Who lives in the bower, for the One Who killed the demon
+   page vol2-214: lines=0.69 cont=0.62 songs nearby=['arati kunja vihari (syam radhe syam)', 'sri sabarisa (svami saranam ayyappa)', 'sundara kanna kanna', 'svami saranam ayyappa (sri sabarisa)', 'syam radhe syam (arati kunja vihari ki)', 'syamne murali']
+       214 Bhajanamritam 2 Lord of Sabari a tribal woman greatly devoted to Rama. Sabarimala is the mountain on which she lived and which is the site of the famous Ayyappa temple. Destroyer of greed, the Form Eternal, Dweller on the Mountain, O Lord Ayyappa, Thou art my refuge. caranarenu śirasilaniññu par
+
+==== TarakaNama [accept] linked=['taraka nama (kannada)'] title=Târaka Nâma refs=[{'year': '2015', 'page': '53'}]
+   SHEET: Tā ra ka nā ma ma hā ma hi mā śrī rā ma | ja ya rā ma ra ghu rā ma sī tā rā ma | Ma na vem ba mar ka ṭa ō rā ma
+   page vol7-286: lines=1.0 cont=0.93 songs nearby=['tapamanu (telugu)', 'taraka nama (kannada)', 'taraka namamu (telugu)', 'tataikalai nikkitum (tamil)']
+       Bhajanamritam Volume 7 286 Tāraka nāma (Kannada) tāraka nāma mahā mahimā śrī rāma jaya-rāma raghu-rāma sītā-rāma The glorious name of Rama enables one to transcend samsara, the cycle of birth and death. Victory to Rama of the Raghu dynasty, consort of Sita! manavemba markaṭa – ō rāma nina nāma dinda
+   page vol7-285: lines=1.0 cont=0.93 songs nearby=['tandavamati (tamil)', 'tapamanu (telugu)', 'taraka nama (kannada)', 'taraka namamu (telugu)']
+       Devotional Songs of Sri Mata Amritanandamayi 285 For earthly beings to dance happily, for auspiciousness to fill the earth and heaven, for the showering of flowers to the sound of divine music by the gods- the dance You are dancing is a much-praised one! Tapamanu (Telugu) tapamanu dhanuvanu cēpaṭṭu 
