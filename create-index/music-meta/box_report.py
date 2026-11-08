@@ -25,11 +25,6 @@ def _full_matches(track):
             if t==3: m3.add(n)
         _fm[track]=(m2,m3)
     return _fm[track]
-def _twin_blocks(track, song):
-    m3=_full_matches(track)[1]
-    indian=[n for n in m3 if _lang(n) not in mb.FOREIGN]; base=[n for n in indian if not mb.name_tagged(n)]
-    langs={_lang(n) for n in indian}
-    return len(langs)>1 and (song not in base or len({_lang(n) for n in base})!=1), langs
 def _main_is_entry(track):
     return bool(_full_matches(track)[0])
 def _owners(track, hint):
@@ -60,9 +55,8 @@ def tier(track, song):
     if tl and _lang(song) and tl!=_lang(song): return 0
     al=mb.album_language(_folder_of.get(track,''))
     if not tl and al and _lang(song) and al!=_lang(song): return 0
-    m3=_full_matches(track)[1]
-    if not tl and not al and _twin_blocks(track, song)[0]: return 0
     if _lang(song) in mb.FOREIGN and not (tl==_lang(song) or al==_lang(song)):
+        m3=_full_matches(track)[1]
         if song not in m3: return 0
         if any(n!=song and _lang(n) not in mb.FOREIGN for n in m3): return 0
     core=[w for k,w in enumerate(tw) if not (k==0 and w in mb.ARTICLES)]
@@ -70,6 +64,27 @@ def tier(track, song):
     owners=_owners(track, hint)
     if owners and song not in owners: return 0
     return mb.song_tier(tk, tw, idx_songs[song], titles[song], aliases[song])
+_t3={}
+def _tier3(track):
+    if track not in _t3: _t3[track]=[n for n in idx_names if tier(track,n)==3]
+    return _t3[track]
+def _full3(track):
+    return [n for n in _full_matches(track)[1] if tier(track,n)>0]
+def _other(track, song, pool): return [n for n in pool if n!=song and _lang(n) not in mb.FOREIGN and _lang(n)!=_lang(song)]
+def _yields(track, song):
+    tl=mb.language_of(track); al=mb.album_language(_folder_of.get(track,''))
+    if tl or al or not mb.is_version(song): return False
+    return any(not mb.name_tagged(n) for n in _other(track, song, _tier3(track)))
+def _rivals_block(track, song):
+    """mirrors match_box rivals_block: (blocks, languages involved)"""
+    tl=mb.language_of(track); al=mb.album_language(_folder_of.get(track,''))
+    if tl or al or _lang(song) in mb.FOREIGN: return False, set()
+    if _yields(track, song): return True, {_lang(song)}|{_lang(n) for n in _other(track, song, _tier3(track)) if not mb.name_tagged(n)}
+    full=_full3(track)
+    if song not in full: return False, set()
+    rivals=_other(track, song, full)
+    if not rivals: return False, set()
+    return (mb.name_tagged(song) or not all(mb.is_version(n) for n in rivals)), {_lang(n) for n in rivals}|{_lang(song)}
 def best(track):
     if track not in tier_cache:
         tier_cache[track]=max(((tier(track,n),n) for n in idx_names), default=(0,None))
@@ -88,13 +103,15 @@ def verdict(song, track):
     if not tl and al and _lang(song) and al!=_lang(song): return ('album is a translation', f'album {al}, entry {_lang(song)}')
     tw=mb.track_words(track)
     m3=_full_matches(track)[1]
-    if not tl and not al:
-        blocks,twins=_twin_blocks(track, song)
-        if blocks: return ('same title in two languages, no language evidence', ', '.join(sorted(x for x in twins if x)))
+    m3=_full_matches(track)[1]
+    if not tl and not al and tier(track,song)==3:
+        blocks,twins=_rivals_block(track, song)
+        if blocks: return ('version entry yields to the untagged original' if mb.is_version(song) else 'same title in two languages, no language evidence', ', '.join(sorted(x for x in twins if x)))
     if _lang(song) in mb.FOREIGN and not (tl==_lang(song) or al==_lang(song)) and (song not in m3 or any(n!=song and _lang(n) not in mb.FOREIGN for n in m3)): return ('untagged recording on a translation entry', f'entry {_lang(song)}; the Indian original holds it')
     core=[w for k,w in enumerate(tw) if not (k==0 and w in mb.ARTICLES)]
     if len(core)==1 and _ambiguous(core[0], song): return ('one-word title opens several songs', core[0])
-    if song not in m3 and m3 and tier(track,song)==3: return ('the whole title is another entry', 'a song whose whole name is the track title holds it')
+    m3_ok=[n for n in _full3(track) if not _yields(track,n)]
+    if song not in m3 and m3_ok and tier(track,song)==3: return ('the whole title is another entry', 'a song whose whole name is the track title holds it')
     ov=overrides.get(song,{})
     if track in ov.get('add',[]): return ('linked from the recording\'s own words', ov.get('why',''))
     if track in ov.get('drop',[]): return ('unlinked from the recording\'s own words', ov.get('why',''))

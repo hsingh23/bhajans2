@@ -159,29 +159,32 @@ into a phonetic key (`amriteshwari`, `amrtesvari`, `Amrteshvari` all give `amrti
   sends the recording there and nowhere else; a one-word title that opens several songs
   ("Amriteshwari", "Sri Lalitambike") names none of them; a recording whose whole title is
   another entry's whole name goes to that entry, not to a shorter entry it merely opens;
-  when the whole title is the whole name of entries in two Indian languages ("Amma Amma
-  Amma", Hindi and Tamil) an untagged recording goes to the entry whose own name carries no
-  language tag (the original; "(kannada version)" entries were added for the others) and to
-  none when there is no such entry or there are such entries in several languages;
+  when an untagged recording names entries in two Indian languages equally, entries that
+  call themselves a version ("iniyoru janmam - kannada version": translations named after
+  their original) yield it to the untagged original, while entries with a plain language tag
+  ("jaya jagadisvari (marathi)", "nandalala nandalala (sanskrit)") may be different songs
+  sharing a title, so neither side takes it unless the sung words decide (`box-overrides.json`);
   and `box-overrides.json`
   holds the decisions made from the recording's own sung words. A fuzzy score alone had
   linked different songs one letter apart (Skanda / Ananda Janani, Raja / Rama, Karunalaye /
-  Karunamayi Devi). 2250 songs now have an accepted recording against 2294 before (3453
-  accepted links; 3095 distinct song/title pairs: 2999 same words, 23 of them through a CD
-  Baby alias, 81 spelling, 4 near, 11 from the sung words, a documented override or a unique
+  Karunamayi Devi). 2244 songs now have an accepted recording against 2294 before (3448
+  accepted links; 3090 distinct song/title pairs: 3004 same words, 22 of them through a CD
+  Baby alias, 70 spelling, 4 near, 12 from the sung words, a documented override or a unique
   short title): the count is lower than before because the old matcher fanned recordings out
   onto sibling entries that merely open with the same words and onto both language twins of
-  a title. 118 songs lose every old
+  a title. 125 songs lose every old
   recording, each with its verdict in `box-link-changes.md` (the earlier losses also have
-  their printed-title check in `box-losses-lyrics-check.md`): 28 whose untagged recording's
-  title is the whole name of entries in two Indian languages, 18 whose recording's whole
-  title is another entry's whole name, 16 translation entries whose untagged recording the
-  Indian original holds, 13 on albums named for another language (translations), 8 whose
-  title belongs exactly to another entry, 5 one-word titles that open several songs, 5
-  language versions, 2 one-word titles too short to tell apart, 7 renames. Ten mis-transcribed names
+  their printed-title check in `box-losses-lyrics-check.md`): 24 whose untagged recording's
+  title is the whole name of entries in two Indian languages with plain language tags, 20
+  whose recording's whole title is another entry's whole name, 19 titles with different words,
+  15 translation entries whose untagged recording the Indian original holds, 13 on albums
+  named for another language (translations), 8 whose title belongs exactly to another entry,
+  7 version entries that yield the untagged recording to their original, 5 one-word titles
+  that open several songs, 5 language versions, 2 one-word titles too short to tell apart, 7
+  renames. Ten mis-transcribed names
   were corrected to the printed title (`renamed-songs.json`; the last six: `ennute jivita`,
   `vithal smaran kara`, `jamuna ke tat par`, `hamsa vahina devi`, `nilanjana mizhi`,
-  `kaitozhunnen krsna`). `music-meta/title-fixtures.json` pins 127 labelled title pairs,
+  `kaitozhunnen krsna`). `music-meta/title-fixtures.json` pins 129 labelled title pairs,
   name-only and with aliases (`python match_box.py --check`); `box-audio-check.md` records
   what Whisper heard in the doubtful recordings, compared with the sheet's lyric lines; eight
   recordings were linked from their sung words, one ("Nenchakam Ventitunnu") stays unlinked
