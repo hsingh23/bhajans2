@@ -27,6 +27,11 @@ describe('Amazon track links in the index', () => {
     const names = linked.map((b) => b.n);
     expect(names.filter((n) => /omkara divya porule/.test(n))).toEqual([]);
     expect(names.filter((n) => /\bversion\b|spanish|french/.test(n))).toEqual([]);
-    expect(Object.fromEntries(linked.map((b) => [b.n, b.az]))['kalam kanalu (kannada)']).toBeUndefined();
+    const az = Object.fromEntries(linked.map((b) => [b.n, b.az]));
+    expect(az['kalam kanalu (kannada)']).toBeUndefined();
+    // Twins that are all language-tagged: the Malayalam original keeps the track, unless another name matches it exactly.
+    expect(az['nilambuja nayane (malayalam)']).toBe('B004G1V3OQ');
+    expect(az['nilambuja nayane (telagu)']).toBeUndefined();
+    expect(az['prema sagara (kannada)']).toBe('B00845ADFK');
   });
 });
