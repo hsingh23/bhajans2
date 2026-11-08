@@ -127,12 +127,13 @@ export const tabLines = (instrument, placed, names = []) => {
 };
 
 const NOTE_PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+// Chord quality prefixes, longest first; each consumes its text from the name.
 const QUALITIES = [
   [/^(maj7|M7)/, [0, 4, 7, 11]],
-  [/^m7b5|^ø/, [0, 3, 6, 10]],
-  [/^dim7/, [0, 3, 6, 9]],
-  [/^dim|^°/, [0, 3, 6]],
-  [/^(aug|\+)/, [0, 4, 8]],
+  [/^(m7b5|ø7?)/, [0, 3, 6, 10]],
+  [/^(dim7|°7)/, [0, 3, 6, 9]],
+  [/^(dim|°)/, [0, 3, 6]],
+  [/^aug/, [0, 4, 8]],
   [/^m6/, [0, 3, 7, 9]],
   [/^m7/, [0, 3, 7, 10]],
   [/^m(?!aj)/, [0, 3, 7]],
@@ -141,16 +142,38 @@ const QUALITIES = [
   [/^7/, [0, 4, 7, 10]],
   [/^6/, [0, 4, 7, 9]],
   [/^(5|\(no3\))/, [0, 7]],
+  [/^/, [0, 4, 7]],
+];
+const swapFifth = (intervals, to) => (intervals.includes(7) ? intervals.map((i) => (i === 7 ? to : i)) : null);
+// What may follow the quality; anything else is a chord we cannot draw correctly.
+const ALTERATIONS = [
+  [/^(-5|b5|\(b5\))$/, (iv) => swapFifth(iv, 6)],
+  [/^(#5|\+5|\(#5\))$/, (iv) => swapFifth(iv, 8)],
+  [/^5$/, (iv) => (iv.includes(8) ? iv : null)], // "aug5" is just aug
+  [/^(\+?9|add9|\(add9\))$/, (iv) => [...iv, 2]],
+  [/^$/, (iv) => iv],
 ];
 
-/** Root and chord tones (pitch classes) of a chord name such as "Bbm7" or "F#dim". */
+/**
+ * Root and chord tones (pitch classes) of a chord name such as "Bbm7", "F#dim"
+ * or "Am-5". Null when the name has a quality or alteration it cannot read,
+ * so no diagram is drawn rather than a wrong one.
+ */
 export const chordTones = (name) => {
   const match = /^([A-G])([#b]?)(.*)$/.exec(String(name || '').trim());
   if (!match) return null;
   const [, letter, acc, quality] = match;
   const root = mod12(NOTE_PC[letter] + (acc === '#' ? 1 : acc === 'b' ? -1 : 0));
-  const intervals = QUALITIES.find(([re]) => re.test(quality))?.[1] || [0, 4, 7];
-  return { root, tones: intervals.map((i) => mod12(root + i)), fifth: intervals.length > 3 && intervals.includes(7) ? mod12(root + 7) : null };
+  const [re, base] = QUALITIES.find(([pattern]) => pattern.test(quality));
+  const rest = quality.replace(re, '');
+  const alter = ALTERATIONS.find(([pattern]) => pattern.test(rest))?.[1];
+  const intervals = alter ? alter(base) : null;
+  if (!intervals) return null;
+  return {
+    root,
+    tones: intervals.map((i) => mod12(root + i)),
+    fifth: intervals.length > 3 && intervals.includes(7) ? mod12(root + 7) : null,
+  };
 };
 
 const product = (lists) => lists.reduce((acc, list) => acc.flatMap((a) => list.map((x) => [...a, x])), [[]]);

@@ -99,6 +99,12 @@ describe('taal counting', () => {
   });
 });
 
+describe('chord names from the data', () => {
+  it('reads + as augmented only on its own or with 5; +9 is an added ninth', () => {
+    expect(chordsInKey(['V+5', 'I+', 'i+9', 'I+9'], 0).map((c) => c.chord)).toEqual(['Gaug', 'Caug', 'Cmadd9', 'Cadd9']);
+  });
+});
+
 describe('generated musician summaries', () => {
   // build_music_json.py writes the "en" summary; its key and notes must read
   // exactly like the app's Key line and Up / Down rows (Cb, not B, in Bb Sindhu Bhairavi).

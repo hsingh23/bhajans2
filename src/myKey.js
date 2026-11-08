@@ -8,6 +8,11 @@ import { setPref, usePref } from './prefs';
 import { isPitchClass } from './musicTheory';
 
 export const MY_KEY_PREF = 'musicKey';
+/**
+ * Stored when the reader goes back to recording keys. A value rather than a
+ * deletion, so the reset syncs to the account and other devices like a key does.
+ */
+export const RECORDING_KEYS = 'recording';
 
 /** The saved Sa as a pitch class, or undefined when the reader has not chosen one. */
 export const useMyKey = () => {
@@ -15,9 +20,9 @@ export const useMyKey = () => {
   return isPitchClass(value) ? value : undefined;
 };
 
-/** Saves (or, with anything but a pitch class, clears) the reader's key. */
+/** Saves the reader's key, or with anything but a pitch class goes back to recording keys. */
 export const setMyKey = (pc) => {
-  const value = isPitchClass(pc) ? pc : undefined;
+  const value = isPitchClass(pc) ? pc : RECORDING_KEYS;
   setPref(MY_KEY_PREF, value);
-  track('set_my_key', { my_key: value ?? 'none' });
+  track('set_my_key', { my_key: value });
 };

@@ -143,7 +143,8 @@ const qualityFor = (lower, suffix) => {
   const s = suffix.trim();
   if (/^(°|o|dim)/.test(s)) return 'dim' + s.replace(/^(°|o|dim)/, '');
   if (/^ø/.test(s)) return 'm7b5';
-  if (/^\+/.test(s)) return 'aug' + s.slice(1);
+  if (/^\+5?$/.test(s)) return 'aug';
+  if (/^\+9$/.test(s)) return (lower ? 'm' : '') + 'add9';
   return (lower ? 'm' : '') + s;
 };
 

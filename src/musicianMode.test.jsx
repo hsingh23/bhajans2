@@ -418,7 +418,8 @@ describe('piano keys and transposing', () => {
     expect(section).toHaveTextContent('Transposed from the recording: D (2 kattai)');
 
     fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
-    expect(getPrefs().musicKey).toBeUndefined();
+    expect(getPrefs().musicKey).toBe('recording');
+    expect(window.dataLayer).toContainEqual({ event: 'set_my_key', my_key: 'recording' });
     expect(section).toHaveTextContent('D (2 kattai)');
     expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
   });
@@ -430,7 +431,7 @@ describe('piano keys and transposing', () => {
     fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
     fireEvent.click(within(section).getByRole('button', { name: 'Show every song in Ab (5.5 kattai)' }));
     fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
-    expect(getPrefs().musicKey).toBeUndefined();
+    expect(getPrefs().musicKey).toBe('recording');
     expect(section).toHaveTextContent('G (5 kattai) · from the full recording');
     expect(section).toHaveTextContent('G A B D E G');
     expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
@@ -446,6 +447,12 @@ describe('piano keys and transposing', () => {
     applyRemotePrefs({ musicKey: 12 });
     applyRemotePrefs({ musicKey: '7' });
     expect(getPrefs().musicKey).toBe(4);
+    // Going back to recording keys on one device reaches the others at sign-in
+    setPref('musicKey', 'recording');
+    await waitFor(() => expect(mockSetRefOnce).toHaveBeenCalledWith('prefs/u1/musicKey', 'recording'));
+    setPref('musicKey', 4);
+    applyRemotePrefs({ musicKey: 'recording' });
+    expect(getPrefs().musicKey).toBe('recording');
     for (const instrument of ['voice', 'piano', 'guitar', 'ukulele', 'bansuri']) {
       applyRemotePrefs({ musicInstrument: instrument });
       expect(getPrefs().musicInstrument).toBe(instrument);

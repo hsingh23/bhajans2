@@ -10,8 +10,20 @@ describe('chord tones', () => {
     expect(chordTones('Bbm7')).toEqual({ root: 10, tones: [10, 1, 5, 8], fifth: 5 });
     expect(chordTones('F#dim').tones).toEqual([6, 9, 0]);
     expect(chordTones('Gsus4').tones).toEqual([7, 0, 2]);
-    expect(chordTones('Dm-').tones).toEqual([2, 5, 9]);
+    expect(chordTones('Gaug5').tones).toEqual([7, 11, 3]);
+    expect(chordTones('Cadd9').tones).toEqual([0, 4, 7, 2]);
     expect(chordTones('nope')).toBeNull();
+  });
+
+  it('honours an altered fifth and refuses what it cannot read', () => {
+    expect(chordTones('Am-5').tones).toEqual([9, 0, 3]);
+    expect(chordTones('F-5').tones).toEqual([5, 9, 11]);
+    expect(chordTones('C#5').tones).toEqual([1, 8]); // C# power chord, not an altered C
+    expect(chordTones('Cm#5').tones).toEqual([0, 3, 8]);
+    expect(chordTones('Dm-')).toBeNull();
+    expect(chordTones('Amn')).toBeNull();
+    expect(chordShape('guitar', 'Am-5')).not.toEqual(chordShape('guitar', 'Am'));
+    expect(chordShape('guitar', 'Dm(')).toBeNull();
   });
 });
 
