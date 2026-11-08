@@ -125,9 +125,9 @@ describe('Search Component', () => {
 // because react-virtualized requires actual DOM dimensions to render items
 
 const categorizedBhajans = [
-  { n: 'amme narayana', l: ['vol1-10'], lg: 'Malayalam', d: 'Devi' },
+  { n: 'amme narayana', l: ['vol1-10'], lg: 'Malayalam', d: 'Devi', az: 'B004G1T0UK' },
   { n: 'devi devi devi', l: ['vol2-5'], lg: 'Sanskrit', d: 'Devi' },
-  { n: 'gopala gopala', l: ['vol1-25'], lg: 'Hindi', d: 'Krishna' },
+  { n: 'gopala gopala', l: ['vol1-25'], lg: 'Hindi', d: 'Krishna', cn: ['gopala gopala'] },
   { n: 'kanna va', l: ['vol3-1'], lg: 'Malayalam', d: 'Krishna' },
   { n: 'om namah sivaya', l: ['vol2-15'], lg: 'Sanskrit', d: 'Shiva' },
 ];
@@ -227,6 +227,19 @@ describe('Bhajan details modal', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
+  it("links the buy button straight to Amma's track, and only for songs that have one", () => {
+    renderCategorized();
+    const buy = screen.getAllByRole('link', { name: 'Buy on Amazon' });
+    expect(buy).toHaveLength(1);
+    expect(buy[0]).toHaveAttribute('href', 'https://www.amazon.com/dp/B004G1T0UK');
+
+    fireEvent.click(screen.getAllByRole('button', { name: 'bhajan details' })[0]);
+    expect(screen.getByRole('link', { name: /Amma's recording on Amazon/ })).toHaveAttribute(
+      'href',
+      'https://www.amazon.com/dp/B004G1T0UK',
+    );
+  });
+
   it('opens with focus on Close and closes on Escape', () => {
     renderCategorized();
     const opener = screen.getAllByRole('button', { name: 'bhajan details' })[0];
@@ -249,6 +262,7 @@ describe('Bhajan details modal', () => {
       d: 'Devi',
       cs: ['https://example.com/a.mp3', 'https://example.com/b.mp3'],
       cn: ['Amme Narayana Vintage'],
+      az: 'B004G1T0UK',
     };
     render(
       <ThemeProvider>
@@ -269,18 +283,18 @@ describe('Bhajan details modal', () => {
     expect(within(dialog).getByRole('heading', { name: 'Found in books' })).toBeInTheDocument();
     expect(within(dialog).getByRole('heading', { name: 'Song samples' })).toBeInTheDocument();
 
-    // One row per sample: play control, name, then a secondary buy link when the album is known
+    // One row per sample: play control and name; the song's own Amazon track gets one Buy link
     const rows = within(dialog).getAllByRole('listitem');
     expect(rows).toHaveLength(2);
     const play = within(rows[0]).getByRole('button', { name: 'Play sample: Amme Narayana Vintage' });
     expect(play).toHaveAttribute('aria-pressed', 'false');
-    expect(within(rows[0]).getByRole('link', { name: 'Buy Amme Narayana Vintage on Amazon' })).toHaveAttribute(
-      'href',
-      expect.stringContaining('amazon.com/s?k=Amme%20Narayana%20Vintage')
-    );
-    expect(within(rows[0]).queryByText(/if available/)).toBeNull();
+    expect(within(rows[0]).queryByRole('link')).toBeNull();
     expect(within(rows[1]).getByRole('button', { name: 'Play sample: Sample 2' })).toBeInTheDocument();
-    expect(within(rows[1]).queryByRole('link')).toBeNull();
+    expect(within(dialog).getByRole('heading', { name: 'Buy' })).toBeInTheDocument();
+    expect(within(dialog).getByRole('link', { name: /Amma's recording on Amazon/ })).toHaveAttribute(
+      'href',
+      'https://www.amazon.com/dp/B004G1T0UK'
+    );
 
     expect(within(dialog).getByText('Deity').nextElementSibling).toHaveTextContent('Devi');
     expect(within(dialog).getByText('Language').nextElementSibling).toHaveTextContent('Malayalam');
