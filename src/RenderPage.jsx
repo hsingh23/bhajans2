@@ -14,10 +14,11 @@ import { groupSheetMusic, parseSheetMusicName, stepKey } from "./sheetMusicGroup
 import { useViewerPrefs, rememberedSheetKey } from "./prefs";
 import { useMusicianMode, useSongMusic, SongMusicSection } from "./MusicianMode";
 import { musicChips } from "./MusicChips";
+import { useMyKey } from "./myKey";
 
 // "G · Mohanam": the key and raga, short enough for a floating button.
-const musicPillText = (entry, music) => {
-  const chips = musicChips(entry, music);
+const musicPillText = (entry, music, myKey) => {
+  const chips = musicChips(entry, music, myKey);
   const shruti = chips.find((c) => c.kind === "shruti")?.text.split(" · ")[0];
   const raga = chips.find((c) => c.kind === "raga")?.text;
   return [shruti, raga].filter(Boolean).join(" · ") || "Musician";
@@ -350,6 +351,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   // fifth is Sa), so prefer the data's pdf_pc and fall back to Sa.
   const songMusic = useSongMusic(name);
   const { music } = useMusicianMode();
+  const myKey = useMyKey();
   const sh = songMusic?.sh;
   const recordingPc = Number.isInteger(sh?.pdf_pc) ? sh.pdf_pc : Number.isInteger(sh?.pc) ? sh.pc : null;
   const [musicOpen, setMusicOpen] = useState(false);
@@ -514,15 +516,26 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               aria-haspopup='dialog'
               onClick={() => setMusicOpen(true)}>
               <Icon name='music-note' />
-              <span>{musicPillText(songMusic, music)}</span>
+              <span>{musicPillText(songMusic, music, myKey)}</span>
             </button>
             {musicOpen && (
               <div className='modal-window open viewer-music-dialog' onClick={() => setMusicOpen(false)} role='dialog' aria-modal='true' aria-label={`For musicians: ${name}`}>
-                <div onClick={(e) => e.stopPropagation()}>
-                  <button type='button' className='modal-close' autoFocus aria-label='close musician details' onClick={() => setMusicOpen(false)}>
-                    Close
-                  </button>
-                  <SongMusicSection name={name} />
+                <div className='modal-panel' onClick={(e) => e.stopPropagation()}>
+                  <div className='modal-head'>
+                    <h1 className='modal-title'>{name}</h1>
+                    <button
+                      type='button'
+                      className='button button-circle modal-close'
+                      autoFocus
+                      title='Close'
+                      aria-label='close musician details'
+                      onClick={() => setMusicOpen(false)}>
+                      <Icon name='close' />
+                    </button>
+                  </div>
+                  <div className='modal-body'>
+                    <SongMusicSection name={name} />
+                  </div>
                 </div>
               </div>
             )}

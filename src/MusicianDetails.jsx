@@ -2,27 +2,151 @@
 // "For musicians" section: key / shruti, raga scales in the song's key, taal
 // with its theka, chords and a plain-English summary. Shown only in musician
 // mode; loaded on demand so other readers never download it.
-import React, { useId } from 'react';
-import { KEY_NAMES, chordsInKey, countPhrase, kattaiFor, keySpelling, markMeaning, swarasToNotes, thekaGroups } from './musicTheory';
-import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, shrutiShort, taalName } from './MusicChips';
+import React, { useId, useState } from 'react';
+import {
+  KEY_NAMES,
+  chordsInKey,
+  countPhrase,
+  isPitchClass,
+  kattaiFor,
+  keyName,
+  keySpelling,
+  markMeaning,
+  noteNameIn,
+  parseSwara,
+  summaryInKey,
+  swaraSemitones,
+  swarasToNotes,
+  thekaGroups,
+} from './musicTheory';
+import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, taalName } from './MusicChips';
+import PianoKeys from './PianoKeys';
+import { BansuriChart, ChordDiagram, FluteChart, SargamLine, ScaleTab } from './InstrumentViews';
+import { bolGuide, dugun, tablaTaal } from './tabla';
+import { sargamNote } from './sargam';
+import { setMyKey, useMyKey } from './myKey';
+import { INSTRUMENT_PREF, MUSIC_INSTRUMENTS, setPref, usePref } from './prefs';
+
+const INSTRUMENT_TABS = [
+  ['voice', 'Voice'],
+  ['piano', 'Piano'],
+  ['guitar', 'Guitar'],
+  ['ukulele', 'Ukulele'],
+  ['bansuri', 'Bansuri'],
+  ['flute', 'Flute'],
+  ['tabla', 'Tabla'],
+];
+const DIAGRAM_INSTRUMENTS = ['guitar', 'ukulele'];
+const useInstrument = () => {
+  const value = usePref(INSTRUMENT_PREF);
+  return MUSIC_INSTRUMENTS.includes(value) ? value : 'piano';
+};
+
+/** Piano / Guitar / Ukulele: which instrument the scales and chords are drawn for (remembered). */
+const InstrumentSwitch = ({ instrument }) => (
+  <div className='md-instruments' role='group' aria-label='Show notes for'>
+    {INSTRUMENT_TABS.map(([id, label]) => (
+      <button
+        key={id}
+        type='button'
+        className='md-instrument'
+        aria-pressed={instrument === id}
+        onClick={() => setPref(INSTRUMENT_PREF, id)}>
+        {label}
+      </button>
+    ))}
+  </div>
+);
 
 const SOURCE = { box: 'from the full recording', cd: 'from a CD sample', sheet: 'from the sheet music' };
 const SYSTEM = { carnatic: 'Carnatic', hindustani: 'Hindustani' };
 const APPROXIMATE_BELOW = 0.7;
 
-const ScaleRow = ({ label, swaras, saPc, spelling }) => {
-  if (!Array.isArray(swaras) || !swaras.length) return null;
-  const notes = swarasToNotes(swaras, saPc, spelling);
+/** Note name for each semitone above Sa that the swaras use, spelled like the scale rows. */
+const namesBySemitone = (swaras, saPc, spelling) => {
+  const tokens = (swaras || []).filter((t) => parseSwara(t));
+  const notes = swarasToNotes(tokens, saPc, spelling);
+  const names = {};
+  tokens.forEach((t, i) => {
+    names[parseSwara(t).semitone] ??= notes[i];
+  });
+  return names;
+};
+
+/** One instrument's drawing of a line (Up or Down), without its own label: the row has it. */
+const LineView = ({ instrument, label, swaras, descending, saPc, notes, labels }) => {
+  // The direction stays in each view's accessible name; the row shows it once.
+  const common = { swaras, descending, names: notes, label, showLabel: false };
+  if (instrument === 'voice') return <SargamLine {...common} showNames={false} />;
+  if (instrument === 'bansuri') return <BansuriChart {...common} />;
+  if (instrument === 'flute') return <FluteChart {...common} saPc={saPc} />;
+  if (instrument === 'guitar' || instrument === 'ukulele') {
+    return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
+  }
+  if (instrument === 'piano') {
+    const piano = { saPc, semitones: swaraSemitones(swaras), notes, labels, label, showLabel: false };
+    // Sa to Sa' when space is tight; two octaves from C when the panel is wide (CSS picks one).
+    return (
+      <>
+        <PianoKeys {...piano} className='pk-compact' />
+        <PianoKeys {...piano} twoOctaves className='pk-wide' />
+      </>
+    );
+  }
+  return null;
+};
+
+/** Up and Down, each one row: label, swaras and notes, then the chosen instrument's view. */
+const ScaleLines = ({ raga, saPc, spelling, instrument }) => {
+  const lines = [
+    ['Up', raga.aroha, false],
+    ['Down', raga.avaroha, true],
+  ].filter(([, swaras]) => Array.isArray(swaras) && swaras.length);
+  if (!lines.length) return null;
+  const hasKey = isPitchClass(saPc);
+  const all = [...(raga.aroha || []), ...(raga.avaroha || [])];
+  const labels = hasKey ? namesBySemitone(all, saPc, spelling) : {};
   return (
-    <div className='md-scale-row'>
-      <span className='md-scale-label'>{label}</span>
-      <span className='md-swaras'>{swaras.join(' ')}</span>
-      {notes.length > 0 && <span className='md-notes'>{notes.join(' ')}</span>}
-    </div>
+    <>
+      <div className={`md-lines md-${instrument}`}>
+        {lines.map(([label, swaras, descending]) => {
+          const notes = hasKey ? swarasToNotes(swaras, saPc, spelling) : [];
+          return (
+            <div key={label} className='md-line'>
+              <span className='md-scale-label'>{label}</span>
+              <span className='md-line-text'>
+                <span className='md-swaras'>{swaras.join(' ')}</span>
+                {notes.length > 0 && <span className='md-notes'>{notes.join(' ')}</span>}
+              </span>
+              {hasKey && (
+                <span className='md-line-view'>
+                  <LineView instrument={instrument} label={label} swaras={swaras} descending={descending} saPc={saPc} notes={notes} labels={labels} />
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {hasKey && instrument === 'voice' && (
+        <p className='md-hint'>Underlined = komal (flat) · Ma′ = tivra (sharp) · dot above = upper octave, below = lower</p>
+      )}
+      {hasKey && instrument === 'flute' && (
+        <p className='md-hint'>
+          Concert flute in C, common Boehm fingerings, top to bottom: thumb, left 1-3 (G♯ key beside), right 1-3 (E♭ key
+          beside), low C♯ / C foot keys. Filled = pressed, ↑ = second octave, ↑↑ = third.
+        </p>
+      )}
+      {hasKey && instrument === 'bansuri' && (
+        <p className='md-hint'>
+          Use a {keyName(saPc, all)} bansuri (Indian bamboo flute, named for its Sa: top three holes closed). Filled =
+          closed, half = half-closed, ↑ = blow harder.
+        </p>
+      )}
+    </>
   );
 };
 
-const Raga = ({ part, raga, saPc }) => {
+const Raga = ({ part, raga, saPc, instrument }) => {
   const sec = part.sec && part.sec !== 'all' ? part.sec : null;
   const swaras = raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [];
   const spelling = keySpelling(saPc, swaras);
@@ -34,12 +158,7 @@ const Raga = ({ part, raga, saPc }) => {
         <strong>{ragaName({ [part.id]: raga }, part.id)}</strong>
         {raga?.hi && <span className='md-aside'> · Hindustani: {raga.hi}</span>}
       </p>
-      {raga && (
-        <div className='md-scale'>
-          <ScaleRow label='Up' swaras={raga.aroha} saPc={saPc} spelling={spelling} />
-          <ScaleRow label='Down' swaras={raga.avaroha} saPc={saPc} spelling={spelling} />
-        </div>
-      )}
+      {raga && <ScaleLines raga={raga} saPc={saPc} spelling={spelling} instrument={instrument} />}
       {(raga?.western || raga?.mood) && (
         <p className='md-aside'>{[raga.western && `Western: ${raga.western}`, raga.mood].filter(Boolean).join(' · ')}</p>
       )}
@@ -47,11 +166,81 @@ const Raga = ({ part, raga, saPc }) => {
   );
 };
 
-const Theka = ({ taal }) => {
+const keyLabel = (pc, swaras) => `${keyName(pc, swaras)} (${kattaiFor(pc)} kattai)`;
+
+/** Semitone steps and a key list, plus saving the key as the reader's own for every song. */
+const Transpose = ({ saPc, recordingPc, myKey, swaras, onChange }) => {
+  const id = useId();
+  const hasKey = isPitchClass(saPc);
+  const step = (by) => onChange(((hasKey ? saPc : (recordingPc ?? 0)) + by + 12) % 12);
+  return (
+    <div className='md-transpose'>
+      <div className='md-transpose-row' role='group' aria-label='Transpose'>
+        <button type='button' className='md-step' aria-label='Down a semitone' title='Down a semitone' onClick={() => step(-1)}>
+          −
+        </button>
+        <label className='visually-hidden' htmlFor={`${id}-key`}>
+          Show in key
+        </label>
+        <select
+          id={`${id}-key`}
+          className='md-key-select'
+          value={hasKey ? String(saPc) : ''}
+          onChange={(e) => e.target.value !== '' && onChange(Number(e.target.value))}>
+          {!hasKey && <option value=''>Pick a key</option>}
+          {KEY_NAMES.map((name, pc) => (
+            <option key={name} value={String(pc)}>
+              {`${name} · ${kattaiFor(pc)}`}
+              {pc === recordingPc ? ' (recording)' : ''}
+              {pc === myKey ? ' (my key)' : ''}
+            </option>
+          ))}
+        </select>
+        <button type='button' className='md-step' aria-label='Up a semitone' title='Up a semitone' onClick={() => step(1)}>
+          +
+        </button>
+        {isPitchClass(recordingPc) && hasKey && saPc !== recordingPc && (
+          <button type='button' className='md-text-button' onClick={() => onChange(recordingPc)}>
+            Recording key
+          </button>
+        )}
+      </div>
+      <div className='md-transpose-row'>
+        {hasKey && saPc !== myKey && (
+          <button
+            type='button'
+            className='md-text-button md-save-key'
+            onClick={() => {
+              setMyKey(saPc);
+              onChange(null);
+            }}>
+            Show every song in {keyLabel(saPc, swaras)}
+          </button>
+        )}
+        {isPitchClass(myKey) && (
+          <span className='md-aside md-my-key'>
+            {saPc === myKey ? 'This is your key for every song.' : `Your key for every song: ${keyLabel(myKey, swaras)}.`}{' '}
+            <button
+              type='button'
+              className='md-text-button'
+              onClick={() => {
+                setMyKey(undefined);
+                onChange(null); // drop this song's own pick too, so it shows the recording key
+              }}>
+              Use recording keys
+            </button>
+          </span>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Theka = ({ taal, label = 'Theka by section' }) => {
   const groups = thekaGroups(taal);
   if (!groups) return null;
   return (
-    <div className='md-theka' role='group' aria-label='Theka by section'>
+    <div className='md-theka' role='group' aria-label={label}>
       {groups.map(({ mark, cells }, i) => (
         <div key={i} className='md-vibhag'>
           <span className='md-mark' title={mark ? markMeaning(mark) : undefined}>
@@ -62,7 +251,12 @@ const Theka = ({ taal }) => {
             {cells.map(({ beat, bol }, i) => (
               <React.Fragment key={beat}>
                 {i > 0 && ' '}
-                <span className='md-bol'>{bol || beat}</span>
+                <span className='md-bol'>
+                  <span className='md-beat' aria-hidden='true'>
+                    {beat}
+                  </span>
+                  {bol || beat}
+                </span>
               </React.Fragment>
             ))}
           </span>
@@ -72,7 +266,7 @@ const Theka = ({ taal }) => {
   );
 };
 
-const Taal = ({ t, taals }) => {
+const Taal = ({ t, taals, showTabla }) => {
   const taal = t.id ? taals?.[t.id] : null;
   const alt = t.alt ? taals?.[t.alt] : null;
   const beats = t.b || taal?.beats;
@@ -96,22 +290,135 @@ const Taal = ({ t, taals }) => {
         </p>
       )}
       {taal?.feel && <p className='md-aside'>{taal.feel}</p>}
+      {showTabla && <Tabla t={t} taals={taals} />}
+    </div>
+  );
+};
+
+/** For the tabla player: the theka to play (Hindustani for a Carnatic taal), dugun, and each stroke. */
+const Tabla = ({ t, taals }) => {
+  const own = t.id ? taals?.[t.id] : null;
+  const tabla = tablaTaal(t, taals);
+  if (!tabla) {
+    return (
+      <p className='md-hint'>
+        {own?.system === 'carnatic' && own.bols
+          ? 'These are spoken counting syllables (konnakol), not tabla strokes.'
+          : 'No tabla theka is known for this rhythm yet.'}
+      </p>
+    );
+  }
+  const { taal, borrowed, id } = tabla;
+  const guide = bolGuide(taal.bols);
+  return (
+    <div className='md-tabla'>
+      <h4 className='md-sublabel'>Tabla</h4>
+      {borrowed && (
+        <>
+          <p className='md-aside'>
+            Play <strong>{taalName(taals, id)}</strong> ({taal.beats} beats) on tabla:
+          </p>
+          <Theka taal={taal} label={`${taalName(taals, id)} theka`} />
+        </>
+      )}
+      <p className='md-aside'>Dugun (double speed), two bols on each beat:</p>
+      <Theka taal={{ ...taal, bols: dugun(taal.bols) }} label='Dugun theka' />
+      {guide.length > 0 && (
+        <dl className='md-bol-guide'>
+          {guide.map(({ bol, stroke }) => (
+            <div key={bol}>
+              <dt>{bol}</dt>
+              <dd>{stroke}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  );
+};
+
+const OCTAVE_NAME = { '-2': 'two octaves down', '-1': 'lower', 0: 'middle', 1: 'upper', 2: 'two octaves up' };
+const spanWords = (span) => {
+  const octaves = Math.floor(span / 12);
+  const rest = span % 12;
+  const parts = [octaves && `${octaves} octave${octaves > 1 ? 's' : ''}`, rest && `${rest}`].filter(Boolean);
+  return `${parts.join(' + ') || '0'} (${span} semitones)`;
+};
+
+const sargamWords = (v) => {
+  const { syllable, kind } = sargamNote(v);
+  return `${kind ? `${kind} ` : ''}${syllable}${kind === 'tivra' ? '′' : ''} (${OCTAVE_NAME[Math.floor(v / 12)] ?? ''})`;
+};
+
+/** The first note sung and the key root of the sheet music (its Western key, not always Sa). */
+const MelodyStart = ({ start, keyRoot, saPc, swaras }) => {
+  const hasStart = Number.isInteger(start);
+  const hasRoot = isPitchClass(saPc) && isPitchClass(keyRoot?.o);
+  if (!hasStart && !hasRoot) return null;
+  return (
+    <p className='md-aside md-melody-start'>
+      {hasStart && (
+        <>
+          Starts on <strong>{sargamWords(start)}</strong>
+          {isPitchClass(saPc) && ` · ${noteNameIn(saPc, start, swaras || [])}`}
+        </>
+      )}
+      {hasStart && hasRoot && ' · '}
+      {hasRoot && (
+        <>
+          Key root (sheet music): <strong>{`${noteNameIn(saPc, keyRoot.o, swaras || [])} ${keyRoot.m ? 'minor' : 'major'}`}</strong>
+        </>
+      )}
+    </p>
+  );
+};
+
+/** How low and high the melody goes, as sargam and as notes in the shown key. */
+const VocalRange = ({ range, saPc, swaras }) => {
+  const ends = range.map((v) => ({
+    sargam: sargamWords(v),
+    note: isPitchClass(saPc) ? noteNameIn(saPc, v, swaras || []) : null,
+  }));
+  return (
+    <div className='md-block md-range'>
+      <h3 className='md-label'>Vocal range</h3>
+      <p className='md-heading'>
+        Without alap: <strong>{ends[0].sargam}</strong> to <strong>{ends[1].sargam}</strong>
+        {ends[0].note && (
+          <span>
+            {' '}
+            · {ends[0].note} to {ends[1].note}
+          </span>
+        )}
+        <span className='md-aside'> · {spanWords(range[1] - range[0])}, from the sheet music</span>
+      </p>
+      <p className='md-aside'>With alap: not measured yet. An alap often goes a few notes beyond the song.</p>
     </div>
   );
 };
 
 const MusicianDetails = ({ entry, music }) => {
   const id = useId();
+  const myKey = useMyKey();
+  const instrument = useInstrument();
+  // A key picked for this song only; null follows the reader's key, else the recording's.
+  const [chosenPc, setChosenPc] = useState(null);
   if (!entry || !music) return null;
   const { ragas = {}, taals = {} } = music;
-  const saPc = entry.sh?.pc;
-  const hasKey = Number.isInteger(saPc);
-  const shruti = shrutiShort(entry, ragas);
-  const kattai = entry.sh?.k || kattaiFor(saPc);
+  const recordingPc = isPitchClass(entry.sh?.pc) ? entry.sh.pc : undefined;
+  const saPc = chosenPc ?? myKey ?? recordingPc;
+  const hasKey = isPitchClass(saPc);
+  const transposed = hasKey && saPc !== recordingPc;
+  const swaras = firstRagaSwaras(entry, ragas);
   const alternatives = (entry.sh?.alt || []).filter(Number.isInteger).map((pc) => `${KEY_NAMES[pc]} (${kattaiFor(pc)})`);
   const ragaParts = Array.isArray(entry.r) ? entry.r.filter((r) => r?.id) : [];
-  const chords = hasKey && Array.isArray(entry.ch) && entry.ch.length ? chordsInKey(entry.ch, saPc, firstRagaSwaras(entry, ragas)) : [];
+  const chords = hasKey && Array.isArray(entry.ch) && entry.ch.length ? chordsInKey(entry.ch, saPc, swaras) : [];
   const approximate = typeof entry.c === 'number' && entry.c < APPROXIMATE_BELOW;
+  // The summary names the recording's key and notes; re-tell it in the shown key, or leave it out.
+  const summary = transposed && isPitchClass(recordingPc) ? summaryInKey(entry.en, saPc, swaras) : entry.en;
+  const showKey = isPitchClass(recordingPc) || ragaParts.length > 0;
+  const hasTaal = Boolean(entry.t && (entry.t.id || entry.t.ts || entry.t.b));
+  const showSwitch = (ragaParts.length > 0 && hasKey) || hasTaal || chords.length > 0 || Array.isArray(entry.vr);
 
   return (
     <section className='musician-details' aria-labelledby={`${id}-title`}>
@@ -123,18 +430,34 @@ const MusicianDetails = ({ entry, music }) => {
           </span>
         )}
       </h2>
-      {entry.en && <p className='md-summary'>{entry.en}</p>}
+      {summary && <p className='md-summary'>{summary}</p>}
+      {showSwitch && <InstrumentSwitch instrument={instrument} />}
+      {instrument === 'voice' && Array.isArray(entry.vr) && <VocalRange range={entry.vr} saPc={saPc} swaras={swaras} />}
 
-      {shruti && (
+      {showKey && (
         <div className='md-block'>
           <h3 className='md-label'>Key / Shruti</h3>
-          <p className='md-heading'>
-            {(entry.sh.c ?? 1) < SHRUTI_SURE && <span className='md-aside'>Probably </span>}
-            <strong>{shruti.text.split(' · ')[0]}</strong>
-            {kattai && <span> ({kattai} kattai)</span>}
-            {SOURCE[entry.sh.src] && <span className='md-aside'> · {SOURCE[entry.sh.src]}</span>}
-          </p>
-          {alternatives.length > 0 && <p className='md-aside'>Also possible: {alternatives.join(', ')}</p>}
+          {hasKey ? (
+            <p className='md-heading'>
+              {!transposed && (entry.sh.c ?? 1) < SHRUTI_SURE && <span className='md-aside'>Probably </span>}
+              <strong>{keyName(saPc, swaras)}</strong>
+              <span> ({kattaiFor(saPc)} kattai)</span>
+              {!transposed && SOURCE[entry.sh.src] && <span className='md-aside'> · {SOURCE[entry.sh.src]}</span>}
+              {transposed && saPc === myKey && <span className='md-aside'> · your key</span>}
+            </p>
+          ) : (
+            <p className='md-aside'>Recording key unknown. Pick a key to see the notes.</p>
+          )}
+          {transposed && isPitchClass(recordingPc) && (
+            <p className='md-aside'>
+              Transposed from the recording: {keyLabel(recordingPc, swaras)}
+              {(entry.sh.c ?? 1) < SHRUTI_SURE ? ', probably' : ''}
+              {SOURCE[entry.sh.src] ? `, ${SOURCE[entry.sh.src]}` : ''}
+            </p>
+          )}
+          {!transposed && alternatives.length > 0 && <p className='md-aside'>Also possible: {alternatives.join(', ')}</p>}
+          <MelodyStart start={entry.st} keyRoot={entry.kr} saPc={hasKey ? saPc : undefined} swaras={swaras} />
+          <Transpose saPc={saPc} recordingPc={recordingPc} myKey={myKey} swaras={swaras} onChange={setChosenPc} />
         </div>
       )}
 
@@ -143,28 +466,35 @@ const MusicianDetails = ({ entry, music }) => {
           <h3 className='md-label'>{ragaParts.length > 1 ? 'Ragas' : 'Raga'}</h3>
           {ragaParts.length === 0 && <p className='md-aside'>No raga: a Western-style or light-music tune.</p>}
           {ragaParts.map((part, i) => (
-            <Raga key={`${part.id}-${i}`} part={part} raga={ragas[part.id]} saPc={hasKey ? saPc : undefined} />
+            <Raga
+              key={`${part.id}-${i}`}
+              part={part}
+              raga={ragas[part.id]}
+              saPc={hasKey ? saPc : undefined}
+              instrument={instrument}
+            />
           ))}
           {ragaParts.length > 0 && !hasKey && <p className='md-aside'>Key unknown, so notes are shown as swaras only.</p>}
         </div>
       )}
 
-      {entry.t && (entry.t.id || entry.t.ts || entry.t.b) && (
+      {hasTaal && (
         <div className='md-block'>
           <h3 className='md-label'>Taal</h3>
-          <Taal t={entry.t} taals={taals} />
+          <Taal t={entry.t} taals={taals} showTabla={instrument === 'tabla'} />
         </div>
       )}
 
       {chords.length > 0 && (
         <div className='md-block'>
           <h3 className='md-label'>Chords</h3>
-          <ol className='md-chords'>
+          <ol className={DIAGRAM_INSTRUMENTS.includes(instrument) ? 'md-chords md-chords-diagrams' : 'md-chords'}>
             {chords.map(({ numeral, chord }, i) => (
               <li key={`${numeral}-${i}`}>
                 <span className='md-numeral'>{numeral}</span>
                 {chord && ' '}
                 {chord && <span className='md-chord'>{chord}</span>}
+                {chord && DIAGRAM_INSTRUMENTS.includes(instrument) && <ChordDiagram instrument={instrument} name={chord} />}
               </li>
             ))}
           </ol>

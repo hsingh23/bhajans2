@@ -4,6 +4,9 @@
     "r": [{ "id": "mohanam", "sec": "all", "c": 0.9 }],
     "t": { "id": "keherwa", "alt": "adi", "b": 8, "ts": "4/4", "bpm": 96, "pulse": "quarter", "sub": 2, "c": 0.85 },
     "ch": ["I", "IV", "V", "vi"],
+    "vr": [-5, 12],
+    "st": 7,
+    "kr": { "o": 5, "m": true },
     "en": "Sing in G (5 kattai). Major-pentatonic tune: G A B D E, no C or F#. 8-beat keherwa: count 1-2-3-4 at about 96 BPM.",
     "c": 0.88
   },

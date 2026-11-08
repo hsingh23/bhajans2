@@ -520,12 +520,19 @@ mark {
 
 .modal-window {
   position: fixed;
-  background-color: rgba(142, 131, 131, 0.25);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Keep the panel clear of the fixed top bar (0 when the viewer hides it) */
+  padding: calc(var(--viewer-top, 64px) + 16px) 16px 16px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.45);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-color);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -538,52 +545,195 @@ mark {
   pointer-events: auto;
   transition: opacity 0.3s;
 }
-.modal-window > div {
-  width: calc(100vw - 64px - 20px);
+.modal-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: 600px;
-  max-height: calc(100dvh - 48px);
+  max-height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--modal-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 16px 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.modal-window .modal-title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding-top: 6px;
+  font-family: "Lora", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  overflow-wrap: anywhere;
+  color: var(--text-color);
+}
+.modal-window .button.modal-close {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 18px;
+}
+.modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding: 2em;
-  background: #ffffff;
-  border-radius: 10px;
+  padding: 4px 20px 20px;
 }
-.modal-window header {
-  font-weight: bold;
+/* The global p / a / h2 rules use a large serif; the modal reads as one sans-serif body */
+.modal-window p,
+.modal-window a,
+.modal-window i {
+  margin-top: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
 }
-.modal-window h1 {
-  font-size: 150%;
-  margin: 0 0 15px;
+.modal-section {
+  padding: 14px 0;
+  border-top: 1px solid var(--border-color);
+}
+.modal-body > .modal-section:first-child {
+  border-top: 0;
+}
+.modal-window .modal-label {
+  margin: 0 0 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.modal-section .block {
+  margin: 4px 0;
+}
+.modal-section .lyrics {
+  font-size: 17px;
+  text-decoration: none;
+}
+.modal-section .lyrics:hover,
+.modal-section .lyrics:focus-visible {
+  text-decoration: underline;
 }
 .block {
   display: block;
   margin: 10px 0;
 }
 
-.modal-close {
-  color: #aaa;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
-  border: none;
+.sample-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.modal-close:hover {
-  color: black;
+.sample-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+.sample-row + .sample-row {
+  border-top: 1px solid var(--border-color);
+}
+.modal-window .button.sample-play {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 15px;
+}
+.sample-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-transform: capitalize;
+}
+.modal-window .sample-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--lyrics-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  box-sizing: border-box;
+}
+.modal-window .sample-buy:hover,
+.modal-window .sample-buy:focus-visible {
+  border-color: currentColor;
 }
 
-.modal-window div:not(:last-of-type) {
-  margin-bottom: 15px;
+@media (max-width: 480px) {
+  .modal-window {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .modal-head {
+    padding: 12px 12px 10px 16px;
+  }
+  .modal-body {
+    padding: 4px 16px 16px;
+  }
+  /* Icon-only buy link so sample names keep the row */
+  .modal-window .sample-buy {
+    justify-content: center;
+    width: 40px;
+    padding: 0;
+  }
+  .sample-buy span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.modal-facts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+.modal-facts > div {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.modal-facts dt {
+  flex: none;
+  width: 7.5em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.modal-facts dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .sheet-music-song {
@@ -763,10 +913,6 @@ a,
 
 .bhajanRow {
   border-bottom: 1px solid var(--border-color);
-}
-
-.modal-window > div {
-  background: var(--modal-bg);
 }
 
 .copyRight {
@@ -1640,9 +1786,10 @@ mark {
 }
 
 .musician-details {
+  container: musician / inline-size;
   --md-accent: #4527a0;
   --md-muted: var(--text-secondary, #757575);
-  margin: 4px 0 15px;
+  margin: 0 0 14px;
   padding: 12px 14px;
   font-family: "Lato", sans-serif;
   font-size: 15px;
@@ -1712,17 +1859,395 @@ mark {
 .musician-details .md-raga + .md-raga {
   margin-top: 8px;
 }
-.md-scale {
+.md-bol {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.md-beat {
+  font-size: 10px;
+  line-height: 1.1;
+  color: var(--md-muted);
+}
+.musician-details .md-tabla {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-color);
+}
+.md-sublabel {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--md-accent);
+}
+.md-bol-guide {
   display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 10px;
+  gap: 2px;
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+.md-bol-guide > div {
+  display: flex;
+  gap: 8px;
+}
+.md-bol-guide dt {
+  flex: none;
+  width: 2.8em;
+  font-weight: 700;
+}
+.md-bol-guide dd {
+  margin: 0;
+  color: var(--md-muted);
+}
+.musician-details .md-hint {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.sargam-line,
+.bansuri-chart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+}
+.sargam-line ol,
+.bansuri-chart ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sg-note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0 5px;
+}
+.sg-syllable {
+  font-size: 16px;
+  font-weight: 700;
+}
+.sg-komal .sg-syllable {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sg-taar::before,
+.sg-mandra::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.sg-taar::before {
+  top: 1px;
+}
+.sg-mandra::after {
+  bottom: 0;
+}
+.sg-pitch {
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.bansuri-chart ol {
+  gap: 2px 6px;
+}
+.bn-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 20px;
+}
+.bn-register {
+  height: 12px;
+  font-size: 11px;
+  line-height: 12px;
+  color: var(--md-accent);
+}
+.bn-hole {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 1;
+}
+.bn-closed {
+  fill: var(--text-color);
+}
+.fl-split {
+  stroke: var(--md-muted);
+  stroke-width: 0.6;
+}
+.bn-name {
+  font-size: 11px;
+  font-weight: 700;
+}
+/* Piano: Sa to Sa' in a narrow panel, two octaves from C when there is room */
+.piano-keys.pk-wide {
+  display: none;
+}
+@container musician (min-width: 420px) {
+  .piano-keys.pk-compact {
+    display: none;
+  }
+  .piano-keys.pk-wide {
+    display: flex;
+  }
+}
+.musician-details .md-instruments {
+  margin: 8px 0 2px;
+}
+/* Up and Down: one row each, label | swaras + notes | instrument view */
+.md-lines {
+  display: grid;
+  /* The text column may shrink (and wrap) so a long line never widens the panel */
+  grid-template-columns: auto minmax(0, max-content) minmax(0, 1fr);
+  align-items: center;
+  gap: 6px 10px;
   margin: 4px 0;
 }
-.md-scale-row {
+.md-line {
   display: contents;
 }
+.md-line-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.md-line-view {
+  display: flex;
+  min-width: 0;
+}
+/* The tab prints the note names over its frets, so the row needn't repeat them */
+.md-guitar .md-notes,
+.md-ukulele .md-notes {
+  display: none;
+}
+@container musician (max-width: 419px) {
+  /* Narrow: label | text, and the view goes under its text in the same row group */
+  .md-lines {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .md-line-view {
+    grid-column: 2 / -1;
+  }
+}
+.md-instruments {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 2px 0 8px;
+  padding: 2px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+}
+.musician-details .md-instrument {
+  min-height: 32px;
+  flex: none;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+}
+.musician-details .md-instrument[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--md-accent);
+}
+[data-theme="dark"] .musician-details .md-instrument[aria-pressed="true"] {
+  color: #1e1e1e;
+}
+.scale-tab {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.scale-tab .pk-label {
+  padding-top: 1.2em;
+}
+.scale-tab > div {
+  min-width: 0;
+  max-width: 100%;
+}
+.scale-tab pre {
+  margin: 0;
+  overflow-x: auto;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--text-color);
+}
+.pk-name {
+  font-family: "Lato", sans-serif;
+  font-size: 9px;
+  fill: #6b6b6b;
+}
+.pk-name-on {
+  font-weight: 700;
+  fill: #ffffff;
+}
+.pk-name-black {
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: #ffffff;
+}
+.chord-diagram {
+  display: block;
+  margin-top: 4px;
+}
+.chord-diagram .cd-line {
+  stroke: var(--md-muted);
+  stroke-width: 1;
+}
+.chord-diagram .cd-nut {
+  stroke: var(--text-color);
+  stroke-width: 3;
+}
+.chord-diagram .cd-dot {
+  fill: var(--md-accent);
+}
+.chord-diagram .cd-open {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 1;
+}
+.chord-diagram .cd-mark,
+.chord-diagram .cd-fret {
+  font-family: "Lato", sans-serif;
+  font-size: 9px;
+  fill: var(--md-muted);
+}
+.piano-keys {
+  --pk-white: #ffffff;
+  --pk-black: #263238;
+  --pk-edge: #8d8d8d;
+  --pk-on: #d32f2f;
+  --pk-on-black: #b71c1c;
+  --pk-dot: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+[data-theme="dark"] .piano-keys {
+  --pk-white: #e6e6e6;
+  --pk-black: #111111;
+  --pk-edge: #5c5c5c;
+  --pk-on: #ef5350;
+  --pk-on-black: #e53935;
+}
+.piano-keys svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.pk-label {
+  width: 2.6em;
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.pk-white {
+  fill: var(--pk-white);
+  stroke: var(--pk-edge);
+  stroke-width: 1;
+}
+.pk-black {
+  fill: var(--pk-black);
+  stroke: var(--pk-black);
+  stroke-width: 1;
+}
+.pk-white.pk-on {
+  fill: var(--pk-on);
+}
+.pk-black.pk-on {
+  fill: var(--pk-on-black);
+  stroke: var(--pk-on-black);
+}
+.pk-sa-dot {
+  fill: var(--pk-dot);
+  stroke: #263238;
+  stroke-width: 1;
+}
+
+/* Transpose: semitone steps, a key list and saving it as the reader's key */
+.md-transpose {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.md-transpose-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+.md-transpose-row:empty {
+  display: none;
+}
+.musician-details .md-step,
+.musician-details .md-key-select {
+  min-height: 36px;
+  font: inherit;
+  color: var(--text-color);
+  background: var(--modal-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md, 8px);
+  box-sizing: border-box;
+}
+.musician-details .md-step {
+  width: 36px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+.musician-details .md-key-select {
+  padding: 0 8px;
+}
+.musician-details .md-step:hover,
+.musician-details .md-key-select:hover {
+  border-color: var(--md-accent);
+}
+.musician-details .md-text-button {
+  min-height: 36px;
+  padding: 0 4px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--md-accent);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.musician-details .md-my-key {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 4px;
+}
+
 .md-scale-label {
-  grid-row: span 2;
   align-self: center;
   font-size: 12px;
   color: var(--md-muted);
@@ -1772,6 +2297,9 @@ mark {
 }
 .md-bol {
   min-width: 1.4em;
+}
+.md-theka + .md-theka {
+  margin-top: 2px;
 }
 .md-ts {
   font-weight: 700;

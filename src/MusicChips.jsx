@@ -1,7 +1,8 @@
 // @ts-nocheck
 // One-line musician summary for a song: shruti, raga and taal chips.
 import React from 'react';
-import { keyName, kattaiFor } from './musicTheory';
+import { isPitchClass, keyName, kattaiFor } from './musicTheory';
+import { useMyKey } from './myKey';
 
 const titleCase = (id) => String(id || '').replace(/(^|[\s-])\w/g, (c) => c.toUpperCase());
 
@@ -20,19 +21,36 @@ export const firstRagaSwaras = (entry, ragas) => {
   return raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : undefined;
 };
 
-/** "G · 5": key name and kattai, or null when the song has no shruti. */
-export const shrutiShort = (entry, ragas) => {
+/**
+ * "G · 5": key name and kattai, or null when the song has no shruti. With the
+ * reader's own key (myKey, a pitch class) it reads "Bb → G · 5": recording key,
+ * then the key the song is shown in.
+ */
+export const shrutiShort = (entry, ragas, myKey) => {
   const pc = entry?.sh?.pc;
-  const name = keyName(pc, firstRagaSwaras(entry, ragas));
+  const swaras = firstRagaSwaras(entry, ragas);
+  const name = keyName(pc, swaras);
   if (!name) return null;
+  if (isPitchClass(myKey) && myKey !== pc) {
+    const mine = keyName(myKey, swaras);
+    const kattai = kattaiFor(myKey);
+    return {
+      text: `${name} → ${mine} · ${kattai}`,
+      label: `Key ${mine}, ${kattai} kattai (your key; recording in ${name})`,
+    };
+  }
   const kattai = entry.sh.k || kattaiFor(pc);
-  return { text: kattai ? `${name} · ${kattai}` : name, label: kattai ? `Key ${name}, ${kattai} kattai` : `Key ${name}` };
+  const mineNote = isPitchClass(myKey) ? ' (your key)' : '';
+  return {
+    text: kattai ? `${name} · ${kattai}` : name,
+    label: (kattai ? `Key ${name}, ${kattai} kattai` : `Key ${name}`) + mineNote,
+  };
 };
 
-export const musicChips = (entry, music) => {
+export const musicChips = (entry, music, myKey) => {
   if (!entry || !music) return [];
   const chips = [];
-  const shruti = shrutiShort(entry, music.ragas);
+  const shruti = shrutiShort(entry, music.ragas, myKey);
   if (shruti) {
     const approx = unsure(entry.sh, SHRUTI_SURE);
     chips.push({ kind: 'shruti', text: approx ? `≈ ${shruti.text}` : shruti.text, label: approx ? `Probably ${shruti.label}` : shruti.label });
@@ -59,7 +77,8 @@ export const musicChips = (entry, music) => {
 const PREFIX = { shruti: 'Key ', raga: 'Raga ', taal: 'Taal ' };
 
 const MusicChips = ({ entry, music }) => {
-  const chips = musicChips(entry, music);
+  const myKey = useMyKey();
+  const chips = musicChips(entry, music, myKey);
   if (!chips.length) return null;
   return (
     <span className='music-chips' data-testid='music-chips'>

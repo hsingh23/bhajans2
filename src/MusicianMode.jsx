@@ -86,7 +86,7 @@ export const SongMusicSection = ({ name }) => {
   if (!entry) return null;
   return (
     <React.Suspense fallback={null}>
-      <MusicianDetails entry={entry} music={music} />
+      <MusicianDetails key={name} entry={entry} music={music} />
     </React.Suspense>
   );
 };
