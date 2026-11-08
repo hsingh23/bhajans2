@@ -10,7 +10,7 @@ move an earlier song fails instead of silently breaking links.
 Meanings come from Layamritam in lower case; meanings-cased.json holds the recased text
 (only letter case may differ, checked here), with a rule-based recaser as fallback.
 
-Run from the repo root: uv run --with pymupdf --with rapidfuzz python create-index/layamritam/render_pdf.py [--repage]
+Run from the repo root: uv run --with pymupdf --with rapidfuzz --with fonttools python create-index/layamritam/render_pdf.py [--repage]
 """
 import html
 import json
@@ -24,6 +24,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "sheet-match"))
 import lmeta  # noqa: E402
+from compact_pdf import compact  # noqa: E402
 from match import english_like  # noqa: E402
 from select_new import lyric_parts  # noqa: E402
 
@@ -170,7 +171,8 @@ def render(repage=False):
     doc.set_metadata({"title": "Bhajans - additional lyrics", "creator": "create-index/layamritam/render_pdf.py",
                       "producer": "PyMuPDF", "author": "", "subject": "", "keywords": "", "creationDate": "", "modDate": ""})
     doc.subset_fonts()
-    doc.save(str(OUT), garbage=4, deflate=True, deflate_fonts=True, no_new_id=True)
+    compact(doc, {f"EB Garamond {w}": FONTS / f"EBGaramond-{w}.ttf" for w in ("Regular", "SemiBold", "Italic")})
+    doc.save(str(OUT), garbage=4, deflate=True, deflate_fonts=True, use_objstms=1, compression_effort=100, no_new_id=True)
     doc.close()
     tmp.unlink()
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n")

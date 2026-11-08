@@ -14,7 +14,7 @@ was fetched and how to refresh it with `fetch_all_lyrics.py`).
 ```bash
 uv run --with rapidfuzz python create-index/layamritam/match_index.py      # -> matches.json
 uv run --with rapidfuzz python create-index/layamritam/select_new.py       # appends new songs to extra-manifest.json
-uv run --with pymupdf --with rapidfuzz python create-index/layamritam/render_pdf.py   # -> public/pdfs/extra.pdf
+uv run --with pymupdf --with rapidfuzz --with fonttools python create-index/layamritam/render_pdf.py   # -> public/pdfs/extra.pdf
 uv run --with rapidfuzz python create-index/layamritam/merge_metadata.py   # index, categories, music, review list
 ```
 
