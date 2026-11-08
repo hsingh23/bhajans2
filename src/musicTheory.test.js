@@ -1,6 +1,9 @@
 // @ts-nocheck
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
+  scaleNotes,
+  summaryInKey,
   swarasToNotes,
   keyName,
   kattaiFor,
@@ -93,5 +96,72 @@ describe('taal counting', () => {
     expect(thekaGroups({ vibhag: 'I4 O O', clap: 'clap, pinky' })).toBeNull();
     expect(thekaGroups({ vibhag: [4, 4], clap: 'clap on 1, wave on 5', bols: null })[0].mark).toBeNull();
     expect(thekaGroups(undefined)).toBeNull();
+  });
+});
+
+describe('chord names from the data', () => {
+  it('reads + as augmented only on its own or with 5; +9 is an added ninth', () => {
+    expect(chordsInKey(['V+5', 'I+', 'i+9', 'I+9'], 0).map((c) => c.chord)).toEqual(['Gaug', 'Caug', 'Cmadd9', 'Cadd9']);
+  });
+});
+
+describe('generated musician summaries', () => {
+  // build_music_json.py writes the "en" summary; its key and notes must read
+  // exactly like the app's Key line and Up / Down rows (Cb, not B, in Bb Sindhu Bhairavi).
+  const read = (file) => JSON.parse(readFileSync(`${process.cwd()}/public/${file}`, 'utf8'));
+  const songs = read('bhajan-music.json');
+  const { ragas } = read('music-reference.json');
+
+  it('spells the key and scale notes the way the app does', () => {
+    const mismatches = [];
+    for (const [name, entry] of Object.entries(songs)) {
+      if (!entry.sh || !entry.en) continue;
+      const raga = entry.r?.[0] && ragas[entry.r[0].id];
+      const swaras = raga ? [...raga.aroha, ...raga.avaroha] : undefined;
+      if (!entry.en.startsWith(`Sing in ${keyName(entry.sh.pc, swaras)} (`)) mismatches.push(name);
+      if (!raga) continue;
+      const notes = entry.en.match(/\): ([A-G][#b]?(?: [A-G][#b]?)*)[,.]/)?.[1].split(' ') || [];
+      const app = new Set(swarasToNotes(swaras, entry.sh.pc));
+      if (notes.length !== app.size || notes.some((note) => !app.has(note))) mismatches.push(name);
+    }
+    expect(mismatches).toEqual([]);
+  });
+
+  it('re-tells every summary unchanged in its own key, so transposing uses the same wording', () => {
+    const changed = Object.entries(songs)
+      .filter(([, e]) => e.sh && e.en)
+      .filter(([, e]) => {
+        const raga = e.r?.[0] && ragas[e.r[0].id];
+        return summaryInKey(e.en, e.sh.pc, raga ? [...raga.aroha, ...raga.avaroha] : []) !== e.en;
+      })
+      .map(([name]) => name);
+    expect(changed).toEqual([]);
+  });
+});
+
+describe('transposing', () => {
+  const sindhuBhairavi = ['S', 'R2', 'g2', 'M1', 'P', 'd1', 'n2', 'S', 'S', 'n2', 'd1', 'P', 'M1', 'g2', 'r1', 'S'];
+
+  it("lists a raga's notes from Sa up, spelled like the scale rows", () => {
+    expect(scaleNotes(sindhuBhairavi, 10)).toEqual(['Bb', 'Cb', 'C', 'Db', 'Eb', 'F', 'Gb', 'Ab']);
+    expect(scaleNotes(sindhuBhairavi, 7)).toEqual(['G', 'Ab', 'A', 'Bb', 'C', 'D', 'Eb', 'F']);
+    expect(scaleNotes(sindhuBhairavi, undefined)).toEqual([]);
+  });
+
+  it('re-tells a generated summary in another key', () => {
+    const summary =
+      'Sing in Bb (6.5 kattai). Raga close to Sindhu Bhairavi (Phrygian/Aeolian blend): Bb Cb C Db Eb F Gb Ab. 8-beat Keherwa (4/4): count 1-2-3-4 at about 158 BPM.';
+    expect(summaryInKey(summary, 7, sindhuBhairavi)).toBe(
+      'Sing in G (5 kattai). Raga close to Sindhu Bhairavi (Phrygian/Aeolian blend): G Ab A Bb C D Eb F. 8-beat Keherwa (4/4): count 1-2-3-4 at about 158 BPM.'
+    );
+    expect(summaryInKey('Sing in D (2 kattai). A Western-style tune rather than a raga.', 4, [])).toBe(
+      'Sing in E (3 kattai). A Western-style tune rather than a raga.'
+    );
+  });
+
+  it('gives up on a summary it cannot re-tell rather than show a stale key or notes', () => {
+    expect(summaryInKey('Sing in G (5 kattai). Major-pentatonic tune: G A B D E, no C or F#.', 9, ['S', 'R2', 'G3', 'P', 'D2'])).toBeNull();
+    expect(summaryInKey('Probably sung in Eb (2.5 kattai).', 4, [])).toBeNull();
+    expect(summaryInKey('', 4, [])).toBeNull();
   });
 });
