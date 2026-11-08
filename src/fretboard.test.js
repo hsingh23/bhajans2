@@ -71,6 +71,13 @@ describe('scale tabs', () => {
     expect(swaraLine(['S', 'R2', 'G3', 'R2', 'M1', 'P', 'S'])).toEqual([0, 2, 4, 2, 5, 7, 12]);
   });
 
+  it('keeps vakra turns inside the octave, large or small (Desh, Kadanakuthuhalam)', () => {
+    const deshDown = ['S', 'n2', 'D2', 'P', 'D2', 'M1', 'G3', 'R2', 'P', 'M1', 'G3', 'R2', 'G3', 'N3', 'S'];
+    expect(swaraLine(deshDown, true)).toEqual([12, 10, 9, 7, 9, 5, 4, 2, 7, 5, 4, 2, 4, -1, 0]);
+    expect(swaraLine(['S', 'R2', 'M1', 'D2', 'N3', 'G3', 'P', 'S'])).toEqual([0, 2, 5, 9, 11, 4, 7, 12]);
+    expect(swaraLine(['S', 'd1', 'n2', 'P', 'M1', 'P', 'g2', 'M1', 'R2', 'S'], true)).toEqual([12, 8, 10, 7, 5, 7, 3, 5, 2, 0]);
+  });
+
   it('keeps an ascending leap going up (Hamirkalyani: S P M2 P D2 N3 S)', () => {
     expect(swaraLine(['S', 'P', 'M2', 'P', 'D2', 'N3', 'S'])).toEqual([0, 7, 6, 7, 9, 11, 12]);
   });
@@ -104,10 +111,10 @@ describe('scale tabs', () => {
     expect(placed.map(({ string, fret }) => open[string] + fret)).toEqual([60, 62, 64, 65, 67, 69, 71, 72]);
   });
 
-  it('folds notes outside the instrument by an octave rather than giving up (Desh down on ukulele)', () => {
-    const desh = ['S', 'n2', 'D2', 'P', 'D2', 'M1', 'G3', 'R2', 'P', 'M1', 'G3', 'R2', 'G3', 'N3', 'S'];
-    const placed = scaleTab('ukulele', 0, desh, true);
-    expect(placed).toHaveLength(15);
+  it('folds notes outside the instrument by an octave rather than giving up (Chenchurutti down in Eb on ukulele)', () => {
+    const chenchurutti = ['n2', 'D2', 'P', 'M1', 'G3', 'R2', 'S', 'n2', 'D2', 'P', 'D2', 'S'];
+    const placed = scaleTab('ukulele', 3, chenchurutti, true);
+    expect(placed).toHaveLength(12);
     expect(placed.some((spot) => spot.folded)).toBe(true);
     expect(placed.every(({ fret }) => fret >= 0 && fret <= 15)).toBe(true);
   });

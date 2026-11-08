@@ -12,34 +12,56 @@ export const INSTRUMENTS = {
 const MAX_FRET = 15;
 const mod12 = (n) => ((n % 12) + 12) % 12;
 
-// A step against the line's direction no larger than this (a major third) is a
-// zig-zag (vakra) turn; anything larger is a leap the other way.
-const VAKRA_STEP = 4;
-
 /**
- * Semitones from Sa for a swara line in the order sung, with octaves. An aroha
- * climbs (S P M2 P ... S = 0 7 6 7 ... 12) and an avaroha falls, apart from small
- * vakra turns. An aroha that opens on Pa-Ni starts below Sa (Behag: N3 S ...);
- * an avaroha that opens on S starts on upper Sa.
+ * Semitones from Sa for a swara line in the order sung, with octaves. The
+ * reference scales carry no octave marks, so the octaves are chosen for the
+ * whole line at once: the path with the least total movement that stays within
+ * the line's span. An aroha stays between its first note and upper Sa (Behag:
+ * N3 S ... starts on lower Ni; Kadanakuthuhalam's N3 G3 P S turns back down
+ * inside the octave); an avaroha starts on upper Sa (or its own first note) and
+ * may dip to lower Sa. A closing S is never the Sa the line began on.
  */
 export const swaraLine = (swaras = [], descending = false) => {
-  const out = [];
-  for (const token of swaras) {
-    const s = parseSwara(token);
-    if (!s) continue;
-    const t = s.semitone;
-    if (!out.length) {
-      out.push(descending ? (t === 0 ? 12 : t) : t >= 7 ? t - 12 : t);
-      continue;
-    }
-    const prev = out[out.length - 1];
-    const up = prev + mod12(t - prev); // nearest at or above
-    const down = up === prev ? prev : up - 12; // nearest below
-    if (up === prev) out.push(prev);
-    else if (descending) out.push(up - prev <= VAKRA_STEP ? up : down);
-    else out.push(prev - down <= VAKRA_STEP ? down : up);
+  const tones = swaras.map(parseSwara).filter(Boolean).map((p) => p.semitone);
+  if (!tones.length) return [];
+  const first = descending ? (tones[0] === 0 ? 12 : tones[0]) : tones[0] >= 7 ? tones[0] - 12 : tones[0];
+  const closesOnSa = tones.length > 1 && tones[tones.length - 1] === 0;
+  const [low, high] = descending ? [-12, first] : [first, Math.max(first, 0) + (closesOnSa ? 12 : 14)];
+  const options = tones.map((t, i) => {
+    if (i === 0) return [first];
+    const out = [];
+    for (let v = t - 24; v <= t + 24; v += 12) if (v >= low && v <= high) out.push(v);
+    // A closing Sa is never the note the line began on (S ... S' or S' ... S).
+    if (i === tones.length - 1 && closesOnSa) return out.filter((v) => v !== first);
+    return out.length ? out : [t];
+  });
+  // Least total movement through the options (a tiny Viterbi pass).
+  let cost = options[0].map(() => 0);
+  const back = [];
+  for (let i = 1; i < options.length; i += 1) {
+    const from = [];
+    cost = options[i].map((v) => {
+      let best = Infinity;
+      let arg = 0;
+      options[i - 1].forEach((u, j) => {
+        const c = cost[j] + Math.abs(v - u);
+        if (c < best) {
+          best = c;
+          arg = j;
+        }
+      });
+      from.push(arg);
+      return best;
+    });
+    back.push(from);
   }
-  return out;
+  let k = cost.indexOf(Math.min(...cost));
+  const line = [options[options.length - 1][k]];
+  for (let i = back.length - 1; i >= 0; i -= 1) {
+    k = back[i][k];
+    line.unshift(options[i][k]);
+  }
+  return line;
 };
 
 /** Cheapest string and fret for each pitch: few position shifts, low frets, open strings free. */
