@@ -249,7 +249,12 @@ describe('musician details in search', () => {
     expect(section).toHaveTextContent('S R2 G3 P D2 S');
     expect(section).toHaveTextContent('G A B D E G');
     expect(section).toHaveTextContent('Carnatic: Adi');
-    expect(section).toHaveTextContent('dha ge na ti');
+    // Each bol carries its beat number, and the tabla part adds dugun and a stroke guide
+    expect(within(section).getByRole('group', { name: 'Theka by section' })).toHaveTextContent('1dha 2ge 3na 4ti');
+    expect(within(section).getByRole('group', { name: 'Dugun theka' })).toHaveTextContent('1dhage 2nati 3naka 4dhina');
+    expect(within(section).getByText('ge', { selector: 'dt' }).nextElementSibling).toHaveTextContent(
+      'bayan (left): open, ringing bass stroke'
+    );
     expect(section).toHaveTextContent('Count 1-2-3-4 at ~96 BPM');
     expect(within(section).getAllByRole('listitem').map((li) => li.textContent)).toEqual(['I G', 'IV C', 'V D', 'vi Em']);
     expect(section).toHaveTextContent('Sing in G (5 kattai).');
@@ -325,13 +330,48 @@ describe('piano keys and transposing', () => {
     setPref('musicianMode', true);
     renderSearch();
     const section = await openDetails('kali kali kali (gujarati)');
-    // Mohanam goes up and down on the same notes: one keyboard, G A B D E lit
+    // Up and Down each get their own labelled keyboard, notes in red, Sa marked
     const pianos = within(section).getAllByRole('img', { name: /^Piano keys/ });
-    expect(pianos).toHaveLength(1);
-    expect(pianos[0]).toHaveAccessibleName('Piano keys — G A B D E G');
+    expect(pianos.map((p) => p.getAttribute('aria-label'))).toEqual([
+      'Piano keys — Up: G A B D E G',
+      'Piano keys — Down: G E D B A G',
+    ]);
     expect(pianos[0].querySelectorAll('.pk-on')).toHaveLength(6);
     expect(pianos[0].querySelectorAll('.pk-sa-dot')).toHaveLength(2);
+    expect([...pianos[0].querySelectorAll('.pk-name-on')].map((t) => t.textContent)).toEqual(['G', 'A', 'B', 'D', 'E', 'G']);
     expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
+  });
+
+  it('switches between voice, piano, guitar, ukulele and bansuri, and remembers the choice', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    const pick = (name) => fireEvent.click(within(section).getByRole('button', { name }));
+    expect(within(section).getByRole('button', { name: 'Piano' })).toHaveAttribute('aria-pressed', 'true');
+
+    pick('Voice');
+    expect(getPrefs().musicInstrument).toBe('voice');
+    expect(within(section).getByRole('img', { name: /^Sing up/ })).toHaveAccessibleName(
+      'Sing up: Sa G, Re A, Ga B, Pa D, Dha E, Sa (upper octave) G'
+    );
+
+    pick('Guitar');
+    expect(within(section).getByRole('img', { name: /^Guitar tab, up/ })).toHaveTextContent('G|-0-2');
+    expect(within(section).getAllByRole('img', { name: /on guitar/ }).map((d) => d.getAttribute('aria-label'))[0]).toBe(
+      'G on guitar: E fret 3, A fret 2, D open, G open, B open, e fret 3'
+    );
+
+    pick('Ukulele');
+    expect(within(section).getAllByRole('img', { name: /on ukulele/ })[1]).toHaveAccessibleName(
+      'C on ukulele: G open, C open, E open, A fret 3'
+    );
+
+    pick('Bansuri');
+    expect(within(section).getByRole('img', { name: /^Bansuri up/ })).toHaveAccessibleName(
+      'Bansuri up: G: top 3 closed; A: top 2 closed; B: top 1 closed; D: top 6 closed, blow harder; E: top 5 closed, blow harder; G: top 3 closed, blow harder'
+    );
+    expect(section).toHaveTextContent('Use a G bansuri');
+    expect(getPrefs().musicInstrument).toBe('bansuri');
   });
 
   it('transposes one song by semitone or key, and back to the recording key', async () => {
@@ -393,6 +433,9 @@ describe('piano keys and transposing', () => {
     applyRemotePrefs({ musicKey: 12 });
     applyRemotePrefs({ musicKey: '7' });
     expect(getPrefs().musicKey).toBe(4);
+    applyRemotePrefs({ musicInstrument: 'guitar' });
+    applyRemotePrefs({ musicInstrument: 'sitar' });
+    expect(getPrefs().musicInstrument).toBe('guitar');
   });
 });
 

@@ -12,6 +12,7 @@ import {
   keyName,
   keySpelling,
   markMeaning,
+  parseSwara,
   summaryInKey,
   swaraSemitones,
   swarasToNotes,
@@ -19,7 +20,39 @@ import {
 } from './musicTheory';
 import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, taalName } from './MusicChips';
 import PianoKeys from './PianoKeys';
+import { BansuriChart, ChordDiagram, SargamLine, ScaleTab } from './InstrumentViews';
+import { bolGuide, dugun, tablaTaal } from './tabla';
 import { setMyKey, useMyKey } from './myKey';
+import { setPref, usePref } from './prefs';
+
+const INSTRUMENT_TABS = [
+  ['voice', 'Voice'],
+  ['piano', 'Piano'],
+  ['guitar', 'Guitar'],
+  ['ukulele', 'Ukulele'],
+  ['bansuri', 'Bansuri'],
+];
+const INSTRUMENT_PREF = 'musicInstrument';
+const useInstrument = () => {
+  const value = usePref(INSTRUMENT_PREF);
+  return INSTRUMENT_TABS.some(([id]) => id === value) ? value : 'piano';
+};
+
+/** Piano / Guitar / Ukulele: which instrument the scales and chords are drawn for (remembered). */
+const InstrumentSwitch = ({ instrument }) => (
+  <div className='md-instruments' role='group' aria-label='Show notes for'>
+    {INSTRUMENT_TABS.map(([id, label]) => (
+      <button
+        key={id}
+        type='button'
+        className='md-instrument'
+        aria-pressed={instrument === id}
+        onClick={() => setPref(INSTRUMENT_PREF, id)}>
+        {label}
+      </button>
+    ))}
+  </div>
+);
 
 const SOURCE = { box: 'from the full recording', cd: 'from a CD sample', sheet: 'from the sheet music' };
 const SYSTEM = { carnatic: 'Carnatic', hindustani: 'Hindustani' };
@@ -37,32 +70,53 @@ const ScaleRow = ({ label, swaras, saPc, spelling }) => {
   );
 };
 
-const sameNotes = (a, b) => a.length === b.length && a.every((s) => b.includes(s));
+/** Note name for each semitone above Sa that the swaras use, spelled like the scale rows. */
+const namesBySemitone = (swaras, saPc, spelling) => {
+  const tokens = (swaras || []).filter((t) => parseSwara(t));
+  const notes = swarasToNotes(tokens, saPc, spelling);
+  const names = {};
+  tokens.forEach((t, i) => {
+    names[parseSwara(t).semitone] ??= notes[i];
+  });
+  return names;
+};
 
-/** Piano keys beside the scale rows: one keyboard, or Up and Down when the notes differ. */
-const RagaPianos = ({ raga, saPc, spelling }) => {
+/** Up and Down drawn for the chosen instrument: sung notes, two keyboards, two tabs or two fingering charts. */
+const RagaInstrument = ({ raga, saPc, spelling, instrument }) => {
   if (!isPitchClass(saPc)) return null;
-  const up = swaraSemitones(raga.aroha);
-  const down = swaraSemitones(raga.avaroha);
-  if (!up.length && !down.length) return null;
-  const notes = (swaras) => swarasToNotes(swaras, saPc, spelling);
+  const lines = [
+    ['Up', raga.aroha, false],
+    ['Down', raga.avaroha, true],
+  ].filter(([, swaras]) => Array.isArray(swaras) && swaras.length);
+  if (!lines.length) return null;
+  const labels = namesBySemitone([...(raga.aroha || []), ...(raga.avaroha || [])], saPc, spelling);
+  const view = (label, swaras, descending) => {
+    const notes = swarasToNotes(swaras, saPc, spelling);
+    const common = { key: label, swaras, descending, names: notes, label };
+    if (instrument === 'voice') return <SargamLine {...common} />;
+    if (instrument === 'bansuri') return <BansuriChart {...common} />;
+    if (instrument === 'piano') {
+      return <PianoKeys key={label} saPc={saPc} semitones={swaraSemitones(swaras)} label={label} notes={notes} labels={labels} />;
+    }
+    return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
+  };
   return (
-    <div className='md-pianos'>
-      {sameNotes(up, down) || !down.length ? (
-        <PianoKeys saPc={saPc} semitones={up} notes={notes(raga.aroha)} />
-      ) : !up.length ? (
-        <PianoKeys saPc={saPc} semitones={down} notes={notes(raga.avaroha)} />
-      ) : (
-        <>
-          <PianoKeys saPc={saPc} semitones={up} label='Up' notes={notes(raga.aroha)} />
-          <PianoKeys saPc={saPc} semitones={down} label='Down' notes={notes(raga.avaroha)} />
-        </>
+    <div className={`md-instrument-view md-${instrument}`}>
+      {lines.map(([label, swaras, descending]) => view(label, swaras, descending))}
+      {instrument === 'voice' && (
+        <p className='md-hint'>Underlined = komal (flat) · Ma′ = tivra (sharp) · dot above = upper octave, below = lower</p>
+      )}
+      {instrument === 'bansuri' && (
+        <p className='md-hint'>
+          Use a {keyName(saPc, raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [])} bansuri (Sa = top three holes
+          closed). Filled = closed, half = half-closed, ↑ = blow harder.
+        </p>
       )}
     </div>
   );
 };
 
-const Raga = ({ part, raga, saPc }) => {
+const Raga = ({ part, raga, saPc, instrument }) => {
   const sec = part.sec && part.sec !== 'all' ? part.sec : null;
   const swaras = raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [];
   const spelling = keySpelling(saPc, swaras);
@@ -80,7 +134,7 @@ const Raga = ({ part, raga, saPc }) => {
             <ScaleRow label='Up' swaras={raga.aroha} saPc={saPc} spelling={spelling} />
             <ScaleRow label='Down' swaras={raga.avaroha} saPc={saPc} spelling={spelling} />
           </div>
-          <RagaPianos raga={raga} saPc={saPc} spelling={spelling} />
+          <RagaInstrument raga={raga} saPc={saPc} spelling={spelling} instrument={instrument} />
         </div>
       )}
       {(raga?.western || raga?.mood) && (
@@ -148,11 +202,11 @@ const Transpose = ({ saPc, recordingPc, myKey, swaras, onChange }) => {
   );
 };
 
-const Theka = ({ taal }) => {
+const Theka = ({ taal, label = 'Theka by section' }) => {
   const groups = thekaGroups(taal);
   if (!groups) return null;
   return (
-    <div className='md-theka' role='group' aria-label='Theka by section'>
+    <div className='md-theka' role='group' aria-label={label}>
       {groups.map(({ mark, cells }, i) => (
         <div key={i} className='md-vibhag'>
           <span className='md-mark' title={mark ? markMeaning(mark) : undefined}>
@@ -163,7 +217,12 @@ const Theka = ({ taal }) => {
             {cells.map(({ beat, bol }, i) => (
               <React.Fragment key={beat}>
                 {i > 0 && ' '}
-                <span className='md-bol'>{bol || beat}</span>
+                <span className='md-bol'>
+                  <span className='md-beat' aria-hidden='true'>
+                    {beat}
+                  </span>
+                  {bol || beat}
+                </span>
               </React.Fragment>
             ))}
           </span>
@@ -197,6 +256,45 @@ const Taal = ({ t, taals }) => {
         </p>
       )}
       {taal?.feel && <p className='md-aside'>{taal.feel}</p>}
+      <Tabla t={t} taals={taals} />
+    </div>
+  );
+};
+
+/** For the tabla player: the theka to play (Hindustani for a Carnatic taal), dugun, and each stroke. */
+const Tabla = ({ t, taals }) => {
+  const own = t.id ? taals?.[t.id] : null;
+  const tabla = tablaTaal(t, taals);
+  if (!tabla) {
+    return own?.system === 'carnatic' && own.bols ? (
+      <p className='md-hint'>These are spoken counting syllables (konnakol), not tabla strokes.</p>
+    ) : null;
+  }
+  const { taal, borrowed, id } = tabla;
+  const guide = bolGuide(taal.bols);
+  return (
+    <div className='md-tabla'>
+      <h4 className='md-sublabel'>Tabla</h4>
+      {borrowed && (
+        <>
+          <p className='md-aside'>
+            Play <strong>{taalName(taals, id)}</strong> ({taal.beats} beats) on tabla:
+          </p>
+          <Theka taal={taal} label={`${taalName(taals, id)} theka`} />
+        </>
+      )}
+      <p className='md-aside'>Dugun (double speed), two bols on each beat:</p>
+      <Theka taal={{ ...taal, bols: dugun(taal.bols) }} label='Dugun theka' />
+      {guide.length > 0 && (
+        <dl className='md-bol-guide'>
+          {guide.map(({ bol, stroke }) => (
+            <div key={bol}>
+              <dt>{bol}</dt>
+              <dd>{stroke}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
     </div>
   );
 };
@@ -204,6 +302,7 @@ const Taal = ({ t, taals }) => {
 const MusicianDetails = ({ entry, music }) => {
   const id = useId();
   const myKey = useMyKey();
+  const instrument = useInstrument();
   // A key picked for this song only; null follows the reader's key, else the recording's.
   const [chosenPc, setChosenPc] = useState(null);
   if (!entry || !music) return null;
@@ -263,8 +362,15 @@ const MusicianDetails = ({ entry, music }) => {
         <div className='md-block'>
           <h3 className='md-label'>{ragaParts.length > 1 ? 'Ragas' : 'Raga'}</h3>
           {ragaParts.length === 0 && <p className='md-aside'>No raga: a Western-style or light-music tune.</p>}
+          {ragaParts.length > 0 && hasKey && <InstrumentSwitch instrument={instrument} />}
           {ragaParts.map((part, i) => (
-            <Raga key={`${part.id}-${i}`} part={part} raga={ragas[part.id]} saPc={hasKey ? saPc : undefined} />
+            <Raga
+              key={`${part.id}-${i}`}
+              part={part}
+              raga={ragas[part.id]}
+              saPc={hasKey ? saPc : undefined}
+              instrument={instrument}
+            />
           ))}
           {ragaParts.length > 0 && !hasKey && <p className='md-aside'>Key unknown, so notes are shown as swaras only.</p>}
         </div>
@@ -280,12 +386,14 @@ const MusicianDetails = ({ entry, music }) => {
       {chords.length > 0 && (
         <div className='md-block'>
           <h3 className='md-label'>Chords</h3>
-          <ol className='md-chords'>
+          {ragaParts.length === 0 && <InstrumentSwitch instrument={instrument} />}
+          <ol className={instrument === 'piano' ? 'md-chords' : 'md-chords md-chords-diagrams'}>
             {chords.map(({ numeral, chord }, i) => (
               <li key={`${numeral}-${i}`}>
                 <span className='md-numeral'>{numeral}</span>
                 {chord && ' '}
                 {chord && <span className='md-chord'>{chord}</span>}
+                {chord && instrument !== 'piano' && <ChordDiagram instrument={instrument} name={chord} />}
               </li>
             ))}
           </ol>

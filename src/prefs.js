@@ -5,6 +5,7 @@
 //
 // Shape (local and remote):
 //   musicianMode   boolean   show raga / taal / shruti details
+//   musicInstrument  'piano' | 'guitar' | 'ukulele'  how scales and chords are drawn
 //   musicKey       0-11      the reader's own Sa (pitch class, 0 = C): every song's
 //                            notes and key are shown from it; absent = recording key
 //   viewer.headerHidden  boolean | absent   top bar on the song page; absent = no choice yet
@@ -92,6 +93,7 @@ const isPitchClass = (value) => Number.isInteger(value) && value >= 0 && value <
 const REMOTE_FIELDS = {
   musicianMode: isBool,
   musicKey: isPitchClass,
+  musicInstrument: (value) => ['piano', 'guitar', 'ukulele'].includes(value),
   'viewer/headerHidden': isBool,
 };
 

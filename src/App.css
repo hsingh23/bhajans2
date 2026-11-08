@@ -1858,17 +1858,235 @@ mark {
 .musician-details .md-raga + .md-raga {
   margin-top: 8px;
 }
+.md-bol {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.md-beat {
+  font-size: 10px;
+  line-height: 1.1;
+  color: var(--md-muted);
+}
+.musician-details .md-tabla {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-color);
+}
+.md-sublabel {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--md-accent);
+}
+.md-bol-guide {
+  display: grid;
+  gap: 2px;
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+.md-bol-guide > div {
+  display: flex;
+  gap: 8px;
+}
+.md-bol-guide dt {
+  flex: none;
+  width: 2.8em;
+  font-weight: 700;
+}
+.md-bol-guide dd {
+  margin: 0;
+  color: var(--md-muted);
+}
+.musician-details .md-hint {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.sargam-line,
+.bansuri-chart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+}
+.sargam-line ol,
+.bansuri-chart ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sg-note {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0 5px;
+}
+.sg-syllable {
+  font-size: 16px;
+  font-weight: 700;
+}
+.sg-komal .sg-syllable {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sg-taar::before,
+.sg-mandra::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.sg-taar::before {
+  top: 1px;
+}
+.sg-mandra::after {
+  bottom: 0;
+}
+.sg-pitch {
+  font-size: 12px;
+  color: var(--md-muted);
+}
+.bansuri-chart ol {
+  gap: 2px 6px;
+}
+.bn-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 20px;
+}
+.bn-register {
+  height: 12px;
+  font-size: 11px;
+  line-height: 12px;
+  color: var(--md-accent);
+}
+.bn-hole {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 1;
+}
+.bn-closed {
+  fill: var(--text-color);
+}
+.bn-name {
+  font-size: 11px;
+  font-weight: 700;
+}
 .md-scale-wrap {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 4px 16px;
 }
-.md-pianos {
+.md-instrument-view {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   margin: 4px 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.md-instruments {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 2px 0 8px;
+  padding: 2px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+}
+.musician-details .md-instrument {
+  min-height: 32px;
+  flex: none;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+}
+.musician-details .md-instrument[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--md-accent);
+}
+[data-theme="dark"] .musician-details .md-instrument[aria-pressed="true"] {
+  color: #1e1e1e;
+}
+.scale-tab {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.scale-tab .pk-label {
+  padding-top: 1.2em;
+}
+.scale-tab pre {
+  margin: 0;
+  overflow-x: auto;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.25;
+  color: var(--text-color);
+}
+.pk-name {
+  font-family: "Lato", sans-serif;
+  font-size: 9px;
+  fill: #6b6b6b;
+}
+.pk-name-on {
+  font-weight: 700;
+  fill: #ffffff;
+}
+.pk-name-black {
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: #ffffff;
+}
+.chord-diagram {
+  display: block;
+  margin-top: 4px;
+}
+.chord-diagram .cd-line {
+  stroke: var(--md-muted);
+  stroke-width: 1;
+}
+.chord-diagram .cd-nut {
+  stroke: var(--text-color);
+  stroke-width: 3;
+}
+.chord-diagram .cd-dot {
+  fill: var(--md-accent);
+}
+.chord-diagram .cd-open {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 1;
+}
+.chord-diagram .cd-mark,
+.chord-diagram .cd-fret {
+  font-family: "Lato", sans-serif;
+  font-size: 9px;
+  fill: var(--md-muted);
 }
 .piano-keys {
   --pk-white: #ffffff;
@@ -2043,6 +2261,9 @@ mark {
 }
 .md-bol {
   min-width: 1.4em;
+}
+.md-theka + .md-theka {
+  margin-top: 2px;
 }
 .md-ts {
   font-weight: 700;

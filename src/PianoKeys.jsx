@@ -4,10 +4,11 @@
 import React from 'react';
 
 const WHITE_PCS = new Set([0, 2, 4, 5, 7, 9, 11]);
-const WHITE_W = 18;
-const WHITE_H = 54;
-const BLACK_W = 11;
-const BLACK_H = 33;
+const WHITE_W = 20;
+const WHITE_H = 62;
+const BLACK_W = 13;
+const BLACK_H = 38;
+const LETTERS = { 0: 'C', 2: 'D', 4: 'E', 5: 'F', 7: 'G', 9: 'A', 11: 'B' };
 
 const isWhite = (abs) => WHITE_PCS.has(((abs % 12) + 12) % 12);
 
@@ -36,10 +37,15 @@ const keyClass = (base, { on, sa }) => [base, on && 'pk-on', sa && 'pk-sa'].filt
 
 const SaDot = ({ x, y, w }) => <circle className='pk-sa-dot' cx={x + w / 2} cy={y} r={3} />;
 
-const PianoKeys = ({ saPc, semitones, label, notes }) => {
+/**
+ * `labels` names the lit notes by semitone above Sa ({ 0: 'Bb', 1: 'Cb', ... }),
+ * spelled like the scale rows; unlit white keys show their plain letter.
+ */
+const PianoKeys = ({ saPc, semitones, label, notes, labels = {} }) => {
   if (!Number.isInteger(saPc) || !semitones?.length) return null;
   const { whites, blacks, width } = pianoLayout(saPc, semitones);
   const name = [label, notes?.length ? notes.join(' ') : null].filter(Boolean).join(': ');
+  const text = (k) => (k.on ? labels[(((k.abs - saPc) % 12) + 12) % 12] : null);
   return (
     <figure className='piano-keys'>
       {label && <figcaption className='pk-label'>{label}</figcaption>}
@@ -52,13 +58,21 @@ const PianoKeys = ({ saPc, semitones, label, notes }) => {
         {whites.map((k) => (
           <g key={k.abs}>
             <rect className={keyClass('pk-white', k)} x={k.x} y={0} width={WHITE_W} height={WHITE_H} rx={2} />
-            {k.sa && <SaDot x={k.x} y={WHITE_H - 7} w={WHITE_W} />}
+            {k.sa && <SaDot x={k.x} y={WHITE_H - 20} w={WHITE_W} />}
+            <text className={k.on ? 'pk-name pk-name-on' : 'pk-name'} x={k.x + WHITE_W / 2} y={WHITE_H - 5} textAnchor='middle'>
+              {text(k) || LETTERS[((k.abs % 12) + 12) % 12]}
+            </text>
           </g>
         ))}
         {blacks.map((k) => (
           <g key={k.abs}>
             <rect className={keyClass('pk-black', k)} x={k.x} y={0} width={BLACK_W} height={BLACK_H} rx={1.5} />
-            {k.sa && <SaDot x={k.x} y={BLACK_H - 6} w={BLACK_W} />}
+            {k.sa && <SaDot x={k.x} y={BLACK_H - 17} w={BLACK_W} />}
+            {text(k) && (
+              <text className='pk-name pk-name-black' x={k.x + BLACK_W / 2} y={BLACK_H - 4} textAnchor='middle'>
+                {text(k)}
+              </text>
+            )}
           </g>
         ))}
       </svg>
