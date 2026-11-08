@@ -119,8 +119,8 @@ describe('resolveSongId', () => {
 });
 
 const mockBhajans = {
-  0: { n: 'Test Bhajan', cu: ['http://buy.com'], cs: ['http://sample.mp3'] },
-  1: { n: 'Another Bhajan', cu: null, cs: null },
+  0: { n: 'Test Bhajan', az: 'B004G1T0UK', cs: ['http://sample.mp3'] },
+  1: { n: 'Another Bhajan', cs: null },
 };
 
 const renderRenderPage = (props = {}, route = '/pdf/vol1-10/0/Test%20Bhajan', element) => {
@@ -188,6 +188,18 @@ describe('RenderPage Component', () => {
     await waitFor(() => {
       expect(screen.getByText('Test Bhajan')).toBeInTheDocument();
     });
+  });
+
+  it("links the header's buy button to the song's Amazon track", async () => {
+    renderRenderPage();
+    const buy = await screen.findByRole('link', { name: 'Buy on Amazon' });
+    expect(buy).toHaveAttribute('href', 'https://www.amazon.com/dp/B004G1T0UK');
+  });
+
+  it('shows no buy button for a song that is not on Amazon', async () => {
+    renderRenderPage({}, '/pdf/vol1-10/1/Another%20Bhajan');
+    await screen.findByText('Another Bhajan');
+    expect(screen.queryByRole('link', { name: 'Buy on Amazon' })).not.toBeInTheDocument();
   });
 
   it('shows back button with proper accessibility', async () => {

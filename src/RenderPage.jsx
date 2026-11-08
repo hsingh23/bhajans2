@@ -23,6 +23,7 @@ const musicPillText = (entry, music) => {
   return [shruti, raga].filter(Boolean).join(" · ") || "Musician";
 };
 import { track } from "./analytics";
+import { amazonTrackUrl } from "./amazon";
 import { rememberOpened } from "./engagement";
 
 const InvertiblePdfComponent = memo(InvertiblePDF);
@@ -253,7 +254,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   useEffect(() => {
     if (name && !isSheetMusic) rememberOpened({ name, location: locationParam, page });
   }, [name, isSheetMusic, locationParam, page]);
-  const cdbabyBuyUrls = bhajans && bhajans[id] && bhajans[id].cu;
+  const amazonTrack = bhajans && bhajans[id] && bhajans[id].az;
   const cdbabySampleUrls = bhajans && bhajans[id] && bhajans[id].cs;
   
   let book, url, scale = 3;
@@ -407,13 +408,14 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
           title={name}
           rightContent={
             <>
-              {cdbabyBuyUrls && (
+              {amazonTrack && (
                 <a
                   className='button button-circle'
-                  href={`https://www.amazon.com/s?k=${encodeURIComponent(name)} amma`}
+                  href={amazonTrackUrl(amazonTrack)}
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label='Buy on Amazon'>
+                  aria-label='Buy on Amazon'
+                  onClick={() => track("buy_click", { bhajan_name: name, store: "amazon" })}>
                   <span role='img' aria-label='cd'>
                     <Icon name='cart' />
                   </span>

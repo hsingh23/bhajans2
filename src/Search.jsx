@@ -16,6 +16,7 @@ import { EMPTY_MUSIC_FILTERS, MUSIC_FACETS, activeMusicFilters, matchesMusic, mu
 import { useViewerPrefs, rememberedSheetKey } from './prefs';
 import { buildSearchIndex, rankBhajans } from './searchRank';
 import { isLyricsLocation, locationLabel } from './lyricsLocation';
+import { amazonTrackUrl } from './amazon';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
 const ROW_HEIGHT = 200;
@@ -264,7 +265,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const rowRenderer = ({ index, key, style }) => {
     const bhajan = bhajans[filteredBhajans[index]];
     if (!bhajan) return null;
-    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, cn: cdbabyNames, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
+    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, az: amazonTrack, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
     const tagContent = tags ? ` (${tags})` : '';
     const songMusic = showMusic ? music.songs[name] : null;
     // Open sheet music in the key this reader last chose for the song.
@@ -321,13 +322,14 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 <Icon name='music' />
               </Link>
             )}
-            {cdbabyNames && (
+            {amazonTrack && (
               <a
                 className='button button-3d button-circle button-jumbo spaced'
-                href={`https://www.amazon.com/s?k=${encodeURIComponent(cdbabyNames[0])} amma`}
+                href={amazonTrackUrl(amazonTrack)}
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label='buy song on cdbaby'>
+                aria-label='Buy on Amazon'
+                onClick={() => track('buy_click', { bhajan_name: name, store: 'amazon' })}>
                 <Icon name='cart' />
               </a>
             )}
@@ -380,7 +382,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   );
   const todaysPath = todaysPick && viewerPath(bhajans, { name: todaysPick.bhajan.n, location: todaysPick.location });
   const showHomeExtras = !myFavoritesMode && !filter && !language && !deity && !musicFiltering && (todaysPath || resumeItems.length > 0);
-  const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
+  const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [], az: infoAmazon } = infoOpen || {};
   const cdbabyLinks = infoSampleUrls.map((sample, i) => [sample, infoNames[i]]);
   const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
 
@@ -465,13 +467,24 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     onClick={() => (playing === sample ? stop() : play(sample, infoName))}>
                     <Icon name={playing === sample ? 'stop' : 'play'} />
                   </button>
-                  {' Buy on Amazon (if available) '}
-                  <a href={`https://www.amazon.com/s?k=${encodeURIComponent(name)} amma`} target='_blank' rel='noopener noreferrer' aria-label={`Buy ${name} on Amazon`}>
-                    {name}
-                  </a>
+                  {' '}
+                  {name}
                 </div>
               ))}
               <hr />
+            </div>
+          )}
+
+          {infoAmazon && (
+            <div>
+              <strong>Buy: </strong>
+              <a
+                href={amazonTrackUrl(infoAmazon)}
+                target='_blank'
+                rel='noopener noreferrer'
+                onClick={() => track('buy_click', { bhajan_name: infoName, store: 'amazon' })}>
+                Amma&apos;s recording on Amazon
+              </a>
             </div>
           )}
 
