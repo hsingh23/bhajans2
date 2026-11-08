@@ -235,7 +235,7 @@ def main():
                 continue
             e = music.setdefault(n, {})
             for k, v in fill.items():
-                if not e.get(k):
+                if not e.get(k) and not (k == "r" and e.get("rn") == "none"):  # "no raga" is a classification
                     e[k] = v
                     if k == "r":
                         used_r.update(r["id"] for r in v)

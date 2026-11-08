@@ -45,8 +45,12 @@ SOFT_DEITY = [{"Amma", "Devi"}, {"Amma", "Universal"}, {"Amma", "Guru"}, {"Devi"
 def music_from(lab):
     """A bhajan-music.json entry (r / t only) from one song's Layamritam labels, or {}."""
     e = {}
-    if lab["ragas"]:
-        e["r"] = [{"id": r["id"], "sec": "all", "c": RAGA_C.get(r["src"], 0.6), "src": "layamritam"} for r in lab["ragas"]]
+    ragas = {}
+    for r in lab["ragas"]:  # one entry per raga, however many recordings name it; a human label wins
+        if r["id"] not in ragas or r["src"] == "human":
+            ragas[r["id"]] = r
+    if ragas:
+        e["r"] = [{"id": r["id"], "sec": "all", "c": RAGA_C.get(r["src"], 0.6), "src": "layamritam"} for r in ragas.values()]
     tid = next((t for t, _ in lab["taals"] if t in TAAL_SHAPE), None)
     if tid:
         b, ts, pulse, sub = TAAL_SHAPE[tid]
@@ -78,6 +82,12 @@ def main(dry=False):
             d = index[by_name[e["versionOf"]]]["d"]
         loc = f"{BOOK}-{e['page']}"
         entry = {"l": [loc], "n": e["n"], "lg": e["lg"] or "Other", "d": d or "Other", "lo": {loc: 0}}
+        mu = music_from(lab)
+        for sid in e.get("same", []):  # another recording of the same song may carry the labels
+            for k, v in music_from(labels[str(sid)]).items():
+                mu.setdefault(k, v)
+        if mu:
+            additions[e["n"]] = mu  # also for songs added by an earlier run, so a rerun keeps their fills
         if e["n"] in by_name:
             cur = index[by_name[e["n"]]]
             if cur["l"] != [loc]:
@@ -87,12 +97,6 @@ def main(dry=False):
         index.append(entry)
         cats[e["n"]] = {"lg": entry["lg"], "d": entry["d"]}
         stats["songs added"] += 1
-        mu = music_from(lab)
-        for sid in e.get("same", []):  # another recording of the same song may carry the labels
-            for k, v in music_from(labels[str(sid)]).items():
-                mu.setdefault(k, v)
-        if mu:
-            additions[e["n"]] = mu
 
     # 2 + 3. Matched songs: fill what is missing, list what disagrees.
     per_song = defaultdict(list)
@@ -133,8 +137,12 @@ def main(dry=False):
         lay_r = [r for lab in labs for r in lab["ragas"]]
         if lay_r:
             app_r = [r["id"] for r in cur.get("r", []) if r.get("src") != "layamritam"]
-            if not app_r:
-                fill["r"] = music_from({"ragas": lay_r[:1] + [r for r in lay_r[1:] if r["raw"] == lay_r[0]["raw"]], "taals": []})["r"]
+            if cur.get("rn") == "none":  # the app hears a Western-style tune, not a raga: a classification, not a gap
+                srcs = sorted({r["src"] for r in lay_r})
+                add_review("conflict", i, "raga", "none (Western-style tune)",
+                           " / ".join(sorted({r["raw"] for r in lay_r})) + f" ({'/'.join(srcs)})", sids, best)
+            elif not app_r:
+                fill["r"] = music_from({"ragas": [r for r in lay_r if r["raw"] == lay_r[0]["raw"]], "taals": []})["r"]
             elif not any(lmeta.same_raga(a, r["id"]) or related(a, r["id"]) for a in app_r for r in lay_r):
                 srcs = sorted({r["src"] for r in lay_r})
                 app_c = max(r.get("c", 0) for r in cur["r"])
@@ -171,17 +179,41 @@ def main(dry=False):
                                                else f"other language, {lyr:.0%} of its lyrics shared"),
             })
 
-    # Apply music fills (fills only; a value the app computed is never replaced).
+    # Apply music fills (fills only; a value the app computed is never replaced). Layamritam parts
+    # from an earlier run that are no longer wanted are taken out first, so reruns converge.
+    def ours(v):
+        return (isinstance(v, dict) and v.get("src") == "layamritam") or (
+            isinstance(v, list) and bool(v) and all(r.get("src") == "layamritam" for r in v))
+
+    touched = set(additions)
+    for n, e in list(music.items()):
+        for k in ("r", "t"):
+            if ours(e.get(k)) and k not in additions.get(n, {}):
+                if k == "r" and e.get("rn") == "none":
+                    e["r"] = []
+                else:
+                    del e[k]
+                touched.add(n)
+                stats[f"removed stale {k}"] += 1
     for n, fill in additions.items():
         e = music.setdefault(n, {})
         for k, v in fill.items():
-            if k not in e or e[k] is None or (isinstance(e[k], dict) and e[k].get("src") == "layamritam") or (
-                    isinstance(e[k], list) and all(r.get("src") == "layamritam" for r in e[k])):
+            if k == "r" and e.get("rn") == "none":
+                continue
+            if not e.get(k) or ours(e[k]):
+                if e.get(k) != v:
+                    stats[f"filled {k}"] += 1
                 e[k] = v
-                stats[f"filled {k}"] += 1
+    for n in touched:
+        e = music[n]
         cs = [p["c"] for p in [e.get("sh"), e.get("t"), *(e.get("r") or [])[:1]] if p and "c" in p]
         if cs:
             e["c"] = round(sum(cs) / len(cs), 2)
+        else:
+            e.pop("c", None)
+        if not set(e) - {"c", "en"}:
+            del music[n]
+            continue
         e["en"] = english(e, ref["ragas"], ref["taals"])
 
     stats.update(f"review {r['kind']} {r['field']}" for r in review)

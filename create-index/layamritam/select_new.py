@@ -49,6 +49,7 @@ def index_name(title, lg, taken):
     main, alias = lmeta.display_title(title)
     t = lmeta.fold(main + (f" ({alias})" if alias else "")).lower().replace("ṙ", "r")
     t = re.sub(r"[\"“”‘’]", "", t)
+    t = re.sub(r"[.#$\[\]/]+", " ", t)  # Firebase keys (favorites are stored under the name) forbid these
     t = re.sub(r"\s+", " ", t).strip(" .,-")
     n = f"{t} ({lg.lower()})" if lg and f"({lg.lower()})" not in t else t
     base, k = n, 2

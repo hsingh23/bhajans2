@@ -287,6 +287,7 @@ conflict,adi srsti lopama (telugu),vol7-6,raga,natabhairavi (c=0.7),Adana (human
 conflict,hare tu hamare (hindi),vol6-77,raga,brindavanasaranga (c=0.7),Des (human),Harē tu hamāre [499],lyrics lyric=0.75
 conflict,kannunir toratta sandhyakal (malayalam),2021supl3-30,raga,kamavardhini (c=0.45),Ahirbhairav / Cakravākam (human),Kaṇṇunīr Tōrātta Sandhyakaḷ [2573],lyrics lyric=0.95
 conflict,nisayute nirava,vol5-128,raga,sarasangi (c=0.7),Ahirbhairav / Cakravākam (human),niśayuṭe nīrava nīlimayil [988],lyrics lyric=0.92
+conflict,only love (english),vol7-227,raga,none (Western-style tune),Darbāri Kānaḍa / Naṭabhairavi (human),Only Love [1026],lyrics lyric=0.75
 conflict,oru nimisam enkilum,vol3old-135,raga,abheri (c=0.7),Darbāri Kānaḍa (human),oru nimiṣa-meṅkilum... [1038],lyrics lyric=0.91
 conflict,"pancaksara mandirattai (tamil, anand)",2020supl3-78,raga,behag (c=0.45),Gowri Manōhari (human),ninai keñjippāṭinān (pañcākṣara) [1920],lyrics lyric=0.73
 conflict,saranagat ko apnavo ma (hindi),vol6-186,raga,dwijavanthi (c=0.7),Kaapi (human),Mā Ō Mā pukārūm̐ (Saranagat ko apnavo Ma) [785],lyrics+title lyric=0.49
@@ -302,17 +303,24 @@ conflict,amrtanandamayi sadguru,vol2-26,raga,shivaranjani (c=0.9),Kalyani (ai),a
 conflict,amutam poriyum ananda,vol2-30,raga,shubhapantuvarali (c=0.9),Jog (ai),amutam pozhiyum  [162],lyrics lyric=0.91
 conflict,anadhinidhane,vol2-32,raga,brindavanasaranga (c=0.9),Hamsadhwani (ai),anādinidhanē... [164],lyrics lyric=0.99
 conflict,ananda rupini amme enikku,vol3-32,raga,bhairavi (c=0.9),Kaapi (ai),ānanda-rūpiṇi ammē enikku nī... [166],lyrics lyric=0.93
+conflict,bhagavad gita 15th chapter,vol4-218,raga,none (Western-style tune),Rēvati (ai),bhagavadgītā 15th Chapter (Chants) [2749],lyrics lyric=0.58
 conflict,bhramarame,vol1-55,raga,brindavanasaranga (c=0.9),Hamsadhwani (ai),bhramaramē mānasa bhramaramē... [286]; bhramaramē mānasa bhramaramē 2... [287],lyrics lyric=0.91
 conflict,brahmanda paksikal,vol1-57,raga,mohanam (c=0.9),Hamsadhwani (ai),brahmāṇḍa pakṣikal... [296]; brahmāṇḍa pakṣikaḷ (Vintage)... [1794],lyrics lyric=0.96
 conflict,callaga cudu (telugu),vol7-57,raga,hindolam (c=0.9),Suddha Dhanyasi (ai),callaga cūḍu... [301],lyrics lyric=0.94
+conflict,close to you (english),vol4-236,raga,none (Western-style tune),Kaapi (ai),Close to you [3444],lyrics lyric=1.00
+conflict,devi awaken your children (english),2020supl2-24,raga,none (Western-style tune),Madhyamāvati (ai),Dēvi Dēvi Awaken your children [1548],lyrics lyric=0.95
+conflict,durga suktam,vol4-224,raga,none (Western-style tune),Rēvati (ai),Durga sūktam D# [2737]; Durgā Sūktam  F [2794],lyrics lyric=0.89
 conflict,ekantatayute azham (malayalam),vol7-75,raga,dheerasankarabharanam (c=0.9),Kaapi (ai),Ekanthathayude [390],lyrics lyric=0.94
+conflict,elayya elayya taka (malayalam),2025-114,raga,none (Western-style tune),Hamsadhwani (ai),Elayya Elayya [3228],lyrics lyric=0.91
 conflict,en manassin oru maunam,vol1-75,raga,mohanam (c=0.9),Hindolam / Madhyamāvati (ai),en manassin oru maunam (Vintage) [402]; en manassin oru maunam [2003],lyrics lyric=0.94
 conflict,everywhere i look (english),vol5-194,raga,natabhairavi (c=0.9),Kīravāṇi (ai),Everywhere I look [440],lyrics lyric=0.84
 conflict,give us grace (shakti de bhakti de) (english),vol4-240,raga,mohanam (c=0.9),Hindolam (ai),Give Us Grace (śakti dē bhakti dē) [3460],lyrics lyric=1.00
 conflict,hare panduranga (marathi),vol6-76,raga,kamavardhini (c=0.9),Hamsadhwani (ai),hare pāṇḍuranga paṇḍarināthā [497],lyrics lyric=0.92
 conflict,holy mother (amrtanandamayi jai jai) english,vol3-263,raga,mohanam (c=0.9),Suddha Dhanyasi (ai),Amṛtānāndamayī Holi Mother  [3402],lyrics lyric=0.99
 conflict,hrdayattin atittattil (malayalam),2020supl3-37,raga,dharmavati (c=0.9),Sarasangi (ai),hṛdayattin aṭittaṭṭil [1747],lyrics lyric=0.96
+conflict,i was lost in the darkness2025(english) (english),2025-156,raga,none (Western-style tune),Gowri Manōhari (ai),I Was Lost [3091],lyrics lyric=0.98
 conflict,ichamayi,vol3-268,raga,hanumatodi (c=0.9),Ābhēri (ai),Source Of The Universe (Icchāmayī) [3459],lyrics lyric=0.99
+conflict,in every heart (english),2020supl2-33,raga,none (Western-style tune),Hari kāmbhōji (ai),In Every heart let us see  [1543],lyrics lyric=0.96
 conflict,irul tingi valarunna,vol2-90,raga,mohanam (c=0.9),Suddha Dhanyasi (ai),iruḷ tiṅgi vaḷarunna... [544]; iruḷ tiṅgi vaḷarunna (Vintage)... [2002],lyrics lyric=0.91
 conflict,iyarkaiyamma (tamil),vol7-110,raga,natakapriya (c=0.9),Cakravākam (ai),iyarkkaiyammā iyarkkaiyammā [556],lyrics lyric=0.91
 conflict,jagavella nine (kannada),2021supl3-25,raga,hamsanandi (c=0.9),Śivaranjani (ai),Jagavella Nīnē [2461],lyrics lyric=0.96
@@ -323,15 +331,22 @@ conflict,kadaloram (tamil),vol6-95,raga,mohanam (c=0.9),Madhyamāvati (ai),Kadal
 conflict,kanivotukattarulitaname (malayalam),vol6-106,raga,charukesi (c=0.9),Valachi (ai),kanivoḍu kātt-aruḷīḍaṇamē... [666],lyrics lyric=0.89
 conflict,kannirunangatta (malayalam),vol7-137,raga,dharmavati (c=0.9),Sarasangi (ai),Kannīr unangātta [683],lyrics lyric=0.96
 conflict,lalita lalita,vol2-126,raga,madhyamavati (c=0.9),Śuddha Sāvēri (ai),lalitā lalitā śrīlalitā (Vintage) [768],lyrics lyric=0.73
+conflict,lalle lalle (malayalam),vol7-160,raga,none (Western-style tune),Hamsadhwani (ai),lallē lallē lālē [771],lyrics lyric=0.94
 conflict,mara yadukula,vol1-153,raga,shuddhadhanyasi (c=0.9),Hindolam (ai),mārā yadukula... [843],lyrics lyric=0.95
+conflict,miles away from you (english),2025-329,raga,none (Western-style tune),Des (ai),Miles Away [3274],lyrics lyric=0.98
+conflict,mother of all english,vol3-271,raga,none (Western-style tune),Hamsadhwani (ai),Mother of all [3446],lyrics lyric=0.98
+conflict,mother send your love to me,vol4-246,raga,none (Western-style tune),Śivaranjani (ai),Send Your Love [3458],lyrics lyric=0.98
+conflict,na karmana na prajaya,vol3old-197,raga,none (Western-style tune),Hindolam / Madhyamāvati / Panthuvarali (ai),ōṃ na karmaṇā  [2195]; Sanyāsa Sūktam D# [2741]; Sanyāsa Sūktam  F [2799],lyrics lyric=0.89
 conflict,nalanchu nalekyu,vol2-140,raga,sarasangi (c=0.45),Ahirbhairav / Cakravākam / Kīravāṇi (ai/human),Nalañcu nālekku [916]; Nalañcu nālekku (Vintage) [2025]; nālañcu nāleykku (Instrumental) [2167]; nālañcu-nāḷēykku (Vintage 2) [2260],lyrics lyric=0.96
 conflict,namo namah (telugu),vol7-203,raga,mohanam (c=0.9),Jog (ai),Namo namah [922],lyrics lyric=0.94
 conflict,narayana hari,vol1-158,raga,mohanam (c=0.9),Hamsadhwani (ai),Narayana Hari [942]; nārāyaṇā hari (sachidānanda ghana) (Vintage)... [1784],lyrics lyric=0.99
 conflict,nila nila megha varnna,vol4-126,raga,hindolam (c=0.9),Suddha Dhanyasi (ai),nīla nīla mēgha varṇā [969],lyrics lyric=0.96
 conflict,nin ormakal,vol1-164,raga,brindavanasaranga (c=0.9),Des / Jog (ai),nin ōrmakaḷ... [973]; nin ōrmakaḷ (Vintage)... [1790]; nin ōrmakaḷ (Instrumental)... [2154]; nin ōrmakaḷ (Vintage) 2... [2258],lyrics lyric=0.93
 conflict,ninna mamate (kannada),vol6-164,raga,shubhapantuvarali (c=0.9),Jog (ai),Ninna Mamate Pretiyalli [980],lyrics lyric=0.83
+conflict,noor a veen (irish),2020supl2-57,raga,none (Western-style tune),Sarasangi (ai),Noor a veen [1642],lyrics lyric=0.85
 conflict,omkara divya porule - 6,vol2-155,raga,shivaranjani (c=0.9),Kalyani (ai),Omkara Divya Porule VI (Vintage) [2014],lyrics lyric=0.94
 conflict,omkara divya porule x,vol3-151,raga,hamsanandi (c=0.9),Cakravākam (ai),Omkara Divya Porule X (Vintage) [2050],lyrics lyric=0.94
+conflict,purusa suktam,vol4-230,raga,none (Western-style tune),Rēvati (ai),Puruṣa sūktam D# [2738]; Puruṣa Sūktam  F [2795],lyrics lyric=0.52
 conflict,sadguruvay vantutitta,vol3-200,raga,charukesi (c=0.9),Kaapi (ai),sadguruvāy vantutitta kāḷi [1147],lyrics lyric=0.93
 conflict,saka varamarulvay rama (tamil),vol6-183,raga,madhuvanti (c=0.9),Kalyani (ai),Saka varam Arulvai [1149],lyrics lyric=0.92
 conflict,sarvavyapiye (tamil),vol6-189,raga,shivaranjani (c=0.9),Rēvati (ai),Sarvavyapiyai [1171],lyrics lyric=0.68
@@ -340,6 +355,7 @@ conflict,taraka namamu (telugu),vol7-287,raga,tilang (c=0.9),Hamsadhwani (ai),Ta
 conflict,tayendru azhaikkava (tamil),vol7-289,raga,khamas (c=0.9),Ābhōgi (ai),Thayendrazhaikkava [1291],lyrics lyric=0.91
 conflict,tujhyata vithala (marathi),vol6-205,raga,sindhubhairavi (c=0.9),Ābhēri (ai),Tujhyat Vittala [1309],lyrics lyric=0.90
 conflict,tumbikkaiyan tunaiyiruppan (tamil),vol6-206,raga,hamsanadam (c=0.9),Hamsadhwani (ai),Thumbikkaiyan [1301],lyrics lyric=0.95
+conflict,underneath a kalpataru (english),vol7-301,raga,none (Western-style tune),Kīravāṇi (ai),Underneath a Kalpataru [1327],lyrics lyric=0.96
 conflict,vazhimel vizhi (tamil),vol7-314,raga,shubhapantuvarali (c=0.9),Panthuvarali (ai),Vazhi mel vizhi vaittu [1361],lyrics lyric=0.95
 judgment,abhayam abhayam amma,vol1-6,deity,Devi,Amma,abhayam abhayam ammā... [28]; abhayam abhayam ammā (Vintage)... [2216],lyrics lyric=0.99
 judgment,"abhayankari amme (malayalam, amritavarshini)",2020supl3-4,deity,Devi,Amma,abhayaṅkarī ammē... [1701],lyrics lyric=0.93

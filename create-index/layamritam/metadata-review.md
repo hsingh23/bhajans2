@@ -312,7 +312,7 @@ Different beat cycle. The app's taal comes from audio analysis of the recording.
 | vettrivel (tamil) | vol7-315 | keherwa (8 beats) | Dādra-6/12 | Vetri vel [1376] | lyrics lyric=0.96 |
 | wondrous goddess precious goddess | vol5-201 | dadra (6 beats) | Keherwa/Tīn tāḷ-8/16 | Wonderous Goddess [1417] | lyrics lyric=0.95 |
 
-## Raga (60)
+## Raga (76)
 
 Different scales, where it matters: Layamritam's label is 'human' or the app's label is confident (c >= 0.85). The app's raga is an Opus label from the recording; Layamritam marks 96% of theirs 'ai' (machine-labelled). Same scale under another name, or one scale inside the other, is not listed.
 
@@ -324,6 +324,7 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | hare tu hamare (hindi) | vol6-77 | brindavanasaranga (c=0.7) | Des (human) | Harē tu hamāre [499] | lyrics lyric=0.75 |
 | kannunir toratta sandhyakal (malayalam) | 2021supl3-30 | kamavardhini (c=0.45) | Ahirbhairav / Cakravākam (human) | Kaṇṇunīr Tōrātta Sandhyakaḷ [2573] | lyrics lyric=0.95 |
 | nisayute nirava | vol5-128 | sarasangi (c=0.7) | Ahirbhairav / Cakravākam (human) | niśayuṭe nīrava nīlimayil [988] | lyrics lyric=0.92 |
+| only love (english) | vol7-227 | none (Western-style tune) | Darbāri Kānaḍa / Naṭabhairavi (human) | Only Love [1026] | lyrics lyric=0.75 |
 | oru nimisam enkilum | vol3old-135 | abheri (c=0.7) | Darbāri Kānaḍa (human) | oru nimiṣa-meṅkilum... [1038] | lyrics lyric=0.91 |
 | pancaksara mandirattai (tamil, anand) | 2020supl3-78 | behag (c=0.45) | Gowri Manōhari (human) | ninai keñjippāṭinān (pañcākṣara) [1920] | lyrics lyric=0.73 |
 | saranagat ko apnavo ma (hindi) | vol6-186 | dwijavanthi (c=0.7) | Kaapi (human) | Mā Ō Mā pukārūm̐ (Saranagat ko apnavo Ma) [785] | lyrics+title lyric=0.49 |
@@ -339,17 +340,24 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | amutam poriyum ananda | vol2-30 | shubhapantuvarali (c=0.9) | Jog (ai) | amutam pozhiyum  [162] | lyrics lyric=0.91 |
 | anadhinidhane | vol2-32 | brindavanasaranga (c=0.9) | Hamsadhwani (ai) | anādinidhanē... [164] | lyrics lyric=0.99 |
 | ananda rupini amme enikku | vol3-32 | bhairavi (c=0.9) | Kaapi (ai) | ānanda-rūpiṇi ammē enikku nī... [166] | lyrics lyric=0.93 |
+| bhagavad gita 15th chapter | vol4-218 | none (Western-style tune) | Rēvati (ai) | bhagavadgītā 15th Chapter (Chants) [2749] | lyrics lyric=0.58 |
 | bhramarame | vol1-55 | brindavanasaranga (c=0.9) | Hamsadhwani (ai) | bhramaramē mānasa bhramaramē... [286]; bhramaramē mānasa bhramaramē 2... [287] | lyrics lyric=0.91 |
 | brahmanda paksikal | vol1-57 | mohanam (c=0.9) | Hamsadhwani (ai) | brahmāṇḍa pakṣikal... [296]; brahmāṇḍa pakṣikaḷ (Vintage)... [1794] | lyrics lyric=0.96 |
 | callaga cudu (telugu) | vol7-57 | hindolam (c=0.9) | Suddha Dhanyasi (ai) | callaga cūḍu... [301] | lyrics lyric=0.94 |
+| close to you (english) | vol4-236 | none (Western-style tune) | Kaapi (ai) | Close to you [3444] | lyrics lyric=1.00 |
+| devi awaken your children (english) | 2020supl2-24 | none (Western-style tune) | Madhyamāvati (ai) | Dēvi Dēvi Awaken your children [1548] | lyrics lyric=0.95 |
+| durga suktam | vol4-224 | none (Western-style tune) | Rēvati (ai) | Durga sūktam D# [2737]; Durgā Sūktam  F [2794] | lyrics lyric=0.89 |
 | ekantatayute azham (malayalam) | vol7-75 | dheerasankarabharanam (c=0.9) | Kaapi (ai) | Ekanthathayude [390] | lyrics lyric=0.94 |
+| elayya elayya taka (malayalam) | 2025-114 | none (Western-style tune) | Hamsadhwani (ai) | Elayya Elayya [3228] | lyrics lyric=0.91 |
 | en manassin oru maunam | vol1-75 | mohanam (c=0.9) | Hindolam / Madhyamāvati (ai) | en manassin oru maunam (Vintage) [402]; en manassin oru maunam [2003] | lyrics lyric=0.94 |
 | everywhere i look (english) | vol5-194 | natabhairavi (c=0.9) | Kīravāṇi (ai) | Everywhere I look [440] | lyrics lyric=0.84 |
 | give us grace (shakti de bhakti de) (english) | vol4-240 | mohanam (c=0.9) | Hindolam (ai) | Give Us Grace (śakti dē bhakti dē) [3460] | lyrics lyric=1.00 |
 | hare panduranga (marathi) | vol6-76 | kamavardhini (c=0.9) | Hamsadhwani (ai) | hare pāṇḍuranga paṇḍarināthā [497] | lyrics lyric=0.92 |
 | holy mother (amrtanandamayi jai jai) english | vol3-263 | mohanam (c=0.9) | Suddha Dhanyasi (ai) | Amṛtānāndamayī Holi Mother  [3402] | lyrics lyric=0.99 |
 | hrdayattin atittattil (malayalam) | 2020supl3-37 | dharmavati (c=0.9) | Sarasangi (ai) | hṛdayattin aṭittaṭṭil [1747] | lyrics lyric=0.96 |
+| i was lost in the darkness2025(english) (english) | 2025-156 | none (Western-style tune) | Gowri Manōhari (ai) | I Was Lost [3091] | lyrics lyric=0.98 |
 | ichamayi | vol3-268 | hanumatodi (c=0.9) | Ābhēri (ai) | Source Of The Universe (Icchāmayī) [3459] | lyrics lyric=0.99 |
+| in every heart (english) | 2020supl2-33 | none (Western-style tune) | Hari kāmbhōji (ai) | In Every heart let us see  [1543] | lyrics lyric=0.96 |
 | irul tingi valarunna | vol2-90 | mohanam (c=0.9) | Suddha Dhanyasi (ai) | iruḷ tiṅgi vaḷarunna... [544]; iruḷ tiṅgi vaḷarunna (Vintage)... [2002] | lyrics lyric=0.91 |
 | iyarkaiyamma (tamil) | vol7-110 | natakapriya (c=0.9) | Cakravākam (ai) | iyarkkaiyammā iyarkkaiyammā [556] | lyrics lyric=0.91 |
 | jagavella nine (kannada) | 2021supl3-25 | hamsanandi (c=0.9) | Śivaranjani (ai) | Jagavella Nīnē [2461] | lyrics lyric=0.96 |
@@ -360,15 +368,22 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | kanivotukattarulitaname (malayalam) | vol6-106 | charukesi (c=0.9) | Valachi (ai) | kanivoḍu kātt-aruḷīḍaṇamē... [666] | lyrics lyric=0.89 |
 | kannirunangatta (malayalam) | vol7-137 | dharmavati (c=0.9) | Sarasangi (ai) | Kannīr unangātta [683] | lyrics lyric=0.96 |
 | lalita lalita | vol2-126 | madhyamavati (c=0.9) | Śuddha Sāvēri (ai) | lalitā lalitā śrīlalitā (Vintage) [768] | lyrics lyric=0.73 |
+| lalle lalle (malayalam) | vol7-160 | none (Western-style tune) | Hamsadhwani (ai) | lallē lallē lālē [771] | lyrics lyric=0.94 |
 | mara yadukula | vol1-153 | shuddhadhanyasi (c=0.9) | Hindolam (ai) | mārā yadukula... [843] | lyrics lyric=0.95 |
+| miles away from you (english) | 2025-329 | none (Western-style tune) | Des (ai) | Miles Away [3274] | lyrics lyric=0.98 |
+| mother of all english | vol3-271 | none (Western-style tune) | Hamsadhwani (ai) | Mother of all [3446] | lyrics lyric=0.98 |
+| mother send your love to me | vol4-246 | none (Western-style tune) | Śivaranjani (ai) | Send Your Love [3458] | lyrics lyric=0.98 |
+| na karmana na prajaya | vol3old-197 | none (Western-style tune) | Hindolam / Madhyamāvati / Panthuvarali (ai) | ōṃ na karmaṇā  [2195]; Sanyāsa Sūktam D# [2741]; Sanyāsa Sūktam  F [2799] | lyrics lyric=0.89 |
 | nalanchu nalekyu | vol2-140 | sarasangi (c=0.45) | Ahirbhairav / Cakravākam / Kīravāṇi (ai/human) | Nalañcu nālekku [916]; Nalañcu nālekku (Vintage) [2025]; nālañcu nāleykku (Instrumental) [2167]; nālañcu-nāḷēykku (Vintage 2) [2260] | lyrics lyric=0.96 |
 | namo namah (telugu) | vol7-203 | mohanam (c=0.9) | Jog (ai) | Namo namah [922] | lyrics lyric=0.94 |
 | narayana hari | vol1-158 | mohanam (c=0.9) | Hamsadhwani (ai) | Narayana Hari [942]; nārāyaṇā hari (sachidānanda ghana) (Vintage)... [1784] | lyrics lyric=0.99 |
 | nila nila megha varnna | vol4-126 | hindolam (c=0.9) | Suddha Dhanyasi (ai) | nīla nīla mēgha varṇā [969] | lyrics lyric=0.96 |
 | nin ormakal | vol1-164 | brindavanasaranga (c=0.9) | Des / Jog (ai) | nin ōrmakaḷ... [973]; nin ōrmakaḷ (Vintage)... [1790]; nin ōrmakaḷ (Instrumental)... [2154]; nin ōrmakaḷ (Vintage) 2... [2258] | lyrics lyric=0.93 |
 | ninna mamate (kannada) | vol6-164 | shubhapantuvarali (c=0.9) | Jog (ai) | Ninna Mamate Pretiyalli [980] | lyrics lyric=0.83 |
+| noor a veen (irish) | 2020supl2-57 | none (Western-style tune) | Sarasangi (ai) | Noor a veen [1642] | lyrics lyric=0.85 |
 | omkara divya porule - 6 | vol2-155 | shivaranjani (c=0.9) | Kalyani (ai) | Omkara Divya Porule VI (Vintage) [2014] | lyrics lyric=0.94 |
 | omkara divya porule x | vol3-151 | hamsanandi (c=0.9) | Cakravākam (ai) | Omkara Divya Porule X (Vintage) [2050] | lyrics lyric=0.94 |
+| purusa suktam | vol4-230 | none (Western-style tune) | Rēvati (ai) | Puruṣa sūktam D# [2738]; Puruṣa Sūktam  F [2795] | lyrics lyric=0.52 |
 | sadguruvay vantutitta | vol3-200 | charukesi (c=0.9) | Kaapi (ai) | sadguruvāy vantutitta kāḷi [1147] | lyrics lyric=0.93 |
 | saka varamarulvay rama (tamil) | vol6-183 | madhuvanti (c=0.9) | Kalyani (ai) | Saka varam Arulvai [1149] | lyrics lyric=0.92 |
 | sarvavyapiye (tamil) | vol6-189 | shivaranjani (c=0.9) | Rēvati (ai) | Sarvavyapiyai [1171] | lyrics lyric=0.68 |
@@ -377,6 +392,7 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | tayendru azhaikkava (tamil) | vol7-289 | khamas (c=0.9) | Ābhōgi (ai) | Thayendrazhaikkava [1291] | lyrics lyric=0.91 |
 | tujhyata vithala (marathi) | vol6-205 | sindhubhairavi (c=0.9) | Ābhēri (ai) | Tujhyat Vittala [1309] | lyrics lyric=0.90 |
 | tumbikkaiyan tunaiyiruppan (tamil) | vol6-206 | hamsanadam (c=0.9) | Hamsadhwani (ai) | Thumbikkaiyan [1301] | lyrics lyric=0.95 |
+| underneath a kalpataru (english) | vol7-301 | none (Western-style tune) | Kīravāṇi (ai) | Underneath a Kalpataru [1327] | lyrics lyric=0.96 |
 | vazhimel vizhi (tamil) | vol7-314 | shubhapantuvarali (c=0.9) | Panthuvarali (ai) | Vazhi mel vizhi vaittu [1361] | lyrics lyric=0.95 |
 
 ## Deity judgment calls (599)

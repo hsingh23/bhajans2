@@ -4302,7 +4302,7 @@
    "src": "layamritam"
   }
  },
- "amme..shining within me (english)": {
+ "amme shining within me (english)": {
   "r": [
    {
     "id": "shuddhadhanyasi",
@@ -5136,16 +5136,6 @@
    "src": "layamritam"
   }
  },
- "bhagavad gita 15th chapter": {
-  "r": [
-   {
-    "id": "revati",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "candracuda (telugu)": {
   "t": {
    "id": "dadra",
@@ -5156,16 +5146,6 @@
    "c": 0.75,
    "src": "layamritam"
   }
- },
- "close to you (english)": {
-  "r": [
-   {
-    "id": "kapi",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
  },
  "culalayil (malayalam)": {
   "t": {
@@ -5189,16 +5169,6 @@
    "src": "layamritam"
   }
  },
- "devi awaken your children (english)": {
-  "r": [
-   {
-    "id": "madhyamavati",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "devi ninne kani kantittu": {
   "r": [
    {
@@ -5217,32 +5187,6 @@
    "c": 0.75,
    "src": "layamritam"
   }
- },
- "durga suktam": {
-  "r": [
-   {
-    "id": "revati",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   },
-   {
-    "id": "revati",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
- "elayya elayya taka (malayalam)": {
-  "r": [
-   {
-    "id": "hamsadhwani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
  },
  "har pal har ksan (hindi)": {
   "r": [
@@ -5330,26 +5274,6 @@
    "c": 0.75,
    "src": "layamritam"
   }
- },
- "i was lost in the darkness2025(english) (english)": {
-  "r": [
-   {
-    "id": "gourimanohari",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
- "in every heart (english)": {
-  "r": [
-   {
-    "id": "harikambhoji",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
  },
  "indu habba (baduga)": {
   "t": {
@@ -5546,16 +5470,6 @@
    "src": "layamritam"
   }
  },
- "lalle lalle (malayalam)": {
-  "r": [
-   {
-    "id": "hamsadhwani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "madhuri (gujarati)": {
   "r": [
    {
@@ -5596,16 +5510,6 @@
    }
   ]
  },
- "miles away from you (english)": {
-  "r": [
-   {
-    "id": "desh",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "mokeda ammanu (tulu)": {
   "r": [
    {
@@ -5624,36 +5528,6 @@
    "c": 0.75,
    "src": "layamritam"
   }
- },
- "mother of all english": {
-  "r": [
-   {
-    "id": "hamsadhwani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
- "mother send your love to me": {
-  "r": [
-   {
-    "id": "shivaranjani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
- "na karmana na prajaya": {
-  "r": [
-   {
-    "id": "kamavardhini",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
  },
  "nakhtalifu (arabic-egyptian)": {
   "t": {
@@ -5725,16 +5599,6 @@
    "src": "layamritam"
   }
  },
- "noor a veen (irish)": {
-  "r": [
-   {
-    "id": "sarasangi",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "omkara-rupini (malayalam)": {
   "t": {
    "id": "khandachapu",
@@ -5745,16 +5609,6 @@
    "c": 0.75,
    "src": "layamritam"
   }
- },
- "only love (english)": {
-  "r": [
-   {
-    "id": "darbarikanada",
-    "sec": "all",
-    "c": 0.8,
-    "src": "layamritam"
-   }
-  ]
  },
  "oru mohaminnita": {
   "r": [
@@ -5800,22 +5654,6 @@
   "r": [
    {
     "id": "dheerasankarabharanam",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
- "purusa suktam": {
-  "r": [
-   {
-    "id": "revati",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   },
-   {
-    "id": "revati",
     "sec": "all",
     "c": 0.6,
     "src": "layamritam"
@@ -5897,12 +5735,6 @@
     "sec": "all",
     "c": 0.6,
     "src": "layamritam"
-   },
-   {
-    "id": "kapi",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
    }
   ],
   "t": {
@@ -5944,16 +5776,6 @@
    }
   ]
  },
- "underneath a kalpataru (english)": {
-  "r": [
-   {
-    "id": "keeravani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ]
- },
  "utayaval (malayalam)": {
   "r": [
    {
@@ -5975,12 +5797,6 @@
  },
  "vole vole nattends pas (french)": {
   "r": [
-   {
-    "id": "keeravani",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   },
    {
     "id": "keeravani",
     "sec": "all",
