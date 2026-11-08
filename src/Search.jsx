@@ -16,6 +16,7 @@ import { EMPTY_MUSIC_FILTERS, MUSIC_FACETS, activeMusicFilters, matchesMusic, mu
 import { useViewerPrefs, rememberedSheetKey } from './prefs';
 import { buildSearchIndex, rankBhajans } from './searchRank';
 import { isLyricsLocation, locationLabel } from './lyricsLocation';
+import { countBy, hasTag } from './categoryTags';
 import { amazonTrackUrl } from './amazon';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
@@ -35,13 +36,6 @@ export const Highlight = ({ text, words, className }) => {
     </span>
   );
 };
-
-const countBy = (items, key) =>
-  items.reduce((counts, item) => {
-    const value = item?.[key];
-    if (value) counts[value] = (counts[value] || 0) + 1;
-    return counts;
-  }, {});
 
 const FilterSelect = ({ id, label, allLabel, value, counts, onChange, optionLabel = (option) => option, order }) => (
   <label className='filter-select' htmlFor={id}>
@@ -129,8 +123,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     const filterFavorites = path.includes('/my-favorites');
     const passes = (i) => {
       if (filterFavorites && !favorites[bhajans[i]?.n]) return false;
-      if (language && bhajans[i]?.lg !== language) return false;
-      if (deity && bhajans[i]?.d !== deity) return false;
+      if (language && !hasTag(bhajans[i], 'lg', language)) return false;
+      if (deity && !hasTag(bhajans[i], 'd', deity)) return false;
       if (musicFiltering) {
         const entry = music.songs[bhajans[i]?.n];
         if (!entry || !matchesMusic(entry, music, musicFilters)) return false;
@@ -155,18 +149,18 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     [bhajans, favorites, path]
   );
   const languageCounts = useMemo(
-    () => countBy(deity ? countable.filter((b) => b.d === deity) : countable, 'lg'),
+    () => countBy(deity ? countable.filter((b) => hasTag(b, 'd', deity)) : countable, 'lg'),
     [countable, deity]
   );
   const deityCounts = useMemo(
-    () => countBy(language ? countable.filter((b) => b.lg === language) : countable, 'd'),
+    () => countBy(language ? countable.filter((b) => hasTag(b, 'lg', language)) : countable, 'd'),
     [countable, language]
   );
   const hasCategories = bhajans.some((b) => b?.lg || b?.d);
   // Music option counts follow the deity and language choices and the other music filters.
   const musicCounts = useMemo(() => {
     if (!showMusic) return null;
-    const names = countable.filter((b) => (!deity || b.d === deity) && (!language || b.lg === language)).map((b) => b.n);
+    const names = countable.filter((b) => (!deity || hasTag(b, 'd', deity)) && (!language || hasTag(b, 'lg', language))).map((b) => b.n);
     return musicFacetCounts(names, music, musicFilters);
   }, [showMusic, countable, deity, language, music, musicFilters]);
 
@@ -283,26 +277,28 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
             )}
             {(bhajanLanguage || bhajanDeity) && (
               <span className='bhajan-categories'>
-                {bhajanDeity && (
+                {[bhajanDeity, bhajan.d2].filter(Boolean).map((value) => (
                   <button
+                    key={`d-${value}`}
                     type='button'
-                    className={deity === bhajanDeity ? 'category-chip deity active' : 'category-chip deity'}
-                    aria-pressed={deity === bhajanDeity}
-                    aria-label={`Show only ${bhajanDeity} bhajans`}
-                    onClick={() => chooseDeity(deity === bhajanDeity ? '' : bhajanDeity)}>
-                    {bhajanDeity}
+                    className={deity === value ? 'category-chip deity active' : 'category-chip deity'}
+                    aria-pressed={deity === value}
+                    aria-label={`Show only ${value} bhajans`}
+                    onClick={() => chooseDeity(deity === value ? '' : value)}>
+                    {value}
                   </button>
-                )}
-                {bhajanLanguage && (
+                ))}
+                {[bhajanLanguage, bhajan.lg2].filter(Boolean).map((value) => (
                   <button
+                    key={`lg-${value}`}
                     type='button'
-                    className={language === bhajanLanguage ? 'category-chip language active' : 'category-chip language'}
-                    aria-pressed={language === bhajanLanguage}
-                    aria-label={`Show only ${bhajanLanguage} bhajans`}
-                    onClick={() => chooseLanguage(language === bhajanLanguage ? '' : bhajanLanguage)}>
-                    {bhajanLanguage}
+                    className={language === value ? 'category-chip language active' : 'category-chip language'}
+                    aria-pressed={language === value}
+                    aria-label={`Show only ${value} bhajans`}
+                    onClick={() => chooseLanguage(language === value ? '' : value)}>
+                    {value}
                   </button>
-                )}
+                ))}
               </span>
             )}
             {songMusic && <MusicChips entry={songMusic} music={music} />}
@@ -507,13 +503,13 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                   {infoOpen.d && (
                     <div>
                       <dt>Deity</dt>
-                      <dd>{infoOpen.d}</dd>
+                      <dd>{[infoOpen.d, infoOpen.d2].filter(Boolean).join(', ')}</dd>
                     </div>
                   )}
                   {infoOpen.lg && (
                     <div>
                       <dt>Language</dt>
-                      <dd>{infoOpen.lg}</dd>
+                      <dd>{[infoOpen.lg, infoOpen.lg2].filter(Boolean).join(', ')}</dd>
                     </div>
                   )}
                   {infoTags.length > 0 && (

@@ -9,6 +9,8 @@
    music-meta/build_music_json.py re-applies them after a rebuild.
 3. Where Layamritam disagrees with the app (language, deity, raga, taal) nothing changes;
    the pair goes on metadata-review.md / metadata-review.csv to double-check by hand.
+   adjudicate/apply_decisions.py settles them; manifest songs it marks "mergedInto" are
+   folded into that index song instead of being added.
 
 Idempotent. Run from the repo root after match_index.py, select_new.py and render_pdf.py:
     uv run --with rapidfuzz python create-index/layamritam/merge_metadata.py [--dry-run]
@@ -24,6 +26,8 @@ ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent / "music-meta"))
 import lmeta  # noqa: E402
+sys.path.insert(0, str(HERE / "adjudicate"))
+from apply_decisions import merge_into  # noqa: E402
 from build_music_json import english  # noqa: E402
 
 INDEX = ROOT / "public" / "bhajan-index2.json"
@@ -76,6 +80,8 @@ def main(dry=False):
     for e in manifest:
         if not e.get("page"):
             sys.exit(f"{e['n']} has no page: run render_pdf.py first")
+        if e.get("mergedInto"):  # a duplicate of an index song: its page is folded in below
+            continue
         lab = labels[str(e["songId"])]
         d = lab["d"][0] if lab["d"] else None
         if not d and e.get("versionOf") in by_name:
@@ -97,11 +103,15 @@ def main(dry=False):
         index.append(entry)
         cats[e["n"]] = {"lg": entry["lg"], "d": entry["d"]}
         stats["songs added"] += 1
+    index[:] = merge_into(index, manifest, stats)  # adjudicate/apply_decisions.py set "mergedInto"
+    by_name = {s["n"]: i for i, s in enumerate(index)}
 
     # 2 + 3. Matched songs: fill what is missing, list what disagrees.
     per_song = defaultdict(list)
     for sid, m in matches.items():
         if m["decision"] in MATCHED and m["idx"] is not None:
+            if index[m["idx"]]["n"] != m["name"]:  # positions come from match_index.py's run
+                sys.exit(f"matches.json idx {m['idx']} is {index[m['idx']]['n']!r}, not {m['name']!r}: rerun match_index.py")
             per_song[m["idx"]].append((sid, m))
     review = []
     pcs = {k: set(v["pcs"]) for k, v in ref["ragas"].items()}
@@ -166,6 +176,8 @@ def main(dry=False):
 
     # Songs added as new that may be an index song after all.
     for e in manifest:
+        if e.get("mergedInto"):
+            continue
         m = matches[str(e["songId"])]
         near = next((a for a in m.get("alt", []) if a["name"] == e.get("versionOf")), None) or (
             {"lyric": m.get("lyric", 0)} if m["decision"] == "version" else None)

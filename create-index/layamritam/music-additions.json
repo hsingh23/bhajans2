@@ -1295,25 +1295,6 @@
    "src": "layamritam"
   }
  },
- "mere hrdaya sri ram base (hindi)": {
-  "r": [
-   {
-    "id": "desh",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ],
-  "t": {
-   "id": "dadra",
-   "b": 6,
-   "ts": "6/8",
-   "pulse": "dotted-quarter",
-   "sub": 3,
-   "c": 0.75,
-   "src": "layamritam"
-  }
- },
  "muraliyanu uduta baro (murali bajate ana) (kannada)": {
   "r": [
    {
@@ -2005,25 +1986,6 @@
    "ts": "7/8",
    "pulse": "eighth",
    "sub": 2,
-   "c": 0.75,
-   "src": "layamritam"
-  }
- },
- "prem jo diyo (sindhi)": {
-  "r": [
-   {
-    "id": "mohanam",
-    "sec": "all",
-    "c": 0.6,
-    "src": "layamritam"
-   }
-  ],
-  "t": {
-   "id": "dadra",
-   "b": 6,
-   "ts": "6/8",
-   "pulse": "dotted-quarter",
-   "sub": 3,
    "c": 0.75,
    "src": "layamritam"
   }
