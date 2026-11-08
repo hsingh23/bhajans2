@@ -31,7 +31,8 @@ const month = (value) => new Date(value).toISOString().slice(0, 7);
 const favoriteCount = (value) =>
   entries(value).filter(([, v]) => v === "1" || v === 1 || v === true).length;
 const isWoo = (row) =>
-  typeof row.orderID === "string" && row.orderID.startsWith("wc_order_");
+  row.provider === "woocommerce" ||
+  (typeof row.orderID === "string" && row.orderID.startsWith("wc_order_"));
 const lines = (row) => (Array.isArray(row.line_items) ? row.line_items : []);
 const manual = (row) =>
   row.manual === true ||
@@ -70,7 +71,7 @@ function planFor(row) {
 function normalizePayment(row, uid, source, sourceKey = "") {
   const woo = isWoo(row);
   const shopify =
-    !woo && (Array.isArray(row.line_items) || row.order_number != null);
+    !woo && (row.provider === "shopify" || Array.isArray(row.line_items) || row.order_number != null);
   const orderKey =
     shopify && row.order_number != null
       ? `shopify:${row.order_number}`
@@ -91,9 +92,9 @@ function normalizePayment(row, uid, source, sourceKey = "") {
     live: row.mode === "live",
     paidOn: timestamp(row.paidOn),
     expiresOn: timestamp(row.expiresOn),
-    amount: shopify || woo ? null : money(row.gross_total_amount?.value),
+    amount: (shopify || woo) && !row.provider ? null : money(row.gross_total_amount?.value),
     currency:
-      shopify || woo ? null : currency(row.gross_total_amount?.currency),
+      (shopify || woo) && !row.provider ? null : currency(row.gross_total_amount?.currency),
     ...planFor(row),
   };
 }
@@ -455,6 +456,9 @@ function paymentEvidence(row) {
       : undefined;
   return JSON.parse(
     JSON.stringify({
+      provider: row.provider,
+      amountScope: row.amountScope,
+      dateBasis: row.dateBasis,
       expiresOn: row.expiresOn,
       paidOn: row.paidOn,
       mode: row.mode,

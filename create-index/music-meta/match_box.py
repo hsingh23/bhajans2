@@ -86,6 +86,9 @@ VOWELS = re.compile(r"[aeiou]")
 ASPIRATION = re.compile(r"(?<=[^aeiou])h")
 
 
+JOIN_SCHWA = True  # main() switches it off to ask which entries spell a title as it stands
+
+
 def schwa(word):
     """Hindi drops a word-final schwa (Jaya/Jay, Rama/Ram, Mata/Mat): drop a final 'a' on a
     keyed word of four or more letters so both spellings agree."""
@@ -183,7 +186,7 @@ def words_tier(t_words, s_words, full=False):
         for raw_x, raw_y, ni, nj, merged in options:
             x, y = schwa(raw_x), schwa(raw_y)
             m = word_match(x, y)
-            if m == 2 and merged:
+            if m == 2 and merged and JOIN_SCHWA:
                 # the pieces lost their word-final schwa before the join: "Kalamurali" is kala murali
                 pieces = t_words[j:nj] if nj - j >= 2 else s_words[i:ni]
                 whole = y if nj - j >= 2 else x
@@ -464,6 +467,14 @@ def main():
             hint_owner_cache[i] = owners
         return hint_owner_cache[i]
 
+    contender_cache = {}
+
+    def indian_contender(i):
+        """whether some Indian-language entry's title fits track i at least as a spelling variant"""
+        if i not in contender_cache:
+            contender_cache[i] = any(lang_for[n] not in FOREIGN and song_tier(box_keys[i], meta[i]["words"], song_for[n], titles_for[n], aliases_for[n]) >= 2 for n in titles_for)
+        return contender_cache[i]
+
     def tier(i, song_name):
         """best tier of track i against the song's name and alias titles; a track numbered as one
         part of a hymn that the index splits into parts fits only that part ("Omkara Divya
@@ -481,8 +492,10 @@ def main():
             # an entry in a non-Indian language (a translation, often named after its original) takes an
             # untagged recording only when the whole title matches and no Indian-language entry has the same title
             if not any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[song_name]):
-                return 0  # "Ellam Ariyunna Amme" carries a Malayalam word beyond the English entry's name
-            if any(n != song_name and lang_for[n] not in FOREIGN and any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[n]) for n in titles_for):
+                if indian_contender(i):
+                    return 0  # "Ellam Ariyunna Amme" carries a Malayalam word beyond the English entry's name
+                # an original song in that language ("Miles Away" / miles away from you): nothing Indian names it
+            elif any(n != song_name and lang_for[n] not in FOREIGN and any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[n]) for n in titles_for):
                 return 0  # the Indian-language twin holds the untagged recording
         core = [w for k, w in enumerate(meta[i]["words"]) if not (k == 0 and w in ARTICLES)]
         if len(core) == 1 and ambiguous_word(core[0], song_name):
@@ -553,12 +566,19 @@ def main():
         if yields(i, song_name):
             return True
         full = full3_entries(i)
-        if song_name not in full:
-            return False  # a title that is the first words of several songs fans out as before
-        rivals = other_language(i, song_name, full)
-        if not rivals:
-            return False
-        return name_tagged(song_name) or not all(is_version(n) for n in rivals)
+        if song_name in full:
+            rivals = other_language(i, song_name, full)
+            if not rivals:
+                return False
+            return name_tagged(song_name) or not all(is_version(n) for n in rivals)
+        # the title is the first words of several songs: untagged entries in several languages
+        # still share it (index duplicates), but where either side carries a plain language tag
+        # ("manasavaca karmana (kannada)" beside manasa vacha karmana for "Manasa Vacha") the
+        # entries are declared different versions and the title alone cannot choose: the sung
+        # words put "02 Manasa Vacha (Vintage)" on the Malayalam side (override)
+        rivals = other_language(i, song_name, tier3_entries(i))
+        plain = lambda n: name_tagged(n) and not is_version(n)
+        return (plain(song_name) and bool(rivals)) or any(plain(n) for n in rivals)
 
     def full_owner_exists(i):
         """some song's whole name is the whole track title and may take it or at least contest it:
@@ -569,9 +589,35 @@ def main():
             full_cache[i] = any(not yields(i, n) for n in full3_entries(i))
         return full_cache[i]
 
+    strict_cache = {}
+
+    def strict3_entries(i):
+        """the tier-3 entries that spell the title as it stands, without a schwa restored at a word join"""
+        if i not in strict_cache:
+            global JOIN_SCHWA
+            pool = tier3_entries(i)
+            JOIN_SCHWA = False
+            try:
+                strict_cache[i] = [n for n in pool if song_tier(box_keys[i], meta[i]["words"], song_for[n], titles_for[n], aliases_for[n]) == 3]
+            finally:
+                JOIN_SCHWA = True
+        return strict_cache[i]
+
+    def glued_yields(i, song_name):
+        """A title that equals the song's words only once a dropped schwa is restored at a word
+        join ("Anantamayi Patarunna" / ananda mayi, "Kanakkan Koti" / kana kana) yields to an
+        entry that spells the title as it stands and can take it (anantamayi patarunnor,
+        kanakkan koti); "Kalamurali Rava" still goes to kala murali because the entry that
+        spells it, "kalamurali - tamil version", yields it as a version."""
+        if song_name in strict3_entries(i):
+            return False
+        return any(not rivals_block(i, n) for n in strict3_entries(i) if n != song_name)
+
     def accepts(i, song_name):
         t = tier(i, song_name)
         if t == 3 and not meta[i]["lang"] and not meta[i]["album_lang"] and rivals_block(i, song_name):
+            return False
+        if t == 3 and glued_yields(i, song_name):
             return False
         if t > 0 and t == best_tier(i):
             if t == 3 and full_owner_exists(i) and not any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[song_name]):

@@ -246,6 +246,8 @@ export {
   THREE_MONTHS_MS,
 };
 
+// Branded sign-in / password reset email (functions/src/index.js sendAuthEmail).
+export const sendBrandedAuthEmail = httpsCallable(getFunctions(firebaseApp, "us-central1"), "sendAuthEmail", { timeout: 20000 });
 export const updateUserAccess = httpsCallable(getFunctions(firebaseApp, "us-central1"), "updateUserAccess");
 
 export const getSalesDashboard = httpsCallable(getFunctions(firebaseApp, "us-central1"), "getSalesDashboard", { timeout: 120000 });

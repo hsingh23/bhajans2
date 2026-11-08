@@ -8,7 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithEmailLink,
 } from 'firebase/auth';
-import { syncUserData } from './firebase';
+import { syncUserData, sendBrandedAuthEmail } from './firebase';
 import { ThemeProvider } from './ThemeContext';
 import MUIThemeWrapper from './MUIThemeProvider';
 import Login from './Login';
@@ -25,6 +25,8 @@ vi.mock('./firebase', () => ({
   syncUserData: vi.fn(() =>
     Promise.resolve({ expiresOn: Date.now() + 86400000 }),
   ),
+  // Unavailable by default, so the tests below also cover the Firebase fallback.
+  sendBrandedAuthEmail: vi.fn(() => Promise.reject(new Error('not deployed'))),
 }));
 
 // Follows what production does: a mismatched address leaves the link usable,
@@ -355,5 +357,48 @@ describe('password sign-in', () => {
     expect(sendPasswordResetEmail.mock.calls[0][2].url).toBe(
       `${window.location.origin}/login`,
     );
+  });
+
+  it('sends the branded magic link email when the function is available', async () => {
+    sendBrandedAuthEmail.mockResolvedValueOnce({ data: { sent: true } });
+    sendSignInLinkToEmail.mockClear();
+    renderLogin();
+    typeEmail(PAID.email);
+    fireEvent.click(screen.getByRole('button', { name: /send magic link/i }));
+
+    await waitFor(() => expect(sendBrandedAuthEmail).toHaveBeenCalledWith({
+      email: PAID.email,
+      type: 'signin',
+      continueUrl: `${window.location.origin}/login`,
+    }));
+    expect(sendSignInLinkToEmail).not.toHaveBeenCalled();
+    expect(localStorage.getItem('emailForSignIn')).toBe(PAID.email);
+  });
+
+  it('does not send a second email when the address was just emailed', async () => {
+    sendBrandedAuthEmail.mockRejectedValueOnce(Object.assign(new Error('limited'), { code: 'functions/resource-exhausted' }));
+    sendSignInLinkToEmail.mockClear();
+    renderLogin();
+    typeEmail(PAID.email);
+    fireEvent.click(screen.getByRole('button', { name: /send magic link/i }));
+
+    expect(await screen.findByText(/we just sent an email to this address/i)).toBeInTheDocument();
+    expect(sendSignInLinkToEmail).not.toHaveBeenCalled();
+  });
+
+  it('sends the branded reset email when the function is available', async () => {
+    sendBrandedAuthEmail.mockResolvedValueOnce({ data: { sent: true } });
+    sendPasswordResetEmail.mockClear();
+    renderLogin();
+    await usePassword();
+    typeEmail(PAID.email);
+    fireEvent.click(screen.getByRole('button', { name: /forgot password/i }));
+
+    await waitFor(() => expect(sendBrandedAuthEmail).toHaveBeenCalledWith({
+      email: PAID.email,
+      type: 'reset',
+      continueUrl: `${window.location.origin}/login`,
+    }));
+    expect(sendPasswordResetEmail).not.toHaveBeenCalled();
   });
 });

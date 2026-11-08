@@ -7,6 +7,7 @@ const {
   aggregateDashboard,
   paymentEvidence,
   createSnapshot,
+  normalizePayment,
 } = require("./analytics.cjs");
 const options = {
   region: "us-central1",
@@ -56,6 +57,20 @@ exports.archiveDashboardPayment = onValueWritten(
   async (event) => {
     const before = paymentEvidence(event.data.before.val()),
       after = paymentEvidence(event.data.after.val());
+    // Archive both sides: overwriting or deleting access must not erase a purchase.
+    for (const row of [before, after]) {
+      if (!row) continue;
+      const item = normalizePayment(row, event.params.uid, "paid");
+      if (!item.live || item.manual || !item.orderKey) continue;
+      const orderKey = createHash("sha256").update(item.orderKey).digest("hex");
+      await getDatabase().ref(`transactions/${orderKey}`).transaction((current) =>
+        current ? undefined : {
+          ...row,
+          uid: event.params.uid,
+          historySource: "paid-trigger",
+        },
+      );
+    }
     if (JSON.stringify(before) === JSON.stringify(after)) return;
     const key = createHash("sha256").update(event.id).digest("hex");
     const record = {

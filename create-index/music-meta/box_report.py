@@ -49,6 +49,12 @@ def _ambiguous(w, song):
         _amb[w]=(exact,opens)
     exact,opens=_amb[w]
     return song not in exact and len(opens)>=2
+_ic={}
+def _indian_contender(track):
+    if track not in _ic:
+        tk,_=mb.clean_box_name(track); tw=mb.track_words(track)
+        _ic[track]=any(_lang(n) not in mb.FOREIGN and mb.song_tier(tk,tw,idx_songs[n],titles[n],aliases[n])>=2 for n in idx_names)
+    return _ic[track]
 def tier(track, song):
     tk,hint=mb.clean_box_name(track); tw=mb.track_words(track)
     tl=mb.language_of(track)
@@ -57,8 +63,9 @@ def tier(track, song):
     if not tl and al and _lang(song) and al!=_lang(song): return 0
     if _lang(song) in mb.FOREIGN and not (tl==_lang(song) or al==_lang(song)):
         m3=_full_matches(track)[1]
-        if song not in m3: return 0
-        if any(n!=song and _lang(n) not in mb.FOREIGN for n in m3): return 0
+        if song not in m3:
+            if _indian_contender(track): return 0
+        elif any(n!=song and _lang(n) not in mb.FOREIGN for n in m3): return 0
     core=[w for k,w in enumerate(tw) if not (k==0 and w in mb.ARTICLES)]
     if len(core)==1 and _ambiguous(core[0], song): return 0
     owners=_owners(track, hint)
@@ -81,10 +88,25 @@ def _rivals_block(track, song):
     if tl or al or _lang(song) in mb.FOREIGN: return False, set()
     if _yields(track, song): return True, {_lang(song)}|{_lang(n) for n in _other(track, song, _tier3(track)) if not mb.name_tagged(n)}
     full=_full3(track)
-    if song not in full: return False, set()
-    rivals=_other(track, song, full)
-    if not rivals: return False, set()
-    return (mb.name_tagged(song) or not all(mb.is_version(n) for n in rivals)), {_lang(n) for n in rivals}|{_lang(song)}
+    if song in full:
+        rivals=_other(track, song, full)
+        if not rivals: return False, set()
+        return (mb.name_tagged(song) or not all(mb.is_version(n) for n in rivals)), {_lang(n) for n in rivals}|{_lang(song)}
+    rivals=_other(track, song, _tier3(track)); plain=lambda n: mb.name_tagged(n) and not mb.is_version(n)
+    return ((plain(song) and bool(rivals)) or any(plain(n) for n in rivals)), {_lang(n) for n in rivals}|{_lang(song)}
+_s3={}
+def _strict3(track):
+    if track not in _s3:
+        pool=_tier3(track); tk,_=mb.clean_box_name(track); tw=mb.track_words(track)
+        mb.JOIN_SCHWA=False
+        try: _s3[track]=[n for n in pool if mb.song_tier(tk,tw,idx_songs[n],titles[n],aliases[n])==3]
+        finally: mb.JOIN_SCHWA=True
+    return _s3[track]
+def _glued_yields(track, song):
+    if song in _strict3(track): return False, None
+    for n in _strict3(track):
+        if n!=song and not _rivals_block(track,n)[0]: return True, n
+    return False, None
 def best(track):
     if track not in tier_cache:
         tier_cache[track]=max(((tier(track,n),n) for n in idx_names), default=(0,None))
@@ -104,10 +126,13 @@ def verdict(song, track):
     tw=mb.track_words(track)
     m3=_full_matches(track)[1]
     m3=_full_matches(track)[1]
+    if tier(track,song)==3:
+        g,holder=_glued_yields(track, song)
+        if g: return ('the title as spelled is another entry', f'{holder} spells it without a restored schwa')
     if not tl and not al and tier(track,song)==3:
         blocks,twins=_rivals_block(track, song)
         if blocks: return ('version entry yields to the untagged original' if mb.is_version(song) else 'same title in two languages, no language evidence', ', '.join(sorted(x for x in twins if x)))
-    if _lang(song) in mb.FOREIGN and not (tl==_lang(song) or al==_lang(song)) and (song not in m3 or any(n!=song and _lang(n) not in mb.FOREIGN for n in m3)): return ('untagged recording on a translation entry', f'entry {_lang(song)}; the Indian original holds it')
+    if _lang(song) in mb.FOREIGN and not (tl==_lang(song) or al==_lang(song)) and ((song not in m3 and _indian_contender(track)) or (song in m3 and any(n!=song and _lang(n) not in mb.FOREIGN for n in m3))): return ('untagged recording on a translation entry', f'entry {_lang(song)}; the Indian original holds it')
     core=[w for k,w in enumerate(tw) if not (k==0 and w in mb.ARTICLES)]
     if len(core)==1 and _ambiguous(core[0], song): return ('one-word title opens several songs', core[0])
     m3_ok=[n for n in _full3(track) if not _yields(track,n)]

@@ -163,7 +163,12 @@ into a phonetic key (`amriteshwari`, `amrtesvari`, `Amrteshvari` all give `amrti
   call themselves a version ("iniyoru janmam - kannada version": translations named after
   their original) yield it to the untagged original, while entries with a plain language tag
   ("jaya jagadisvari (marathi)", "nandalala nandalala (sanskrit)") may be different songs
-  sharing a title, so neither side takes it unless the sung words decide (`box-overrides.json`);
+  sharing a title, so neither side takes it unless the sung words decide (`box-overrides.json`),
+  and the same holds when the title is only the first words of both ("Manasa Vacha"); a title
+  that equals an entry's words only once a dropped schwa is restored at a word join
+  ("Anantamayi" / ananda mayi) yields to an entry that spells it as it stands; an entry in a
+  non-Indian language takes an untagged recording on a partial match when no Indian entry
+  names the title ("Miles Away" is miles away from you);
   and `box-overrides.json`
   holds the decisions made from the recording's own sung words. A fuzzy score alone had
   linked different songs one letter apart (Skanda / Ananda Janani, Raja / Rama, Karunalaye /

@@ -59,8 +59,17 @@ const removeServiceWorkers = () => {
 
 import { syncUserData, THREE_MONTHS_MS } from "./firebase";
 
+// Song ids in viewer URLs are positions in the name-sorted index, so a link made before
+// songs were added can point at a neighbour; the song name in the URL then decides.
+export const resolveSongId = (bhajans, id, name) => {
+  if (!bhajans || !name || bhajans[id]?.n === name) return id;
+  const match = Object.keys(bhajans).find((key) => bhajans[key]?.n === name);
+  return match ?? id;
+};
+
 const RenderPage = ({ bhajans = {}, renderFavorite }) => {
-  const { id, location: locationParam, name: nameParam } = useParams();
+  const { id: idParam, location: locationParam, name: nameParam } = useParams();
+  const id = resolveSongId(bhajans, idParam, nameParam);
   const navigate = useNavigate();
   const { state: navState, key: locationKey } = useLocation();
   // Rewriting the URL in place gives it a new key, so remember that this page

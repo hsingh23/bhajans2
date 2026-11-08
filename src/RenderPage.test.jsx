@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
 import { useEffect, useState } from 'react';
 import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
-import RenderPage from './RenderPage';
+import RenderPage, { resolveSongId } from './RenderPage';
 import { ThemeProvider } from "./ThemeContext";
 import MUIThemeWrapper from "./MUIThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -100,6 +100,23 @@ vi.mock('./Loader', async () => {
 vi.mock('./InvertibleEmbed', () => ({
   default: ({ src }) => <div data-testid="pdf-embed">{src}</div>,
 }));
+
+describe('resolveSongId', () => {
+  const list = [{ n: 'Alpha' }, { n: 'Beta' }, { n: 'Gamma' }];
+
+  it('keeps the id when it names the song in the URL', () => {
+    expect(resolveSongId(list, '1', 'Beta')).toBe('1');
+  });
+
+  it('finds the song by name when songs added since moved it', () => {
+    expect(resolveSongId(list, '1', 'Gamma')).toBe('2');
+  });
+
+  it('keeps the id when no song has that name', () => {
+    expect(resolveSongId(list, '1', 'Delta')).toBe('1');
+    expect(resolveSongId(undefined, '1', 'Beta')).toBe('1');
+  });
+});
 
 const mockBhajans = {
   0: { n: 'Test Bhajan', cu: ['http://buy.com'], cs: ['http://sample.mp3'] },

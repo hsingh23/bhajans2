@@ -120,5 +120,19 @@
    "03 Apara Kripalo (Classic).mp3"
   ],
   "why": "Whisper hears 'adi sharaa krishnam aram varao' ≈ 'avanisvara krsna arul varam tayo', this Malayalam sheet's line (round 6, box-audio-sample-6.md); the Kannada and Telugu entries carry plain tags (so the title alone decides nothing) and hold their own tagged recordings 'Apara Krpalo (Kannada)/(Telugu)'; the Amritanjali 'Classic' recording predates both versions."
+ },
+ "manasa vacha karmana": {
+  "add": [
+   "02 Manasa Vacha (Vintage).mp3",
+   "05 Manasa Vacha.m4a"
+  ],
+  "why": "Whisper hears 'manasa vacha karmana nirantaram ninne smari...' (as 'Manasavajah Kalmanah Kiren Kerem In Ismari' and 'anas ma-kha karminal Nirem'), this Malayalam sheet's first line (round 7, box-audio-sample-7.md); the Kannada 'manasavaca karmana (kannada)' and the Marathi version share the opening words."
+ },
+ "manasavaca karmana (kannada)": {
+  "drop": [
+   "02 Manasa Vacha (Vintage).mp3",
+   "05 Manasa Vacha.m4a"
+  ],
+  "why": "sing the Malayalam 'manasa vacha karmana nirantaram', see 'manasa vacha karmana'"
  }
 }
