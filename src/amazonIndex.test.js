@@ -22,4 +22,11 @@ describe('Amazon track links in the index', () => {
     // Same title by another artist: never linked.
     expect(az['abhayam abhayam amma']).toBeUndefined();
   });
+
+  it('skip language versions and series whose Amazon track is a different rendition', () => {
+    const names = linked.map((b) => b.n);
+    expect(names.filter((n) => /omkara divya porule/.test(n))).toEqual([]);
+    expect(names.filter((n) => /\bversion\b|spanish|french/.test(n))).toEqual([]);
+    expect(Object.fromEntries(linked.map((b) => [b.n, b.az]))['kalam kanalu (kannada)']).toBeUndefined();
+  });
 });
