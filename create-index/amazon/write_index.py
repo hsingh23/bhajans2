@@ -60,6 +60,13 @@ for name, a in links.items():
 for a, names in holders.items():
     if len(names) < 2: continue
     best = max(score(n) for n in names)
+    # No song's own name matches a short track title ("Nilambuja") and all are language-tagged twins
+    # ("nilambuja nayane (malayalam)" / "(telagu)"): Amma's track is the Malayalam original.
+    malayalam = [n for n in names if re.search(r"\(malayalam\b", n, re.I)]
+    if best < 0.8 and len(malayalam) == 1 and all(TAGGED.search(n) for n in names):
+        for n in names:
+            if n not in malayalam: links[n] = None
+        continue
     for n in names:
         if score(n) < best - 0.02 or score(n) < 0.8:
             links[n] = None
