@@ -1982,6 +1982,10 @@ mark {
 .bn-closed {
   fill: var(--text-color);
 }
+.fl-split {
+  stroke: var(--md-muted);
+  stroke-width: 0.6;
+}
 .bn-name {
   font-size: 11px;
   font-weight: 700;

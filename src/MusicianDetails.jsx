@@ -21,7 +21,7 @@ import {
 } from './musicTheory';
 import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, taalName } from './MusicChips';
 import PianoKeys from './PianoKeys';
-import { BansuriChart, ChordDiagram, SargamLine, ScaleTab } from './InstrumentViews';
+import { BansuriChart, ChordDiagram, FluteChart, SargamLine, ScaleTab } from './InstrumentViews';
 import { bolGuide, dugun, tablaTaal } from './tabla';
 import { sargamNote } from './sargam';
 import { setMyKey, useMyKey } from './myKey';
@@ -32,7 +32,8 @@ const INSTRUMENT_TABS = [
   ['piano', 'Piano'],
   ['guitar', 'Guitar'],
   ['ukulele', 'Ukulele'],
-  ['bansuri', 'Flute'],
+  ['bansuri', 'Bansuri'],
+  ['flute', 'Flute'],
   ['tabla', 'Tabla'],
 ];
 const DIAGRAM_INSTRUMENTS = ['guitar', 'ukulele'];
@@ -78,6 +79,7 @@ const LineView = ({ instrument, label, swaras, descending, saPc, notes, labels }
   const common = { swaras, descending, names: notes, label, showLabel: false };
   if (instrument === 'voice') return <SargamLine {...common} showNames={false} />;
   if (instrument === 'bansuri') return <BansuriChart {...common} />;
+  if (instrument === 'flute') return <FluteChart {...common} saPc={saPc} />;
   if (instrument === 'guitar' || instrument === 'ukulele') {
     return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
   }
@@ -127,6 +129,12 @@ const ScaleLines = ({ raga, saPc, spelling, instrument }) => {
       </div>
       {hasKey && instrument === 'voice' && (
         <p className='md-hint'>Underlined = komal (flat) · Ma′ = tivra (sharp) · dot above = upper octave, below = lower</p>
+      )}
+      {hasKey && instrument === 'flute' && (
+        <p className='md-hint'>
+          Concert flute in C, common Boehm fingerings, top to bottom: thumb, left 1-3 (G♯ key beside), right 1-3 (E♭ key
+          beside), low C♯ / C foot keys. Filled = pressed, ↑ = second octave, ↑↑ = third.
+        </p>
       )}
       {hasKey && instrument === 'bansuri' && (
         <p className='md-hint'>

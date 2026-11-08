@@ -350,7 +350,7 @@ describe('piano keys and transposing', () => {
     expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
   });
 
-  it('switches between voice, piano, guitar, ukulele, flute and tabla, and remembers the choice', async () => {
+  it('switches between voice, piano, guitar, ukulele, flute, bansuri and tabla, and remembers the choice', async () => {
     setPref('musicianMode', true);
     renderSearch();
     const section = await openDetails('kali kali kali (gujarati)');
@@ -380,6 +380,14 @@ describe('piano keys and transposing', () => {
     );
 
     pick('Flute');
+    expect(getPrefs().musicInstrument).toBe('flute');
+    expect(within(section).getByRole('img', { name: /^Flute up/ })).toHaveAccessibleName(
+      'Flute up: G: thumb L1 L2 L3 E flat key; A: thumb L1 L2 E flat key; B: thumb L1 E flat key; ' +
+        'D: thumb L2 L3 R1 R2 R3, octave 2; E: thumb L1 L2 L3 R1 R2 E flat key, octave 2; G: thumb L1 L2 L3 E flat key, octave 2'
+    );
+    expect(section).toHaveTextContent('Concert flute in C');
+
+    pick('Bansuri');
     expect(within(section).getByRole('img', { name: /^Bansuri up/ })).toHaveAccessibleName(
       'Bansuri up: G: top 3 closed; A: top 2 closed; B: top 1 closed; D: top 6 closed, blow harder; E: top 5 closed, blow harder; G: top 3 closed, blow harder'
     );
@@ -482,7 +490,7 @@ describe('piano keys and transposing', () => {
     setPref('musicKey', 4);
     applyRemotePrefs({ musicKey: 'recording' });
     expect(getPrefs().musicKey).toBe('recording');
-    for (const instrument of ['voice', 'piano', 'guitar', 'ukulele', 'tabla', 'bansuri']) {
+    for (const instrument of ['voice', 'piano', 'guitar', 'ukulele', 'tabla', 'flute', 'bansuri']) {
       applyRemotePrefs({ musicInstrument: instrument });
       expect(getPrefs().musicInstrument).toBe(instrument);
     }
