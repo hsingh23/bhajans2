@@ -41,7 +41,10 @@ const AUTH_ERROR_MESSAGES = {
   'auth/too-many-requests': "Too many attempts. Please wait a few minutes and try again.",
   'auth/user-disabled': "This account has been disabled. Please contact singwithamma@gmail.com.",
   'auth/network-request-failed': "We couldn't reach the server. Please check your connection and try again.",
+  'functions/resource-exhausted': "We just sent an email to this address. Please check your inbox (and spam folder), or wait a minute and try again.",
 };
+// sendAuthEmail's per-recipient limit (functions/src/index.js).
+const RATE_LIMITED = 'functions/resource-exhausted';
 
 const authErrorMessage = (error) =>
   AUTH_ERROR_MESSAGES[error.code] ||
@@ -235,6 +238,8 @@ const Login = () => {
       try {
         await sendBrandedAuthEmail({ email, type: "reset", continueUrl });
       } catch (brandedError) {
+        // An email was just sent to this address: say so rather than send another one.
+        if (brandedError?.code === RATE_LIMITED) throw brandedError;
         // Fall back to Firebase's own email if the branded sender is unavailable.
         console.warn("Branded reset email failed, using Firebase's", brandedError);
         await sendPasswordResetEmail(auth, email, { url: continueUrl });
@@ -278,6 +283,8 @@ const Login = () => {
       try {
         await sendBrandedAuthEmail({ email, type: "signin", continueUrl: redirectUrl });
       } catch (brandedError) {
+        // An email was just sent to this address: say so rather than send another one.
+        if (brandedError?.code === RATE_LIMITED) throw brandedError;
         // Fall back to Firebase's own email if the branded sender is unavailable.
         console.warn("Branded sign-in email failed, using Firebase's", brandedError);
         await sendSignInLinkToEmail(auth, email, actionCodeSettings);

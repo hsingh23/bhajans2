@@ -375,6 +375,17 @@ describe('password sign-in', () => {
     expect(localStorage.getItem('emailForSignIn')).toBe(PAID.email);
   });
 
+  it('does not send a second email when the address was just emailed', async () => {
+    sendBrandedAuthEmail.mockRejectedValueOnce(Object.assign(new Error('limited'), { code: 'functions/resource-exhausted' }));
+    sendSignInLinkToEmail.mockClear();
+    renderLogin();
+    typeEmail(PAID.email);
+    fireEvent.click(screen.getByRole('button', { name: /send magic link/i }));
+
+    expect(await screen.findByText(/we just sent an email to this address/i)).toBeInTheDocument();
+    expect(sendSignInLinkToEmail).not.toHaveBeenCalled();
+  });
+
   it('sends the branded reset email when the function is available', async () => {
     sendBrandedAuthEmail.mockResolvedValueOnce({ data: { sent: true } });
     sendPasswordResetEmail.mockClear();
