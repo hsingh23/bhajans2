@@ -509,11 +509,22 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
             </button>
             {musicOpen && (
               <div className='modal-window open viewer-music-dialog' onClick={() => setMusicOpen(false)} role='dialog' aria-modal='true' aria-label={`For musicians: ${name}`}>
-                <div onClick={(e) => e.stopPropagation()}>
-                  <button type='button' className='modal-close' autoFocus aria-label='close musician details' onClick={() => setMusicOpen(false)}>
-                    Close
-                  </button>
-                  <SongMusicSection name={name} />
+                <div className='modal-panel' onClick={(e) => e.stopPropagation()}>
+                  <div className='modal-head'>
+                    <h1 className='modal-title'>{name}</h1>
+                    <button
+                      type='button'
+                      className='button button-circle modal-close'
+                      autoFocus
+                      title='Close'
+                      aria-label='close musician details'
+                      onClick={() => setMusicOpen(false)}>
+                      <Icon name='close' />
+                    </button>
+                  </div>
+                  <div className='modal-body'>
+                    <SongMusicSection name={name} />
+                  </div>
                 </div>
               </div>
             )}

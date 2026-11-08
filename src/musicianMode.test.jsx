@@ -252,7 +252,8 @@ describe('musician details in search', () => {
     expect(section).toHaveTextContent('dha ge na ti');
     expect(section).toHaveTextContent('Count 1-2-3-4 at ~96 BPM');
     expect(within(section).getAllByRole('listitem').map((li) => li.textContent)).toEqual(['I G', 'IV C', 'V D', 'vi Em']);
-    expect(section).toHaveTextContent('Sing in G (5 kattai).');
+    // No prose summary repeating the key, scale and taal shown above
+    expect(section).not.toHaveTextContent('Sing in');
     expect(section).toHaveTextContent(/may be imperfect/);
     expect(within(section).queryByText('approximate')).toBeNull();
   });

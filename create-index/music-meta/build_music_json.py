@@ -112,35 +112,6 @@ def chords(name, sheet, sa_over, trust):
     return [c for c, _ in Counter(rel).most_common(6)]
 
 
-def scale_notes(pcs, sa):
-    return " ".join(FLAT[(sa + p) % 12] for p in sorted(set(pcs)))
-
-
-def english(entry, ragas, taals):
-    parts = []
-    sh = entry.get("sh")
-    if sh:
-        parts.append(f"Sing in {FLAT[sh['pc']]} ({sh['k']} kattai).")
-    rs = entry.get("r") or []
-    if rs and sh:
-        r = ragas.get(rs[0]["id"])
-        if r:
-            notes = scale_notes(r["pcs"], sh["pc"])
-            close = "" if rs[0]["c"] >= 0.85 else "close to "
-            mix = f", moving into {', '.join(ragas[x['id']]['name'] for x in rs[1:] if x['id'] in ragas)}" if len(rs) > 1 else ""
-            parts.append(f"Raga {close}{r['name']} ({r['western']}): {notes}{mix}.")
-    elif entry.get("rn") == "none":
-        parts.append("A Western-style tune rather than a raga.")
-    t = entry.get("t")
-    if t:
-        tl = taals.get(t["id"], {})
-        count = {8: "1-2-3-4", 6: "1-2-3, 4-5-6" if t.get("sub") == 3 else "1-2-3", 7: "1-2-3, 1-2, 1-2",
-                 5: "1-2, 1-2-3"}.get(t["b"], "")
-        bpm = f" at about {t['bpm']} BPM" if t.get("bpm") else ""
-        parts.append(f"{t['b']}-beat {tl.get('name', t['id'])} ({t['ts']}): count {count}{bpm}.")
-    return " ".join(parts)
-
-
 def main():
     write = "--write" in sys.argv
     index = json.loads((ROOT / "public/bhajan-index2.json").read_text())
@@ -236,9 +207,6 @@ def main():
             taals_ref[t["name"]] = {"name": title(t["name"]), "system": t["system"], "beats": t["beats"],
                                     "vibhag": t.get("vibhag"), "bols": t.get("theka_bols"), "clap": t.get("clap_wave"),
                                     "western": t.get("western"), "feel": t.get("feel")}
-    for e in music.values():
-        e["en"] = english(e, ragas_ref, taals_ref)
-
     stats = Counter()
     for e in music.values():
         stats["songs"] += 1

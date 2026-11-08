@@ -11,7 +11,6 @@ Two static files, fetched only when musician mode is on (regular users download 
     "r":  [ { "id": "mohanam", "sec": "all", "c": 0.9 } ],
     "t":  { "id": "keherwa", "alt": "adi", "b": 8, "ts": "4/4", "bpm": 96, "pulse": "quarter", "sub": 2, "c": 0.85 },
     "ch": ["I", "IV", "V", "vi"],
-    "en": "Sing in G (5 kattai). Major-pentatonic tune: G A B D E, no C or F#. 8-beat keherwa: count 1-2-3-4 at about 96 BPM.",
     "c":  0.88
   }
 }
@@ -27,7 +26,6 @@ Two static files, fetched only when musician mode is on (regular users download 
 | `r` | ragas in order; `id` keys into music-reference.json `ragas`; `sec` "all" or a short label ("verse", "charanam 2"); empty list + `"rn": "none"` = no raga (Western/light tune) |
 | `t` | taal: `id` / `alt` key into `taals`; `b` beats per cycle; `ts` Western time signature; `bpm` pulse tempo; `pulse` "quarter" / "dotted-quarter"; `sub` 2 or 3 (beat subdivision) |
 | `ch` | main chord progression as Roman numerals relative to Sa (only when sheet music exists) |
-| `en` | one or two plain-English sentences for a non-Indian musician |
 | `c` | overall confidence; the UI shows a subtle "approximate" marker below 0.7. Each part is also marked on its own: raga `c` < 0.85 → "≈ / close to", shruti or taal `c` < 0.8 → "≈ / probably" |
 
 Any field may be missing (no recording, no sheet music, low confidence).
