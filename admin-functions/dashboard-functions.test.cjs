@@ -2,6 +2,9 @@ const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const vm = require("node:vm");
 const fs = require("node:fs");
+const { createHash } = require("node:crypto");
+const transactionPath = (orderKey) =>
+  `transactions/${createHash("sha256").update(orderKey).digest("hex")}`;
 function load(role = "1") {
   const reads = [],
     writes = [];
@@ -120,10 +123,44 @@ test("payment archive is idempotent, strips PII, and never changes paid records"
   };
   await ctx.exports.archiveDashboardPayment(event);
   await ctx.exports.archiveDashboardPayment(event);
-  assert.equal(ctx.writes.length, 1);
-  assert.ok(ctx.writes.every((x) => x.startsWith("analytics/paymentEvents/")));
+  const purchase = transactionPath("payment:a");
+  assert.equal(ctx.writes.length, 2);
+  assert.ok(ctx.writes.includes(purchase));
+  assert.equal(
+    ctx.writes.filter((x) => x.startsWith("analytics/paymentEvents/")).length,
+    1,
+  );
+  assert.equal(ctx.values[purchase].uid, "u");
+  assert.equal(ctx.values[purchase].historySource, "paid-trigger");
   assert.ok(!JSON.stringify(ctx.values).includes("private@example.com"));
   assert.ok(!JSON.stringify(ctx.values).includes("secret"));
+});
+test("removing access keeps the purchase in the transaction archive", async () => {
+  const ctx = load();
+  await ctx.exports.archiveDashboardPayment({
+    id: "removed",
+    time: "2026-09-19T00:00:00Z",
+    params: { uid: "u" },
+    data: {
+      before: { val: () => ({ mode: "live", orderID: "a", paidOn: 1 }) },
+      after: { val: () => null },
+    },
+  });
+  assert.equal(ctx.values[transactionPath("payment:a")].orderID, "a");
+});
+test("manual and test payments are not archived as purchases", async () => {
+  const ctx = load();
+  for (const row of [
+    { mode: "live", manual: true, orderID: "a", paidOn: 1 },
+    { mode: "sandbox", orderID: "b", paidOn: 1 },
+  ])
+    await ctx.exports.archiveDashboardPayment({
+      id: row.orderID,
+      time: "2026-09-19T00:00:00Z",
+      params: { uid: "u" },
+      data: { before: { val: () => null }, after: { val: () => row } },
+    });
+  assert.equal(ctx.writes.filter((x) => x.startsWith("transactions/")).length, 0);
 });
 test("snapshot retries preserve the first observation for the UTC day", async () => {
   const ctx = load();
