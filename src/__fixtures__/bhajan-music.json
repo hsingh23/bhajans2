@@ -4,6 +4,7 @@
     "r": [{ "id": "mohanam", "sec": "all", "c": 0.9 }],
     "t": { "id": "keherwa", "alt": "adi", "b": 8, "ts": "4/4", "bpm": 96, "pulse": "quarter", "sub": 2, "c": 0.85 },
     "ch": ["I", "IV", "V", "vi"],
+    "en": "Sing in G (5 kattai). Major-pentatonic tune: G A B D E, no C or F#. 8-beat keherwa: count 1-2-3-4 at about 96 BPM.",
     "c": 0.88
   },
   "belli bettadodeya (kannada)": {
@@ -11,6 +12,7 @@
     "r": [{ "id": "natabhairavi", "sec": "all", "c": 0.84 }],
     "t": { "id": "dadra", "alt": "rupakam", "b": 6, "ts": "6/8", "bpm": 66, "pulse": "dotted-quarter", "sub": 3, "c": 0.8 },
     "ch": ["i", "iv", "v", "VI"],
+    "en": "Sing in A (6 kattai). A natural-minor tune: A B C D E F G. 6-beat dadra: count 1-2 at about 66 BPM, each count split in three.",
     "c": 0.82
   },
   "arivenum akakkan (tamil)": {
@@ -20,6 +22,7 @@
       { "id": "sarasangi", "sec": "charanam", "c": 0.72 }
     ],
     "t": { "id": "keherwa", "alt": "adi", "b": 8, "ts": "4/4", "bpm": 104, "pulse": "quarter", "sub": 2, "c": 0.82 },
+    "en": "Sing in D (2 kattai). The opening uses the folk raga Maand (a major scale); the verses move to Sarasangi, a major scale with a flat sixth (Bb). 8-beat keherwa: count 1-2-3-4 at about 104 BPM.",
     "c": 0.78
   },
   "mother send your love to me": {
@@ -28,18 +31,21 @@
     "rn": "none",
     "t": { "b": 3, "ts": "3/4", "bpm": 88, "pulse": "quarter", "sub": 2, "c": 0.72 },
     "ch": ["I", "V", "vi", "IV"],
+    "en": "A Western-style song with no raga, in D major. Waltz time: count 1-2-3 at about 88 BPM.",
     "c": 0.8
   },
   "ajnabi rah ke (hindi)": {
     "sh": { "pc": 3, "k": "2.5", "alt": [2, 4], "c": 0.5, "src": "cd" },
     "r": [{ "id": "jog", "sec": "all", "c": 0.45 }],
     "t": { "id": "rupak", "b": 7, "ts": "7/8", "bpm": 150, "pulse": "quarter", "sub": 2, "c": 0.5 },
+    "en": "Probably sung in Eb (2.5 kattai), with a bluesy scale that has both a major and a minor third. 7-beat rupak, grouped 3+2+2.",
     "c": 0.55
   },
   "atulya tayute": {
     "sh": { "pc": 0, "k": "1", "c": 0.8, "src": "sheet" },
     "r": [{ "id": "hindolam", "sec": "all", "c": 0.85 }],
     "ch": ["i", "iv", "VI", "VII"],
+    "en": "Sing in C (1 kattai). A five-note minor scale: C Eb F Ab Bb, no D or G (the Malkauns sound).",
     "c": 0.8
   },
   "tayendru azhaikkava (tamil)": {
@@ -47,6 +53,7 @@
     "r": [{ "id": "khamas", "sec": "all", "c": 0.8 }],
     "t": { "id": "adi", "alt": "keherwa", "b": 8, "ts": "4/4", "bpm": 84, "pulse": "quarter", "sub": 2, "c": 0.84 },
     "ch": ["I", "IV", "bVII", "I"],
+    "en": "Sing in E (3 kattai). A major scale with a flat seventh (Mixolydian): E F# G# A B C# D. 8-beat adi tala: count 1-2-3-4 at about 84 BPM.",
     "c": 0.83
   }
 }

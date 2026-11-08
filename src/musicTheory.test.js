@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
   swarasToNotes,
@@ -93,5 +94,28 @@ describe('taal counting', () => {
     expect(thekaGroups({ vibhag: 'I4 O O', clap: 'clap, pinky' })).toBeNull();
     expect(thekaGroups({ vibhag: [4, 4], clap: 'clap on 1, wave on 5', bols: null })[0].mark).toBeNull();
     expect(thekaGroups(undefined)).toBeNull();
+  });
+});
+
+describe('generated musician summaries', () => {
+  // build_music_json.py writes the "en" summary; its key and notes must read
+  // exactly like the app's Key line and Up / Down rows (Cb, not B, in Bb Sindhu Bhairavi).
+  const read = (file) => JSON.parse(readFileSync(`${process.cwd()}/public/${file}`, 'utf8'));
+  const songs = read('bhajan-music.json');
+  const { ragas } = read('music-reference.json');
+
+  it('spells the key and scale notes the way the app does', () => {
+    const mismatches = [];
+    for (const [name, entry] of Object.entries(songs)) {
+      if (!entry.sh || !entry.en) continue;
+      const raga = entry.r?.[0] && ragas[entry.r[0].id];
+      const swaras = raga ? [...raga.aroha, ...raga.avaroha] : undefined;
+      if (!entry.en.startsWith(`Sing in ${keyName(entry.sh.pc, swaras)} (`)) mismatches.push(name);
+      if (!raga) continue;
+      const notes = entry.en.match(/\): ([A-G][#b]?(?: [A-G][#b]?)*)[,.]/)?.[1].split(' ') || [];
+      const app = new Set(swarasToNotes(swaras, entry.sh.pc));
+      if (notes.length !== app.size || notes.some((note) => !app.has(note))) mismatches.push(name);
+    }
+    expect(mismatches).toEqual([]);
   });
 });

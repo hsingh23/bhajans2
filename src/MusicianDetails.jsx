@@ -1,6 +1,6 @@
 // @ts-nocheck
 // "For musicians" section: key / shruti, raga scales in the song's key, taal
-// with its theka and chords. Shown only in musician
+// with its theka, chords and a plain-English summary. Shown only in musician
 // mode; loaded on demand so other readers never download it.
 import React, { useId } from 'react';
 import { KEY_NAMES, chordsInKey, countPhrase, kattaiFor, keySpelling, markMeaning, swarasToNotes, thekaGroups } from './musicTheory';
@@ -123,6 +123,7 @@ const MusicianDetails = ({ entry, music }) => {
           </span>
         )}
       </h2>
+      {entry.en && <p className='md-summary'>{entry.en}</p>}
 
       {shruti && (
         <div className='md-block'>

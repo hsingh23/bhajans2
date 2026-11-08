@@ -112,6 +112,112 @@ def chords(name, sheet, sa_over, trust):
     return [c for c, _ in Counter(rel).most_common(6)]
 
 
+# Note spelling, mirroring src/musicTheory.js (keySpelling / swarasToNotes) so the summary
+# names each note exactly as the app's scale rows do (Cb in Bb Sindhu Bhairavi, not B).
+SEMITONES = {"S": 0, "r1": 1, "R1": 1, "R2": 2, "G1": 2, "g2": 3, "G2": 3, "R3": 3, "G3": 4, "M1": 5, "M2": 6,
+             "P": 7, "d1": 8, "D1": 8, "D2": 9, "N1": 9, "n2": 10, "N2": 10, "D3": 10, "N3": 11}
+DEGREE = {"S": 1, "R": 2, "G": 3, "M": 4, "P": 5, "D": 6, "N": 7}
+LETTERS = "CDEFGAB"
+LETTER_PC = [0, 2, 4, 5, 7, 9, 11]
+SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+KEY_NAMES = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
+
+
+def parse_swara(token):
+    clean = re.sub(r"[^A-Za-z0-9]", "", str(token or ""))
+    if clean not in SEMITONES:
+        return None
+    return SEMITONES[clean], DEGREE[clean[0].upper()]
+
+
+def _offset(pc, letter_pc):
+    d = (pc - letter_pc) % 12
+    return d - 12 if d > 6 else d
+
+
+def _accidental(n):
+    return "#" * n if n > 0 else "b" * -n
+
+
+def _spell_with(li, sa, semitone, degree):
+    lj = (li + degree - 1) % 7
+    off = _offset((sa + semitone) % 12, LETTER_PC[lj])
+    return LETTERS[lj] + _accidental(off), (10 if abs(off) > 1 else abs(off))
+
+
+def key_spelling(sa, swaras):
+    """Which letter Sa sits on, so the raga needs the fewest accidentals (musicTheory.js keySpelling)."""
+    parsed = [p for p in map(parse_swara, swaras) if p]
+    best = None
+    for li in range(7):
+        off = _offset(sa, LETTER_PC[li])
+        if abs(off) > 1:
+            continue
+        tonic = LETTERS[li] + _accidental(off)
+        cost = sum(_spell_with(li, sa, st, dg)[1] for st, dg in parsed) + abs(off) * 0.1 + \
+            (0 if tonic == KEY_NAMES[sa] else 0.05)
+        if best is None or cost < best[2]:
+            best = (li, tonic, cost)
+    li, tonic, _ = best
+    return {"sa": sa, "li": li, "tonic": tonic, "flats": "b" in tonic or tonic == "F"}
+
+
+def note_name(spelling, semitone, degree):
+    name, cost = _spell_with(spelling["li"], spelling["sa"], semitone, degree)
+    if cost < 10:
+        return name
+    return (FLAT if spelling["flats"] else SHARP)[(spelling["sa"] + semitone) % 12]
+
+
+def raga_swaras(raga):
+    return [*(raga.get("aroha") or []), *(raga.get("avaroha") or [])]
+
+
+def scale_notes(raga, sa):
+    """The raga's notes from Sa upward, each named as in the app's Up / Down rows."""
+    swaras = raga_swaras(raga)
+    spelling = key_spelling(sa, swaras)
+    by_semitone = {}
+    for p in map(parse_swara, swaras):
+        if p:
+            by_semitone.setdefault(p[0], p[1])
+    names = []
+    for pc in sorted(set(raga["pcs"])):
+        names.append(note_name(spelling, pc, by_semitone[pc]) if pc in by_semitone
+                     else (FLAT if spelling["flats"] else SHARP)[(sa + pc) % 12])
+    return " ".join(names)
+
+
+def key_name(sa, raga):
+    return key_spelling(sa, raga_swaras(raga))["tonic"] if raga and raga_swaras(raga) else KEY_NAMES[sa]
+
+
+def english(entry, ragas, taals):
+    parts = []
+    sh = entry.get("sh")
+    rs = entry.get("r") or []
+    if sh:
+        first = ragas.get(rs[0]["id"]) if rs else None
+        parts.append(f"Sing in {key_name(sh['pc'], first)} ({sh['k']} kattai).")
+    if rs and sh:
+        r = ragas.get(rs[0]["id"])
+        if r:
+            notes = scale_notes(r, sh["pc"])
+            close = "" if rs[0]["c"] >= 0.85 else "close to "
+            mix = f", moving into {', '.join(ragas[x['id']]['name'] for x in rs[1:] if x['id'] in ragas)}" if len(rs) > 1 else ""
+            parts.append(f"Raga {close}{r['name']} ({r['western']}): {notes}{mix}.")
+    elif entry.get("rn") == "none":
+        parts.append("A Western-style tune rather than a raga.")
+    t = entry.get("t")
+    if t:
+        tl = taals.get(t["id"], {})
+        count = {8: "1-2-3-4", 6: "1-2-3, 4-5-6" if t.get("sub") == 3 else "1-2-3", 7: "1-2-3, 1-2, 1-2",
+                 5: "1-2, 1-2-3"}.get(t["b"], "")
+        bpm = f" at about {t['bpm']} BPM" if t.get("bpm") else ""
+        parts.append(f"{t['b']}-beat {tl.get('name', t['id'])} ({t['ts']}): count {count}{bpm}.")
+    return " ".join(parts)
+
+
 def main():
     write = "--write" in sys.argv
     index = json.loads((ROOT / "public/bhajan-index2.json").read_text())
@@ -207,6 +313,9 @@ def main():
             taals_ref[t["name"]] = {"name": title(t["name"]), "system": t["system"], "beats": t["beats"],
                                     "vibhag": t.get("vibhag"), "bols": t.get("theka_bols"), "clap": t.get("clap_wave"),
                                     "western": t.get("western"), "feel": t.get("feel")}
+    for e in music.values():
+        e["en"] = english(e, ragas_ref, taals_ref)
+
     stats = Counter()
     for e in music.values():
         stats["songs"] += 1

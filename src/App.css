@@ -1833,6 +1833,9 @@ mark {
   border-radius: var(--radius-full, 9999px);
   color: var(--md-muted);
 }
+.musician-details .md-summary {
+  margin-bottom: 4px;
+}
 .musician-details .md-block {
   margin-top: 10px;
 }
