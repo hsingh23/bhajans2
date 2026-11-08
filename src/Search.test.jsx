@@ -240,6 +240,29 @@ describe('Bhajan details modal', () => {
     );
   });
 
+  it('shows the song year on its card and in the details, and nothing for songs without one', () => {
+    const songs = [
+      { n: 'amme narayana', l: ['vol1-10'], lg: 'Malayalam', d: 'Devi', y: 1985 },
+      { n: 'kanna va', l: ['vol3-1'], lg: 'Malayalam', d: 'Krishna' },
+    ];
+    render(
+      <ThemeProvider>
+        <MemoryRouter>
+          <Search path='/' favorites={{}} renderFavorite={() => null} bhajans={songs} />
+        </MemoryRouter>
+      </ThemeProvider>
+    );
+    const chips = document.querySelectorAll('.category-chip.year');
+    expect([...chips].map((c) => c.textContent)).toEqual(['1985']);
+
+    fireEvent.click(screen.getAllByRole('button', { name: 'bhajan details' })[0]);
+    expect(within(screen.getByRole('dialog')).getByText('Year').nextElementSibling).toHaveTextContent('1985');
+    fireEvent.keyDown(document, { key: 'Escape' });
+
+    fireEvent.click(screen.getAllByRole('button', { name: 'bhajan details' })[1]);
+    expect(within(screen.getByRole('dialog')).queryByText('Year')).toBeNull();
+  });
+
   it('opens with focus on Close and closes on Escape', () => {
     renderCategorized();
     const opener = screen.getAllByRole('button', { name: 'bhajan details' })[0];

@@ -19,6 +19,9 @@ import { isLyricsLocation, locationLabel } from './lyricsLocation';
 import { countBy, hasTag } from './categoryTags';
 import { amazonTrackUrl } from './amazon';
 
+// `y`: earliest known recording, or the 2019-2025 songbook supplement it first appears in.
+const SONG_YEAR_HINT = 'Year first sung, from the earliest known recording';
+
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
 const ROW_HEIGHT = 200;
 const MUSICIAN_ROW_HEIGHT = 240;
@@ -259,7 +262,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const rowRenderer = ({ index, key, style }) => {
     const bhajan = bhajans[filteredBhajans[index]];
     if (!bhajan) return null;
-    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, az: amazonTrack, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
+    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, az: amazonTrack, lg: bhajanLanguage, d: bhajanDeity, y: songYear } = bhajan;
     const tagContent = tags ? ` (${tags})` : '';
     const songMusic = showMusic ? music.songs[name] : null;
     // Open sheet music in the key this reader last chose for the song.
@@ -275,7 +278,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               `${filteredBhajans[index]}/${name}`,
               <Highlight className='spaced' words={filter.split(' ')} text={`${name}${tagContent || ''}`} />
             )}
-            {(bhajanLanguage || bhajanDeity) && (
+            {(bhajanLanguage || bhajanDeity || songYear) && (
               <span className='bhajan-categories'>
                 {[bhajanDeity, bhajan.d2].filter(Boolean).map((value) => (
                   <button
@@ -299,6 +302,11 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     {value}
                   </button>
                 ))}
+                {songYear && (
+                  <span className='category-chip year' title={SONG_YEAR_HINT}>
+                    {songYear}
+                  </span>
+                )}
               </span>
             )}
             {songMusic && <MusicChips entry={songMusic} music={music} />}
@@ -497,7 +505,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
               </section>
             )}
 
-            {(infoOpen?.d || infoOpen?.lg || infoTags.length > 0) && (
+            {(infoOpen?.d || infoOpen?.lg || infoOpen?.y || infoTags.length > 0) && (
               <section className='modal-section'>
                 <dl className='modal-facts'>
                   {infoOpen.d && (
@@ -510,6 +518,12 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     <div>
                       <dt>Language</dt>
                       <dd>{[infoOpen.lg, infoOpen.lg2].filter(Boolean).join(', ')}</dd>
+                    </div>
+                  )}
+                  {infoOpen.y && (
+                    <div>
+                      <dt>Year</dt>
+                      <dd title={SONG_YEAR_HINT}>{infoOpen.y}</dd>
                     </div>
                   )}
                   {infoTags.length > 0 && (

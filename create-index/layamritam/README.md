@@ -102,3 +102,17 @@ Raga, over 2,700 matched pairs: 741 the same raga, 81 the same scale under anoth
 Layamritam marks 96% of its raga labels `ai`; only 16 of the different ones are human
 labels. The review list shows those and the ones where the app's label is confident
 (c >= 0.85); the rest are in the CSV only.
+
+## Song years (`y`)
+
+```bash
+python3 create-index/layamritam/song_years.py      # y in public/bhajan-index2.json, song-years.json
+```
+
+`y` is the year a song was first sung as far as the data shows: the earliest Layamritam
+`recordingYear` among the recordings matched to it, ignoring years after the last edition
+of a book it is printed in (those are re-recordings, e.g. Vol 1 songs on the 2025 album);
+failing that, the year of the 2019-2025 supplement it is printed in. 2,090 of 3,063
+songs get one; most of the rest are old-volume songs with no recording dated before
+their book. `song-years.json` lists every recording year per song. The search card shows
+it as a chip and the details modal as "Year". Rerun after `merge_metadata.py`.
