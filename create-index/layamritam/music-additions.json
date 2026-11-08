@@ -1,0 +1,6011 @@
+{
+ "aavi che holi (gujarati)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "aavo mara (gujarati)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "adethamu (telugu)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "adi parameswari (telugu)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "adi paramesvariye (adiyil paramesvariye) (kannada)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "a jivanantam (kannada)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ajivanantam bhajincenu (ajivanantam) (telugu)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amba tojale (amba paluku) (tulu)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma ani nantane (annai enrratume) (telugu)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma bhavani (a-i bhavani) (telugu)": {
+  "r": [
+   {
+    "id": "sarasangi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma elli nannamma (ammayalle ennammayalle) (kannada)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma ni rupam (amma nin rupam) (telugu)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amme nin padataril vinu (malayalam)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "amma bhagavati nityakanye (amme bhagavati nityakanye) (kannada)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "anandamrta rupini amme (kannada)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "anantamam i lokattil (bengali)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "anupama premada (kannada)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "appe atte enna appe atte (tulu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "baliyali iddaru (arikiluntenkilum) (kannada)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bandhavar eshto (kannada)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bandhamilla (bandhu nathi) (gujarati)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhajeham ganesam (sanskrit)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhavasagar jodi (dasarathe raghuramana) (bengali)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhramaramor (bhramarame) (bengali)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "brahmanda paksule (brahmanda paksikal) (telugu)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "brahmasmi tatvada (brahmanda pakshikal) (kannada)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "brojo dhame othe (bengali)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "cintalaku antam (telugu)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "cintana ceyyavale (telugu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "chintane madalu ba (kannada)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "devi devi devi (trimurtir) (bengali)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "devi devi devi (trimurtula) (telugu)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "duhkha tapta manassu (kannada)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "elam ami mago (bengali)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "enna kannunir estu (kannada)": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "enniyo naluga (telugu)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "entana kanu neeru (telugu)": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "evariki telipeda (telugu)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hrdaya pushpame (telugu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "icchamayi ni (telugu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "isvara lileyidella (kannada)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "isvari jagadisvari (kannada)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "iswar tume (odia)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "isvaralilayitenta (isvaralilayitellam) (telugu)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jay jay jay gananath gajanana kasht haro (gujarati)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "radhe shyam krishna (gujarati)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jvalana kalyana (kannada)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kaanada kayyagi kanuva kannagi (kannada)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kalam kanalu (kannada)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kalam nippulu (telugu)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kaneeri linindale padava (kannada)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kannal illaiyeninum (kannillenkilum) (tamil)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunalaye devi (telugu)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunalaye devi (kannada)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunyamurtte (tulu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "konn konn avya (gujarati)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kshanavendu baruvudu (kannada)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ma jogadamba (ma jagadambe) (bengali)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "ma jogadambe (odia)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maanavanariya (kannada)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mananthi vachanthi (gujarati)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "manasa vaca karmana (kannada)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "manase nina swantadavaru (kannada)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "manasa vaca karmana (tamil)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "meri sunle araj (gujarati)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mata rani (gujarati)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "matr vatsalya tori (kannada)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maunaghanamrta (telugu)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maya seyyum (tamil)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mayya hu to (gujarati)": {
+  "r": [
+   {
+    "id": "shanmukhapriya",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mere hrdaya sri ram base (hindi)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "muraliyanu uduta baro (murali bajate ana) (kannada)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nandalala nandalala (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nava vidha bhakthi (kannada)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "neenallade beraru jotege (kannada)": {
+  "r": [
+   {
+    "id": "hemavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nin premadindali (kannada)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nina nenapu matra (kannada)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nirmala premave ninnanu (kannada)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nirmala snehame (telugu)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "o kripamayi appe (tulu)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "yen mahadevi lokesi (telugu)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oka nimishamainanu (telugu)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "okanadu maruvani (telugu)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ondu nimishavaadaru (kannada)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "onji nimisha andalu (tulu)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oru nalum piriyatta (tamil)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oru siriya (tamil)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "padaippum padai (tamil)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pandarivasa sri hari (marathi)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pirivuthuyar (tamil)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "priyo kanai (bengali)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "radata jag ma (gujarati)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "radha ramana (telugu)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "rakka karo ma (bengali)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "re manuva re manuva (hindi)": {
+  "r": [
+   {
+    "id": "valaji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sindhura padamule (telugu)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sri guru punya nama (kannada)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "srstiyo tumi (bengali)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tannanna tananna (poruka poruka) (malayalam)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "vantale vantale (bandalo bandalo) (tamil)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "vyatireka saktula (telugu)": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "devere enklenu (tulu)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "iswar tuhi (sindhi)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maname unakku sontam (tamil)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ni enna belaku (kannada)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "paravasavadi hrdaya (kannada)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma taye dayakari (iswar tumhi) (kannada)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "shakti de bhakti de (sindhi)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "prem jo diyo (sindhi)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jay jay jay srikrsna (kannada)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "gange mata holy bhagirathi (english)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "shukam tse v (polish)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "akataril teliyane jagadisvari (malayalam)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma en unmayenn-ariyate (malayalam)": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amme amme amrtesvari (ammayenna mahamatram) (malayalam)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amme nin karunya-sparsana-ttal matram (malayalam)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amrta rupini abhaya (malayalam)": {
+  "r": [
+   {
+    "id": "sarasangi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "anu nimisam akataril (malayalam)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "atma caitanyame nin (malayalam)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ekanta pathikayay karma (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "guruvin trpada seva (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "inam-ekattoru kavyattin-akumo (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kalattin katt ozhukkil (malayalam)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karayatentomana paitale (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karolivarnna (malayalam)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunya varidhi amme (malayalam)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "klesam nirannor (malayalam)": {
+  "r": [
+   {
+    "id": "simhendramadhyamam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "krsna niyennil varum (malayalam)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "niscala cittattil teliyum (malayalam)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oru pincupaitalam ennude (malayalam)": {
+  "r": [
+   {
+    "id": "hindolam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oru tulli piyusam (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ozhukunnu amme (malayalam)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sasvatamaya ninne (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tamburuvil sruti (malayalam)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tulasi malayay (malayalam)": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "uttunga saila nivasiyam (malayalam)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "varum ennu karuti (malayalam)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "virahattin venalil en (malayalam)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "vyamoha patayil nan (malayalam)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "abhisekam abhisekam (tamil)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "cit ambaramaka (tamil)": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ennai nan tolaittuvitten (tamil)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ennulle unnai tetinen (tamil)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "siva padam adum (tamil)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "dinabandho karunasindho (sanskrit)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "astottaram & lalita sahasra namam (108 & 1000 - archana) (sanskrit)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 47 (malayalam)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 48 (malayalam)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 49 (malayalam)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 50 (malayalam)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 51 (malayalam)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 52 (malayalam)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 53 (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 54 (malayalam)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 55 (malayalam)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 61 (malayalam)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 63 (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 64 (malayalam)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 65 (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "omkara divya porule 66 (malayalam)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhagvan suyi kar (kashmiri)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jogoto natho probhu (odia)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "somosto lilare puri (odia)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhakti ka ras (hindi)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "om devi ma (french)": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "mara nalum vazhttum (malayalam)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "¡haya paz! (aya he sara) (spanish)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "oh mi senor ven a mi (anantamam i lokattil) (spanish)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "madre divina (ma jagadambe) (spanish)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "cantamos tu gloria (hail to your glory) (spanish)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "brota la fuente (khushiyon ki bahar) (spanish)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "o amor puro (nirmala snehame) (spanish)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "todo el mundo (everyone in the world) (spanish)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mi mente es (nin ormakal) (spanish)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "esta vida dura solo un dia (nalenchu nalaikyu) (spanish)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "donde puedo ir (where can i go) (spanish)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "o diosa preciosa - isvari jagadisvari (spanish)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "al pensar, al hablar (manasa vaca karmana) (spanish)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "eres la creacion (srstiyum) (spanish)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "iswar tumhi - danos tu compasion (spanish)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "everyone in the world (portuguese)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hail to your glory (portuguese)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "teninum iniday (tamil)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "namah sivaya endruraikka (tamil)": {
+  "r": [
+   {
+    "id": "sarasangi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "adangidum manam unul (tamil)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "amma gel bana (turkish)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "siksavalli (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "ganapati stuti (sanskrit)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "saraswati stuti (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "ganapati atharvasirsa (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "devi suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "medha suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "sivopasana mantra (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "narayana suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "navagraha suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "sri rudram (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "sri suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "bhruguvalli (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "mantra puspam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "hiranya garbha suktam (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "brahmavalli (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "surya upanisad (sanskrit)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "hanuman calisa (hindi)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "bhaja govindam bhaja govindam (sanskrit)": {
+  "r": [
+   {
+    "id": "simhendramadhyamam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "iswar tumhi (finnish)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "i manojna bhumiyil (finnish)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "everyone in the world (finnish)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "isvara lila itella (finnish)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "iswari jagadiswari (finnish)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tu es la creation (srstiyum) (french)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "que tout etre en ce monde (everyone in the world) (french)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "alona dekhi (dipak na janu) (bengali)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhramarave (bhramarame) (kannada)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "visamakara kannan (tamil)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "madumeykkum kanne (tamil)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kalike nin mizhi tumbil (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "aradhikkanor amma (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "vagadhise nin tejassal (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "klavu pidicchu (malayalam)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "oh mother earth (english)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "you are the light (english)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "tirada vilayattu pillai (tamil)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "karuna kadale (amma solo) (malayalam)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "kar na phakiri (mira) (braj bhasha)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "karam ki gati (mira) (braj bhasha)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "hoji hari kit gayi (mira) (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "radhya pyari de daro na (braj bhasha)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "syam mane cakar (mira) (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "bala maim bairagan hungi (mira) (hindi)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "te to palak (mira) (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "sakhi re (braj bhasha)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "baso more nayanan (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hari bin kaun gati meri (braj bhasha)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maim to giridhar ke ghar (braj bhasha)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nirbhaya nirguna guna re (braj bhasha)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pani mem minu pyasi (marwari)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhaj man ram caran sukhadayi (marwari)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "calna hai dur musaphir (braj bhasha)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "dinanath ab bari tumhari (hindi)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "e ri maim to prem divani (braj bhasha)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "man re parasi hari (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "barse badariya (braj bhasha)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "come children (english)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "you are my light (english)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "softly singing in my heart (english)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "only through god (english)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "in the silence (english)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "jhini re jhini ke (hindi)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karuna suno syam meri (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kanasina lokadhi kaledu hogi (kinaccillayil) (kannada)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "a o sahelarali (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nilambhuja nayane (tulu)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amme..shining within me (english)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "flower of my heart (hrdaya puspame) (english)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "daras bin dukhan (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hari darasanu ki pyasi (braj bhasha)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kunjan ban chadi (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "maim hari carananu ki dasi (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pyare darasanu dijo aye (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhagavad gita (sanskrit)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhala huva mori matki (hindi)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ram milan ke kaj (braj bhasha)": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ko birahini ko duhkh (braj bhasha)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "prabhu mere avagun (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hari avan ki (hindi)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mhara olagiya ghar (marwari)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ali ri mere nainam (marwari)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ali ri mhane lage (marwari)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "re mana murakh (braj bhasha)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sahab ham mem (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "calo agam ke des (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ram milan ro ghano (braj bhasha)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pag ghungharu bamdh (marwari)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sadguru soyi daya (braj bhasha)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "santo sahaj samadhi bhali (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tosom lagyo neh (braj bhasha)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jogi mat ja mat ja mat ja (braj bhasha)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "lakhan jati jagat (braj bhasha)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amrita varsham 73 anthem (malayalam)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "man re tu kar le (hindi)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ber ber nahi ave avasar (hindi)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sadho sabad sadhana (hindi)": {
+  "r": [
+   {
+    "id": "natabhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "manamohana kanha (hindi)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nirajadala vilocana (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mai mhari hari ji (hindi)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ab to nibhayam saregi (hindi)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "devi jagadodharini (hindi)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "akataril nombaram azhalay eriyumbol (malayalam)": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ambike jagadambike mama (malayalam)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma amma amma en amma (tamil)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amma mother of my heart (english)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "amrtesvari suprabhatam": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "ananta samsara": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "anjani putra (sreyas, malayalam)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ankh na palka": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "aparadham-endetu (malayalam)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "arupatai vitu (tamil)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "avi amba (bandalo in gujarati)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "azhiyada anandam (tamil)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "bhagavad gita 15th chapter": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "candracuda (telugu)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "close to you (english)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "culalayil (malayalam)": {
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "dayayale urukondu (tamil)": {
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "devi awaken your children (english)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "devi ninne kani kantittu": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "durga suktam": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   },
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "elayya elayya taka (malayalam)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "har pal har ksan (hindi)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "haraya jaya": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hariyuva nadiya (gujarati version)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "he manave ele manave (kannada)": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "hrdayesvari en": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "i was lost in the darkness2025(english) (english)": {
+  "r": [
+   {
+    "id": "gourimanohari",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "in every heart (english)": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "indu habba (baduga)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "innallo karthika nalu": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "iratte tupanaru (tulu)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "irul mari teliyanay (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "isori jogodisari": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jagadisvari ma paramesvari ma (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jago bansi vale (hindi)": {
+  "r": [
+   {
+    "id": "sarasangi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "janmantarapathikan (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "jaya jaya arati": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "kalamurali - tamil version": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karmukil varnna ennunni kanna (malayalam)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunamayi sneha arunodayam": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "karunardra manase (malayalam, chinmaya)": {
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kattu kattirunnoru kadavilanu (malayalam)": {
+  "r": [
+   {
+    "id": "mohanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "kehenda hai mukh (punjabi)": {
+  "r": [
+   {
+    "id": "madhyamavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "lalle lalle (malayalam)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "madhuri (gujarati)": {
+  "r": [
+   {
+    "id": "sindhubhairavi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mayi maine (braj bhasha)": {
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mhara re giridhar gopal (marwari)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "miles away from you (english)": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "mokeda ammanu (tulu)": {
+  "r": [
+   {
+    "id": "mechakalyani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "mother of all english": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "mother send your love to me": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "na karmana na prajaya": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "nakhtalifu (arabic-egyptian)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "namma karmaphalava tanundu (kannada)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "nandanandan dith padiya (braj bhasha)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "neyyapantam yetriya dipam": {
+  "r": [
+   {
+    "id": "shivaranjani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "ninnil nirantara bhakti (malayalam)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "noor a veen (irish)": {
+  "r": [
+   {
+    "id": "sarasangi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "omkara-rupini (malayalam)": {
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "only love (english)": {
+  "r": [
+   {
+    "id": "darbarikanada",
+    "sec": "all",
+    "c": 0.8,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "oru mohaminnita": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "oru piti sneham tirannu": {
+  "r": [
+   {
+    "id": "desh",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "paurnami ravil": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "pikimusta taivas (finnish)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "purusa suktam": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   },
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "ram nam ras (hindi)": {
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "rat din dalati jay (hindi)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "rupak",
+   "b": 7,
+   "ts": "7/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "santamay orukatte jivitam": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sivoham jyotiraham (malayalam)": {
+  "r": [
+   {
+    "id": "mayamalavagowla",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "sri krsna deva (malayalam)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   },
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "tandavamati (tamil)": {
+  "r": [
+   {
+    "id": "kamavardhini",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "khandachapu",
+   "b": 5,
+   "ts": "5/8",
+   "pulse": "eighth",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "taney tantanenano taney tantanenano (malayalam)": {
+  "r": [
+   {
+    "id": "abheri",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "underneath a kalpataru (english)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ },
+ "utayaval (malayalam)": {
+  "r": [
+   {
+    "id": "revati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "keherwa",
+   "b": 8,
+   "ts": "4/4",
+   "pulse": "quarter",
+   "sub": 2,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "vole vole nattends pas (french)": {
+  "r": [
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   },
+   {
+    "id": "keeravani",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ],
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.75,
+   "src": "layamritam"
+  }
+ },
+ "warum suchen wir (german)": {
+  "r": [
+   {
+    "id": "hemavati",
+    "sec": "all",
+    "c": 0.6,
+    "src": "layamritam"
+   }
+  ]
+ }
+}

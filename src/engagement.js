@@ -3,9 +3,10 @@
 // resume on the same page) and a "bhajan of the day" suited to their taste.
 // Everything lives in this browser's localStorage; nothing is sent anywhere.
 
+import { isLyricsLocation } from "./lyricsLocation";
+
 const RECENT_KEY = "recentBhajans";
 const RECENT_LIMIT = 8;
-const LYRICS_LOCATION = /^(\d{4}(?:supl\d?)?-\d+|vol\d-\d+)$/i;
 
 const readRecent = () => {
   try {
@@ -39,7 +40,7 @@ export const viewerPath = (bhajans, { name, location, page }) => {
   return `/pdf/${encodeURIComponent(location)}/${index}/${encodeURIComponent(name)}${query}`;
 };
 
-const lyricsLocation = (bhajan) => bhajan?.l?.find((loc) => LYRICS_LOCATION.test(loc));
+const lyricsLocation = (bhajan) => bhajan?.l?.find(isLyricsLocation);
 
 const mostCommon = (values) => {
   const counts = new Map();
