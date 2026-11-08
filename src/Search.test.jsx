@@ -263,6 +263,28 @@ describe('Bhajan details modal', () => {
     expect(within(screen.getByRole('dialog')).queryByText('Year')).toBeNull();
   });
 
+  it('searches for a year when its chip is pressed, and clears it when pressed again', () => {
+    const songs = [
+      { n: 'amme narayana', l: ['vol1-10'], lg: 'Malayalam', d: 'Devi', y: 1985 },
+      { n: 'kanna va', l: ['vol3-1'], lg: 'Malayalam', d: 'Krishna', y: 2010 },
+    ];
+    render(
+      <ThemeProvider>
+        <MemoryRouter>
+          <Search path='/' favorites={{}} renderFavorite={() => null} bhajans={songs} />
+        </MemoryRouter>
+      </ThemeProvider>
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Show bhajans first sung in 1985' }));
+    expect(screen.getByRole('searchbox', { name: 'search' })).toHaveValue('1985');
+    expect(screen.queryByText('kanna va')).toBeNull();
+    const chip = screen.getByRole('button', { name: 'Show bhajans first sung in 1985' });
+    expect(chip).toHaveAttribute('aria-pressed', 'true');
+
+    fireEvent.click(chip);
+    expect(screen.getByRole('searchbox', { name: 'search' })).toHaveValue('');
+  });
+
   it('opens with focus on Close and closes on Escape', () => {
     renderCategorized();
     const opener = screen.getAllByRole('button', { name: 'bhajan details' })[0];

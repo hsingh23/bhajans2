@@ -1342,7 +1342,6 @@ mark {
   border-color: rgba(77, 182, 172, 0.35);
 }
 .category-chip.year {
-  cursor: default;
   font-variant-numeric: tabular-nums;
   color: var(--text-secondary);
   background: transparent;

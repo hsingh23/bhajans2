@@ -205,6 +205,12 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
     setLanguage(value);
     if (value) track('filter_bhajans', { filter_type: 'language', filter_value: value });
   };
+  // The year chip searches for its year (the search box understands "1985", "1980s").
+  const chooseYear = (year) => {
+    const next = filter.trim() === String(year) ? '' : String(year);
+    setFilter(next);
+    if (next) track('filter_bhajans', { filter_type: 'year', filter_value: next });
+  };
   const chooseMusic = (facet, value) => {
     setMusicFilters((current) => ({ ...current, [facet]: value }));
     if (value) track('filter_bhajans', { filter_type: facet, filter_value: value });
@@ -303,9 +309,15 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                   </button>
                 ))}
                 {songYear && (
-                  <span className='category-chip year' title={SONG_YEAR_HINT}>
+                  <button
+                    type='button'
+                    className={filter.trim() === String(songYear) ? 'category-chip year active' : 'category-chip year'}
+                    title={SONG_YEAR_HINT}
+                    aria-pressed={filter.trim() === String(songYear)}
+                    aria-label={`Show bhajans first sung in ${songYear}`}
+                    onClick={() => chooseYear(songYear)}>
                     {songYear}
-                  </span>
+                  </button>
                 )}
               </span>
             )}
