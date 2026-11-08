@@ -9,7 +9,7 @@ const KIND_WORD = { komal: 'komal ', tivra: 'tivra ' };
 const OCTAVE_WORD = { '-1': ' (lower octave)', 1: ' (upper octave)' };
 
 /** The line as a singer reads it: Sa Re Ga... with komal underlined, tivra Ma ticked, octave dots. */
-export const SargamLine = ({ swaras, descending = false, names = [], label }) => {
+export const SargamLine = ({ swaras, descending = false, names = [], label, showNames = true, showLabel = true }) => {
   const line = sargamLine(swaras, descending);
   if (!line.length) return null;
   const spoken = line
@@ -17,7 +17,7 @@ export const SargamLine = ({ swaras, descending = false, names = [], label }) =>
     .join(', ');
   return (
     <figure className='sargam-line'>
-      {label && <figcaption className='pk-label'>{label}</figcaption>}
+      {label && showLabel && <figcaption className='pk-label'>{label}</figcaption>}
       <ol role='img' aria-label={`Sing${label ? ` ${label.toLowerCase()}` : ''}: ${spoken}`}>
         {line.map(({ syllable, kind, octave }, i) => (
           <li key={i} className={['sg-note', kind && `sg-${kind}`, octave > 0 && 'sg-taar', octave < 0 && 'sg-mandra'].filter(Boolean).join(' ')}>
@@ -25,7 +25,7 @@ export const SargamLine = ({ swaras, descending = false, names = [], label }) =>
               {syllable}
               {kind === 'tivra' && '′'}
             </span>
-            {names[i] && <span className='sg-pitch'>{names[i]}</span>}
+            {showNames && names[i] && <span className='sg-pitch'>{names[i]}</span>}
           </li>
         ))}
       </ol>
@@ -42,7 +42,7 @@ const HOLE_WORD = (holes) => {
 };
 
 /** One column per note: the six holes (filled = closed, half = half-closed), the note, ↑ = blow harder. */
-export const BansuriChart = ({ swaras, descending = false, names = [], label }) => {
+export const BansuriChart = ({ swaras, descending = false, names = [], label, showLabel = true }) => {
   const line = bansuriLine(swaras, descending);
   if (!line.length) return null;
   const syllables = sargamLine(swaras, descending);
@@ -51,7 +51,7 @@ export const BansuriChart = ({ swaras, descending = false, names = [], label }) 
     .join('; ');
   return (
     <figure className='bansuri-chart'>
-      {label && <figcaption className='pk-label'>{label}</figcaption>}
+      {label && showLabel && <figcaption className='pk-label'>{label}</figcaption>}
       <ol role='img' aria-label={`Bansuri${label ? ` ${label.toLowerCase()}` : ''}: ${spoken}`}>
         {line.map(({ holes, register }, i) => (
           <li key={i} className='bn-note'>
@@ -76,7 +76,7 @@ export const BansuriChart = ({ swaras, descending = false, names = [], label }) 
 };
 
 /** The raga line (Up or Down) as tab, with the note names above the frets. */
-export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names = [], label }) => {
+export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names = [], label, showLabel = true }) => {
   const placed = scaleTab(instrument, saPc, swaras, descending);
   if (!placed) return null;
   const inst = INSTRUMENTS[instrument];
@@ -85,7 +85,7 @@ export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names =
     .join(', ');
   return (
     <figure className='scale-tab'>
-      {label && <figcaption className='pk-label'>{label}</figcaption>}
+      {label && showLabel && <figcaption className='pk-label'>{label}</figcaption>}
       <div>
         <pre role='img' aria-label={`${inst.name} tab${label ? `, ${label.toLowerCase()}` : ''}: ${spoken}`}>
           {tabLines(instrument, placed, names).join('\n')}

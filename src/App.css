@@ -2001,19 +2001,35 @@ mark {
 .musician-details .md-instruments {
   margin: 8px 0 2px;
 }
-.md-scale-wrap {
-  display: flex;
-  flex-wrap: wrap;
+/* Up and Down: one row each, label | swaras + notes | instrument view */
+.md-lines {
+  display: grid;
+  grid-template-columns: auto max-content minmax(0, 1fr);
   align-items: center;
-  gap: 4px 16px;
+  gap: 6px 10px;
+  margin: 4px 0;
 }
-.md-instrument-view {
+.md-line {
+  display: contents;
+}
+.md-line-text {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin: 4px 0;
+}
+.md-line-view {
+  display: flex;
   min-width: 0;
-  max-width: 100%;
+}
+/* The tab prints the note names over its frets, so the row needn't repeat them */
+.md-guitar .md-notes,
+.md-ukulele .md-notes {
+  display: none;
+}
+@container musician (max-width: 419px) {
+  /* Narrow: the view goes under its text, still inside the same row group */
+  .md-line-view {
+    grid-column: 2 / -1;
+  }
 }
 .md-instruments {
   display: inline-flex;
@@ -2217,17 +2233,7 @@ mark {
   column-gap: 4px;
 }
 
-.md-scale {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 10px;
-  margin: 4px 0;
-}
-.md-scale-row {
-  display: contents;
-}
 .md-scale-label {
-  grid-row: span 2;
   align-self: center;
   font-size: 12px;
   color: var(--md-muted);

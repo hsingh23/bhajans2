@@ -61,18 +61,6 @@ const SOURCE = { box: 'from the full recording', cd: 'from a CD sample', sheet: 
 const SYSTEM = { carnatic: 'Carnatic', hindustani: 'Hindustani' };
 const APPROXIMATE_BELOW = 0.7;
 
-const ScaleRow = ({ label, swaras, saPc, spelling }) => {
-  if (!Array.isArray(swaras) || !swaras.length) return null;
-  const notes = swarasToNotes(swaras, saPc, spelling);
-  return (
-    <div className='md-scale-row'>
-      <span className='md-scale-label'>{label}</span>
-      <span className='md-swaras'>{swaras.join(' ')}</span>
-      {notes.length > 0 && <span className='md-notes'>{notes.join(' ')}</span>}
-    </div>
-  );
-};
-
 /** Note name for each semitone above Sa that the swaras use, spelled like the scale rows. */
 const namesBySemitone = (swaras, saPc, spelling) => {
   const tokens = (swaras || []).filter((t) => parseSwara(t));
@@ -84,46 +72,69 @@ const namesBySemitone = (swaras, saPc, spelling) => {
   return names;
 };
 
-/** Up and Down drawn for the chosen instrument: sung notes, two keyboards, two tabs or two fingering charts. */
-const RagaInstrument = ({ raga, saPc, spelling, instrument }) => {
-  if (!isPitchClass(saPc)) return null;
+/** One instrument's drawing of a line (Up or Down), without its own label: the row has it. */
+const LineView = ({ instrument, label, swaras, descending, saPc, notes, labels }) => {
+  // The direction stays in each view's accessible name; the row shows it once.
+  const common = { swaras, descending, names: notes, label, showLabel: false };
+  if (instrument === 'voice') return <SargamLine {...common} showNames={false} />;
+  if (instrument === 'bansuri') return <BansuriChart {...common} />;
+  if (instrument === 'guitar' || instrument === 'ukulele') {
+    return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
+  }
+  if (instrument === 'piano') {
+    const piano = { saPc, semitones: swaraSemitones(swaras), notes, labels, label, showLabel: false };
+    // Sa to Sa' when space is tight; two octaves from C when the panel is wide (CSS picks one).
+    return (
+      <>
+        <PianoKeys {...piano} className='pk-compact' />
+        <PianoKeys {...piano} twoOctaves className='pk-wide' />
+      </>
+    );
+  }
+  return null;
+};
+
+/** Up and Down, each one row: label, swaras and notes, then the chosen instrument's view. */
+const ScaleLines = ({ raga, saPc, spelling, instrument }) => {
   const lines = [
     ['Up', raga.aroha, false],
     ['Down', raga.avaroha, true],
   ].filter(([, swaras]) => Array.isArray(swaras) && swaras.length);
   if (!lines.length) return null;
-  const labels = namesBySemitone([...(raga.aroha || []), ...(raga.avaroha || [])], saPc, spelling);
-  const view = (label, swaras, descending) => {
-    const notes = swarasToNotes(swaras, saPc, spelling);
-    const common = { key: label, swaras, descending, names: notes, label };
-    if (instrument === 'voice') return <SargamLine {...common} />;
-    if (instrument === 'bansuri') return <BansuriChart {...common} />;
-    if (instrument === 'piano') {
-      const piano = { saPc, semitones: swaraSemitones(swaras), label, notes, labels };
-      // Sa to Sa' when space is tight; two octaves from C when the panel is wide (CSS picks one).
-      return (
-        <React.Fragment key={label}>
-          <PianoKeys {...piano} className='pk-compact' />
-          <PianoKeys {...piano} twoOctaves className='pk-wide' />
-        </React.Fragment>
-      );
-    }
-    return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
-  };
-  if (instrument === 'tabla') return null;
+  const hasKey = isPitchClass(saPc);
+  const all = [...(raga.aroha || []), ...(raga.avaroha || [])];
+  const labels = hasKey ? namesBySemitone(all, saPc, spelling) : {};
   return (
-    <div className={`md-instrument-view md-${instrument}`}>
-      {lines.map(([label, swaras, descending]) => view(label, swaras, descending))}
-      {instrument === 'voice' && (
+    <>
+      <div className={`md-lines md-${instrument}`}>
+        {lines.map(([label, swaras, descending]) => {
+          const notes = hasKey ? swarasToNotes(swaras, saPc, spelling) : [];
+          return (
+            <div key={label} className='md-line'>
+              <span className='md-scale-label'>{label}</span>
+              <span className='md-line-text'>
+                <span className='md-swaras'>{swaras.join(' ')}</span>
+                {notes.length > 0 && <span className='md-notes'>{notes.join(' ')}</span>}
+              </span>
+              {hasKey && (
+                <span className='md-line-view'>
+                  <LineView instrument={instrument} label={label} swaras={swaras} descending={descending} saPc={saPc} notes={notes} labels={labels} />
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {hasKey && instrument === 'voice' && (
         <p className='md-hint'>Underlined = komal (flat) · Ma′ = tivra (sharp) · dot above = upper octave, below = lower</p>
       )}
-      {instrument === 'bansuri' && (
+      {hasKey && instrument === 'bansuri' && (
         <p className='md-hint'>
-          Use a {keyName(saPc, raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [])} bansuri (Indian bamboo flute, named
-          for its Sa: top three holes closed). Filled = closed, half = half-closed, ↑ = blow harder.
+          Use a {keyName(saPc, all)} bansuri (Indian bamboo flute, named for its Sa: top three holes closed). Filled =
+          closed, half = half-closed, ↑ = blow harder.
         </p>
       )}
-    </div>
+    </>
   );
 };
 
@@ -139,15 +150,7 @@ const Raga = ({ part, raga, saPc, instrument }) => {
         <strong>{ragaName({ [part.id]: raga }, part.id)}</strong>
         {raga?.hi && <span className='md-aside'> · Hindustani: {raga.hi}</span>}
       </p>
-      {raga && (
-        <div className='md-scale-wrap'>
-          <div className='md-scale'>
-            <ScaleRow label='Up' swaras={raga.aroha} saPc={saPc} spelling={spelling} />
-            <ScaleRow label='Down' swaras={raga.avaroha} saPc={saPc} spelling={spelling} />
-          </div>
-          <RagaInstrument raga={raga} saPc={saPc} spelling={spelling} instrument={instrument} />
-        </div>
-      )}
+      {raga && <ScaleLines raga={raga} saPc={saPc} spelling={spelling} instrument={instrument} />}
       {(raga?.western || raga?.mood) && (
         <p className='md-aside'>{[raga.western && `Western: ${raga.western}`, raga.mood].filter(Boolean).join(' · ')}</p>
       )}
@@ -334,16 +337,40 @@ const spanWords = (span) => {
   return `${parts.join(' + ') || '0'} (${span} semitones)`;
 };
 
+const sargamWords = (v) => {
+  const { syllable, kind } = sargamNote(v);
+  return `${kind ? `${kind} ` : ''}${syllable}${kind === 'tivra' ? '′' : ''} (${OCTAVE_NAME[Math.floor(v / 12)] ?? ''})`;
+};
+
+/** The first note sung and the key root of the sheet music (its Western key, not always Sa). */
+const MelodyStart = ({ start, keyRoot, saPc, swaras }) => {
+  const hasStart = Number.isInteger(start);
+  const hasRoot = isPitchClass(saPc) && isPitchClass(keyRoot?.o);
+  if (!hasStart && !hasRoot) return null;
+  return (
+    <p className='md-aside md-melody-start'>
+      {hasStart && (
+        <>
+          Starts on <strong>{sargamWords(start)}</strong>
+          {isPitchClass(saPc) && ` · ${noteNameIn(saPc, start, swaras || [])}`}
+        </>
+      )}
+      {hasStart && hasRoot && ' · '}
+      {hasRoot && (
+        <>
+          Key root (sheet music): <strong>{`${noteNameIn(saPc, keyRoot.o, swaras || [])} ${keyRoot.m ? 'minor' : 'major'}`}</strong>
+        </>
+      )}
+    </p>
+  );
+};
+
 /** How low and high the melody goes, as sargam and as notes in the shown key. */
 const VocalRange = ({ range, saPc, swaras }) => {
-  const ends = range.map((v) => {
-    const { syllable, kind } = sargamNote(v);
-    const octave = OCTAVE_NAME[Math.floor(v / 12)] ?? '';
-    return {
-      sargam: `${kind ? `${kind} ` : ''}${syllable}${kind === 'tivra' ? '′' : ''} (${octave})`,
-      note: isPitchClass(saPc) ? noteNameIn(saPc, v, swaras || []) : null,
-    };
-  });
+  const ends = range.map((v) => ({
+    sargam: sargamWords(v),
+    note: isPitchClass(saPc) ? noteNameIn(saPc, v, swaras || []) : null,
+  }));
   return (
     <div className='md-block md-range'>
       <h3 className='md-label'>Vocal range</h3>
@@ -421,6 +448,7 @@ const MusicianDetails = ({ entry, music }) => {
             </p>
           )}
           {!transposed && alternatives.length > 0 && <p className='md-aside'>Also possible: {alternatives.join(', ')}</p>}
+          <MelodyStart start={entry.st} keyRoot={entry.kr} saPc={hasKey ? saPc : undefined} swaras={swaras} />
           <Transpose saPc={saPc} recordingPc={recordingPc} myKey={myKey} swaras={swaras} onChange={setChosenPc} />
         </div>
       )}

@@ -6,7 +6,7 @@ Inputs (all under create-index/music-meta):
   work/raga/full/out_*.jsonl   raga labels (Opus), one JSON per song
   features/taal.json           beat-cycle class, meter, tempo
   features/sheet.json + features/tonic_sheet_sa.json + features/sheet_trust.json   chords
-  features/vocal_range.json    melody range from the sheet music (vocal_range.py)
+  features/vocal_range.json    melody range, first note, key root from the sheet music (vocal_range.py)
   reference/ragas.json, reference/taals.json
 Outputs (contract: reference/music-data-spec.md):
   public/bhajan-music.json, public/music-reference.json   (with --write; else a dry run + stats)
@@ -300,9 +300,11 @@ def main():
             e["ch"] = ch
         if not e:
             continue
-        vr = vrange.get(n) or vrange.get(old)
-        if vr:
-            e["vr"] = vr
+        melody = vrange.get(n) or vrange.get(old)
+        if melody:
+            e["vr"] = melody["range"]
+            e["st"] = melody["start"]
+            e["kr"] = melody["key"]
         cs = [x for x in [e.get("sh", {}).get("c"), *(r["c"] for r in e.get("r", [])[:1]), e.get("t", {}).get("c")] if x is not None]
         if cs:  # a song with only chords (sheet music, no recording or raga) has no overall confidence
             e["c"] = round(sum(cs) / len(cs), 2)

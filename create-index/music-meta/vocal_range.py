@@ -1,4 +1,5 @@
-"""Vocal range of each song's melody, in semitones from Sa, from its sheet music.
+"""Melody facts from each song's sheet music, in semitones from Sa: the vocal
+range, the first note sung, and the key root the arrangement is written in.
 
     python3 vocal_range.py                # writes features/vocal_range.json
     python3 vocal_range.py --check-audio  # compares recording-based ranges with the sheets
@@ -43,8 +44,11 @@ def sa_ref(midi, sa_pc):
     return base
 
 
-def sheet_range(s, sa_offset=0):
-    """[lowest, highest] written note in semitones from Sa, or None for a thin sheet.
+def sheet_facts(s, sa_offset=0):
+    """{range: [lowest, highest], start, key: {o, m}} in semitones from Sa, or None for a thin sheet.
+
+    start is the first written note; key.o is the key root (0-11 above Sa) and
+    key.m whether the sheet is in a minor key.
 
     sheet.json stores notes relative to the PDF's key root (MIDI minus its pitch
     class), so in note space the key root is pitch class 0 and Sa is sa_offset.
@@ -57,7 +61,11 @@ def sheet_range(s, sa_offset=0):
     # Of the Sa octaves near the median, take the one that best fits the range in
     # the usual bhajan span (lower Pa .. upper Sa); ties keep the median's choice.
     ref = min((ref, ref + 12, ref - 12), key=lambda r: max(0, TYPICAL[0] - (lo - r)) + max(0, (hi - r) - TYPICAL[1]))
-    return [int(lo - ref), int(hi - ref)]
+    return {
+        "range": [int(lo - ref), int(hi - ref)],
+        "start": int(notes[0] - ref),
+        "key": {"o": (-sa_offset) % 12, "m": bool(s.get("minor"))},
+    }
 
 
 def sheet_ranges():
@@ -69,9 +77,9 @@ def sheet_ranges():
         sa = sa_over.get(name) or {}
         if "error" in s or trust.get(name, {}).get("trust") not in TRUSTED or sa.get("confidence") not in SURE_SA:
             continue
-        rng = sheet_range(s, sa.get("sa_offset", 0))
-        if rng:
-            out[name] = rng
+        facts = sheet_facts(s, sa.get("sa_offset", 0))
+        if facts:
+            out[name] = facts
     return out
 
 
@@ -79,7 +87,8 @@ def check_audio(ranges):
     """How far a recording's melody range is from the sheet's (see the module notes)."""
     tonic = json.loads((FEAT / "tonic.json").read_text())
     lo, hi = [], []
-    for name, rng in ranges.items():
+    for name, facts in ranges.items():
+        rng = facts["range"]
         rec = next((r for r in (tonic.get(name) or {}).get("recordings", [])
                     if r["source"].startswith("box:") and r.get("tonic_pc") is not None), None)
         npz = rec and FEAT / "audio" / f"{rec['source'][4:]}.npz"
@@ -99,7 +108,7 @@ def check_audio(ranges):
 
 def main():
     ranges = sheet_ranges()
-    spans = [b - a for a, b in ranges.values()]
+    spans = [f["range"][1] - f["range"][0] for f in ranges.values()]
     print(f"{len(ranges)} sheet ranges; span 10/50/90th percentile {np.percentile(spans, [10, 50, 90]).tolist()}")
     if "--check-audio" in sys.argv:
         check_audio(ranges)

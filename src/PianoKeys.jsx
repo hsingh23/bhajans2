@@ -47,14 +47,14 @@ const SaDot = ({ x, y, w }) => <circle className='pk-sa-dot' cx={x + w / 2} cy={
  * `labels` names the lit notes by semitone above Sa ({ 0: 'Bb', 1: 'Cb', ... }),
  * spelled like the scale rows; unlit white keys show their plain letter.
  */
-const PianoKeys = ({ saPc, semitones, label, notes, labels = {}, twoOctaves = false, className }) => {
+const PianoKeys = ({ saPc, semitones, label, notes, labels = {}, twoOctaves = false, className, showLabel = true }) => {
   if (!Number.isInteger(saPc) || !semitones?.length) return null;
   const { whites, blacks, width } = pianoLayout(saPc, semitones, twoOctaves);
   const name = [label, notes?.length ? notes.join(' ') : null].filter(Boolean).join(': ');
   const text = (k) => (k.on ? labels[(((k.abs - saPc) % 12) + 12) % 12] : null);
   return (
     <figure className={['piano-keys', className].filter(Boolean).join(' ')}>
-      {label && <figcaption className='pk-label'>{label}</figcaption>}
+      {label && showLabel && <figcaption className='pk-label'>{label}</figcaption>}
       <svg
         viewBox={`-1 -1 ${width + 2} ${WHITE_H + 2}`}
         width={width + 2}

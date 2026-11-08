@@ -443,6 +443,16 @@ describe('piano keys and transposing', () => {
     expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
   });
 
+  it('names the first note sung and the key root of the sheet music, in the shown key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    const line = () => section.querySelector('.md-melody-start');
+    expect(line()).toHaveTextContent('Starts on Pa (middle) · D · Key root (sheet music): C minor');
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    expect(line()).toHaveTextContent('Starts on Pa (middle) · Eb · Key root (sheet music): Db minor');
+  });
+
   it('goes back to the recording key after saving a transposed key and clearing it', async () => {
     setPref('musicianMode', true);
     renderSearch();
