@@ -1,0 +1,213 @@
+{
+ "ajnabi rah ke (hindi)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "ame ma maiya (gujrati)": {
+  "t": {
+   "id": "dadra",
+   "b": 6,
+   "ts": "6/8",
+   "pulse": "dotted-quarter",
+   "sub": 3,
+   "c": 0.9,
+   "src": "adjudicated"
+  }
+ },
+ "ammana nadadu (tulu)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "andela ravali": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "bandamuntu sontamuntu (tamil)": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "callaga cudu (telugu)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "durge durgati (hindi)": {
+  "r": [
+   {
+    "id": "charukesi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "ennadu yavudamma (kannada)": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "indire subha": {
+  "r": [
+   {
+    "id": "dheerasankarabharanam",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "jai ganesa jai ekadanta (hindi)": {
+  "r": [
+   {
+    "id": "jog",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "kandarppakoti sundara (telugu)": {
+  "r": [
+   {
+    "id": "hamsadhwani",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "kannande marile (malayalam)": {
+  "r": [
+   {
+    "id": "hemavati",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "malaimakale taye (tamil)": {
+  "r": [
+   {
+    "id": "shanmukhapriya",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "nila nila megha varnna": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "nilanjana mizhi": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "omkara divya porule x": {
+  "r": [
+   {
+    "id": "chakravakam",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "paccamalai pavalamalai (tamil)": {
+  "r": [
+   {
+    "id": "yamunakalyani",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "radha tan sandesam": {
+  "r": [
+   {
+    "id": "kapi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "sri rama raghu rama": {
+  "r": [
+   {
+    "id": "harikambhoji",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "srivenkatesa (telugu)": {
+  "r": [
+   {
+    "id": "shuddhadhanyasi",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ },
+ "taraka nama (kannada)": {
+  "r": [
+   {
+    "id": "shuddhasaveri",
+    "sec": "all",
+    "c": 0.9,
+    "src": "adjudicated"
+   }
+  ]
+ }
+}

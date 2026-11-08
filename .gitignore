@@ -53,3 +53,14 @@ test-results/
 
 # Layamritam dump (530 MB, from a logged-in session): local only, see create-index/layamritam/README.md
 /layamritam/
+
+# Layamritam adjudication: transcoded audio and beat caches (local only)
+# (rows.json and packets/ hold Layamritam lyrics; work/ holds its audio and a private sheet copy)
+/create-index/layamritam/adjudicate/work/
+/create-index/layamritam/adjudicate/rows.json
+/create-index/layamritam/adjudicate/packets/*.json
+/create-index/layamritam/adjudicate/packets/*.jsonl
+# intermediate results (some quote Layamritam notes); decisions.csv and amma_named.json are kept
+/create-index/layamritam/adjudicate/*.json
+!/create-index/layamritam/adjudicate/amma_named.json
+/create-index/layamritam/adjudicate/*.log

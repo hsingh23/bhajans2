@@ -245,6 +245,26 @@ def main():
             if cs:
                 e["c"] = round(sum(cs) / len(cs), 2)
 
+    # Raga / taal settled where this pipeline and Layamritam disagreed (written by
+    # create-index/layamritam/adjudicate/apply_decisions.py): these replace the computed value.
+    overrides = HERE.parent / "layamritam" / "music-overrides.json"
+    if overrides.exists():
+        names = {s["n"] for s in index}
+        for n, fix in json.loads(overrides.read_text()).items():
+            if n not in names:
+                continue
+            e = music.setdefault(n, {})
+            for k, v in fix.items():
+                e[k] = v
+                if k == "r":
+                    e.pop("rn", None)
+                    used_r.update(r["id"] for r in v)
+                elif k == "t":
+                    used_t.add(v["id"])
+            cs = [p["c"] for p in [e.get("sh"), e.get("t"), *(e.get("r") or [])[:1]] if p and "c" in p]
+            if cs:
+                e["c"] = round(sum(cs) / len(cs), 2)
+
     ragas_ref = {}
     for rid in sorted(used_r):
         r = by[rid]

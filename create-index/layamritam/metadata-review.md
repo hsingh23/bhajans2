@@ -2,7 +2,7 @@
 
 Written by `merge_metadata.py`. Nothing below was changed in the app: each row is a place where Layamritam disagrees with the app's data (or a new song that may duplicate an index song). Fix the right side by hand (`create-index/bhajan-categories.json` + `public/bhajan-index2.json` for language/deity, `public/bhajan-music.json` for raga/taal). `metadata-review.csv` has the same rows for a spreadsheet.
 
-## Added as new songs, but may be an index song (41)
+## Added as new songs, but may be an index song (39)
 
 Layamritam has these lyrics under a name (or a near-copy of the lyrics in another language) that the index already has. If it is the same song, delete the new entry and add its page to the old one.
 
@@ -25,7 +25,6 @@ Layamritam has these lyrics under a name (or a near-copy of the lyrics in anothe
 | kunjan ban chadi (braj bhasha) | extra-593 | kahiyo re prabhu (braj bhasha) | kuñjan ban chāḍi   (Braj Bhasha) | 3505 | doubt: same name and language, different lyrics |
 | manasa vaca karmana (kannada) | extra-76 | manasavaca karmana (kannada) | Manasā Vācā Karmaṇā (Kannada) | 814 | doubt: same name and language, different lyrics |
 | maunaghanamrta (telugu) | extra-86 | mauna ghanamrtam | maunaghanāmṛta (telugu) (Telugu) | 854 | version: other language, 69% of its lyrics shared |
-| mere hrdaya sri ram base (hindi) | extra-90 | mere hrdaya (gujrati) | mērē hṛdaya śrī rām basē (Hindi) | 869 | version: other language, 67% of its lyrics shared |
 | nandalala nandalala (hindi) | extra-94 | nanda lala nanda lala | Nandalala nandalala (Hindi) | 932 | doubt: same name and language, different lyrics |
 | nirmala snehame (telugu) | extra-101 | nirmala snehame | nirmala snēhamē (Telugu) | 986 | version: other language, 57% of its lyrics shared |
 | omkara divya porule 47 (malayalam) | extra-269 | omkara divya porule - 14 | ōmkāra divya porūḷē 47 (Malayalam) | 1962 | doubt: same name and language, different lyrics |
@@ -42,7 +41,6 @@ Layamritam has these lyrics under a name (or a near-copy of the lyrics in anothe
 | omkara divya porule 64 (malayalam) | extra-369 | omkara divya porule - 14 | Omkara Divya Porule 64 (Malayalam) | 1973 | doubt: same name and language, different lyrics |
 | omkara divya porule 65 (malayalam) | extra-381 | omkara divya porule - 14 | ōmkāra divya porūḷē 65 (Malayalam) | 1974 | doubt: same name and language, different lyrics |
 | omkara divya porule 66 (malayalam) | extra-392 | omkara divya porule - 14 | ōmkāra divya porūḷē 66 (Malayalam) | 1975 | doubt: same name and language, different lyrics |
-| prem jo diyo (sindhi) | extra-140 | prem jo diyo | Prem jo diyo (Sindhi) | 1478 | version: other language, 68% of its lyrics shared |
 | radata jag ma (gujarati) | extra-120 | rote jag me | Radata jag ma (Gujarati) | 1108 | version: other language, 64% of its lyrics shared |
 | radhe shyam krishna (gujarati) | extra-57 | japu me sada | Radhe Shyam Krishna (Gujarati) | 1119 | version: other language, 73% of its lyrics shared |
 | sadho sabad sadhana (hindi) | extra-632 | sadho sadho (hindi) | sādhō śabad sādhanā  (Hindi) | 3544 | doubt: same name and language, different lyrics |
@@ -50,13 +48,12 @@ Layamritam has these lyrics under a name (or a near-copy of the lyrics in anothe
 | skanda muruga varuvaye (malayalam) | extra-530 | skanda muruka varuvaye | Skanda Muruga Varuvāyē (Malayalam) | 2938 | version: other language, 71% of its lyrics shared |
 | you are my light (english) | extra-573 | mother of all english | You are my light (English) | 3486 | doubt: same name and language, different lyrics |
 
-## Language (94)
+## Language (74)
 
 The index language (Sonnet-labelled, Nov 2026) differs from Layamritam's.
 
 | song | page | app | Layamritam | Layamritam song | evidence |
 |---|---|---|---|---|---|
-| adi sakti maha layamkari | vol2-9 | Sanskrit | Malayalam | ādi-śakti mahā-layamkari (Vintage)... [48] | lyrics lyric=0.95 |
 | aiye guru maharani | vol1-48 | Malayalam | Hindi | āyiyē guru maharāni... [2769] | lyrics lyric=0.99 |
 | akhilandesvari ambe | vol4-10 | Hindi | Sanskrit | akhilāṇḍēśvari ambē (Vintage)... [70]; akhilāṇḍēśvari ambē... [2278] | lyrics lyric=0.76 |
 | amba janani (sanskrit) | 2020supl2-8 | Sanskrit | Hindi | ambā jananī abhirāmī... [1928] | lyrics lyric=0.91 |
@@ -64,27 +61,20 @@ The index language (Sonnet-labelled, Nov 2026) differs from Layamritam's.
 | amba sambhavi (sanskrit) | vol7-13 | Sanskrit | Kannada | ambā śāmbhavī... [79] | lyrics lyric=0.94 |
 | ambe jagadambe | vol5-10 | Sanskrit | Hindi | ambē  jagadambē...  [82] | lyrics lyric=0.95 |
 | amrta-mahesvari akhilandesvari (sanskrit) | 2021supl2-7 | Sanskrit | Malayalam | Amṛta-Mahēśvari Akhilāṇḍēśvari [2356] | lyrics lyric=0.98 |
-| amrtakale anandakale | vol4-17 | Malayalam | Sanskrit | amṛtakalē ānandakalē... [146] | lyrics lyric=0.90 |
 | amrtam tava nijarupam | vol5-19 | Sanskrit | Malayalam | amṛtam tava nijarūpam... [147] | lyrics lyric=0.97 |
 | amrtamayi anandamayi | vol2-21 | Malayalam | Hindi | amṛtamayī ānandamayī (vēdamayī) (Vintage)... [148] | lyrics lyric=0.83 |
 | amrtanandamayi amma | vol2-22 | Tamil | Malayalam | amṛtānandamayī ammā - umaye mūkāmbikayē (Vintage)... [150] | lyrics lyric=0.92 |
 | amrtanandamayi janani | vol2-23 | Sanskrit | Malayalam | amṛtānandamayī janani - karuṇāmayī nī (Vintage)... [140] | lyrics lyric=0.94 |
 | amrtanandamayi jay jay | vol2-24 | Sanskrit | Hindi | amṛtānandamayī jai jai [151] | lyrics lyric=0.84 |
-| amrtapuresvari devi | vol2-27 | Sanskrit | Malayalam | amṛitapurēśvari dēvī dayāmayi... [2646] | lyrics lyric=0.89 |
 | amrtesvari jagadisvari | vol3old-24 | Sanskrit | Malayalam | amṛtēśvari jagadīśvari surapūjitē (Vintage)... [157] | lyrics lyric=0.88 |
 | amrtesvari susmita | vol3old-26 | Sanskrit | Malayalam |  amṛtēśvari susmita (Vintage)... [160] | lyrics lyric=0.98 |
 | amrtesvari vandanam | vol3old-27 | Sanskrit | Malayalam | amṛtēśvari vandanam... [161] | lyrics lyric=0.94 |
-| amutam poriyum ananda | vol2-30 | Sanskrit | Tamil | amutam pozhiyum  [162] | lyrics lyric=0.91 |
-| anadhanakkarute | vol2-31 | Tamil | Malayalam | anāthar-ākkarutē [163]; anāthar-ākkarutē (Vintage)... [2008] | lyrics lyric=0.92 |
 | anadhinidhane | vol2-32 | Sanskrit | Malayalam | anādinidhanē... [164] | lyrics lyric=0.99 |
-| arati kunja vihari (syam radhe syam) | vol2-215 | Braj Bhasha | Hindi | śyām rādhe śyām (āratī kuñjavihāri kī) [1201]; śyām rādhe śyām (āratī kuñjavihāri kī) (Vintage) [2231] | lyrics lyric=0.89 |
 | avo ma de carana (punjabi) | 2018supl-18 | Punjabi | Gujarati | Āvo mā de [236] | lyrics lyric=0.93 |
 | bhavani bhagyavidhatri | vol5-36 | Sanskrit | Hindi | bhavāni bhāgyavidhātrī... [283] | lyrics lyric=0.93 |
 | bomma bomma (hindi) | 2018supl-23 | Hindi | Kannada | bomma bomma tā... [293] | lyrics lyric=0.90 |
-| chintakal kantyam | vol2-52 | Hindi | Malayalam | cintakaḷkk-antyam vannen (Vintage) [315]; cintakaḷkk-antyam vannen... [1987] | lyrics lyric=0.97 |
 | chitta chora | vol1-60 | Hindi | Sanskrit | citta cōra yaśōda [2822] | lyrics lyric=1.00 |
 | danava bhanjana | vol2-54 | Hindi | Sanskrit | Dānava Bhanjana Rāma [2922] | lyrics lyric=0.83 |
-| dasarada atmaja (dasarathatmaja) | vol2-55 | Hindi | Malayalam / Sanskrit | daśarathātmaja (Vintage) [341]; daśarathātmaja (Instrumental) [2133] | lyrics lyric=0.98 |
 | devi devi devi amrtesvari | vol1-65 | Malayalam | Sanskrit | dēvi dēvi dēvi jaganmōhinī... [2782] | lyrics lyric=0.83 |
 | devi jaganmata | vol1-65 | Malayalam | Tamil | dēvi jaganmātā  [363] | lyrics lyric=0.91 |
 | devi mate | vol3old-43 | Sanskrit | Hindi | Dēvi Māte [367] | lyrics lyric=0.80 |
@@ -98,31 +88,24 @@ The index language (Sonnet-labelled, Nov 2026) differs from Layamritam's.
 | he gananayaka siddivinayaka (marathi) | vol6-80 | Marathi | Hindi | Hē Gaṇanāyaka Siddivināyaka [2293] | lyrics lyric=0.86 |
 | he giridhara gopala | vol1-96 | Sanskrit | Hindi | hē giridhara gōpālā...  [511] | lyrics lyric=0.94 |
 | hrdoye acho ma tumi (bengali) | vol7-104 | Bengali | Gujarati | hridoye acho [1461] | lyrics lyric=0.89 |
-| ichamayi (english) | vol1-102 | English | Malayalam | icchāmayiyām nin... [527]; icchāmayiyām nin (Vintage)... [1978] | lyrics lyric=0.93 |
 | jag janani (punjabi) | 2018supl-45 | Punjabi | Hindi | Jag Janani Tū [558] | lyrics lyric=0.79 |
 | jago bansi vale (hindi) | 2025-172 | Hindi | Braj Bhasha | jāgo baṅsi vālē [3390] | lyrics lyric=0.89 |
 | jai ambe | vol1-106 | Hindi | Sanskrit | jai ambē... [563] | lyrics lyric=0.79 |
 | jai jai mata | vol5-73 | Sanskrit | Hindi | jay jay mātā jay jaga-jjananī [575] | lyrics lyric=0.97 |
-| jai jai satguru | vol4-69 | Hindi | Sanskrit | jay jay satguru maharāṇi (samskritam) (Namavali)... [577] | lyrics lyric=0.88 |
 | jani-mrti sulinird tikkonde yan (malayalam) | 2025-175 | Malayalam | Tulu | Janimriti Sulinirdu [3096] | lyrics lyric=0.87 |
 | jaya janakijivana rama | vol4-63 | Sanskrit | Hindi | jaya jānaki-jīvana rama... [2105] | lyrics lyric=0.95 |
 | jaya jaya mahesvari | vol2-98 | Sanskrit | Malayalam | jaya jaya mahēśvarī (Vintage) [601]; jaya jaya mahēśvarī [2128] | lyrics lyric=0.91 |
 | jaya jaya syamala | vol4-70 | Sanskrit | Malayalam | jaya jaya śyāmala sundari kāḷi... [603] | lyrics lyric=0.92 |
 | kali karali mahasakti (sanskrit) | 2020supl3-45 | Sanskrit | Malayalam | kāḷī karāḷī mahāśakti [1807] | lyrics lyric=0.96 |
 | kali mahesvari parvati | vol2-103 | Sanskrit | Malayalam | Kāḷi Mahēśwari Pārvati [2924] | lyrics lyric=0.88 |
-| kannande dvaraka tedi (english) | 2025-212 | English | Malayalam | Kannande Dvaraka tedi  [3031] | lyrics lyric=0.95 |
 | karmukil niram arnnor-en karvarnnane (malayalam) | 2025-230 | Malayalam | Tamil | Karmukil Niram [3254] | lyrics lyric=0.91 |
 | karunamayi hrdayesvari | vol3old-83 | Malayalam | Sanskrit | karuṇāmayī  hṛdayeśvarī... [709] | lyrics lyric=0.96 |
-| krnvanto visvamaryam amrtasya putrah vayam (vietnamese) | 2025-262 | Vietnamese | English | Kṛnvantō Viśwamāryam [3183] | lyrics lyric=0.91 |
 | mama janani | vol2-127 | Sanskrit | Malayalam | Mama Jananī [801]; mama jananī (Vintage) [2009] | lyrics lyric=0.86 |
 | mani-maniku (hindi) | 2020supl-111 | Hindi | Marathi | maṇi māṇiku yut [2090] | lyrics lyric=0.87 |
 | mauna ghanamrtam | vol1-155 | Sanskrit | Malayalam | mauna ghanāmṛta [855]; mauna ghanāmṛta (Vintage) [1869] | lyrics lyric=0.94 |
-| me khadi | vol5-114 | Hindi | Punjabi | Maim̐ khaḍi [797] | lyrics lyric=0.85 |
 | mizhi nanayate kanna nin rupam (malayalam) | 2025-331 | Malayalam | Tamil | Mizhi Nanayate [3276] | lyrics lyric=0.90 |
 | murali dhara gopala | vol2-135 | Sanskrit | Hindi / Malayalam | muraḷī dhara gōpāla (Vintage) [2033]; muralīdhara gōpāla mukundā... [2034] | lyrics lyric=0.95 |
 | nandakumara vanditarupa | vol4-122 | Sanskrit | Hindi | Nandakumara [931] | lyrics lyric=0.95 |
-| nin mizhittumbil ninnurunna (kannada) | 2025-383 | Kannada | Malayalam | Nin Mizhittumbil [3335] | lyrics lyric=0.93 |
-| omkaresvara (telugu) | vol6-172 | Telugu | Sanskrit | Omkareshwara [1022] | lyrics lyric=0.83 |
 | pahi gajanana (jai jai gananath gajanana) | vol5-72 | Sanskrit | Hindi | jai jai jai gaṇanātha gajānana (pāhi gajānana)  [2708] | lyrics lyric=0.90 |
 | panca-bhutamum paramasivam (tamil) | 2025-432 | Tamil | Malayalam | Panchabhutamum paramasivam [3035] | lyrics lyric=0.91 |
 | paramesa gopala jaya harati (telugu) | 2025-434 | Telugu | Malayalam | Paramesha Gopala [3294] | lyrics lyric=0.83 |
@@ -130,11 +113,8 @@ The index language (Sonnet-labelled, Nov 2026) differs from Layamritam's.
 | pavana gange taye | vol2-177 | Sanskrit | Malayalam | Pāvana Gangē Tāyē (Vintage) [1079]; pāvana gangē tāyē [2692] | lyrics lyric=0.94 |
 | pazhani malayil vanarulum (malayalam) | 2025-439 | Malayalam | Tamil | Pazhani Malayil [3119] | lyrics lyric=0.93 |
 | pirava varam tarum perananke (tamil) | 2025-448 | Tamil | Malayalam | Pirava Varam [3337] | lyrics lyric=0.92 |
-| puvali pasuvundu (english) | 2025-464 | English | Malayalam | Radhe Govinda Hari - Puvali pasuvundu [3037] | lyrics lyric=0.99 |
 | radhe radhe govinda bhajo | vol4-162 | Hindi | Sanskrit | Rādhē Rādhē Gōvinda Rādhē [2941] | lyrics lyric=0.92 |
-| santamay orukatte jivitam | vol2-190 | Sanskrit | Malayalam | Śāntamāy Ozhukaṭṭē [1163] | lyrics lyric=0.96 |
 | saravanabhava saravanabhava saravanabhava (malayalam) | 2025-493 | Malayalam | Tamil | śaravaṇabhava śaravaṇabhava [3341] | lyrics lyric=0.95 |
-| ser pe savar (punjabi) | vol7-261 | Punjabi | Hindi | Śer pē savār [1188] | lyrics lyric=0.83 |
 | sivoham jyotiraham (malayalam) | 2025-502 | Malayalam | French | śivōham jyōtiraham [3242] | lyrics lyric=0.93 |
 | skanda janani | vol1-231 | Sanskrit | Malayalam | skanda  jananī... [1216] | lyrics lyric=0.96 |
 | sri krsna govinda gopala | vol2-122 | Sanskrit | Hindi | śrī kṛṣṇa gōvinda gōpāla (Swāmi) [751] | lyrics lyric=0.97 |
@@ -142,24 +122,20 @@ The index language (Sonnet-labelled, Nov 2026) differs from Layamritam's.
 | sri ramachandra krpalu | vol5-153 | Hindi | Sanskrit | śrīrāmacaṅdra kṛpālu bhaja mana [1239]; śrī rāmacandra kṛpālu [1240] | lyrics lyric=0.91 |
 | sundara kanna kanna | vol2-211 | Sanskrit | Malayalam | sundara kaṇṇā kaṇṇā... [1251] | lyrics lyric=0.99 |
 | suryavamsa sobha ettum ramacandrano (malayalam) | 2025-513 | Malayalam | Tamil | Sūryavamśa Śōbha (tanatintō tāna tintō) [3305] | lyrics lyric=0.92 |
-| un madi midu talai sayntu nan irukkave (malayalam) | 2025-559 | Malayalam | Tamil | Un madi midu [3060] | lyrics lyric=0.94 |
 | vani sarasvati (sanskrit, swathika) | 2020supl3-92 | Sanskrit | Malayalam | vāṇi sarasvati namōstutē [1949] | lyrics lyric=0.95 |
 | vedambike namo | vol1-251 | Sanskrit | Malayalam | vēdāmbikē namō nādāmbikē... [1367]; vēdāmbikē namō nādāmbikē (Vintage)... [1760] | lyrics lyric=0.93 |
 | venkataramana | vol2-228 | Sanskrit | Telugu | vēnkaṭaramaṇā [1371]; vēnkaṭaramaṇā vēnkaṭaramaṇā (Vintage)... [2023]; vēnkaṭaramaṇā (Vintage2)... [2251] | lyrics lyric=0.82 |
 | viharati yamuna tatme | vol3-249 | Sanskrit | Hindi | Viharati Yamunā Taṭ mē [1379] | lyrics lyric=0.92 |
 | vithala vithala | vol2-235 | Hindi | Marathi | viṭhala viṭhala viṭhalā (ō mājhā) [1400] | lyrics lyric=0.85 |
 | yamuna tira vihara yadukula | vol4-210 | Sanskrit | Hindi | Yamuna tīra [1423]; Yamunā tīra (Vintage) [2808] | lyrics lyric=0.94 |
-| you are the one awake at nightoutside its darkbut youre full of light (italian) | 2025-604 | Italian | English | You Are The One [3322] | lyrics lyric=0.96 |
 
-## Deity (79)
+## Deity (67)
 
 The index deity differs from every deity Layamritam lists.
 
 | song | page | app | Layamritam | Layamritam song | evidence |
 |---|---|---|---|---|---|
 | a padapadmattil (malayalam) | 2025-1 | Krishna | Amma | A pada padmattil [2966] | lyrics lyric=0.94 |
-| agatanayi | vol1-10 | Devi | Krishna / Vishnu | āgatanāy (Vintage)... [54]; āgatanāy... [1756] | lyrics lyric=0.98 |
-| amba sahita | vol1-17 | Devi | Shiva | ambā sahita mahādēvā  [3453] | lyrics lyric=0.94 |
 | angalake haribandu (kannada) | 2020supl-24 | Vishnu | Universal | aṅgaḷake hāri bandu [1521] | lyrics lyric=0.95 |
 | aray kanenam aray bhajikkenam (malayalam) | 2025-56 | Krishna | Guru | Aray kanenam aray bhajikenam [3073] | lyrics lyric=0.91 |
 | aridu aridu (tamil) | vol7-29 | Guru | Universal | Arithu arithu [218]; Aridu Aridu Mānidala [2614] | lyrics lyric=0.94 |
@@ -168,7 +144,6 @@ The index deity differs from every deity Layamritam lists.
 | brahmam okkateyani (telugu) | 2019supl-20 | Universal | Krishna | brahmam okkaṭēyani... [294] | lyrics lyric=0.94 |
 | colte colte (bengali) | vol6-49 | Universal | Krishna | Cholte Cholte [328] | lyrics lyric=0.88 |
 | darsanam darsanam sudarsanam (telugu) | 2018supl-29 | Universal | Vishnu | Darśanam Darśanam [340] | lyrics lyric=0.97 |
-| drsya-prapancam (malayalam) | 2021supl1-7 | Universal | Shiva | Drśya Prapañcam [2317] | lyrics lyric=0.98 |
 | du er mit smukke hjem (danish) | 2020supl2-24 | Other | Universal | Du er mit smukke hjem  [1620] | lyrics lyric=0.93 |
 | ellam ariyunna kannanotu | vol1-74 | Krishna | Devi | ellām aṙiyunna ammayoṭ (Vintage)... [396] | lyrics lyric=0.78 |
 | etrayo nalayi | vol1-79 | Universal | Krishna | etrayō nāḷāyi kāttirikkunnu 2 [435]; etrayō nāḷāyi (Vintage) [1692]; etrayō nāḷāyi kāttirikkunnu... [2304] | lyrics lyric=0.92 |
@@ -180,7 +155,6 @@ The index deity differs from every deity Layamritam lists.
 | innu nan pujaykk-irikkumbol (malayalam) | 2025-162 | Universal | Guru | Innu nyan pujaykku [3033] | lyrics lyric=0.92 |
 | is duniya ko kabtak (hindi) | 2025-166 | Universal | Rama | Is duniya ko kab tak  [2976] | lyrics lyric=0.84 |
 | jag spandan (hindi) | 2020supl2-37 | Universal | Shiva | jag spandan sat [1596] | lyrics lyric=0.88 |
-| jani-mrti sulinird tikkonde yan (malayalam) | 2025-175 | Universal | Shiva | Janimriti Sulinirdu [3096] | lyrics lyric=0.87 |
 | janmataḥ maranantam (sanskrit) | 2021supl4-18 | Shiva | Universal | Janmātaḥ Maraṇāntam [2446] | lyrics lyric=0.96 |
 | kalacakravu (kannada) | 2021supl1-10 | Universal | Krishna | Kālacakravu [2310] | lyrics lyric=0.93 |
 | kalam kanalu (tamil version) | 2018supl-50 | Universal | Krishna | kālam kanalinai pozhigiradu [634] | lyrics lyric=0.96 |
@@ -199,10 +173,6 @@ The index deity differs from every deity Layamritam lists.
 | mannu vari tinnarut-ennu (malayalam) | 2025-298 | Krishna | Amma | Mannu vāri (attinantō tintinam) [3176] | lyrics lyric=0.90 |
 | mano buddhya (nirvanastakam) | vol1-151 | Shiva | Universal | Manō buddhyahankāra  [839] | lyrics lyric=0.84 |
 | maranattin-oru cuvatu (malayalam) | 2020supl-119 | Shiva | Universal | maraṇattin oru cuvaṭu  [1832] | lyrics lyric=0.98 |
-| mir, lyubov' (russian) | 2020supl2-53 | Other | Universal | Mir, lyubov', krasata  [1653]; White Flower Meditation (Russian) [3368] | lyrics lyric=0.91 |
-| moda musukide (kannada) | 2019supl-50 | Other | Universal | Mōḍa Musukide [876] | lyrics lyric=0.92 |
-| mother nature (english) | vol6-228 | Other | Universal | Mother nature [881] | lyrics lyric=0.71 |
-| muka hrdaya | vol1-156 | Krishna | Universal | mūka-hṛdaya vipañcikayil 2... [888]; mūka-hṛdaya vipañcikayil (Vintage)... [1789]; mūka-hṛdaya vipañcikayil... [2303] | lyrics lyric=0.97 |
 | mulu mulugi (kannada) | 2021supl5-47 | Krishna | Universal | Muḷu Muḷugi [2517] | lyrics lyric=0.96 |
 | nam japo (hindi) | vol7-202 | Universal | Rama | Naam japo nith [912]; Nām Japō (Saxophone) [2593] | lyrics lyric=0.89 |
 | nila-vihayasin vyaptiyilo (malayalam) | 2025-382 | Universal | Krishna | Nīla Vihāyassin [3430] | title |
@@ -227,24 +197,19 @@ The index deity differs from every deity Layamritam lists.
 | sri rama namame (tamil) | vol7-271 | Hanuman | Rama | Śrī Rāma Nāmamē [1235] | lyrics lyric=0.96 |
 | sri ramacandranu maruti enna pol (malayalam) | 2025-509 | Devi | Rama | Sri Ramachandra Maruti [3303] | lyrics lyric=0.92 |
 | srigandhadantha manavanidu taye (kannada) | 2025-512 | Devi | Shiva | Srigandhadantha [3304] | lyrics lyric=0.89 |
-| syama tan tirunettiyile (malayalam) | 2025-497 | Krishna | Devi | Shyama tan tirunettiyile  [3000] | lyrics lyric=0.93 |
 | tabonam (bengali) | 2020supl-180 | Krishna | Universal | tabōnām gānē bhōrē [1530] | lyrics lyric=0.82 |
-| tataikalai nikkitum (tamil) | vol7-288 | Universal | Ganesha | Thadaikalai neekitum [1284] | lyrics lyric=0.91 |
 | teri rah ka ik chota phul main (hindi) | 2025-537 | Devi | Krishna | Teri Rah Ka [3310] | lyrics lyric=0.68 |
-| unai marava varamondru (tamil) | vol7-300 | Devi | Krishna | Unai marava varamondru [1323] | lyrics lyric=0.86 |
-| vagdevate varu | vol2-225 | Guru | Devi | Vag Devate Varu (Vintage) [1338] | lyrics lyric=0.95 |
 | vazhkeyenum padaku (tamil) | 2020supl-202 | Guru | Universal | vāzhkeyenum paḍagu [1365] | lyrics lyric=0.94 |
 | vizhittituvay maname (tamil) | vol6-220 | Krishna | Universal | Vizhittiḍuvāy manamē [1404] | lyrics lyric=0.83 |
 | you are the one awake at nightoutside its darkbut youre full of light (italian) | 2025-604 | Shiva | Amma | You Are The One [3322] | lyrics lyric=0.96 |
 
-## Taal (68)
+## Taal (67)
 
 Different beat cycle. The app's taal comes from audio analysis of the recording.
 
 | song | page | app | Layamritam | Layamritam song | evidence |
 |---|---|---|---|---|---|
 | ajivanantam (tamil version) | 2020supl-13 | keherwa (8 beats) | Dādra-6/12 | āyuḷvarai nān [246] | lyrics lyric=0.97 |
-| ame ma maiya (gujrati) | vol6-15 | keherwa (8 beats) | Dādra-6/12 | amē mā maiyā... [89] | lyrics lyric=0.88 |
 | amma allate i paritattil (malayalam) | 2021supl4-6 | keherwa (8 beats) | Dādra-6/12 | amma allāte ī pāriṭattil... [2376] | lyrics lyric=0.96 |
 | ammavai parkka pokalam | vol3old-16 | dadra (6 beats) | Keherwa/Tīn tāḷ-8/16 | ammāvai pārka pōkalām (Vintage)... [126] | lyrics lyric=0.91 |
 | ammayennullora ten mozhikkokumo | vol1-24 | dadra (6 beats) | Keherwa/Tīn tāḷ-8/16 | amma ennuḷḷorā (Vintage)... [1474]; amma ennuḷḷorā... [2307]; Amma yennullora  [3440] | lyrics lyric=0.94 |
@@ -312,7 +277,7 @@ Different beat cycle. The app's taal comes from audio analysis of the recording.
 | vettrivel (tamil) | vol7-315 | keherwa (8 beats) | Dādra-6/12 | Vetri vel [1376] | lyrics lyric=0.96 |
 | wondrous goddess precious goddess | vol5-201 | dadra (6 beats) | Keherwa/Tīn tāḷ-8/16 | Wonderous Goddess [1417] | lyrics lyric=0.95 |
 
-## Raga (76)
+## Raga (72)
 
 Different scales, where it matters: Layamritam's label is 'human' or the app's label is confident (c >= 0.85). The app's raga is an Opus label from the recording; Layamritam marks 96% of theirs 'ai' (machine-labelled). Same scale under another name, or one scale inside the other, is not listed.
 
@@ -343,7 +308,6 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | bhagavad gita 15th chapter | vol4-218 | none (Western-style tune) | Rēvati (ai) | bhagavadgītā 15th Chapter (Chants) [2749] | lyrics lyric=0.58 |
 | bhramarame | vol1-55 | brindavanasaranga (c=0.9) | Hamsadhwani (ai) | bhramaramē mānasa bhramaramē... [286]; bhramaramē mānasa bhramaramē 2... [287] | lyrics lyric=0.91 |
 | brahmanda paksikal | vol1-57 | mohanam (c=0.9) | Hamsadhwani (ai) | brahmāṇḍa pakṣikal... [296]; brahmāṇḍa pakṣikaḷ (Vintage)... [1794] | lyrics lyric=0.96 |
-| callaga cudu (telugu) | vol7-57 | hindolam (c=0.9) | Suddha Dhanyasi (ai) | callaga cūḍu... [301] | lyrics lyric=0.94 |
 | close to you (english) | vol4-236 | none (Western-style tune) | Kaapi (ai) | Close to you [3444] | lyrics lyric=1.00 |
 | devi awaken your children (english) | 2020supl2-24 | none (Western-style tune) | Madhyamāvati (ai) | Dēvi Dēvi Awaken your children [1548] | lyrics lyric=0.95 |
 | durga suktam | vol4-224 | none (Western-style tune) | Rēvati (ai) | Durga sūktam D# [2737]; Durgā Sūktam  F [2794] | lyrics lyric=0.89 |
@@ -361,7 +325,6 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | irul tingi valarunna | vol2-90 | mohanam (c=0.9) | Suddha Dhanyasi (ai) | iruḷ tiṅgi vaḷarunna... [544]; iruḷ tiṅgi vaḷarunna (Vintage)... [2002] | lyrics lyric=0.91 |
 | iyarkaiyamma (tamil) | vol7-110 | natakapriya (c=0.9) | Cakravākam (ai) | iyarkkaiyammā iyarkkaiyammā [556] | lyrics lyric=0.91 |
 | jagavella nine (kannada) | 2021supl3-25 | hamsanandi (c=0.9) | Śivaranjani (ai) | Jagavella Nīnē [2461] | lyrics lyric=0.96 |
-| jai ganesa jai ekadanta (hindi) | vol6-88 | hindolam (c=0.9) | Jog (ai) | Jay Ganesha Jay ekdanta [565] | lyrics lyric=0.89 |
 | jay janani (hindi) | vol6-90 | mohanam (c=0.9) | Hamsadhwani (ai) | jay janani jaga janani... [578] | lyrics lyric=0.83 |
 | jnanayoga arivumillai (tamil) | vol6-93 | dwijavanthi (c=0.9) | Dhīra śankarābharaṇam (ai) | Jñāna Yōga [618] | lyrics lyric=0.90 |
 | kadaloram (tamil) | vol6-95 | mohanam (c=0.9) | Madhyamāvati (ai) | Kadaloram tavam [628] | lyrics lyric=0.94 |
@@ -377,12 +340,10 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | nalanchu nalekyu | vol2-140 | sarasangi (c=0.45) | Ahirbhairav / Cakravākam / Kīravāṇi (ai/human) | Nalañcu nālekku [916]; Nalañcu nālekku (Vintage) [2025]; nālañcu nāleykku (Instrumental) [2167]; nālañcu-nāḷēykku (Vintage 2) [2260] | lyrics lyric=0.96 |
 | namo namah (telugu) | vol7-203 | mohanam (c=0.9) | Jog (ai) | Namo namah [922] | lyrics lyric=0.94 |
 | narayana hari | vol1-158 | mohanam (c=0.9) | Hamsadhwani (ai) | Narayana Hari [942]; nārāyaṇā hari (sachidānanda ghana) (Vintage)... [1784] | lyrics lyric=0.99 |
-| nila nila megha varnna | vol4-126 | hindolam (c=0.9) | Suddha Dhanyasi (ai) | nīla nīla mēgha varṇā [969] | lyrics lyric=0.96 |
 | nin ormakal | vol1-164 | brindavanasaranga (c=0.9) | Des / Jog (ai) | nin ōrmakaḷ... [973]; nin ōrmakaḷ (Vintage)... [1790]; nin ōrmakaḷ (Instrumental)... [2154]; nin ōrmakaḷ (Vintage) 2... [2258] | lyrics lyric=0.93 |
 | ninna mamate (kannada) | vol6-164 | shubhapantuvarali (c=0.9) | Jog (ai) | Ninna Mamate Pretiyalli [980] | lyrics lyric=0.83 |
 | noor a veen (irish) | 2020supl2-57 | none (Western-style tune) | Sarasangi (ai) | Noor a veen [1642] | lyrics lyric=0.85 |
 | omkara divya porule - 6 | vol2-155 | shivaranjani (c=0.9) | Kalyani (ai) | Omkara Divya Porule VI (Vintage) [2014] | lyrics lyric=0.94 |
-| omkara divya porule x | vol3-151 | hamsanandi (c=0.9) | Cakravākam (ai) | Omkara Divya Porule X (Vintage) [2050] | lyrics lyric=0.94 |
 | purusa suktam | vol4-230 | none (Western-style tune) | Rēvati (ai) | Puruṣa sūktam D# [2738]; Puruṣa Sūktam  F [2795] | lyrics lyric=0.52 |
 | sadguruvay vantutitta | vol3-200 | charukesi (c=0.9) | Kaapi (ai) | sadguruvāy vantutitta kāḷi [1147] | lyrics lyric=0.93 |
 | saka varamarulvay rama (tamil) | vol6-183 | madhuvanti (c=0.9) | Kalyani (ai) | Saka varam Arulvai [1149] | lyrics lyric=0.92 |
@@ -395,10 +356,10 @@ Different scales, where it matters: Layamritam's label is 'human' or the app's l
 | underneath a kalpataru (english) | vol7-301 | none (Western-style tune) | Kīravāṇi (ai) | Underneath a Kalpataru [1327] | lyrics lyric=0.96 |
 | vazhimel vizhi (tamil) | vol7-314 | shubhapantuvarali (c=0.9) | Panthuvarali (ai) | Vazhi mel vizhi vaittu [1361] | lyrics lyric=0.95 |
 
-## Deity judgment calls (599)
+## Deity judgment calls (586)
 
 Amma/Devi, Amma/Universal and similar: both readings are defensible. Rows are in `metadata-review.csv` only.
 
-## Raga, both sides uncertain (680)
+## Raga, both sides uncertain (664)
 
 Layamritam 'ai' label against an app label below 0.85 confidence. Rows are in `metadata-review.csv` only.

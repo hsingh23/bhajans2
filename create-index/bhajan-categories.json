@@ -21,7 +21,8 @@
 },
 "abhayam abhayam amma": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "abhayam tan aruluka": {
 "lg": "Malayalam",
@@ -33,15 +34,18 @@
 },
 "abhayankari amme (malayalam, amritavarshini)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "abhayartthini aham (sanskrit)": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "abhayattinayi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "abhayattinimakan": {
 "lg": "Malayalam",
@@ -49,7 +53,8 @@
 },
 "abhinnatva torisi (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "abhista varadayike": {
 "lg": "Malayalam",
@@ -73,7 +78,8 @@
 },
 "adhyatmata (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "adi divya jyoti maha": {
 "lg": "Sanskrit",
@@ -84,8 +90,10 @@
 "d": "Vishnu"
 },
 "adi sakti maha layamkari": {
-"lg": "Sanskrit",
-"d": "Devi"
+"lg": "Malayalam",
+"d": "Amma",
+"lg2": "Sanskrit",
+"d2": "Devi"
 },
 "adi srsti lopama (telugu)": {
 "lg": "Telugu",
@@ -101,7 +109,8 @@
 },
 "adimula param jyoti": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "adiparama jyotivai (telugu)": {
 "lg": "Telugu",
@@ -153,11 +162,13 @@
 },
 "agama-sarame (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "agamakkatalayi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "agamanta porule": {
 "lg": "Malayalam",
@@ -165,7 +176,7 @@
 },
 "agatanayi": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Vishnu"
 },
 "agraganya agrapujya (telugu)": {
 "lg": "Telugu",
@@ -205,11 +216,13 @@
 },
 "ajivanantam (tamil version)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ajnabi rah ke (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ajnana tamassil mayangunna (malayalam)": {
 "lg": "Malayalam",
@@ -217,7 +230,8 @@
 },
 "ajnanattai pokkum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akalatta kovilil": {
 "lg": "Malayalam",
@@ -229,15 +243,18 @@
 },
 "akale allamma (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akaleyanenkilum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akamadhikam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akamanatin karirulai (tamil)": {
 "lg": "Tamil",
@@ -245,19 +262,23 @@
 },
 "akasa-melappil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataliril atimalar (malayalam, bri. tanmayamrita)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataliril aṙivay (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataril amba ni maruvunnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataril arivinte": {
 "lg": "Malayalam",
@@ -273,15 +294,18 @@
 },
 "akataril nombaram azhalay eriyumbol (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataril oru neram (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akataril uṙavakum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akatarilarivinte oli namam telichu": {
 "lg": "Malayalam",
@@ -289,7 +313,8 @@
 },
 "akatarilennennum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akattil irruppavale": {
 "lg": "Tamil",
@@ -297,7 +322,8 @@
 },
 "akhila brahmandangal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "akhila loka nayaki": {
 "lg": "Sanskrit",
@@ -313,7 +339,8 @@
 },
 "akhilandesvari ambe": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Sanskrit"
 },
 "aksara-rupini amrtesvari (malayalam)": {
 "lg": "Malayalam",
@@ -353,7 +380,8 @@
 },
 "alavilla ananda vadivana amma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "alaya maniosai kekkudamma": {
 "lg": "Tamil",
@@ -365,7 +393,8 @@
 },
 "alippatarum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "allah tumaho": {
 "lg": "Hindi",
@@ -381,7 +410,8 @@
 },
 "alolam-alolam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amaidiyin vative": {
 "lg": "Tamil",
@@ -393,7 +423,8 @@
 },
 "amala prakasame": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amba bhavani jaya jagadambe": {
 "lg": "Sanskrit",
@@ -401,7 +432,8 @@
 },
 "amba bhavani nin ambhoja": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amba bhavani paratpare": {
 "lg": "Hindi",
@@ -417,7 +449,8 @@
 },
 "amba janani (sanskrit)": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Hindi"
 },
 "amba kali (namavali, krishna amrit)": {
 "lg": "Sanskrit",
@@ -425,7 +458,8 @@
 },
 "amba krpa varsam (sanskrit)": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amba mata": {
 "lg": "Sanskrit",
@@ -437,7 +471,7 @@
 },
 "amba sahita": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Shiva"
 },
 "amba sambhavi (sanskrit)": {
 "lg": "Sanskrit",
@@ -445,11 +479,13 @@
 },
 "amba tan padatarin dhulikal nannay (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amba tava caru-syama-varnnattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ambadi paitale (malayalam)": {
 "lg": "Malayalam",
@@ -469,7 +505,9 @@
 },
 "ambe jagadambe": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Hindi",
+"d2": "Amma"
 },
 "ambe ma jagadambe ma": {
 "lg": "Hindi",
@@ -481,11 +519,13 @@
 },
 "ambe mayamauli (marathi)": {
 "lg": "Marathi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ambe pahimam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "ambike devi": {
 "lg": "Malayalam",
@@ -509,15 +549,18 @@
 },
 "ambujam vidaruvatum nokki ninnoren (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ame ma maiya (gujrati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ame ramakada (gujarati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ami que recherches-tu (french)": {
 "lg": "French",
@@ -561,7 +604,8 @@
 },
 "amma baramma": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma devi - kannada version": {
 "lg": "Kannada",
@@ -605,7 +649,8 @@
 },
 "amma hasattu (konkani)": {
 "lg": "Konkani",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma kali enakku mattum (tamil)": {
 "lg": "Tamil",
@@ -613,7 +658,8 @@
 },
 "amma ki chaya me": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma mother of my heart (english)": {
 "lg": "English",
@@ -625,31 +671,38 @@
 },
 "amma nanum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma napai (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ni (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ni baruveya (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ni nidu (alisuammana)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ni pogum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ni sirikkayile (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma nin mugdhamam (malayalam, anagha)": {
 "lg": "Malayalam",
@@ -657,15 +710,18 @@
 },
 "amma nin rupam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ninna karagalalli (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ninna neralinalli (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma ninna prema (kannada)": {
 "lg": "Kannada",
@@ -673,11 +729,13 @@
 },
 "amma ninna premakagi (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma nive saksi (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma okaasam (japanese)": {
 "lg": "Japanese",
@@ -689,15 +747,18 @@
 },
 "amma tan matiyil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma tan namam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma tan padattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma tan pranan (malayalam)": {
 "lg": "Malayalam",
@@ -705,7 +766,8 @@
 },
 "amma tanna matitattil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma taye jaganmata": {
 "lg": "Tamil",
@@ -717,19 +779,23 @@
 },
 "amma un punnagayil": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma unnai ariyamal (tamil, geetapriya)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma unnanbu (vaishnavi, tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma untan (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma untan tiru (tamil)": {
 "lg": "Tamil",
@@ -741,7 +807,8 @@
 },
 "amma ye meri jivan savari (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amma you are everything (english)": {
 "lg": "English",
@@ -757,7 +824,8 @@
 },
 "ammana nadadu (tulu)": {
 "lg": "Tulu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammana padake (kannada)": {
 "lg": "Kannada",
@@ -765,11 +833,13 @@
 },
 "ammavai parkka pokalam": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammayalle en (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammayalle endammayalle (telugu)": {
 "lg": "Telugu",
@@ -793,23 +863,28 @@
 },
 "ammayennullora ten mozhikkokumo": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammayennulloru nama morttidave": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammayil manasam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ammayupeksa": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme abhayaprade (malayalam, krishna)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme adiparasakti (malayalam)": {
 "lg": "Malayalam",
@@ -829,7 +904,8 @@
 },
 "amme amme ennu (malayalam, kuruvi)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme amme nitya (malayalam)": {
 "lg": "Malayalam",
@@ -869,7 +945,8 @@
 },
 "amme dayanidhe (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme devi amrtesvari (malayalam, amritadev)": {
 "lg": "Malayalam",
@@ -877,27 +954,33 @@
 },
 "amme devi snehasvarupini (malayalam, amritachit)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme en hrdayattin spandanam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme en priya taye (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme enullu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme hrdayesvari (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme hrdayesvari (malayalam, chaitanya)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme jaganmate maye (malayalam)": {
 "lg": "Malayalam",
@@ -905,7 +988,8 @@
 },
 "amme kaninneku (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme kannu turakkule": {
 "lg": "Malayalam",
@@ -913,7 +997,8 @@
 },
 "amme kannu turakule (kannada version)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme karunamayi (malayalam, shobhita)": {
 "lg": "Malayalam",
@@ -921,27 +1006,33 @@
 },
 "amme manassiloru (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nan avitutte (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nin kannil viriyum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nin maya (malayalam, aiswarya)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nin padattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nin palinayi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme nin ponnilam paitalalle (malayalam)": {
 "lg": "Malayalam",
@@ -949,11 +1040,13 @@
 },
 "amme nin trppada-kamalattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme ninn-ormma tan (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme parasakti (malayalam, amrit krishna)": {
 "lg": "Malayalam",
@@ -965,15 +1058,18 @@
 },
 "amme saranam devi saranam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme ulakam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amme yi jivente": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amrta dayiniyamme": {
 "lg": "Malayalam",
@@ -993,11 +1089,13 @@
 },
 "amrta-mahesvari akhilandesvari (sanskrit)": {
 "lg": "Sanskrit",
-"d": "Amma"
+"d": "Amma",
+"lg2": "Malayalam"
 },
 "amrtakale anandakale": {
-"lg": "Malayalam",
-"d": "Devi"
+"lg": "Sanskrit",
+"d": "Devi",
+"d2": "Amma"
 },
 "amrtalayam anandalayam (malayalam)": {
 "lg": "Malayalam",
@@ -1009,11 +1107,13 @@
 },
 "amrtam tava nijarupam": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "amrtamayi anandamayi": {
 "lg": "Malayalam",
-"d": "Amma"
+"d": "Amma",
+"lg2": "Sanskrit"
 },
 "amrtamayi jaya janani": {
 "lg": "Malayalam",
@@ -1041,11 +1141,13 @@
 },
 "amrtanandamayi janani": {
 "lg": "Sanskrit",
-"d": "Amma"
+"d": "Amma",
+"lg2": "Malayalam"
 },
 "amrtanandamayi jay jay": {
 "lg": "Sanskrit",
-"d": "Amma"
+"d": "Amma",
+"lg2": "Hindi"
 },
 "amrtanandamayi ma tucch ko": {
 "lg": "Hindi",
@@ -1060,8 +1162,9 @@
 "d": "Amma"
 },
 "amrtapuresvari devi": {
-"lg": "Sanskrit",
-"d": "Amma"
+"lg": "Malayalam",
+"d": "Amma",
+"lg2": "Sanskrit"
 },
 "amrtapuresvari mate": {
 "lg": "Sanskrit",
@@ -1124,12 +1227,15 @@
 "d": "Amma"
 },
 "amutam poriyum ananda": {
-"lg": "Sanskrit",
-"d": "Devi"
+"lg": "Tamil",
+"d": "Amma",
+"lg2": "Sanskrit",
+"d2": "Devi"
 },
 "anadhanakkarute": {
-"lg": "Tamil",
-"d": "Devi"
+"lg": "Malayalam",
+"d": "Devi",
+"d2": "Amma"
 },
 "anadhinidhane": {
 "lg": "Sanskrit",
@@ -1149,7 +1255,8 @@
 },
 "ananda rupiniye": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ananda sagara": {
 "lg": "Hindi",
@@ -1169,7 +1276,8 @@
 },
 "anandadhamamam ninnilettan": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anandam anandam anandame (tamil)": {
 "lg": "Tamil",
@@ -1197,7 +1305,8 @@
 },
 "anandame saccidananda (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anandamrta rupini amme": {
 "lg": "Malayalam",
@@ -1237,11 +1346,13 @@
 },
 "anbenum sollukku amma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anbin vativam amma": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anbu vativanaval (tamil)": {
 "lg": "Tamil",
@@ -1253,7 +1364,8 @@
 },
 "anbumigu endan taye (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "andela ravali": {
 "lg": "Telugu",
@@ -1285,19 +1397,23 @@
 },
 "annai endrale azhakallava (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "annai entra sondama (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "annai entratume": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "annai kayil pillaiyena": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "annaikku niratta ventum": {
 "lg": "Tamil",
@@ -1305,7 +1421,8 @@
 },
 "annaiye unnaiye (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "annapurna stotram": {
 "lg": "Sanskrit",
@@ -1313,7 +1430,8 @@
 },
 "annay madiyil (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anondo anondo (bengali)": {
 "lg": "Bengali",
@@ -1349,7 +1467,8 @@
 },
 "anudinamum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "anupama guna nilaye": {
 "lg": "Malayalam",
@@ -1389,7 +1508,8 @@
 },
 "arari unnu nin maha": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ararum kanate (malayalam)": {
 "lg": "Malayalam",
@@ -1404,7 +1524,7 @@
 "d": "Devi"
 },
 "arati kunja vihari (syam radhe syam)": {
-"lg": "Braj Bhasha",
+"lg": "Hindi",
 "d": "Krishna"
 },
 "aray kanenam aray bhajikkenam (malayalam)": {
@@ -1425,19 +1545,23 @@
 },
 "arikil undenkilum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "arikil-undenn-amma (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "arikilundenkilum - tamil version": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "arinda nabarukko (tamil)": {
 "lg": "Tamil",
-"d": "Universal"
+"d": "Universal",
+"d2": "Guru"
 },
 "arivanu niduva sivane (kannada)": {
 "lg": "Kannada",
@@ -1493,11 +1617,13 @@
 },
 "arunarkkabimbam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "arundu bandhukkal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "arundu cholluvan": {
 "lg": "Malayalam",
@@ -1509,7 +1635,8 @@
 },
 "arute makkal nangal": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "as i walk along (english)": {
 "lg": "English",
@@ -1521,7 +1648,8 @@
 },
 "asaiyennum asuranvandu (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "asato ma sad gamaya": {
 "lg": "Sanskrit",
@@ -1529,7 +1657,8 @@
 },
 "asrutirtthattal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "asu bhare": {
 "lg": "Hindi",
@@ -1553,7 +1682,8 @@
 },
 "atirilla karunyam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "atituvom namum atituvom": {
 "lg": "Tamil",
@@ -1577,7 +1707,8 @@
 },
 "atulita-prema-pravahame (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "atulya tayute": {
 "lg": "Malayalam",
@@ -1593,11 +1724,13 @@
 },
 "avi amba (bandalo in gujarati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "avo ma amma (gujarati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "avo ma de carana (punjabi)": {
 "lg": "Punjabi",
@@ -1661,7 +1794,8 @@
 },
 "ayiram ayiram nadrikal (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ayiram dipangal": {
 "lg": "Malayalam",
@@ -1673,7 +1807,8 @@
 },
 "ayiram navund-ennalum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ayiye guru maharani": {
 "lg": "Malayalam",
@@ -1697,7 +1832,8 @@
 },
 "azhaku azhaku (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "azhalingu puzhayay (malayalam)": {
 "lg": "Malayalam",
@@ -1705,7 +1841,8 @@
 },
 "azhavum ariyen anugavum ariyen (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "azhikullil": {
 "lg": "Malayalam",
@@ -1713,11 +1850,13 @@
 },
 "azhiyada anandam (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "azhiyil vinu poyamme kadanamam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "azhutal unnaiperalame (tamil)": {
 "lg": "Tamil",
@@ -1725,7 +1864,8 @@
 },
 "aṙivillappaitale (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "aṙiyendat-aṙiyuvan (malayalam)": {
 "lg": "Malayalam",
@@ -1741,7 +1881,8 @@
 },
 "ba bhrngave ba (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "badi duvidha me (hindi)": {
 "lg": "Hindi",
@@ -1753,7 +1894,8 @@
 },
 "bahut tarasa": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "balakrsnam kalaya": {
 "lg": "Sanskrit",
@@ -1777,7 +1919,8 @@
 },
 "bandamuntu sontamuntu (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bandham illa": {
 "lg": "Malayalam",
@@ -1785,15 +1928,18 @@
 },
 "bandhamu nitto (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bandu bidabarade (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bandu che (gujrati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bara gopala bala gopalabala (kannada)": {
 "lg": "Kannada",
@@ -1833,7 +1979,8 @@
 },
 "beyond the most beautiful words": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhagavad gita 15th chapter": {
 "lg": "Sanskrit",
@@ -1873,7 +2020,8 @@
 },
 "bhaje visva-vandyam jaganmatr-rupam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhajle ram ram ram (hindi)": {
 "lg": "Hindi",
@@ -1897,7 +2045,8 @@
 },
 "bhakti bhavam (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhakti de ma": {
 "lg": "Hindi",
@@ -1905,11 +2054,13 @@
 },
 "bhakti de ma (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhakti korle amma": {
 "lg": "Tulu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhaktige sopana (kannada)": {
 "lg": "Kannada",
@@ -1937,7 +2088,8 @@
 },
 "bhavanagamya en amma ennakilum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bhavani bhagyavidhatri": {
 "lg": "Sanskrit",
@@ -1965,7 +2117,8 @@
 },
 "bhitiyilayen manam (malayalam, nived)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bholanatha re": {
 "lg": "Hindi",
@@ -2013,7 +2166,8 @@
 },
 "bodhimaram (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "bolo bolo gokula bala": {
 "lg": "Hindi",
@@ -2045,19 +2199,23 @@
 },
 "brahmanda paksikal": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "calitam skhalitam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "callaga cudu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "candana manasullor-amma (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "candracuda (telugu)": {
 "lg": "Telugu",
@@ -2069,7 +2227,8 @@
 },
 "caridarilla nan ennaka vatil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "celebramos la vida (spanish)": {
 "lg": "Spanish",
@@ -2077,7 +2236,8 @@
 },
 "cembatt-aninnora (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "cenmile (hindi)": {
 "lg": "Hindi",
@@ -2085,15 +2245,18 @@
 },
 "ceru purandori jivane (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "cesedi nivamma (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "cesenu talli abhisekam (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "chamundhaye kali ma": {
 "lg": "Sanskrit",
@@ -2113,7 +2276,8 @@
 },
 "chenthalir padangal": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "chetuletti": {
 "lg": "Telugu",
@@ -2136,7 +2300,7 @@
 "d": "Krishna"
 },
 "chintakal kantyam": {
-"lg": "Hindi",
+"lg": "Malayalam",
 "d": "Universal"
 },
 "chintanai cheytituvay": {
@@ -2145,7 +2309,8 @@
 },
 "chitta chora": {
 "lg": "Hindi",
-"d": "Krishna"
+"d": "Krishna",
+"lg2": "Sanskrit"
 },
 "chitta vrndavanam": {
 "lg": "Malayalam",
@@ -2153,7 +2318,8 @@
 },
 "chittamenum": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "chod de manase (odiya version)": {
 "lg": "Odia",
@@ -2257,7 +2423,8 @@
 },
 "cuttri cuttri (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "cuttuniri (tamil)": {
 "lg": "Tamil",
@@ -2281,7 +2448,8 @@
 },
 "danava bhanjana": {
 "lg": "Hindi",
-"d": "Rama"
+"d": "Rama",
+"lg2": "Sanskrit"
 },
 "danavantaka rama (kannada)": {
 "lg": "Kannada",
@@ -2293,7 +2461,8 @@
 },
 "dao dao dao more (bengali)": {
 "lg": "Bengali",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "dar dar me": {
 "lg": "Hindi",
@@ -2301,7 +2470,8 @@
 },
 "dari nivu dari nivu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "darsan dena rama": {
 "lg": "Hindi",
@@ -2320,7 +2490,7 @@
 "d": "Universal"
 },
 "dasarada atmaja (dasarathatmaja)": {
-"lg": "Hindi",
+"lg": "Sanskrit",
 "d": "Rama"
 },
 "dasaratha nandana rama": {
@@ -2345,7 +2515,8 @@
 },
 "dayagala ma amma (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "dayakaro tum (hindi)": {
 "lg": "Hindi",
@@ -2433,7 +2604,8 @@
 },
 "devi devi devi amrtesvari": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Sanskrit"
 },
 "devi devi devi jaganmohini": {
 "lg": "Malayalam",
@@ -2441,7 +2613,8 @@
 },
 "devi jaganmata": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Tamil"
 },
 "devi mahadevi (hindi)": {
 "lg": "Hindi",
@@ -2461,7 +2634,8 @@
 },
 "devi mate": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Hindi"
 },
 "devi mate durge (malayalam, vedika)": {
 "lg": "Malayalam",
@@ -2473,7 +2647,8 @@
 },
 "devi ninne kani kantittu": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "devi saranam": {
 "lg": "Malayalam",
@@ -2489,7 +2664,8 @@
 },
 "dhanye dhanye janani": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "dhim dhimi takadhimi (malayalam)": {
 "lg": "Malayalam",
@@ -2509,7 +2685,8 @@
 },
 "dil me teri (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "dina dayalo": {
 "lg": "Hindi",
@@ -2525,7 +2702,8 @@
 },
 "dinatarini durita varini": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Malayalam"
 },
 "dinkar canda bhu jaladhi nadiya (hindi)": {
 "lg": "Hindi",
@@ -2549,7 +2727,7 @@
 },
 "drsya-prapancam (malayalam)": {
 "lg": "Malayalam",
-"d": "Universal"
+"d": "Shiva"
 },
 "du er mit smukke hjem (danish)": {
 "lg": "Danish",
@@ -2557,11 +2735,13 @@
 },
 "dukhatti jvalayil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "durga amba bhavani": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Sanskrit"
 },
 "durga bhavani ma": {
 "lg": "Hindi",
@@ -2601,7 +2781,8 @@
 },
 "e amma! (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "e duniya hai (punjabi)": {
 "lg": "Punjabi",
@@ -2613,7 +2794,8 @@
 },
 "ededu lokallo (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ehi murare": {
 "lg": "Sanskrit",
@@ -2645,11 +2827,13 @@
 },
 "ekanta-pathikayay samsara-tirattu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ekantatayute azham (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ekasrayamam amma": {
 "lg": "Malayalam",
@@ -2673,7 +2857,8 @@
 },
 "ella pulariyum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ellam ariyunna english": {
 "lg": "English",
@@ -2693,7 +2878,8 @@
 },
 "ellamirikkilum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "elo elo (malayalam)": {
 "lg": "Malayalam",
@@ -2709,11 +2895,13 @@
 },
 "en antarangattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "en hrdayavina mittattat-entu ni (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "en maha devi": {
 "lg": "Malayalam",
@@ -2721,11 +2909,13 @@
 },
 "en manah kovilin": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "en manass-amma tan puvadi akki (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "en manassin oru maunam": {
 "lg": "Malayalam",
@@ -2737,7 +2927,8 @@
 },
 "en piravi mutinditumo (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "en prabhuvin (malayalam)": {
 "lg": "Malayalam",
@@ -2753,15 +2944,18 @@
 },
 "enaikkakka unaiyantri": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enakkulle niyum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enchi mahimena (tulu)": {
 "lg": "Tulu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enci poruluda (tulu)": {
 "lg": "Tulu",
@@ -2769,7 +2963,8 @@
 },
 "engine nan ariyum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "engopoyi": {
 "lg": "Malayalam",
@@ -2781,11 +2976,13 @@
 },
 "engum annaiyun (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "engum un arul mazhaiye": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "enkal kuladaivam (tamil)": {
 "lg": "Tamil",
@@ -2805,15 +3002,18 @@
 },
 "ennadu yavudamma (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ennaga tarama (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ennai nan maranda (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enne nayikkuvan (malayalm, amritavarshini)": {
 "lg": "Malayalam",
@@ -2829,11 +3029,13 @@
 },
 "ennile enne tirinnu": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ennini kanum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enno enno (telugu)": {
 "lg": "Telugu",
@@ -2845,7 +3047,8 @@
 },
 "ennute jivita (kannada version)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ennullil minnunna": {
 "lg": "Malayalam",
@@ -2857,7 +3060,8 @@
 },
 "ennute jivita": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "enta citramu enta vairudhyamu (telugu)": {
 "lg": "Telugu",
@@ -2865,11 +3069,13 @@
 },
 "entamme nin makkale": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ente amme en manam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ente ennamme": {
 "lg": "Malayalam",
@@ -2885,7 +3091,8 @@
 },
 "entini ceyyendat-amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "entino vendi (malayalam)": {
 "lg": "Malayalam",
@@ -2997,7 +3204,8 @@
 },
 "everywhere i look (english)": {
 "lg": "English",
-"d": "Krishna"
+"d": "Krishna",
+"d2": "Devi"
 },
 "evite anandam (malayalam)": {
 "lg": "Malayalam",
@@ -3037,7 +3245,8 @@
 },
 "gana-nayakane (malayalam)": {
 "lg": "Malayalam",
-"d": "Ganesha"
+"d": "Ganesha",
+"lg2": "Sanskrit"
 },
 "gananatha he gananatha (tamil)": {
 "lg": "Tamil",
@@ -3089,7 +3298,8 @@
 },
 "ganesaya namah om": {
 "lg": "Hindi",
-"d": "Ganesha"
+"d": "Ganesha",
+"lg2": "Sanskrit"
 },
 "gangadhara hara": {
 "lg": "Sanskrit",
@@ -3101,11 +3311,13 @@
 },
 "gange ginta (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "gange svar gange": {
 "lg": "Malayalam",
-"d": "Other"
+"d": "Other",
+"d2": "Devi"
 },
 "garbhattin nilaiyai (tamil)": {
 "lg": "Tamil",
@@ -3117,7 +3329,8 @@
 },
 "gatakala-smaranakal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "gau re tujhe abhanga (jaya hari vithala)": {
 "lg": "Marathi",
@@ -3141,7 +3354,8 @@
 },
 "giri vana puri (kannada)": {
 "lg": "Kannada",
-"d": "Guru"
+"d": "Guru",
+"d2": "Universal"
 },
 "giridhar he yadunatha (hindi)": {
 "lg": "Hindi",
@@ -3225,7 +3439,8 @@
 },
 "gopala nacho": {
 "lg": "Sanskrit",
-"d": "Krishna"
+"d": "Krishna",
+"lg2": "Hindi"
 },
 "gopalak basuri (hindi)": {
 "lg": "Hindi",
@@ -3441,7 +3656,8 @@
 },
 "harati gaikonuma (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "haravadyam utirkkunnu aditalam (malayalam)": {
 "lg": "Malayalam",
@@ -3645,7 +3861,8 @@
 },
 "hrdaya nivasini": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdaya puspame": {
 "lg": "Malayalam",
@@ -3657,7 +3874,8 @@
 },
 "hrdaya-mandirattile (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdaya-sandesam (malayalam)": {
 "lg": "Malayalam",
@@ -3665,11 +3883,13 @@
 },
 "hrdayam dravicc-ozhukum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdayam uruki (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdayanjali": {
 "lg": "Malayalam",
@@ -3681,7 +3901,8 @@
 },
 "hrdayatil amulya (marathi)": {
 "lg": "Marathi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdayattil ennum oramantranam (malayalam)": {
 "lg": "Malayalam",
@@ -3701,7 +3922,8 @@
 },
 "hrdayesvari en": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "hrdinivasi (kannada)": {
 "lg": "Kannada",
@@ -3717,7 +3939,8 @@
 },
 "hun to ma main tera hi (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "i manojna bhumiyil": {
 "lg": "Malayalam",
@@ -3740,7 +3963,7 @@
 "d": "Amma"
 },
 "ichamayi (english)": {
-"lg": "English",
+"lg": "Malayalam",
 "d": "Devi"
 },
 "idamilla": {
@@ -3749,11 +3972,13 @@
 },
 "illamai enbatilum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "illumina el mey camí (catalan, bhavani)": {
 "lg": "Catalan",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ilumina ilumina (spanish)": {
 "lg": "Spanish",
@@ -3761,7 +3986,8 @@
 },
 "imbakkulattil ninta anandame (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "in every heart (english)": {
 "lg": "English",
@@ -3785,7 +4011,8 @@
 },
 "indu habba (baduga)": {
 "lg": "Baduga",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "indu nammamma (kannada)": {
 "lg": "Kannada",
@@ -3845,7 +4072,8 @@
 },
 "innu nan pujaykk-irikkumbol (malayalam)": {
 "lg": "Malayalam",
-"d": "Universal"
+"d": "Universal",
+"d2": "Guru"
 },
 "intilokki (telugu)": {
 "lg": "Telugu",
@@ -3857,23 +4085,28 @@
 },
 "iratte tupanaru (tulu)": {
 "lg": "Tulu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "irul mari teliyanay (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "irul mari teliyanayi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "irul tingi valarunna": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "irularnna jivita-vithiyil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "irulil dharayilay-azhnnu (malayalam)": {
 "lg": "Malayalam",
@@ -3909,7 +4142,8 @@
 },
 "isvara lila yitellam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "isvaran aran-enn (malayalam)": {
 "lg": "Malayalam",
@@ -4021,7 +4255,8 @@
 },
 "jai ambe": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Sanskrit"
 },
 "jai ganesa jai ekadanta (hindi)": {
 "lg": "Hindi",
@@ -4081,7 +4316,8 @@
 },
 "jai jai mata": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Hindi"
 },
 "jai jai mukunda (spanish)": {
 "lg": "Spanish",
@@ -4100,7 +4336,7 @@
 "d": "Universal"
 },
 "jai jai satguru": {
-"lg": "Hindi",
+"lg": "Sanskrit",
 "d": "Amma"
 },
 "jai kalyani jai bhavani (hindi,marathi)": {
@@ -4125,7 +4361,8 @@
 },
 "jai mata di": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "jai radha madhava": {
 "lg": "Hindi",
@@ -4145,7 +4382,8 @@
 },
 "jalabindu tannilum mazhavil tirkkum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jamuna ke tat par (hindi)": {
 "lg": "Hindi",
@@ -4165,11 +4403,13 @@
 },
 "jani-mrti sulinird tikkonde yan (malayalam)": {
 "lg": "Malayalam",
-"d": "Universal"
+"d": "Shiva",
+"lg2": "Tulu"
 },
 "janimrti cakram palatum urundu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "janimrti-cakrattin (malayalam)": {
 "lg": "Malayalam",
@@ -4181,7 +4421,8 @@
 },
 "janmataḥ maranantam (sanskrit)": {
 "lg": "Sanskrit",
-"d": "Shiva"
+"d": "Shiva",
+"d2": "Guru"
 },
 "japa japa amma amma": {
 "lg": "Hindi",
@@ -4245,7 +4486,8 @@
 },
 "jaya janani caitanya (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jaya jaya arati": {
 "lg": "Hindi",
@@ -4285,7 +4527,8 @@
 },
 "jaya jaya syamala": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Malayalam"
 },
 "jaya ma jaya ma": {
 "lg": "Sanskrit",
@@ -4361,7 +4604,8 @@
 },
 "jivita omme (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jivitam-ennoru tutarkatha (malayalam)": {
 "lg": "Malayalam",
@@ -4369,11 +4613,13 @@
 },
 "jivitamam van vipinatil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jivitamennum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jnana-dipam (malayalam)": {
 "lg": "Malayalam",
@@ -4385,11 +4631,13 @@
 },
 "jnanayoga arivumillai (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jo amma jojo (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "jo tum todo piya (hindi)": {
 "lg": "Hindi",
@@ -4437,7 +4685,8 @@
 },
 "kadiranu enagende (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kaha ho kanha": {
 "lg": "Hindi",
@@ -4669,7 +4918,8 @@
 },
 "kana kana (marathi)": {
 "lg": "Marathi",
-"d": "Universal"
+"d": "Universal",
+"d2": "Krishna"
 },
 "kanaka cilambum (malayalam)": {
 "lg": "Malayalam",
@@ -4689,7 +4939,8 @@
 },
 "kanan kotikkayan-ullam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kanan-uzharunna (malayalam)": {
 "lg": "Malayalam",
@@ -4840,7 +5091,7 @@
 "d": "Krishna"
 },
 "kannande dvaraka tedi (english)": {
-"lg": "English",
+"lg": "Malayalam",
 "d": "Krishna"
 },
 "kannande karunyam kandal ariyilla (malayalam)": {
@@ -4905,7 +5156,8 @@
 },
 "kanneduttu paramma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kannende kalocha kettu": {
 "lg": "Malayalam",
@@ -4945,11 +5197,13 @@
 },
 "kannirkkatalin karayil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kannirodu vanden (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kannirunangatta (malayalam)": {
 "lg": "Malayalam",
@@ -4961,7 +5215,8 @@
 },
 "kannunir chaliccu chalicc-ezhutam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kannunir illatta": {
 "lg": "Malayalam",
@@ -5001,7 +5256,8 @@
 },
 "kanparamma enai kanparamma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kanpatu ayiram (tamil)": {
 "lg": "Tamil",
@@ -5009,7 +5265,8 @@
 },
 "kar le ma ka": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kar nila katarkarayil (tamil)": {
 "lg": "Tamil",
@@ -5033,7 +5290,8 @@
 },
 "karalil kanal eriyunnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kararavindena": {
 "lg": "Sanskrit",
@@ -5041,7 +5299,8 @@
 },
 "karayalle paitale (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karayate karayunna": {
 "lg": "Malayalam",
@@ -5057,7 +5316,8 @@
 },
 "karayunna kunninay (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karimukil varnna (malayalam)": {
 "lg": "Malayalam",
@@ -5073,7 +5333,8 @@
 },
 "karinila-mizhikale (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karm ki nadiya (hindi)": {
 "lg": "Hindi",
@@ -5109,7 +5370,8 @@
 },
 "karppuradipam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kartikeya subrahmanya (telugu)": {
 "lg": "Telugu",
@@ -5129,7 +5391,8 @@
 },
 "karuna nir katale nin": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karuna sindho bhairavi": {
 "lg": "Sanskrit",
@@ -5149,7 +5412,8 @@
 },
 "karunamayi dayanidhe (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunamayi devi (kannada,telugu)": {
 "lg": "Kannada",
@@ -5173,7 +5437,8 @@
 },
 "karunardra manase (malayalam, chinmaya)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunardra manassan": {
 "lg": "Malayalam",
@@ -5185,7 +5450,8 @@
 },
 "karunardra-mukile karal onnu kuliran (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunasagara (tamil)": {
 "lg": "Tamil",
@@ -5221,7 +5487,8 @@
 },
 "karunya rupini (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunya varidhe": {
 "lg": "Malayalam",
@@ -5229,15 +5496,18 @@
 },
 "karunya-gangayam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunya-katal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunya-katalakum amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karunya-varidhi akum i ammaye (malayalam)": {
 "lg": "Malayalam",
@@ -5245,7 +5515,8 @@
 },
 "karunyarupini amme nin (kunju, malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "karvarnnan oru dinam (malayalam)": {
 "lg": "Malayalam",
@@ -5273,7 +5544,8 @@
 },
 "kathakal ariyate kaliyarangil vannu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "katinnu katay": {
 "lg": "Malayalam",
@@ -5281,7 +5553,8 @@
 },
 "kattarulvay devi (amrita, tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kattittayir taram": {
 "lg": "Malayalam",
@@ -5293,7 +5566,8 @@
 },
 "kattraka nan (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kattrinile ilaiyinaippol (tamil)": {
 "lg": "Tamil",
@@ -5313,7 +5587,8 @@
 },
 "kavalai illaiye enakku (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kavatiyam kavati (tamil)": {
 "lg": "Tamil",
@@ -5345,7 +5620,8 @@
 },
 "kazhalinayil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kaṫṫinde inattil (malayalam)": {
 "lg": "Malayalam",
@@ -5393,7 +5669,8 @@
 },
 "kezhunnen manasam (kerunnen manasam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "khol darvaza (punjabi)": {
 "lg": "Punjabi",
@@ -5480,8 +5757,9 @@
 "d": "Krishna"
 },
 "krnvanto visvamaryam amrtasya putrah vayam (vietnamese)": {
-"lg": "Vietnamese",
-"d": "Universal"
+"lg": "English",
+"d": "Universal",
+"lg2": "Sanskrit"
 },
 "krpa ho teri": {
 "lg": "Hindi",
@@ -5501,7 +5779,8 @@
 },
 "krpaykkayi bhajippu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "krsna govinda gopala (hindi)": {
 "lg": "Hindi",
@@ -5617,7 +5896,8 @@
 },
 "kugi karede (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kumbhodara varada": {
 "lg": "Malayalam",
@@ -5629,7 +5909,8 @@
 },
 "kuravellam kazhivakki tirkkunn-oramme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kurirul pole": {
 "lg": "Malayalam",
@@ -5637,11 +5918,13 @@
 },
 "kurirul tingumi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kuriyani kanniru (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "kurumbukkara (tamil)": {
 "lg": "Tamil",
@@ -5669,7 +5952,8 @@
 },
 "lalitambike amme (malayalam, pranav)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "lalle lalle (malayalam)": {
 "lg": "Malayalam",
@@ -5705,7 +5989,8 @@
 },
 "life is a play": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "light of truth (bandham illa)": {
 "lg": "English",
@@ -5749,7 +6034,8 @@
 },
 "lutayil ninnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ma amrtesvari": {
 "lg": "Hindi",
@@ -5785,7 +6071,8 @@
 },
 "ma ka mantr-jap (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ma kali devi (french)": {
 "lg": "French",
@@ -5797,7 +6084,8 @@
 },
 "ma nam bole dil se": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ma o ma (gujarati)": {
 "lg": "Gujarati",
@@ -5809,7 +6097,8 @@
 },
 "ma o ma mari (gujrati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ma oh meri ma": {
 "lg": "Hindi",
@@ -5821,15 +6110,18 @@
 },
 "ma tere carano me jo (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ma tere prem men (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "maadare man (persian)": {
 "lg": "Persian",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "madhava gopal": {
 "lg": "Hindi",
@@ -5845,11 +6137,13 @@
 },
 "madi tari (gujrati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "maha natakam (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mahadeva sambho mahesa": {
 "lg": "Sanskrit",
@@ -5869,7 +6163,8 @@
 },
 "mahamahima (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mahamayi mahakali (telugu)": {
 "lg": "Telugu",
@@ -5917,7 +6212,8 @@
 },
 "makaranda madhurya (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "makhan cor (hindi)": {
 "lg": "Hindi",
@@ -5937,7 +6233,8 @@
 },
 "malarum manavum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "malayinai uyarttiya gokulakkanna (tamil)": {
 "lg": "Tamil",
@@ -5957,7 +6254,8 @@
 },
 "man magan hua (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "man re": {
 "lg": "Hindi",
@@ -5977,7 +6275,8 @@
 },
 "manadinullil (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "manahsaksi an-isvaran ennarinnal (malayalam)": {
 "lg": "Malayalam",
@@ -6017,7 +6316,8 @@
 },
 "manamilla madhuvilla (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "manamirukka ahankaram (tamil)": {
 "lg": "Tamil",
@@ -6033,7 +6333,8 @@
 },
 "manan karo man (hindi)": {
 "lg": "Hindi",
-"d": "Guru"
+"d": "Guru",
+"d2": "Universal"
 },
 "manas chora radha krsna (hindi)": {
 "lg": "Hindi",
@@ -6069,7 +6370,8 @@
 },
 "manase kelu (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "manase nin svantamayi": {
 "lg": "Malayalam",
@@ -6093,7 +6395,8 @@
 },
 "manassil nila sarasil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "manassil varnnappolima": {
 "lg": "Malayalam",
@@ -6141,7 +6444,8 @@
 },
 "mandahasa vadane manohari": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mandahasavadane (namavali)": {
 "lg": "Sanskrit",
@@ -6241,11 +6545,13 @@
 },
 "manodarppanattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mantari tan spandanavum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mantirattirkkilla (tamil)": {
 "lg": "Tamil",
@@ -6297,7 +6603,8 @@
 },
 "marivillin ezhu varnangalil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mariyamma mariyamma (tamil)": {
 "lg": "Tamil",
@@ -6321,7 +6628,8 @@
 },
 "mathe rahe taro hath ma (gujrati)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mathuradhipathe": {
 "lg": "Hindi",
@@ -6357,11 +6665,13 @@
 },
 "matr-vatsalyamam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mauna ghanamrtam": {
 "lg": "Sanskrit",
-"d": "Universal"
+"d": "Universal",
+"lg2": "Malayalam"
 },
 "maunamam manassil (malayalam)": {
 "lg": "Malayalam",
@@ -6377,7 +6687,8 @@
 },
 "maya loniki nettak-amma (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "maya ulagam (tamil)": {
 "lg": "Tamil",
@@ -6397,7 +6708,8 @@
 },
 "mayangunna pakalinnu": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mayapurita-tapattal (malayalam)": {
 "lg": "Malayalam",
@@ -6445,7 +6757,8 @@
 },
 "mayyaji menu tu cahidi (punjabi)": {
 "lg": "Punjabi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mazha peytu nanavarnna vithiyilude (malayalam)": {
 "lg": "Malayalam",
@@ -6453,10 +6766,11 @@
 },
 "mazhayay pozhiyuk-amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "me khadi": {
-"lg": "Hindi",
+"lg": "Punjabi",
 "d": "Krishna"
 },
 "mera mujh main (punjabi)": {
@@ -6465,14 +6779,15 @@
 },
 "mera pranam he (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mere guruvan di vani (punjabi)": {
 "lg": "Punjabi",
 "d": "Guru"
 },
 "mere hrdaya (gujrati)": {
-"lg": "Gujarati",
+"lg": "Hindi",
 "d": "Rama"
 },
 "mere prabhu tu mujh ko": {
@@ -6517,11 +6832,13 @@
 },
 "mil gaya mil gaya darsan (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "miles away from you (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "milna tujhe mai chahu": {
 "lg": "Hindi",
@@ -6541,7 +6858,7 @@
 },
 "mir, lyubov' (russian)": {
 "lg": "Russian",
-"d": "Other"
+"d": "Universal"
 },
 "mithi madhuri (gujrati)": {
 "lg": "Gujarati",
@@ -6557,15 +6874,18 @@
 },
 "mizhikal en (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mizhinir ozhukki (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mizhiniril azhnnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mizhinirilazhnna (malayalam)": {
 "lg": "Malayalam",
@@ -6577,7 +6897,7 @@
 },
 "moda musukide (kannada)": {
 "lg": "Kannada",
-"d": "Other"
+"d": "Universal"
 },
 "mohalu champpara gauri ramana (telugu)": {
 "lg": "Telugu",
@@ -6613,11 +6933,12 @@
 },
 "mother divine (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mother nature (english)": {
 "lg": "English",
-"d": "Other"
+"d": "Universal"
 },
 "mother ocean (english)": {
 "lg": "English",
@@ -6637,11 +6958,13 @@
 },
 "mother send your love to me": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mother with you as our shield (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mother your will": {
 "lg": "English",
@@ -6661,7 +6984,8 @@
 },
 "mrta-prayamayor-en (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mrtyunjaya hara (saipriya, namavali)": {
 "lg": "Sanskrit",
@@ -6677,7 +7001,8 @@
 },
 "mujhe apna bana lo (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mujhe darsan do bhagavan": {
 "lg": "Hindi",
@@ -6693,11 +7018,12 @@
 },
 "muka hrdaya": {
 "lg": "Malayalam",
-"d": "Krishna"
+"d": "Universal"
 },
 "mukam i hrdayam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "mukhi asude": {
 "lg": "Marathi",
@@ -6717,7 +7043,8 @@
 },
 "mulu mulugi (kannada)": {
 "lg": "Kannada",
-"d": "Krishna"
+"d": "Krishna",
+"d2": "Vishnu"
 },
 "munna morayiram": {
 "lg": "Malayalam",
@@ -6725,7 +7052,8 @@
 },
 "muppiraviyin tavamo (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "murahara muralika padi en (malayalam)": {
 "lg": "Malayalam",
@@ -6733,7 +7061,8 @@
 },
 "murali dhara gopala": {
 "lg": "Sanskrit",
-"d": "Krishna"
+"d": "Krishna",
+"lg2": "Hindi"
 },
 "murali dhara sundara": {
 "lg": "Sanskrit",
@@ -6789,7 +7118,8 @@
 },
 "muttu mukkutti (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "muttu muttu mariyamma (tamil)": {
 "lg": "Tamil",
@@ -6813,15 +7143,18 @@
 },
 "na gunde (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "na hrdi (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "na kantiki velugu (telugu, poorna sameera)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "na karmana na prajaya": {
 "lg": "Sanskrit",
@@ -6833,7 +7166,8 @@
 },
 "na mai dharmi (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nace kanudo nace (gujrati)": {
 "lg": "Gujarati",
@@ -6893,7 +7227,8 @@
 },
 "nam japo (hindi)": {
 "lg": "Hindi",
-"d": "Universal"
+"d": "Universal",
+"d2": "Rama"
 },
 "namami kalike": {
 "lg": "Sanskrit",
@@ -7049,7 +7384,8 @@
 },
 "nane ariyata ennai (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nanendu kanuve (kannada)": {
 "lg": "Kannada",
@@ -7065,7 +7401,8 @@
 },
 "nanna hudottada (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nannodeya (kannada)": {
 "lg": "Kannada",
@@ -7073,11 +7410,13 @@
 },
 "nannu cusi (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nanu embudilla (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nanu nanallavembante (kannada)": {
 "lg": "Kannada",
@@ -7117,7 +7456,8 @@
 },
 "nasvara-prapancattil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nataraja nataraja nartana": {
 "lg": "Sanskrit",
@@ -7133,7 +7473,8 @@
 },
 "navavidha bhakti (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "navilu gariya (kannada)": {
 "lg": "Kannada",
@@ -7149,7 +7490,8 @@
 },
 "naynon se chalakta ye pyar tera (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "neh mujhe do (hindi)": {
 "lg": "Hindi",
@@ -7161,7 +7503,8 @@
 },
 "nencakaë ventitunnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nencam negizhndatamma (tamil)": {
 "lg": "Tamil",
@@ -7173,7 +7516,8 @@
 },
 "nene manave ammana ninu (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nenedi nenedi (telugu)": {
 "lg": "Telugu",
@@ -7189,7 +7533,8 @@
 },
 "nenu yavaranu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nerane neraninnitu rarari rararika rarari (malayalam)": {
 "lg": "Malayalam",
@@ -7205,15 +7550,18 @@
 },
 "neyyapantam yetriya dipam": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "ni biddanamma cinni sisuvunu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ni enna ganatte padan (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ni ente velicham": {
 "lg": "Malayalam",
@@ -7221,7 +7569,8 @@
 },
 "ni intri verarumillai (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ni maran jirippatengu": {
 "lg": "Malayalam",
@@ -7233,19 +7582,23 @@
 },
 "ni tanda solletuttu (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ni tanne pulariyum sandhyayum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ni viral tottal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nija svarupada kadege (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nijava nariyade (telugu version)": {
 "lg": "Telugu",
@@ -7265,7 +7618,8 @@
 },
 "nila-kamala (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nila-vihayasin vyaptiyilo (malayalam)": {
 "lg": "Malayalam",
@@ -7285,15 +7639,18 @@
 },
 "nilambuja nayane (gujrati version)": {
 "lg": "Gujarati",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nilambuja nayane (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nilambuja nayane (tamil version)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nilambuja nayane (telagu)": {
 "lg": "Telugu",
@@ -7313,7 +7670,8 @@
 },
 "nilavanil ni nirannu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nilavanna (tamil)": {
 "lg": "Tamil",
@@ -7325,11 +7683,13 @@
 },
 "nin malarvatiyil (malayalam, ramanand)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin mizhittumbil ninnurunna (kannada)": {
-"lg": "Kannada",
-"d": "Devi"
+"lg": "Malayalam",
+"d": "Devi",
+"d2": "Amma"
 },
 "nin mukham kanumbol": {
 "lg": "Malayalam",
@@ -7337,11 +7697,13 @@
 },
 "nin namam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin ormakal": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin pada-padmangal (malayalam)": {
 "lg": "Malayalam",
@@ -7349,15 +7711,18 @@
 },
 "nin padapadmattil anayan (malayalam, smrithi)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin pavana-sannidhi tedi tedi (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin premam kontenne": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nin tiru padattil": {
 "lg": "Malayalam",
@@ -7365,27 +7730,33 @@
 },
 "ninaittitu maname (tamil)": {
 "lg": "Tamil",
-"d": "Guru"
+"d": "Guru",
+"d2": "Amma"
 },
 "ninaivai nan marakkayile (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ninna mamate (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "ninna naguvu (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ninna nirmala (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ninna noduttale karagidenamma (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ninnapada sevemmadalu (kannada)": {
 "lg": "Kannada",
@@ -7401,11 +7772,13 @@
 },
 "ninnil nirantara bhakti (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nintra tiru kolam kanten (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nintra tirukkolam kanten": {
 "lg": "Tamil",
@@ -7413,7 +7786,8 @@
 },
 "ninu kirtimpa (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nir bhara (hindi, namrata)": {
 "lg": "Hindi",
@@ -7421,7 +7795,8 @@
 },
 "nira kanti tingi": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "niradavarnnande nila-tirumeni (malayalam)": {
 "lg": "Malayalam",
@@ -7429,7 +7804,8 @@
 },
 "nirajanam": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nirakanti coriyum (malayalam)": {
 "lg": "Malayalam",
@@ -7449,7 +7825,8 @@
 },
 "nirmala-prema-svarupam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nirvanastakam (mano buddhya)": {
 "lg": "Sanskrit",
@@ -7469,7 +7846,8 @@
 },
 "nisithiniyute ghorandhakare (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nisphala-svapnattil (malayalam)": {
 "lg": "Malayalam",
@@ -7485,7 +7863,8 @@
 },
 "nitya-suddha-snehame (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nityabandho nityanirmala (malayalam)": {
 "lg": "Malayalam",
@@ -7497,7 +7876,8 @@
 },
 "nityanandattil (vidya, malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nivu veṙu (telugu)": {
 "lg": "Telugu",
@@ -7505,11 +7885,13 @@
 },
 "niye gati (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nizhalinte pinnale": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "niṙamayil-piliyil (malayalam)": {
 "lg": "Malayalam",
@@ -7517,7 +7899,8 @@
 },
 "niṙamaṫṫa jivita-yatrayil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "no one is your own (manase nin svantamayi) english": {
 "lg": "English",
@@ -7525,7 +7908,8 @@
 },
 "noor a veen (irish)": {
 "lg": "Irish",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "nrttamadu (malayalam)": {
 "lg": "Malayalam",
@@ -7537,7 +7921,8 @@
 },
 "nuṙaṙu bhavanegalu (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "o amma please come (english, amit)": {
 "lg": "English",
@@ -7561,7 +7946,8 @@
 },
 "o ma sab lokon (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "o ma ye": {
 "lg": "Hindi",
@@ -7593,7 +7979,8 @@
 },
 "o taye mahamaye (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "o vasudeva": {
 "lg": "Tamil",
@@ -7601,7 +7988,8 @@
 },
 "o visva-mate (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oh ma you are everywhereall is within you (english)": {
 "lg": "English",
@@ -7617,11 +8005,13 @@
 },
 "oi riti (finnish)": {
 "lg": "Finnish",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "okka mani (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ola kuzhaluti (malayalam)": {
 "lg": "Malayalam",
@@ -7697,7 +8087,8 @@
 },
 "omkara brahmattin": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "omkara divya porule - 1": {
 "lg": "Malayalam",
@@ -7741,11 +8132,13 @@
 },
 "omkara panjara sukim (isvari ninne)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "omkara svaramezhum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "omkara svararupini unaru (malayalam)": {
 "lg": "Malayalam",
@@ -7776,7 +8169,7 @@
 "d": "Devi"
 },
 "omkaresvara (telugu)": {
-"lg": "Telugu",
+"lg": "Sanskrit",
 "d": "Shiva"
 },
 "omkaresvara kailasesvara (sanskrit)": {
@@ -7805,7 +8198,8 @@
 },
 "onnum uriyatan (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "open my heart english": {
 "lg": "English",
@@ -7829,7 +8223,8 @@
 },
 "oru ganam ennil virinnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru koccu kunninte": {
 "lg": "Malayalam",
@@ -7845,7 +8240,8 @@
 },
 "oru kunnu kadanattin (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru manal taripolum": {
 "lg": "Malayalam",
@@ -7865,11 +8261,13 @@
 },
 "oru mohaminnita": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru nalamma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru nalil nan en (kannada version)": {
 "lg": "Kannada",
@@ -7889,15 +8287,18 @@
 },
 "oru nalum piriyatto": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru neduvirppumay anayunnu nan amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru nerippot-eriyunnu (malayalam, hridayamrita)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "oru nimisam enkilum": {
 "lg": "Malayalam",
@@ -7905,7 +8306,8 @@
 },
 "oru nimisam orttu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru nimisham (tamil)": {
 "lg": "Tamil",
@@ -7913,11 +8315,13 @@
 },
 "oru nokkil oru vakkil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru nottam-ekattat-ente (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru pilitundinay nan alannu (malayalam)": {
 "lg": "Malayalam",
@@ -7933,11 +8337,13 @@
 },
 "oru piti sneham tirannu": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru sottu kanniral (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru svarga gangayay amma vannu (malayalam)": {
 "lg": "Malayalam",
@@ -7945,7 +8351,8 @@
 },
 "oru tataiya (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru tulli sneham": {
 "lg": "Malayalam",
@@ -7953,23 +8360,28 @@
 },
 "oru tulli-amrtam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru tumba-malarinde azhak-ezhum venmayil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru varam nalku (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "oru vitumbal matram (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "orunalum piriyatta - kannada version": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ote bondie (kreole)": {
 "lg": "Kreole",
@@ -7993,15 +8405,18 @@
 },
 "padamalar parijatam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "padamalar-atikal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "padamulattile pamsuvay": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "padapadmam vedinn-engottu pokum (malayalam)": {
 "lg": "Malayalam",
@@ -8017,19 +8432,23 @@
 },
 "padaravindhangal": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "padataram kalpaka taru (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "padavanten amma paravasamay (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pagalaina reyaina (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pahi gajanana (jai jai gananath gajanana)": {
 "lg": "Sanskrit",
@@ -8053,7 +8472,8 @@
 },
 "pakalantiyil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pakalon poy marannu (malayalam)": {
 "lg": "Malayalam",
@@ -8069,11 +8489,13 @@
 },
 "palmanam maratta paital alle amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "panca-bhutamum paramasivam (tamil)": {
 "lg": "Tamil",
-"d": "Shiva"
+"d": "Shiva",
+"lg2": "Sanskrit"
 },
 "pancaksara mandirattai (tamil, anand)": {
 "lg": "Tamil",
@@ -8125,7 +8547,8 @@
 },
 "parabrahma (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "parama pavana vadane": {
 "lg": "Sanskrit",
@@ -8133,7 +8556,8 @@
 },
 "paramarttham entenn-aṙiyate (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "paramasiva mam pahi": {
 "lg": "Sanskrit",
@@ -8141,7 +8565,8 @@
 },
 "paramatma-tattva-svarupini (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "paramesa gopala jaya harati (telugu)": {
 "lg": "Telugu",
@@ -8161,7 +8586,8 @@
 },
 "parasakti paramjyoti": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Sanskrit"
 },
 "paravasamanen hrdayam": {
 "lg": "Malayalam",
@@ -8173,7 +8599,8 @@
 },
 "parayuvanavatilla (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pari pari (telugu)": {
 "lg": "Telugu",
@@ -8189,7 +8616,8 @@
 },
 "parihasa patramay": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "parinamam iyalatta": {
 "lg": "Malayalam",
@@ -8201,7 +8629,8 @@
 },
 "paripavana (marathi)": {
 "lg": "Marathi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "parisuddha anbin uruvame (tamil)": {
 "lg": "Tamil",
@@ -8209,7 +8638,8 @@
 },
 "parisuddha snehatte": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "paritiyinmun paniyai (tamil)": {
 "lg": "Tamil",
@@ -8221,7 +8651,8 @@
 },
 "pasi aṙum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pasiyentral utan": {
 "lg": "Tamil",
@@ -8233,7 +8664,8 @@
 },
 "patita-hrdayatte (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "patitum amme atitum": {
 "lg": "Malayalam",
@@ -8245,7 +8677,8 @@
 },
 "pattave padamu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "patupettere nan": {
 "lg": "Malayalam",
@@ -8253,11 +8686,13 @@
 },
 "paurnami ravil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "paurnnamiravil (kannada version)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "paurnnamiravil (telugu)": {
 "lg": "Telugu",
@@ -8265,7 +8700,8 @@
 },
 "pavana gange taye": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Malayalam"
 },
 "pavani dayakari": {
 "lg": "Sanskrit",
@@ -8277,7 +8713,8 @@
 },
 "pazhani malayil vanarulum (malayalam)": {
 "lg": "Malayalam",
-"d": "Murugan"
+"d": "Murugan",
+"lg2": "Tamil"
 },
 "peace to the ocean (english)": {
 "lg": "English",
@@ -8285,7 +8722,8 @@
 },
 "pelava kaiviral (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "picca veccu nadakkunnon-ende (malayalam)": {
 "lg": "Malayalam",
@@ -8321,7 +8759,8 @@
 },
 "pirayentu cheytu": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "please give me refuge (devi sharanam) english": {
 "lg": "English",
@@ -8329,7 +8768,8 @@
 },
 "ponnamma en amma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ponnin kalvalakalaninnu (malayalam)": {
 "lg": "Malayalam",
@@ -8337,7 +8777,8 @@
 },
 "ponnuncal atayo (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "potti karannu karannu manam (malayalam)": {
 "lg": "Malayalam",
@@ -8357,7 +8798,8 @@
 },
 "prabhavam sarva-vyaptam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "prabho ganapate": {
 "lg": "Tamil",
@@ -8369,7 +8811,8 @@
 },
 "prabhu caranan (hindi)": {
 "lg": "Hindi",
-"d": "Universal"
+"d": "Universal",
+"d2": "Krishna"
 },
 "prabhu misam": {
 "lg": "Sanskrit",
@@ -8433,18 +8876,20 @@
 },
 "prati ledu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "pratiloma saktitan": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "prem hi jivan ka adhar he (hindi)": {
 "lg": "Hindi",
 "d": "Universal"
 },
 "prem jo diyo": {
-"lg": "Hindi",
+"lg": "Sindhi",
 "d": "Rama"
 },
 "prem se gao (hindi)": {
@@ -8465,7 +8910,8 @@
 },
 "prema prabholasini devi": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "prema sagara (kannada)": {
 "lg": "Kannada",
@@ -8477,11 +8923,13 @@
 },
 "prema-pravahame (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "prema-sagarame jagadisvari amme (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "premadondu (kannada)": {
 "lg": "Kannada",
@@ -8489,11 +8937,13 @@
 },
 "premamrtattinde nanav-urum mizhiyina (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "premasandayini (marathi)": {
 "lg": "Marathi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "premasurya (kannada)": {
 "lg": "Kannada",
@@ -8540,7 +8990,7 @@
 "d": "Krishna"
 },
 "puvali pasuvundu (english)": {
-"lg": "English",
+"lg": "Malayalam",
 "d": "Krishna"
 },
 "puvuranga taye": {
@@ -8553,7 +9003,8 @@
 },
 "queen of my heart (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "radha govinda (telugu)": {
 "lg": "Telugu",
@@ -8601,7 +9052,8 @@
 },
 "radhaykku madhavan (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Amma",
+"d2": "Devi"
 },
 "radhe govinda bhajo": {
 "lg": "Hindi",
@@ -8685,11 +9137,13 @@
 },
 "raga vairikal (telugu translation)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "raga vairikal ningitum": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "raghu nandana": {
 "lg": "Sanskrit",
@@ -8821,7 +9275,8 @@
 },
 "ravere nintupoy": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ravikula-tilaka (sanskrit)": {
 "lg": "Sanskrit",
@@ -8829,7 +9284,8 @@
 },
 "reflect on life (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "rise up mother kali (jago ma)": {
 "lg": "English",
@@ -8873,7 +9329,8 @@
 },
 "sada hrday men (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sada nirantara": {
 "lg": "Hindi",
@@ -8909,7 +9366,8 @@
 },
 "sadi tojale (tulu)": {
 "lg": "Tulu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sagara cepaku (telugu)": {
 "lg": "Telugu",
@@ -8921,7 +9379,8 @@
 },
 "sagarattin agadhatayum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "saha navavatu": {
 "lg": "Sanskrit",
@@ -9013,23 +9472,28 @@
 },
 "samsara dukha samanam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "samsara-duḥkha-purnamam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "samsara-tapattil uzharumi jivanil (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "samsaraduhkha (telugu version)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "samsaramanu (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sanatani sangita": {
 "lg": "Sanskrit",
@@ -9068,12 +9532,14 @@
 "d": "Devi"
 },
 "santamay orukatte jivitam": {
-"lg": "Sanskrit",
-"d": "Devi"
+"lg": "Malayalam",
+"d": "Devi",
+"d2": "Amma"
 },
 "santapa hrttinnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "santapa santikkay": {
 "lg": "Malayalam",
@@ -9085,7 +9551,8 @@
 },
 "sapne me dekha (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sapta svara rupini": {
 "lg": "Sanskrit",
@@ -9101,7 +9568,8 @@
 },
 "saranagat ko apnavo ma (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "saranam kali saranam": {
 "lg": "Sanskrit",
@@ -9117,7 +9585,8 @@
 },
 "sarananti sarananti (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "saranarthikalude": {
 "lg": "Malayalam",
@@ -9169,7 +9638,8 @@
 },
 "sarva-vyapiyam isvari (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sarvajagattinum adharam": {
 "lg": "Malayalam",
@@ -9228,7 +9698,7 @@
 "d": "Amma"
 },
 "ser pe savar (punjabi)": {
-"lg": "Punjabi",
+"lg": "Hindi",
 "d": "Devi"
 },
 "ser te savar ayi (punjabi)": {
@@ -9241,7 +9711,8 @@
 },
 "sevaiyenum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "seyda seyalgal (tamil)": {
 "lg": "Tamil",
@@ -9253,7 +9724,8 @@
 },
 "shsnsheng muqin (chinese)": {
 "lg": "Chinese",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sibje bhola (bengali)": {
 "lg": "Bengali",
@@ -9261,7 +9733,8 @@
 },
 "silukisadiru ni (kannada)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sinam konda manam atu (tamil)": {
 "lg": "Tamil",
@@ -9277,7 +9750,8 @@
 },
 "sinnanciru kuzhandai (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sirikka connal (marathi version)": {
 "lg": "Marathi",
@@ -9293,7 +9767,8 @@
 },
 "sisirattil ila pol (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sita ram bol": {
 "lg": "Hindi",
@@ -9313,7 +9788,8 @@
 },
 "sitting in the dark (english, madhu)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "siva hara (tamil)": {
 "lg": "Tamil",
@@ -9381,7 +9857,8 @@
 },
 "sivoham jyotiraham (malayalam)": {
 "lg": "Malayalam",
-"d": "Universal"
+"d": "Universal",
+"lg2": "French"
 },
 "sivoham sivoham (hindi)": {
 "lg": "Hindi",
@@ -9389,7 +9866,8 @@
 },
 "skanda janani": {
 "lg": "Sanskrit",
-"d": "Amma"
+"d": "Amma",
+"lg2": "Malayalam"
 },
 "skanda muruka varuvaye": {
 "lg": "Tamil",
@@ -9533,7 +10011,8 @@
 },
 "sri rama namame (tamil)": {
 "lg": "Tamil",
-"d": "Hanuman"
+"d": "Hanuman",
+"d2": "Rama"
 },
 "sri rama namamu": {
 "lg": "Telugu",
@@ -9581,7 +10060,8 @@
 },
 "sricakra-vasini jagadambike (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "srigandhadantha manavanidu taye (kannada)": {
 "lg": "Kannada",
@@ -9649,11 +10129,13 @@
 },
 "sun meri mayya (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sun sun ma (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sundar hai nayana tere (hindi)": {
 "lg": "Hindi",
@@ -9717,11 +10199,13 @@
 },
 "svarloka vatsalya dharayai (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "svasamellam un peyare (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "sveta patmasane sasvate": {
 "lg": "Malayalam",
@@ -9757,7 +10241,7 @@
 },
 "syama tan tirunettiyile (malayalam)": {
 "lg": "Malayalam",
-"d": "Krishna"
+"d": "Devi"
 },
 "syamambarattin (malayalam)": {
 "lg": "Malayalam",
@@ -9797,7 +10281,8 @@
 },
 "takutiyilla": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tal panintom (tamil)": {
 "lg": "Tamil",
@@ -9813,7 +10298,8 @@
 },
 "talatalli karayunna (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "talelo (tamil)": {
 "lg": "Tamil",
@@ -9821,7 +10307,8 @@
 },
 "talli valli kalpavalli (telugu)": {
 "lg": "Telugu",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tam tittam tey tey (malayalam)": {
 "lg": "Malayalam",
@@ -9833,7 +10320,8 @@
 },
 "tan man dhan nu": {
 "lg": "Punjabi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tan manam tannil (malayalam)": {
 "lg": "Malayalam",
@@ -9873,7 +10361,8 @@
 },
 "tanman ki": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tanna tanana tannana tane (malayalam)": {
 "lg": "Malayalam",
@@ -9909,7 +10398,8 @@
 },
 "tapta manasam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "taraka nama (kannada)": {
 "lg": "Kannada",
@@ -9937,7 +10427,7 @@
 },
 "tataikalai nikkitum (tamil)": {
 "lg": "Tamil",
-"d": "Universal"
+"d": "Ganesha"
 },
 "tatan avitunnu nangal makkal": {
 "lg": "Malayalam",
@@ -9945,7 +10435,8 @@
 },
 "tathi tathi (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tattinantam teytara (malayalam)": {
 "lg": "Malayalam",
@@ -9953,11 +10444,13 @@
 },
 "tava padatarilin (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tava sannidhanattil": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tava tirumozhikal": {
 "lg": "Malayalam",
@@ -9969,7 +10462,8 @@
 },
 "tay irukka pillai": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "taye maha maye": {
 "lg": "Malayalam",
@@ -9977,7 +10471,8 @@
 },
 "taye tava - kannada version": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "taye tava tanayaril": {
 "lg": "Malayalam",
@@ -9985,7 +10480,8 @@
 },
 "taye unai (tamil, hema)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tayendru azhaikkava (tamil)": {
 "lg": "Tamil",
@@ -9993,15 +10489,18 @@
 },
 "tayilla pillayo (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tayum niye (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tazhukunna kaṫṫeṫṫu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "teach me the language english": {
 "lg": "English",
@@ -10037,7 +10536,8 @@
 },
 "tere liye amma (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tere siva": {
 "lg": "Hindi",
@@ -10077,7 +10577,8 @@
 },
 "thankyou for this life (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "the pendulum of life (english)": {
 "lg": "English",
@@ -10089,7 +10590,8 @@
 },
 "the world reels (english)": {
 "lg": "English",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "theres a way of life in this universe leading to true peace (english)": {
 "lg": "English",
@@ -10125,7 +10627,8 @@
 },
 "tiru mumbil kanikka vaccu en hrdayam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tiru vallikkavil amma": {
 "lg": "Malayalam",
@@ -10161,11 +10664,13 @@
 },
 "tottunartti (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tozhuda karamum (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "trailokya-karaniyaya (malayalam)": {
 "lg": "Malayalam",
@@ -10205,7 +10710,8 @@
 },
 "tunpankale (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "tuyarang kalai kurum": {
 "lg": "Tamil",
@@ -10237,7 +10743,8 @@
 },
 "udayardra-kiranangal (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "udukkin nadam kekkanandallo (malayalam)": {
 "lg": "Malayalam",
@@ -10249,7 +10756,8 @@
 },
 "ulagam oru puntottam (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ulagamaga mari nirkkum (tamil)": {
 "lg": "Tamil",
@@ -10265,7 +10773,8 @@
 },
 "ulakalum nayakiye (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ulakattin adhara": {
 "lg": "Malayalam",
@@ -10273,7 +10782,8 @@
 },
 "ulakattin adhara (tamil version)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "ulakattin tayentru (tamil)": {
 "lg": "Tamil",
@@ -10297,7 +10807,8 @@
 },
 "ullin himasrngam urukunnuvo (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "umaye ullil (malayalam)": {
 "lg": "Malayalam",
@@ -10308,12 +10819,14 @@
 "d": "Amma"
 },
 "un madi midu talai sayntu nan irukkave (malayalam)": {
-"lg": "Malayalam",
-"d": "Devi"
+"lg": "Tamil",
+"d": "Devi",
+"d2": "Amma"
 },
 "un seyal enendru (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "un vasal teti": {
 "lg": "Tamil",
@@ -10321,7 +10834,8 @@
 },
 "unai marava varamondru (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Krishna",
+"d2": "Universal"
 },
 "unarunaru amrtanandamayi": {
 "lg": "Malayalam",
@@ -10329,11 +10843,13 @@
 },
 "undan namam (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "undan tolil (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "underneath a kalpataru (english)": {
 "lg": "English",
@@ -10345,7 +10861,8 @@
 },
 "unnai saranadainden amma (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "unnai saranadainten parasakti (tamil)": {
 "lg": "Tamil",
@@ -10377,7 +10894,8 @@
 },
 "ushakala neram": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "utayaval (malayalam)": {
 "lg": "Malayalam",
@@ -10413,7 +10931,7 @@
 },
 "vagdevate varu": {
 "lg": "Malayalam",
-"d": "Guru"
+"d": "Devi"
 },
 "vagis nages (hindi)": {
 "lg": "Hindi",
@@ -10473,7 +10991,8 @@
 },
 "vani sarasvati (sanskrit, swathika)": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Malayalam"
 },
 "vanil teliyunna (malayalam)": {
 "lg": "Malayalam",
@@ -10517,7 +11036,8 @@
 },
 "vardani ma jaya jaya durga ma (hindi)": {
 "lg": "Hindi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "varde mata jagadambe mata": {
 "lg": "Hindi",
@@ -10565,7 +11085,8 @@
 },
 "vatavrksmam (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vatikkozhinnitum (malayalam)": {
 "lg": "Malayalam",
@@ -10573,15 +11094,18 @@
 },
 "vatsalyam etrayo ni corinnu (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vattatta snehattin (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vazhi duram": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vazhi tavariya kuzhantai nan (tamil)": {
 "lg": "Tamil",
@@ -10605,7 +11129,8 @@
 },
 "vedambike namo": {
 "lg": "Sanskrit",
-"d": "Devi"
+"d": "Devi",
+"lg2": "Malayalam"
 },
 "vedana kondoru (malayalam)": {
 "lg": "Malayalam",
@@ -10649,7 +11174,8 @@
 },
 "verum oru pulkkoti": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vettrivel (tamil)": {
 "lg": "Tamil",
@@ -10661,7 +11187,8 @@
 },
 "vidaratta tamara (kannada version)": {
 "lg": "Kannada",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vidhitakhila": {
 "lg": "Sanskrit",
@@ -10673,11 +11200,13 @@
 },
 "viharati yamuna tatme": {
 "lg": "Sanskrit",
-"d": "Krishna"
+"d": "Krishna",
+"lg2": "Hindi"
 },
 "vilayeṙum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vithal smaran kara (marathi)": {
 "lg": "Marathi",
@@ -10685,7 +11214,8 @@
 },
 "vilichal vilikelkkan": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vilvattal archittom (tamil)": {
 "lg": "Tamil",
@@ -10693,7 +11223,8 @@
 },
 "vimmum kural (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vina vilambam": {
 "lg": "Malayalam",
@@ -10717,7 +11248,8 @@
 },
 "vinaya manasam": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vinayaka enkal (tamil)": {
 "lg": "Tamil",
@@ -10761,11 +11293,13 @@
 },
 "virahatti patarunnen": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "virahattin nombaram (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "virayarnnarayalttalirukal (malayalam)": {
 "lg": "Malayalam",
@@ -10801,7 +11335,8 @@
 },
 "visvam teliykkum (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "visvamatru svabhava": {
 "lg": "Malayalam",
@@ -10809,11 +11344,13 @@
 },
 "visvattin adhara caitanyame ni (malayalam)": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vitaratta tamara": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "vitarunna kalikakku": {
 "lg": "Malayalam",
@@ -10941,7 +11478,8 @@
 },
 "yad teri vic (punjabi)": {
 "lg": "Punjabi",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "yadavane mana mohanane": {
 "lg": "Malayalam",
@@ -10989,7 +11527,8 @@
 },
 "yaru sondam yaru bandham (tamil)": {
 "lg": "Tamil",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "yasoda ke bala": {
 "lg": "Hindi",
@@ -11005,7 +11544,8 @@
 },
 "yatha yariyiykkan": {
 "lg": "Malayalam",
-"d": "Devi"
+"d": "Devi",
+"d2": "Amma"
 },
 "yavarkkum tayana amma ni": {
 "lg": "Tamil",
@@ -11032,7 +11572,7 @@
 "d": "Devi"
 },
 "you are the one awake at nightoutside its darkbut youre full of light (italian)": {
-"lg": "Italian",
+"lg": "English",
 "d": "Shiva"
 },
 "you have come to sacrifice (english)": {
@@ -11351,10 +11891,6 @@
 "lg": "Gujarati",
 "d": "Devi"
 },
-"mere hrdaya sri ram base (hindi)": {
-"lg": "Hindi",
-"d": "Rama"
-},
 "muraliyanu uduta baro (murali bajate ana) (kannada)": {
 "lg": "Kannada",
 "d": "Krishna"
@@ -11502,10 +12038,6 @@
 "shakti de bhakti de (sindhi)": {
 "lg": "Sindhi",
 "d": "Devi"
-},
-"prem jo diyo (sindhi)": {
-"lg": "Sindhi",
-"d": "Rama"
 },
 "jay jay jay srikrsna (kannada)": {
 "lg": "Kannada",
