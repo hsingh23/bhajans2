@@ -300,6 +300,102 @@ describe('musician details in search', () => {
   });
 });
 
+describe('piano keys and transposing', () => {
+  // react-virtualized only renders rows when its containers have a size
+  const sizes = {};
+  beforeEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      sizes[prop] = Object.getOwnPropertyDescriptor(HTMLElement.prototype, prop);
+      Object.defineProperty(HTMLElement.prototype, prop, { configurable: true, get: () => 1000 });
+    }
+  });
+  afterEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      Object.defineProperty(HTMLElement.prototype, prop, sizes[prop]);
+    }
+  });
+  const openDetails = async (name) => {
+    await within(rowFor(name)).findByTestId('music-chips');
+    fireEvent.click(within(rowFor(name)).getByRole('button', { name: 'bhajan details' }));
+    return screen.findByRole('region', { name: 'For musicians' });
+  };
+  const shrutiChip = (name) => rowFor(name).querySelector('.category-chip.shruti');
+
+  it('draws the raga on a piano in the recording key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    // Mohanam goes up and down on the same notes: one keyboard, G A B D E lit
+    const pianos = within(section).getAllByRole('img', { name: /^Piano keys/ });
+    expect(pianos).toHaveLength(1);
+    expect(pianos[0]).toHaveAccessibleName('Piano keys — G A B D E G');
+    expect(pianos[0].querySelectorAll('.pk-on')).toHaveLength(6);
+    expect(pianos[0].querySelectorAll('.pk-sa-dot')).toHaveLength(2);
+    expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
+  });
+
+  it('transposes one song by semitone or key, and back to the recording key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    expect(section).toHaveTextContent('Ab (5.5 kattai)');
+    expect(section).toHaveTextContent('Transposed from the recording: G (5 kattai)');
+    expect(section).toHaveTextContent('Ab Bb C Eb F Ab');
+    expect(within(section).getAllByRole('listitem').map((li) => li.textContent)).toEqual(['I Ab', 'IV Db', 'V Eb', 'vi Fm']);
+    // This fixture's summary is hand-written, so it cannot be re-told in the new key: it is left out
+    expect(section).not.toHaveTextContent('Sing in');
+
+    fireEvent.change(within(section).getByRole('combobox', { name: 'Show in key' }), { target: { value: '2' } });
+    expect(section).toHaveTextContent('D E F# A B D');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Recording key' }));
+    expect(section).toHaveTextContent('G (5 kattai) · from the full recording');
+    expect(section).toHaveTextContent('Sing in G (5 kattai).');
+    // Picking a key for one song does not change the others
+    expect(getPrefs().musicKey).toBeUndefined();
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
+  });
+
+  it('saves a key for every song, shows it on the chips and resets to recording keys', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    let section = await openDetails('kali kali kali (gujarati)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Down a semitone' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Show every song in F# (4.5 kattai)' }));
+    expect(getPrefs().musicKey).toBe(6);
+    expect(window.dataLayer).toContainEqual({ event: 'set_my_key', my_key: 6 });
+    expect(section).toHaveTextContent('This is your key for every song.');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G → F# · 4.5');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveAttribute('title', 'Key F#, 4.5 kattai (your key; recording in G)');
+
+    // Another song opens straight in the saved key
+    fireEvent.click(screen.getByRole('button', { name: 'close details modal' }));
+    section = await openDetails('arivenum akakkan (tamil)');
+    expect(section).toHaveTextContent('F# (4.5 kattai) · your key');
+    expect(section).toHaveTextContent('Transposed from the recording: D (2 kattai)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
+    expect(getPrefs().musicKey).toBeUndefined();
+    expect(section).toHaveTextContent('D (2 kattai)');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
+  });
+
+  it("syncs the saved key to a signed-in reader's account and back", async () => {
+    mockAuth.currentUser = { uid: 'u1' };
+    setPref('musicKey', 9);
+    await waitFor(() => expect(mockSetRefOnce).toHaveBeenCalledWith('prefs/u1/musicKey', 9));
+    localStorage.clear();
+    applyRemotePrefs({ musicKey: 4 });
+    expect(getPrefs().musicKey).toBe(4);
+    applyRemotePrefs({ musicKey: 12 });
+    applyRemotePrefs({ musicKey: '7' });
+    expect(getPrefs().musicKey).toBe(4);
+  });
+});
+
 describe('music data', () => {
   const readPublic = (file) => JSON.parse(readFileSync(join(process.cwd(), 'public', file), 'utf8'));
   const KATTAI = ['1', '1.5', '2', '2.5', '3', '4', '4.5', '5', '5.5', '6', '6.5', '7'];

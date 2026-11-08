@@ -83,6 +83,51 @@ export const swarasToNotes = (swaras = [], saPc, spelling = keySpelling(saPc, sw
     .map((s) => nameIn(spelling, s.semitone, s.degree));
 };
 
+/** True for a pitch class 0-11 (0 = C). */
+export const isPitchClass = isPc;
+
+/**
+ * The raga's distinct notes from Sa upward, spelled like the scale rows
+ * (Sindhu Bhairavi on Bb gives Bb Cb C Db Eb F Gb Ab).
+ */
+export const scaleNotes = (swaras = [], saPc) => {
+  const spelling = keySpelling(saPc, swaras);
+  if (!spelling) return [];
+  const bySemitone = new Map();
+  for (const s of swaras.map(parseSwara).filter(Boolean)) {
+    if (!bySemitone.has(s.semitone)) bySemitone.set(s.semitone, s);
+  }
+  return [...bySemitone.values()]
+    .sort((a, b) => a.semitone - b.semitone)
+    .map((s) => nameIn(spelling, s.semitone, s.degree));
+};
+
+/** Semitones above Sa (0-11) that the swaras use. */
+export const swaraSemitones = (swaras = []) => [
+  ...new Set(swaras.map(parseSwara).filter(Boolean).map((s) => s.semitone)),
+];
+
+const KEY_SENTENCE = /^Sing in [A-G][#b]? \([\d.]+ kattai\)\./;
+const SUMMARY_NOTES = /(\): )[A-G][#b]?(?: [A-G][#b]?)*(?=[,.])/;
+
+/**
+ * The generated summary ("Sing in Bb (6.5 kattai). Raga ...: Bb Cb C ...") re-told
+ * with Sa on saPc. Returns null when the summary does not have the generated
+ * shape, so a caller never shows a key the reader did not choose.
+ */
+const NOTE_RUN = /(?:^|[\s:(])[A-G][#b]?(?: [A-G][#b]?){2,}(?=$|[\s,.)])/g;
+
+export const summaryInKey = (summary, saPc, swaras = []) => {
+  if (!summary || !isPc(saPc) || !KEY_SENTENCE.test(summary)) return null;
+  // Every list of notes must be the generated one we can re-spell; anything else would go stale.
+  const rest = summary.replace(KEY_SENTENCE, '');
+  const runs = rest.match(NOTE_RUN)?.length || 0;
+  if (runs > (SUMMARY_NOTES.test(rest) ? 1 : 0)) return null;
+  return summary
+    .replace(KEY_SENTENCE, `Sing in ${keyName(saPc, swaras)} (${kattaiFor(saPc)} kattai).`)
+    .replace(SUMMARY_NOTES, (_, lead) => lead + scaleNotes(swaras, saPc).join(' '));
+};
+
 /** Name of the song's key: spelled from its first raga when there is one ("Db", "C#"). */
 export const keyName = (saPc, swaras) => {
   if (!isPc(saPc)) return undefined;

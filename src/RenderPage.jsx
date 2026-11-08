@@ -14,10 +14,11 @@ import { groupSheetMusic, parseSheetMusicName, stepKey } from "./sheetMusicGroup
 import { useViewerPrefs, rememberedSheetKey } from "./prefs";
 import { useMusicianMode, useSongMusic, SongMusicSection } from "./MusicianMode";
 import { musicChips } from "./MusicChips";
+import { useMyKey } from "./myKey";
 
 // "G · Mohanam": the key and raga, short enough for a floating button.
-const musicPillText = (entry, music) => {
-  const chips = musicChips(entry, music);
+const musicPillText = (entry, music, myKey) => {
+  const chips = musicChips(entry, music, myKey);
   const shruti = chips.find((c) => c.kind === "shruti")?.text.split(" · ")[0];
   const raga = chips.find((c) => c.kind === "raga")?.text;
   return [shruti, raga].filter(Boolean).join(" · ") || "Musician";
@@ -341,6 +342,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
   // fifth is Sa), so prefer the data's pdf_pc and fall back to Sa.
   const songMusic = useSongMusic(name);
   const { music } = useMusicianMode();
+  const myKey = useMyKey();
   const sh = songMusic?.sh;
   const recordingPc = Number.isInteger(sh?.pdf_pc) ? sh.pdf_pc : Number.isInteger(sh?.pc) ? sh.pc : null;
   const [musicOpen, setMusicOpen] = useState(false);
@@ -505,7 +507,7 @@ const RenderPage = ({ bhajans = {}, renderFavorite }) => {
               aria-haspopup='dialog'
               onClick={() => setMusicOpen(true)}>
               <Icon name='music-note' />
-              <span>{musicPillText(songMusic, music)}</span>
+              <span>{musicPillText(songMusic, music, myKey)}</span>
             </button>
             {musicOpen && (
               <div className='modal-window open viewer-music-dialog' onClick={() => setMusicOpen(false)} role='dialog' aria-modal='true' aria-label={`For musicians: ${name}`}>
