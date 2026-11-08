@@ -93,7 +93,7 @@ const isBool = (value) => typeof value === 'boolean';
 const isPitchClass = (value) => Number.isInteger(value) && value >= 0 && value < 12;
 export const INSTRUMENT_PREF = 'musicInstrument';
 /** Instruments the musician panel draws for; the account may only set one of these. */
-export const MUSIC_INSTRUMENTS = ['voice', 'piano', 'guitar', 'ukulele', 'bansuri'];
+export const MUSIC_INSTRUMENTS = ['voice', 'piano', 'guitar', 'ukulele', 'bansuri', 'tabla'];
 const REMOTE_FIELDS = {
   musicianMode: isBool,
   musicKey: (value) => isPitchClass(value) || value === 'recording',

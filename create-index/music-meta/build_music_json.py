@@ -6,6 +6,7 @@ Inputs (all under create-index/music-meta):
   work/raga/full/out_*.jsonl   raga labels (Opus), one JSON per song
   features/taal.json           beat-cycle class, meter, tempo
   features/sheet.json + features/tonic_sheet_sa.json + features/sheet_trust.json   chords
+  features/vocal_range.json    melody range from the sheet music (vocal_range.py)
   reference/ragas.json, reference/taals.json
 Outputs (contract: reference/music-data-spec.md):
   public/bhajan-music.json, public/music-reference.json   (with --write; else a dry run + stats)
@@ -226,6 +227,8 @@ def main():
     sheet = json.loads((HERE / "features/sheet.json").read_text())
     sa_over = json.loads((HERE / "features/tonic_sheet_sa.json").read_text())
     trust = json.loads((HERE / "features/sheet_trust.json").read_text())
+    vrange_file = HERE / "features/vocal_range.json"
+    vrange = json.loads(vrange_file.read_text()) if vrange_file.exists() else {}
     raga_out = load_jsonl("work/raga/full/out_*.jsonl")
     table = json.loads((HERE / "reference/ragas.json").read_text())
     ttable = json.loads((HERE / "reference/taals.json").read_text())["taals"]
@@ -297,6 +300,9 @@ def main():
             e["ch"] = ch
         if not e:
             continue
+        vr = vrange.get(n) or vrange.get(old)
+        if vr:
+            e["vr"] = vr
         cs = [x for x in [e.get("sh", {}).get("c"), *(r["c"] for r in e.get("r", [])[:1]), e.get("t", {}).get("c")] if x is not None]
         if cs:  # a song with only chords (sheet music, no recording or raga) has no overall confidence
             e["c"] = round(sum(cs) / len(cs), 2)

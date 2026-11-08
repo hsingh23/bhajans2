@@ -13,14 +13,20 @@ const LETTERS = { 0: 'C', 2: 'D', 4: 'E', 5: 'F', 7: 'G', 9: 'A', 11: 'B' };
 const isWhite = (abs) => WHITE_PCS.has(((abs % 12) + 12) % 12);
 
 /**
- * Keys for one octave from Sa (saPc) up to Sa', padded to whole white keys.
- * `semitones` are the notes above Sa to light up (0-11); Sa' lights with Sa.
+ * Keys for one octave from Sa (saPc) up to Sa', padded to whole white keys, or
+ * with `twoOctaves` C to C two octaves up. `semitones` are the notes above Sa to
+ * light up (0-11); Sa' lights with Sa.
  */
-export const pianoLayout = (saPc, semitones = []) => {
+export const pianoLayout = (saPc, semitones = [], twoOctaves = false) => {
   let first = saPc;
   while (!isWhite(first)) first -= 1;
   let last = saPc + 12;
   while (!isWhite(last)) last += 1;
+  if (twoOctaves) {
+    // Two octaves from C, so the keyboard always starts on C (Sa..Sa' always fits).
+    first = 0;
+    last = 24;
+  }
   const used = new Set(semitones.map((s) => saPc + s));
   if (used.has(saPc)) used.add(saPc + 12);
   const whites = [];
@@ -41,13 +47,13 @@ const SaDot = ({ x, y, w }) => <circle className='pk-sa-dot' cx={x + w / 2} cy={
  * `labels` names the lit notes by semitone above Sa ({ 0: 'Bb', 1: 'Cb', ... }),
  * spelled like the scale rows; unlit white keys show their plain letter.
  */
-const PianoKeys = ({ saPc, semitones, label, notes, labels = {} }) => {
+const PianoKeys = ({ saPc, semitones, label, notes, labels = {}, twoOctaves = false, className }) => {
   if (!Number.isInteger(saPc) || !semitones?.length) return null;
-  const { whites, blacks, width } = pianoLayout(saPc, semitones);
+  const { whites, blacks, width } = pianoLayout(saPc, semitones, twoOctaves);
   const name = [label, notes?.length ? notes.join(' ') : null].filter(Boolean).join(': ');
   const text = (k) => (k.on ? labels[(((k.abs - saPc) % 12) + 12) % 12] : null);
   return (
-    <figure className='piano-keys'>
+    <figure className={['piano-keys', className].filter(Boolean).join(' ')}>
       {label && <figcaption className='pk-label'>{label}</figcaption>}
       <svg
         viewBox={`-1 -1 ${width + 2} ${WHITE_H + 2}`}

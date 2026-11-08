@@ -102,6 +102,16 @@ export const scaleNotes = (swaras = [], saPc) => {
     .map((s) => nameIn(spelling, s.semitone, s.degree));
 };
 
+/** Name of the note `semitone` above Sa (any octave), spelled like the raga's scale rows. */
+export const noteNameIn = (saPc, semitone, swaras = []) => {
+  const spelling = keySpelling(saPc, swaras);
+  if (!spelling) return undefined;
+  const st = mod12(semitone);
+  const s = swaras.map(parseSwara).find((p) => p && p.semitone === st);
+  if (s) return nameIn(spelling, st, s.degree);
+  return (spelling.flats ? FLAT_NAMES : SHARP_NAMES)[mod12(saPc + st)];
+};
+
 /** Semitones above Sa (0-11) that the swaras use. */
 export const swaraSemitones = (swaras = []) => [
   ...new Set(swaras.map(parseSwara).filter(Boolean).map((s) => s.semitone)),

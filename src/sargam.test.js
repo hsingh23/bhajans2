@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { describe, it, expect } from 'vitest';
-import { bansuriLine, sargamLine } from './sargam';
+import { bansuriLine, sargamLine, sargamNote } from './sargam';
+import { noteNameIn } from './musicTheory';
 import { bolGuide, dugun, tablaTaal } from './tabla';
 
 describe('sung notes', () => {
@@ -18,6 +19,17 @@ describe('sung notes', () => {
     expect(sargamLine(['S', 'n2', 'S'], true).map((n) => n.octave)).toEqual([1, 0, 1]);
     // An aroha that opens on Pa climbs from the lower octave to middle Sa
     expect(sargamLine(['P', 'D2', 'N3', 'S']).map((n) => n.octave)).toEqual([-1, -1, -1, 0]);
+  });
+});
+
+describe('range ends', () => {
+  it('names a note by sargam and octave, and by note name in the key', () => {
+    expect(sargamNote(-5)).toEqual({ syllable: 'Pa', kind: null, octave: -1, semitone: 7 });
+    expect(sargamNote(13)).toEqual({ syllable: 'Re', kind: 'komal', octave: 1, semitone: 1 });
+    const sindhuBhairavi = ['S', 'R2', 'g2', 'M1', 'P', 'd1', 'n2', 'S', 'S', 'n2', 'd1', 'P', 'M1', 'g2', 'r1', 'S'];
+    expect(noteNameIn(10, 13, sindhuBhairavi)).toBe('Cb');
+    expect(noteNameIn(10, -5, sindhuBhairavi)).toBe('F');
+    expect(noteNameIn(7, 6, ['S', 'R2', 'G3', 'P', 'D2'])).toBe('C#'); // not in the raga: sharp key, sharp name
   });
 });
 

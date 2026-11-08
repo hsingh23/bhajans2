@@ -1786,6 +1786,7 @@ mark {
 }
 
 .musician-details {
+  container: musician / inline-size;
   --md-accent: #4527a0;
   --md-muted: var(--text-secondary, #757575);
   margin: 0 0 14px;
@@ -1984,6 +1985,21 @@ mark {
 .bn-name {
   font-size: 11px;
   font-weight: 700;
+}
+/* Piano: Sa to Sa' in a narrow panel, two octaves from C when there is room */
+.piano-keys.pk-wide {
+  display: none;
+}
+@container musician (min-width: 420px) {
+  .piano-keys.pk-compact {
+    display: none;
+  }
+  .piano-keys.pk-wide {
+    display: flex;
+  }
+}
+.musician-details .md-instruments {
+  margin: 8px 0 2px;
 }
 .md-scale-wrap {
   display: flex;

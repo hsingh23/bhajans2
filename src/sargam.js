@@ -19,16 +19,19 @@ const SYLLABLES = [
   ['Ni'],
 ];
 
+/** Syllable, komal / tivra and octave of the note `v` semitones from Sa (-5 = lower Pa). */
+export const sargamNote = (v) => {
+  const semitone = ((v % 12) + 12) % 12;
+  const [syllable, kind = null] = SYLLABLES[semitone];
+  return { syllable, kind, octave: Math.floor(v / 12), semitone };
+};
+
 /**
  * The sung line: syllable, komal / tivra, octave (-1 mandra, 0 madhya, 1 taar)
  * for each swara, in the order sung.
  */
 export const sargamLine = (swaras = [], descending = false) =>
-  swaraLine(swaras, descending).map((v) => {
-    const semitone = ((v % 12) + 12) % 12;
-    const [syllable, kind = null] = SYLLABLES[semitone];
-    return { syllable, kind, octave: Math.floor(v / 12), semitone };
-  });
+  swaraLine(swaras, descending).map(sargamNote);
 
 // Bansuri named for its Sa, played with the top three holes closed. Holes from
 // the mouth hole down: 1 = closed, 0.5 = half-closed, 0 = open.

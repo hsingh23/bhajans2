@@ -14,6 +14,15 @@ describe('PianoKeys', () => {
     expect([...whites, ...blacks].filter((k) => k.sa).map((k) => k.abs).sort((a, b) => a - b)).toEqual([10, 22]);
   });
 
+  it('spans two octaves from C when asked, whatever Sa is', () => {
+    const { whites, blacks } = pianoLayout(11, [0, 4, 7], true);
+    expect(whites[0].abs).toBe(0);
+    expect(whites.at(-1).abs).toBe(24);
+    expect(whites).toHaveLength(15);
+    const lit = [...whites, ...blacks].filter((k) => k.on).map((k) => k.abs).sort((a, b) => a - b);
+    expect(lit).toEqual([11, 15, 18, 23]);
+  });
+
   it('starts on Sa when Sa is a white key', () => {
     const { whites } = pianoLayout(0, [0, 4, 7]);
     expect(whites.map((k) => k.abs)).toEqual([0, 2, 4, 5, 7, 9, 11, 12]);

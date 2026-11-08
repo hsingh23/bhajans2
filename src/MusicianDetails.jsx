@@ -12,6 +12,7 @@ import {
   keyName,
   keySpelling,
   markMeaning,
+  noteNameIn,
   parseSwara,
   summaryInKey,
   swaraSemitones,
@@ -22,6 +23,7 @@ import { RAGA_SURE, SHRUTI_SURE, TAAL_SURE, firstRagaSwaras, ragaName, taalName 
 import PianoKeys from './PianoKeys';
 import { BansuriChart, ChordDiagram, SargamLine, ScaleTab } from './InstrumentViews';
 import { bolGuide, dugun, tablaTaal } from './tabla';
+import { sargamNote } from './sargam';
 import { setMyKey, useMyKey } from './myKey';
 import { INSTRUMENT_PREF, MUSIC_INSTRUMENTS, setPref, usePref } from './prefs';
 
@@ -30,8 +32,10 @@ const INSTRUMENT_TABS = [
   ['piano', 'Piano'],
   ['guitar', 'Guitar'],
   ['ukulele', 'Ukulele'],
-  ['bansuri', 'Bansuri'],
+  ['bansuri', 'Flute'],
+  ['tabla', 'Tabla'],
 ];
+const DIAGRAM_INSTRUMENTS = ['guitar', 'ukulele'];
 const useInstrument = () => {
   const value = usePref(INSTRUMENT_PREF);
   return MUSIC_INSTRUMENTS.includes(value) ? value : 'piano';
@@ -95,10 +99,18 @@ const RagaInstrument = ({ raga, saPc, spelling, instrument }) => {
     if (instrument === 'voice') return <SargamLine {...common} />;
     if (instrument === 'bansuri') return <BansuriChart {...common} />;
     if (instrument === 'piano') {
-      return <PianoKeys key={label} saPc={saPc} semitones={swaraSemitones(swaras)} label={label} notes={notes} labels={labels} />;
+      const piano = { saPc, semitones: swaraSemitones(swaras), label, notes, labels };
+      // Sa to Sa' when space is tight; two octaves from C when the panel is wide (CSS picks one).
+      return (
+        <React.Fragment key={label}>
+          <PianoKeys {...piano} className='pk-compact' />
+          <PianoKeys {...piano} twoOctaves className='pk-wide' />
+        </React.Fragment>
+      );
     }
     return <ScaleTab {...common} instrument={instrument} saPc={saPc} />;
   };
+  if (instrument === 'tabla') return null;
   return (
     <div className={`md-instrument-view md-${instrument}`}>
       {lines.map(([label, swaras, descending]) => view(label, swaras, descending))}
@@ -107,8 +119,8 @@ const RagaInstrument = ({ raga, saPc, spelling, instrument }) => {
       )}
       {instrument === 'bansuri' && (
         <p className='md-hint'>
-          Use a {keyName(saPc, raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [])} bansuri (Sa = top three holes
-          closed). Filled = closed, half = half-closed, ↑ = blow harder.
+          Use a {keyName(saPc, raga ? [...(raga.aroha || []), ...(raga.avaroha || [])] : [])} bansuri (Indian bamboo flute, named
+          for its Sa: top three holes closed). Filled = closed, half = half-closed, ↑ = blow harder.
         </p>
       )}
     </div>
@@ -243,7 +255,7 @@ const Theka = ({ taal, label = 'Theka by section' }) => {
   );
 };
 
-const Taal = ({ t, taals }) => {
+const Taal = ({ t, taals, showTabla }) => {
   const taal = t.id ? taals?.[t.id] : null;
   const alt = t.alt ? taals?.[t.alt] : null;
   const beats = t.b || taal?.beats;
@@ -267,7 +279,7 @@ const Taal = ({ t, taals }) => {
         </p>
       )}
       {taal?.feel && <p className='md-aside'>{taal.feel}</p>}
-      <Tabla t={t} taals={taals} />
+      {showTabla && <Tabla t={t} taals={taals} />}
     </div>
   );
 };
@@ -277,9 +289,13 @@ const Tabla = ({ t, taals }) => {
   const own = t.id ? taals?.[t.id] : null;
   const tabla = tablaTaal(t, taals);
   if (!tabla) {
-    return own?.system === 'carnatic' && own.bols ? (
-      <p className='md-hint'>These are spoken counting syllables (konnakol), not tabla strokes.</p>
-    ) : null;
+    return (
+      <p className='md-hint'>
+        {own?.system === 'carnatic' && own.bols
+          ? 'These are spoken counting syllables (konnakol), not tabla strokes.'
+          : 'No tabla theka is known for this rhythm yet.'}
+      </p>
+    );
   }
   const { taal, borrowed, id } = tabla;
   const guide = bolGuide(taal.bols);
@@ -310,6 +326,42 @@ const Tabla = ({ t, taals }) => {
   );
 };
 
+const OCTAVE_NAME = { '-2': 'two octaves down', '-1': 'lower', 0: 'middle', 1: 'upper', 2: 'two octaves up' };
+const spanWords = (span) => {
+  const octaves = Math.floor(span / 12);
+  const rest = span % 12;
+  const parts = [octaves && `${octaves} octave${octaves > 1 ? 's' : ''}`, rest && `${rest}`].filter(Boolean);
+  return `${parts.join(' + ') || '0'} (${span} semitones)`;
+};
+
+/** How low and high the melody goes, as sargam and as notes in the shown key. */
+const VocalRange = ({ range, saPc, swaras }) => {
+  const ends = range.map((v) => {
+    const { syllable, kind } = sargamNote(v);
+    const octave = OCTAVE_NAME[Math.floor(v / 12)] ?? '';
+    return {
+      sargam: `${kind ? `${kind} ` : ''}${syllable}${kind === 'tivra' ? '′' : ''} (${octave})`,
+      note: isPitchClass(saPc) ? noteNameIn(saPc, v, swaras || []) : null,
+    };
+  });
+  return (
+    <div className='md-block md-range'>
+      <h3 className='md-label'>Vocal range</h3>
+      <p className='md-heading'>
+        Without alap: <strong>{ends[0].sargam}</strong> to <strong>{ends[1].sargam}</strong>
+        {ends[0].note && (
+          <span>
+            {' '}
+            · {ends[0].note} to {ends[1].note}
+          </span>
+        )}
+        <span className='md-aside'> · {spanWords(range[1] - range[0])}, from the sheet music</span>
+      </p>
+      <p className='md-aside'>With alap: not measured yet. An alap often goes a few notes beyond the song.</p>
+    </div>
+  );
+};
+
 const MusicianDetails = ({ entry, music }) => {
   const id = useId();
   const myKey = useMyKey();
@@ -330,6 +382,8 @@ const MusicianDetails = ({ entry, music }) => {
   // The summary names the recording's key and notes; re-tell it in the shown key, or leave it out.
   const summary = transposed && isPitchClass(recordingPc) ? summaryInKey(entry.en, saPc, swaras) : entry.en;
   const showKey = isPitchClass(recordingPc) || ragaParts.length > 0;
+  const hasTaal = Boolean(entry.t && (entry.t.id || entry.t.ts || entry.t.b));
+  const showSwitch = (ragaParts.length > 0 && hasKey) || hasTaal || chords.length > 0 || Array.isArray(entry.vr);
 
   return (
     <section className='musician-details' aria-labelledby={`${id}-title`}>
@@ -342,6 +396,8 @@ const MusicianDetails = ({ entry, music }) => {
         )}
       </h2>
       {summary && <p className='md-summary'>{summary}</p>}
+      {showSwitch && <InstrumentSwitch instrument={instrument} />}
+      {instrument === 'voice' && Array.isArray(entry.vr) && <VocalRange range={entry.vr} saPc={saPc} swaras={swaras} />}
 
       {showKey && (
         <div className='md-block'>
@@ -373,7 +429,6 @@ const MusicianDetails = ({ entry, music }) => {
         <div className='md-block'>
           <h3 className='md-label'>{ragaParts.length > 1 ? 'Ragas' : 'Raga'}</h3>
           {ragaParts.length === 0 && <p className='md-aside'>No raga: a Western-style or light-music tune.</p>}
-          {ragaParts.length > 0 && hasKey && <InstrumentSwitch instrument={instrument} />}
           {ragaParts.map((part, i) => (
             <Raga
               key={`${part.id}-${i}`}
@@ -387,24 +442,23 @@ const MusicianDetails = ({ entry, music }) => {
         </div>
       )}
 
-      {entry.t && (entry.t.id || entry.t.ts || entry.t.b) && (
+      {hasTaal && (
         <div className='md-block'>
           <h3 className='md-label'>Taal</h3>
-          <Taal t={entry.t} taals={taals} />
+          <Taal t={entry.t} taals={taals} showTabla={instrument === 'tabla'} />
         </div>
       )}
 
       {chords.length > 0 && (
         <div className='md-block'>
           <h3 className='md-label'>Chords</h3>
-          {ragaParts.length === 0 && <InstrumentSwitch instrument={instrument} />}
-          <ol className={instrument === 'piano' ? 'md-chords' : 'md-chords md-chords-diagrams'}>
+          <ol className={DIAGRAM_INSTRUMENTS.includes(instrument) ? 'md-chords md-chords-diagrams' : 'md-chords'}>
             {chords.map(({ numeral, chord }, i) => (
               <li key={`${numeral}-${i}`}>
                 <span className='md-numeral'>{numeral}</span>
                 {chord && ' '}
                 {chord && <span className='md-chord'>{chord}</span>}
-                {chord && instrument !== 'piano' && <ChordDiagram instrument={instrument} name={chord} />}
+                {chord && DIAGRAM_INSTRUMENTS.includes(instrument) && <ChordDiagram instrument={instrument} name={chord} />}
               </li>
             ))}
           </ol>
