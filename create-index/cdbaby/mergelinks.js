@@ -208,7 +208,31 @@ function readSheetMusic() {
   console.log(`Sheet music: ${linked} songs linked from sheet-match/sm.json`);
 }
 
+// Samples cut from Layamritam recordings (create-index/layamritam/make_samples.py) are
+// linked by exact index name, never by title matching; ones that are the same recording
+// as a CD sample (`dupOf`) stay unlinked. link_samples.py applies the same mapping.
+function readLayamritamSamples() {
+  const file = path.resolve(__dirname, "../layamritam/samples.json");
+  if (!fs.existsSync(file)) return;
+  const samples = JSON.parse(fs.readFileSync(file));
+  let linked = 0;
+  bhajans.forEach((bhajan) => {
+    (samples[bhajan.n] || []).filter((e) => !e.dupOf).forEach((e) => {
+      const url = "https://singwithamma.s3.amazonaws.com" + encodeURI(e.path);
+      bhajan.cs = bhajan.cs || [];
+      bhajan.cn = bhajan.cn || [];
+      if (!bhajan.cs.includes(url)) {
+        bhajan.cs.push(url);
+        bhajan.cn.push(e.song);
+        linked += 1;
+      }
+    });
+  });
+  console.log(`Layamritam samples: ${linked} linked from layamritam/samples.json`);
+}
+
 readBhajanIndex();
 readFiles();
+readLayamritamSamples();
 readSheetMusic();
 writeNewBhajanIndex();

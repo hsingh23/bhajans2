@@ -60,6 +60,33 @@ already published moves. A song can also be added by hand: append
 `{"songId": <Layamritam id>, "same": [], "n": "<index name (language)>", "title": "...",
 "lg": "...", "why": "manual", "versionOf": null}` to the manifest and run steps 3-4.
 
+## Song samples from Layamritam recordings
+
+Songs the app has no CD sample for (no `cs`) play a 75-second sample cut from
+Layamritam's recording instead, and songs that have CD samples get Layamritam's other
+versions (vintage, instrumental, other singers) as extra samples.
+
+```bash
+python3 <repo>/layamritam/fetch_audio.py <authToken> <songId>...       # mp3s -> layamritam/audio/
+python3 create-index/layamritam/make_samples.py layamritam/sample-sources.json   # -> layamritam/samples/, samples.json
+aws s3 sync layamritam/samples s3://singwithamma/samples-layamritam/ --acl public-read \
+  --content-type audio/mpeg --cache-control "public, max-age=31536000, immutable"
+python3 create-index/layamritam/link_samples.py --check-dups           # cs / cn in public/bhajan-index2.json
+```
+
+- Which recordings: every Layamritam song `matches.json` assigns to an index song
+  (`lyrics`, `lyrics+title`, `title`) plus each extra-book song's `songId` and `same`.
+- Samples copy the CD samples' shape, measured on the existing ones: the first 73 s
+  with a 2 s fade-out, then 2 s of silence, 96 kb/s 44.1 kHz stereo MP3.
+- `samples.json` maps an index name to its samples (`path`, label `song`, `songId`).
+  `--check-dups` cross-correlates each sample with the song's CD samples and marks
+  `dupOf` when it is the same recording (score >= 0.5; same recordings score 0.8-0.99,
+  different ones under 0.1); those stay unlinked. `mergelinks.js` re-applies the mapping
+  after it rebuilds `cs`.
+- Tokens: every load of the Layamritam web app logs in again and voids older tokens, so
+  take the token from the only open Layamritam tab (two tabs void each other's: 401
+  "session expired").
+
 ## Vocabulary maps (`lmeta.py`)
 
 Language and deity map onto the app's `lg` / `d` values (Vēdāntic, Love, Peace, Nature ->
