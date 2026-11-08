@@ -1341,6 +1341,12 @@ mark {
   background: rgba(77, 182, 172, 0.14);
   border-color: rgba(77, 182, 172, 0.35);
 }
+.category-chip.year {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+  background: transparent;
+  border-color: var(--border-color, rgba(0, 0, 0, 0.15));
+}
 
 /* Keep every round icon button a true circle, even with .button-jumbo or .spaced padding. */
 .button.button-circle {

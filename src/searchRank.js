@@ -73,6 +73,7 @@ export const buildSearchIndex = (bhajans) =>
       raw: `${b.n}${(b.l || []).join('')}${b.t || ''}`.toLowerCase(),
       tri: trigrams(k.joined),
       pop: popularity(b),
+      y: b.y ?? null,
     };
   });
 
@@ -129,14 +130,47 @@ const fuzzyScore = (q, entry) => {
   return d > 0.35 ? 200 * d : 0;
 };
 
+// Year words in a query: "1985", decades "1980s" / "80s". Each becomes [first, last] year.
+const YEAR = /^(19[5-9]\d|20[0-4]\d)$/;
+const DECADE = /^(19[5-9]0|20[0-4]0)'?s$/;
+const SHORT_DECADE = /^'?(\d0)'?s$/;
+
+/** Splits year words out of a query: `{ rest, ranges }`, ranges empty when there are none. */
+export const splitYears = (query) => {
+  const ranges = [];
+  const rest = [];
+  for (const word of (query || '').trim().toLowerCase().split(/\s+/)) {
+    let m;
+    if ((m = word.match(YEAR))) ranges.push([+m[1], +m[1]]);
+    else if ((m = word.match(DECADE))) ranges.push([+m[1], +m[1] + 9]);
+    else if ((m = word.match(SHORT_DECADE))) {
+      const start = (+m[1] >= 50 ? 1900 : 2000) + +m[1];
+      ranges.push([start, start + 9]);
+    } else if (word) rest.push(word);
+  }
+  return { rest: rest.join(' '), ranges };
+};
+
 /**
  * Indices of the bhajans matching `query`, best first. An empty query returns every
  * index in order. Location and tag text ("vol5-74", "ganesha") still match as plain
- * substrings of the name + locations + tags.
+ * substrings of the name + locations + tags. Years ("1985", "1980s", "80s") filter by
+ * the song's year, see splitYears.
  */
 export const rankBhajans = (index, query) => {
   const rawQ = (query || '').trim().toLowerCase().replace(/\s+/g, '');
   if (!rawQ) return index.map((e) => e.i);
+  const { rest, ranges } = splitYears(query);
+  if (ranges.length) {
+    // Year words keep songs first sung in that year or decade (`y`) and rank the rest
+    // of the query among them. A lone year also still finds its book ("2020" ->
+    // 2020supl pages), after the songs dated that year.
+    const inYears = index.filter((e) => e.y != null && ranges.some(([lo, hi]) => e.y >= lo && e.y <= hi));
+    const ranked = rankBhajans(inYears, rest);
+    if (rest) return ranked;
+    const seen = new Set(ranked);
+    return ranked.concat(index.filter((e) => !seen.has(e.i) && e.raw.includes(rawQ)).map((e) => e.i));
+  }
   if (/\d/.test(rawQ)) {
     // A page reference or a numbered title: plain substring search over name + locations + tags.
     return index.filter((e) => e.raw.replace(/\s+/g, '').includes(rawQ)).map((e) => e.i);

@@ -5,7 +5,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { buildSearchIndex, rankBhajans } from './searchRank';
+import { buildSearchIndex, rankBhajans, splitYears } from './searchRank';
 
 const bhajans = JSON.parse(readFileSync(resolve(process.cwd(), 'public/bhajan-index2.json'), 'utf8'));
 const index = buildSearchIndex(bhajans);
@@ -84,6 +84,37 @@ describe('search ranking', () => {
   it('returns everything in index order for an empty query', () => {
     expect(rankBhajans(index, '')).toEqual(bhajans.map((_, i) => i));
     expect(rankBhajans(index, '   ')).toEqual(bhajans.map((_, i) => i));
+  });
+
+  it('finds songs by year and decade, alone or with a name', () => {
+    const years = (query) => rankBhajans(index, query).map((i) => bhajans[i].y);
+    const in1985 = rankBhajans(index, '1985');
+    expect(in1985.length).toBe(bhajans.filter((b) => b.y === 1985).length);
+    expect(years('1985').every((y) => y === 1985)).toBe(true);
+    for (const q of ['1980s', '80s', "'80s"]) {
+      const ys = years(q);
+      expect(ys.length).toBe(bhajans.filter((b) => b.y >= 1980 && b.y <= 1989).length);
+      expect(ys.every((y) => y >= 1980 && y <= 1989)).toBe(true);
+    }
+    // A name plus a year ranks the name among that year's songs only.
+    const named = rankBhajans(index, 'amba bhavani 1985').map((i) => bhajans[i]);
+    expect(named[0].n).toBe('amba bhavani jaya jagadambe');
+    expect(named.every((b) => b.y === 1985)).toBe(true);
+    // Two years mean either year.
+    expect(new Set(years('1985 1987'))).toEqual(new Set([1985, 1987]));
+  });
+
+  it('still finds a supplement by its year, after the songs dated that year', () => {
+    const found = rankBhajans(index, '2020').map((i) => bhajans[i]);
+    const dated = found.findIndex((b) => b.y !== 2020);
+    expect(found.slice(0, dated).every((b) => b.y === 2020)).toBe(true);
+    expect(found.slice(dated).every((b) => b.l.some((l) => l.startsWith('2020')))).toBe(true);
+  });
+
+  it('splits year words from the rest of the query', () => {
+    expect(splitYears('krishna 2010')).toEqual({ rest: 'krishna', ranges: [[2010, 2010]] });
+    expect(splitYears('20s 1990s')).toEqual({ rest: '', ranges: [[2020, 2029], [1990, 1999]] });
+    expect(splitYears('om 108 vol5-74')).toEqual({ rest: 'om 108 vol5-74', ranges: [] });
   });
 
   it('keeps location and tag substring search', () => {
