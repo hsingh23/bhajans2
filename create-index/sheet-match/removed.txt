@@ -1,0 +1,918 @@
+VS HEAD: kept 999 added 69 removed 473; stems linked before 1015 after 1035
+
+######## REMOVED links whose title matched >= 90
+
+==== A-IBhavani -/-> 'mai bhavani (marathi)' title=94 lyric=0.218 lines=0.0 pos=None copy=vol7-167 | now linked: ['a-i bhavani (marathi)']
+SHEET: Ā ī bha vā nī ā nan da dā yi nī aṣ dabhu jā tū sim ha vā hi nī | Bhak ta val sa lē pā pa nā śi nī | Na ma na tu lā hē tuḷ ja bha vā nī tuḷ ja bha vā nī Ā ī | u de ude g ambā bā ī ā ī u de u de g ambā bā ī Ā ī am bā bā ī
+PAGE : vol7-167: es, playing with us, making us confused! Māi bhavānī (Marathi) māi bhavānī premasvarūpiṇi ude g ambe ā-ī āsura mardini amṛtavarṣiṇi ude g ambē ā-ī O Bhavani, consort of Shiva, whose true nature is love. Awaken Mother, slayer of the asuras. You constantly shower the nectar of love on us. Awaken, O Mother! ādi śakti ambābāyīcā jāgar karto āmhī jñāna bhaktīce de vardān lekar tujhī āmhī tuljhā bhavāni śambhu mohinī mahādevī māte sukhdāyiṇī jagadambe tū yogeśvarī māte 
+
+==== AdiSakti -/-> 'adisakti (marathi)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['adi sakti maha layamkari']
+SHEET: Ā di śak-ti ma hā la-yam ka-ri nit-ya śān-ti san dāyi-ni | kā ḷi kā ḷi sa nā ta nī a mṛ tānan-da ma-yī bhaira-vī | Sat-ya-mā-i śi-va rū-pa-māi śu-bha nit-ya sun-da-ra sā ra-māi | e tra kal-pan-ga ḷā-i ra-sippū nī śāś-wa-tē durg-gē kai to-zhām
+PAGE : 2018supl-8: down, please hold me close to You, O Parashakti. Ādiśaktī (Marathi) ādiśaktī āyī bhavānī he ambe śaktidāyinī… bhaktidāyinī… premadāyinī…viśvās dāyinī… ādimāye jagatkāriṇī he ambe śaktidāyinī… bhaktidāyinī… premadāyinī… viśvās dāyinī… Primal energy, Mother Bhavani, O Mother, giver of energy, devotion, love and faith! You create the illusory world, O Mother, and give energy, devo- tion, love and faith! ajāṇa lekare tujhī āmhi vyākuḷ jhālo yā samsārī śaraṇ ālo tav caraṇī śaktidāyinī… bhaktidāyi
+
+==== AkatarilArivinteOlinalam -/-> 'akataril arivinte' title=100 lyric=None lines=None pos=None copy=None | now linked: ['akatarilarivinte oli namam telichu']
+SHEET: A ka tā ril a ri vin de o ḷi nā ḷam te ḷi chu | a vi rā mam vi ja yip pōr a bhi rā ma mūrt tē | A mṛ tēś wa rī en nil u ṇa rum vī chā ran gaḷ | a mṛ ta su gan dhi ka ḷāk kū am mē
+PAGE : vol3-8: 8 Bhajanamritam 3 Akatāril arivinte Akatāril aṛivinte naṛukānti parattum anupama guṇa sadanē amṛtēśvari ammē O Mother Amriteshwari! Who is of incomparable virtues, who radiates the brilliance of knowledge in the inner heart... Prakṛtē kṛtasukṛtē gatiyaruḷuka cira sukhadē Avirāmam mama hṛdi nī teḷiyuka manaḥ sukhadē O Performer of great and holy acts! O Blessed One! Lead me to the eternal goal of Realisation. Shine in my heart always, O Giver of mental happiness! Ānanda ttiratalli ātmāvil 
+
+==== AmbaAmrteshwari -/-> 'ma amrtesvari' title=92 lyric=None lines=None pos=None copy=None | now linked: ['amba bhavani nin ambhoja']
+SHEET: Am ba a mṛ tēś shi nin am bhō ja nē trat tin | san ta tā nan da pra kā śa dhā ra | En ni la harn ni śam sam dīp ta mā ku vān | nin ka zhalt tār to zhun en num en num
+PAGE : vol5-105: 105 Devotional songs Mā amṛtēśvari Mā amṛtēśvari maṅgala dāyini mā jaya jagadhō dhāriṇi jaya jaga jananī mā mā amṛtēśvari (3x) mā Mother, the Immortal Goddess who showers auspiciousness upon us, victory to You who uplift the whole universe. Bhakti dijō mā prēma dijō mā darṣan dijō mā kṛpā karō mā mā amṛtēśvari (3x) mā Please grant us devotion, please grant us love, please be- stow upon us the vision of You. Shower Your grace on us, O Mother, Immortal Goddess. Prēma svarūpiṇi mā tripura sūndar
+
+==== AmrtanandamayiMata -/-> 'amrtanandamayi amma' title=91 lyric=None lines=None pos=None copy=None | now linked: ['amrtanandamayi']
+SHEET: A mṛ tā nan da ma yi mā tā a ma rā dhī śē | na-mō na-maḥ a ka-tā ril van nu da-yam chey yu ka | a-mṛ-tā nan-da-ma yi mā tā a-mṛ-tā-nanda-ma yi yi | A-ṛi yil-lam-mē vāzhttān nin-nu-de a-pa dā nan-ga-ḷa
+PAGE : vol2-22: 22 Bhajanamritam 2 amṚtānandamayī ammā amṛtānandamayī ammā amṛtānandamayī umaye mūkāmbikayē mūvulakin nāyakiyē uṇmaye tann uṇmaye veṇmayāl maṛaitavaḷe uyirāna uyirkaḷellām stutippavaḷe ammā nī uṛavōṭu kāpāttu uṭal edutu vantavaḷe Umaye Mookambikaye, the Empress of the three worlds, hiding Truth, Thy Truth, beyond the white veil. All living things worship Thee, Amma! Save me by binding me unto Thee, O Devi Incarnate. ammā...ammā...ammā... uṇmai tēdi tēdi ulakellām nān alainten ulakellām pay
+
+==== AnandaRupini -/-> 'ananta rupini' title=100 lyric=None lines=None pos=None copy=None | now linked: ['ananda rupini amme enikku']
+SHEET: Ā nan da rū pi ṇi am mē e nik kyu nī | ā nan da tē vi lak ki? | Āt ma pra kā śam ni ran nya nit yā nan da | nir vṛ ti en dē mu dak ki?
+PAGE : vol4-29: her works; come to Me, you are always Mine.” Ananta rūpiṇi Ananta rūpiṇi ananta guṇavati ananta nāmini girijē mā O You with endless forms, infinite qualities, countless names, O Mother Girija. Jagajananī trilōka pālini viśva suvāsini śubhadē mā durmmati nāśini sanmatidāyini bhōga mōkṣa sukha kāriṇi mā You are the Mother sustaining the three worlds. Auspiciously married one, You are my Mother, do bless me. You grace the world with auspiciousness and bestow happiness on all, the worldly an
+
+==== AparaKrpalo -/-> 'apara krpalo (telugu)' title=100 lyric=0.223 lines=0.0 pos=None copy=2019supl-16 | now linked: ['apara krpalo arikil']
+SHEET: A pā ra kṛ pā lō a ri kil nī vā yō | a va nīś wa rā kṛṣ ṇā a ruḷ va ram tā yō A tā yō | A ri mul lap pun chi ri a ka tā ril vi ri yik kyū | azhal pō yen nāt mā vu ku ḷi ra ṇi yān yān A
+PAGE : 2019supl-16: e yondigē matilaya sukhalābha gati nīḍu bā kṛṣṇā… apāra kṛpālō (Telugu) apāra kṛpālō nā dariki rāvā avanīśvarā kṛṣṇā varamulu osagavā virajāji navvu nā śōka tapta madilōna cirujallu kuripiñci vikasimpavā kṛṣṇā… karuṇanu kuripiñcu nayanāla kāntitō nā antarangamunu sparśiñcavā tapiyiñcu hṛdayāntarāḷalō – svalpam prēmarasāmṛtam varṣimpavā kṛṣṇā… mṛdumuraḷī gāna paravaśamaina nā manamandiramulō nāṭyamāḍa rā śrutilaya sangīta rasa dhāratō nā manassunu nīlō layam cēyyavā kṛṣṇā… 
+
+==== AparaKrpalo -/-> 'aparakrpalo (kannada)' title=100 lyric=0.269 lines=0.14 pos=None copy=2019supl-15 | now linked: ['apara krpalo arikil']
+SHEET: A pā ra kṛ pā lō a ri kil nī vā yō | a va nīś wa rā kṛṣ ṇā a ruḷ va ram tā yō A tā yō | A ri mul lap pun chi ri a ka tā ril vi ri yik kyū | azhal pō yen nāt mā vu ku ḷi ra ṇi yān yān A
+PAGE : 2019supl-15: t Ganesha who is ever demonstrating to us the absolute Truth. apārakṛpāḷō (Kannada) apārakṛpāḷō baḷigenna bārō avanīśvarā kṛṣṇā varavondu tāro arivina hūnage araḷali manadali anutāpavagali ennātmakinde karuṇāpūrita sundara nayanadā kāntiyu hṛnmana beḷagali bā dahisuva hṛdayāntarāḷadi ondīsu 
+
+==== Chandrasekhara -/-> 'candrasekhara (telugu)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['chandrasekaraya namah om']
+SHEET: Chan dra śe kharā ya na maḥ om Chandra om Gan | gā dha rā ya na maḥ om Gan om Chan dra | śe kha rā ya na maḥ om Chan dra om Gan | gā dharā yanamaḥ om Gan om Om namaḥśivā ya na maḥ om
+PAGE : 2019supl-21: ory to the Mother of the Universe! candraśēkharā (Telugu) candraśēkharā nīlakandharā phālolōcana pālayamām pannagābharaṇa jaṭaladhāraṇā bhasmabhūṣaṇa pālayamām We take refuge in Lord Shiva, who wears the crescent moon on his head, has a blue-hued throat, and an eye on his forehead. We take refuge in him, who is adorned with a snake, wears matted locks, is smeared with ash. kuriyajēyumā kṛpārasamunu ninnēkoliceda nirantaramu madini nimpavā bhaktibhāvamu 
+
+==== Chittamennum -/-> 'jivitamennum' title=90 lyric=None lines=None pos=None copy=None | now linked: ['chittamenum']
+SHEET: Chit ta me num si ra yi ni lē vaṭ ṭa mi dum pa ṛa va yai pōl | sik ki nān kaḷ ta vik ki rōm am mā kāt ti du vāi | Śi va jnyā na ka la yai nī en ka l ku bō dhip pāy | Chi tri n ba si ṛa yi li run du vi du ta lai a ḷit ti du vāy
+PAGE : vol4-76: 76 Bhajanamritam 4 Jīvitamennum Jīvitamennum śōbhanamākkum bhāvukadīpam nī ammē jñāna tapasvikal tēṭumśāśvata śāntinikētam nī Mother, You are the lamp of love that always brightens life. You are the eternal abode of peace that the ascetics seek deep within themselves. Prēma payasvini vēda manasvini dēvi sarasvati nī ammē phalavilōcini pāpavimārdhini tāpavināśini nī You are the river of love, O Devi Saraswati, You hold the Vedas in Your mind. You are the three-eyed Goddess who destroys sin a
+
+==== DeDarshanMa -/-> 'de darsan ma (odiya version)' title=100 lyric=0.157 lines=0.23 pos=0.08 copy=2020supl-49 | now linked: ['de darsan ma devi']
+SHEET: Dē dar śa-n mā dē vī mā am bē mā bha-vā nī mā | Dē dar śa-n mā dē vī mā am bē mā bha-vā nī mā | Riś-tē nā tē bhan dha n jhū ṭhe | sa chā he ba s pyār tē rā mā pyār tē rā mā
+PAGE : 2020supl-49:  Songs of Sri Mata Amritanandamayi 49 dē darśan mā (Odiya version) dē darśana mā dēbī mā ambē mā bhabānī mā bandhu parijana bandhana micchā mā sata ēkā sinā sēnēha tōra dhana jana māna sabu micchā mā gō sata ekā khālī prēma tōra jai jai mā jai jai mā jai jai mā jai jai mā ē bhaba sāgara pāri kara mōtē dhanya kari dē mā jībana mōrā abōdha sīsu mu nīya kōḷē mā go jagāo antarē parama prēma Desire leads to anger (English) Desire leads to anger, from anger follows fear. The door opens for hatred 
+
+==== DeviDayakari -/-> 'devi daya kari ma' title=92 lyric=None lines=None pos=None copy=None | now linked: ['devi dayakari (kannada)']
+SHEET: Dē vi da yā ka ri tā yē pa ri pā la ki pū ra ṇi mā tē | tūṣ ṭi yu nī nē puṣ ṭi yu nī nē an na pūr ṇēś va ri tā yē | Ja la ni dhi bat ti de bha vāg ni su ṭu ti de | bē ge yā tā ḷe vu tā yē
+PAGE : vol2-57: of Bliss. *representing the death of the ego dĒvi dayĀ kari mā dēvi dayā kari mā, amba dēvi sarasvati mā durga bhavāni mā, amba kāli kapālini mā jagadō dhāriṇi mā amṛtānanda rūpiṇi mā O Mother Goddess Giver of Compassion, O Mother Goddess of Knowledge, O Durga Consort of Shiva, O Mother Kali Consort of Kapali (Shiva), O Mother Support of the Universe, In the form of Amritanandamayi. dĒvi daya karō mā dēvi daya karō mā jai mātā gaurī kāli mā dukha nivārō mayyā dēvi bhakta janōmkē mayyā maṅg
+
+==== EntinuSokam -/-> 'entinu sokam (telugu version)' title=100 lyric=0.318 lines=0.31 pos=0.0 copy=2020supl-57 | now linked: ['entinu sokam manasse']
+SHEET: En ti nu śō kam ma nas sē | nin ni ja bhā vam a tal la | Sān dra su khā mṛ ta sām rā jyat tin | ē kā dhi pa ti yenn ōrk kū
+PAGE : 2020supl-57: hus, uplifter of the down-trodden, Sita Rama! entinu śokam (Telugu version) ēla ī śōkam manasā nī nija bhāvamadi kādu sāndra sukhāmṛta sāmrajyamlō ēkādhipati ani erugu mārppu anunadi mārani niyamam mārani vastuvani gurttiñcu maru bhūmilō eṇḍamāvula pōle māyākṛtamī jagamantā āndhyam tyajiñcu manasā akhilamu ātmēyani grahiyiñcu erukana śrīmukha prabha darśiñcu erigetḍu ahamē nī rūpam 
+
+==== GajananaHeGajanana -/-> 'gajanana he gajanana (tamil)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['gajanana']
+SHEET: Ga jā na nā hē ga jā na nā ga jā na nā hē ga ja va da na | Ga jā na nā hē ga jā na nā ga jā na nā hē ga ja va da na | Vā ra ṇa ma dha ha ra ga jā na nā parvva tī nanda na ga jā nana | Pārv va ti nan da na
+PAGE : vol7-86: , without deviation, for my journey towards goal. Gajānanā he gajānanā (Tamil) gajānanā he gajānanā gajānanā he gajavadanā O Gajanana, elephant-faced Lord! vezha mukhattu vināyakanē viḷanku sindūra vināyakanē aindu karankaḷ uṭayavanē ankuśa pāśam koṇḍavanē O elephant-faced Lord, destroyer of our miseries! You wear kumkum, have five arms and bear the goad and the noose. aimpula vēṭkai aṭakkiṭuvāy añcēl eṇṭrē kāttiṭuvāy allalakaḷ nīkki aruḷ taruvāy anbāl emmai āṇṭiṭuvāy 
+
+==== GauReTujheAbhanga -/-> 'gau re tujhe abhanga (jaya hari vithala)' title=100 lyric=0.167 lines=0.11 pos=0.19 copy=vol4-51 | now linked: ['jaya hari vithala (gau re tujhe abhanga)']
+SHEET: freely | Ha riḥ sa dā va-sēt ta-tra ya-tra bhāga-vatā nā ḥ | gā-yan ti bhak-tibhā vēna ha-rēr nā maiva kē-va-lam. | Jay ha ri vi-ṭha la vi-ṭha la pāṇ-ḍu-rang
+PAGE : vol4-51: ṛṣṇā kṛṣṇā kṛṣṇā harē harē Gāū rē tujhē abhanga Harī sadā vasē tatra yatra bhāgavatā nāḥ gāyanti bhakti bhāvēna harē nāmaiva kēvalam jaya hari viṭṭhala viṭṭhala pānduranga jaya hari viṭṭhala viṭṭhala pānduranga The Lord always looks after those who remember Him and sing His praises with devotion. Salutations to Lord Vithala, the Lord of Pandharpur. Gāū rē tujhē abhanga jay jay viṭṭhala pānduranga hē dēvā tujhā sūṭē na sanga dharuna ghē malā pānduranga dharuna ghē malā pānduranga gāū rē tujhē
+
+==== GuruCharanam -/-> 'guru charanam' title=100 lyric=None lines=None pos=None copy=None | now linked: ['guru caranam sadguru']
+SHEET: Gu-ru cha-ra-ṇamsad gu-ru cha-ra-ṇam a-mṛ-tānan-da-ma yī cha-ra-ṇam | gu-rucha-ra-ṇambha-va bha-ya ha-ra-ṇam a-mṛ-tā-nanda-ma yī cha-ra-ṇam | Akhi-la janār-chi-ta satcharaṇam ja-nimṛi-ti nāśaka śrī cha-raṇam | Sa-mas tadē-vī dē-va-ma-yam sad gu-rucha-ra-ṇam pra-ṇa māmisa-dā
+PAGE : vol2-78: gavata priya - Dear to the devotees guru caraṇam guru caraṇam guru caraṇam śrī guru caraṇam bhava haraṇam paramaguru caraṇam bhava haraṇam satguru caraṇam bhava haraṇam śiva guru caraṇam bhava haraṇam The Guru’s Feet destroy the cycle of birth and death. The Supreme Guru’s Feet destroy becoming. The Satguru’s Feet destroy that cycle. The Guru’s Feet, who is equal to Siva, destroy the cycle. 
+
+==== Ichamayi -/-> 'ichamayi' title=100 lyric=None lines=None pos=None copy=None | now linked: ['ichamayi (english)']
+SHEET: I-chā ma yiyāmnin i cha-pō lal la-yō viśwa ti len-tum na | da pa-tammē ti len-tum na da pa-tammē | viśwa | Nī cheyyum karm-mangaḷ ōrōnnum mā-nu-śan tān chey-va ten-nutā
+PAGE : vol3-268: in my heart. Holy Mother of the Universe... Ichamayi Mother, Your will is the source of the universe, All that occurs is Your Divine play. We foolish ones think we act on our own, Amma You are the power behind all we do. You are the One who creates and destroys again, She who forms maya then sweeps it away. Only with Grace can we carry these burdens, Filled with Your love we abandon all fear. Mother You serve us the fruits of our actions, Sweet they may be, or so bitter and hard. I am the carri
+
+==== Jagadishvari -/-> 'jagadisvari ma (malayalam amrita)' title=92 lyric=None lines=None pos=None copy=None | now linked: ['jagadisvari daya karo']
+SHEET: Ja ga dīś wa rī da yā ka ro mā | Śi va śan ka rī kṛ pā ka ro mā mā | Sar vēś wa rī rak ṣā ka ro mā | A mṛ tēś wa rī rak ṣā ka ro mā
+PAGE : 2020supl3-42: Jagadīśvarī Mā (Malayalam Amrita) jagadīśvarī mā jagadīśvarī mā jagadīśvarī mā jagadīśvarī mā O Mother goddess, Mother of the world! ammē en uḷḷil teḷiyēṇamē ammē nin kṛpa coriyēṇamē Mother, please shine within, and shower Your grace! ammē nin upakaraṇam ākkēṇamē ammē nin kaṭākṣam coriyēṇamē Mother, please make me Your instrument, and grace me with Your sidelong glance. ammē nin iccha en iccha ākaṇe ammē nin pādattil aliyēṇamē Please may Your will become my wi
+
+==== KarunardraManasan -/-> 'karunardra manase (malayalam, chinmaya)' title=91 lyric=None lines=None pos=None copy=None | now linked: ['karunardra manassan']
+SHEET: Ka ru ṇār dra mā na-san ka-danārt ti nā śa-kan | ka ma nī ya vi gra han pō y ma ṛan nyu | Ka ra kā ṇā ka da li lī e zha kaḷ vī zhu vān | a pa rā dha tin gu chey tu śau rē
+PAGE : 2020supl3-50: Karuṇārdra Mānasē (Malayalam, Chinmaya) karuṇārdra mānasē kāruṇya mūrttē en ambikē amṛtāmbikē kōmaḷē kāḷi bhavatāriṇi ambē bhaktapriyē amṛtāmbikē O my mother, eternal mother, embodiment of mercy, whose heart melts with compassion! Tender one, Kali, who carries us across the ocean of samsara, mother, dear to the devotees, eternal mother! tṛyambakē tripurātmikē sarvalōkēśi nin kazhal ñān vandikkunnēn mānava ṛṣīśvar stutikkumā trikkazhal ñānitā vandiciṭunnēn bhuvanēśvari… amṛtā
+
+==== KrshnaGovindaGopala -/-> 'krsna govinda gopala (hindi)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['sri krsna govinda gopala']
+SHEET: Kṛṣ ṇa gō vin da go pā lā Śrī lā Śrī | kṛṣ ṇa gō vin da go pā lā Śrī lā Ha ri | gō vin da gō vin da go pā lā Ha ri lā Śrī | kṛṣ ṇa gō vin da mu ra li ma nō ha ra
+PAGE : vol2-122: faced Rama.” krishna gōvinda gōpāla śrī kṛṣṇa gōvinda gōpāla hari gōvinda gōvinda gopālā śrī kṛṣṇa gōvinda murali manōhara gōkula nandana gōpāla kṛṣṇa - All-attractor gōvinda - Lord of the cows gōpala - Cowherd murali - Flute player hari - Refuge of the distressed manōhara - Mind-ravishing gōkula - Krishna’s village nandana - Son dēvaki nandana gōpālā dānava bhañjana gōpāla śrī kṛṣṇa gōvinda murali manōhara gōkula nandana gōpālā dēvaki nandana - Son of Devaki dan
+
+==== KrshnaKrshnaRadhaKrshna -/-> 'krsna krsna jaya radhakrsna' title=90 lyric=None lines=None pos=None copy=None | now linked: ['krsna krsna radha']
+SHEET: Kṛṣ-ṇā kṛṣ-ṇā rā-dhā kṛṣ-ṇā Rā-dhā kṛṣ-ṇā | Go-pī kṛṣ-ṇā Rā-dhā kṛṣ-ṇā Go-pī kṛṣ-ṇā | Gō vin da gō pā la vē ṇu kṛṣ-ṇā | Mō ha-na kṛṣ-ṇāma-dhu sū da-na kṛṣ-ṇā Ma-na sū da-na kṛṣ-ṇā Mu
+PAGE : vol5-103: Govardhana mountain. Mujhe darṣan dēdo kṛṣṇā kṛṣṇā tērē ṣaran mē lēlō kṛṣṇā kṛṣṇā is dil mē rehna kṛṣṇā kṛṣṇā Please give me Your darshan (vision of the Lord) Krishna, let me take refuge in You. Krishna, always reside in my heart. Sukh jāta hai dukh āta dukh jāta hai sukh āta par is jīvan mē dukh hi dukh sē dūb raha he tērē bina Happiness goes and sorrows come; then sorrows go and happiness comes. But in this life of mine I am drowning in sorrow after sorrow when I am without You. Rādhe rādhe
+
+==== ManasaVacha -/-> 'manasa vaca (marathi version)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['manasa vacha karmana']
+SHEET: Ma na sā vā chā karm ma-ṇā | ni ran ta ram nin ne sma ri kyun nu | En niṭ ṭu nō ḍu ka ni vu kāṭṭān | a mān ta tē pon nam mē
+PAGE : 2018supl-65: and transform me into dust at Your lotus feet. Manasā vācā (Marathi version) manasā vācā karmaṇā nirantar smarito tujalā kā bare hā vilamba ā ī dayā dākhaviṇyā majavarī kitī varṣe aśī sarlī nase svasthatā mājhyā manī alpaśī sāntvanā de māte kā bare hā vilamba ā ī kā bare hā vilamba ā ī ā ī maj asahya jhāle nako maj he ase jīvan aśakta mī tav parīkṣā jhelaṇyā malā ātā he asahya jhāle malā ātā he asahya jhāle vādaḷī phasalelyā tārusam bharakaṭṭale g man māze bhramiṣṭa na hovo he jīvan thoḍītarī 
+
+==== ManasavachaKarmana -/-> 'manasa vacha karmana' title=100 lyric=None lines=None pos=None copy=None | now linked: ['manasavaca karmana (kannada)']
+SHEET: A ga lī vi vē ka sū r ya | na u da ya a ra ḷa li hṛ da ya | ka ma la vi ma la | Ma na sa vā cha kar ma ṇā śa ra ṇ em be nu
+PAGE : vol1-145: the time looking forward to the grave. MANASĀ VĀCHĀ manasā vāchā karmaṇā nirantaram ninne smarikkunnu enniṭṭu mennōṭu kanivukāṭṭān amāntamentē ponnammē amāntamentē ponnammē Through my mind, speech and actions I am remembering Thee in-cessantly. Why then are Thou delaying to show Thy mercy to me, beloved Mother? āndukaḷ palatu kazhiññiṭṭum svasthatayillen manassinu ittiri āśvāsamēkuvān amāntamentē ponnammē amāntamentē ponnammē (manasā) Years have passed but still my mind has no peace. O darli
+
+==== MandahasavadaneManonmani -/-> 'mandahasa vadane manohari' title=90 lyric=None lines=None pos=None copy=None | now linked: ['mandahasa vadane']
+SHEET: Manda-hā sa va-da nē ma-nōn ma-ni manga-ḷa dāyi | ni mṛ du ma dhū ra bhā ṣi ṇi | mṛ du ma dhū ra bhā ṣi ṇi | Bha va tā pa hā ri ṇi bha vā ni
+PAGE : vol1-149: 149 Devotional songs MANDA HĀSA manda hāsa vadanē manōhari mātā jagad jananī mātā mātā mātā jagad jananī mātā mātā mātā jagad jananī jagad jananī śubha jananī mātā jagad jananī ambā mātā jagad jananī īśvarī ambā paramēśvarī ambā jagadīśvarī ambā paramēśvarī ambā mandahāsa vadane = Gently smiling face manōhari = Enchanting jagad jananī = Mother of the world śubha = Auspicious īśvarī = Goddess ambā = Mother paramēśvarī = Supreme Goddess jagadīśvarī = World ruler MANGALA
+
+==== Mizhinirilazhnna -/-> 'mizhiniril azhnnu (malayalam)' title=92 lyric=None lines=None pos=None copy=None | now linked: ['mizhinirilazhnna (malayalam)']
+SHEET: Mi zhi nī ri lāzhn na ma na tā ri lin nu ma dhu | villayen dejana nī ma dhu vil la yen dejana nī Mi zhi nī Ta zha nī | yā te yon nu tu ṇa yā yi van nu ta zhu kī ṭu ken ne sa da | yam ta zhu kī ṭu ken ne sa da yam Ta zha yam Ve ru
+PAGE : 2025-333: Songs of Sri Mata Amritanandamayi 333 Mizhinīril Āzhnnu Malayalam mizhiniril azhnnu Malayalam mizhinīril āzhnnu māzhkum manassiluṇarv-ēkān aṇayū janani… My heart is weary from tears that endlessly flow. Mother, make me anew. kaniv-ūṙum tirumizhi tumbāl onn-aḍiyandeeriyunn-akam onnuzhiyū jananieriyunn-akam onnuzhiyū With your eyes, aglow with compassion, caress this aching heart. jananieriyunn-akam onnuzhiyū O Mother, caress this aching heart. nīḷum ī rāvil kāḷum manassilpāḷunnu cintakaḷ ammē The
+
+==== MuttumariAmma -/-> 'muttumari amba' title=96 lyric=None lines=None pos=None copy=None | now linked: ['teti unnai saranataintom']
+SHEET: Tē-di un-nay ṣa-ra ṇa-dain-dom de-śa mut tu mā ri | tē-di un-nay ṣa-ra ṇa-dain-dōm en-kal mut tu mā ri | Mut tu mā ri am ma mut tu mā ri | Mut tu mā ri am ma mut tu mā ri
+PAGE : vol2-140: 140 Bhajanamritam 2 mutTu māri amMa muttu māri amma muttu māri muttu māri amma muttu māri devi unnai śaran adāindhom nēṣa muttu māri O Mother, Showerer of pearls, O Devi, we have taken refuge in Thee, O loving, affectionate Showerer of pearls. nālañcu nāleyKKu nālañcu nāleykku tān jīvitam nāmeṅgu pōkunnu hē mānavā kandinnu kandiṅgu kānāteyāyi kaṇṇinnu kaṇṇāyatāke maṇṇil nīḷunna mōhaṅgal pālunnitā kāḷunna melaṅgaḷ nāḷamitā entiṅgu bandhaṅgal āru bandhu māññu pōm mādaka svargga bhangi śrī mātu 
+
+==== NamoNamah -/-> 'namo namah' title=100 lyric=None lines=None pos=None copy=None | now linked: ['namo namah (telugu)']
+SHEET: Na mo na mah na mo na mah kā li cha ra nā lu | mā ma na su na ko lu vai na kā li cha ra nā lu | Vai rā gya sī ma lo ā ḍu cha ra nā lu | kā li dā su pū jin che kā li cha ra nā lu
+PAGE : vol4-120: 120 Bhajanamritam 4 Namō namaḥ Namō namaḥ namō namaḥ ādi para śakti (4x) Salutations to the primal supreme power. Śrī mātā śrī mahārājñī śrīmat simhāsanēśvarī cidagnī kuṇḍa sambhūtā dēvā kārya samudyatā The Mother of all, the great empress of the whole universe, the sovereign enthroned on a lion’s back, who emerged from the fire of pure consciousness, ever promoting the cause of divine forces. Udyadbhānu sahasrābhā caturbāhu samanvitā rāga svarūpa pāśāḍhyā krōdhā kārāṅkuśōjjvalā manō r
+
+==== NandalalaNandalalaHari -/-> 'nanda lala nanda lala' title=100 lyric=None lines=None pos=None copy=None | now linked: ['nandalala nandalala (sanskrit)']
+SHEET: Nan da lā lā nan da lā lā | Nan da lā lā ha ri nan da lā lā | Na va ja la dha ra sa ma nī la kṛṣ ṇa | na va ja la dha ra sa ma nī la
+PAGE : vol2-144: 144 Bhajanamritam 2 nanda lālā nanda lālā nanda lālā nanda lālā nandā kē lālā prabhu rādhā lōlā gōpi lōlā gōpa bālā citta līlā vilāsa lōlā harē rāma harē rāma rāma rāma harē harē harē kṛṣṇa harē kṛṣṇa kṛṣṇa kṛṣṇa harē harē O Son of Nanda, O Son of Nanda, For Radha to know joy is to be devoted to the Lord. Soft-hearted toward the Gopis, O Cowherd Boy, My heart is longing for the divine sport of Krishna. nandalālā navanīta nandalālā navanīta cōra naṭavara lālā gōpālā dēvakī vāsudēva kumār
+
+==== NandalalaNandalalaHari -/-> 'nandalal nandalal' title=94 lyric=None lines=None pos=None copy=None | now linked: ['nandalala nandalala (sanskrit)']
+SHEET: Nan da lā lā nan da lā lā | Nan da lā lā ha ri nan da lā lā | Na va ja la dha ra sa ma nī la kṛṣ ṇa | na va ja la dha ra sa ma nī la
+PAGE : vol1-158: 158 Bhajanamritam 1 NANDALĀL nandalāl nandalāl nandalāl yadu nandalāl nandalālā navanīta chōra rādhā pyāre nandalāl māyi mīrā manasa chōra hṛdaya vihārā nandalāl O Son of Nanda, born in the Yadu clan, Stealer of butter, Beloved of Radha, who stole Mother Mira Bai’s mind, that Son of Nanda who plays in the heart... NANDALĀLĀ YADU nandalālā yadu nandalālā vṛndāvana gōvinda lālā rādhā mādhava nandalālā rādhā lōla nandalālā O Son of Nanda born in the Yadu clan, Lord of the cows in Brin- davan, Bel
+
+==== NandalalaNandalalaHari -/-> 'nandalala yadu nandalala (hindi)' title=90 lyric=None lines=None pos=None copy=None | now linked: ['nandalala nandalala (sanskrit)']
+SHEET: Nan da lā lā nan da lā lā | Nan da lā lā ha ri nan da lā lā | Na va ja la dha ra sa ma nī la kṛṣ ṇa | na va ja la dha ra sa ma nī la
+PAGE : 2020supl-130: nt Kaliya. nācē nācē kānō nācē nācē Krishna is dancing! nandalālā yadu nandalālā (Hindi) nandalālā yadu nandalālā vṛndāvana gōvinda bālā rādhālōlā nandalālā rādhā mādhava nandalālā O Beloved son of Nanda, enchanting little Lord of Vrindavan, Beloved of Radha. 
+
+==== OhMindOfMine -/-> 'oh mind of mine (english)' title=100 lyric=None lines=None pos=None copy=None | now linked: []
+SHEET: Hear this oh mind, live ev ery mo ment in re | mem brance of Am ma's name. name. Grate-ful | ly we bow at Her feet, o cean of com | pas sion, Moth er of us Grate-ful
+PAGE : 2020supl2-60:  O Mother? Will I know the real Me within me? oh mind of mine (English) oh mind of mine, selfishly blind surrender to the divine, surrender to the divine from cradle to pyre, chasing your desires blindfolded you run, right into the fire hold fast to this: the truth exists! it’s name is eternal bliss all that you fear, for all that you pine all that is ‘yours’, all that is ‘mine’ all those you love, and those you disdain only this truth is what shall remain Oi Äiti (Finnish) Oi Äiti, kaipaus on
+
+==== OmNamahSivaya -/-> 'om namo namah sivaya' title=86 lyric=None lines=None pos=None copy=None | now linked: []
+SHEET: Ōm na maḥ śi vā ya ōm na maḥ śi vā ya | ōm na maḥ śi vā ya śi va ōm na maḥ
+PAGE : vol4-142: 142 Bhajanamritam 4 Ōm namō namaḥ śivāya Ōm namō namaḥ śivāya (4x) Salutations to Lord Shiva. Sarvva mantra yantra mūrtti ādi śrī gurō namaḥ tṛppādāmbujam tozhunnu sarvvamamgalattināy Prostrations to the Lord of all mantras and all yantras, the first in the line of Gurus. I bow to Your lotus feet, repository of all auspiciousness. Ādhi vyādhināśanam sudhāmayam cinmayā klēśabharita jīvitattil ēkunī kṛpādhanam Lord, in this life full of misery, grant me the treasure of Your compassion, the
+
+==== OmNamahSivayaA- -/-> 'om namo namah sivaya' title=86 lyric=None lines=None pos=None copy=None | now linked: []
+SHEET: Ōm na-maḥ śi vā ya ōm na-maḥ śi vā ya | Ōm na-maḥ śi vā ya ōm na-maḥ śi vā ya
+PAGE : vol4-142: 142 Bhajanamritam 4 Ōm namō namaḥ śivāya Ōm namō namaḥ śivāya (4x) Salutations to Lord Shiva. Sarvva mantra yantra mūrtti ādi śrī gurō namaḥ tṛppādāmbujam tozhunnu sarvvamamgalattināy Prostrations to the Lord of all mantras and all yantras, the first in the line of Gurus. I bow to Your lotus feet, repository of all auspiciousness. Ādhi vyādhināśanam sudhāmayam cinmayā klēśabharita jīvitattil ēkunī kṛpādhanam Lord, in this life full of misery, grant me the treasure of Your compassion, the
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 1' title=97 lyric=0.317 lines=0.14 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 14' title=97 lyric=0.376 lines=0.14 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 2' title=97 lyric=0.338 lines=0.14 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 4' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 6' title=97 lyric=0.341 lines=0.09 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule - 7' title=97 lyric=0.35 lines=0.14 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule viii' title=92 lyric=0.324 lines=0.14 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10a -/-> 'omkara divya porule xi' title=92 lyric=0.352 lines=0.14 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 1' title=97 lyric=0.266 lines=0.07 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 14' title=97 lyric=0.35 lines=0.07 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 2' title=97 lyric=0.282 lines=0.1 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 4' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 6' title=97 lyric=0.304 lines=0.1 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule - 7' title=97 lyric=0.321 lines=0.1 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule viii' title=92 lyric=0.326 lines=0.07 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10b -/-> 'omkara divya porule xi' title=92 lyric=0.33 lines=0.07 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ō ma nich am ma va ḷart tām, ō rō | kal chō ṭum am ma te ḷik kyām
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 1' title=97 lyric=0.262 lines=0.05 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 14' title=97 lyric=0.363 lines=0.08 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 2' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 4' title=97 lyric=0.294 lines=0.05 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 6' title=97 lyric=0.299 lines=0.05 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule - 7' title=97 lyric=0.347 lines=0.13 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule viii' title=92 lyric=0.318 lines=0.05 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10c -/-> 'omkara divya porule xi' title=92 lyric=0.327 lines=0.05 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷe vē gam | Lak ṣyam mi ka vut ta tin kil, mārg ga | vigh nan gaḷ ē tum nis sā ram
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 14' title=97 lyric=0.317 lines=0.08 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 2' title=97 lyric=0.236 lines=0.05 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 4' title=97 lyric=0.254 lines=0.08 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 6' title=97 lyric=0.302 lines=0.08 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule - 7' title=97 lyric=0.325 lines=0.08 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule viii' title=92 lyric=0.322 lines=0.08 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10d -/-> 'omkara divya porule xi' title=92 lyric=0.274 lines=0.05 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe va rū | ō ma na mak ka ḷē vē gam | Uḷ ḷam pra bhā pūrṇ ṇam ā kum uṇ ma | nam me ka ram tan nu yart tum
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 1' title=94 lyric=0.244 lines=0.06 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 14' title=94 lyric=0.355 lines=0.09 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 2' title=94 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 4' title=94 lyric=0.252 lines=0.03 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 6' title=94 lyric=0.303 lines=0.06 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule - 7' title=94 lyric=0.333 lines=0.12 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule viii' title=94 lyric=0.314 lines=0.06 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10e -/-> 'omkara divya porule xi' title=94 lyric=0.301 lines=0.06 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷē, va rū | ō ma na mak ka ḷē vē gam | Ar chan ā sū na māi nam me, swa-yam | arp pa-ṇam chey yu vin mak kaḷ
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 14' title=97 lyric=0.38 lines=0.18 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 2' title=97 lyric=0.319 lines=0.14 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 4' title=97 lyric=0.264 lines=0.04 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 6' title=97 lyric=0.357 lines=0.11 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule - 7' title=97 lyric=0.345 lines=0.14 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule viii' title=92 lyric=0.356 lines=0.11 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule10f -/-> 'omkara divya porule xi' title=92 lyric=0.326 lines=0.18 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule x']
+SHEET: Ōm kā ra div ya po ru ḷe, va-rū | ō ma-na mak ka ḷe vē gam | Dhyā na pra kā śat til ū ṭe, dwand wa | vai rud dhya bhā van gaḷ mā yum
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 1' title=97 lyric=0.238 lines=0.09 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 14' title=97 lyric=0.332 lines=0.14 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 2' title=97 lyric=0.253 lines=0.11 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 4' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 6' title=97 lyric=0.276 lines=0.07 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule - 7' title=97 lyric=0.308 lines=0.11 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule viii' title=92 lyric=0.297 lines=0.14 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule11a -/-> 'omkara divya porule x' title=94 lyric=0.283 lines=0.09 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ō ma na yai va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 14' title=97 lyric=0.327 lines=0.05 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 2' title=97 lyric=0.277 lines=0.05 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 4' title=97 lyric=0.259 lines=0.07 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 6' title=97 lyric=0.282 lines=0.07 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule - 7' title=97 lyric=0.309 lines=0.05 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule viii' title=92 lyric=0.304 lines=0.05 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule11b -/-> 'omkara divya porule x' title=94 lyric=0.3 lines=0.05 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Ōrt tā lī sam sā ra mō di, en num | an ta kan tīrt tu pū vā di
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 14' title=97 lyric=0.365 lines=0.12 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 2' title=97 lyric=0.276 lines=0.05 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 4' title=97 lyric=0.306 lines=0.05 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 6' title=97 lyric=0.32 lines=0.07 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule - 7' title=97 lyric=0.325 lines=0.05 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule viii' title=92 lyric=0.324 lines=0.05 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule11c -/-> 'omkara divya porule x' title=94 lyric=0.332 lines=0.05 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sam vā da sa tran gaḷ vēṇ ṭa, chī rum | vag va da sīlk kā ram veṇ ṭa
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 1' title=97 lyric=0.251 lines=0.05 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 14' title=97 lyric=0.355 lines=0.07 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 2' title=97 lyric=0.277 lines=0.09 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 4' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 6' title=97 lyric=0.285 lines=0.09 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule - 7' title=97 lyric=0.34 lines=0.09 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule viii' title=92 lyric=0.295 lines=0.07 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule11d -/-> 'omkara divya porule x' title=94 lyric=0.303 lines=0.07 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule xi']
+SHEET: Ōm kā ra div ya po ru ḷe, va rū | ō ma na mak ka ḷe vē gam | Sat yat te sam bat ti nā yi, vā tu | veyk kyan ma ṭik kyāt ta lō kam
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule - 1' title=97 lyric=0.346 lines=0.12 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule - 14' title=97 lyric=0.358 lines=0.12 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule - 2' title=97 lyric=0.36 lines=0.15 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule - 6' title=97 lyric=0.388 lines=0.15 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule - 7' title=97 lyric=0.379 lines=0.12 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule viii' title=92 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule x' title=94 lyric=0.365 lines=0.12 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule4a -/-> 'omkara divya porule xi' title=92 lyric=0.339 lines=0.12 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 4']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷe vē gam | Ō ma na yāi va larn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule - 14' title=97 lyric=0.301 lines=0.05 pos=None copy=vol4-130 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule - 2' title=97 lyric=0.286 lines=0.05 pos=None copy=vol1-177 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule - 6' title=97 lyric=0.317 lines=0.08 pos=None copy=vol2-155 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule - 7' title=97 lyric=0.321 lines=0.03 pos=None copy=vol2-164 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule viii' title=92 lyric=0.296 lines=0.03 pos=None copy=vol3-141 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule x' title=94 lyric=0.273 lines=0.05 pos=None copy=vol3-151 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule4b -/-> 'omkara divya porule xi' title=92 lyric=0.293 lines=0.03 pos=None copy=vol3-161 | now linked: ['omkara divya porule - 4']
+SHEET: Īś-war āj nyāvi dhē yat-wam vē-ṇam ārk-kum vi | pat-tā ke nīn gān Āt ma viś wā sam ke | dut mak ka-ḷe vyart tha tā | vyar tha tā
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule - 14' title=97 lyric=0.362 lines=0.12 pos=None copy=vol4-130 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule - 2' title=97 lyric=0.373 lines=0.15 pos=None copy=vol1-177 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule - 6' title=97 lyric=0.385 lines=0.12 pos=None copy=vol2-155 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule - 7' title=97 lyric=0.374 lines=0.12 pos=None copy=vol2-164 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule viii' title=92 lyric=0.387 lines=0.15 pos=None copy=vol3-141 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule x' title=94 lyric=0.344 lines=0.12 pos=None copy=vol3-151 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule4c -/-> 'omkara divya porule xi' title=92 lyric=0.358 lines=0.12 pos=None copy=vol3-161 | now linked: ['omkara divya porule - 4']
+SHEET: Śa-tru tā bhā vam tja jik kyū mak-kaḷ mi tra mā | ṇā ru nōrk kū Swan tam su kham tya ji | chan yark ku san-tā-pa śān tik kyu pā-yam ti ra yū | Ōm kā ra div ya po ru ḷē va rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule - 14' title=97 lyric=0.342 lines=0.05 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule - 2' title=97 lyric=0.27 lines=0.05 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule - 4' title=97 lyric=0.292 lines=0.02 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule - 7' title=97 lyric=0.34 lines=0.06 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule viii' title=92 lyric=0.324 lines=0.09 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule x' title=94 lyric=0.321 lines=0.05 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule6a -/-> 'omkara divya porule xi' title=92 lyric=0.288 lines=0.05 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷar nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule - 14' title=97 lyric=0.317 lines=0.05 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule - 2' title=97 lyric=0.282 lines=0.05 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule - 4' title=97 lyric=0.284 lines=0.02 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule - 7' title=97 lyric=0.405 lines=0.17 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule viii' title=92 lyric=0.311 lines=0.05 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule x' title=94 lyric=0.346 lines=0.05 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule6b -/-> 'omkara divya porule xi' title=92 lyric=0.286 lines=0.05 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Vē-ṣa vi dhā nat ti lal la ma-nō bhā vat ti | nā ṇu prā dhān yam ār-bhā da bhak ti yum,
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule - 14' title=97 lyric=0.397 lines=0.1 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule - 2' title=97 lyric=0.323 lines=0.1 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule - 4' title=97 lyric=0.333 lines=0.07 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule - 7' title=97 lyric=0.378 lines=0.14 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule viii' title=92 lyric=0.366 lines=0.17 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule x' title=94 lyric=0.344 lines=0.1 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule6c -/-> 'omkara divya porule xi' title=92 lyric=0.357 lines=0.1 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 6']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Man-tra swa rū pam ma nas sil sa-dā man-gā te | vart tik ku kīl man-dī bha vik killa
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule - 14' title=97 lyric=0.37 lines=0.09 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule - 2' title=97 lyric=0.311 lines=0.09 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule - 4' title=97 lyric=0.292 lines=0.02 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule - 6' title=97 lyric=0.357 lines=0.12 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule viii' title=92 lyric=0.352 lines=0.09 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule x' title=94 lyric=0.337 lines=0.12 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule7a -/-> 'omkara divya porule xi' title=92 lyric=0.314 lines=0.09 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu vāi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule - 14' title=97 lyric=0.332 lines=0.09 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule - 2' title=97 lyric=0.256 lines=0.07 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule - 4' title=97 lyric=0.271 lines=0.02 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule - 6' title=97 lyric=0.324 lines=0.11 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule viii' title=92 lyric=0.294 lines=0.11 pos=0.0 copy=vol3-141 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule x' title=94 lyric=0.332 lines=0.09 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule7b -/-> 'omkara divya porule xi' title=92 lyric=0.314 lines=0.09 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule - 7']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma na yāi va ḷarn nā ma yan gaḷ nīk ki | ōm kā ra vas tu āi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule - 14' title=97 lyric=0.316 lines=0.0 pos=None copy=vol4-130 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule - 2' title=97 lyric=0.295 lines=0.0 pos=None copy=vol1-177 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule - 4' title=97 lyric=0.302 lines=0.0 pos=None copy=vol1-184 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule - 6' title=97 lyric=0.455 lines=0.2 pos=None copy=vol2-155 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule viii' title=92 lyric=0.32 lines=0.0 pos=None copy=vol3-141 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol3-141: d). Mother who protects those who are helpless... Ōmkāra divya porūle viii Ōmkāra divya porūle varū ōmana makkaḷe vēgam Ōmanayāyi valarnām ayaṅgaḷ nīkki ōmkāra vastu āyi tīrū Come quickly, darling children, you who are the Essence of OM. Break away from all the shackles that you have carefully nurtured, and become one with the sacred syllable OM. Ālasyam dūratteriyū - karma vīryam prakāśi cidatte ārṣa cētassil ninnāgōla sīmakal bhēdicha śamkholi kēlppu Discard all indolent tendencies. Let th
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule x' title=94 lyric=0.298 lines=0.1 pos=None copy=vol3-151 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule7c -/-> 'omkara divya porule xi' title=92 lyric=0.309 lines=0.0 pos=None copy=vol3-161 | now linked: ['omkara divya porule - 7']
+SHEET: uḷ ḷa bhē dam bhu-vi mā-yā vi mō ha nōrk-kū. | Man dā ra puṣ pa sa mā nam hṛt til man ga ḷa | chin ta vi dart ti chā ru saun dar ya vum | pūv a mṛ tum pā ri lā ke yo zhuk ku-ken mak-kaḷ.
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 1' title=97 lyric=0.28 lines=0.12 pos=0.0 copy=vol1-170 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 14' title=97 lyric=0.382 lines=0.09 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 2' title=97 lyric=0.28 lines=0.12 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 4' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 6' title=97 lyric=0.325 lines=0.15 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule - 7' title=97 lyric=0.343 lines=0.09 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule x' title=94 lyric=0.34 lines=0.12 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule8a -/-> 'omkara divya porule xi' title=92 lyric=0.347 lines=0.09 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ō ma-na yāi va-ḷar nā ma-yan gaḷ nīk-ki ōm-kā ra vas-tu-āi | tī rū ōmkā ra vas-tu āi tī rū
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 14' title=97 lyric=0.308 lines=0.1 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 2' title=97 lyric=0.256 lines=0.08 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 4' title=97 lyric=0.263 lines=0.06 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 6' title=97 lyric=0.3 lines=0.12 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule - 7' title=97 lyric=0.321 lines=0.04 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule x' title=94 lyric=0.296 lines=0.06 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule8b -/-> 'omkara divya porule xi' title=92 lyric=0.28 lines=0.08 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Ā-zhak ka dal saum ya śān-tam sa dā tī rak ka | dal kṣō bha pūrṇ-ṇam dhyā na lī nāt mā vu
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 1' title=97 lyric=None lines=None pos=None copy=None | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol1-170: 170 Bhajanamritam 1 ŌMKĀRA DIVYAPORŪḶE-I ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnā mayaṅgal nīkki ōmkāra vastu āyitīru Come quickly darling children, you who are the Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. ennile ñān āṇu nīyum pinne ninnile nī āṇu ñānum kaṇṇu kāṇāyi keyāl bhinnamāyi tōnnunnu bhinnam alennāl ī tōnnum You are the ‘I’ which is in me and I am the ‘you’ which is in you. The feeling of difference is
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 14' title=97 lyric=0.326 lines=0.04 pos=0.0 copy=vol4-130 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol4-130: ctory to the Goddess of the world. Ōmkāra divya porūlē (14) Ōmkāra divya porūlē varū ōmana makkalē vēgam ōmanayāy valar nāmayaṅgal nīkki ōmkāra vastuvāy tīru Come quickly darling children, you who are the divine es- sence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable “Om.” Munnile satguru rūpam ullil minnunnorātma pratīkam satguru pādattil cittam ramikukil attalum baddhalum tīrum The form of the Guru appearing in front of us is truly a symbol of the Self th
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 2' title=97 lyric=0.235 lines=0.04 pos=0.0 copy=vol1-177 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol1-177: otion for the attainment of Liberation. OMKĀRA DIVYA PORUḶĒ, II omkāra divya poruḷē varū omana makkaḷe vēgam ōmanayāyi valar nāmayangaḷ nīkki omkāra vastuvāyi tīru Come quickly darling children, you who are the Divine Essence of OM. Removing all sorrow, grow as endearing ones and become one with the sacred syllable OM. mōkṣatil āsa undeṅkil makkaḷ svārtatā bhāvam tyajikkyū dīna janatinte tengaḷ dhvanikale kātuttu kēlkkān śramikku Children, if you are desirous of attaining Liberation give up 
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 4' title=97 lyric=0.245 lines=0.01 pos=0.0 copy=vol1-184 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol1-184: ssing Lord will satisfy all your desires. ŌMKĀRA DIVYA PORUḶE-IV hṛīmkāra mantram muzhakki sadā pāyum purapōl manassum nīndoru kīdatte prēmātma sindhuvil chernnangatāyi tīrnnidatte Chanting the mantra ‘Hrim’, let the mind flow like a river towards the Ocean of Love and meet and and become one with It. śatyattin nervaritedū makkaḷ niṣkāma bhāvattilude 
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 6' title=97 lyric=0.268 lines=0.05 pos=0.0 copy=vol2-155 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol2-155: o the Kundalini Shakti, the Mother of the World. ōmkāra divya porūḷe - VI ōmkāra divya porūḷe varū ōmana makkaḷe vēgam ōmanayāyi valarnāmayangal nīkki ōmkāra vastu āyi tīrū 
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule - 7' title=97 lyric=0.27 lines=0.03 pos=0.0 copy=vol2-164 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol2-163: 163 Devotional songs Someone demonic can turn into someone divine and vice versa. Remember: the good and evil qualities of man, god and demon, are in the human heart. tatvārtha buddhiyil makkaḷ sadā nisvārtha jīvitam nedū vyakti bōdhatin nahanta yattul kalam arppikka daivattil makkaḷ Children, always lead a selfless life and seek the higher truths. Control your egocentric nature and surrender your heart to God. uḷḷam telīvuttu narnāl tante uḷḷum puravum kulirkkum audārya sīlavum anyōnya mai
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule x' title=94 lyric=0.289 lines=0.03 pos=0.0 copy=vol3-151 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol3-151: g go, and constantly plead for attention. Ōmkāra divya porūle x Ōmkāra divya poruḷē - varū ōmana makkaḷē vēgam Ōmanayāy vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāyu tīrū... ōmkāra vastuvāy tīrū Come quickly darling children; you are the essence of Om. Removing all sorrows, grow to be adorable and become one with the sacred syllable Om. Vēdō jvalānta sandēśam - lōka vēdiyil kīrttikka makkaḷ kōṭi yabdaṅgaḷ kazhiññālu millati- nnētum svarasthāna bhēdam (2x) Children, sing the shining spiritual me
+
+==== OmkaraDivyaPorule8c -/-> 'omkara divya porule xi' title=92 lyric=0.265 lines=0.04 pos=0.0 copy=vol3-161 | now linked: ['omkara divya porule viii']
+SHEET: Ōm kā ra div ya po ru ḷē va rū | ō ma na mak ka ḷē vē gam | Mā-yak kya dhī-śan ma hē-śan ma hā mayak kya | dhī nan ma nu ṣyan mō ha pā śam koṇ du
+PAGE : vol3-161: er of your life an ideal mirror for others! Ōmkāra divya porūle XI Ōmkāra divya poruḷē - varū ōmana makkaḷe vēgam Ōmanayay vaḷarnnā mayaṅgaḷ nīkki ōmkāra vastuvāy tīrū Come quickly darling children, you who are the divine essence of Om. Remove all sorrows, grow to be adorable and merge with the sacred syllable Om. Ātma vipañcikamīṭṭi - snēha (all verses call only) gānaṅgaḷ ālapiccīṭū nīrum manassukaḷ kāśvasa tīrtthamāy snēhardra gānam pozhikkū! Sing songs of love in the veena of the Self. Be 
+
+==== OruNalilNyanEn -/-> 'oru nalil nan en (kannada version)' title=96 lyric=0.251 lines=0.0 pos=0.0 copy=2020supl-150 | now linked: ['oru nalil nanen kannane']
+SHEET: O-ru nā ḷil nyān en kaṇ ṇa-ne kā ṇum | o ru gā na mā dhu ri keḷk kum | Ō ma na chuṇ du ka ḷil ō da ku zha-lu mai | ā rō mal kaṇ ṇa mun nil va rum
+PAGE : 2020supl-150: Bhajanamritam Supplement 2020 – Volume 1 150 oru naḷil ñān en (Kannada version) ontudina nānu kṛṣṇana kāṇuvē koḷalgāna mādhuri kēḷuvē sundara adharadi muraḷiya nūduvā kṛṣṇana darśanā nā paḍēvē āgenna janma saphalavāguvudū andu nā ānanda pānamāḍi unmatta bhaktiya uttuṅga neleyali nintu ānandadi nartisuvē ī jīvarāśigaḷigādhāra nīnu īśa nīnu jagatpālakanu kālaviḷamba māḍadē bandu darśanā nīḍi santayisu oru nōṭṭam-ēkāttat-entē (Malayalam) oru nōṭṭam-ēkāttat-entē? ammē onnum uriyāḍāttat-entē mizh
+
+==== RadheKrishna -/-> 'radhe krsna' title=95 lyric=None lines=None pos=None copy=None | now linked: ['radhe krsna (gopika ramana)']
+SHEET: Rā-dhē kṛṣ-ṇā rā-dhē kṛṣ-ṇā rā-dhē rā dhē rā-dhē kṛṣ-ṇā | rā dhē kṛṣ ṇā rā dhē rā dhē kṛṣ-ṇā rā dhē rā dhē | Gō pi kā ra ma ṇā kṛṣ-ṇā gō ku la pā lā | mō ha na rū pā kṛṣ ṇā nī la śa rī rā
+PAGE : vol3-192: worlds except Her Lord, Radha waits for You alone. Rādhe Kṛṣṇa Rādhe kṛṣṇa rādhe kṛṣṇa kṛṣṇa kṛṣṇa rādhe rādhe (2x) Gōpi kṛṣṇa gopāla kṛṣṇa govardana dhāri gōvinda kṛṣṇa Muraḷi kṛṣṇa mōhana kṛṣṇa mañjuḷa hāsa mānasa cōrā... Mañjuḷa hāsa mānasa cōrā... Nirupama saure murāri malāri pītāmbara dhāri kuñja vihāri Nitya nirāmaya nirmala dēvā nirguna saguna bhāva prakāśa... Nirguna saguna bhāva prakāśa... Nartana sundara nanda kumāra navanita cōrā nīraja netrā Nāda svarūpa vēda svarūpa 
+
+==== RadhesyamRadhesyam -/-> 'radhe syam radhe syam' title=100 lyric=0.111 lines=0.06 pos=0.0 copy=vol3-194 | now linked: ['radhesyam radhesyam (hindi)']
+SHEET: Rā dhe śy ā m rā dhe śyām | Ta ṭ pa t hū n mem yā d mem te rī, nā jā nū vi śrām | Bā v ri ke h ke mī rā pa r sa b has te ha i hai O | rā dhe śy ā m o rā dhe śyām o
+PAGE : vol3-194: 194 Bhajanamritam 3 Rādhe śyām Rādhe śyām rādhe śyām (3x) Vṛndāvana candra kṛṣṇa kanhaiya tu hi āśraya rādhe gōvinda Anātha nātha dīna bandhō rādhe gōvinda (2x) O Radhe Shyam, the shining moon of Vrindavana, Krishna, You are my sole refuge and protector of cows. You are the lord of the destitute, You are the friend and relative of the downtrodden. Mīra ke prabhu giridhara nāgara dēdo bhakti ham kō mādhav Nanda kumāra navanīta cōrā rādhe gōvinda (2x) You are Meera’s Lord, You held up the go
+
+==== RajaRam -/-> 'raja rama' title=93 lyric=None lines=None pos=None copy=None | now linked: []
+SHEET: Rā-ja rām rā ja rām rā ja rām rā ja | rām sī tā rām sī tā rām sī tā | śyām rādhe śyām rādhe śyām rādhe | rām rā ja rām rā ja rām rā ja rām rā ja
+PAGE : vol1-214: rd of the Universe, Raghava, victory to Ram! RĀJA RĀMA rājā rāma rāma rāma sītā rāma sītā rāma kōdaṇḍa rāma rāma rāma sītā rāma rāma rāma tāraka nāma rāma rāma sītā rāma rāma rāma rāma rāma rāma rāma kōdaṇḍa rāma kōdaṇḍa rāma kōdaṇḍa rāma kōdaṇḍa rāma rājā rāma = Lord Rama the king sīta rāma = Sita’s husband, Rama kōdaṇḍa = Rama’s bow tāraka nāma = The Divine Name which takes one across the ocean of transmigration 
+
+==== ReManva -/-> 'jago jago re manva (hindi)' title=64 lyric=None lines=None pos=None copy=None | now linked: []
+SHEET: Re ma n va re ma n va | pyā r pra bhu se ka r le | ka ya phe re shwa s ke ma n ke | ha ri ka na m su mir le
+PAGE : 2025-170:  Songs of Sri Mata Amritanandamayi 170 Jāgō Jāgō Rē Manvā Hindi jago jago re manva Hindi jāgō jāgō rē manvājāgō jāgō rē manvā Awaken, awaken, O human. bhōg kī nidrā sē ab jāgōmāyā kē is chal kō pēhcānō Rise now from the slumber of worldly pleasures. Recognize the deceit of maya. ab dēr nā karnā jāgō jāgō rē manvā Do not delay any longer — awaken, O human! jīvan yē ghaṭtā jāyē har ik kṣaṇ Life is diminishing with every passing moment. man kī tṛṣṇā kō bujhāyejag pē tan man dhan luṭāye The endless 
+
+==== SambhoSankara -/-> 'sambho sankara' title=100 lyric=0.251 lines=0.0 pos=None copy=vol2-188 | now linked: ['sambho sankara umapathe']
+SHEET: Śambhōśanka-ra u-mā pathe pā hiśanka-ra pa-śu pa-the | Nan-di vā ha-na nā-ga-bhūṣa-nā chān-draśekha-rā ja-dādha-rā | Gangā dhāra śiva gaurima-nōha-rā pāhiśan kā-ra sadā-śiva | Sambhōśanka-ra u-mā pa-the pā hi śanka-ra pa-su pa-the
+PAGE : vol2-187: 187 Devotional songs darśan ki āsha hē man mērā pyāsā hē āj mērī ittnīsi bātt māniyē My mind is thirsty and longing for darshan. Please consider this supplication, just this much for today. cārōn ōr andhēra hē māyā mēm gēra hē jñān kā diyā man mēn jalā dījīyē There is darkness everywhere, and I am immersed in the maya all around me. Please light the lamp of knowledge in my mind. dukhōm kā sāgar hē pāpom ka sāgar hē mērī tutti naiyyā kō pār kījiye In front of me is the ocean of worldly misery
+
+==== SamsaraDukha -/-> 'samsaraduhkha (telugu version)' title=100 lyric=0.412 lines=0.25 pos=0.07 copy=2018supl-79 | now linked: ['samsara dukha samanam']
+SHEET: Sam-sā-raduḥ kha śa-ma-namchey-yum an-put-ta lō ka ja-na-nī! | Nin div-ya has ta ta-ṇa-lā ṇen-num en-num na-muk ko ra bha-yam | An-dhat-vamārn nu ma-ru-vumjī-va vṛn-dat-tin am ba śa-ra-ṇam | Ā-pat-ti lārk ku ma-bha-yam nin pā-da pat-ma sma-ra-ṇam
+PAGE : 2018supl-79: m rām Chant the name of Rama, chant the name of Sita Rama! Samsāraduḥkha (Telugu version) samsāraduḥkha śamanam cēyyū priyamaina lōkajananī nī divyahasta caluvē satatam satatam māku abhayam andhatvamulō munigē jīva bṛndānikamma śaraṇam āpadalō māku abhayam – amma nī pādapadma smaraṇam sāntam bhramiñci hṛdayam – ghōra timiramlō cikki tirigē ī dusthitīki śamanam – amma nī nāmarūpa mananam 
+
+==== SarvaMangala -/-> 'sarva mangale' title=92 lyric=None lines=None pos=None copy=None | now linked: ['sarva mamgala lalitambika']
+SHEET: Sar va man ga la la li tām bi ka | Bhakta ma na sa ham si ka Bhak ti matkal pa ra si ka | La li tām bi ka | Sam rā jya dā yi ṇi sa dā śiva ku tum bi ṇi
+PAGE : vol3-210:  of the true realized guru, who is omniscient. Sarva mangaḷe Sarva mangaḷē sadguru mātā amṛtānandamayī mama janani Sarva śobhanē śobhana rūpiṇi garva vināśini namō namaḥ O Mother who is the embodiment of auspisiousness, who shines in all brightness, Who has a resplendent form and who destroys pride, O Satguru Mata Amritanandamayi, salutations to You! Bhava bhaya mōcini trāhi mahēśvari nikhila nirāmaya nirañjini Mangaḷa rūpiṇi manalaya kāriṇi mangaḷa dāyini namō namaḥ O Great Goddess, who liber
+
+==== SriPadaMahatmya -/-> 'sri pada mahatmyam (amrtesvari padam vande)' title=96 lyric=0.229 lines=0.25 pos=0.13 copy=vol2-203 | now linked: ['amrtesvari padam vande (sri pada mahatmyam)']
+SHEET: Śrī pā da mā hāt mya mārk ka ṛi yām gu ru | pā dat tin vai bha va mārk ka ṛi yām | A mṛ tēś va rī am mē ā nan da sā ra mē | kai val ya dhā ma mē nyān na mik kyām
+PAGE : vol2-203: 203 Devotional songs śrī pāda māhātmyaM śrī pāda māhātmyam ārkkariyām - guru pādattin vaibhavamārkkariyām amṛteśvarī ammē ānanda sāramē kaivalya dhāmamē ñān namikkām amṛtēṣvari pādam vandē . . . (2) Who knows the importance of the lotus feet of the Guru? Who knows the grandeur of the Guru’s feet? Amme, Amritesvari, the Essence of bliss, the Abode of Liberation, I am prostrating to You! śrī pāda pūjakku mēlilla pūjakaḷ illa yōgādikaḷ sādhanakaḷ sad guru pādattil prēmavum śraddhayum janma janmān
+
+==== SriRamaNamame -/-> 'sri rama namamu' title=92 lyric=None lines=None pos=None copy=None | now linked: ['sri rama namame (tamil)']
+SHEET: Śrī rā ma nā ma mē son nāl an | kē va ru vān ha nu mān Śrī mān | Kṣē man gaḷ yā vum ta ru vān śrī | rā ma bhak ta ha nu mān mān Śrī
+PAGE : vol1-236:  (Protector of the sages) is a Name dear to Thee. ŚRI RĀMA NĀMAMU śrī rāma nāmamu entōmañchi madhuramu madhurādi madhuramu manakaṇde amṛtamu (śrī rāma) Sri Rama’s name is very sweet. It is so sweet like ambrosia, also easily reachable. tāṭaki mardinchi munulanu kāpādina nāmamu ṛāttini nātika mārchina ramya maina nāmamu (śrī rāma) Rama killed evil demoness Tataki. He made into a stone a woman. That is the beauty of this name. ṛāvanādi rākṣasūlanu vadhiyimchina nāmamu vāsiga bhadrācha
+
+==== SyamRadheShyam -/-> 'syam radhe syam (arati kunja vihari ki)' title=100 lyric=None lines=None pos=None copy=None | now linked: ['arati kunja vihari (syam radhe syam)']
+SHEET: Śyām rā-dheśyām rādhe śyām rā-dheśyāmrādhe śyām rā-dheśyām rādhe | śyām rā dhe śyām śyām rā dheśyām Ā ra-ti kuñ-ja-vi | hā rī ki śrī gi ri dha ra kṛṣ-ṇa mu rā rī ki Ā | rā rī ki Śyām rā dheśyām rā-dhe śyām rā dheśyāmrā-dhe
+PAGE : vol2-215: 215 Devotional songs Śyām rādhe Śyām (ĀRATI KUñJavihari) śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām rādhe śyām āratī kuñjavihāri kī śrī giridhara kṛṣṇa murāri kī śyām rādhe śyām... This is the arati for Lord Krishna Who lives in the bower, for the One Who killed the demon Mura and held the mountain aloft on His hand. galē mē vaijayanti mālā bajāve murali madhura bālā śravana mē kuṇḍala chala kālā He wears a garland of wild flowers on His neck and is the Boy Wh
+
+==== TarakaNama -/-> 'taraka namamu (telugu)' title=91 lyric=None lines=None pos=None copy=None | now linked: ['taraka nama (kannada)']
+SHEET: Tā ra ka nā ma ma hā ma hi mā śrī rā ma | ja ya rā ma ra ghu rā ma sī tā rā ma | Ma na vem ba mar ka ṭa ō rā ma | Ni na nā ma din da ni na prē ma din da
+PAGE : vol7-287: ught in the world. You became Emperor of the universe! Tāraka nāmamu (Telugu) śrī rāma rāma rāmēti ramē rāmē manōramē sahasranāma tattulyam rāma nāma varānanē Meditate upon Sri Ram as Sri Rama Rama Rama. The thrice recital of Rama’s name is equal to the recitation of the thousand names of Lord Vishnu (Vishnu Sahasranama). tāraka nāmamu taluvara manujā bhava-nāśaka mantramu maruvakurā O Man, without forgetting, chant the name of Rama, which is capable of taking one across this ocean of sams
+
+######## RANDOM mid-band accepts (lyric .55-.70, title 75-95)
+mid-band count 7
+
+==== KarayattaKannaninnente -> 'karayatta kannanin (malayalam)' lyric=0.686 lines=0.8 pos=0.0 title=88.2 ref=True vol6-112
+SHEET: Ka ra yāt ta kaṇ ṇa nin nen tē en | ka ra yun na kaṇ ṇi nō ṭiṣ ṭam | Ka da na na ḷil lāt ta kaṇ ṇā en ne | ka ra yik kum vi ra ha ma kat tū En ne
+PAGE : vol6-112:  KAṆṆANIN (MALAYALAM) kaṇṇā. . . kaṇṇā. . . kaṇṇā. . . /'*'0+))'(/'::'&9&&<&)%(3(<& karayunna kaṇṇinōṭiṣṭam /'1'&'C'?9==+))'(/'::+(3(<&&< karayikkum virahamakattū - kaṇṇā. . . O Krishna who never cries, why are my crying eyes so dear to You? O Krishna, who is immune to sorrow, please remove the separation from You that makes me weep. puzhayōḷam mizhinīrozhukkī - ñān tuzhayunnu virahattin tōṇi azhal kāttil en nauka kaṇṇā cuzhiyil peṭṭāzhnnu pōkunnu - kaṇṇā. . . In this flood of tears that fl
+
+==== KannaVada -> 'kanna vada unni' lyric=0.58 lines=1.0 pos=0.0 title=84.2 ref=True vol2-108
+SHEET: Kaṇ ṇā vā dā uṇ ṇi kaṇ ṇā vā dā | veṇ ṇa kaṭ ṭuṇ ṇā nāi kaṇ ṇā vā dā | Kaṇ ṇā vā dā uṇ ṇi kaṇ ṇā vā dā | ā dā nā pā dā nāi kaṇ ṇā vā dā
+PAGE : vol2-108: 108 Bhajanamritam 2 kaṇṇā vādā uṇṇi kaṇṇā vādā uṇṇi kaṇṇā vāṭā Come, O Kanna (boy Krishna), come charming Kanna!veṇṇa kaṭṭuṇṇānāyi kaṇṇā vāṭā Come, Kanna, feed Yourself on stolen butter! āṭānayi pāṭānayi kaṇṇā vāṭā Come Kanna, to sing and dance! gōkkaḷe mēykkānāyi kaṇṇā vāṭa Come Kanna, to graze the cows! carattaṇyānāyi kaṇṇā vāṭā Come, Kanna, to get a hug! cāñjādi ceriñjādi kaṇṇā vāṭā Come Kanna, with hopping and skipping steps! puñciri tūki nī kaṇṇā vāṭā Come Kanna, smiling all the way... mur
+
+==== MuralivaleBhajave -> 'muralivale' lyric=0.617 lines=0.4 pos=0.0 title=76.9 ref=True vol2-139
+SHEET: Mu ra ḷī vā lē bha jā vē mu r ḷī | ra s kē bhā rī Mu ra ḷī rī | Jaymu-r ḷi-dha r jay gha-naśyām jayma-n-mō ha-n rā-dheśyām | Śyāmśyāmbō-lō rā-dhē śyām bō-lō rā-dhe śyām Mu-ra ḷī
+PAGE : vol2-139: 139 Devotional songs muralivāle bhajāve muralivāle bhajāve murali rasake bhāri jai muralidhar jai ghana śyām jai manamōhan rādhe śyām śyām śyām bōlō śrī rādhe śyām bōlō O Holder of the flute, play a melodious tune. Victory to the Holder of the flute, victory to Him Who is blue like the sky, to the Enchanter of the mind, Radha Krishna. Say “Shyam, Shyam”; say “Radhe Shyam.” brahma nāche śankar nāche nāche suramuni sāre sūrya candrama dharti nāche nache nabh ke tāre o murali sune nārad nāche kā
+
+==== DehachyaMuralita -> 'dehachya muralita gitecha vara (marathi)' lyric=0.649 lines=0.47 pos=0.0 title=82.4 ref=True vol6-57
+SHEET: Dē hā chyā mū ra līt t gī tē vā rā | Kar mā chyā vī ṇē lā bhak tī tā rā | Ka rū pra bhu chē kām rē mā mu khi ha ri chē | nām sa dā mī bhak tī ka rū ni ṣ kām ha ri chē
+PAGE : vol6-57:  You to the world of divine bliss! DĒHACHYĀ MŪRALĪTA GĪTĒCHĀ VĀRĀ (MARATHI) dēhachyā mūralīta gītēchā vārā karmachyā vīnēlā bhaktīchā tārā The flute in the form of a body is played by the wind of the Gita. A vina of karma having the strings of devotion… karū prabhuchē kāma rē mājhā mūkhī harī chē nāma sadā mī bakti karū niṣkām 
+
+==== SankarSutHo -> 'sankar sut ho tum (hindi)' lyric=0.612 lines=0.58 pos=0.04 title=87.0 ref=True vol6-185
+SHEET: Śan ka r su t hō tum sā rē | san ka d ha r lō tum | Dā s tu mā rō dēv ha m kō | vān chi t va r dō tum
+PAGE : vol6-185: 185 Devotional songs SANKAR SUT HŌ TUM (HINDI) sankar sut hō tum - sare sankaṭ har lō tum 1+,()72"+*@(1%8(3("'2(/@ vāncchit var dō tum Child of Shankara (Shiva) remove all my problems. I am Your servant, bless me. vāraṇ mukh dēvā gaurī nandan gajvadanā vighnēṣvar varadā sundar! gangādhara tanayā O Elephant-faced child of Gauri (Parvati’s son), re- mover of obstacles, beauteous one, son of the bearer of Ganga. musē par chaḍhakar - āvō - māyā mōh harō - sārō - 2'&F'=("'2(/@(1@(3()72"E ēk 
+
+==== SyamGopalaMaza -> 'syam gopala majha' lyric=0.68 lines=0.69 pos=0.02 title=92.9 ref=True vol3-233
+SHEET: Śyā m gō pā lā mā zā kṛṣḥ ṇa gō pā la | yē mā zā pu-ḍe he nan dā chyā bā ḷā bā ḷā Kṛṣḥ | La-pun nakko rā-hus ma lā sō-ḍun nakko zā vūs zā vūs | Ra-ḍe vu nak kō-re ma lā gi-ri dha r bā ḷā bā ḷā
+PAGE : vol3-233: od naṭeśvara God of dance Śyām gōpālā mājhā śyām gōpālā mājhā kṛṣṇa gōpālā yē mājhā puḍe he nandā cyā bāḷā Lapun nakko rāhus malā sōḍun nakko jhāvus Raḍavu nakkōre malā giridhar bālā O Shyama Gopala, my Krishna Gopala, please come before me, O son of Nanda. Don’t hide from me, never part away from me. Do not make me cry. O Giridhara Gopala. Āvaḍicā khāvu tulā mi dēyīn āvaḍice khēḷu tujhe mi paṇ kheḷī 
+
+==== SitaRam -> 'sita ram bol' lyric=0.651 lines=0.83 pos=0.01 title=82.4 ref=True vol1-228
+SHEET: Sī-tā rām sī-tā rām sī-tā rām bōl rā-dhē śyām rā-dhē śyām | rā-dhē śyām bōl Ha-ri bōl ha-ri bōl ha-ri ha-ri bōl | Ha-ri bōl ha-ribōl ha-ri ha ri bōl Mu-kun-da mā-dha-va | gō-vin-da bōl Sī-tā rām sī-tā rām sī-tā rām bōl
+PAGE : vol1-228: n of Vrindavan, the sporting ground of Krishna SĪTA RĀM BOL sīta rām sīta rām sīta rām bōl rādhe śyām rādhe śyām rādhe śyām bōl hari bōl hari bōl hari hari bōl mukunda mādhava gōvinda bōl nāma prabhū kā hē sukha dāyī pāpa katēngē kṣaṇa mēm bhāī rāma kī mahimā aisē bōl mukunda mādhava gōvinda bōl The Name of the Lord is the Bestower of bliss. It will destroy all sins in a moment. Therefore, sing the glory of Rama and sing “Mukunda, Madhava, Govinda!” 

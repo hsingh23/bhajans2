@@ -1,0 +1,40 @@
+### REVIEW
+### NONE with old links
+### ACCEPTED title<75 & no ref
+AdidumAmme                 -> patitum amme atitum                      ly=0.852 ln=1.0 co=0.34 ti=72.0 vol3-186
+Akatarilennennum           -> akatarilennennum (malayalam)             ly=0.937 ln=1.0 co=0.41 ti=66.7 vol7-9
+AmmaDeviTanitantana        -> amma devi - kannada version              ly=0.971 ln=1.0 co=0.94 ti=68.4 vol7-16
+AmmeYennuLoru              -> ammayennulloru nama morttidave           ly=0.871 ln=1.0 co=0.41 ti=57.1 vol1-25
+AmrtanandamayiJanani       -> karunamayi ni krpamayi ni                ly=0.918 ln=1.0 co=0.41 ti=56.4 vol2-116
+AnbuVativanaval            -> jhala jhalavena (tamil)                  ly=0.959 ln=1.0 co=0.33 ti=44.4 vol7-120
+ClosingPrayers             -> lokah samastah sukhino                   ly=0.322 ln=0.5 co=0.52 ti=40.0 vol3-281
+DhyanaSloka                -> om amrtesvariyai namah                   ly=0.925 ln=1.0 co=0.18 ti=42.9 vol3-139
+MaOMaPukaru                -> saranagat ko apnavo ma (hindi)           ly=0.705 ln=0.8 co=0.31 ti=33.3 vol6-186
+MandahasavadaneManonmani   -> mandahasa vadane                         ly=0.922 ln=1.0 co=0.33 ti=74.3 vol3-120
+NaJivana                   -> adiparama jyotivai (telugu)              ly=0.923 ln=1.0 co=0.39 ti=40.0 vol6-6
+NaviluGariyaNayanada       -> navilu gariya (kannada)                  ly=0.924 ln=1.0 co=0.37 ti=73.3 vol7-216
+NoOneIsYourOwn             -> o mind become surrendered (english)      ly=0.972 ln=1.0 co=0.92 ti=35.3 vol6-228
+OMindBecome(English 2008)  -> no one is your own (manase nin svantamay ly=0.967 ln=1.0 co=0.84 ti=35.0 vol3-270
+OMindBecome(English2008)   -> no one is your own (manase nin svantamay ly=0.967 ln=1.0 co=0.84 ti=35.0 vol3-270
+Satyaslesam                -> alambahina (malayalam)                   ly=0.915 ln=1.0 co=0.42 ti=40.0 vol6-11
+SendYourLove               -> mother send your love to me              ly=0.758 ln=0.77 co=0.85 ti=72.7 vol4-246
+SubhraSaroruha             -> subhra saroruha nilaye devi              ly=0.87 ln=1.0 co=0.35 ti=70.6 vol4-180
+WondrousGoddess(SantaFe)   -> wondrous goddess precious goddess        ly=0.569 ln=0.44 co=0.68 ti=66.7 vol5-201
+### MULTI accepts, different pages
+AmrtanandamayiJanani [('karunamayi ni krpamayi ni', 0.918, 1.0, 56.4, 'vol2-116'), ('amrtanandamayi janani', 0.896, 1.0, 100.0, 'vol2-23')]
+AnbuVativanaval [('jhala jhalavena (tamil)', 0.959, 1.0, 44.4, 'vol7-120'), ('anbu vativanaval (tamil)', 0.953, 1.0, 100.0, 'vol6-27'), ('jhala jhala (tamil)', 0.953, 1.0, 34.8, 'vol6-27')]
+Cenmile [('cenmile (hindi)', 0.886, 1.0, 100.0, 'vol7-59'), ('chen mile', 0.838, 1.0, 100.0, 'vol5-41')]
+ClosingPrayers [('asato ma sad gamaya', 0.052, 0.0, 33.3, 'vol1-272'), ('lokah samastah sukhino', 0.322, 0.5, 40.0, 'vol3-281')]
+DamDamDumDumDamaruBole [('dam dam dum dum damaru bole', 0.941, 1.0, 100.0, 'vol6-51'), ('dam dam dum dum damaru bole ', 0.926, 1.0, 100.0, 'vol7-62')]
+Kadaloram [('kadaloram (tamil)', 0.967, 1.0, 100.0, 'vol6-95'), ('kataloram tapamceyyum', 0.824, 0.77, 100.0, 'vol4-91'), ('kataloram tavam', 0.697, 0.69, 100.0, 'vol3-109')]
+NintraTiruKolam [('nintra tiru kolam kanten (ta', 0.879, 0.88, 100.0, 'vol6-165'), ('nintra tirukkolam kanten', 0.732, 0.75, 100.0, 'vol4-128')]
+NoOneIsYourOwn [('no one is your own (manase n', 0.974, 1.0, 81.2, 'vol3-270'), ('o mind become surrendered (e', 0.972, 1.0, 35.3, 'vol6-228')]
+OMindBecome(English 2008) [('no one is your own (manase n', 0.967, 1.0, 35.0, 'vol3-270'), ('o mind become surrendered (e', 0.966, 1.0, 100.0, 'vol6-228')]
+OMindBecome(English2008) [('no one is your own (manase n', 0.967, 1.0, 35.0, 'vol3-270'), ('o mind become surrendered (e', 0.966, 1.0, 100.0, 'vol6-228')]
+OMindBecome(SantaFe) [('no one is your own (manase n', 0.974, 1.0, 35.0, 'vol3-270'), ('o mind become surrendered (e', 0.972, 1.0, 100.0, 'vol6-228')]
+OmkaraSvararupini [('omkara svarupini unaru', 0.83, 0.73, 93.8, 'vol5-133'), ('omkara svararupini unaru (ma', 0.716, 0.67, 87.2, 'vol6-172')]
+RadheRadheShyama [('radhe radhe syama', 1.0, 1.0, 100.0, 'vol2-182'), ('radhe radhe radhe syam', 1.0, 1.0, 82.8, 'vol2-181')]
+SitrinbamNatum [('sitrinbam natum (tamil)', 0.769, 0.83, 100.0, 'vol7-265'), ('sitrinbam nadum (tamil)', 0.671, 0.61, 100.0, '2020supl-175')]
+TanchamenaVantom [('tancamena vantom (tamil)', 0.903, 1.0, 100.0, 'vol7-279'), ('tanjamena vandom (tamil)', 0.849, 0.92, 100.0, '2020supl-183')]
+WondrousGoddess(Pray&Serve [('wondrous goddess precious go', 0.927, 0.94, 66.7, 'vol5-201'), ('wondrous goddes (ishwari jag', 0.763, 0.69, 81.2, 'vol3-269')]
+WondrousGoddess(SantaFe) [('wondrous goddes (ishwari jag', 0.973, 1.0, 81.2, 'vol3-269'), ('wondrous goddess precious go', 0.569, 0.44, 66.7, 'vol5-201')]

@@ -116,3 +116,5 @@ yarn serve           # Local development with Firebase emulators
 ## Data Processing Tools
 
 The `create-index/` directory contains Python scripts for processing bhajan data and generating searchable indices and PDFs. This is separate from the main React app.
+
+- **Sheet music links** (`sm` in the index) come from `create-index/sheet-match/` (see its README): each PDF's printed lyrics are matched against the songbook pages, not names. Rerun `match.py` then `write_index.py` after adding PDFs to `sheetmusiclist.txt` or changing the index; `golden.json` must stay green. `cdbaby/mergelinks.js` only copies `sheet-match/sm.json` back in.

@@ -1,1533 +1,3420 @@
 [
   [
     {
+      "path": "/samples-cd/01 Adishakti Maha Layamkari (Vintage).mp3",
+      "song": "adishakti maha layamkari vintage",
+      "sn": "adisakti mah layangari"
+    },
+    [
+      "adi sakti maha layamkari",
+      "adisakti (marathi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Aiye Guru Maharani.mp3",
+      "song": "aiye guru maharani",
+      "sn": "aye guru maharani"
+    },
+    [
+      "aiye guru maharani",
+      "ayiye guru maharani"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Ambadi Kanna.mp3",
+      "song": "ambadi kanna",
+      "sn": "anbadi kan"
+    },
+    [
+      "ambati kanna",
+      "anbatikkannante padangal"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amme Amritanandamayi Devi (Vintage).mp3",
+      "song": "amme amritanandamayi devi vintage",
+      "sn": "ame amrtanandamayi devi"
+    },
+    [
+      "amme amrtanandamayi devi",
+      "amme amritanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amme Amritanandamayi Sarvagama (Vintage).mp3",
+      "song": "amme amritanandamayi sarvagama vintage",
+      "sn": "ame amrtanandamayi sarvagam"
+    },
+    [
+      "amme amrtanandamayi sarvagama",
+      "amme amritanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amritanandamayi Amma (Vintage).mp3",
+      "song": "amritanandamayi amma vintage",
+      "sn": "amrtanandamayi ama"
+    },
+    [
+      "amrtanandamayi amma",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amritanandamayi Janani (Vintage).mp3",
+      "song": "amritanandamayi janani vintage",
+      "sn": "amrtanandamayi janani"
+    },
+    [
+      "amrtanandamayi janani",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amritanandamayi Mata (Vintage).mp3",
+      "song": "amritanandamayi mata vintage",
+      "sn": "amrtanandamayi mat"
+    },
+    [
+      "amrtanandamayi",
+      "amrtanandamayi ma tucch ko"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Amriteshwari Jagadishwari (Vintage).mp3",
+      "song": "amriteshwari jagadishwari vintage",
+      "sn": "amrtisvari jagadisvari"
+    },
+    [
+      "amrtesvari jagadisvari",
+      "amrtesvari jagadisvari he matrrupa"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Ayiye Guru Maharani.mp3",
+      "song": "ayiye guru maharani",
+      "sn": "aye guru maharani"
+    },
+    [
+      "aiye guru maharani",
+      "ayiye guru maharani"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Chinna Chinna.mp3",
+      "song": "chinna chinna",
+      "sn": "cin cin"
+    },
+    [
+      "cinna cinna",
+      "cinna cinna kanna (tamil)"
+    ]
+  ],
+  [
+    {
       "path": "/samples-cd/01 Dayanidhiye.mp3",
       "song": "dayanidhiye",
-      "sn": "TaYanYiTYe"
+      "sn": "dayanidye"
     },
     [
-      "TaYanYiTYekanYnYaTa",
-      "TaYanYiTYeTaYanYaTYeTamiT"
+      "dayanidhiye (kannada)",
+      "dayanidhiye dayanadiye (tamil)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/01 Elo Elo.mp3",
-      "song": "elo elo",
-      "sn": "eToeTo"
+      "path": "/samples-cd/01 Devi Sharanam (Vintage).mp3",
+      "song": "devi sharanam vintage",
+      "sn": "devi saranam"
     },
     [
-      "eToeTomaTaYaTam",
-      "eToeToTeTukirienYTamiT"
+      "devi saranam",
+      "devi saranam durge saranam"
     ]
   ],
   [
     {
-      "path": "/samples-cd/01 Ma-Om.mp3",
-      "song": "maom",
-      "sn": "maom"
+      "path": "/samples-cd/01 Gajanana.mp3",
+      "song": "gajanana",
+      "sn": "gajanan"
     },
     [
-      "maomagujariaTi",
-      "maomagujriaTi",
-      "maomamarigujriaTi",
-      "maomerima"
+      "gajanana",
+      "gajanana he gajanana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Ganesha Namah Om (Vintage).mp3",
+      "song": "ganesha namah om vintage",
+      "sn": "ganes nam om"
+    },
+    [
+      "ganesa namah om",
+      "ganesa namaḥ om (odiya version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Govinda Gopala.mp3",
+      "song": "govinda gopala",
+      "sn": "govind gopal"
+    },
+    [
+      "govinda gopala",
+      "govinda gopala ani (telugu)",
+      "govinda gopala hari hari",
+      "govinda gopala madhava (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Guru Charanam.mp3",
+      "song": "guru charanam",
+      "sn": "guru caranam"
+    },
+    [
+      "guru charanam",
+      "guru caranam sadguru",
+      "guru charanam guru"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Jai Jai Jai Gananatha (Gujarati).mp3",
+      "song": "jai jai jai gananatha gujarati",
+      "sn": "jay jay jay gananat"
+    },
+    [
+      "jai jai jai gananath gajanana",
+      "jai jai jai gananatha gajanana (pahi gajanana)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Kanna Kanna Kanna Odi Va.mp3",
+      "song": "kanna kanna kanna odi va",
+      "sn": "kan kan kan odi va"
+    },
+    [
+      "kana kana (marathi)",
+      "kanna kanna kanna (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Nanda Nandana.mp3",
+      "song": "nanda nandana",
+      "sn": "nand nandan"
+    },
+    [
+      "nanda nandana",
+      "nanda nandana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Nīlavaṇṇā.mp3",
+      "song": "nilavanna",
+      "sn": "nilavan"
+    },
+    [
+      "nilavanna (tamil)",
+      "nilavanil ni nirannu (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/01 Oru Nalil.mp3",
       "song": "oru nalil",
-      "sn": "oriunYaTiT"
+      "sn": "oru nalil"
     },
     [
-      "oriunYaTiTnYanYenYkanYnYaTaVerisionY",
-      "oriunYaTiTnYanYenYkanYnYanYe",
-      "oriunYaTiTnYanYTamiT",
-      "oriunYaTiTVriumoriTaYa"
+      "oru nalil nan en (kannada version)",
+      "oru nalil nanen kannane",
+      "oru nalil nyan (tamil)",
+      "oru nalil varumo hrdaya"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Oru Nimisham Enkilum.mp3",
+      "song": "oru nimisham enkilum",
+      "sn": "oru nimisam engilum"
+    },
+    [
+      "oru nimisam enkilum",
+      "oru nimisham (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Sri Lalitambike (Kannada).mp3",
+      "song": "sri lalitambike kannada",
+      "sn": "sri lalitanbike"
+    },
+    [
+      "sri lalitambike parasakti (malayalam)",
+      "sri lalitambike sarvasakte",
+      "sri lalitambike sarvasakte (kannada version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/01 Sri Lalitambike.mp3",
       "song": "sri lalitambike",
-      "sn": "sriTaTiTambike"
+      "sn": "sri lalitanbike"
     },
     [
-      "sriTaTiTambikepariasaTimaTaYaTam",
-      "sriTaTiTambikesariVsaTe",
-      "sriTaTiTambikesariVsaTekanYnYaTaVerisionY"
+      "sri lalitambike parasakti (malayalam)",
+      "sri lalitambike sarvasakte",
+      "sri lalitambike sarvasakte (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Sri Rama Jaya Rama.mp3",
+      "song": "sri rama jaya rama",
+      "sn": "sri ram jay ram"
+    },
+    [
+      "sri rama jaya rama",
+      "sri rama jaya rama dasarathe"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/01 Ulakatti Nadhara (Vintage).mp3",
+      "song": "ulakatti nadhara vintage",
+      "sn": "ulakati nadar"
+    },
+    [
+      "ulakattin adhara",
+      "ulakattin adhara (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Ambadi Kanna (Vintage).mp3",
+      "song": "ambadi kanna vintage",
+      "sn": "anbadi kan"
+    },
+    [
+      "ambati kanna",
+      "anbatikkannante padangal"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Ambati Kanna.mp3",
+      "song": "ambati kanna",
+      "sn": "anbati kan"
+    },
+    [
+      "ambati kanna",
+      "anbatikkannante padangal"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Amma Amma Amma .mp3",
+      "song": "amma amma amma",
+      "sn": "ama ama ama"
+    },
+    [
+      "amma amma amma",
+      "amma amma amma (tamil, amit)",
+      "amma amma amma en amma (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Amma Untan.mp3",
       "song": "amma untan",
-      "sn": "ammaunYTanY"
+      "sn": "ama undan"
     },
     [
-      "ammaunYTanYTamiT",
-      "ammaunYTanYTiriuTamiT"
+      "amma untan (tamil)",
+      "amma untan tiru (tamil)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/02 Atbhuta Charitre.mp3",
-      "song": "atbhuta charitre",
-      "sn": "aTbuTacariTrie"
+      "path": "/samples-cd/02 Amme Bhagavati (Vintage).mp3",
+      "song": "amme bhagavati vintage",
+      "sn": "ame bagavati"
     },
     [
-      "aTbuTacariTrieaTbuTacariTrie",
-      "aTbuTacariTrieaTbuTacariTrie"
+      "amme bhagavati",
+      "amme bhagavati kali mahesvari (malayalam)",
+      "amme bhagavati kalimate"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Amritanandamayi Jay Jay.mp3",
+      "song": "amritanandamayi jay jay",
+      "sn": "amrtanandamayi jay jay"
+    },
+    [
+      "amrtanandamayi jay jay",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Amritanandamayi Ma Tucch Ko (Vintage).mp3",
+      "song": "amritanandamayi ma tucch ko vintage",
+      "sn": "amrtanandamayi ma tuc ko"
+    },
+    [
+      "amrtanandamayi ma tucch ko",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Amritanandamayi Ma.mp3",
+      "song": "amritanandamayi ma",
+      "sn": "amrtanandamayi ma"
+    },
+    [
+      "amrtanandamayi ma tucch ko",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Amritavarshini (Vintage).mp3",
+      "song": "amritavarshini vintage",
+      "sn": "amrtavarsini"
+    },
+    [
+      "amrtavarsini amme",
+      "amrtavarsini gange (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Ayiye Guru Maharani - Pronouncations & Practice Singing.mp3",
+      "song": "ayiye guru maharani pronouncations practice singing",
+      "sn": "aye guru maharani pronaunjations practice singing"
+    },
+    [
+      "aiye guru maharani",
+      "ayiye guru maharani"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Chitta Chora.mp3",
+      "song": "chitta chora",
+      "sn": "cit cor"
+    },
+    [
+      "chitta chora",
+      "cittacorana (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Chuttuniri (Vintage).mp3",
+      "song": "chuttuniri vintage",
+      "sn": "cutuniri"
+    },
+    [
+      "chuttuniri",
+      "cuttuniri (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 darshan.mp3",
       "song": "darshan",
-      "sn": "TarisanY"
+      "sn": "darsan"
     },
     [
-      "TarisanYTenYariama",
-      "TarisanYkiicaeTo",
-      "TarisanYamambikemoanYam",
-      "TarisanYamTarisanYamsuTarisanYamTeTugu"
+      "darsan dena rama",
+      "darsan ki icha he to"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Devi Dayakari.mp3",
       "song": "devi dayakari",
-      "sn": "TeViTaYakari"
+      "sn": "devi dayakari"
     },
     [
-      "TeViTaYakarima",
-      "TeViTaYakarioma",
-      "TeViTaYakarikanYnYaTa"
+      "devi dayakari (kannada)",
+      "devi daya kari ma"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Gajanana.mp3",
+      "song": "gajanana",
+      "sn": "gajanan"
+    },
+    [
+      "gajanana",
+      "gajanana he gajanana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Gopala Krsna.mp3",
+      "song": "gopala krsna",
+      "sn": "gopal krsn"
+    },
+    [
+      "gopala krsna",
+      "gopala krsna giridhari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Gopiyarkal Ullankalai.mp3",
+      "song": "gopiyarkal ullankalai",
+      "sn": "gopyarkal ulangalay"
+    },
+    [
+      "gopiyarkal ullankalai (tamil)",
+      "gopiyarkal (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Gopiyarkal.mp3",
       "song": "gopiyarkal",
-      "sn": "gopYarikaT"
+      "sn": "gopyarkal"
     },
     [
-      "gopYarikaTTamiT",
-      "gopYarikaTuTTanYkaTaiTamiT"
+      "gopiyarkal (tamil)",
+      "gopiyarkal ullankalai (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 He Govinda He Gopala.mp3",
+      "song": "he govinda he gopala",
+      "sn": "he govind he gopal"
+    },
+    [
+      "he govinda he gopala",
+      "he govind he gopal uddhara"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Ichamayi.mp3",
+      "song": "ichamayi",
+      "sn": "icamayi"
+    },
+    [
+      "ichamayi",
+      "ichamayi (english)"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Jai Jai Jai Gananath.mp3",
       "song": "jai jai jai gananath",
-      "sn": "jaijaijaiganYanYaT"
+      "sn": "jay jay jay gananat"
     },
     [
-      "jaijaijaiganYanYaTgajanYanYa",
-      "jaijaijaiganYanYaTagajanYanYapaigajanYanYa"
+      "jai jai jai gananath gajanana",
+      "jai jai jai gananatha gajanana (pahi gajanana)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/02 Jai Ma.mp3",
-      "song": "jai ma",
-      "sn": "jaima"
+      "path": "/samples-cd/02 Karunya Murte (Instrumental).mp3",
+      "song": "karunya murte instrumental",
+      "sn": "karuny murte instrmendal"
     },
     [
-      "jaimambejaimambe",
-      "jaimabaVnYi",
-      "jaimajaijaima",
-      "jaimajaikaTima",
-      "jaimaTaTi"
+      "karunya murte",
+      "karunya murtte - kannada version"
     ]
   ],
   [
     {
-      "path": "/samples-cd/02 Kadaloram.mp3",
-      "song": "kadaloram",
-      "sn": "kaTaToriam"
+      "path": "/samples-cd/02 Karunya Murte (Vintage).mp3",
+      "song": "karunya murte vintage",
+      "sn": "karuny murte"
     },
     [
-      "kaTaToriamTamiT",
-      "kaTaToriamTapamcYYum",
-      "kaTaToriamTaVm"
+      "karunya murte",
+      "karunya murtte - kannada version"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Krsna Govinda Gopala.mp3",
       "song": "krsna govinda gopala",
-      "sn": "krisnYagoVinYTagopaTa"
+      "sn": "krsn govind gopal"
     },
     [
-      "krisnYagoVinYTagopaTainYTi",
-      "krisnYagoVinYTagopaTariamarinYamgaVoinYTi"
+      "krsna govinda gopala (hindi)",
+      "krsna govinda gopala ram hari nam gavo (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Manasa Vacha (Vintage).mp3",
+      "song": "manasa vacha vintage",
+      "sn": "manas vac"
+    },
+    [
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana",
+      "manasavaca karmana (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Mandahasa Vadane.mp3",
+      "song": "mandahasa vadane",
+      "sn": "mandahas vadane"
+    },
+    [
+      "mandahasa vadane",
+      "mandahasa vadane manohari",
+      "mandahasavadane (namavali)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Murali Vale Pyare Kahna.mp3",
+      "song": "murali vale pyare kahna",
+      "sn": "murali vale pyare kahn"
+    },
+    [
+      "murali vale (hindi)",
+      "muralivale"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Nanda Nandana.mp3",
+      "song": "nanda nandana",
+      "sn": "nand nandan"
+    },
+    [
+      "nanda nandana",
+      "nanda nandana (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/02 Omkaresvara.mp3",
       "song": "omkaresvara",
-      "sn": "omkariesVria"
+      "sn": "ongarisvar"
     },
     [
-      "omkariesVriaTeTugu",
-      "omkariesVriakaiTasesVriasanYskriT"
+      "omkaresvara (telugu)",
+      "omkaresvara kailasesvara (sanskrit)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/02 Vithal Smaran Kara.mp3",
-      "song": "vithal smaran kara",
-      "sn": "ViTaTsmarianYkaria"
+      "path": "/samples-cd/02 Oru Nimisham Enkilum.mp3",
+      "song": "oru nimisham enkilum",
+      "sn": "oru nimisam engilum"
     },
     [
-      "ViTaTsmarianYkariamariaTi",
-      "ViTaTsmarianYkariamariaTi"
+      "oru nimisam enkilum",
+      "oru nimisham (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/02 Praneshwari.mp3",
+      "song": "praneshwari",
+      "sn": "pranisvari"
+    },
+    [
+      "pranesvari (malayalam)",
+      "praneshwara english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Ajivanantam.mp3",
+      "song": "ajivanantam",
+      "sn": "ajivanandam"
+    },
+    [
+      "ajivanantam",
+      "ajivanantam (tamil version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Amba Bhavani.mp3",
       "song": "amba bhavani",
-      "sn": "ambabaVnYi"
+      "sn": "anb bavani"
     },
     [
-      "ambabaVnYijaYajagaTambe",
-      "ambabaVnYinYinYamboja",
-      "ambabaVnYipariaTparie",
-      "ambabaVnYisariaTe"
+      "amba bhavani jaya jagadambe",
+      "amba bhavani nin ambhoja",
+      "amba bhavani paratpare",
+      "amba bhavani sarade"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Amma Devi.mp3",
       "song": "amma devi",
-      "sn": "ammaTeVi"
+      "sn": "ama devi"
     },
     [
-      "ammaTeVikanYnYaTaVerisionY",
-      "ammaTeViTuTuVerisionY",
-      "ammaTeVijagaTisVrisanYasanYskriT"
+      "amma devi - kannada version",
+      "amma devi - tulu version",
+      "amma devi jagadisvari (sahana, sanskrit)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/03 Ammā Nī.mp3",
-      "song": "amma ni",
-      "sn": "ammanYi"
+      "path": "/samples-cd/03 Amme Kannu Turakkule (Vintage).mp3",
+      "song": "amme kannu turakkule vintage",
+      "sn": "ame kanu turakule"
     },
     [
-      "ammanYiTamiT",
-      "ammanYibariuVYakanYnYaTa",
-      "ammanYinYiTuaTisuammanYa",
-      "ammanYipogumTamiT",
-      "ammanYisirikaYiTeTamiT",
-      "ammanYinYmugTamammaTaYaTamanYaga",
-      "ammanYinYriupam",
-      "ammanYinYnYakariagaTaTTikanYnYaTa",
-      "ammanYinYnYanYeriaTinYaTTikanYnYaTa",
-      "ammanYinYnYapriemakanYnYaTa",
-      "ammanYinYnYapriemakagikanYnYaTa",
-      "ammanYiVesaksiTeTugu"
+      "amme kannu turakkule",
+      "amme kannu turakule (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Anantamayi Patarunna.mp3",
+      "song": "anantamayi patarunna",
+      "sn": "anandamayi patarun"
+    },
+    [
+      "ananda mayi",
+      "anantamayi patarunnor"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Apara Kripalo (Classic).mp3",
+      "song": "apara kripalo classic",
+      "sn": "apar krpalo clasic"
+    },
+    [
+      "apara krpalo (telugu)",
+      "aparakrpalo (kannada)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Apara Kripalo.mp3",
       "song": "apara kripalo",
-      "sn": "apariakripaTo"
+      "sn": "apar krpalo"
     },
     [
-      "apariakripaToTeTugu",
-      "apariakripaToarikgiT",
-      "apariakripaTokanYnYaTa"
+      "apara krpalo (telugu)",
+      "apara krpalo arikil",
+      "aparakrpalo (kannada)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Bhakti.mp3",
       "song": "bhakti",
-      "sn": "baTi"
+      "sn": "bakti"
     },
     [
-      "baTiTuViTameinYTi",
-      "baTibaVmTeTugu",
-      "baTiTema",
-      "baTiTemainYTi",
-      "baTikoriTeamma",
-      "baTigesopanYakanYnYaTa"
+      "bhakti bhavam (telugu)",
+      "bhakti de ma",
+      "bhakti de ma (hindi)",
+      "bhakti korle amma"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Chinna Chinna (Vintage).mp3",
+      "song": "chinna chinna vintage",
+      "sn": "cin cin"
+    },
+    [
+      "cinna cinna",
+      "cinna cinna kanna (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Devi Devi Devi.mp3",
       "song": "devi devi devi",
-      "sn": "TeViTeViTeVi"
+      "sn": "devi devi devi"
     },
     [
-      "TeViTeViTeVikanYnYaTa",
-      "TeViTeViTeViamriTesVri",
-      "TeViTeViTeVijaganYmoinYi"
+      "devi devi devi (kannada)",
+      "devi devi devi amrtesvari",
+      "devi devi devi jaganmohini"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Gopala Krishna.mp3",
+      "song": "gopala krishna",
+      "sn": "gopal krsn"
+    },
+    [
+      "gopala krsna",
+      "gopala krsna giridhari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Govardhanagiri Kudayakki.mp3",
+      "song": "govardhanagiri kudayakki",
+      "sn": "govardanagiri kudayaki"
+    },
+    [
+      "govardhana giri",
+      "govardhana giri kudayakki"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Ini Oru Janmam.mp3",
+      "song": "ini oru janmam",
+      "sn": "ini oru janmam"
+    },
+    [
+      "ini oru janmam",
+      "ini oru janmam (tamil version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Jai Jai Rama.mp3",
       "song": "jai jai rama",
-      "sn": "jaijairiama"
+      "sn": "jay jay ram"
     },
     [
-      "jaijairiamakanYnYaTa",
-      "jaijairiamakrisnYa"
+      "jai jai ram",
+      "jai jai rama (kannada)",
+      "jaya jaya rama janaki rama (kannada)",
+      "jai jai ramakrsna"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Kannane Kanan (Vintage).mp3",
+      "song": "kannane kanan vintage",
+      "sn": "kanane kanan"
+    },
+    [
+      "kannane kanan",
+      "kannane kanan (malayalam, amrita lakshmi)",
+      "kannane kanan koticcu (malayalam)",
+      "kannane kananull-atimoham kondenno (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Manasa vacha.mp3",
       "song": "manasa vacha",
-      "sn": "manYasaVca"
+      "sn": "manas vac"
     },
     [
-      "manYasaVcamariaTiVerisionY",
-      "manYasaVcakarimanYa",
-      "manYasaVcakarimanYakanYnYaTa"
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana",
+      "manasavaca karmana (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Nanda Nandana.mp3",
+      "song": "nanda nandana",
+      "sn": "nand nandan"
+    },
+    [
+      "nanda nandana",
+      "nanda nandana (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Nijavan Ariyadē.mp3",
       "song": "nijavan ariyade",
-      "sn": "nYijaVnYarYaTe"
+      "sn": "nijavan aryade"
     },
     [
-      "nYijaVnYarYaTeTeTuguVerisionY",
-      "nYijaVnYarYaTekanYnYaTa"
+      "nijava nariyade (telugu version)",
+      "nijavanariyade (kannada)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/03 Nindra Thirukolam.mp3",
-      "song": "nindra thirukolam",
-      "sn": "nYinYTriaTiriukoTam"
+      "path": "/samples-cd/03 Nilambuja (Vintage).mp3",
+      "song": "nilambuja vintage",
+      "sn": "nilanbuj"
     },
     [
-      "nYinYTriaTiriukoTamkanYTenYTamiT",
-      "nYinYTriaTiriukoTamkanYTenY"
+      "nilambuja nayane (gujrati version)",
+      "nilambuja nayane (malayalam)",
+      "nilambuja nayane (tamil version)",
+      "nilambuja nayane (telagu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Om Sakti.mp3",
       "song": "om sakti",
-      "sn": "omsaTi"
+      "sn": "om sakti"
     },
     [
-      "omsaTiTamiT",
-      "omsaTiomsaTiomsaTiTamiT"
+      "om sakti (tamil)",
+      "om sakti om sakti om sakti (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Praneshwara Giridhari.mp3",
+      "song": "praneshwara giridhari",
+      "sn": "pranisvar giridari"
+    },
+    [
+      "pranesvara giridhari",
+      "praneshwara english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Radha Ramana (Vintage).mp3",
+      "song": "radha ramana vintage",
+      "sn": "rad raman"
+    },
+    [
+      "radha ramana",
+      "radha ramana gopi-gopala (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Radhe Krishna (Vintage).mp3",
+      "song": "radhe krishna vintage",
+      "sn": "rade krsn"
+    },
+    [
+      "radhe krsna",
+      "radhe krsna (gopika ramana)",
+      "radhe krsna radhe krsna (vennai unda vayinal)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Sambho Sankara Umapate.mp3",
+      "song": "sambho sankara umapate",
+      "sn": "sanbo sangar umapate"
+    },
+    [
+      "sambho sankara umapathe",
+      "sambho sankara",
+      "sambho sankara (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/03 Vinayaka.mp3",
       "song": "vinayaka",
-      "sn": "VinYaYaka"
+      "sn": "vinayak"
     },
     [
-      "VinYaYakaenYkaTTamiT",
-      "VinYaYakaVinYaYaka",
-      "VinYaYakanYeVinYaYTiriTariuTVYTamiT"
+      "vinayaka enkal (tamil)",
+      "vinayaka vinayaka",
+      "vinayakane vinay tirtarulvay (tamil)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/04 Amme.mp3",
-      "song": "amme",
-      "sn": "amme"
+      "path": "/samples-cd/03 Vitarata Tamara.mp3",
+      "song": "vitarata tamara",
+      "sn": "vitarat tamar"
     },
     [
-      "ammeabaYapriaTemaTaYaTamkrisnYa",
-      "ammeaTipariasaTimaTaYaTam",
-      "ammeagaTamaY",
-      "ammeammeamriTanYanYTamaYi",
-      "ammeamminYnYaTma",
-      "ammeamminYnYumaTaYaTamkuriuVi",
-      "ammeammenYiTYamaTaYaTam",
-      "ammeamriTanYanYTamaYi",
-      "ammeamriTanYanYTamaYiTeVi",
-      "ammeamriTanYanYTamaYisariVgama",
-      "ammeamriTesVriTeVimukambike",
-      "ammeaViTuTesaViTaTiTmaTaYaTam",
-      "ammebagaVTi",
-      "ammebagaVTikaTimaesVrimaTaYaTam",
-      "ammebagaVTikaTimaTe",
-      "ammeTaYanYiTemaTaYaTam",
-      "ammeTeViamriTesVrimaTaYaTamamriTaTeV",
-      "ammeTeVisnYeasVriupinYimaTaYaTamamriTaciT",
-      "ammeriTaYesVrimaTaYaTam",
-      "ammeriTaYesVrimaTaYaTamcaiTanYa",
-      "ammejaganYmaTemaYemaTaYaTam",
-      "ammekanYinYnYekumaTaYaTam",
-      "ammekanYnYuTuriakuTe",
-      "ammekanYnYuTuriakuTekanYnYaTaVerisionY",
-      "ammekariunYamaYimaTaYaTamsobiTa",
-      "ammemanYassiToriumaTaYaTam",
-      "ammenYanYaViTuTemaTaYaTam",
-      "ammenYinYkanYnYiTVirYummaTaYaTam",
-      "ammenYinYmaYamaTaYaTamaisVarYa",
-      "ammenYinYpaTaTiTmaTaYaTam",
-      "ammenYinYpaTinYaYimaTaYaTam",
-      "ammenYinYponYnYiTampaiTaTaTTemaTaYaTam",
-      "ammenYinYTripaTakamaTaTiTmaTaYaTam",
-      "ammenYinYnYorimmaTanYmaTaYaTam",
-      "ammepariasaTimaTaYaTamamrikrisnYa",
-      "ammesarianYamamriTesVrisarianYammaTaYaTam",
-      "ammesarianYamTeVisarianYammaTaYaTam",
-      "ammeuTakam"
+      "vitaratta tamara",
+      "vidaratta tamara (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 Vithala Vithala.mp3",
+      "song": "vithala vithala",
+      "sn": "vital vital"
+    },
+    [
+      "vithala vithala",
+      "vithala vithala vithala vithala (konkani)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/03 You are Creation.mp3",
+      "song": "you are creation",
+      "sn": "yau are creation"
+    },
+    [
+      "you are creation",
+      "you are creation (srishtiyum niye) english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Adishakti Brahmamrita (Vintage).mp3",
+      "song": "adishakti brahmamrita vintage",
+      "sn": "adisakti brahmamrt"
+    },
+    [
+      "adisakti brahmamrta",
+      "adisakti (marathi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Ajivanantam (Vintage).mp3",
+      "song": "ajivanantam vintage",
+      "sn": "ajivanandam"
+    },
+    [
+      "ajivanantam",
+      "ajivanantam (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Amma Ninna Premakagi.mp3",
+      "song": "amma ninna premakagi",
+      "sn": "ama nin premakagi"
+    },
+    [
+      "amma ninna premakagi (kannada)",
+      "amma ninna prema (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Amme Kannu Turakkule.mp3",
+      "song": "amme kannu turakkule",
+      "sn": "ame kanu turakule"
+    },
+    [
+      "amme kannu turakkule",
+      "amme kannu turakule (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Amritanandamayi Jai Jai (English).mp3",
+      "song": "amritanandamayi jai jai english",
+      "sn": "amrtanandamayi jay jay"
+    },
+    [
+      "amrtanandamayi jay jay",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Amritanandamayi Ma Tucch Ko.mp3",
+      "song": "amritanandamayi ma tucch ko",
+      "sn": "amrtanandamayi ma tuc ko"
+    },
+    [
+      "amrtanandamayi ma tucch ko",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Arikil Undenkilum (Vintage).mp3",
+      "song": "arikil undenkilum vintage",
+      "sn": "arikil undengilum"
+    },
+    [
+      "arikil undenkilum",
+      "arikilundenkilum - tamil version"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Candraśēkharā.mp3",
       "song": "candrasekhara",
-      "sn": "canYTriasekaria"
+      "sn": "candrasekar"
     },
     [
-      "canYTriasekariaTeTugu",
-      "canYTriasekariaYanYamaom"
+      "candrasekhara (telugu)",
+      "chandrasekaraya namah om"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 De Darsan Ma.mp3",
       "song": "de darsan ma",
-      "sn": "TeTarisanYma"
+      "sn": "de darsan ma"
     },
     [
-      "TeTarisanYmaoTYaVerisionY",
-      "TeTarisanYmaTeVi"
+      "de darsan ma (odiya version)",
+      "de darsan ma devi"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 De Darshan Ma (1997).mp3",
       "song": "de darshan ma",
-      "sn": "TeTarisanYma"
+      "sn": "de darsan ma"
     },
     [
-      "TeTarisanYmaoTYaVerisionY",
-      "TeTarisanYmaTeVi"
+      "de darsan ma (odiya version)",
+      "de darsan ma devi"
     ]
   ],
   [
     {
-      "path": "/samples-cd/04 Jai Ma.mp3",
-      "song": "jai ma",
-      "sn": "jaima"
+      "path": "/samples-cd/04 Devi Daya Kari Ma.mp3",
+      "song": "devi daya kari ma",
+      "sn": "devi day kari ma"
     },
     [
-      "jaimambejaimambe",
-      "jaimabaVnYi",
-      "jaimajaijaima",
-      "jaimajaikaTima",
-      "jaimaTaTi"
+      "devi daya kari ma",
+      "devi dayakari (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Devi Saranam.mp3",
+      "song": "devi saranam",
+      "sn": "devi saranam"
+    },
+    [
+      "devi saranam",
+      "devi saranam durge saranam"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Ichamayi (English).mp3",
+      "song": "ichamayi english",
+      "sn": "icamayi"
+    },
+    [
+      "ichamayi",
+      "ichamayi (english)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Jaya Jaya Devi.mp3",
+      "song": "jaya jaya devi",
+      "sn": "jay jay devi"
+    },
+    [
+      "jay jay devi (amrita, namavali)",
+      "jaya jaya devi",
+      "jaya jaya devi dayala hari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Kalam Kanalu (Classic).mp3",
+      "song": "kalam kanalu classic",
+      "sn": "kalam kanalu clasic"
+    },
+    [
+      "kalam kanalu",
+      "kalam kanalu (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Kalamurali Rava (Classic).mp3",
+      "song": "kalamurali rava classic",
+      "sn": "kalamurali rav clasic"
+    },
+    [
+      "kala murali",
+      "kalamurali - tamil version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Kannunir Thoratha (Vintage).mp3",
+      "song": "kannunir thoratha vintage",
+      "sn": "kanunir torat"
+    },
+    [
+      "kannunir toratta",
+      "kannunir toratta sandhyakal (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Krishna Govinda.mp3",
       "song": "krishna govinda",
-      "sn": "krisnYagoVinYTa"
+      "sn": "krsn govind"
     },
     [
-      "krisnYagoVinYTagopaTainYTi",
-      "krisnYagoVinYTagopaTariamarinYamgaVoinYTi",
-      "krisnYagoVinYTagoVinYTagopaTa"
+      "krsna govinda gopala (hindi)",
+      "krsna govinda gopala ram hari nam gavo (hindi)",
+      "krsna govinda govinda gopala"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Maname Nara Jivitam.mp3",
+      "song": "maname nara jivitam",
+      "sn": "maname nar jivitam"
+    },
+    [
+      "maname narajivitam",
+      "maname narajivitamakum (odia)"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Manasa Vacha.mp3",
       "song": "manasa vacha",
-      "sn": "manYasaVca"
+      "sn": "manas vac"
     },
     [
-      "manYasaVcamariaTiVerisionY",
-      "manYasaVcakarimanYa",
-      "manYasaVcakarimanYakanYnYaTa"
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana",
+      "manasavaca karmana (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Mandahasa Vadane Manohari.mp3",
+      "song": "mandahasa vadane manohari",
+      "sn": "mandahas vadane manohari"
+    },
+    [
+      "mandahasa vadane manohari",
+      "mandahasa vadane",
+      "mandahasavadane (namavali)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Nanda Nandana Namo Narayana.mp3",
+      "song": "nanda nandana namo narayana",
+      "sn": "nand nandan namo narayan"
+    },
+    [
+      "nanda nandana",
+      "nanda nandana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Nandalal Nandalal.mp3",
+      "song": "nandalal nandalal",
+      "sn": "nandalal nandalal"
+    },
+    [
+      "nandalal nandalal",
+      "nandalala nandalala (sanskrit)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Oru Nalil Nyan (Vintage).mp3",
+      "song": "oru nalil nyan vintage",
+      "sn": "oru nalil nan"
+    },
+    [
+      "oru nalil nyan (tamil)",
+      "oru nalil nan en (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Radha Ramana.mp3",
+      "song": "radha ramana",
+      "sn": "rad raman"
+    },
+    [
+      "radha ramana",
+      "radha ramana gopi-gopala (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Sarva Mangala.mp3",
+      "song": "sarva mangala",
+      "sn": "sarv mangal"
+    },
+    [
+      "sarva mamgala lalitambika",
+      "sarva mangale"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Sirikka Connāḷ.mp3",
       "song": "sirikka connal",
-      "sn": "sirikaconYnYaT"
+      "sn": "sirik conal"
     },
     [
-      "sirikaconYnYaTmariaTiVerisionY",
-      "sirikaconYnYaTTamiT"
+      "sirikka connal (marathi version)",
+      "sirikka connal (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Sri Ramachandra.mp3",
       "song": "sri ramachandra",
-      "sn": "sririamacanYTria"
+      "sn": "sri ramacandr"
     },
     [
-      "sririamacanYTrianYumariuTienYnYapoTmaTaYaTam",
-      "sririamacanYTriakripaTu",
-      "sririamacanYTriariagu"
+      "sri ramachandra krpalu",
+      "sri ramachandra raghu",
+      "sri ramacandranu maruti enna pol (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Taye Tava Tanayaril.mp3",
+      "song": "taye tava tanayaril",
+      "sn": "taye tav tanayaril"
+    },
+    [
+      "taye tava tanayaril",
+      "taye tava - kannada version"
     ]
   ],
   [
     {
       "path": "/samples-cd/04 Tintaka Tintaka.mp3",
       "song": "tintaka tintaka",
-      "sn": "TinYTakaTinYTaka"
+      "sn": "tindak tindak"
     },
     [
-      "TinYTakaTinYTakamaTaYaTam",
-      "TinYTakaTinYTakaTarioTakaTinYTakaTariogoTokapaTakanYkanYnYanYmaTaYaTam"
+      "tintaka tintaka (malayalam)",
+      "tintaka tintaka taro taka tintaka taro (goloka-palakan kannan ) (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Ulakatti Nadhara.mp3",
+      "song": "ulakatti nadhara",
+      "sn": "ulakati nadar"
+    },
+    [
+      "ulakattin adhara",
+      "ulakattin adhara (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 Vithala Hari Vithala.mp3",
+      "song": "vithala hari vithala",
+      "sn": "vital hari vital"
+    },
+    [
+      "vithala hari vithala",
+      "vithal hari vithal nam gajari (marathi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/04 You Are Creation.mp3",
+      "song": "you are creation",
+      "sn": "yau are creation"
+    },
+    [
+      "you are creation",
+      "you are creation (srishtiyum niye) english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Amba Bhavani (Vintage).mp3",
+      "song": "amba bhavani vintage",
+      "sn": "anb bavani"
+    },
+    [
+      "amba bhavani jaya jagadambe",
+      "amba bhavani nin ambhoja",
+      "amba bhavani paratpare",
+      "amba bhavani sarade"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Ammaye Kanaan.mp3",
       "song": "ammaye kanaan",
-      "sn": "ammaYekanYanY"
+      "sn": "amaye kanan"
     },
     [
-      "ammaYekanYanYkoTicoriumaTaYaTam",
-      "ammaYekanYanYaYinYnYunYanY"
+      "ammaye kanan koticc-oru (malayalam)",
+      "ammayekkananayinnu nan"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Amme Bhagavati.mp3",
+      "song": "amme bhagavati",
+      "sn": "ame bagavati"
+    },
+    [
+      "amme bhagavati",
+      "amme bhagavati kali mahesvari (malayalam)",
+      "amme bhagavati kalimate"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Amritanandamayi Jai Jai.mp3",
+      "song": "amritanandamayi jai jai",
+      "sn": "amrtanandamayi jay jay"
+    },
+    [
+      "amrtanandamayi jay jay",
+      "amrtanandamayi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Amritanandamayi Satguru (Vintage).mp3",
+      "song": "amritanandamayi satguru vintage",
+      "sn": "amrtanandamayi satguru"
+    },
+    [
+      "amrtanandamayi sadguru",
+      "amrtanandamayi",
+      "amrtanandamayi sadguru mama janani"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Devi Devi Devi Jaganmohini.mp3",
+      "song": "devi devi devi jaganmohini",
+      "sn": "devi devi devi jaganmohini"
+    },
+    [
+      "devi devi devi jaganmohini",
+      "devi devi devi (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Ellam Ariyunna (English).mp3",
+      "song": "ellam ariyunna english",
+      "sn": "elam aryun"
+    },
+    [
+      "ellam ariyunna english",
+      "ellam ariyunna kannanotu",
+      "ellam ariyunnar amme",
+      "ellam aṙiyunnuvenkilum (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Entinu Shokam.mp3",
       "song": "entinu shokam",
-      "sn": "enYTinYusokam"
+      "sn": "endinu sokam"
     },
     [
-      "enYTinYusokamTeTuguVerisionY",
-      "enYTinYusokammanYasse"
+      "entinu sokam (telugu version)",
+      "entinu sokam manasse"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Gopala Krishna Giridhari (Vintage).mp3",
+      "song": "gopala krishna giridhari vintage",
+      "sn": "gopal krsn giridari"
+    },
+    [
+      "gopala krsna giridhari",
+      "gopala krsna"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Guru Charanam.mp3",
+      "song": "guru charanam",
+      "sn": "guru caranam"
+    },
+    [
+      "guru charanam",
+      "guru caranam sadguru",
+      "guru charanam guru"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Ini Oru Janmam.mp3",
+      "song": "ini oru janmam",
+      "sn": "ini oru janmam"
+    },
+    [
+      "ini oru janmam",
+      "ini oru janmam (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Kanakkan Koti (Classic).mp3",
+      "song": "kanakkan koti classic",
+      "sn": "kanakan koti clasic"
+    },
+    [
+      "kana kana (marathi)",
+      "kanakkan koti"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Kannuniral.mp3",
       "song": "kannuniral",
-      "sn": "kanYnYunYiriaT"
+      "sn": "kanuniral"
     },
     [
-      "kanYnYunYiriaTkanYnYu",
-      "kanYnYunYiriaTnYanYamme"
+      "kannuniral kannu",
+      "kannuniral nan amme"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Manasa Vacha.mp3",
       "song": "manasa vacha",
-      "sn": "manYasaVca"
+      "sn": "manas vac"
     },
     [
-      "manYasaVcamariaTiVerisionY",
-      "manYasaVcakarimanYa",
-      "manYasaVcakarimanYakanYnYaTa"
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana",
+      "manasavaca karmana (kannada)"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Mayil Peeli.mp3",
       "song": "mayil peeli",
-      "sn": "maYiTpiTi"
+      "sn": "mayil pili"
     },
     [
-      "maYiTpiTimaTaYaTam",
-      "maYiTpiTiariakeTiTummaTaYaTam"
+      "mayil pili (malayalam)",
+      "mayilppili azhakettidum (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Muralivale.mp3",
+      "song": "muralivale",
+      "sn": "muralivale"
+    },
+    [
+      "muralivale",
+      "murali vale (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/05 Nanda Nandana Hare (Vintage).mp3",
+      "song": "nanda nandana hare vintage",
+      "sn": "nand nandan hare"
+    },
+    [
+      "nanda nandana hare",
+      "nanda nandana",
+      "nanda nandana (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Nilambuja.mp3",
       "song": "nilambuja",
-      "sn": "nYiTambuja"
+      "sn": "nilanbuj"
     },
     [
-      "nYiTambujanYaYanYegujriaTiVerisionY",
-      "nYiTambujanYaYanYemaTaYaTam",
-      "nYiTambujanYaYanYeTamiTVerisionY",
-      "nYiTambujanYaYanYeTeTagu"
+      "nilambuja nayane (gujrati version)",
+      "nilambuja nayane (malayalam)",
+      "nilambuja nayane (tamil version)",
+      "nilambuja nayane (telagu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/05 Om Sakti.mp3",
       "song": "om sakti",
-      "sn": "omsaTi"
+      "sn": "om sakti"
     },
     [
-      "omsaTiTamiT",
-      "omsaTiomsaTiomsaTiTamiT"
+      "om sakti (tamil)",
+      "om sakti om sakti om sakti (tamil)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/05 Omkara Divya Porule.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
+      "path": "/samples-cd/05 Sri Rama Jaya Rama.mp3",
+      "song": "sri rama jaya rama",
+      "sn": "sri ram jay ram"
     },
     [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
+      "sri rama jaya rama",
+      "sri rama jaya rama dasarathe"
     ]
   ],
   [
     {
-      "path": "/samples-cd/05 Var De.mp3",
-      "song": "var de",
-      "sn": "VriTe"
+      "path": "/samples-cd/06 Amme Amritanandamayi.mp3",
+      "song": "amme amritanandamayi",
+      "sn": "ame amrtanandamayi"
     },
     [
-      "VriTeinYTi",
-      "VriTemaTajagaTambemaTa",
-      "VriTeVriTejaYaVriTe"
+      "amme amritanandamayi",
+      "amme amrtanandamayi devi",
+      "amme amrtanandamayi sarvagama"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Arati.mp3",
+      "song": "arati",
+      "sn": "arati"
+    },
+    [
+      "arati",
+      "arati ambaku (telugu)",
+      "arati kunja vihari (syam radhe syam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Ennile Enne (Vintage).mp3",
+      "song": "ennile enne vintage",
+      "sn": "enile ene"
+    },
+    [
+      "ennile enne tiranna neram (malayalam)",
+      "ennile enne tirinnu"
     ]
   ],
   [
     {
       "path": "/samples-cd/06 Ennile Enne.mp3",
       "song": "ennile enne",
-      "sn": "enYnYiTinYnYe"
+      "sn": "enile ene"
     },
     [
-      "enYnYiTinYnYeTirianYnYanYeriammaTaYaTam",
-      "enYnYiTinYnYeTirinYnYu"
+      "ennile enne tiranna neram (malayalam)",
+      "ennile enne tirinnu"
     ]
   ],
   [
     {
-      "path": "/samples-cd/06 Kerunnen Manasam.mp3",
-      "song": "kerunnen manasam",
-      "sn": "keriunYnYenYmanYasam"
+      "path": "/samples-cd/06 Gajanana (Vintage).mp3",
+      "song": "gajanana vintage",
+      "sn": "gajanan"
     },
     [
-      "keriunYnYenYmanYasamkeriunYnYenYmanYasam",
-      "keriunYnYenYmanYasamkeriunYnYenYmanYasam"
+      "gajanana",
+      "gajanana he gajanana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Gopala Krishna (Vintage).mp3",
+      "song": "gopala krishna vintage",
+      "sn": "gopal krsn"
+    },
+    [
+      "gopala krsna",
+      "gopala krsna giridhari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Ichamayi (English).mp3",
+      "song": "ichamayi english",
+      "sn": "icamayi"
+    },
+    [
+      "ichamayi",
+      "ichamayi (english)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Kalam Kanalu.mp3",
+      "song": "kalam kanalu",
+      "sn": "kalam kanalu"
+    },
+    [
+      "kalam kanalu",
+      "kalam kanalu (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Kannane Kanan.mp3",
+      "song": "kannane kanan",
+      "sn": "kanane kanan"
+    },
+    [
+      "kannane kanan",
+      "kannane kanan (malayalam, amrita lakshmi)",
+      "kannane kanan koticcu (malayalam)",
+      "kannane kananull-atimoham kondenno (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Karunamayi Devi.mp3",
+      "song": "karunamayi devi",
+      "sn": "karunamayi devi"
+    },
+    [
+      "karunamayi devi (kannada,telugu)",
+      "karuna mayi devi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Karunya Murte (Telegu).mp3",
+      "song": "karunya murte telegu",
+      "sn": "karuny murte telegu"
+    },
+    [
+      "karunya murte",
+      "karunya murtte - kannada version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Krishna Govinda Gopala (Vintage).mp3",
+      "song": "krishna govinda gopala vintage",
+      "sn": "krsn govind gopal"
+    },
+    [
+      "krsna govinda gopala (hindi)",
+      "krsna govinda gopala ram hari nam gavo (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Murali Vale (Vintage).mp3",
+      "song": "murali vale vintage",
+      "sn": "murali vale"
+    },
+    [
+      "murali vale (hindi)",
+      "muralivale"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Nanda Nandana Hari.mp3",
+      "song": "nanda nandana hari",
+      "sn": "nand nandan hari"
+    },
+    [
+      "nanda nandana hari",
+      "nanda nandana",
+      "nanda nandana (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Ninna Mamate.mp3",
+      "song": "ninna mamate",
+      "sn": "nin mamate"
+    },
+    [
+      "ninna mamate (kannada)",
+      "nin namam (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/06 Om Shakti.mp3",
       "song": "om shakti",
-      "sn": "omsaTi"
+      "sn": "om sakti"
     },
     [
-      "omsaTiTamiT",
-      "omsaTiomsaTiomsaTiTamiT"
+      "om sakti (tamil)",
+      "om sakti om sakti om sakti (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Oru Nimisham Enkilum.mp3",
+      "song": "oru nimisham enkilum",
+      "sn": "oru nimisam engilum"
+    },
+    [
+      "oru nimisam enkilum",
+      "oru nimisham (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Parinamam Iyalatta.mp3",
+      "song": "parinamam iyalatta",
+      "sn": "parinamam yalat"
+    },
+    [
+      "parinamam iyalatta",
+      "parinamamiyallatta - kannada version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Radha Ramana.mp3",
+      "song": "radha ramana",
+      "sn": "rad raman"
+    },
+    [
+      "radha ramana",
+      "radha ramana gopi-gopala (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/06 Raga Vairikal.mp3",
       "song": "raga vairikal",
-      "sn": "riagaVirikaT"
+      "sn": "rag vairikal"
     },
     [
-      "riagaVirikaTTeTuguTrianYsTaTionY",
-      "riagaVirikaTnYinYgiTum"
+      "raga vairikal (telugu translation)",
+      "raga vairikal ningitum"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Shankara Shiva Shankara.mp3",
+      "song": "shankara shiva shankara",
+      "sn": "sangar siv sangar"
+    },
+    [
+      "samkara siva samkara",
+      "sankara siva sankara (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/06 Shokam Itentinu.mp3",
       "song": "shokam itentinu",
-      "sn": "sokamiTenYTinYu"
+      "sn": "sokam itendinu"
     },
     [
-      "sokamiTenYTinYusanYTYe",
-      "sokamiTenYTinYusanYTYe"
+      "sokam itentinu sandhye",
+      "sokamitentinu sandhye"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Sitrimbam Natum.mp3",
+      "song": "sitrimbam natum",
+      "sn": "sitrnbam natum"
+    },
+    [
+      "sitrinbam natum (tamil)",
+      "sitrinbam nadum (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Sri Rama Jaya Rama.mp3",
+      "song": "sri rama jaya rama",
+      "sn": "sri ram jay ram"
+    },
+    [
+      "sri rama jaya rama",
+      "sri rama jaya rama dasarathe"
     ]
   ],
   [
     {
       "path": "/samples-cd/06 Taraka Nama.mp3",
       "song": "taraka nama",
-      "sn": "TariakanYama"
+      "sn": "tarak nam"
     },
     [
-      "TariakanYamakanYnYaTa",
-      "TariakanYamamuTeTugu"
+      "taraka nama (kannada)",
+      "taraka namamu (telugu)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 Thannana Thannana.mp3",
+      "song": "thannana thannana",
+      "sn": "tanan tanan"
+    },
+    [
+      "tanana tanana",
+      "tannana tannana (english, nalini)",
+      "tannanna tannanna (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/06 You Are Creattion (Srishtiyum Niy.mp3",
+      "song": "you are creattion srishtiyum niy",
+      "sn": "yau are creation srstyum ny"
+    },
+    [
+      "you are creation",
+      "you are creation (srishtiyum niye) english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Adiparasakti.mp3",
+      "song": "adiparasakti",
+      "sn": "adiparasakti"
+    },
+    [
+      "adiparasakti",
+      "adiparasakti ambike (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/07 Aintezhuttu.mp3",
       "song": "aintezhuttu",
-      "sn": "ainYTeriuTu"
+      "sn": "aindelutu"
     },
     [
-      "ainYTeriuTumanYTiriaTinYTamiT",
-      "ainYTeriuTuTamiT"
+      "aintezhuttu (tamil)",
+      "aindezhuttu mandirattin (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Anantamayi Patarunna (Vintage).mp3",
+      "song": "anantamayi patarunna vintage",
+      "sn": "anandamayi patarun"
+    },
+    [
+      "ananda mayi",
+      "anantamayi patarunnor"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Arati.mp3",
+      "song": "arati",
+      "sn": "arati"
+    },
+    [
+      "arati",
+      "arati ambaku (telugu)",
+      "arati kunja vihari (syam radhe syam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Cenmile.mp3",
+      "song": "cenmile",
+      "sn": "cenmile"
+    },
+    [
+      "cenmile (hindi)",
+      "chen mile"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Chetuletti.mp3",
+      "song": "chetuletti",
+      "sn": "cetuleti"
+    },
+    [
+      "chetuletti",
+      "chetuletti mrokkutunna (telugu)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Chuttuniri.mp3",
+      "song": "chuttuniri",
+      "sn": "cutuniri"
+    },
+    [
+      "chuttuniri",
+      "cuttuniri (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Cittacorana.mp3",
+      "song": "cittacorana",
+      "sn": "citacoran"
+    },
+    [
+      "cittacorana (kannada)",
+      "chitta chora"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Ellam Ariyunna Kannanotu.mp3",
+      "song": "ellam ariyunna kannanotu",
+      "sn": "elam aryun kananotu"
+    },
+    [
+      "ellam ariyunna kannanotu",
+      "ellam ariyunna english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Enkirundu Vandom.mp3",
+      "song": "enkirundu vandom",
+      "sn": "engirundu vandom"
+    },
+    [
+      "enkirundu vandom (tamil)",
+      "enkiruntu vandom"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Jaya Jaya Devi (Vintage).mp3",
+      "song": "jaya jaya devi vintage",
+      "sn": "jay jay devi"
+    },
+    [
+      "jay jay devi (amrita, namavali)",
+      "jaya jaya devi",
+      "jaya jaya devi dayala hari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Kalamurali Rava.mp3",
+      "song": "kalamurali rava",
+      "sn": "kalamurali rav"
+    },
+    [
+      "kala murali",
+      "kalamurali - tamil version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Namo Namah.mp3",
+      "song": "namo namah",
+      "sn": "namo nam"
+    },
+    [
+      "namo namah",
+      "namo namah (telugu)",
+      "namo namaste",
+      "namo namaste matah sarasvati"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Nandalala Nandalala.mp3",
+      "song": "nandalala nandalala",
+      "sn": "nandalal nandalal"
+    },
+    [
+      "nandalal nandalal",
+      "nandalala nandalala (sanskrit)",
+      "nanda lala nanda lala"
     ]
   ],
   [
     {
       "path": "/samples-cd/07 Nityananda 1.mp3",
       "song": "nityananda",
-      "sn": "nYiTYanYanYTa"
+      "sn": "nityanand"
     },
     [
-      "nYiTYanYanYTasaciTanYanYTa",
-      "nYiTYanYanYTaTiTViTYamaTaYaTam"
+      "nityananda satchitananda",
+      "nityanandattil (vidya, malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/07 Oru Nalil Nyan.mp3",
       "song": "oru nalil nyan",
-      "sn": "oriunYaTiTnYanY"
+      "sn": "oru nalil nan"
     },
     [
-      "oriunYaTiTnYanYenYkanYnYaTaVerisionY",
-      "oriunYaTiTnYanYenYkanYnYanYe",
-      "oriunYaTiTnYanYTamiT"
+      "oru nalil nyan (tamil)",
+      "oru nalil nan en (kannada version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/07 Prema Sagara.mp3",
       "song": "prema sagara",
-      "sn": "priemasagaria"
+      "sn": "prem sagar"
     },
     [
-      "priemasagariakanYnYaTa",
-      "priemasagariamejagaTisVriammemaTaYaTam"
+      "prema sagara (kannada)",
+      "prema-sagarame jagadisvari amme (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Radhesyam Radhesyam.mp3",
+      "song": "radhesyam radhesyam",
+      "sn": "radesyam radesyam"
+    },
+    [
+      "radhesyam radhesyam (hindi)",
+      "radhe syam",
+      "radhe syam radhe syam"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Sankara Siva Sankara.mp3",
+      "song": "sankara siva sankara",
+      "sn": "sangar siv sangar"
+    },
+    [
+      "samkara siva samkara",
+      "sankara siva sankara (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/07 Satyam Jnanam.mp3",
       "song": "satyam jnanam",
-      "sn": "saTYamjnYanYam"
+      "sn": "satyam gnanam"
     },
     [
-      "saTYamjnYanYamTamiT",
-      "saTYamjnYanYamanYanYTamsanYskriT"
+      "satyam jnanam (tamil)",
+      "satyam jnanam anantam (sanskrit)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Swami Sharanam Ayyappa (Vintage).mp3",
+      "song": "swami sharanam ayyappa vintage",
+      "sn": "svami saranam ayap"
+    },
+    [
+      "svami saranam ayappa",
+      "svami saranam ayyappa (sri sabarisa)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Taye Tava Tanayaril (Vintage).mp3",
+      "song": "taye tava tanayaril vintage",
+      "sn": "taye tav tanayaril"
+    },
+    [
+      "taye tava tanayaril",
+      "taye tava - kannada version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/07 Yamuna Tira Vihara.mp3",
+      "song": "yamuna tira vihara",
+      "sn": "yamun tir vihar"
+    },
+    [
+      "yamuna tira vihara yadukula",
+      "yamuna tira vihari",
+      "yamuna tira vihari (krsna murari)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Arikilundengilum.mp3",
+      "song": "arikilundengilum",
+      "sn": "arikilundengilum"
+    },
+    [
+      "arikilundenkilum - tamil version",
+      "arikil undenkilum"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Chandrasekaraya Namah Om.mp3",
+      "song": "chandrasekaraya namah om",
+      "sn": "candrasekaray nam om"
+    },
+    [
+      "chandrasekaraya namah om",
+      "candrasekhara (telugu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/08 De Darshan Ma.mp3",
       "song": "de darshan ma",
-      "sn": "TeTarisanYma"
+      "sn": "de darsan ma"
     },
     [
-      "TeTarisanYmaoTYaVerisionY",
-      "TeTarisanYmaTeVi"
+      "de darsan ma (odiya version)",
+      "de darsan ma devi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Devi Sharanam.mp3",
+      "song": "devi sharanam",
+      "sn": "devi saranam"
+    },
+    [
+      "devi saranam",
+      "devi saranam durge saranam"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Ichamayi (Vintage).mp3",
+      "song": "ichamayi vintage",
+      "sn": "icamayi"
+    },
+    [
+      "ichamayi",
+      "ichamayi (english)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Jaya Jagadīśvarī.mp3",
+      "song": "jaya jagadisvari",
+      "sn": "jay jagadisvari"
+    },
+    [
+      "jai jagadisvari",
+      "jaya jagadisvari (marathi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Jaya Jaya Devi (Vintage).mp3",
+      "song": "jaya jaya devi vintage",
+      "sn": "jay jay devi"
+    },
+    [
+      "jay jay devi (amrita, namavali)",
+      "jaya jaya devi",
+      "jaya jaya devi dayala hari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Manasavacha Karmana.mp3",
+      "song": "manasavacha karmana",
+      "sn": "manasavac karman"
+    },
+    [
+      "manasavaca karmana (kannada)",
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Nintra Tirukkolam Kanten.mp3",
+      "song": "nintra tirukkolam kanten",
+      "sn": "nindr tirukolam kanden"
+    },
+    [
+      "nintra tirukkolam kanten",
+      "nintra tiru kolam kanten (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/08 Nityananda 2.mp3",
       "song": "nityananda",
-      "sn": "nYiTYanYanYTa"
+      "sn": "nityanand"
     },
     [
-      "nYiTYanYanYTasaciTanYanYTa",
-      "nYiTYanYanYTaTiTViTYamaTaYaTam"
+      "nityananda satchitananda",
+      "nityanandattil (vidya, malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Paurnami Ravil (Instrumental).mp3",
+      "song": "paurnami ravil instrumental",
+      "sn": "paurnami ravil instrmendal"
+    },
+    [
+      "paurnami ravil",
+      "paurnnamiravil (kannada version)",
+      "paurnnamiravil (telugu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/08 Radhe Govinda.mp3",
       "song": "radhe govinda",
-      "sn": "riaTegoVinYTa"
+      "sn": "rade govind"
     },
     [
-      "riaTegoVinYTabajo",
-      "riaTegoVinYTagopi",
-      "riaTegoVinYTakrisnYamuriariesanYskriT"
+      "radhe govinda bhajo",
+      "radhe govinda gopi",
+      "radhe govinda krsna murare (sanskrit)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Sri Krishna Govinda.mp3",
+      "song": "sri krishna govinda",
+      "sn": "sri krsn govind"
+    },
+    [
+      "sri krsna govinda",
+      "sri krsna govinda gopala"
     ]
   ],
   [
     {
       "path": "/samples-cd/08 Sri Ramachandra.mp3",
       "song": "sri ramachandra",
-      "sn": "sririamacanYTria"
+      "sn": "sri ramacandr"
     },
     [
-      "sririamacanYTrianYumariuTienYnYapoTmaTaYaTam",
-      "sririamacanYTriakripaTu",
-      "sririamacanYTriariagu"
+      "sri ramachandra krpalu",
+      "sri ramachandra raghu",
+      "sri ramacandranu maruti enna pol (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Tancamena Vantom.mp3",
+      "song": "tancamena vantom",
+      "sn": "tanjamen vandom"
+    },
+    [
+      "tancamena vantom (tamil)",
+      "tanjamena vandom (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/08 Taraka Namamu.mp3",
+      "song": "taraka namamu",
+      "sn": "tarak namamu"
+    },
+    [
+      "taraka namamu (telugu)",
+      "taraka nama (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Abhishta Varadayike (Vintage).mp3",
+      "song": "abhishta varadayike vintage",
+      "sn": "abist varadayike"
+    },
+    [
+      "abhista varadayike",
+      "abhistavaradayike (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Abhishta Varadayike.mp3",
+      "song": "abhishta varadayike",
+      "sn": "abist varadayike"
+    },
+    [
+      "abhista varadayike",
+      "abhistavaradayike (kannada version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Adi Shakti.mp3",
       "song": "adi shakti",
-      "sn": "aTisaTi"
+      "sn": "adi sakti"
     },
     [
-      "aTisaTimaTaYamkari",
-      "aTisaTimariaTi",
-      "aTisaTibriamamriTa"
+      "adi sakti maha layamkari",
+      "adisakti (marathi)",
+      "adisakti brahmamrta"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Durge.mp3",
       "song": "durge",
-      "sn": "Turige"
+      "sn": "durge"
     },
     [
-      "TurigeTukanYiVrinYibaVTarinYiamriTesVrimaTaYaTam",
-      "TurigeTurigaTiinYTi",
-      "TurigeTurige",
-      "TurigeiTariekgiTiTubariekanYnYaTa"
+      "durge duhkha-nivarini bhavatarini amrtesvari (malayalam)",
+      "durge durgati (hindi)",
+      "durge durge",
+      "durgge i dhare gilidu bare (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Govardhana Giri.mp3",
+      "song": "govardhana giri",
+      "sn": "govardan giri"
+    },
+    [
+      "govardhana giri",
+      "govardhana giri kudayakki"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Gōvinda Gōpāla Ani.mp3",
+      "song": "govinda gopala ani",
+      "sn": "govind gopal ani"
+    },
+    [
+      "govinda gopala ani (telugu)",
+      "govinda gopala"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Ichamayi.mp3",
+      "song": "ichamayi",
+      "sn": "icamayi"
+    },
+    [
+      "ichamayi",
+      "ichamayi (english)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Jay Janani.mp3",
+      "song": "jay janani",
+      "sn": "jay janani"
+    },
+    [
+      "jay janani (hindi)",
+      "jaya janani caitanya (telugu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Kali Kali Kali.mp3",
       "song": "kali kali kali",
-      "sn": "kaTikaTikaTi"
+      "sn": "kali kali kali"
     },
     [
-      "kaTikaTikaTigujariaTi",
-      "kaTikaTikaTikaTasVriupinYiTeTugu",
-      "kaTikaTikaTikaTiTrisuTiTamiT"
+      "kali kali kali (gujarati)",
+      "kali kali kali kalasvarupini (telugu)",
+      "kali kali kali kali trisuli (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/09 Mandahāsavadane.mp3",
+      "song": "mandahasavadane",
+      "sn": "mandahasavadane"
+    },
+    [
+      "mandahasavadane (namavali)",
+      "mandahasa vadane",
+      "mandahasa vadane manohari"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Narayana.mp3",
       "song": "narayana",
-      "sn": "nYariaYanYa"
+      "sn": "narayan"
     },
     [
-      "nYariaYanYariekaTinYakanYanYenYkanYnYa",
-      "nYariaYanYari",
-      "nYariaYanYanYariaYanYajaYa",
-      "nYariaYanYasririamanYariaYanYasririamasanYskriT"
+      "narayana hare (kalina kanan en kanna)",
+      "narayana hari",
+      "narayana narayana jaya",
+      "narayana sri rama narayana sri rama (sanskrit)"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Sri Lalita.mp3",
       "song": "sri lalita",
-      "sn": "sriTaTiTa"
+      "sn": "sri lalit"
     },
     [
-      "sriTaTiTambikepariasaTimaTaYaTam",
-      "sriTaTiTambikesariVsaTe",
-      "sriTaTiTambikesariVsaTekanYnYaTaVerisionY"
+      "sri lalitambike parasakti (malayalam)",
+      "sri lalitambike sarvasakte",
+      "sri lalitambike sarvasakte (kannada version)",
+      "sri lalite (tulu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/09 Sri Ramachandra.mp3",
       "song": "sri ramachandra",
-      "sn": "sririamacanYTria"
+      "sn": "sri ramacandr"
     },
     [
-      "sririamacanYTrianYumariuTienYnYapoTmaTaYaTam",
-      "sririamacanYTriakripaTu",
-      "sririamacanYTriariagu"
+      "sri ramachandra krpalu",
+      "sri ramachandra raghu",
+      "sri ramacandranu maruti enna pol (malayalam)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/10 Amma.mp3",
-      "song": "amma",
-      "sn": "amma"
+      "path": "/samples-cd/10 Arati (Vintage).mp3",
+      "song": "arati vintage",
+      "sn": "arati"
     },
     [
-      "ammaTTaTeipariTaTiTmaTaYaTam",
-      "ammammamma",
-      "ammammammaTamiTamiT",
-      "ammammammaenYammaTamiT",
-      "ammammabairiaVYe",
-      "ammammaenYaunYnYaiTamiT",
-      "ammammaenYumTamiT",
-      "ammammakonYacikonYkanYi",
-      "ammammaTaYe",
-      "ammabariamma",
-      "ammaTeVikanYnYaTaVerisionY",
-      "ammaTeViTuTuVerisionY",
-      "ammaTeVijagaTisVrisanYasanYskriT",
-      "ammaTubisTmeinYgerimanY",
-      "ammaekiTamunYnYinYinYakinYnYumaTaYaTam",
-      "ammaenYariaikaYiT",
-      "ammaenYboTanYiTaVYiTammaenYjiViTasanYgiTamaYmaTaYaTam",
-      "ammaenYTriusoTVTumTamiT",
-      "ammaenYnYorikumboTmaTaYaTam",
-      "ammaenYumsoTTukuTamiT",
-      "ammasaTukonYkanYi",
-      "ammakaTienYakumaTumTamiT",
-      "ammakicaYame",
-      "ammamoTeriofmYeariTenYgTis",
-      "ammamYeariTenYgTis",
-      "ammanYanYumTamiT",
-      "ammanYapaiTeTugu",
-      "ammanYiTamiT",
-      "ammanYibariuVYakanYnYaTa",
-      "ammanYinYiTuaTisuammanYa",
-      "ammanYipogumTamiT",
-      "ammanYisirikaYiTeTamiT",
-      "ammanYinYmugTamammaTaYaTamanYaga",
-      "ammanYinYriupam",
-      "ammanYinYnYakariagaTaTTikanYnYaTa",
-      "ammanYinYnYanYeriaTinYaTTikanYnYaTa",
-      "ammanYinYnYapriemakanYnYaTa",
-      "ammanYinYnYapriemakagikanYnYaTa",
-      "ammanYiVesaksiTeTugu",
-      "ammaokasamjapanYese",
-      "ammaoTrimaTebrieV",
-      "ammaTanYmaTYiT",
-      "ammaTanYnYamam",
-      "ammaTanYpaTaTiTmaTaYaTam",
-      "ammaTanYprianYanYmaTaYaTam",
-      "ammaTanYnYamaTiTaTiT",
-      "ammaTaYejaganYmaTa",
-      "ammaTuTanYsesfrienYcamriTaVrisinYi",
-      "ammaunYpunYnYagaYiT",
-      "ammaunYnYaiarYamaTTamiTgiTaprYa",
-      "ammaunYnYanYbuVisnYaViTamiT",
-      "ammaunYTanYTamiT",
-      "ammaunYTanYTiriuTamiT",
-      "ammaVaiTsumoTarimesjapanYese",
-      "ammaYemerijiVnYsaVriinYTi",
-      "ammaYouariiVerYTinYgenYgTis",
-      "ammaoYmesienYToTejosspanYis",
-      "ammanYaTiVYapaTambujagaTige",
-      "ammanYanYaTaTuTuTu",
-      "ammanYapaTakekanYnYaTa",
-      "ammaViparikapokaTam",
-      "ammaYaTTinYmaTaYaTam",
-      "ammaYaTTinYTammaYaTTeTeTugu",
-      "ammaYaTTinYTammaYaTTe",
-      "ammaYekanYanYkoTicoriumaTaYaTam",
-      "ammaYekanYTunYanY",
-      "ammaYekanYanYaYinYnYunYanY",
-      "ammaYenYnYuTToriaTenYmorikokumo",
-      "ammaYenYnYuTToriunYamamoriTiTaVe",
-      "ammaYiTmanYasam",
-      "ammaYupeksa"
+      "arati",
+      "arati ambaku (telugu)",
+      "arati kunja vihari (syam radhe syam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/10 Bandalo Bandalo.mp3",
       "song": "bandalo bandalo",
-      "sn": "banYTaTobanYTaTo"
+      "sn": "bandalo bandalo"
     },
     [
-      "banYTaTobanYTaTokanYnYaTa",
-      "banYTaTobanYTaTogujariaTiVerisionY"
+      "bandalo bandalo (kannada)",
+      "bandalo bandalo - gujarati version"
     ]
   ],
   [
     {
       "path": "/samples-cd/10 Dam Dam Dum Dum.mp3",
       "song": "dam dam dum dum",
-      "sn": "TamTamTumTum"
+      "sn": "dam dam dum dum"
     },
     [
-      "TamTamTumTumTamariuboTe",
-      "TamTamTumTumTamariuboTegujariaTi"
+      "dam dam dum dum damaru bole",
+      "dam dam dum dum damaru bole (gujarati)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/10 Laya.mp3",
-      "song": "laya",
-      "sn": "TaYa"
+      "path": "/samples-cd/10 Devi Mate.mp3",
+      "song": "devi mate",
+      "sn": "devi mate"
     },
     [
-      "TaYakarioarinYariaYanYa",
-      "TaYakariomaTa",
-      "TaYagaTamammaTeTugu",
-      "TaYakarioTuminYTi",
-      "TaYanYiTYekanYnYaTa",
-      "TaYanYiTYeTaYanYaTYeTamiT",
-      "TaYaToriuekaTikekanYnYaTa",
-      "TaYaVnYTaTrisTimariaTi",
-      "TaYaYaTeuriukonYTuTamiT"
+      "devi mate",
+      "devi mate durge (malayalam, vedika)"
     ]
   ],
   [
     {
-      "path": "/samples-cd/2-03 Omkara Divya Porule.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
+      "path": "/samples-cd/10 Vithala Hari Vithala.mp3",
+      "song": "vithala hari vithala",
+      "sn": "vital hari vital"
     },
     [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
+      "vithala hari vithala",
+      "vithal hari vithal nam gajari (marathi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/2-04 Kanakkan Koti Vendum (hemavatri.mp3",
+      "song": "kanakkan koti vendum hemavatri",
+      "sn": "kanakan koti vendum hemavatri"
+    },
+    [
+      "kana kana (marathi)",
+      "kanakkan koti"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/2-06 Muralivale (hindusthani kapi).mp3",
+      "song": "muralivale hindusthani kapi",
+      "sn": "muralivale hindustani kapi"
+    },
+    [
+      "murali vale (hindi)",
+      "muralivale"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/3-08 Abhista Varadayike (sindubhaira.mp3",
+      "song": "abhista varadayike sindubhaira",
+      "sn": "abist varadayike sindubair"
+    },
+    [
+      "abhista varadayike",
+      "abhistavaradayike (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Aindezhuttu Mandirattin.mp3",
+      "song": "aindezhuttu mandirattin",
+      "sn": "aindelutu mandiratin"
+    },
+    [
+      "aindezhuttu mandirattin (tamil)",
+      "aintezhuttu (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ājīvanāntam (Tamil).mp3",
+      "song": "ajivanantam tamil",
+      "sn": "ajivanandam"
+    },
+    [
+      "ajivanantam",
+      "ajivanantam (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ammā Dēvi Jagadīśvari (Sanskrit).mp3",
+      "song": "amma devi jagadisvari sanskrit",
+      "sn": "ama devi jagadisvari"
+    },
+    [
+      "amma devi jagadisvari (sahana, sanskrit)",
+      "amma devi - kannada version",
+      "amma devi - tulu version"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Amma Devi Ma (French).mp3",
+      "song": "amma devi ma french",
+      "sn": "ama devi ma"
+    },
+    [
+      "amma devi - kannada version",
+      "amma devi - tulu version"
     ]
   ],
   [
     {
       "path": "/samples-cd/Amma Ninna Prēma.mp3",
       "song": "amma ninna prema",
-      "sn": "ammanYinYnYapriema"
+      "sn": "ama nin prem"
     },
     [
-      "ammanYinYnYapriemakanYnYaTa",
-      "ammanYinYnYapriemakagikanYnYaTa"
+      "amma ninna prema (kannada)",
+      "amma ninna premakagi (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ammā Untan Tiru.mp3",
+      "song": "amma untan tiru",
+      "sn": "ama undan tiru"
+    },
+    [
+      "amma untan tiru (tamil)",
+      "amma untan (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Ammayallē En.mp3",
       "song": "ammayalle en",
-      "sn": "ammaYaTTinY"
+      "sn": "amayale en"
     },
     [
-      "ammaYaTTinYmaTaYaTam",
-      "ammaYaTTinYTammaYaTTeTeTugu",
-      "ammaYaTTinYTammaYaTTe"
+      "ammayalle en (malayalam)",
+      "ammayalle endammayalle (telugu)",
+      "ammayalle entammayalle"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ammē Bhagavati Kāḷi Mahēśvari.mp3",
+      "song": "amme bhagavati kali mahesvari",
+      "sn": "ame bagavati kali mahisvari"
+    },
+    [
+      "amme bhagavati kali mahesvari (malayalam)",
+      "amme bhagavati"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ammē Hṛdayēśvari (Malayalam).mp3",
+      "song": "amme hrdayesvari malayalam",
+      "sn": "ame hrdayisvari"
+    },
+    [
+      "amme hrdayesvari (malayalam)",
+      "amme hrdayesvari (malayalam, chaitanya)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Ammē Hṛdayēśvarī.mp3",
       "song": "amme hrdayesvari",
-      "sn": "ammeriTaYesVri"
+      "sn": "ame hrdayisvari"
     },
     [
-      "ammeriTaYesVrimaTaYaTam",
-      "ammeriTaYesVrimaTaYaTamcaiTanYa"
+      "amme hrdayesvari (malayalam)",
+      "amme hrdayesvari (malayalam, chaitanya)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Āyēṅgē Mērē Kānhā Āj.mp3",
+      "song": "ayenge mere kanha aj",
+      "sn": "ayenge mere kanh aj"
+    },
+    [
+      "ayenge mere kanha aj (hindi)",
+      "ayenge mere"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Bhakti Dē Mā.mp3",
+      "song": "bhakti de ma",
+      "sn": "bakti de ma"
+    },
+    [
+      "bhakti de ma",
+      "bhakti de ma (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Bōlo Śyām Rādhē Rādhē.mp3",
+      "song": "bolo syam radhe radhe",
+      "sn": "bolo syam rade rade"
+    },
+    [
+      "bolo syam radhe radhe (hindi)",
+      "bolo syam radhe"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Dayānidhiyē Dayānadiyē.mp3",
+      "song": "dayanidhiye dayanadiye",
+      "sn": "dayanidye dayanadye"
+    },
+    [
+      "dayanidhiye dayanadiye (tamil)",
+      "dayanidhiye (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Dē Darśan Mā (Oriya).mp3",
+      "song": "de darsan ma oriya",
+      "sn": "de darsan ma"
+    },
+    [
+      "de darsan ma (odiya version)",
+      "de darsan ma devi"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Dēvi Mātē Durgē (Malayalam).mp3",
+      "song": "devi mate durge malayalam",
+      "sn": "devi mate durge"
+    },
+    [
+      "devi mate durge (malayalam, vedika)",
+      "devi mate"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ellām Aṙiyunnuvenkilum.mp3",
+      "song": "ellam ariyunnuvenkilum",
+      "sn": "elam aryunuvengilum"
+    },
+    [
+      "ellam aṙiyunnuvenkilum (malayalam)",
+      "ellam ariyunna english"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Entinu Śokam (Telugu).mp3",
+      "song": "entinu sokam telugu",
+      "sn": "endinu sokam"
+    },
+    [
+      "entinu sokam (telugu version)",
+      "entinu sokam manasse"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Gaṇēśa Namaḥ Ōm (Oriya).mp3",
+      "song": "ganesa namah om oriya",
+      "sn": "ganes nam om"
+    },
+    [
+      "ganesa namah om",
+      "ganesa namaḥ om (odiya version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Gōvinda Gōpāla Mādhava.mp3",
+      "song": "govinda gopala madhava",
+      "sn": "govind gopal madav"
+    },
+    [
+      "govinda gopala madhava (tamil)",
+      "govinda gopala"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ini Oru Janmam (Tamil).mp3",
+      "song": "ini oru janmam tamil",
+      "sn": "ini oru janmam"
+    },
+    [
+      "ini oru janmam",
+      "ini oru janmam (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Iruḷ Māri Teḷiyānāyi.mp3",
+      "song": "irul mari teliyanayi",
+      "sn": "irul mari telyanayi"
+    },
+    [
+      "irul mari teliyanayi (malayalam)",
+      "irul mari teliyanay (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Jaga Janani.mp3",
       "song": "jaga janani",
-      "sn": "jagajanYanYi"
+      "sn": "jag janani"
     },
     [
-      "jagajanYanYimariaTi",
-      "jagajanYanYiTamiT"
+      "jag janani (punjabi)",
+      "jagajjanani (marathi)",
+      "jagajjanani (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Jagadīśvarī Mā (Malayalam).mp3",
+      "song": "jagadisvari ma malayalam",
+      "sn": "jagadisvari ma"
+    },
+    [
+      "jagadisvari ma (malayalam amrita)",
+      "jagadisvari ma paramesvari ma (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Jagajjananī.mp3",
       "song": "jagajjanani",
-      "sn": "jagajanYanYi"
+      "sn": "jagajanani"
     },
     [
-      "jagajanYanYimariaTi",
-      "jagajanYanYiTamiT"
+      "jagajjanani (marathi)",
+      "jagajjanani (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Jay Jay Dēvi (Sanskrit).mp3",
+      "song": "jay jay devi sanskrit",
+      "sn": "jay jay devi"
+    },
+    [
+      "jay jay devi (amrita, namavali)",
+      "jaya jaya devi",
+      "jaya jaya devi dayala hari"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Jaya Jaya Śaṅkara Hara Hara.mp3",
+      "song": "jaya jaya sankara hara hara",
+      "sn": "jay jay sangar har har"
+    },
+    [
+      "jaya jaya sankara hara hara (tamil)",
+      "jaya jaya sankara (kannada)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Jaya Jaya Śankara.mp3",
       "song": "jaya jaya sankara",
-      "sn": "jaYajaYasanYkaria"
+      "sn": "jay jay sangar"
     },
     [
-      "jaYajaYasanYkariakanYnYaTa",
-      "jaYajaYasanYkariariariaTamiT"
+      "jaya jaya sankara (kannada)",
+      "jaya jaya sankara hara hara (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Jōt Jalālē Rām.mp3",
+      "song": "jot jalale ram",
+      "sn": "jot jalale ram"
+    },
+    [
+      "jot jalale ram (hindi)",
+      "jot jalale"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kaalam Kanalu (Tamil).mp3",
+      "song": "kaalam kanalu tamil",
+      "sn": "kalam kanalu"
+    },
+    [
+      "kalam kanalu",
+      "kalam kanalu (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kāḷi Kāḷi Kāḷi Kālasvarūpiṇi.mp3",
+      "song": "kali kali kali kalasvarupini",
+      "sn": "kali kali kali kalasvarupini"
+    },
+    [
+      "kali kali kali kalasvarupini (telugu)",
+      "kali kali kali (gujarati)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kāḷi Kāḷi Kāḷi Kāḷi Triśūlī.mp3",
+      "song": "kali kali kali kali trisuli",
+      "sn": "kali kali kali kali trsuli"
+    },
+    [
+      "kali kali kali kali trisuli (tamil)",
+      "kali kali kali (gujarati)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kaṇā Kaṇā.mp3",
+      "song": "kana kana",
+      "sn": "kan kan"
+    },
+    [
+      "kana kana (marathi)",
+      "kanna kanna kanna (tamil)",
+      "kanakkan koti"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kaṇṇane Kāṇān (Malayalam).mp3",
+      "song": "kannane kanan malayalam",
+      "sn": "kanane kanan"
+    },
+    [
+      "kannane kanan",
+      "kannane kanan (malayalam, amrita lakshmi)",
+      "kannane kanan koticcu (malayalam)",
+      "kannane kananull-atimoham kondenno (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kaṇṇane Kāṇān Koticcu.mp3",
+      "song": "kannane kanan koticcu",
+      "sn": "kanane kanan koticu"
+    },
+    [
+      "kannane kanan koticcu (malayalam)",
+      "kannane kanan",
+      "kannane kanan (malayalam, amrita lakshmi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kaṇṇunīr Tōrātta Sandhyakaḷ.mp3",
+      "song": "kannunir toratta sandhyakal",
+      "sn": "kanunir torat sandyakal"
+    },
+    [
+      "kannunir toratta sandhyakal (malayalam)",
+      "kannunir toratta"
     ]
   ],
   [
     {
       "path": "/samples-cd/Karimukil Varṇṇā.mp3",
       "song": "karimukil varnna",
-      "sn": "karimukgiTVrinYnYa"
+      "sn": "karimukil varn"
     },
     [
-      "karimukgiTVrinYnYamaTaYaTam",
-      "karimukgiTVrinYnYanY",
-      "karimukgiTVrinYnYaenYnYunYnYikanYnYamaTaYaTam",
-      "karimukgiTVrinYnYanYTeTiTakaTmaTaYaTam"
+      "karimukil varnna (malayalam)",
+      "karimukil varnnan"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Karuṇārdra Mānasē (Malayalam).mp3",
+      "song": "karunardra manase malayalam",
+      "sn": "karunardr manase"
+    },
+    [
+      "karunardra manase (malayalam, chinmaya)",
+      "karunardra-manase hrdayesvari (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Kāruṇya-Kaṭal.mp3",
       "song": "karunyakatal",
-      "sn": "kariunYakaTaT"
+      "sn": "karunyakatal"
     },
     [
-      "kariunYakaTaTmaTaYaTam",
-      "kariunYakaTaTakumammemaTaYaTam"
+      "karunya-katal (malayalam)",
+      "karunya-katalakum amme (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Kāruṇya-Kaṭalākum Ammē.mp3",
+      "song": "karunyakatalakum amme",
+      "sn": "karunyakatalakum ame"
+    },
+    [
+      "karunya-katalakum amme (malayalam)",
+      "karunya-katal (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Karunyarupini Amme Nin (Malayalam).mp3",
+      "song": "karunyarupini amme nin malayalam",
+      "sn": "karunyarupini ame nin"
+    },
+    [
+      "karunyarupini amme nin (kunju, malayalam)",
+      "karunya rupini (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Mahadevi Mahakali.mp3",
+      "song": "mahadevi mahakali",
+      "sn": "mahadevi mahakali"
+    },
+    [
+      "mahadevi mahakali (kannada)",
+      "mahadevi (malayalam)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Mahādēvi.mp3",
       "song": "mahadevi",
-      "sn": "maTeVi"
+      "sn": "mahadevi"
     },
     [
-      "maTeVimaTaYaTam",
-      "maTeVimakaTikanYnYaTa"
+      "mahadevi (malayalam)",
+      "mahadevi mahakali (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Mahiṣāsura-Marddini Mahā-Pātaka.mp3",
+      "song": "mahisasuramarddini mahapataka",
+      "sn": "mahisasuramardini mahapatak"
+    },
+    [
+      "mahisasura-marddini maha-pataka (sanskrit)",
+      "mahisa sura mardini"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Manasa Vacha (Marathi).mp3",
+      "song": "manasa vacha marathi",
+      "sn": "manas vac"
+    },
+    [
+      "manasa vaca (marathi version)",
+      "manasa vacha karmana",
+      "manasavaca karmana (kannada)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Mandahasa Vadane Manohari (Vintage).mp3",
+      "song": "mandahasa vadane manohari vintage",
+      "sn": "mandahas vadane manohari"
+    },
+    [
+      "mandahasa vadane manohari",
+      "mandahasa vadane",
+      "mandahasavadane (namavali)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Manvā Rē Tu.mp3",
+      "song": "manva re tu",
+      "sn": "manv re tu"
+    },
+    [
+      "manva re tu",
+      "manva re tu (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Mātṛ-Vātsalyamām.mp3",
+      "song": "matrvatsalyamam",
+      "sn": "matrvatsalyamam"
+    },
+    [
+      "matr-vatsalyamam (malayalam)",
+      "matr vatsalya"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Muruga Muruga (Malayalam).mp3",
+      "song": "muruga muruga malayalam",
+      "sn": "murug murug"
+    },
+    [
+      "muruga muruga (malayalam, amritapriya)",
+      "muruka muruka vel muruka"
     ]
   ],
   [
     {
       "path": "/samples-cd/Muttu Muttu.mp3",
       "song": "muttu muttu",
-      "sn": "muTumuTu"
+      "sn": "mutu mutu"
     },
     [
-      "muTumuTugikanYnYaTa",
-      "muTumuTumarYammaTamiT",
-      "muTumuTuVeTaVnYeTamiT"
+      "muttu muttu mariyamma (tamil)",
+      "muttu muttu velavane (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Neelambuja Nayane.mp3",
       "song": "neelambuja nayane",
-      "sn": "nYiTambujanYaYanYe"
+      "sn": "nilanbuj nayane"
     },
     [
-      "nYiTambujanYaYanYegujriaTiVerisionY",
-      "nYiTambujanYaYanYemaTaYaTam",
-      "nYiTambujanYaYanYeTamiTVerisionY",
-      "nYiTambujanYaYanYeTeTagu"
+      "nilambuja nayane (gujrati version)",
+      "nilambuja nayane (malayalam)",
+      "nilambuja nayane (tamil version)",
+      "nilambuja nayane (telagu)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Nilambhuja Nayane (Gujarati).mp3",
+      "song": "nilambhuja nayane gujarati",
+      "sn": "nilanbuj nayane"
+    },
+    [
+      "nilambuja nayane (gujrati version)",
+      "nilambuja nayane (malayalam)",
+      "nilambuja nayane (tamil version)",
+      "nilambuja nayane (telagu)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Nilambhuja Nayane (Japanese).mp3",
+      "song": "nilambhuja nayane japanese",
+      "sn": "nilanbuj nayane"
+    },
+    [
+      "nilambuja nayane (gujrati version)",
+      "nilambuja nayane (malayalam)",
+      "nilambuja nayane (tamil version)",
+      "nilambuja nayane (telagu)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Nin Nāmam.mp3",
       "song": "nin namam",
-      "sn": "nYinYnYamam"
+      "sn": "nin namam"
     },
     [
-      "nYinYnYamammaTaYaTam",
-      "nYinYnYamamaTekanYnYaTa"
+      "nin namam (malayalam)",
+      "ninna mamate (kannada)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Nṛttamāḍu.mp3",
       "song": "nrttamadu",
-      "sn": "nYriTamaTu"
+      "sn": "nrtamadu"
     },
     [
-      "nYriTamaTumaTaYaTam",
-      "nYriTamaTukrisnYa"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Omkara Divya Porule 2009.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Omkara Divya Porule 2011.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Omkara Divya Porule 2012.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Omkara Divya Porule 2013.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 47.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 48.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 49.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 50.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 51.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 52.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 53.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 54.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 55.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 61.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 62.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 63.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 64.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 65.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Divya Porūḷē 66.mp3",
-      "song": "omkara divya porule",
-      "sn": "omkariaTiVYaporiuTe"
-    },
-    [
-      "omkariaTiVYaporiuTe1",
-      "omkariaTiVYaporiuTe14",
-      "omkariaTiVYaporiuTe2",
-      "omkariaTiVYaporiuTe4",
-      "omkariaTiVYaporiuTe6",
-      "omkariaTiVYaporiuTe7",
-      "omkariaTiVYaporiuTeViii",
-      "omkariaTiVYaporiuTex",
-      "omkariaTiVYaporiuTexi"
-    ]
-  ],
-  [
-    {
-      "path": "/samples-cd/Ōmkāra Svaramezhum.mp3",
-      "song": "omkara svaramezhum",
-      "sn": "omkariasVriamerium"
-    },
-    [
-      "omkariasVriameriummaTaYaTam",
-      "omkariasVriameriumnYiriamaTacariTimaTaYaTam"
+      "nrttamadu (malayalam)",
+      "nrttamatu krsna"
     ]
   ],
   [
     {
       "path": "/samples-cd/Ōmkāra-Rūpiṇi.mp3",
       "song": "omkararupini",
-      "sn": "omkariariupinYi"
+      "sn": "ongararupini"
     },
     [
-      "omkariariupinYimaTaYaTam",
-      "omkariariupinYiaYoriammemaTaYaTam"
+      "omkara-rupini (malayalam)",
+      "omkara-rupini ayoramme (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ōmkārēśvara Kailāsēśvara.mp3",
+      "song": "omkaresvara kailasesvara",
+      "sn": "ongarisvar kailasisvar"
+    },
+    [
+      "omkaresvara kailasesvara (sanskrit)",
+      "omkaresvara (telugu)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Oru Nalil Nyan (Kannada).mp3",
+      "song": "oru nalil nyan kannada",
+      "sn": "oru nalil nan"
+    },
+    [
+      "oru nalil nyan (tamil)",
+      "oru nalil nan en (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Oru Nimiṣam Ōrttu.mp3",
+      "song": "oru nimisam orttu",
+      "sn": "oru nimisam ortu"
+    },
+    [
+      "oru nimisam orttu (malayalam)",
+      "oru nimisham (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Pīlippu.mp3",
       "song": "pilippu",
-      "sn": "piTipu"
+      "sn": "pilipu"
     },
     [
-      "piTipumaTaYaTam",
-      "piTipucuTYaTamariakanYnYanYemaTaYaTam",
-      "piTipucuTYamaTaYaTam"
+      "pilippu (malayalam)",
+      "pilippu cudiya tamara-kannane (malayalam)",
+      "pilippu cutiya (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Rāma Rāma Jaya (Sanskrit).mp3",
+      "song": "rama rama jaya sanskrit",
+      "sn": "ram ram jay"
+    },
+    [
+      "rama rama jaya (aravind, sanskrit)",
+      "rama rama jaya rama"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Śambhō Śankara Sāmba Sadāśiva.mp3",
+      "song": "sambho sankara samba sadasiva",
+      "sn": "sanbo sangar sanb sadasiv"
+    },
+    [
+      "sambho sankara samba sadasiva (sanskrit)",
+      "sambho sankara",
+      "sambho sankara (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Śambho Śaṅkara.mp3",
+      "song": "sambho sankara",
+      "sn": "sanbo sangar"
+    },
+    [
+      "sambho sankara",
+      "sambho sankara (tamil)",
+      "sambho sankara samba sadasiva (sanskrit)",
+      "sambho sankara umapathe"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Samsāra-Duḥkha-Pūrṇamām.mp3",
+      "song": "samsaraduhkhapurnamam",
+      "sn": "sansaraduhkapurnamam"
+    },
+    [
+      "samsara-duḥkha-purnamam (malayalam)",
+      "samsaraduhkha (telugu version)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Siṭrinbam Nāḍum.mp3",
       "song": "sitrinbam nadum",
-      "sn": "siTrinYbamnYaTum"
+      "sn": "sitrnbam nadum"
     },
     [
-      "siTrinYbamnYaTumTamiT",
-      "siTrinYbamnYaTumTamiT"
+      "sitrinbam nadum (tamil)",
+      "sitrinbam natum (tamil)"
     ]
   ],
   [
     {
       "path": "/samples-cd/Sri Lalitambike.mp3",
       "song": "sri lalitambike",
-      "sn": "sriTaTiTambike"
+      "sn": "sri lalitanbike"
     },
     [
-      "sriTaTiTambikepariasaTimaTaYaTam",
-      "sriTaTiTambikesariVsaTe",
-      "sriTaTiTambikesariVsaTekanYnYaTaVerisionY"
+      "sri lalitambike parasakti (malayalam)",
+      "sri lalitambike sarvasakte",
+      "sri lalitambike sarvasakte (kannada version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Sun Mēri Mayyā.mp3",
+      "song": "sun meri mayya",
+      "sn": "sun meri may"
+    },
+    [
+      "sun meri mayya (hindi)",
+      "sun meri"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Tañjamena Vandōm.mp3",
+      "song": "tanjamena vandom",
+      "sn": "tanjamen vandom"
+    },
+    [
+      "tancamena vantom (tamil)",
+      "tanjamena vandom (tamil)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Tannana Tannana (English).mp3",
+      "song": "tannana tannana english",
+      "sn": "tanan tanan"
+    },
+    [
+      "tanana tanana",
+      "tannana tannana (english, nalini)",
+      "tannanna tannanna (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Tannana Tannana.mp3",
+      "song": "tannana tannana",
+      "sn": "tanan tanan"
+    },
+    [
+      "tanana tanana",
+      "tannana tannana (english, nalini)",
+      "tannanna tannanna (malayalam)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Tīn Guṇōṅ Kī.mp3",
+      "song": "tin gunon ki",
+      "sn": "tin gunon ki"
+    },
+    [
+      "tin gunon ki (hindi)",
+      "tin guno"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Tyāga Diyā Tūnē.mp3",
+      "song": "tyaga diya tune",
+      "sn": "tyag dya tune"
+    },
+    [
+      "tyaga diya tune",
+      "tyaga diya tune (hindi)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Ulakattin Ādhāra (Tamil).mp3",
+      "song": "ulakattin adhara tamil",
+      "sn": "ulakatin adar"
+    },
+    [
+      "ulakattin adhara",
+      "ulakattin adhara (tamil version)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Vāṇi Sarasvati (Sanskrit).mp3",
+      "song": "vani sarasvati sanskrit",
+      "sn": "vani sarasvati"
+    },
+    [
+      "vani sarasvati",
+      "vani sarasvati (sanskrit, swathika)"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Viḍarātta Tāmara (Kannada).mp3",
+      "song": "vidaratta tamara kannada",
+      "sn": "vidarat tamar"
+    },
+    [
+      "vidaratta tamara (kannada version)",
+      "vitaratta tamara"
+    ]
+  ],
+  [
+    {
+      "path": "/samples-cd/Viṭhala Viṭhala Viṭhala Viṭhala.mp3",
+      "song": "vithala vithala vithala vithala",
+      "sn": "vital vital vital vital"
+    },
+    [
+      "vithala vithala vithala vithala (konkani)",
+      "vithala vithala"
     ]
   ]
 ]
