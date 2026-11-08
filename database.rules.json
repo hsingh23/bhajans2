@@ -65,6 +65,10 @@
     "analytics": {
       ".read": false,
       ".write": false
+    },
+    "authEmailLimits": {
+      ".read": false,
+      ".write": false
     }
   }
 }

@@ -1,4 +1,4 @@
-const { onRequest } = require("firebase-functions/v2/https");
+const { onRequest, onCall, HttpsError } = require("firebase-functions/v2/https");
 const { onValueWritten } = require("firebase-functions/v2/database");
 const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
@@ -11,6 +11,7 @@ const {
   newUserResetPasswordEmail,
   newUserResetPasswordEmailShopify,
   accountActivated,
+  sendAuthEmail,
 } = require("./mail");
 const { ga4ApiSecret, recordGa4Purchase } = require("./engagement");
 initializeApp();
@@ -626,6 +627,103 @@ exports.shopifyWebhook = onRequest(
       });
       return res.status(500).send("Order processing failed; retry required");
     }
+  },
+);
+
+// Sends the magic sign-in link or password reset link in a branded email,
+// instead of Firebase's plain default templates. The client falls back to
+// Firebase's own email if this fails.
+const AUTH_EMAIL_HOSTS = new Set([
+  "sing.withamma.com",
+  "bhajans-588f5.web.app",
+  "bhajans-588f5.firebaseapp.com",
+  "localhost",
+]);
+const isAllowedContinueUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return (
+      AUTH_EMAIL_HOSTS.has(url.hostname) ||
+      /^deploy-preview-\d+--bhajans\.netlify\.app$/.test(url.hostname)
+    );
+  } catch {
+    return false;
+  }
+};
+// Anyone can call sendAuthEmail, so it is rate-limited before any link is made:
+// - per recipient, one email a minute and five an hour (no inbox flooding); over that
+//   the caller gets "resource-exhausted" and the login page says to wait;
+// - in total, AUTH_EMAIL_HOURLY_CAP an hour (the Mailjet quota); over that it answers
+//   "unavailable" and the login page falls back to Firebase's own (rate-limited) email.
+// No per-IP limit: the first X-Forwarded-For hop is whatever the caller sends.
+// Counters live under authEmailLimits/ (hashed keys; clients can't read or write it).
+const AUTH_EMAIL_RECIPIENT_LIMITS = [
+  { windowMs: 60 * 1000, max: 1 },
+  { windowMs: 60 * 60 * 1000, max: 5 },
+];
+const AUTH_EMAIL_HOURLY_CAP = 200;
+const hashKey = (value) => crypto.createHash("sha256").update(value).digest("hex").slice(0, 40);
+
+async function takeAuthEmailSlot(email, now = Date.now()) {
+  // The recipient first, so a flood aimed at one address never spends the shared budget.
+  const longest = Math.max(...AUTH_EMAIL_RECIPIENT_LIMITS.map((l) => l.windowMs));
+  const recipient = await getDatabase()
+    .ref(`authEmailLimits/to/${hashKey(email)}`)
+    .transaction((times) => {
+      const recent = (Array.isArray(times) ? times : []).filter((t) => now - t < longest);
+      const over = AUTH_EMAIL_RECIPIENT_LIMITS.some(
+        ({ windowMs, max }) => recent.filter((t) => now - t < windowMs).length >= max,
+      );
+      return over ? undefined : [...recent, now];
+    });
+  if (!recipient.committed) return "recipient";
+  const hour = Math.floor(now / 3600000);
+  const total = await getDatabase()
+    .ref(`authEmailLimits/total/${hour}`)
+    .transaction((count) => ((count || 0) >= AUTH_EMAIL_HOURLY_CAP ? undefined : (count || 0) + 1));
+  return total.committed ? null : "total";
+}
+exports.takeAuthEmailSlot = takeAuthEmailSlot;
+
+exports.sendAuthEmail = onCall(
+  { ...options, secrets: [mailjetAuth] },
+  async (request) => {
+    const { email: rawEmail, type, continueUrl } = request.data || {};
+    const email = typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : "";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254)
+      throw new HttpsError("invalid-argument", "A valid email address is required");
+    if (!["signin", "reset"].includes(type))
+      throw new HttpsError("invalid-argument", "Unknown email type");
+    if (!isAllowedContinueUrl(continueUrl))
+      throw new HttpsError("invalid-argument", "Unsupported return address");
+    const limited = await takeAuthEmailSlot(email);
+    if (limited === "recipient") {
+      logger.warn("Auth email rate-limited", { type, limit: "recipient" });
+      throw new HttpsError("resource-exhausted", "An email was just sent to this address. Please wait a minute.");
+    }
+    if (limited === "total") {
+      logger.warn("Auth email rate-limited", { type, limit: "total" });
+      throw new HttpsError("unavailable", "Branded email is busy");
+    }
+    let link;
+    try {
+      link =
+        type === "signin"
+          ? await getAuth().generateSignInWithEmailLink(email, {
+              url: continueUrl,
+              handleCodeInApp: true,
+            })
+          : await getAuth().generatePasswordResetLink(email, { url: continueUrl });
+    } catch (error) {
+      // Don't reveal whether an account exists.
+      if (error?.code === "auth/user-not-found" || error?.code === "auth/email-not-found")
+        return { sent: true };
+      logger.error("Auth link generation failed", { type, code: error?.code });
+      throw new HttpsError("internal", "Could not create the link");
+    }
+    await sendAuthEmail({ email, link, type, apiKey: mailjetAuth.value() });
+    logger.info("Auth email sent", { type });
+    return { sent: true };
   },
 );
 

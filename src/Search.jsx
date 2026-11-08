@@ -15,6 +15,7 @@ import MusicChips from './MusicChips';
 import { EMPTY_MUSIC_FILTERS, MUSIC_FACETS, activeMusicFilters, matchesMusic, musicFacetCounts, musicSearchText } from './musicFilters';
 import { useViewerPrefs, rememberedSheetKey } from './prefs';
 import { buildSearchIndex, rankBhajans } from './searchRank';
+import { isLyricsLocation, locationLabel } from './lyricsLocation';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
 const ROW_HEIGHT = 200;
@@ -251,10 +252,8 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   }, [isInfoOpen]);
 
   const wrappedName = (loc, name, child) => {
-    // Pattern matches: YYYYsuplN-X (supplements), volN-X (volumes), and YYYY-X (year-only like 2025-53)
-    const match = loc.match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi);
-    return match ? (
-      <Link to={`/pdf/${match[0]}/${name}`} className='lyrics'>
+    return isLyricsLocation(loc) ? (
+      <Link to={`/pdf/${loc}/${name}`} className='lyrics'>
         {child} <Icon name='book' className='lyrics-icon' />
       </Link>
     ) : (
@@ -276,7 +275,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         <div className='bhajanRow'>
           <div className='Search_LeftSide'>
             {wrappedName(
-              locationArr.find((loc) => loc.match(/\d{4}(?:supl\d?)?-\d+|vol\d-\d+/gi)) ||
+              locationArr.find(isLyricsLocation) ||
                 locationArr[0],
               `${filteredBhajans[index]}/${name}`,
               <Highlight className='spaced' words={filter.split(' ')} text={`${name}${tagContent || ''}`} />
@@ -423,10 +422,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                     {wrappedName(
                       pdf,
                       `${infoFilteredIndex}/${infoName}`,
-                      pdf
-                        .replace('voli', 'Alternate Volume ')
-                        .replace('vol', 'Volume ')
-                        .replace('-', ', page ')
+                      locationLabel(pdf)
                     )}
                   </span>
                 ))}

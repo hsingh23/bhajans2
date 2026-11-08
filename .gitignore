@@ -50,3 +50,6 @@ admin-functions/.env*
 firebase-debug*.log
 playwright-report/
 test-results/
+
+# Layamritam dump (530 MB, from a logged-in session): local only, see create-index/layamritam/README.md
+/layamritam/

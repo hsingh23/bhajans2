@@ -10823,10 +10823,6 @@
 "lg": "Marathi",
 "d": "Krishna"
 },
-"vithal smaran kara (marathi)": {
-"lg": "Marathi",
-"d": "Krishna"
-},
 "vithala hari vithala": {
 "lg": "Sanskrit",
 "d": "Vishnu"
@@ -11074,5 +11070,1193 @@
 "lammossa tuulen (finnish)": {
 "lg": "Finnish",
 "d": "Other"
+},
+"aavi che holi (gujarati)": {
+"lg": "Gujarati",
+"d": "Krishna"
+},
+"aavo mara (gujarati)": {
+"lg": "Gujarati",
+"d": "Krishna"
+},
+"adethamu (telugu)": {
+"lg": "Telugu",
+"d": "Krishna"
+},
+"adi parameswari (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"adi paramesvariye (adiyil paramesvariye) (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"a jivanantam (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"ajivanantam bhajincenu (ajivanantam) (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"amba tojale (amba paluku) (tulu)": {
+"lg": "Tulu",
+"d": "Amma"
+},
+"amma ani nantane (annai enrratume) (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"amma bhavani (a-i bhavani) (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"amma elli nannamma (ammayalle ennammayalle) (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"amma ni rupam (amma nin rupam) (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"amme nin padataril vinu (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"amma bhagavati nityakanye (amme bhagavati nityakanye) (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"anandamrta rupini amme (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"anantamam i lokattil (bengali)": {
+"lg": "Bengali",
+"d": "Krishna"
+},
+"anupama premada (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"appe atte enna appe atte (tulu)": {
+"lg": "Tulu",
+"d": "Amma"
+},
+"baliyali iddaru (arikiluntenkilum) (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"bandhavar eshto (kannada)": {
+"lg": "Kannada",
+"d": "Universal"
+},
+"bandhamilla (bandhu nathi) (gujarati)": {
+"lg": "Gujarati",
+"d": "Universal"
+},
+"bhajeham ganesam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Ganesha"
+},
+"bhavasagar jodi (dasarathe raghuramana) (bengali)": {
+"lg": "Bengali",
+"d": "Rama"
+},
+"bhramaramor (bhramarame) (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"brahmanda paksule (brahmanda paksikal) (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"brahmasmi tatvada (brahmanda pakshikal) (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"brojo dhame othe (bengali)": {
+"lg": "Bengali",
+"d": "Krishna"
+},
+"cintalaku antam (telugu)": {
+"lg": "Telugu",
+"d": "Universal"
+},
+"cintana ceyyavale (telugu)": {
+"lg": "Telugu",
+"d": "Vishnu"
+},
+"chintane madalu ba (kannada)": {
+"lg": "Kannada",
+"d": "Vishnu"
+},
+"devi devi devi (trimurtir) (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"devi devi devi (trimurtula) (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"duhkha tapta manassu (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"elam ami mago (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"enna kannunir estu (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"enniyo naluga (telugu)": {
+"lg": "Telugu",
+"d": "Krishna"
+},
+"entana kanu neeru (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"evariki telipeda (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"hrdaya pushpame (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"icchamayi ni (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"isvara lileyidella (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"isvari jagadisvari (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"iswar tume (odia)": {
+"lg": "Odia",
+"d": "Amma"
+},
+"isvaralilayitenta (isvaralilayitellam) (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"jay jay jay gananath gajanana kasht haro (gujarati)": {
+"lg": "Gujarati",
+"d": "Ganesha"
+},
+"radhe shyam krishna (gujarati)": {
+"lg": "Gujarati",
+"d": "Krishna"
+},
+"jvalana kalyana (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"kaanada kayyagi kanuva kannagi (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"kalam kanalu (kannada)": {
+"lg": "Kannada",
+"d": "Universal"
+},
+"kalam nippulu (telugu)": {
+"lg": "Telugu",
+"d": "Universal"
+},
+"kaneeri linindale padava (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"kannal illaiyeninum (kannillenkilum) (tamil)": {
+"lg": "Tamil",
+"d": "Krishna"
+},
+"karunalaye devi (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"karunalaye devi (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"karunyamurtte (tulu)": {
+"lg": "Tulu",
+"d": "Krishna"
+},
+"konn konn avya (gujarati)": {
+"lg": "Gujarati",
+"d": "Universal"
+},
+"kshanavendu baruvudu (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"ma jogadamba (ma jagadambe) (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"ma jogadambe (odia)": {
+"lg": "Odia",
+"d": "Devi"
+},
+"maanavanariya (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"mananthi vachanthi (gujarati)": {
+"lg": "Gujarati",
+"d": "Devi"
+},
+"manasa vaca karmana (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"manase nina swantadavaru (kannada)": {
+"lg": "Kannada",
+"d": "Universal"
+},
+"manasa vaca karmana (tamil)": {
+"lg": "Tamil",
+"d": "Devi"
+},
+"meri sunle araj (gujarati)": {
+"lg": "Gujarati",
+"d": "Krishna"
+},
+"mata rani (gujarati)": {
+"lg": "Gujarati",
+"d": "Devi"
+},
+"matr vatsalya tori (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"maunaghanamrta (telugu)": {
+"lg": "Telugu",
+"d": "Universal"
+},
+"maya seyyum (tamil)": {
+"lg": "Tamil",
+"d": "Universal"
+},
+"mayya hu to (gujarati)": {
+"lg": "Gujarati",
+"d": "Devi"
+},
+"mere hrdaya sri ram base (hindi)": {
+"lg": "Hindi",
+"d": "Rama"
+},
+"muraliyanu uduta baro (murali bajate ana) (kannada)": {
+"lg": "Kannada",
+"d": "Krishna"
+},
+"nandalala nandalala (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"nava vidha bhakthi (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"neenallade beraru jotege (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"nin premadindali (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"nina nenapu matra (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"nirmala premave ninnanu (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"nirmala snehame (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"o kripamayi appe (tulu)": {
+"lg": "Tulu",
+"d": "Devi"
+},
+"yen mahadevi lokesi (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"oka nimishamainanu (telugu)": {
+"lg": "Telugu",
+"d": "Universal"
+},
+"okanadu maruvani (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"ondu nimishavaadaru (kannada)": {
+"lg": "Kannada",
+"d": "Universal"
+},
+"onji nimisha andalu (tulu)": {
+"lg": "Tulu",
+"d": "Universal"
+},
+"oru nalum piriyatta (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"oru siriya (tamil)": {
+"lg": "Tamil",
+"d": "Universal"
+},
+"padaippum padai (tamil)": {
+"lg": "Tamil",
+"d": "Universal"
+},
+"pandarivasa sri hari (marathi)": {
+"lg": "Marathi",
+"d": "Krishna"
+},
+"pirivuthuyar (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"priyo kanai (bengali)": {
+"lg": "Bengali",
+"d": "Krishna"
+},
+"radata jag ma (gujarati)": {
+"lg": "Gujarati",
+"d": "Universal"
+},
+"radha ramana (telugu)": {
+"lg": "Telugu",
+"d": "Krishna"
+},
+"rakka karo ma (bengali)": {
+"lg": "Bengali",
+"d": "Amma"
+},
+"re manuva re manuva (hindi)": {
+"lg": "Hindi",
+"d": "Universal"
+},
+"sindhura padamule (telugu)": {
+"lg": "Telugu",
+"d": "Devi"
+},
+"sri guru punya nama (kannada)": {
+"lg": "Kannada",
+"d": "Guru"
+},
+"srstiyo tumi (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"tannanna tananna (poruka poruka) (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"vantale vantale (bandalo bandalo) (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"vyatireka saktula (telugu)": {
+"lg": "Telugu",
+"d": "Amma"
+},
+"devere enklenu (tulu)": {
+"lg": "Tulu",
+"d": "Universal"
+},
+"iswar tuhi (sindhi)": {
+"lg": "Sindhi",
+"d": "Universal"
+},
+"maname unakku sontam (tamil)": {
+"lg": "Tamil",
+"d": "Universal"
+},
+"ni enna belaku (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"paravasavadi hrdaya (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"amma taye dayakari (iswar tumhi) (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"shakti de bhakti de (sindhi)": {
+"lg": "Sindhi",
+"d": "Devi"
+},
+"prem jo diyo (sindhi)": {
+"lg": "Sindhi",
+"d": "Rama"
+},
+"jay jay jay srikrsna (kannada)": {
+"lg": "Kannada",
+"d": "Krishna"
+},
+"gange mata holy bhagirathi (english)": {
+"lg": "English",
+"d": "Universal"
+},
+"shukam tse v (polish)": {
+"lg": "Polish",
+"d": "Devi"
+},
+"akataril teliyane jagadisvari (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"amma en unmayenn-ariyate (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"amme amme amrtesvari (ammayenna mahamatram) (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"amme nin karunya-sparsana-ttal matram (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"amrta rupini abhaya (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"anu nimisam akataril (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"atma caitanyame nin (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"ekanta pathikayay karma (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"guruvin trpada seva (malayalam)": {
+"lg": "Malayalam",
+"d": "Guru"
+},
+"inam-ekattoru kavyattin-akumo (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"kalattin katt ozhukkil (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"karayatentomana paitale (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"karolivarnna (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"karunya varidhi amme (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"klesam nirannor (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"krsna niyennil varum (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"niscala cittattil teliyum (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"oru pincupaitalam ennude (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"oru tulli piyusam (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"ozhukunnu amme (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"sasvatamaya ninne (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"tamburuvil sruti (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"tulasi malayay (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"uttunga saila nivasiyam (malayalam)": {
+"lg": "Malayalam",
+"d": "Shiva"
+},
+"varum ennu karuti (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"virahattin venalil en (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"vyamoha patayil nan (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"abhisekam abhisekam (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"cit ambaramaka (tamil)": {
+"lg": "Tamil",
+"d": "Shiva"
+},
+"ennai nan tolaittuvitten (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"ennulle unnai tetinen (tamil)": {
+"lg": "Tamil",
+"d": "Amma"
+},
+"siva padam adum (tamil)": {
+"lg": "Tamil",
+"d": "Shiva"
+},
+"dinabandho karunasindho (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Krishna"
+},
+"astottaram & lalita sahasra namam (108 & 1000 - archana) (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Amma"
+},
+"omkara divya porule 47 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 48 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 49 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 50 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 51 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 52 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 53 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 54 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 55 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 61 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 63 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 64 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 65 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"omkara divya porule 66 (malayalam)": {
+"lg": "Malayalam",
+"d": "Universal"
+},
+"bhagvan suyi kar (kashmiri)": {
+"lg": "Kashmiri",
+"d": "Amma"
+},
+"jogoto natho probhu (odia)": {
+"lg": "Odia",
+"d": "Vishnu"
+},
+"somosto lilare puri (odia)": {
+"lg": "Odia",
+"d": "Devi"
+},
+"bhakti ka ras (hindi)": {
+"lg": "Hindi",
+"d": "Guru"
+},
+"om devi ma (french)": {
+"lg": "French",
+"d": "Devi"
+},
+"mara nalum vazhttum (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"¡haya paz! (aya he sara) (spanish)": {
+"lg": "Spanish",
+"d": "Universal"
+},
+"oh mi senor ven a mi (anantamam i lokattil) (spanish)": {
+"lg": "Spanish",
+"d": "Krishna"
+},
+"madre divina (ma jagadambe) (spanish)": {
+"lg": "Spanish",
+"d": "Devi"
+},
+"cantamos tu gloria (hail to your glory) (spanish)": {
+"lg": "Spanish",
+"d": "Rama"
+},
+"brota la fuente (khushiyon ki bahar) (spanish)": {
+"lg": "Spanish",
+"d": "Universal"
+},
+"o amor puro (nirmala snehame) (spanish)": {
+"lg": "Spanish",
+"d": "Amma"
+},
+"todo el mundo (everyone in the world) (spanish)": {
+"lg": "Spanish",
+"d": "Universal"
+},
+"mi mente es (nin ormakal) (spanish)": {
+"lg": "Spanish",
+"d": "Amma"
+},
+"esta vida dura solo un dia (nalenchu nalaikyu) (spanish)": {
+"lg": "Spanish",
+"d": "Universal"
+},
+"donde puedo ir (where can i go) (spanish)": {
+"lg": "Spanish",
+"d": "Amma"
+},
+"o diosa preciosa - isvari jagadisvari (spanish)": {
+"lg": "Spanish",
+"d": "Devi"
+},
+"al pensar, al hablar (manasa vaca karmana) (spanish)": {
+"lg": "Spanish",
+"d": "Devi"
+},
+"eres la creacion (srstiyum) (spanish)": {
+"lg": "Spanish",
+"d": "Devi"
+},
+"iswar tumhi - danos tu compasion (spanish)": {
+"lg": "Spanish",
+"d": "Amma"
+},
+"everyone in the world (portuguese)": {
+"lg": "Portuguese",
+"d": "Universal"
+},
+"hail to your glory (portuguese)": {
+"lg": "Portuguese",
+"d": "Rama"
+},
+"parisuddha snehattin paryayam (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"teninum iniday (tamil)": {
+"lg": "Tamil",
+"d": "Shiva"
+},
+"namah sivaya endruraikka (tamil)": {
+"lg": "Tamil",
+"d": "Shiva"
+},
+"adangidum manam unul (tamil)": {
+"lg": "Tamil",
+"d": "Shiva"
+},
+"amma gel bana (turkish)": {
+"lg": "Turkish",
+"d": "Amma"
+},
+"siksavalli (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Universal"
+},
+"ganapati stuti (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Ganesha"
+},
+"saraswati stuti (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"ganapati atharvasirsa (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Ganesha"
+},
+"devi suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"medha suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"sivopasana mantra (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Shiva"
+},
+"narayana suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Vishnu"
+},
+"navagraha suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Other"
+},
+"sri rudram (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Shiva"
+},
+"sri suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"bhruguvalli (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Universal"
+},
+"mantra puspam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"hiranya garbha suktam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Devi"
+},
+"brahmavalli (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Guru"
+},
+"surya upanisad (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Other"
+},
+"bhagyada laksmi baramma (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"gopiye cintinccu (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"hanuman calisa (hindi)": {
+"lg": "Hindi",
+"d": "Hanuman"
+},
+"janani janani janani (tamil)": {
+"lg": "Tamil",
+"d": "Devi"
+},
+"bhaja govindam bhaja govindam (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Universal"
+},
+"iswar tumhi (finnish)": {
+"lg": "Finnish",
+"d": "Amma"
+},
+"i manojna bhumiyil (finnish)": {
+"lg": "Finnish",
+"d": "Devi"
+},
+"everyone in the world (finnish)": {
+"lg": "Finnish",
+"d": "Universal"
+},
+"isvara lila itella (finnish)": {
+"lg": "Finnish",
+"d": "Amma"
+},
+"iswari jagadiswari (finnish)": {
+"lg": "Finnish",
+"d": "Devi"
+},
+"tu es la creation (srstiyum) (french)": {
+"lg": "French",
+"d": "Devi"
+},
+"que tout etre en ce monde (everyone in the world) (french)": {
+"lg": "French",
+"d": "Universal"
+},
+"alona dekhi (dipak na janu) (bengali)": {
+"lg": "Bengali",
+"d": "Devi"
+},
+"bhramarave (bhramarame) (kannada)": {
+"lg": "Kannada",
+"d": "Devi"
+},
+"visamakara kannan (tamil)": {
+"lg": "Tamil",
+"d": "Krishna"
+},
+"madumeykkum kanne (tamil)": {
+"lg": "Tamil",
+"d": "Krishna"
+},
+"skanda muruga varuvaye (malayalam)": {
+"lg": "Malayalam",
+"d": "Murugan"
+},
+"kalike nin mizhi tumbil (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"aradhikkanor amma (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"vagadhise nin tejassal (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"klavu pidicchu (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"suddha nairmalyame ninne nokki (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"oh mother earth (english)": {
+"lg": "English",
+"d": "Universal"
+},
+"you are the light (english)": {
+"lg": "English",
+"d": "Universal"
+},
+"ambati tannile (malayalam)": {
+"lg": "Malayalam",
+"d": "Krishna"
+},
+"tirada vilayattu pillai (tamil)": {
+"lg": "Tamil",
+"d": "Krishna"
+},
+"sakhi mori (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"karuna kadale (amma solo) (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"kar na phakiri (mira) (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Universal"
+},
+"karam ki gati (mira) (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Universal"
+},
+"hoji hari kit gayi (mira) (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"radhya pyari de daro na (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"syam mane cakar (mira) (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"bala maim bairagan hungi (mira) (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"te to palak (mira) (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"sakhi re (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"baso more nayanan (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"hari bin kaun gati meri (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"maim to giridhar ke ghar (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"nirbhaya nirguna guna re (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"pani mem minu pyasi (marwari)": {
+"lg": "Marwari",
+"d": "Universal"
+},
+"bhaj man ram caran sukhadayi (marwari)": {
+"lg": "Marwari",
+"d": "Rama"
+},
+"calna hai dur musaphir (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Universal"
+},
+"dinanath ab bari tumhari (hindi)": {
+"lg": "Hindi",
+"d": "Universal"
+},
+"e ri maim to prem divani (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"man re parasi hari (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"barse badariya (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"oh amma (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"come children (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"you are my light (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"softly singing in my heart (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"only through god (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"in the silence (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"jhini re jhini ke (hindi)": {
+"lg": "Hindi",
+"d": "Rama"
+},
+"karuna suno syam meri (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"kanasina lokadhi kaledu hogi (kinaccillayil) (kannada)": {
+"lg": "Kannada",
+"d": "Amma"
+},
+"a o sahelarali (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"nilambhuja nayane (tulu)": {
+"lg": "Tulu",
+"d": "Amma"
+},
+"come to me - remove all fear (english)": {
+"lg": "English",
+"d": "Amma"
+},
+"flower of my heart (hrdaya puspame) (english)": {
+"lg": "English",
+"d": "Universal"
+},
+"daras bin dukhan (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"hari darasanu ki pyasi (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"kunjan ban chadi (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"maim hari carananu ki dasi (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Rama"
+},
+"pyare darasanu dijo aye (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"bhagavad gita (sanskrit)": {
+"lg": "Sanskrit",
+"d": "Universal"
+},
+"bhala huva mori matki (hindi)": {
+"lg": "Hindi",
+"d": "Universal"
+},
+"ram milan ke kaj (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Rama"
+},
+"ko birahini ko duhkh (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"prabhu mere avagun (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"hari avan ki (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"mhara olagiya ghar (marwari)": {
+"lg": "Marwari",
+"d": "Krishna"
+},
+"ali ri mere nainam (marwari)": {
+"lg": "Marwari",
+"d": "Krishna"
+},
+"ali ri mhane lage (marwari)": {
+"lg": "Marwari",
+"d": "Krishna"
+},
+"re mana murakh (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"sahab ham mem (hindi)": {
+"lg": "Hindi",
+"d": "Rama"
+},
+"calo agam ke des (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"ram milan ro ghano (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Rama"
+},
+"pag ghungharu bamdh (marwari)": {
+"lg": "Marwari",
+"d": "Krishna"
+},
+"sadguru soyi daya (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Guru"
+},
+"santo sahaj samadhi bhali (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Universal"
+},
+"tosom lagyo neh (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"jogi mat ja mat ja mat ja (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Krishna"
+},
+"lakhan jati jagat (braj bhasha)": {
+"lg": "Braj Bhasha",
+"d": "Guru"
+},
+"amrita varsham 73 anthem (malayalam)": {
+"lg": "Malayalam",
+"d": "Amma"
+},
+"man re tu kar le (hindi)": {
+"lg": "Hindi",
+"d": "Rama"
+},
+"ber ber nahi ave avasar (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"sadho sabad sadhana (hindi)": {
+"lg": "Hindi",
+"d": "Universal"
+},
+"manamohana kanha (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"nirajadala vilocana (malayalam)": {
+"lg": "Malayalam",
+"d": "Devi"
+},
+"mai mhari hari ji (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"ab to nibhayam saregi (hindi)": {
+"lg": "Hindi",
+"d": "Krishna"
+},
+"devi jagadodharini (hindi)": {
+"lg": "Hindi",
+"d": "Devi"
+},
+"amme shining within me (english)": {
+"lg": "English",
+"d": "Amma"
 }
 }

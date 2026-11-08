@@ -134,3 +134,17 @@ test("emails link to the login page, not the retired hash route", async () => {
     global.fetch = original;
   }
 });
+test("sign-in and reset emails are friendly, escaped and include a plain link fallback", () => {
+  const link = "https://bhajans-588f5.firebaseapp.com/__/auth/action?mode=signIn&oobCode=a&b=1";
+  for (const type of ["signin", "reset"]) {
+    const { subject, html, text } = mail.renderAuthEmail({ email: "a<b>@example.com", link, type });
+    assert.match(subject, /Sing with Amma/);
+    assert.match(html, /a&lt;b&gt;@example\.com/);
+    assert.match(html, /oobCode=a&amp;b=1/);
+    assert.match(html, /Copy this link/);
+    assert.match(text, /oobCode=a&b=1/);
+    assert.doesNotMatch(html, /<script/);
+  }
+  assert.match(mail.renderAuthEmail({ email: "x@y.z", link, type: "signin" }).html, /No password needed/);
+  assert.throws(() => mail.renderAuthEmail({ email: "x@y.z", link: "http://insecure", type: "reset" }));
+});

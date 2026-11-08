@@ -310,6 +310,26 @@ def main():
             e["c"] = round(sum(cs) / len(cs), 2)
         music[n] = e
 
+    # Raga / taal from Layamritam for songs this pipeline has none for (written by
+    # create-index/layamritam/merge_metadata.py; it never replaces a value computed here).
+    additions = HERE.parent / "layamritam" / "music-additions.json"
+    if additions.exists():
+        names = {s["n"] for s in index}
+        for n, fill in json.loads(additions.read_text()).items():
+            if n not in names:
+                continue
+            e = music.setdefault(n, {})
+            for k, v in fill.items():
+                if not e.get(k) and not (k == "r" and e.get("rn") == "none"):  # "no raga" is a classification
+                    e[k] = v
+                    if k == "r":
+                        used_r.update(r["id"] for r in v)
+                    elif k == "t":
+                        used_t.add(v["id"])
+            cs = [p["c"] for p in [e.get("sh"), e.get("t"), *(e.get("r") or [])[:1]] if p and "c" in p]
+            if cs:
+                e["c"] = round(sum(cs) / len(cs), 2)
+
     ragas_ref = {}
     for rid in sorted(used_r):
         r = by[rid]
