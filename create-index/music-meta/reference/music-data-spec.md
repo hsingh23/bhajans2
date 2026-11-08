@@ -27,6 +27,9 @@ Two static files, fetched only when musician mode is on (regular users download 
 | `r` | ragas in order; `id` keys into music-reference.json `ragas`; `sec` "all" or a short label ("verse", "charanam 2"); empty list + `"rn": "none"` = no raga (Western/light tune) |
 | `t` | taal: `id` / `alt` key into `taals`; `b` beats per cycle; `ts` Western time signature; `bpm` pulse tempo; `pulse` "quarter" / "dotted-quarter"; `sub` 2 or 3 (beat subdivision) |
 | `ch` | main chord progression as Roman numerals relative to Sa (only when sheet music exists) |
+| `vr` | melody range `[lowest, highest]` in semitones from Sa (-5 = lower Pa, 12 = upper Sa), from trusted sheet music; no alap |
+| `st` | the melody's first note, semitones from Sa (same octave convention as `vr`) |
+| `kr` | key root of the sheet music: `o` = semitones above Sa (0-11), `m` = minor key |
 | `en` | one or two plain-English sentences for a non-Indian musician |
 | `c` | overall confidence; the UI shows a subtle "approximate" marker below 0.7. Each part is also marked on its own: raga `c` < 0.85 → "≈ / close to", shruti or taal `c` < 0.8 → "≈ / probably" |
 

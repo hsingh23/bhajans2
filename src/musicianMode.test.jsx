@@ -249,7 +249,14 @@ describe('musician details in search', () => {
     expect(section).toHaveTextContent('S R2 G3 P D2 S');
     expect(section).toHaveTextContent('G A B D E G');
     expect(section).toHaveTextContent('Carnatic: Adi');
-    expect(section).toHaveTextContent('dha ge na ti');
+    // Each bol carries its beat number; the Tabla tab adds dugun and a stroke guide
+    expect(within(section).getByRole('group', { name: 'Theka by section' })).toHaveTextContent('1dha 2ge 3na 4ti');
+    expect(within(section).queryByRole('group', { name: 'Dugun theka' })).toBeNull();
+    fireEvent.click(within(section).getByRole('button', { name: 'Tabla' }));
+    expect(within(section).getByRole('group', { name: 'Dugun theka' })).toHaveTextContent('1dhage 2nati 3naka 4dhina');
+    expect(within(section).getByText('ge', { selector: 'dt' }).nextElementSibling).toHaveTextContent(
+      'bayan (left): open, ringing bass stroke'
+    );
     expect(section).toHaveTextContent('Count 1-2-3-4 at ~96 BPM');
     expect(within(section).getAllByRole('listitem').map((li) => li.textContent)).toEqual(['I G', 'IV C', 'V D', 'vi Em']);
     expect(section).toHaveTextContent('Sing in G (5 kattai).');
@@ -297,6 +304,198 @@ describe('musician details in search', () => {
       'href',
       '/pdf/KaliKaliKaliG.pdf/0/kali kali kali (gujarati)'
     );
+  });
+});
+
+describe('piano keys and transposing', () => {
+  // react-virtualized only renders rows when its containers have a size
+  const sizes = {};
+  beforeEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      sizes[prop] = Object.getOwnPropertyDescriptor(HTMLElement.prototype, prop);
+      Object.defineProperty(HTMLElement.prototype, prop, { configurable: true, get: () => 1000 });
+    }
+  });
+  afterEach(() => {
+    for (const prop of ['offsetWidth', 'offsetHeight']) {
+      Object.defineProperty(HTMLElement.prototype, prop, sizes[prop]);
+    }
+  });
+  const openDetails = async (name) => {
+    await within(rowFor(name)).findByTestId('music-chips');
+    fireEvent.click(within(rowFor(name)).getByRole('button', { name: 'bhajan details' }));
+    return screen.findByRole('region', { name: 'For musicians' });
+  };
+  const shrutiChip = (name) => rowFor(name).querySelector('.category-chip.shruti');
+
+  it('draws the raga on a piano in the recording key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    // Up and Down each get their own labelled keyboard, notes in red, Sa marked:
+    // Sa to Sa' for a narrow panel, and two octaves from C for a wide one (CSS shows one)
+    const pianos = [...section.querySelectorAll('.pk-compact [role="img"]')];
+    const wide = [...section.querySelectorAll('.pk-wide [role="img"]')];
+    expect(wide.map((p) => p.getAttribute('aria-label'))).toEqual(pianos.map((p) => p.getAttribute('aria-label')));
+    expect(wide[0].querySelector('.pk-white .pk-name, text.pk-name')).toHaveTextContent('C');
+    expect(wide[0].querySelectorAll('rect.pk-white')).toHaveLength(15);
+    expect(pianos[0].querySelectorAll('rect.pk-white')).toHaveLength(8);
+    expect(pianos.map((p) => p.getAttribute('aria-label'))).toEqual([
+      'Piano keys — Up: G A B D E G',
+      'Piano keys — Down: G E D B A G',
+    ]);
+    expect(pianos[0].querySelectorAll('.pk-on')).toHaveLength(6);
+    expect(pianos[0].querySelectorAll('.pk-sa-dot')).toHaveLength(2);
+    expect([...pianos[0].querySelectorAll('.pk-name-on')].map((t) => t.textContent)).toEqual(['G', 'A', 'B', 'D', 'E', 'G']);
+    expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
+  });
+
+  it('switches between voice, piano, guitar, ukulele, flute, bansuri and tabla, and remembers the choice', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    const pick = (name) => fireEvent.click(within(section).getByRole('button', { name }));
+    expect(within(section).getByRole('button', { name: 'Piano' })).toHaveAttribute('aria-pressed', 'true');
+
+    pick('Voice');
+    expect(getPrefs().musicInstrument).toBe('voice');
+    // The melody's range from the sheet music, as sargam and as notes in the key
+    expect(within(section).getByText('Vocal range').closest('.md-range')).toHaveTextContent(
+      'Without alap: Pa (lower) to Sa (upper) · D to G · 1 octave + 5 (17 semitones), from the sheet music'
+    );
+    expect(section).toHaveTextContent('With alap: not measured yet.');
+    expect(within(section).getByRole('img', { name: /^Sing up/ })).toHaveAccessibleName(
+      'Sing up: Sa G, Re A, Ga B, Pa D, Dha E, Sa (upper octave) G'
+    );
+
+    pick('Guitar');
+    expect(within(section).getByRole('img', { name: /^Guitar tab, up/ })).toHaveTextContent('G|-0-2');
+    expect(within(section).getAllByRole('img', { name: /on guitar/ }).map((d) => d.getAttribute('aria-label'))[0]).toBe(
+      'G on guitar: E fret 3, A fret 2, D open, G open, B open, e fret 3'
+    );
+
+    pick('Ukulele');
+    expect(within(section).getAllByRole('img', { name: /on ukulele/ })[1]).toHaveAccessibleName(
+      'C on ukulele: G open, C open, E open, A fret 3'
+    );
+
+    pick('Flute');
+    expect(getPrefs().musicInstrument).toBe('flute');
+    expect(within(section).getByRole('img', { name: /^Flute up/ })).toHaveAccessibleName(
+      'Flute up: G: thumb L1 L2 L3 E flat key; A: thumb L1 L2 E flat key; B: thumb L1 E flat key; ' +
+        'D: thumb L2 L3 R1 R2 R3, octave 2; E: thumb L1 L2 L3 R1 R2 E flat key, octave 2; G: thumb L1 L2 L3 E flat key, octave 2'
+    );
+    expect(section).toHaveTextContent('Concert flute in C');
+
+    pick('Bansuri');
+    expect(within(section).getByRole('img', { name: /^Bansuri up/ })).toHaveAccessibleName(
+      'Bansuri up: G: top 3 closed; A: top 2 closed; B: top 1 closed; D: top 6 closed, blow harder; E: top 5 closed, blow harder; G: top 3 closed, blow harder'
+    );
+    expect(section).toHaveTextContent('Use a G bansuri');
+    expect(getPrefs().musicInstrument).toBe('bansuri');
+    expect(within(section).queryByText('Vocal range')).toBeNull();
+
+    pick('Tabla');
+    expect(getPrefs().musicInstrument).toBe('tabla');
+    expect(within(section).queryByRole('img', { name: /^Bansuri/ })).toBeNull();
+    expect(within(section).getByRole('group', { name: 'Dugun theka' })).toBeInTheDocument();
+  });
+
+  it('transposes one song by semitone or key, and back to the recording key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    expect(section).toHaveTextContent('Ab (5.5 kattai)');
+    expect(section).toHaveTextContent('Transposed from the recording: G (5 kattai)');
+    expect(section).toHaveTextContent('Ab Bb C Eb F Ab');
+    expect(within(section).getAllByRole('listitem').map((li) => li.textContent)).toEqual(['I Ab', 'IV Db', 'V Eb', 'vi Fm']);
+    // This fixture's summary is hand-written, so it cannot be re-told in the new key: it is left out
+    expect(section).not.toHaveTextContent('Sing in');
+
+    fireEvent.change(within(section).getByRole('combobox', { name: 'Show in key' }), { target: { value: '2' } });
+    expect(section).toHaveTextContent('D E F# A B D');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Recording key' }));
+    expect(section).toHaveTextContent('G (5 kattai) · from the full recording');
+    expect(section).toHaveTextContent('Sing in G (5 kattai).');
+    // Picking a key for one song does not change the others
+    expect(getPrefs().musicKey).toBeUndefined();
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
+  });
+
+  it('saves a key for every song, shows it on the chips and resets to recording keys', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    let section = await openDetails('kali kali kali (gujarati)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Down a semitone' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Show every song in F# (4.5 kattai)' }));
+    expect(getPrefs().musicKey).toBe(6);
+    expect(window.dataLayer).toContainEqual({ event: 'set_my_key', my_key: 6 });
+    expect(section).toHaveTextContent('This is your key for every song.');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G → F# · 4.5');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveAttribute('title', 'Key F#, 4.5 kattai (your key; recording in G)');
+
+    // Another song opens straight in the saved key
+    fireEvent.click(screen.getByRole('button', { name: 'close details modal' }));
+    section = await openDetails('arivenum akakkan (tamil)');
+    expect(section).toHaveTextContent('F# (4.5 kattai) · your key');
+    expect(section).toHaveTextContent('Transposed from the recording: D (2 kattai)');
+
+    fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
+    expect(getPrefs().musicKey).toBe('recording');
+    expect(window.dataLayer).toContainEqual({ event: 'set_my_key', my_key: 'recording' });
+    expect(section).toHaveTextContent('D (2 kattai)');
+    expect(shrutiChip('kali kali kali (gujarati)')).toHaveTextContent('G · 5');
+  });
+
+  it('names the first note sung and the key root of the sheet music, in the shown key', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    const line = () => section.querySelector('.md-melody-start');
+    expect(line()).toHaveTextContent('Starts on Pa (middle) · D · Key root (sheet music): C minor');
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    expect(line()).toHaveTextContent('Starts on Pa (middle) · Eb · Key root (sheet music): Db minor');
+  });
+
+  it('goes back to the recording key after saving a transposed key and clearing it', async () => {
+    setPref('musicianMode', true);
+    renderSearch();
+    const section = await openDetails('kali kali kali (gujarati)');
+    fireEvent.click(within(section).getByRole('button', { name: 'Up a semitone' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Show every song in Ab (5.5 kattai)' }));
+    fireEvent.click(within(section).getByRole('button', { name: 'Use recording keys' }));
+    expect(getPrefs().musicKey).toBe('recording');
+    expect(section).toHaveTextContent('G (5 kattai) · from the full recording');
+    expect(section).toHaveTextContent('G A B D E G');
+    expect(within(section).getByRole('combobox', { name: 'Show in key' })).toHaveValue('7');
+  });
+
+  it("syncs the saved key to a signed-in reader's account and back", async () => {
+    mockAuth.currentUser = { uid: 'u1' };
+    setPref('musicKey', 9);
+    await waitFor(() => expect(mockSetRefOnce).toHaveBeenCalledWith('prefs/u1/musicKey', 9));
+    localStorage.clear();
+    applyRemotePrefs({ musicKey: 4 });
+    expect(getPrefs().musicKey).toBe(4);
+    applyRemotePrefs({ musicKey: 12 });
+    applyRemotePrefs({ musicKey: '7' });
+    expect(getPrefs().musicKey).toBe(4);
+    // Going back to recording keys on one device reaches the others at sign-in
+    setPref('musicKey', 'recording');
+    await waitFor(() => expect(mockSetRefOnce).toHaveBeenCalledWith('prefs/u1/musicKey', 'recording'));
+    setPref('musicKey', 4);
+    applyRemotePrefs({ musicKey: 'recording' });
+    expect(getPrefs().musicKey).toBe('recording');
+    for (const instrument of ['voice', 'piano', 'guitar', 'ukulele', 'tabla', 'flute', 'bansuri']) {
+      applyRemotePrefs({ musicInstrument: instrument });
+      expect(getPrefs().musicInstrument).toBe(instrument);
+    }
+    applyRemotePrefs({ musicInstrument: 'sitar' });
+    expect(getPrefs().musicInstrument).toBe('bansuri');
   });
 });
 

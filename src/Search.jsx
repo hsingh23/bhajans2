@@ -17,6 +17,7 @@ import { useViewerPrefs, rememberedSheetKey } from './prefs';
 import { buildSearchIndex, rankBhajans } from './searchRank';
 import { isLyricsLocation, locationLabel } from './lyricsLocation';
 import { countBy, hasTag } from './categoryTags';
+import { amazonTrackUrl } from './amazon';
 
 // react-virtualized needs one fixed row height; musician mode adds a line of chips.
 const ROW_HEIGHT = 200;
@@ -258,7 +259,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   const rowRenderer = ({ index, key, style }) => {
     const bhajan = bhajans[filteredBhajans[index]];
     if (!bhajan) return null;
-    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, cn: cdbabyNames, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
+    const { sm: sheetmusic, n: name, t: tags = '', l: locationArr, cs: cdbabySampleUrls, az: amazonTrack, lg: bhajanLanguage, d: bhajanDeity } = bhajan;
     const tagContent = tags ? ` (${tags})` : '';
     const songMusic = showMusic ? music.songs[name] : null;
     // Open sheet music in the key this reader last chose for the song.
@@ -317,13 +318,14 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
                 <Icon name='music' />
               </Link>
             )}
-            {cdbabyNames && (
+            {amazonTrack && (
               <a
                 className='button button-3d button-circle button-jumbo spaced'
-                href={`https://www.amazon.com/s?k=${encodeURIComponent(cdbabyNames[0])} amma`}
+                href={amazonTrackUrl(amazonTrack)}
                 target='_blank'
                 rel='noopener noreferrer'
-                aria-label='buy song on cdbaby'>
+                aria-label='Buy on Amazon'
+                onClick={() => track('buy_click', { bhajan_name: name, store: 'amazon' })}>
                 <Icon name='cart' />
               </a>
             )}
@@ -376,7 +378,7 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
   );
   const todaysPath = todaysPick && viewerPath(bhajans, { name: todaysPick.bhajan.n, location: todaysPick.location });
   const showHomeExtras = !myFavoritesMode && !filter && !language && !deity && !musicFiltering && (todaysPath || resumeItems.length > 0);
-  const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [] } = infoOpen || {};
+  const { sm: infoSheetMusic = [], n: infoName, t: infoTags = [], l: infoLocation = [], cs: infoSampleUrls = [], cn: infoNames = [], az: infoAmazon } = infoOpen || {};
   const cdbabyLinks = infoSampleUrls.map((sample, i) => [sample, infoNames[i]]);
   const sheetMusicGroups = groupSheetMusic(infoSheetMusic);
 
@@ -391,110 +393,135 @@ const Search = ({ path, favorites, renderFavorite, bhajans = [] }) => {
         aria-hidden={!infoOpen}
         inert={!infoOpen}
       >
-        <div onClick={(e) => e.stopPropagation()}>
-          <button
-            ref={closeButtonRef}
-            aria-label='close details modal'
-            onClick={(e) => {
-              e.stopPropagation();
-              setInfo(false);
-            }}
-            title='Close'
-            className='modal-close'>
-            Close
-          </button>
-          <h1 id="modal-title">{infoName}</h1>
-          {infoLocation.length > 0 && (
-            <div>
-              <strong>Found in Books: </strong>
-              {infoLocation.map((pdf) => (
-                <span key={pdf} className='block'>
-                  {wrappedName(
-                    pdf,
-                    `${infoFilteredIndex}/${infoName}`,
-                    locationLabel(pdf)
-                  )}
-                </span>
-              ))}
-              <hr />
-            </div>
-          )}
+        <div className='modal-panel' onClick={(e) => e.stopPropagation()}>
+          <div className='modal-head'>
+            <h1 id='modal-title' className='modal-title'>
+              {infoName}
+            </h1>
+            <button
+              type='button'
+              ref={closeButtonRef}
+              aria-label='close details modal'
+              onClick={(e) => {
+                e.stopPropagation();
+                setInfo(false);
+              }}
+              title='Close'
+              className='button button-circle modal-close'>
+              <Icon name='close' />
+            </button>
+          </div>
+          <div className='modal-body'>
+            {infoLocation.length > 0 && (
+              <section className='modal-section'>
+                <h2 className='modal-label'>Found in books</h2>
+                {infoLocation.map((pdf) => (
+                  <span key={pdf} className='block'>
+                    {wrappedName(
+                      pdf,
+                      `${infoFilteredIndex}/${infoName}`,
+                      locationLabel(pdf)
+                    )}
+                  </span>
+                ))}
+              </section>
+            )}
 
-          {infoSheetMusic.length > 0 && (
-            <div>
-              <strong>Sheet Music: </strong>
-              {sheetMusicGroups.groups.map(({ song, label, keys }) => (
-                <div key={song} className='sheet-music-song'>
-                  <span className='sheet-music-title'>{label}</span>
-                  <div className='sheet-music-keys'>
-                    {keys.map(({ file, key }) => (
-                      <Link
-                        key={file}
-                        to={`/pdf/${file}/${infoFilteredIndex}/${infoName}`}
-                        className='sheet-music-key'
-                        title={file}
-                        aria-label={`${label} in ${key}`}>
-                        {key}
-                      </Link>
-                    ))}
+            {infoSheetMusic.length > 0 && (
+              <section className='modal-section'>
+                <h2 className='modal-label'>Sheet music</h2>
+                {sheetMusicGroups.groups.map(({ song, label, keys }) => (
+                  <div key={song} className='sheet-music-song'>
+                    <span className='sheet-music-title'>{label}</span>
+                    <div className='sheet-music-keys'>
+                      {keys.map(({ file, key }) => (
+                        <Link
+                          key={file}
+                          to={`/pdf/${file}/${infoFilteredIndex}/${infoName}`}
+                          className='sheet-music-key'
+                          title={file}
+                          aria-label={`${label} in ${key}`}>
+                          {key}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-              {sheetMusicGroups.other.map((pdf) => (
-                <Link key={pdf} to={`/pdf/${pdf}/${infoFilteredIndex}/${infoName}`} className='block'>
-                  {pdf}
-                </Link>
-              ))}
-              <hr />
-            </div>
-          )}
+                ))}
+                {sheetMusicGroups.other.map((pdf) => (
+                  <Link key={pdf} to={`/pdf/${pdf}/${infoFilteredIndex}/${infoName}`} className='block'>
+                    {pdf}
+                  </Link>
+                ))}
+              </section>
+            )}
 
-          <SongMusicSection name={infoName} />
+            <SongMusicSection name={infoName} />
 
-          {cdbabyLinks.length > 0 && (
-            <div>
-              <strong>Song samples: </strong>
-              {cdbabyLinks.map(([sample, name]) => (
-                <div key={sample}>
-                  <button
-                    aria-label='toggle sample'
-                    onClick={() => (playing === sample ? stop() : play(sample, infoName))}>
-                    <Icon name={playing === sample ? 'stop' : 'play'} />
-                  </button>
-                  {' Buy on Amazon (if available) '}
-                  <a href={`https://www.amazon.com/s?k=${encodeURIComponent(name)} amma`} target='_blank' rel='noopener noreferrer' aria-label={`Buy ${name} on Amazon`}>
-                    {name}
-                  </a>
-                </div>
-              ))}
-              <hr />
-            </div>
-          )}
+            {cdbabyLinks.length > 0 && (
+              <section className='modal-section'>
+                <h2 className='modal-label'>Song samples</h2>
+                <ul className='sample-list'>
+                  {cdbabyLinks.map(([sample, name], i) => {
+                    const label = name || `Sample ${i + 1}`;
+                    const isPlaying = playing === sample;
+                    return (
+                      <li key={sample} className='sample-row'>
+                        <button
+                          type='button'
+                          className='button button-circle sample-play'
+                          aria-label={`${isPlaying ? 'Stop' : 'Play'} sample: ${label}`}
+                          aria-pressed={isPlaying}
+                          onClick={() => (isPlaying ? stop() : play(sample, infoName))}>
+                          <Icon name={isPlaying ? 'stop' : 'play'} />
+                        </button>
+                        <span className='sample-name'>{label}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            )}
 
-          {(infoOpen?.lg || infoOpen?.d) && (
-            <div>
-              {infoOpen.d && (
-                <span className='block'>
-                  <strong>Deity: </strong>
-                  {[infoOpen.d, infoOpen.d2].filter(Boolean).join(', ')}
-                </span>
-              )}
-              {infoOpen.lg && (
-                <span className='block'>
-                  <strong>Language: </strong>
-                  {[infoOpen.lg, infoOpen.lg2].filter(Boolean).join(', ')}
-                </span>
-              )}
-              <hr />
-            </div>
-          )}
+            {infoAmazon && (
+              <section className='modal-section'>
+                <h2 className='modal-label'>Buy</h2>
+                <a
+                  className='sample-buy'
+                  href={amazonTrackUrl(infoAmazon)}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  onClick={() => track('buy_click', { bhajan_name: infoName, store: 'amazon' })}>
+                  <Icon name='cart' />
+                  <span>Amma&apos;s recording on Amazon</span>
+                </a>
+              </section>
+            )}
 
-          {infoTags.length > 0 && (
-            <div>
-              <strong>Tags: </strong>
-              <small>{infoTags.join(', ')}</small>
-            </div>
-          )}
+            {(infoOpen?.d || infoOpen?.lg || infoTags.length > 0) && (
+              <section className='modal-section'>
+                <dl className='modal-facts'>
+                  {infoOpen.d && (
+                    <div>
+                      <dt>Deity</dt>
+                      <dd>{[infoOpen.d, infoOpen.d2].filter(Boolean).join(', ')}</dd>
+                    </div>
+                  )}
+                  {infoOpen.lg && (
+                    <div>
+                      <dt>Language</dt>
+                      <dd>{[infoOpen.lg, infoOpen.lg2].filter(Boolean).join(', ')}</dd>
+                    </div>
+                  )}
+                  {infoTags.length > 0 && (
+                    <div>
+                      <dt>Tags</dt>
+                      <dd>{infoTags.join(', ')}</dd>
+                    </div>
+                  )}
+                </dl>
+              </section>
+            )}
+          </div>
         </div>
       </div>
       <Header>

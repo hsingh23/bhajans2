@@ -5,6 +5,10 @@
 //
 // Shape (local and remote):
 //   musicianMode   boolean   show raga / taal / shruti details
+//   musicInstrument  one of MUSIC_INSTRUMENTS        how scales and chords are drawn
+//   musicKey       0-11      the reader's own Sa (pitch class, 0 = C): every song's
+//                            notes and key are shown from it; 'recording' or absent =
+//                            each song's recording key ('recording' so a reset syncs)
 //   viewer.headerHidden  boolean | absent   top bar on the song page; absent = no choice yet
 //   viewer.sheetKeys     { [sheetSong]: "Db" }  last key opened for each sheet-music song
 //
@@ -86,8 +90,14 @@ export const setPref = (path, value) => {
 
 // What may come back from the account; anything else there is ignored.
 const isBool = (value) => typeof value === 'boolean';
+const isPitchClass = (value) => Number.isInteger(value) && value >= 0 && value < 12;
+export const INSTRUMENT_PREF = 'musicInstrument';
+/** Instruments the musician panel draws for; the account may only set one of these. */
+export const MUSIC_INSTRUMENTS = ['voice', 'piano', 'guitar', 'ukulele', 'bansuri', 'flute', 'tabla'];
 const REMOTE_FIELDS = {
   musicianMode: isBool,
+  musicKey: (value) => isPitchClass(value) || value === 'recording',
+  [INSTRUMENT_PREF]: (value) => MUSIC_INSTRUMENTS.includes(value),
   'viewer/headerHidden': isBool,
 };
 
