@@ -76,6 +76,14 @@ export const BansuriChart = ({ swaras, descending = false, names = [], label, sh
 };
 
 /** The raga line (Up or Down) as tab, with the note names above the frets. */
+// Notes per stave, so a long line wraps like printed tab instead of running off a phone screen.
+const STAVE = 8;
+const staves = (n) => {
+  const count = Math.ceil(n / STAVE);
+  const size = Math.ceil(n / count); // even staves: 15 notes -> 8 + 7, not 8 + 1 + ...
+  return Array.from({ length: count }, (_, i) => [i * size, Math.min(n, (i + 1) * size)]);
+};
+
 export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names = [], label, showLabel = true }) => {
   const placed = scaleTab(instrument, saPc, swaras, descending);
   if (!placed) return null;
@@ -88,7 +96,9 @@ export const ScaleTab = ({ instrument, saPc, swaras, descending = false, names =
       {label && showLabel && <figcaption className='pk-label'>{label}</figcaption>}
       <div>
         <pre role='img' aria-label={`${inst.name} tab${label ? `, ${label.toLowerCase()}` : ''}: ${spoken}`}>
-          {tabLines(instrument, placed, names).join('\n')}
+          {staves(placed.length)
+            .map(([from, to]) => tabLines(instrument, placed.slice(from, to), names.slice(from, to)).join('\n'))
+            .join('\n\n')}
         </pre>
         {placed.some((spot) => spot.folded) && (
           <p className='md-hint'>Wider than the {inst.name.toLowerCase()}: some notes are played an octave up or down.</p>
