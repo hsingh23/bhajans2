@@ -64,5 +64,61 @@
    "04 Nenchakam Ventitunnu.mp3"
   ],
   "why": "the index name's final 'ë' is the font-map transcription artefact seen in the other renamed names (ṭ→l, ä→r); read as 'nencakam ventitunnu' the recording's title is identical word for word; the entry is printed in no book we have, so no lyrics exist to read, and the audio was unintelligible in nine windows"
+ },
+ "amma amma amma": {
+  "add": [
+   "01 Amma Amma Amma (Classic).mp3",
+   "02 Amma Amma Amma.mp3"
+  ],
+  "why": "Whisper hears Devanagari 'amma amma amma' and the Hindi line 'dur karo sab sankat tere' (round 6, box-audio-sample-6.md); the album is Hindi Bhajans Vol.2. The Tamil twin 'amma amma amma (tamil, amit)' shares the title and stays unlinked."
+ },
+ "jaya jagadisvari (marathi)": {
+  "add": [
+   "08 Jaya Jagadīśvarī.mp3"
+  ],
+  "why": "Whisper hears 'jaya jagadishwari jaya param(e)shwari de(i) sukha ...', the Marathi entry's first line (2019supl-38); the Hindi 'jai jagadisvari' prints 'jay jagadisvari mata sarasvati' (vol4-68)."
+ },
+ "jai jagadisvari": {
+  "drop": [
+   "08 Jaya Jagadīśvarī.mp3"
+  ],
+  "why": "sings the Marathi 'jaya jagadisvari jaya paramesvari', see 'jaya jagadisvari (marathi)'"
+ },
+ "nandalala nandalala (sanskrit)": {
+  "add": [
+   "07 Nandalala Nandalala.mp3"
+  ],
+  "why": "Whisper hears 'hari nanda lala nava jaladhara samani(la) ...', this entry's first line (vol6-159, sheet NandalalaNandalalaHari); the Hindi 'nanda lala nanda lala' prints 'nanda lala prabhu radha lola gopi lola'."
+ },
+ "nanda lala nanda lala": {
+  "drop": [
+   "07 Nandalala Nandalala.mp3"
+  ],
+  "why": "sings the Sanskrit 'nanda lala hari nanda lala nava jaladhara', see 'nandalala nandalala (sanskrit)'"
+ },
+ "ananda vithiyiludente": {
+  "add": [
+   "02 Ananda Veedhi (Classic).mp3"
+  ],
+  "why": "Whisper (Tamil script) hears 'ananda vithi(yi)ludente atmavu adi rasichu nadannu ...', the printed first line (vol4-27); the title rule stops at 'veedhi' being the first letters of 'vithiyiludente'."
+ },
+ "krsna govinda gopala (hindi)": {
+  "add": [
+   "06 Krishna Govinda Gopala (Vintage).mp3"
+  ],
+  "why": "Whisper hears 'sri krishna govinda murali manohara gokula nandana gopala ... devaki nandana gopala' (round 6, box-audio-sample-6.md), the Hindi entry's lines (vol2-123); the Sanskrit 'sri krsna govinda gopala' sings 'krsna govinda gopala srila'."
+ },
+ "sri krsna govinda gopala": {
+  "drop": [
+   "06 Krishna Govinda Gopala (Vintage).mp3"
+  ],
+  "why": "sings the Hindi 'murali manohara gokula nandana gopala', see 'krsna govinda gopala (hindi)'"
+ },
+ "apara krpalo arikil": {
+  "add": [
+   "Apāra Kripālō.mp3",
+   "03 Apara Kripalo (Classic).mp3"
+  ],
+  "why": "Whisper hears 'adi sharaa krishnam aram varao' ≈ 'avanisvara krsna arul varam tayo', this Malayalam sheet's line (round 6, box-audio-sample-6.md); the Kannada and Telugu entries carry plain tags (so the title alone decides nothing) and hold their own tagged recordings 'Apara Krpalo (Kannada)/(Telugu)'; the Amritanjali 'Classic' recording predates both versions."
  }
 }

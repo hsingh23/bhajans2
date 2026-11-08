@@ -183,6 +183,13 @@ def words_tier(t_words, s_words, full=False):
         for raw_x, raw_y, ni, nj, merged in options:
             x, y = schwa(raw_x), schwa(raw_y)
             m = word_match(x, y)
+            if m == 2 and merged:
+                # the pieces lost their word-final schwa before the join: "Kalamurali" is kala murali
+                pieces = t_words[j:nj] if nj - j >= 2 else s_words[i:ni]
+                whole = y if nj - j >= 2 else x
+                joins = {"".join(pieces[:q]) + "a" + "".join(pieces[q:]) for q in range(1, len(pieces))}
+                if whole in joins or schwa(whole) in {schwa(v) for v in joins}:
+                    m = 3
             if not m and merged and nj - j >= 2 and ni - i == 1:
                 m = split_match(t_words[j:nj], raw_y)  # "Amme Yennu Loru" / ammayennulloru
             if not m and not merged and j >= 2 and 2 <= min(len(x), len(y)) and max(len(x), len(y)) <= 3 and (x.startswith(y) or y.startswith(x)):
@@ -262,7 +269,7 @@ def clean_index_name(n):
 ROMAN = {"ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8, "ix": 9, "x": 10, "xi": 11, "xii": 12, "xiii": 13, "xiv": 14, "xv": 15}
 
 
-LANG_ALIASES = {"gujrati": "gujarati", "oriya": "odia", "odiya": "odia", "telegu": "telugu", "bangla": "bengali", "tamizh": "tamil", "francais": "french", "français": "french", "deutsch": "german", "espanol": "spanish", "español": "spanish", "portugues": "portuguese", "português": "portuguese", "farsi": "persian"}
+LANG_ALIASES = {"gujrati": "gujarati", "telagu": "telugu", "oriya": "odia", "odiya": "odia", "telegu": "telugu", "bangla": "bengali", "tamizh": "tamil", "francais": "french", "français": "french", "deutsch": "german", "espanol": "spanish", "español": "spanish", "portugues": "portuguese", "português": "portuguese", "farsi": "persian"}
 FOREIGN = {"german", "french", "spanish", "japanese", "english", "hebrew", "danish", "finnish", "portuguese", "italian", "russian", "arabic", "dutch", "swedish", "chinese", "korean", "polish", "czech", "greek", "turkish", "swahili", "norwegian", "hungarian", "romanian", "slovak", "slovenian", "croatian", "ukrainian", "persian", "indonesian", "thai", "vietnamese", "latvian", "lithuanian", "estonian", "gaelic", "irish", "welsh", "scottish", "latin", "catalan", "basque", "tagalog", "malay", "afrikaans", "bulgarian", "serbian", "icelandic", "maori", "hawaiian"}
 
 
@@ -306,6 +313,12 @@ def part_number(title):
     return ROMAN[m.group(1)] if m else None
 
 LANG_TOKENS = {w for tok in LANG_WORDS.strip("()").split("|") for w in tok.split()} | set(LANG_ALIASES) | set(LANG_ALIASES.values()) | FOREIGN | {"version"}
+
+
+def is_version(n):
+    """Whether an entry calls itself a version of a song ("iniyoru janmam - kannada version"): a
+    translation named after its original."""
+    return "version" in re.split(r"[^a-z]+", ascii_fold(n).lower())
 
 
 def name_tagged(n):
@@ -499,40 +512,66 @@ def main():
 
     full_cache = {}
 
-    def full_owner_exists(i):
-        """some song's whole name is the whole track title (word for word)"""
-        if i not in full_cache:
-            full_cache[i] = any(
-                title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3
-                for n in titles_for for k, w in titles_for[n]
-            )
-        return full_cache[i]
+    full3_cache = {}
 
-    twin_cache = {}
+    def full3_entries(i):
+        """the entries whose whole name is the whole track title (word for word) and whose language fits"""
+        if i not in full3_cache:
+            full3_cache[i] = [n for n in titles_for if tier(i, n) > 0 and any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[n])]
+        return full3_cache[i]
 
-    def twin_entries(i):
-        """The Indian-language entries whose whole name is the whole track title, and those among
-        them whose own name carries no language tag (translations into non-Indian languages are
-        handled by tier(): the Indian original holds an untagged recording)."""
-        if i not in twin_cache:
-            full = [n for n in titles_for if any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[n])]
-            indian = [n for n in full if lang_for[n] not in FOREIGN]
-            twin_cache[i] = (indian, [n for n in indian if not name_tagged(n)])
-        return twin_cache[i]
+    tier3_cache = {}
 
-    def twins_block(i, song_name):
-        """"Amma Amma Amma" is the whole name of a Tamil entry and of a Sanskrit one. Without a
-        language tag on the recording, the entry whose own name carries no tag (the original;
-        "(kannada version)" entries were added for the other languages) holds it; when no such
-        entry exists, or untagged entries exist in several languages, none does."""
-        indian, base = twin_entries(i)
-        if len({lang_for[n] for n in indian}) <= 1:
+    def tier3_entries(i):
+        """the entries track i names at tier 3 (same words, either side may run out first), once per track"""
+        if i not in tier3_cache:
+            tier3_cache[i] = [n for n in titles_for if tier(i, n) == 3]
+        return tier3_cache[i]
+
+    def other_language(i, song_name, pool):
+        return [n for n in pool if n != song_name and lang_for[n] not in FOREIGN and lang_for[n] != lang_for[song_name]]
+
+    def yields(i, song_name):
+        """An entry that calls itself a version ("kalamurali - tamil version", "(kannada
+        version)") is a translation named after its original: an untagged recording that names
+        it and an untagged entry in another language equally goes to that original ("Kalamurali
+        Rava" is kala murali; "Abhishta Varadayike" is the Malayalam entry, confirmed by the
+        sung words)."""
+        if meta[i]["lang"] or meta[i]["album_lang"] or not is_version(song_name):
             return False
-        return song_name not in base or len({lang_for[n] for n in base}) != 1
+        return any(not name_tagged(n) for n in other_language(i, song_name, tier3_entries(i)))
+
+    def rivals_block(i, song_name):
+        """An untagged recording whose whole title is the whole name of entries in two Indian
+        languages: version entries yield to the untagged original (see yields); an entry with a
+        plain language tag ("jaya jagadisvari (marathi)", "nandalala nandalala (sanskrit)",
+        "krsna govinda gopala (hindi)") is often a different song sharing the title, and the
+        sung words went against the untagged side in three of eighteen readable recordings, so
+        neither side takes it; box-overrides.json records the decisions made from the audio."""
+        if meta[i]["lang"] or meta[i]["album_lang"] or lang_for[song_name] in FOREIGN:
+            return False  # a tagged recording is placed by its tag; translations into non-Indian languages by tier()
+        if yields(i, song_name):
+            return True
+        full = full3_entries(i)
+        if song_name not in full:
+            return False  # a title that is the first words of several songs fans out as before
+        rivals = other_language(i, song_name, full)
+        if not rivals:
+            return False
+        return name_tagged(song_name) or not all(is_version(n) for n in rivals)
+
+    def full_owner_exists(i):
+        """some song's whole name is the whole track title and may take it or at least contest it:
+        shorter entries that merely open with the title then yield to it; only whole-title owners
+        that are versions yielding to an untagged original are discounted ("Apara Kripalo" with
+        version-only owners would go to the original apara krpalo arikil)"""
+        if i not in full_cache:
+            full_cache[i] = any(not yields(i, n) for n in full3_entries(i))
+        return full_cache[i]
 
     def accepts(i, song_name):
         t = tier(i, song_name)
-        if t == 3 and not meta[i]["lang"] and not meta[i]["album_lang"] and twins_block(i, song_name):
+        if t == 3 and not meta[i]["lang"] and not meta[i]["album_lang"] and rivals_block(i, song_name):
             return False
         if t > 0 and t == best_tier(i):
             if t == 3 and full_owner_exists(i) and not any(title_tier(box_keys[i], k, meta[i]["words"], w, full=True) == 3 for k, w in titles_for[song_name]):

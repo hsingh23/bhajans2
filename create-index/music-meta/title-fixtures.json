@@ -1,643 +1,653 @@
 {
-"_": "Box track title vs index song name -> expected tier from match_box.song_tier (3 same words, 2 spelling of the same words, 1 long word a letter off, 0 not this song). 'pairs' test the song name alone; 'alias_pairs' also allow the song's CD Baby aliases (cn). Run: uv run --with rapidfuzz python match_box.py --check",
-"pairs": [
-[
-"Jay Ma Jay Ma.mp3",
-"jaya ma jaya ma",
-3
-],
-[
-"Rama Rama.mp3",
-"radha radha",
-0
-],
-[
-"09 Japo Nam.mp3",
-"japonam japonam (bengali)",
-3
-],
-[
-"01 Amritanandamayi Mata (Vintage).mp3",
-"amrtanandamayi sadguru",
-0
-],
-[
-"05 Amritanandamayi Satguru (Vintage).mp3",
-"amrtanandamayi sadguru",
-2
-],
-[
-"06 He Nandalala Tujhe.mp3",
-"he nandalala tuhje (hindi)",
-2
-],
-[
-"01 Sweetness Of Devotion.mp3",
-"the sweetness of devotion",
-3
-],
-[
-"10 Laya.mp3",
-"daya karo hari narayana",
-0
-],
-[
-"Ma Kali.mp3",
-"mahakali",
-0
-],
-[
-"Ma Kali.mp3",
-"amma kali enakku mattum (tamil)",
-0
-],
-[
-"Mama Janani.mp3",
-"amba janani",
-0
-],
-[
-"Ē Amma!.mp3",
-"e amma! (telugu)",
-3
-],
-[
-"10 Krsna Kanaiyya.mp3",
-"krsna kanhaiya",
-2
-],
-[
-"Devi Devi Devi.mp3",
-"devi devi devi amrtesvari",
-3
-],
-[
-"Jaya Jaya Durga.mp3",
-"jaya jaya devi dayala hari",
-0
-],
-[
-"Radhe Govinda.mp3",
-"radhe gopala",
-0
-],
-[
-"09 Durge.mp3",
-"durge durgati (hindi)",
-0
-],
-[
-"03 Bhakti.mp3",
-"bhakti de ma",
-0
-],
-[
-"03 Ammā Nī.mp3",
-"amma ni pogum (tamil)",
-0
-],
-[
-"04 Hari Om.mp3",
-"hara om siva (kannada)",
-0
-],
-[
-"01 Oru Nalamma.mp3",
-"oru nalum piriyatto",
-0
-],
-[
-"Kali Mata Zai.mp3",
-"kali ma jai jai ma",
-0
-],
-[
-"08 Vitthala - (Live Jam).mp3",
-"vithala vithala",
-0
-],
-[
-"Nī Mātram.mp3",
-"ni matram ni matram ni matram ambike (malayalam)",
-3
-],
-[
-"Yamunā Tīra Vihārā Yadukula.mp3",
-"yamuna tira vihari",
-2
-],
-[
-"05 Ammave Parkka Pokalam (Vintage).mp3",
-"ammavai parkka pokalam",
-2
-],
-[
-"04 Karunalaye Devi.mp3",
-"karuna mayi devi",
-0
-],
-[
-"06 Skanda Janani (Vintage).mp3",
-"ananda janani",
-0
-],
-[
-"14 Ananda Janani.mp3",
-"skanda janani",
-0
-],
-[
-"02 Amritanandamayi Ma.mp3",
-"amrtanandamayi jay jay",
-0
-],
-[
-"09 Narayana.mp3",
-"narajanmogu (tulu)",
-0
-],
-[
-"06 Nam Japo.mp3",
-"nam japana kyom chod",
-0
-],
-[
-"Rāja Rāma.mp3",
-"rama rama raja rama",
-0
-],
-[
-"01 Vrindavan Ke Sundara.mp3",
-"vrndavanam sundaramay aninn-orungilo (malayalam)",
-0
-],
-[
-"10 Dam Dam Dum Dum.mp3",
-"dam dam dam dam (hindi)",
-0
-],
-[
-"10 Dam Dam Dum Dum.mp3",
-"dam dam dum dum damaru bole",
-3
-],
-[
-"03 Amme Enulle.mp3",
-"amme enullu (malayalam)",
-2
-],
-[
-"04 Kisiki Khoj.mp3",
-"kiski khoj (hindi)",
-2
-],
-[
-"08 Sri Rama Namame.mp3",
-"sri rama namamu",
-2
-],
-[
-"05 Albhuta Charitre (Vintage).mp3",
-"atbhuta charitre (albhuta charitre)",
-3
-],
-[
-"05 Nanda Nandana Hare (Vintage).mp3",
-"nanda nandana hari",
-2
-],
-[
-"Amma Tannā Maṭi Taṭṭil.mp3",
-"amma tan matiyil",
-2
-],
-[
-"Amma Tannā Maṭi Taṭṭil.mp3",
-"amma tanna matitattil",
-3
-],
-[
-"Devi Dayakari.mp3",
-"devi daya kari ma",
-2
-],
-[
-"06 Ishwara Lila (Kannada).mp3",
-"ishwara lele yitellam",
-0
-],
-[
-"08 Anantamami (Vintage).mp3",
-"anantamayi patarunnor",
-0
-],
-[
-"Paunamiravil (Telugu).mp3",
-"paurnnamiravil (telugu)",
-1
-],
-[
-"04 Natakam Ondru.mp3",
-"natakam onru (tamil)",
-0
-],
-[
-"04 Amudam Pozhiyum (Vintage).mp3",
-"amutam poriyum ananda",
-0
-],
-[
-"02 Jagadishwari Janamanaharini.mp3",
-"jagadisvari janamana",
-2
-],
-[
-"04 Kanna Ni Enne (Vintage).mp3",
-"kanna ni yenne",
-2
-],
-[
-"Karimukil Varṇṇā.mp3",
-"karimukil varnnan",
-2
-],
-[
-"01 Karendra Vadana.mp3",
-"karindra vadana (hindi)",
-2
-],
-[
-"06 Karunardra Manasam.mp3",
-"karunardra manassan",
-2
-],
-[
-"04 Sri Mahisasuramardini Stotram.mp3",
-"mahisasura mardini stotram",
-2
-],
-[
-"Mahita Snēham.mp3",
-"mahita sneha maharnnavam",
-2
-],
-[
-"Manamē Narajīvitam.mp3",
-"maname narajivitamakum (odia)",
-2
-],
-[
-"Oh Ma You Are Everywhere.mp3",
-"oh ma you are everywhereall is within you (english)",
-2
-],
-[
-"Ruṭhā Hai Kyōṅ Mērē Lāl.mp3",
-"rutha he kyo mere lal",
-0
-],
-[
-"03 Satchitananda Guru.mp3",
-"sachitananda guru",
-1
-],
-[
-"Samsara Dukha (Telegu).mp3",
-"samsaraduhkha (telugu version)",
-2
-],
-[
-"04 Sharanathikalude (Classic).mp3",
-"saranarthikalude",
-1
-],
-[
-"02 Sri Raghavum (Classic).mp3",
-"sri raghavam",
-0
-],
-[
-"05 Ullil Tulumbunna Mantram (Vintage.mp3",
-"ullil tulumbunna mantra",
-2
-],
-[
-"03 Jai Jai Rama.mp3",
-"jai jai ramakrsna",
-0
-],
-[
-"07 Namo Namah.mp3",
-"namo namaste",
-0
-],
-[
-"05 Akatarilaravinte  (Vintage).mp3",
-"akataril azhalinde nizhal (malayalam)",
-0
-],
-[
-"03 Brahmarame.mp3",
-"brahma murari",
-0
-],
-[
-"Kāṙoḷivarṇṇa.mp3",
-"karoli chandran",
-0
-],
-[
-"04 Lalitamba.mp3",
-"lalita lalita",
-0
-],
-[
-"03 Nashayute Nirava.mp3",
-"nisayute nirava",
-0
-],
-[
-"03 Panchama.mp3",
-"panca-bhutamum paramasivam (tamil)",
-0
-],
-[
-"06 Sandeep.mp3",
-"sandhya mayangukayay",
-0
-],
-[
-"Tuḷasīmālayāy.mp3",
-"tulasimala gala (marathi)",
-0
-],
-[
-"04 Govardhana Giridhari (Classic).mp3",
-"govardhana giri kudayakki",
-0
-],
-[
-"03 Anantamayi Patarunna.mp3",
-"anantamayi patarunnor",
-2
-],
-[
-"05 Tirayunna Nyan Ninne (Classic).mp3",
-"tirayunnu nan ninne",
-2
-],
-[
-"03 Wonderous Goddess.mp3",
-"wondrous goddess precious goddess",
-2
-],
-[
-"Kāṇān Kotikkayāṇu.mp3",
-"kanan kotikkayan-ullam (malayalam)",
-2
-],
-[
-"Prēmāmṛtattinde Nanavu.mp3",
-"premamrtattinde nanav-urum mizhiyina (malayalam)",
-2
-],
-[
-"01 Entu Ceyvo.mp3",
-"entu chevo yedu chevo",
-2
-],
-[
-"Lelo Sharanam (Bengali).mp3",
-"le lo sarana me ma",
-0
-],
-[
-"Bhagavad Gita Chapter 15.mp3",
-"bhagavad gita 15th chapter",
-3
-],
-[
-"03 Ellam Ariyunna Amme (Vintage).mp3",
-"ellam ariyunnar amme",
-2
-],
-[
-"02 Darshan.mp3",
-"darsanam darsanam sudarsanam (telugu)",
-0
-],
-[
-"05 Ammaye Kanaan.mp3",
-"ammayekkananayinnu nan",
-0
-],
-[
-"03 Ayi Me Ma.mp3",
-"ame ma maiya (gujrati)",
-0
-],
-[
-"03 Ka Radha Mane.mp3",
-"ke radha mane tu (gujrati)",
-0
-],
-[
-"Pyare Khana (Bengali).mp3",
-"pyare kanha",
-0
-],
-[
-"02 Paravarshamannen Hridayam.mp3",
-"paravasamanen hrdayam",
-1
-],
-[
-"05 Engu Poyi (Vintage).mp3",
-"engopoyi",
-2
-],
-[
-"01 Gananatha He Gananatha.mp3",
-"gananatha he gananatha (tamil)",
-3
-],
-[
-"Hamsa Vāhina Dēvī.mp3",
-"hamsa vahina devi",
-3
-],
-[
-"03 Chod De Manathi (Chod De Manase).mp3",
-"chodi de manthi",
-0
-],
-[
-"06 Mata Rani (Gujarati).mp3",
-"mata rani ne krpa basayi (punjabi)",
-0
-],
-[
-"02 Nilambhuja Nayane (Japanese).mp3",
-"nilambuja nayane (gujrati version)",
-0
-],
-[
-"Entinu Śokam (Telugu).mp3",
-"entinu sokam manasse",
-0
-],
-[
-"Samsara Dukha (Telegu).mp3",
-"samsara dukha samanam",
-0
-],
-[
-"Chod De Manase (Oriya).mp3",
-"chod de manase (odiya version)",
-3
-],
-[
-"Oru Nimisham (Tamil).mp3",
-"oru nimisam orttu (malayalam)",
-0
-],
-[
-"03 Kaha Ho Kahna.mp3",
-"kaha ho kanha",
-2
-],
-[
-"09 Ame Ma Maya.mp3",
-"ame ma maiya (gujrati)",
-3
-],
-[
-"01 Amme Yennu Loru (Vintage).mp3",
-"ammayennulloru nama morttidave",
-2
-],
-[
-"01 Darshanam Sudarshanam.mp3",
-"darsanam darsanam sudarsanam (telugu)",
-2
-],
-[
-"Jai Jai Durga.mp3",
-"jai durga",
-2
-],
-[
-"Devi Devi Devi.mp3",
-"devi",
-0
-],
-[
-"06 Amma Amma (Amme Amme Amritanandam.mp3",
-"amme amme amrtanandamayi",
-2
-],
-[
-"06 Amma Amma (Amme Amme Amritanandam.mp3",
-"amma amma ena unnai (tamil)",
-3
-],
-[
-"2-07 Kaitozhunnen Krsna (kalyani).mp3",
-"kaitozhunnen krsna",
-3
-],
-[
-"07 Kar Le Ma Kar.mp3",
-"kar le ma ka",
-2
-],
-[
-"Kali Mata.mp3",
-"kali ma",
-0
-],
-[
-"Where Can I Go (Gaelic).mp3",
-"where can i go?",
-0
-],
-[
-"Iṣwar Tumhi Dayākarō (Kashmiri).mp3",
-"iswar tumhi dayakaro",
-0
-],
-[
-"Ānandamayī.mp3",
-"ananda mayi",
-3
-],
-[
-"Chinna Kanna (Pyare Kanha).mp3",
-"chinna kanna",
-3
-]
-],
-"alias_pairs": [
-[
-"09 Durge.mp3",
-"durge durgati (hindi)",
-0
-],
-[
-"03 Bhakti.mp3",
-"bhakti de ma",
-0
-],
-[
-"03 Jai Jai Rama.mp3",
-"jai jai ramakrsna",
-0
-],
-[
-"07 Namo Namah.mp3",
-"namo namaste",
-0
-],
-[
-"03 Nashayute Nirava.mp3",
-"nisayute nirava",
-0
-],
-[
-"05 Ammaye Kanaan.mp3",
-"ammayekkananayinnu nan",
-0
-],
-[
-"02 Paravarshamannen Hridayam.mp3",
-"paravasamanen hrdayam",
-3
-],
-[
-"05 Engu Poyi (Vintage).mp3",
-"engopoyi",
-3
-],
-[
-"03 Chod De Manathi (Chod De Manase).mp3",
-"chod de manase (odiya version)",
-0
-],
-[
-"03 Manava Hridayattin (Vintage).mp3",
-"manava hrdayattil",
-0
-],
-[
-"07 Oru Kochu Kunjinte (Vintage).mp3",
-"oru koccu kunninte",
-0
-],
-[
-"03 Birah Ki.mp3",
-"birha ki in (hindi)",
-0
-]
-],
-"_note_hint": "title-rule fixtures ignore the parenthetical-owner exclusion (main() applies it): '06 Amma Amma (Amme Amme Amritanandam' is tier 3 on both names by title, and main gives it to amme amme amrtanandamayi only"
+ "_": "Box track title vs index song name -> expected tier from match_box.song_tier (3 same words, 2 spelling of the same words, 1 long word a letter off, 0 not this song). 'pairs' test the song name alone; 'alias_pairs' also allow the song's CD Baby aliases (cn). Run: uv run --with rapidfuzz python match_box.py --check",
+ "pairs": [
+  [
+   "Jay Ma Jay Ma.mp3",
+   "jaya ma jaya ma",
+   3
+  ],
+  [
+   "Rama Rama.mp3",
+   "radha radha",
+   0
+  ],
+  [
+   "09 Japo Nam.mp3",
+   "japonam japonam (bengali)",
+   3
+  ],
+  [
+   "01 Amritanandamayi Mata (Vintage).mp3",
+   "amrtanandamayi sadguru",
+   0
+  ],
+  [
+   "05 Amritanandamayi Satguru (Vintage).mp3",
+   "amrtanandamayi sadguru",
+   2
+  ],
+  [
+   "06 He Nandalala Tujhe.mp3",
+   "he nandalala tuhje (hindi)",
+   2
+  ],
+  [
+   "01 Sweetness Of Devotion.mp3",
+   "the sweetness of devotion",
+   3
+  ],
+  [
+   "10 Laya.mp3",
+   "daya karo hari narayana",
+   0
+  ],
+  [
+   "Ma Kali.mp3",
+   "mahakali",
+   0
+  ],
+  [
+   "Ma Kali.mp3",
+   "amma kali enakku mattum (tamil)",
+   0
+  ],
+  [
+   "Mama Janani.mp3",
+   "amba janani",
+   0
+  ],
+  [
+   "Ē Amma!.mp3",
+   "e amma! (telugu)",
+   3
+  ],
+  [
+   "10 Krsna Kanaiyya.mp3",
+   "krsna kanhaiya",
+   2
+  ],
+  [
+   "Devi Devi Devi.mp3",
+   "devi devi devi amrtesvari",
+   3
+  ],
+  [
+   "Jaya Jaya Durga.mp3",
+   "jaya jaya devi dayala hari",
+   0
+  ],
+  [
+   "Radhe Govinda.mp3",
+   "radhe gopala",
+   0
+  ],
+  [
+   "09 Durge.mp3",
+   "durge durgati (hindi)",
+   0
+  ],
+  [
+   "03 Bhakti.mp3",
+   "bhakti de ma",
+   0
+  ],
+  [
+   "03 Ammā Nī.mp3",
+   "amma ni pogum (tamil)",
+   0
+  ],
+  [
+   "04 Hari Om.mp3",
+   "hara om siva (kannada)",
+   0
+  ],
+  [
+   "01 Oru Nalamma.mp3",
+   "oru nalum piriyatto",
+   0
+  ],
+  [
+   "Kali Mata Zai.mp3",
+   "kali ma jai jai ma",
+   0
+  ],
+  [
+   "08 Vitthala - (Live Jam).mp3",
+   "vithala vithala",
+   0
+  ],
+  [
+   "Nī Mātram.mp3",
+   "ni matram ni matram ni matram ambike (malayalam)",
+   3
+  ],
+  [
+   "Yamunā Tīra Vihārā Yadukula.mp3",
+   "yamuna tira vihari",
+   2
+  ],
+  [
+   "05 Ammave Parkka Pokalam (Vintage).mp3",
+   "ammavai parkka pokalam",
+   2
+  ],
+  [
+   "04 Karunalaye Devi.mp3",
+   "karuna mayi devi",
+   0
+  ],
+  [
+   "06 Skanda Janani (Vintage).mp3",
+   "ananda janani",
+   0
+  ],
+  [
+   "14 Ananda Janani.mp3",
+   "skanda janani",
+   0
+  ],
+  [
+   "02 Amritanandamayi Ma.mp3",
+   "amrtanandamayi jay jay",
+   0
+  ],
+  [
+   "09 Narayana.mp3",
+   "narajanmogu (tulu)",
+   0
+  ],
+  [
+   "06 Nam Japo.mp3",
+   "nam japana kyom chod",
+   0
+  ],
+  [
+   "Rāja Rāma.mp3",
+   "rama rama raja rama",
+   0
+  ],
+  [
+   "01 Vrindavan Ke Sundara.mp3",
+   "vrndavanam sundaramay aninn-orungilo (malayalam)",
+   0
+  ],
+  [
+   "10 Dam Dam Dum Dum.mp3",
+   "dam dam dam dam (hindi)",
+   0
+  ],
+  [
+   "10 Dam Dam Dum Dum.mp3",
+   "dam dam dum dum damaru bole",
+   3
+  ],
+  [
+   "03 Amme Enulle.mp3",
+   "amme enullu (malayalam)",
+   2
+  ],
+  [
+   "04 Kisiki Khoj.mp3",
+   "kiski khoj (hindi)",
+   2
+  ],
+  [
+   "08 Sri Rama Namame.mp3",
+   "sri rama namamu",
+   2
+  ],
+  [
+   "05 Albhuta Charitre (Vintage).mp3",
+   "atbhuta charitre (albhuta charitre)",
+   3
+  ],
+  [
+   "05 Nanda Nandana Hare (Vintage).mp3",
+   "nanda nandana hari",
+   2
+  ],
+  [
+   "Amma Tannā Maṭi Taṭṭil.mp3",
+   "amma tan matiyil",
+   2
+  ],
+  [
+   "Amma Tannā Maṭi Taṭṭil.mp3",
+   "amma tanna matitattil",
+   3
+  ],
+  [
+   "Devi Dayakari.mp3",
+   "devi daya kari ma",
+   3
+  ],
+  [
+   "06 Ishwara Lila (Kannada).mp3",
+   "ishwara lele yitellam",
+   0
+  ],
+  [
+   "08 Anantamami (Vintage).mp3",
+   "anantamayi patarunnor",
+   0
+  ],
+  [
+   "Paunamiravil (Telugu).mp3",
+   "paurnnamiravil (telugu)",
+   1
+  ],
+  [
+   "04 Natakam Ondru.mp3",
+   "natakam onru (tamil)",
+   0
+  ],
+  [
+   "04 Amudam Pozhiyum (Vintage).mp3",
+   "amutam poriyum ananda",
+   0
+  ],
+  [
+   "02 Jagadishwari Janamanaharini.mp3",
+   "jagadisvari janamana",
+   2
+  ],
+  [
+   "04 Kanna Ni Enne (Vintage).mp3",
+   "kanna ni yenne",
+   2
+  ],
+  [
+   "Karimukil Varṇṇā.mp3",
+   "karimukil varnnan",
+   2
+  ],
+  [
+   "01 Karendra Vadana.mp3",
+   "karindra vadana (hindi)",
+   2
+  ],
+  [
+   "06 Karunardra Manasam.mp3",
+   "karunardra manassan",
+   2
+  ],
+  [
+   "04 Sri Mahisasuramardini Stotram.mp3",
+   "mahisasura mardini stotram",
+   3
+  ],
+  [
+   "Mahita Snēham.mp3",
+   "mahita sneha maharnnavam",
+   2
+  ],
+  [
+   "Manamē Narajīvitam.mp3",
+   "maname narajivitamakum (odia)",
+   2
+  ],
+  [
+   "Oh Ma You Are Everywhere.mp3",
+   "oh ma you are everywhereall is within you (english)",
+   2
+  ],
+  [
+   "Ruṭhā Hai Kyōṅ Mērē Lāl.mp3",
+   "rutha he kyo mere lal",
+   0
+  ],
+  [
+   "03 Satchitananda Guru.mp3",
+   "sachitananda guru",
+   1
+  ],
+  [
+   "Samsara Dukha (Telegu).mp3",
+   "samsaraduhkha (telugu version)",
+   2
+  ],
+  [
+   "04 Sharanathikalude (Classic).mp3",
+   "saranarthikalude",
+   1
+  ],
+  [
+   "02 Sri Raghavum (Classic).mp3",
+   "sri raghavam",
+   0
+  ],
+  [
+   "05 Ullil Tulumbunna Mantram (Vintage.mp3",
+   "ullil tulumbunna mantra",
+   2
+  ],
+  [
+   "03 Jai Jai Rama.mp3",
+   "jai jai ramakrsna",
+   0
+  ],
+  [
+   "07 Namo Namah.mp3",
+   "namo namaste",
+   0
+  ],
+  [
+   "05 Akatarilaravinte  (Vintage).mp3",
+   "akataril azhalinde nizhal (malayalam)",
+   0
+  ],
+  [
+   "03 Brahmarame.mp3",
+   "brahma murari",
+   0
+  ],
+  [
+   "Kāṙoḷivarṇṇa.mp3",
+   "karoli chandran",
+   0
+  ],
+  [
+   "04 Lalitamba.mp3",
+   "lalita lalita",
+   0
+  ],
+  [
+   "03 Nashayute Nirava.mp3",
+   "nisayute nirava",
+   0
+  ],
+  [
+   "03 Panchama.mp3",
+   "panca-bhutamum paramasivam (tamil)",
+   0
+  ],
+  [
+   "06 Sandeep.mp3",
+   "sandhya mayangukayay",
+   0
+  ],
+  [
+   "Tuḷasīmālayāy.mp3",
+   "tulasimala gala (marathi)",
+   0
+  ],
+  [
+   "04 Govardhana Giridhari (Classic).mp3",
+   "govardhana giri kudayakki",
+   0
+  ],
+  [
+   "03 Anantamayi Patarunna.mp3",
+   "anantamayi patarunnor",
+   2
+  ],
+  [
+   "05 Tirayunna Nyan Ninne (Classic).mp3",
+   "tirayunnu nan ninne",
+   2
+  ],
+  [
+   "03 Wonderous Goddess.mp3",
+   "wondrous goddess precious goddess",
+   2
+  ],
+  [
+   "Kāṇān Kotikkayāṇu.mp3",
+   "kanan kotikkayan-ullam (malayalam)",
+   2
+  ],
+  [
+   "Prēmāmṛtattinde Nanavu.mp3",
+   "premamrtattinde nanav-urum mizhiyina (malayalam)",
+   2
+  ],
+  [
+   "01 Entu Ceyvo.mp3",
+   "entu chevo yedu chevo",
+   2
+  ],
+  [
+   "Lelo Sharanam (Bengali).mp3",
+   "le lo sarana me ma",
+   0
+  ],
+  [
+   "Bhagavad Gita Chapter 15.mp3",
+   "bhagavad gita 15th chapter",
+   3
+  ],
+  [
+   "03 Ellam Ariyunna Amme (Vintage).mp3",
+   "ellam ariyunnar amme",
+   2
+  ],
+  [
+   "02 Darshan.mp3",
+   "darsanam darsanam sudarsanam (telugu)",
+   0
+  ],
+  [
+   "05 Ammaye Kanaan.mp3",
+   "ammayekkananayinnu nan",
+   0
+  ],
+  [
+   "03 Ayi Me Ma.mp3",
+   "ame ma maiya (gujrati)",
+   0
+  ],
+  [
+   "03 Ka Radha Mane.mp3",
+   "ke radha mane tu (gujrati)",
+   0
+  ],
+  [
+   "Pyare Khana (Bengali).mp3",
+   "pyare kanha",
+   0
+  ],
+  [
+   "02 Paravarshamannen Hridayam.mp3",
+   "paravasamanen hrdayam",
+   1
+  ],
+  [
+   "05 Engu Poyi (Vintage).mp3",
+   "engopoyi",
+   2
+  ],
+  [
+   "01 Gananatha He Gananatha.mp3",
+   "gananatha he gananatha (tamil)",
+   3
+  ],
+  [
+   "Hamsa Vāhina Dēvī.mp3",
+   "hamsa vahina devi",
+   3
+  ],
+  [
+   "03 Chod De Manathi (Chod De Manase).mp3",
+   "chodi de manthi",
+   0
+  ],
+  [
+   "06 Mata Rani (Gujarati).mp3",
+   "mata rani ne krpa basayi (punjabi)",
+   0
+  ],
+  [
+   "02 Nilambhuja Nayane (Japanese).mp3",
+   "nilambuja nayane (gujrati version)",
+   0
+  ],
+  [
+   "Entinu Śokam (Telugu).mp3",
+   "entinu sokam manasse",
+   0
+  ],
+  [
+   "Samsara Dukha (Telegu).mp3",
+   "samsara dukha samanam",
+   0
+  ],
+  [
+   "Chod De Manase (Oriya).mp3",
+   "chod de manase (odiya version)",
+   3
+  ],
+  [
+   "Oru Nimisham (Tamil).mp3",
+   "oru nimisam orttu (malayalam)",
+   0
+  ],
+  [
+   "03 Kaha Ho Kahna.mp3",
+   "kaha ho kanha",
+   2
+  ],
+  [
+   "09 Ame Ma Maya.mp3",
+   "ame ma maiya (gujrati)",
+   3
+  ],
+  [
+   "01 Amme Yennu Loru (Vintage).mp3",
+   "ammayennulloru nama morttidave",
+   2
+  ],
+  [
+   "01 Darshanam Sudarshanam.mp3",
+   "darsanam darsanam sudarsanam (telugu)",
+   2
+  ],
+  [
+   "Jai Jai Durga.mp3",
+   "jai durga",
+   2
+  ],
+  [
+   "Devi Devi Devi.mp3",
+   "devi",
+   0
+  ],
+  [
+   "06 Amma Amma (Amme Amme Amritanandam.mp3",
+   "amme amme amrtanandamayi",
+   2
+  ],
+  [
+   "06 Amma Amma (Amme Amme Amritanandam.mp3",
+   "amma amma ena unnai (tamil)",
+   3
+  ],
+  [
+   "2-07 Kaitozhunnen Krsna (kalyani).mp3",
+   "kaitozhunnen krsna",
+   3
+  ],
+  [
+   "07 Kar Le Ma Kar.mp3",
+   "kar le ma ka",
+   2
+  ],
+  [
+   "Kali Mata.mp3",
+   "kali ma",
+   0
+  ],
+  [
+   "Where Can I Go (Gaelic).mp3",
+   "where can i go?",
+   0
+  ],
+  [
+   "Iṣwar Tumhi Dayākarō (Kashmiri).mp3",
+   "iswar tumhi dayakaro",
+   0
+  ],
+  [
+   "Ānandamayī.mp3",
+   "ananda mayi",
+   3
+  ],
+  [
+   "Chinna Kanna (Pyare Kanha).mp3",
+   "chinna kanna",
+   3
+  ],
+  [
+   "04 Kalamurali Rava (Classic).mp3",
+   "kala murali",
+   3
+  ],
+  [
+   "04 Kalamurali Rava (Classic).mp3",
+   "kalamurali - tamil version",
+   3
+  ]
+ ],
+ "alias_pairs": [
+  [
+   "09 Durge.mp3",
+   "durge durgati (hindi)",
+   0
+  ],
+  [
+   "03 Bhakti.mp3",
+   "bhakti de ma",
+   0
+  ],
+  [
+   "03 Jai Jai Rama.mp3",
+   "jai jai ramakrsna",
+   0
+  ],
+  [
+   "07 Namo Namah.mp3",
+   "namo namaste",
+   0
+  ],
+  [
+   "03 Nashayute Nirava.mp3",
+   "nisayute nirava",
+   0
+  ],
+  [
+   "05 Ammaye Kanaan.mp3",
+   "ammayekkananayinnu nan",
+   0
+  ],
+  [
+   "02 Paravarshamannen Hridayam.mp3",
+   "paravasamanen hrdayam",
+   3
+  ],
+  [
+   "05 Engu Poyi (Vintage).mp3",
+   "engopoyi",
+   3
+  ],
+  [
+   "03 Chod De Manathi (Chod De Manase).mp3",
+   "chod de manase (odiya version)",
+   0
+  ],
+  [
+   "03 Manava Hridayattin (Vintage).mp3",
+   "manava hrdayattil",
+   0
+  ],
+  [
+   "07 Oru Kochu Kunjinte (Vintage).mp3",
+   "oru koccu kunninte",
+   0
+  ],
+  [
+   "03 Birah Ki.mp3",
+   "birha ki in (hindi)",
+   0
+  ]
+ ],
+ "_note_hint": "title-rule fixtures ignore the parenthetical-owner exclusion (main() applies it): '06 Amma Amma (Amme Amme Amritanandam' is tier 3 on both names by title, and main gives it to amme amme amrtanandamayi only"
 }

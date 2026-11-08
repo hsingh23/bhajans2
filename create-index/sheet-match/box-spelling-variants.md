@@ -11,23 +11,18 @@ Each row: the song, the track, the keyed words of track / song, and the tier (2 
 | amme amrtesvari (devi mukambike) | Ammē Ammē Amṛtēśvarī.mp3 | ['ame', 'ame', 'amrtisvari'] / ['ame', 'amrtisvari', 'devi', 'mukanbike'] | 2 |
 | amme enullu (malayalam) | 03 Amme Enulle.mp3 | ['ame', 'enule'] / ['ame', 'enulu'] | 2 |
 | amme ulakam | Amma Ulakam (Instrumental).mp3 | ['ama', 'ulakam'] / ['ame', 'ulakam'] | 2 |
-| ananda mayi | 01 Anandamayi Brahmayi.mp3 | ['anandamai', 'brahmai'] / ['anand', 'mai'] | 2 |
-| anandadhamamam ninnilettan | 01 Ananda Dhamamam.mp3 | ['anand', 'damamam'] / ['anandadamamam', 'niniletan'] | 2 |
+| ananda vithiyiludente | 02 Ananda Veedhi (Classic).mp3 | ['anand', 'vidi'] / ['anand', 'vitiludende'] | 0 |
 | anpudan anaittidum un kaikal (tamil) | Anbuḍan.mp3 | ['anbudan'] / ['anpudan', 'anaitidum', 'un', 'kaikal'] | 2 |
 | apara sachid | 1-09 Apara Saccit (dvijanti).mp3 | ['apar', 'sacit'] / ['apar', 'sacid'] | 2 |
 | ardiente es el llanto (spanish) | Caliente Es El Llanto.mp3 | ['calinde', 'es', 'el', 'lando'] / ['ardinde', 'es', 'el', 'lando'] | 0 |
 | arute makkal nangal | 01 Arude Makkal Nyangal (Vintage).mp3 | ['arude', 'makal', 'nangal'] / ['arute', 'makal', 'nangal'] | 2 |
 | avo ma de carana (punjabi) | Avo Mate.mp3 | ['avo', 'mate'] / ['avo', 'ma', 'de', 'caran'] | 2 |
-| chandra bhaga tiri ubhe | 01 Chandrabhaga.mp3 | ['candrabag'] / ['candr', 'bag', 'tiri', 'ube'] | 2 |
 | chodi de manthi | 03 Chod De Manathi (Chod De Manase).mp3 | ['cod', 'de', 'manati'] / ['codi', 'de', 'mandi'] | 0 |
 | darsanam darsanam sudarsanam (telugu) | 01 Darshanam Sudarshanam.mp3 | ['darsanam', 'sudarsanam'] / ['darsanam', 'darsanam', 'sudarsanam'] | 2 |
 | dasarathe raghuramana (kannada) | 01 Dasharate Raghu.mp3 | ['dasarate', 'ragu'] / ['dasarate', 'raguraman'] | 0 |
 | dhanye dhanye janani | 01 Dhanya Dhanye (Classic).mp3 | ['dani', 'danie'] / ['danie', 'danie', 'janani'] | 2 |
-| dip ka na | 05 Deepak Na (Instrumental).mp3 | ['dipak', 'na'] / ['dip', 'ka', 'na'] | 2 |
 | ehi murare | 05 Ehi Murari (Instrumental).mp3 | ['ehi', 'murari'] / ['ehi', 'murare'] | 2 |
 | ellam ariyunnar amme | 03 Ellam Ariyunna Amme (Vintage).mp3 | ['elam', 'ariun', 'ame'] / ['elam', 'ariunar', 'ame'] | 2 |
-| en maha devi | 02 En Mahadevi Lokeshi (Vintage).mp3 | ['en', 'mahadevi', 'lokesi'] / ['en', 'mah', 'devi'] | 2 |
-| en maha devi | 02 En Mahadevi Lokeshi.mp3 | ['en', 'mahadevi', 'lokesi'] / ['en', 'mah', 'devi'] | 2 |
 | en manah kovilin | 04 En Mana Kovililin (Vintage).mp3 | ['en', 'man', 'kovililin'] / ['en', 'man', 'kovilin'] | 0 |
 | enaikkakka unaiyantri | 07 Enakaka.mp3 | ['enakak'] / ['enaikak', 'unaiandri'] | 2 |
 | entu chevo yedu chevo | 01 Entu Ceyvo.mp3 | ['endu', 'ceivo'] / ['endu', 'cevo', 'iedu', 'cevo'] | 2 |
@@ -60,12 +55,10 @@ Each row: the song, the track, the keyed words of track / song, and the tier (2 
 | karunya murtte - kannada version | 05 Karunye Murte.mp3 | ['karunie', 'murte'] / ['karuni', 'murte'] | 2 |
 | kotanukoti (gujrati version) | Kodanu Kodi (Gujarati).mp3 | ['kodanu', 'kodi'] / ['kotanukoti'] | 2 |
 | krsna mana mohana | 09 Krishna Krishna Manamohana.mp3 | ['krsn', 'krsn', 'manamohan'] / ['krsn', 'man', 'mohan'] | 2 |
-| le lo sarana me ma | 02 Le Lo Sharaname (Classic).mp3 | ['le', 'lo', 'saraname'] / ['le', 'lo', 'saran', 'me', 'ma'] | 2 |
 | lumiere du dharma (french) | Lumiera Du Dharma.mp3 | ['lumir', 'du', 'darm'] / ['lumire', 'du', 'darm'] | 2 |
 | manidarkal palavidam (tamil) | Manitarkaḷ Palavidam.mp3 | ['manitarkal', 'palavidam'] / ['manidarkal', 'palavidam'] | 2 |
 | mauna ghanamrtam | 3-06 MaunaGhanamrita (ritagaula).mp3 | ['maunaganamrt'] / ['maun', 'ganamrtam'] | 2 |
 | muttu muttu mariyamma (tamil) | 03 Muthu Mari Amma.mp3 | ['mutu', 'mari', 'ama'] / ['mutu', 'mutu', 'mariam'] | 2 |
-| na karmana na prajaya | 01 Na Karmanana.mp3 | ['na', 'karmanan'] / ['na', 'karman', 'na', 'prajai'] | 2 |
 | nalanchu nalekyu | Nālañcu Nāleykku.mp3 | ['nalanju', 'naleiku'] / ['nalanju', 'nalekiu'] | 2 |
 | nencakaë ventitunnu (malayalam) | 04 Nenchakam Ventitunnu.mp3 | ['nenjakam', 'venditunu'] / ['nenjakae', 'venditunu'] | 0 |
 | nencukku nitiyum tolukku valumnirainta cudarmanippun (tamil) | Neñjukku Nīdiyum.mp3 | ['nenjuku', 'nidium'] / ['nenjuku', 'nitium', 'toluku', 'valuniraind', 'cudarmanipun'] | 2 |
@@ -78,17 +71,14 @@ Each row: the song, the track, the keyed words of track / song, and the tier (2 
 | paurnnamiravil (kannada version) | Paunamiravil (Kannada).mp3 | ['paunamiravil'] / ['paurnamiravil'] | 1 |
 | paurnnamiravil (telugu) | Paunamiravil (Telugu).mp3 | ['paunamiravil'] / ['paurnamiravil'] | 1 |
 | prabhu caranan (hindi) | Prabhu Caraṇanu.mp3 | ['prabu', 'carananu'] / ['prabu', 'caranan'] | 2 |
-| prema prabholasini devi | 1-08 Premaprabholasini (des).mp3 | ['premaprabolasini'] / ['prem', 'prabolasini', 'devi'] | 2 |
 | premamrtattinde nanav-urum mizhiyina (malayalam) | Prēmāmṛtattinde Nanavu.mp3 | ['premamrtatinde', 'nanavu'] / ['premamrtatinde', 'nanav', 'urum', 'milin'] | 2 |
 | samsaraduhkha (telugu version) | Samsara Dukha (Telegu).mp3 | ['sansar', 'duk'] / ['sansaraduhk'] | 2 |
 | saranarthikalude | 04 Sharanathikalude (Classic).mp3 | ['saranatikalude'] / ['saranartikalude'] | 1 |
 | sirme mayur mukuta dhare | 02 Sirame Mayur.mp3 | ['sirame', 'maiur'] / ['sirme', 'maiur', 'mukut', 'dare'] | 2 |
-| siva nandana sundara | 04 Sivanandana.mp3 | ['sivanandan'] / ['siv', 'nandan', 'sundar'] | 2 |
 | sri raghavam | 02 Sri Raghavum (Classic).mp3 | ['sri', 'ragavum'] / ['sri', 'ragavam'] | 0 |
 | sri ramachandra krpalu | 04 Sri Ramachandra Kripalo (Classic).mp3 | ['sri', 'ramacandr', 'krpalo'] / ['sri', 'ramacandr', 'krpalu'] | 2 |
 | sri ramachandra raghu | 03 Sri Ramachandra Raghurama (Vintag.mp3 | ['sri', 'ramacandr', 'raguram'] / ['sri', 'ramacandr', 'ragu'] | 2 |
 | sri ramachandra raghu | 09 Sri Ramachandra Raghurama.mp3 | ['sri', 'ramacandr', 'raguram'] / ['sri', 'ramacandr', 'ragu'] | 2 |
-| subhra saroruha nilaye devi | Subhrasaroruha Nilaye (Classic).mp3 | ['subrasaroruh', 'nilaie'] / ['subr', 'saroruh', 'nilaie', 'devi'] | 2 |
 | syamambarattin (malayalam) | Śyāmāmbarattil.mp3 | ['siamanbaratil'] / ['siamanbaratin'] | 1 |
 | tatan avitunnu nangal makkal | 02 Tatanavidunnu.mp3 | ['tatanavidunu'] / ['tatan', 'avitunu', 'nangal', 'makal'] | 2 |
 | tirayunnu nan ninne | 05 Tirayunna Nyan Ninne (Classic).mp3 | ['tiraiun', 'nan', 'nine'] / ['tiraiunu', 'nan', 'nine'] | 2 |
@@ -101,4 +91,4 @@ Each row: the song, the track, the keyed words of track / song, and the tier (2 
 | vinati hamare tune (odiya version) | Vinati Hamari Tune (Oriya).mp3 | ['vinati', 'hamari', 'tune'] / ['vinati', 'hamare', 'tune'] | 2 |
 | yatha yariyiykkan | 2-03 Vyathariyikkan (harikambhoji).mp3 | ['viatarikan'] / ['iat', 'iarikan'] | 0 |
 
-96 accepted pairs beyond same-words; accepted pairs by tier: {3: 2999, 2: 81, 0: 11, 1: 4}.
+86 accepted pairs beyond same-words; accepted pairs by tier: {3: 3004, 2: 70, 0: 12, 1: 4}.
