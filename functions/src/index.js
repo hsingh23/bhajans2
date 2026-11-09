@@ -731,3 +731,14 @@ exports.sendAuthEmail = onCall(
 const engagement = require("./engagement");
 exports.sendRenewalReminders = engagement.sendRenewalReminders;
 exports.sendAnnouncement = engagement.sendAnnouncement;
+
+// One-click unsubscribe for campaign emails (see unsubscribe.js).
+const unsubscribeSecret = defineSecret("UNSUBSCRIBE_SECRET");
+exports.unsubscribe = onRequest(
+  { ...options, invoker: "public", secrets: [unsubscribeSecret] },
+  (req, res) =>
+    require("./unsubscribe").handleUnsubscribe(req, res, {
+      secret: unsubscribeSecret.value(),
+      db: getDatabase(),
+    }),
+);
