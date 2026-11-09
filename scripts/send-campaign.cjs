@@ -302,19 +302,27 @@ async function main() {
     const claim = await ref.transaction((current) => (current ? undefined : { at: now, status: "sending" }));
     if (!claim.committed) continue;
     const started = Date.now();
+    let messageId;
     try {
-      const messageId = await send(campaigns.emailMessage({ email: r.email, name: r.name, rendered: r.rendered, campaign: opts.id, unsubscribeUrl: r.link }));
-      await ref.set({ at: Date.now(), status: "sent", via: opts.via, messageId: messageId || "" });
-      sent += 1;
+      messageId = await send(campaigns.emailMessage({ email: r.email, name: r.name, rendered: r.rendered, campaign: opts.id, unsubscribeUrl: r.link }));
     } catch (error) {
+      // The provider refused it, so nobody got it: release the claim for a later run.
       failed += 1;
-      await ref.remove();
+      await ref.remove().catch((e) => console.error(`Could not release claim for ${r.uid}: ${e.message}`));
       console.error(`Send failed for ${r.uid}: ${error.name || ""} ${error.message}`);
       if (/Throttl|MaxSendRate|Daily message quota/i.test(`${error.name} ${error.message}`)) {
         console.error("Provider quota reached; stopping. Rerun later to continue.");
         break;
       }
+      await sleep(Math.max(0, gap - (Date.now() - started)));
+      continue;
     }
+    // Delivered. Never release the claim from here on, even if recording fails:
+    // a released claim would send this person the same email again next run.
+    sent += 1;
+    await ref
+      .set({ at: Date.now(), status: "sent", via: opts.via, messageId: messageId || "" })
+      .catch((e) => console.error(`Sent to ${r.uid} but could not record it (claim kept): ${e.message}`));
     if ((sent + failed) % 50 === 0) console.log(`Progress: ${sent} sent, ${failed} failed of ${queue.length}`);
     await sleep(Math.max(0, gap - (Date.now() - started)));
   }

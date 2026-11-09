@@ -88,14 +88,19 @@ async function main() {
       continue;
     }
     const batch = Math.min(budget, todo);
-    if (dryRun) console.log(`(dry run) would send ${batch} ${kind}`);
-    else {
-      const out = run(kind, ["--send", "--yes", `--max=${batch}`]);
-      const done = out.match(/Done: (\d+) sent, (\d+) failed/);
-      console.log(out.trim().split("\n").filter((l) => !/FIREBASE WARNING/.test(l)).slice(-3).join("\n"));
-      budget -= done ? Number(done[1]) + Number(done[2]) : batch;
+    if (dryRun) {
+      console.log(`(dry run) would send ${batch} ${kind}`);
+      left += Math.max(0, todo - batch);
+      continue;
     }
-    left += Math.max(0, todo - batch);
+    const out = run(kind, ["--send", "--yes", `--max=${batch}`]);
+    const done = out.match(/Done: (\d+) sent, (\d+) failed/);
+    console.log(out.trim().split("\n").filter((l) => !/FIREBASE WARNING/.test(l)).slice(-3).join("\n"));
+    // Failed sends count against the quota too, so spend them from the budget.
+    budget -= done ? Number(done[1]) + Number(done[2]) : batch;
+    // Recount from the claims instead of trusting the batch size: failed and
+    // unattempted recipients stay unclaimed and must keep the rollout open.
+    left += remaining(kind);
   }
   if (!left && !dryRun) return "COMPLETE";
   return dryRun ? "DRY_RUN" : "SENT";
