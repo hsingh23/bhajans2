@@ -5,6 +5,13 @@
 
 const ORIGIN = "https://sing.withamma.com";
 const IMAGE_URL = `${ORIGIN}/email-images/amma_singing.jpg`;
+// 1:18 tour of the new features (Loom), with a poster frame we host because
+// Loom serves no public thumbnail. Set url to null to drop the block.
+const VIDEO = {
+  url: "https://www.loom.com/share/88c974fa64bb4eb7947a0043665545bc",
+  poster: "https://singwithamma.s3.amazonaws.com/email/whats-new-video.jpg",
+  length: "1:18",
+};
 const SUPPORT = "hisingh1@gmail.com";
 // CAN-SPAM postal address shown in every campaign footer.
 const POSTAL_ADDRESS = "MA Center Chicago · 41W501 Keslinger Road, Elburn, IL 60119";
@@ -139,6 +146,16 @@ function indexStats(bhajans, { added = 297 } = {}) {
   };
 }
 
+/** Clickable poster plus a text link, for clients that block images. */
+function videoBlock() {
+  if (!VIDEO.url) return "";
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px;"><tr><td>
+<a href="${escapeHtml(VIDEO.url)}" style="text-decoration:none;"><img src="${escapeHtml(VIDEO.poster)}" alt="Watch a ${VIDEO.length} tour of what’s new in Sing with Amma" width="520" style="display:block;width:100%;max-width:520px;height:auto;border:1px solid #e7ded2;border-radius:8px;"></a>
+<p style="margin:10px 0 0;font-size:14px;line-height:1.6;color:#74685c;"><a href="${escapeHtml(VIDEO.url)}" style="color:#9a3f1c;font-weight:bold;">Watch the ${VIDEO.length} tour</a> to see it all in the app.</p>
+</td></tr></table>`;
+}
+const videoText = () => (VIDEO.url ? `Watch the ${VIDEO.length} tour: ${VIDEO.url}\n\n` : "");
+
 const button = (href, label) =>
   `<a class="button" href="${escapeHtml(href)}" style="display:inline-block;background:#a9441d;border:1px solid #a9441d;border-radius:6px;padding:15px 24px;color:#ffffff;font-size:16px;font-weight:bold;line-height:1.4;text-decoration:none;">${label} &rarr;</a>`;
 
@@ -230,6 +247,7 @@ ${
     : `<p style="margin:0 0 24px;">${button(payUrl, "Renew and sing again")}</p>`
 }
 <p style="margin:8px 0 16px;font-size:11px;letter-spacing:1.8px;font-weight:bold;color:#a34d27;">NEW SINCE YOU LEFT</p>
+${videoBlock()}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${featureRows(list.slice(0, 5))}</table>
 <p style="margin:8px 0 18px;">${button(payUrl, "Renew my subscription")}</p>
 <p style="margin:0;font-size:14px;line-height:1.7;color:#74685c;">Every subscription supports Amma’s charities. Sign in with this email address; you can ask for a magic link on the sign-in page, so no password is needed.</p>`;
@@ -247,7 +265,7 @@ ${
   });
   const text = `${title}\n\n${name ? `Dear ${name},` : "Dear friend,"}\n\n${intro}${favIntro ? ` ${favIntro}` : ""}\n\n${songs
     .map((s) => `- ${s.title}${s.highlights.length ? ` (${s.highlights.join(", ")})` : ""}\n  ${s.url}`)
-    .join("\n")}${more ? `\n...and ${more} more in My Favorites` : ""}\n\nRenew: ${payUrl}\n\nNew since you left:\n${list
+    .join("\n")}${more ? `\n...and ${more} more in My Favorites` : ""}\n\nRenew: ${payUrl}\n\nNew since you left:\n${videoText()}${list
     .slice(0, 5)
     .map((f) => `- ${f.title}: ${f.body}`)
     .join("\n")}\n\nEvery subscription supports Amma’s charities.${textFooter(reason, postalAddress, unsubscribeUrl)}`;
@@ -271,6 +289,7 @@ function renderFeatures({ name, active, validUntil, favorite, stats, campaign, p
     : "";
   const body = `<p style="margin:0 0 12px;font-size:16px;line-height:1.7;">${greeting}</p>
 <p style="margin:0 0 24px;font-size:16px;line-height:1.7;color:#65594e;">${escapeHtml(intro)}</p>
+${videoBlock()}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0">${featureRows(list)}</table>
 ${tryLine}
 <p style="margin:0 0 18px;">${cta}</p>
@@ -290,7 +309,7 @@ ${
     postalAddress,
     unsubscribeUrl,
   });
-  const text = `${title}\n\n${name ? `Dear ${name},` : "Dear friend,"}\n\n${intro}\n\n${list
+  const text = `${title}\n\n${name ? `Dear ${name},` : "Dear friend,"}\n\n${intro}\n\n${videoText()}${list
     .map((f) => `- ${f.title}: ${f.body}`)
     .join("\n")}${favorite ? `\n\nTry it on one of your favorites, ${favorite.title}: ${favorite.url}` : ""}\n\n${
     active ? `Open the app: ${openUrl}` : `Start singing: ${track("/pay", campaign, "subscribe")}`

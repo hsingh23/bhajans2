@@ -99,3 +99,15 @@ test("footer carries the unsubscribe link and the MA Center postal address by de
   assert.match(html, /41W501 Keslinger Road, Elburn, IL 60119/);
   assert.match(text, /Unsubscribe: https:\/\/x\.example\/u\?u=1&t=2/);
 });
+
+test("both emails link the feature tour video with a hosted poster and a text fallback", () => {
+  const now = Date.UTC(2026, 10, 8);
+  for (const { html, text } of [
+    c.renderFeatures({ active: true, stats, campaign: "fe" }),
+    c.renderWinback({ expiredOn: now - 40 * DAY, stats, campaign: "wb", now }),
+  ]) {
+    assert.match(html, /<a href="https:\/\/www\.loom\.com\/share\/[0-9a-f]{32}"[^>]*><img src="https:\/\/singwithamma\.s3\.amazonaws\.com\/email\/whats-new-video\.jpg"/);
+    assert.match(html, /Watch the 1:18 tour<\/a>/);
+    assert.match(text, /Watch the 1:18 tour: https:\/\/www\.loom\.com\/share\//);
+  }
+});
