@@ -79,7 +79,8 @@ describe('search ranking', () => {
     console.log(`search quality: top-1 ${top1}/${ranks.length}, MRR ${mrr.toFixed(3)}; not first: ${JSON.stringify(misses)}`);
     expect(top1 / ranks.length).toBeGreaterThanOrEqual(0.9);
     expect(mrr).toBeGreaterThanOrEqual(0.93);
-  });
+    // Ranks every query against the full index: ~1 s alone, past 5 s on a busy machine.
+  }, 30000);
 
   it('returns everything in index order for an empty query', () => {
     expect(rankBhajans(index, '')).toEqual(bhajans.map((_, i) => i));

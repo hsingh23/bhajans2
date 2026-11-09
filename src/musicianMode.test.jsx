@@ -293,7 +293,8 @@ describe('musician details in search', () => {
     await waitFor(() => expect(musicFetches().length).toBeGreaterThan(0));
     await new Promise((resolve) => setTimeout(resolve, 20));
     expect(screen.queryByTestId('music-chips')).toBeNull();
-    expect(screen.getByText('kali kali kali (gujarati)')).toBeInTheDocument();
+    // The song can also be the home page's bhajan of the day, so look in the results row.
+    expect(rowFor('kali kali kali (gujarati)')).toBeInTheDocument();
     warn.mockRestore();
   });
 

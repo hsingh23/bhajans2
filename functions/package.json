@@ -10,7 +10,7 @@
     "firebase-tools": "^15.35.0"
   },
   "scripts": {
-    "build": "node --check src/index.js && node --check src/mail.js",
+    "build": "node --check src/index.js && node --check src/mail.js && node --check src/campaigns.js && node --check src/unsubscribe.js",
     "test": "node --test test/*.test.cjs",
     "deploy": "firebase deploy --config ../firebase.json --only functions:default:amritabooks,functions:default:shopifyWebhook,functions:default:manuallyAddUser,functions:default:paidNotification",
     "serve": "firebase emulators:start --config ../firebase.json --only functions"

@@ -1,6 +1,6 @@
 {
   "name": "bhajans",
-  "version": "1.21.0",
+  "version": "1.23.0",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -22,6 +22,8 @@
     "react-virtualized": "9.22.6"
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudwatch": "^3.1164.0",
+    "@aws-sdk/client-sesv2": "^3.1164.0",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
     "@playwright/test": "^1.65.0",
